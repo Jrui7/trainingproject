@@ -1,13 +1,4 @@
 Rails.application.routes.draw do
-  get 'seeds/index'
-
-  get 'seeds/new'
-
-  get 'seeds/show'
-
-  get 'seeds/update'
-
-  get 'seeds/destroy'
 
   devise_for :users
   root to: 'pages#home'
