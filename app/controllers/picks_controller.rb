@@ -1,0 +1,30 @@
+class PicksController < ApplicationController
+
+  def index
+    @picks = current_user.picks
+  end
+
+  def create
+    @pick = Pick.new(pick_params)
+    @pick.user = current_user
+    @pick.seed = Seed.find(params[:seed_id])
+    if @pick.save
+      redirect_to seed_path(params[:seed_id])
+    else
+      @seed = @pick.seed
+      render 'seeds/show'
+    end
+
+  end
+
+  def destroy
+  end
+
+  private
+
+  def pick_params
+    params.require(:pick).permit(:price)
+  end
+
+
+end

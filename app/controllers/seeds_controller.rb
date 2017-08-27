@@ -22,6 +22,8 @@ class SeedsController < ApplicationController
 
   def show
     @seed = Seed.find(params[:id])
+    @pick = Pick.new
+    @picks = @seed.picks
   end
 
   def update
