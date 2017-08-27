@@ -4,6 +4,10 @@ class PicksController < ApplicationController
     @picks = current_user.picks
   end
 
+  def new
+    @pick = Pick.new
+  end
+
   def create
     @pick = Pick.new(pick_params)
     @pick.user = current_user

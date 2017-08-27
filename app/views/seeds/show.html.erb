@@ -1,13 +1,34 @@
 <h1>Seeds#show</h1>
 <p><%= @seed.title %></p>
 <p><%= @seed.description %></p>
-
+<h2>
+<%= pluralize @seed.picks.size, "pick" %>
+</h2>
 <%= link_to "Retour", seeds_path %>
 
-  <%= simple_form_for [@seed, @pick], url: seed_picks_path(@seed), :method => :post do |f| %>
-    <p><strong>Prix :</strong></p>
-    <%= f.input_field :price, as: :integer, class: 'input-sm form-control', id: 'start' %>
-    <%= f.submit "Enregistrer mon pick", class: "btn btn-success" %>
+
+
+  <% collections = [] %>
+  <% @user.picks.each do |pick| %>
+  <% collections << pick.seed.id  %>
+  <% end %>
+
+  <% if collections.include? @seed.id %>
+    <%= "Vous avez déjà pické"  %>
+  <% else %>
+    <%= simple_form_for [@seed, @pick], url: seed_picks_path(@seed), :method => :post do |f| %>
+      <p><strong>Prix :</strong></p>
+      <%= f.input_field :price, as: :integer, class: 'input-sm form-control', id: 'start' %>
+      <%= f.submit "Enregistrer mon pick", class: "btn btn-success" %>
     <% end %>
+  <% end %>
+
+
+
+
+
+
+
+
 
 
