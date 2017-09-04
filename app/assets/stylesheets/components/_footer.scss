@@ -1,0 +1,35 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  width: 100%;
+  padding: 0px 30px;
+  color: rgba(0,0,0,0.3);
+  position:absolute;
+  bottom:0;
+  background: $red;
+  background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+  p {
+    color: white;
+  }
+
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: white;
+  font-weight: lighter;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 0px 10px;
+}
+
+.footer-links a:hover {
+  color: $orange;
+}
+.footer .fa-heart {
+  color: white;
+}
