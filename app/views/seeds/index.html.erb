@@ -3,11 +3,16 @@
 
 <% @seeds.each do |seed| %>
     <div class="product">
+
       <div class='product-upvote'>
         <div class="product-arrow"></div>
-        <div class='product-count'><%= seed.picks.size %> </div>
+
+          <div class='product-count'><%= seed.picks.size %> </div>
+
       </div>
-      <%= cl_image_tag seed.photos.first.path, width: 300, height: 200, crop: :fill, class: "product-image hidden-xs" %>
+      <%= link_to seed_path(seed) do  %>
+        <%= cl_image_tag seed.photos.first.path, width: 300, height: 200, crop: :fill, class: "product-image hidden-xs" %>
+      <% end %>
       <div class='product-body'>
         <h3> <%= seed.title %></h3>
         <p> <%= seed.description%></p>
