@@ -38,7 +38,7 @@ class SeedsController < ApplicationController
   private
 
   def seed_params
-    params.require(:seed).permit(:title, :description, :category_id)
+    params.require(:seed).permit(:title, :description, :category_id, photos: [])
   end
 
 

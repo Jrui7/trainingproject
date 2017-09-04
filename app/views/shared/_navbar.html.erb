@@ -4,15 +4,18 @@
     <%= image_tag "logo.png" %>
   <% end %>
 
+<% if user_signed_in? %>
+<!-- Links when logged in -->
+
+  <div class="navbar-menu">
+    <%= link_to "Mon Seedoak", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Les Seeds", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "About Seedoak", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+  </div>
+
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <% if user_signed_in? %>
-
-      <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -21,17 +24,13 @@
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Mon profil") %>
               <% end %>
             </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
-              <% end %>
-            </li>
+
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Déconnecter") %>
               <% end %>
             </li>
           </ul>

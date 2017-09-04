@@ -10,4 +10,6 @@ class Seed < ApplicationRecord
   validates :description,
     presence: true,
     length: { minimum: 5 }
+
+  has_attachments :photos, maximum: 5
 end

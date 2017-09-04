@@ -9,6 +9,7 @@
          <%= b.input :title %>
          <%= b.input :description %>
          <%= b.input :category_id, collection: @categories, prompt: "Select category"%>
+         <%= b.input :photos, as: :attachinary %>
          <%= b.submit class: "text-center btn btn-primary" %>
        <% end %>
      </div>
