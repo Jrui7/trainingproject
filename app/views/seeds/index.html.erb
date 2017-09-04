@@ -1,12 +1,26 @@
 <h1>Seeds#index</h1>
 <p>Decouvrez ici tous les derniers seeds</p>
-<ul>
-  <% @seeds.each do |seed| %>
-    <li>
-      <%= seed.title %>
-      <%= seed.description %>
-      <%= link_to "Détails", seed_path(seed) %>
-    </li>
-  <% end %>
-</ul>
+
+<% @seeds.each do |seed| %>
+    <div class="product">
+      <div class='product-upvote'>
+        <div class="product-arrow"></div>
+        <div class='product-count'><%= seed.picks.size %> </div>
+      </div>
+      <%= cl_image_tag seed.photos.first.path, width: 300, height: 200, crop: :fill, class: "product-image hidden-xs" %>
+      <div class='product-body'>
+        <h3> <%= seed.title %></h3>
+        <p> <%= seed.description%></p>
+      </div>
+      <ul class="list-inline product-controls hidden-sm hidden-xs">
+        <li><a href=""><i class="fa fa-heart"></i></a></li>
+        <li><a href=""><i class="fa fa-share"></i></a></li>
+        <li><a href=""><i class="fa fa-star"></i></a></li>
+      </ul>
+    </div>
+<% end %>
+
 <%= link_to "Créér un nouveau seed", new_seed_path, {class: "btn btn-primary"}  %>
+
+
+

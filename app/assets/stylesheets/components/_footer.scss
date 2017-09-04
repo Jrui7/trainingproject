@@ -1,3 +1,9 @@
+#body {
+
+}
+
+
+
 .footer {
   display: flex;
   align-items: center;
@@ -6,7 +12,9 @@
   width: 100%;
   padding: 0px 30px;
   color: rgba(0,0,0,0.3);
-  position:absolute;
+  position: relative;
+  margin-bottom: 0px;
+  margin-top: 50px;
   bottom:0;
   background: $red;
   background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
