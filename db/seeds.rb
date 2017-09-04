@@ -7,10 +7,22 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+User.destroy_all
+Category.destroy_all
 
-
-mode = Category.create(name: "Mode")
+mode_homme = Category.create(name: "Mode homme")
+mode_femme = Category.create(name: "Mode femme")
 musique = Category.create(name: "Musique")
-categories = [mode, musique]
+sorties = Category.create(name: "Sorties")
+sport = Category.create(name: "Sport")
+categories = ["Mode homme", "Mode femme", "Musique", "Sorties", "Sport" ]
 puts "Categories created !"
+puts "--------------------"
+
+
+jorge = User.create(email: "jorge.ruivinho@me.com", password: "password")
+renan = User.create(email: "renan.legall@gmail.com", password: "password")
+thomas = User.create(email: "thomas@birdies.com", password: "password")
+
+puts "Users created !"
 puts "--------------------"
