@@ -20,9 +20,9 @@ puts "Categories created !"
 puts "--------------------"
 
 
-jorge = User.create(email: "jorge.ruivinho@me.com", password: "password")
-renan = User.create(email: "renan.legall@gmail.com", password: "password")
-thomas = User.create(email: "thomas@birdies.com", password: "password")
+jorge = User.create(email: "jorge.ruivinho@me.com", password: "password", first_name: "Jorge", last_name: "Ruivinho", pseudo: "Jrui7")
+renan = User.create(email: "renan.legall@gmail.com", password: "password", first_name: "Renan", last_name: "Legall", pseudo: "TheVoice")
+thomas = User.create(email: "thomas@birdies.com", password: "password", first_name: "Thomas", last_name: "Caillol", pseudo: "SurfMousse")
 
 puts "Users created !"
 puts "--------------------"

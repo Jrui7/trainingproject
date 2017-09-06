@@ -10,18 +10,17 @@
           <div class='product-count'><%= seed.picks.size %> </div>
 
       </div>
-      <%= link_to seed_path(seed) do  %>
+       <%= link_to seed_path(seed) do  %>
         <%= cl_image_tag seed.photos.first.path, width: 300, height: 200, crop: :fill, class: "product-image hidden-xs" %>
-      <% end %>
-      <div class='product-body'>
-        <h3> <%= seed.title %></h3>
-        <p> <%= seed.description%></p>
-      </div>
-      <ul class="list-inline product-controls hidden-sm hidden-xs">
-        <li><a href=""><i class="fa fa-heart"></i></a></li>
-        <li><a href=""><i class="fa fa-share"></i></a></li>
-        <li><a href=""><i class="fa fa-star"></i></a></li>
-      </ul>
+        <% end %>
+
+          <div class='product-body'> <%= link_to seed_path(seed) do  %>
+            <h3> <%= seed.title %></h3>
+            <p> <%= seed.description%></p>
+            <p> <%= seed.user.first_name %> </p>
+            <% end %>
+          </div>
+
     </div>
 <% end %>
 

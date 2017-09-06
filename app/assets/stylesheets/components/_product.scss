@@ -1,3 +1,10 @@
+a { color: inherit; }
+
+a:hover {
+  text-decoration:none;
+}
+
+
 .product {
   display: flex;
   align-items: center;
@@ -52,27 +59,7 @@
   margin: auto;
 }
 
-/* Controls design */
-.product-controls {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin: 0px;
-}
-.product-controls a {
-  padding: 0 20px;
-  font-size: 17px;
-  color: #E6E6E6;
-}
-.product-controls a:hover {
-  color: #D3473C !important
-}
-.product-controls-hidden a {
-  color: transparent;
-  font-size: 15px;
-  transition: all 0.15s ease;
-  border-color: transparent;
-}
+
 
 /* Hover effects */
 .product:hover {
