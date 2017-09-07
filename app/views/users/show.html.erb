@@ -1,0 +1,38 @@
+<p>Bienvenue sur votre profil <%=  @user.pseudo %> </p>
+
+<div class="dashboard">
+
+  <div class="profile-details">
+    <% if current_user.photo? %>
+      <%= cl_image_tag(current_user.photo.path,  width: 200, height: 200)%>
+    <% else %>
+      <%= image_tag "user.jpg", width: "75"%>
+    <% end %>
+
+    <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
+    <div class="tab edit-tab" data-target="#edit">
+      <p class="edit-button">Editer mes infos</p>
+    </div>
+  </div>
+
+
+  <!-- Modifier mon profil -->
+      <div class="tab-content" id="edit">
+        <div class="view-header">
+          <h1>Mon Profil</h1>
+        </div>
+        <div class="view-body">
+          <div class="user-form">
+            <%= simple_form_for current_user do |f| %>
+              <%= f.input :pseudo, label: "Pseudo" %>
+              <%= f.input :first_name, label: "Prénom" %>
+              <%= f.input :last_name, label: "Nom" %>
+              <%= f.input :email, label: "Email" %>
+              <%= f.input :photo, as: :attachinary %>
+              <%= f.button :submit %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+</div>

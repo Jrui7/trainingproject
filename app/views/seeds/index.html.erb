@@ -16,8 +16,8 @@
 
           <div class='product-body'> <%= link_to seed_path(seed) do  %>
             <h3> <%= seed.title %></h3>
+            <p>présenté par <%= seed.user.pseudo %></p>
             <p> <%= seed.description%></p>
-            <p> <%= seed.user.first_name %> </p>
             <% end %>
           </div>
 
