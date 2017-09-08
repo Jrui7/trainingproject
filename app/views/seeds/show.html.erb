@@ -7,7 +7,7 @@
 <h2>
 <%= pluralize @seed.picks.size, "pick" %>
 </h2>
-<%= link_to "Retour", seeds_path %>
+
 
 
 
@@ -17,7 +17,7 @@
   <% end %>
 
   <% if collections.include? @seed.id %>
-    <%= "Vous avez déjà pické"  %>
+    <p> <%= "Vous avez déjà pické"  %> </p>
   <% else %>
     <%= simple_form_for [@seed, @pick], url: seed_picks_path(@seed), :method => :post do |f| %>
       <p><strong>Prix :</strong></p>
@@ -26,7 +26,18 @@
     <% end %>
   <% end %>
 
+  <p><%= link_to "Retour", seeds_path %></p>
 
+
+ <% if @seed.picks.size > 0 %>
+  <ul>
+    <% @seed.picks.each do |pick| %>
+      <li>
+        <%= pick.price  %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
 
 
 
