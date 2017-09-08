@@ -42,3 +42,149 @@
   }
 }
 
+.view {
+  grid-row: 1 / span 4;
+  grid-column: 2 / span 3;
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  height: fit-content;
+}
+
+.view-header {
+  padding-left: 30px;
+  border-bottom: solid 1px #eee;
+  h1 {
+    font-size: 22px;
+    font-weight: bold;
+  }
+}
+
+.view-body {
+  height: 520px;
+  overflow: auto;
+}
+
+.tabs {
+  display: flex;
+  justify-content:  space-around;
+  flex-direction: column;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+}
+
+.tab-title {
+  margin-left: 10px;
+  color: #a6a6ae;
+}
+
+.tab {
+  justify-content: space-between;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  p {
+    color: rgba(136, 136, 136, 1);
+    margin: 0;
+  }
+  img {
+    width: 5px;
+  }
+}
+
+.box-tab {
+  border-bottom: 1px solid #ddd;
+  padding: 5px 25px 5px 20px;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.tab.active {
+  background-color: rgba(0, 0, 0, 0.03);
+  p {
+  color: #000;
+  font-weight: bold;
+  }
+}
+
+.tabs a:hover {
+  text-decoration: none;
+}
+
+#reviews {
+  margin: 30px;
+}
+
+.dashboard-review {
+  padding: 28px;
+  border-bottom: solid 1px rgba(136, 136, 136, 1);
+}
+
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+#review-content {
+  color: rgba(136, 136, 136, 1)
+}
+
+.dashboard-button {
+  color: #fff;
+  background-color: #B69FBF;
+  border: 1px solid #B69FBF;
+  border-radius: 2px;
+  padding: 10px 15px;
+  &:hover {
+    text-decoration: none;
+    color: #B69FBF;
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.dashboard-link {
+  color: #fff;
+  &:hover {
+    text-decoration: none;
+    color: #B69FBF;
+  }
+}
+
+
+
+//  ----------------------------------- EDIT
+
+.form-control {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.control-label {
+  text-align: right;
+  margin-right: 15px;
+  color: #a6a6ae;
+  font-weight: normal;
+}
+
+.user-form {
+  padding: 20px 40px;
+}
+
+label {
+  margin-right: 15px;
+}
+
+
+.form-group {
+  margin-bottom: 10px;
+}
+
