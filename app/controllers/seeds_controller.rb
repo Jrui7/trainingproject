@@ -35,6 +35,7 @@ class SeedsController < ApplicationController
   def destroy
   end
 
+
   private
 
   def seed_params
