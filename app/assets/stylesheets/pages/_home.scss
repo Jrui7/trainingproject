@@ -1,1 +1,36 @@
-// Specific CSS for your home-page
+#pages-home {
+  #welcome {
+    display: flex;
+    align-items: center;
+    .btn-discover {
+      margin-top: 25px;
+    }
+  }
+
+  #swiper-container {
+    margin-bottom: 4.7vh;
+    .owl-carousel {
+      padding: 0.5%;
+      border: solid 1px;
+      border-color: #d1d1d1;
+      .slide {
+        background-size: cover;
+        overflow: hidden;
+        height: 70vh;
+        width: 100%;
+        position: relative;
+      }
+      #slide1 {
+        .details {
+          color: white;
+          text-shadow: 1px 1px 2px black;
+          margin: 5%;
+          font-size: 2.8vw;
+          &.join {
+            margin-top: 35%;
+          }
+        }
+      }
+    }
+  }
+}
