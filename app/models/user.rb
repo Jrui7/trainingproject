@@ -7,6 +7,9 @@ class User < ApplicationRecord
          has_many :seeds
          has_many :picks
          has_attachment :photo
+         has_many :user_preferences
+
+
 
 
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170911093042) do
+ActiveRecord::Schema.define(version: 20170911131947) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,15 @@ ActiveRecord::Schema.define(version: 20170911093042) do
     t.index ["user_id"], name: "index_seeds_on_user_id", using: :btree
   end
 
+  create_table "user_preferences", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["category_id"], name: "index_user_preferences_on_category_id", using: :btree
+    t.index ["user_id"], name: "index_user_preferences_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -86,4 +95,6 @@ ActiveRecord::Schema.define(version: 20170911093042) do
   add_foreign_key "picks", "users"
   add_foreign_key "seeds", "categories"
   add_foreign_key "seeds", "users"
+  add_foreign_key "user_preferences", "categories"
+  add_foreign_key "user_preferences", "users"
 end
