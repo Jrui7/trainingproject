@@ -9,6 +9,7 @@
 
 User.destroy_all
 Category.destroy_all
+UserPreference.destroy_all
 
 mode_homme = Category.create(name: "Mode homme")
 mode_femme = Category.create(name: "Mode femme")
@@ -26,3 +27,14 @@ thomas = User.create(email: "thomas@birdies.com", password: "password", first_na
 
 puts "Users created !"
 puts "--------------------"
+
+UserPreference.create(user_id: jorge.id, category_id: mode_homme.id)
+UserPreference.create(user_id: jorge.id, category_id: sport.id)
+UserPreference.create(user_id: thomas.id, category_id: sport.id)
+UserPreference.create(user_id: renan.id, category_id: sorties.id)
+
+
+
+puts "Users preferences created !"
+puts "--------------------"
+
