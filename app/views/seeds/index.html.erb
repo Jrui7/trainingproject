@@ -11,12 +11,12 @@
 
       </div>
        <%= link_to seed_path(seed) do  %>
-        <%= cl_image_tag seed.photos.first.path, width: 300, height: 200, crop: :fill, class: "product-image hidden-xs" %>
+        <%= cl_image_tag seed.photos.first.path, width: 300, height: 200, class: "product-image" %>
         <% end %>
 
           <div class='product-body'> <%= link_to seed_path(seed) do  %>
             <h3> <%= seed.title %></h3>
-            <p>présenté par <%= cl_image_tag(seed.user.photo.path, class: "navbar-wagon avatar")%> <%= seed.user.pseudo %></p>
+            <p>présenté par <%= cl_image_tag(seed.user.photo.path, class: "seeder-picture")%> <%= seed.user.pseudo %></p>
             <p> <%= seed.description%></p>
             <% end %>
           </div>
