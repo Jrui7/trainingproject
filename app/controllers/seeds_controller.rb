@@ -35,6 +35,18 @@ class SeedsController < ApplicationController
   def destroy
   end
 
+  def mon_seedoak
+    user_preferences = UserPreference.where(user_id: current_user)
+
+    categories = []
+
+    user_preferences.each do |preference|
+      categories << preference.category_id
+    end
+
+    @seeds = Seed.where(category_id: categories)
+  end
+
 
   private
 
