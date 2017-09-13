@@ -1,16 +1,16 @@
+<%= render 'shared/navbar' %>
+<div class="container">
+  <div class="row">
+    <h1>My seeds</h1>
+    <p>L'historique de vos posts de seed</p>
 
+    <% @seeds.each do |seed| %>
+      <div class="product">
 
-<h1>Mon Seedoak</h1>
-<p>Les seeds qui correspondent à vos préférences</p>
+          <div class='product-upvote'>
+            <div class="product-arrow"></div>
 
-<% @seeds.each do |seed| %>
-    <div class="product">
-
-      <div class='product-upvote'>
-        <div class="product-arrow"></div>
-
-          <div class='product-count'><%= seed.picks.size %> </div>
-
+              <div class='product-count'><%= seed.picks.size %> </div>
       </div>
        <%= link_to seed_path(seed) do  %>
         <%= cl_image_tag seed.photos.first.path, width: 300, height: 200, class: "product-image" %>
@@ -23,7 +23,9 @@
             <% end %>
           </div>
 
-    </div>
-<% end %>
+     </div>
+    <% end %>
 
-<%= link_to "Créér un nouveau seed", new_seed_path, {class: "btn btn-primary"}  %>
+    <%= link_to "Créér un nouveau seed", new_seed_path, {class: "btn btn-primary"}  %>
+  </div>
+</div>
