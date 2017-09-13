@@ -47,6 +47,10 @@ class SeedsController < ApplicationController
     @seeds = Seed.where(category_id: categories)
   end
 
+  def my_seeds
+    @seeds = Seed.where(user_id: current_user)
+  end
+
 
   private
 
