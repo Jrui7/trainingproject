@@ -1,3 +1,4 @@
+<!-- navbar -->
 <div class="container-fluid" id="navbar">
   <div class="row navbar">
     <div class="col-xs-1 navbar-wagon-brand">
@@ -24,7 +25,7 @@
       <% if user_signed_in? %>
         <%= link_to "(your account)", user_path(current_user), class: "link-dashboard btn btn-default" %>
         <label class="checkbox-inline ">
-          <input type="checkbox" checked disabled data-toggle="toggle" data-on="connected">
+          <input type="checkbox" checked  data-toggle="toggle" data-on="connected">
         </label>
       <% else %>
         <%= link_to "create an account", new_user_session_path, class: "link-dashboard btn btn-success" %>
@@ -35,6 +36,7 @@
     </div>
   </div>
 </div>
+<!-- navbar end -->
 
 <%= content_for :header do %>
 <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
