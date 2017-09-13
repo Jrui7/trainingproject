@@ -1,61 +1,45 @@
-<div class="navbar-wagon">
-  <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png" %>
-  <% end %>
+<div class="container-fluid" id="navbar">
+  <div class="row navbar">
+    <div class="col-xs-1 navbar-wagon-brand">
+      <%= link_to root_path do %>
+        <%= image_tag "logo.png", class: "img-rounded" %>
+      <% end %>
+    </div>
 
-<% if user_signed_in? %>
-<!-- Links when logged in -->
-
-  <div class="navbar-menu">
-    <%= link_to "Mon Seedoak", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Les Seeds", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "About Seedoak", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-  </div>
-
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-
-      <!-- Avatar with dropdown menu -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <% if current_user.photo? %>
-            <%= cl_image_tag(current_user.photo.path, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown") %>
-          <% else %>
-            <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <% end %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to user_path(current_user) do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Mon profil") %>
-              <% end %>
-            </li>
-
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Déconnecter") %>
-              <% end %>
-            </li>
-          </ul>
+    <div class="col-sm-6 col-md-6 col-lg-8">
+      <div class="btn-group btn-group-justified" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+          <%= link_to "mes seedoaks", "#", class: "btn btn-default seedoak" %>
+        </div>
+        <div class="btn-group" role="group">
+          <%= link_to "index", "#", class: "btn btn-default seedoak" %>
+        </div>
+        <div class="btn-group" role="group">
+          <%= link_to "about us", "#", class: "btn btn-default seedoak" %>
         </div>
       </div>
-    <% else %>
-      <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <% end %>
-  </div>
+    </div>
 
-  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
-      </ul>
+    <div class="col-md-4 col-md-offset-1 col-lg-offset-0 col-lg-3 text-right account">
+      <% if user_signed_in? %>
+        <%= link_to "(your account)", user_path(current_user), class: "link-dashboard btn btn-default" %>
+        <label class="checkbox-inline ">
+          <input type="checkbox" checked disabled data-toggle="toggle" data-on="connected">
+        </label>
+      <% else %>
+        <%= link_to "create an account", new_user_session_path, class: "link-dashboard btn btn-success" %>
+        <label class="checkbox-inline ">
+          <input type="checkbox" disabled data-toggle="toggle" data-off="disconnect">
+        </label>
+      <% end %>
     </div>
   </div>
 </div>
 
+<%= content_for :header do %>
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<% end %>
+
+<%= content_for :after_js do %>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<% end %>
