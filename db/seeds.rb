@@ -21,9 +21,9 @@ puts "Categories created !"
 puts "--------------------"
 
 
-jorge = User.create(email: "jorge.ruivinho@me.com", password: "password", first_name: "Jorge", last_name: "Ruivinho", pseudo: "Jrui7", photo_url: "http://res.cloudinary.com/dlddnk3pr/image/upload/v1504805315/chx9ggnqbpz9ojb9pjnb.jpg", preferences: [])
-renan = User.create(email: "renan.legall@gmail.com", password: "password", first_name: "Renan", last_name: "Legall", pseudo: "TheVoice", photo_url: "http://res.cloudinary.com/dlddnk3pr/image/upload/v1504809025/pfzlmedhzlieyalaczxr.jpg", preferences: [])
-thomas = User.create(email: "thomas@birdies.com", password: "password", first_name: "Thomas", last_name: "Caillol", pseudo: "SurfMousse", photo_url: "http://res.cloudinary.com/dlddnk3pr/image/upload/v1505133796/sgb463x8acjlumv7ht86.jpg", preferences: [])
+jorge = User.create(email: "jorge.ruivinho@me.com", password: "password", first_name: "Jorge", last_name: "Ruivinho", pseudo: "Jrui7", photo_url: "http://res.cloudinary.com/dlddnk3pr/image/upload/v1504805315/chx9ggnqbpz9ojb9pjnb.jpg")
+renan = User.create(email: "renan.legall@gmail.com", password: "password", first_name: "Renan", last_name: "Legall", pseudo: "TheVoice", photo_url: "http://res.cloudinary.com/dlddnk3pr/image/upload/v1504809025/pfzlmedhzlieyalaczxr.jpg")
+thomas = User.create(email: "thomas@birdies.com", password: "password", first_name: "Thomas", last_name: "Caillol", pseudo: "SurfMousse", photo_url: "http://res.cloudinary.com/dlddnk3pr/image/upload/v1505133796/sgb463x8acjlumv7ht86.jpg")
 
 puts "Users created !"
 puts "--------------------"
