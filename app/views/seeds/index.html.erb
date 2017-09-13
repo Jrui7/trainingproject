@@ -5,26 +5,25 @@
     <p>Decouvrez ici tous les derniers seeds</p>
 
     <% @seeds.each do |seed| %>
-        <div class="product">
+      <div class="product">
 
           <div class='product-upvote'>
             <div class="product-arrow"></div>
 
               <div class='product-count'><%= seed.picks.size %> </div>
+      </div>
+       <%= link_to seed_path(seed) do  %>
+        <%= cl_image_tag seed.photos.first.path, width: 300, height: 200, class: "product-image" %>
+        <% end %>
 
-          </div>
-           <%= link_to seed_path(seed) do  %>
-            <%= cl_image_tag seed.photos.first.path, width: 300, height: 200, crop: :fill, class: "product-image hidden-xs" %>
+          <div class='product-body'> <%= link_to seed_path(seed) do  %>
+            <h3> <%= seed.title %></h3>
+            <p>présenté par <%= cl_image_tag(seed.user.photo.path, class: "seeder-picture")%> <%= seed.user.pseudo %></p>
+            <p> <%= seed.description%></p>
             <% end %>
+          </div>
 
-              <div class='product-body'> <%= link_to seed_path(seed) do  %>
-                <h3> <%= seed.title %></h3>
-                <p>présenté par <%= cl_image_tag(seed.user.photo.path, class: "navbar-wagon avatar")%> <%= seed.user.pseudo %></p>
-                <p> <%= seed.description%></p>
-                <% end %>
-              </div>
-
-        </div>
+     </div>
     <% end %>
 
     <%= link_to "Créér un nouveau seed", new_seed_path, {class: "btn btn-primary"}  %>
