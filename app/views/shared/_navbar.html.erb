@@ -1,13 +1,7 @@
 <!-- navbar -->
 <div class="container-fluid" id="navbar">
   <div class="row navbar">
-    <div class="col-xs-1 navbar-wagon-brand">
-      <%= link_to root_path do %>
-        <%= image_tag "seedoak-logo.png", class: "img-rounded" %>
-      <% end %>
-    </div>
-
-    <div class="col-sm-6 col-md-6 col-lg-8">
+    <div class="hidden-xs hidden-sm col-sm-6 col-md-8 col-lg-8">
       <div class="btn-group btn-group-justified" role="group" aria-label="...">
         <div class="btn-group" role="group">
           <%= link_to "mes seedoaks", "#", class: "btn btn-default seedoak" %>
@@ -21,19 +15,47 @@
       </div>
     </div>
 
-    <div class="col-md-4 col-md-offset-1 col-lg-offset-0 col-lg-3 text-right account">
+    <div class="col-md-2 col-md-offset-1 col-lg-offset-2 account text-center">
       <% if user_signed_in? %>
-        <%= link_to "(your account)", user_path(current_user), class: "link-dashboard btn btn-default" %>
-        <label class="checkbox-inline ">
-          <input type="checkbox" checked  data-toggle="toggle" data-on="connected">
+        <label class="checkbox-inline log-out">
+          <input type="checkbox" checked data-toggle="toggle" data-on="Log Out" data-off="realy? :(">
         </label>
+        <div id="avatar-navbar">
+          <%= link_to user_path(current_user), class: "link-dashboard" do %>
+            <% if current_user.photo? %>
+                <%= cl_image_tag current_user.avatar.path, crop: :fill  %>
+            <% else %>
+              <%= image_tag "user.jpg", class: "img-circle"%>
+            <% end %>
+          <% end %>
+        </div>
       <% else %>
-        <%= link_to "create an account", new_user_session_path, class: "link-dashboard btn btn-success" %>
-        <label class="checkbox-inline ">
-          <input type="checkbox" disabled data-toggle="toggle" data-off="disconnect">
+        <label class="checkbox-inline log-in">
+          <input type="checkbox" data-toggle="toggle" data-off="Log In" data-on="redirect..">
         </label>
       <% end %>
     </div>
+
+
+    <!-- modal -->
+    <div class="modal fade" id="LogOutModal" tabindex="-1" role="dialog" aria-labelledby="LogOutModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="LogOutModalTitle">Are you sure ?</h4>
+          </div>
+          <div class="modal-body">
+            Do you realy want to disconnect ?
+          </div>
+          <div class="modal-footer-disconnect">
+            <button type="button" class="btn btn-default" data-dismiss="modal">I stay</button>
+            <%= link_to "See you", destroy_user_session_path, method: "delete", class: "btn btn-danger" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal end -->
   </div>
 </div>
 <!-- navbar end -->
@@ -44,4 +66,20 @@
 
 <%= content_for :after_js do %>
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $(".checkbox-inline.log-out").on('change', function(e) {
+      $('#LogOutModal').modal();
+
+      $('#LogOutModal').on('hidden.bs.modal', function (e) {
+        $(".checkbox-inline>.toggle").removeClass("off")
+        $(".checkbox-inline>.toggle").removeClass("default")
+        $(".checkbox-inline>.toggle").addClass("primary")
+      });
+    });
+    $(".checkbox-inline.log-in").on('change', function(e) {
+      window.location.replace("<%= new_user_session_path %>")
+    });
+  });
+</script>
 <% end %>
