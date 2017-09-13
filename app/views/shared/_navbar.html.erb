@@ -23,7 +23,7 @@
         <div id="avatar-navbar">
           <%= link_to user_path(current_user), class: "link-dashboard" do %>
             <% if current_user.photo? %>
-                <%= cl_image_tag current_user.avatar.path, crop: :fill  %>
+                <%= cl_image_tag current_user.photo.path, crop: :fill  %>
             <% else %>
               <%= image_tag "user.jpg", class: "img-circle"%>
             <% end %>
