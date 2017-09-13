@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :seeds, shallow: true do
     collection do                       # collection => no restaurant id in URL
-      get 'mon_seedoak', to: "seeds#mon_seedoak"
+      get 'my_seedoak', to: "seeds#my_seedoak"
     end
     resources :picks
   end

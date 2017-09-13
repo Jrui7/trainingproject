@@ -35,7 +35,7 @@ class SeedsController < ApplicationController
   def destroy
   end
 
-  def mon_seedoak
+  def my_seedoak
     user_preferences = UserPreference.where(user_id: current_user)
 
     categories = []
