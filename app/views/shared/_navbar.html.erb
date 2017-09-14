@@ -4,13 +4,13 @@
     <div class="hidden-xs hidden-sm col-sm-6 col-md-8 col-lg-8">
       <div class="btn-group btn-group-justified" role="group" aria-label="...">
         <div class="btn-group" role="group">
-          <%= link_to "mes seedoaks", "#", class: "btn btn-default seedoak" %>
+          <%= link_to "Mon seedoak", "#", class: "btn btn-default seedoak" %>
         </div>
         <div class="btn-group" role="group">
-          <%= link_to "index", "#", class: "btn btn-default seedoak" %>
+          <%= link_to "Tous les seeds", "#", class: "btn btn-default seedoak" %>
         </div>
         <div class="btn-group" role="group">
-          <%= link_to "about us", "#", class: "btn btn-default seedoak" %>
+          <%= link_to "About seedoak", "#", class: "btn btn-default seedoak" %>
         </div>
       </div>
     </div>
@@ -18,12 +18,12 @@
     <div class="col-md-2 col-md-offset-1 col-lg-offset-2 account text-center">
       <% if user_signed_in? %>
         <label class="checkbox-inline log-out">
-          <input type="checkbox" checked data-toggle="toggle" data-on="Log Out" data-off="realy? :(">
+          <input type="checkbox" checked data-toggle="toggle" data-on="Log Out" data-off="Really?">
         </label>
         <div id="avatar-navbar">
           <%= link_to user_path(current_user), class: "link-dashboard" do %>
             <% if current_user.photo? %>
-                <%= cl_image_tag current_user.avatar.path, crop: :fill  %>
+                <%= cl_image_tag current_user.photo.path, crop: :fill  %>
             <% else %>
               <%= image_tag "user.jpg", class: "img-circle"%>
             <% end %>
@@ -46,7 +46,7 @@
             <h4 class="modal-title" id="LogOutModalTitle">Are you sure ?</h4>
           </div>
           <div class="modal-body">
-            Do you realy want to disconnect ?
+            Do you really want to disconnect ?
           </div>
           <div class="modal-footer-disconnect">
             <button type="button" class="btn btn-default" data-dismiss="modal">I stay</button>
