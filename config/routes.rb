@@ -12,5 +12,6 @@ Rails.application.routes.draw do
 
   get 'feed', to: 'my_seedoak#feed'
   get 'my_seeds', to: 'my_seedoak#my_seeds'
+  get 'my_picks', to: 'my_seedoak#my_picks'
 
 end
