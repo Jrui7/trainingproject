@@ -1,0 +1,6 @@
+class UserPreferencesController < ApplicationController
+
+
+end
+
+

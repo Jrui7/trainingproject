@@ -4,12 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+         validates :pseudo, uniqueness: true
+
          has_many :seeds
          has_many :picks
          has_attachment :photo
          has_many :user_preferences
-
-
 
 
 end
