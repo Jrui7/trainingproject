@@ -16,4 +16,8 @@ class MySeedoakController < ApplicationController
     @seeds = Seed.where(user_id: current_user)
   end
 
+  def my_picks
+    @picks = Pick.where(user_id: current_user)
+  end
+
 end
