@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :picks
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :users, only: [ :show, :edit, :update, :destroy], shallow: true
+  resources :users, only: [ :show, :edit, :update, :destroy]
 
 
   get 'my_seeds', to: 'my_seedoak#my_seeds'
