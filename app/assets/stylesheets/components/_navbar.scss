@@ -4,15 +4,24 @@
   background: white;
   transition: all 0.3s ease;
   height: 70px;
-  padding: 0px 30px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 /* Logo */
 #logo {
-  height: 50px;
+  height: 60px;
 }
+
+.menu-links {
+  flex: 0 0 675px;
+  display: flex;
+  justify-content: space-around;
+  color: #616668;
+  font-size: 20px;
+}
+
 
 /* Basic navbar item */
 .navbar-item {
@@ -20,12 +29,8 @@
   padding: 0 20px;
 }
 
-/* Navbar link */
-.navbar-link {
-  color: #616668;
-  font-size: 14px;
-}
-.navbar-link:hover {
+
+.menu-links:hover {
   color: #da552f;
   text-decoration: none;
 }
@@ -34,8 +39,8 @@
 
 /* User Avatar */
 .navbar .avatar {
-  height: 35px;
-  width: 35px;
+  height: 55px;
+  width: 55px;
   border-radius: 50%;
 }
 

@@ -5,9 +5,12 @@
       <%= image_tag "seedoak-logo.png", id: "logo" %>
     <% end %>
 
-      <%= link_to "Seeds", "#", class: "navigation-link" %>
-      <%= link_to "Le concept", "#", class: "navigation-link" %>
-      <%= link_to "Qui sommes-nous?", "#", class: "navigation-link" %>
+    <div class="menu-links">
+      <%= link_to "Seeds", "#", class: "seed" %>
+      <%= link_to "Le concept", "#", class: "concept" %>
+      <%= link_to "Qui sommes-nous?", "#", class: "about"%>
+    </div>
+
 
       <!-- Right Navigation -->
 
@@ -16,10 +19,10 @@
         <!-- Avatar with dropdown menu -->
         <div class="navbar-item">
           <div class="dropdown">
-          <% if current_user.photo? %>
-            <%= cl_image_tag current_user.photo.path, class: "avatar dropdown-toggle", id: "navbar-menu", "data-toggle" => "dropdown" %>
+            <% if current_user.photo? %>
+              <%= cl_image_tag current_user.photo.path, class: "avatar dropdown-toggle", id: "navbar-menu", "data-toggle" => "dropdown" %>
             <% else %>
-            <%= image_tag "user.jpg", class: "avatar dropdown-toggle", id: "navbar-menu", "data-toggle" => "dropdown" %>
+              <%= image_tag "user.jpg", class: "avatar dropdown-toggle", id: "navbar-menu", "data-toggle" => "dropdown" %>
             <% end %>
             <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
               <li>
