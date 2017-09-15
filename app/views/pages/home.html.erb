@@ -1,48 +1,47 @@
 
-<%= render 'shared/navbar' %>
-<div class="container" id="pages-home">
-  <div class="row" id="swiper-container">
-    <div class="col-xs-12 owl-carousel">
 
-        <div class="slide", style="background-image: url(<%= image_url "slide1.jpeg" %>);", id="slide1">
-          <div class="row">
-            <div class="col-xs-5">
-              <p class="details">Découvrez et faites nous découvrir les meilleures nouveautés !</p>
-            </div>
-            <div class="col-xs-5 col-xs-offset-2">
-              <p class="details join text-right">Le meilleur moyen de se faire plaisir</p>
-              <div class="text-center">
-                <%= link_to "Essayez maintenant", seeds_path, class: "btn btn-success " %>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="slide"> Your Content </div>
-        <div class="slide"> Your Content </div>
-        <div class="slide"> Your Content </div>
-        <div class="slide"> Your Content </div>
-        <div class="slide"> Your Content </div>
-        <div class="slide"> Your Content </div>
-
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_url "slide1.jpeg" %>);">
+  <div class="banner-content">
+    <h1>Seedoak</h1>
+    <p>Découvrez et faites nous découvrir les meilleures nouveautés</p>
+    <div class="enter">
+      <div class="text-center">
+        <%= link_to "Connectez-vous", new_user_session_path, class: "btn btn-success btn-lg " %>
       </div>
+      <div class="text-center">
+        <%= link_to "Inscrivez-vous", new_user_registration_path, class: "btn btn-warning btn-lg " %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+
+    <% @seeds.each do |seed| %>
+
+    <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path seed.photos.first.path%>');">
+        <div class="card-category"> <%= seed.category.name %></div>
+        <div class="card-description">
+          <h2><%= seed.title %></h2>
+        </div>
+
+        <div class="seeder-id">
+
+            <p><%= seed.user.pseudo %> </p>
+            <p> <%= cl_image_tag(seed.user.photo.path, class: "card-user")%> </p>
+
+        </div>
+      </div>
+
+    </div>
+
+    <% end %>
+
 
   </div>
 </div>
 
-<%= content_for :after_js do %>
-
-<script>
-  var owl = $('.owl-carousel');
-  owl.owlCarousel({
-    items: 1,
-    loop:true,
-    margin:10,
-    autoplay:true,
-    autoplayTimeout:1000,
-    autoplayHoverPause:true
-  });
-  $(document).ready(function(){
-    owl.trigger('play.owl.autoplay',[1000])
-  })
-</script>
-<% end %>
