@@ -11,6 +11,10 @@
     <%= yield(:header) %>
   </head>
   <body>
+    <% unless controller_name == "pages" %>
+      <%= render 'shared/navbar' %>
+    <% end %>
+
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%#= render 'shared/footer' %>

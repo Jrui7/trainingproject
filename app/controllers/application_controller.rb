@@ -8,5 +8,13 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:pseudo])
   end
 
+  def after_sign_in_path_for(resource_or_scope)
+    seeds_path
+  end
+
+  def default_url_options
+  { host: ENV["HOST"] || "localhost:3000" }
+  end
+
 
 end
