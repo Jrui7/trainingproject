@@ -5,11 +5,62 @@
       <%= image_tag "seedoak-logo.png", id: "logo" %>
     <% end %>
 
-    <div class="menu-links">
-      <%= link_to "Seeds", "#", class: "seed" %>
-      <%= link_to "Le concept", "#", class: "concept" %>
-      <%= link_to "Qui sommes-nous?", "#", class: "about"%>
-    </div>
+      <div class="menu-links">
+
+        <div class="navbar-item">
+          <div class="dropdown">
+            <%= link_to "Seeds", "#", class: "navigation dropdown-toggle", id: "navbar-menu", "data-toggle" => "dropdown" %>
+            <ul class="dropdown-menu dropdown-menu-riht navbar-dropdown-menu">
+              <li>
+                <p>Les plus récents</p>
+              </li>
+              <li>
+                <p>Les plus populaires</p>
+              </li>
+              <li>
+                <p>Dernier jour</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="navbar-item">
+          <div class="dropdown">
+            <%= link_to "Le concept", "#", class: "navigation dropdown-toggle", id: "navbar-menu", "data-toggle" => "dropdown" %>
+            <ul class="dropdown-menu dropdown-menu-riht navbar-dropdown-menu">
+              <li>
+                <p>Les plus récents</p>
+              </li>
+              <li>
+                <p>Les plus populaires</p>
+              </li>
+              <li>
+                <p>Dernier jour</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="navbar-item">
+          <div class="dropdown">
+            <%= link_to "Qui sommes-nous", "#", class: "navigation dropdown-toggle", id: "navbar-menu", "data-toggle" => "dropdown" %>
+            <ul class="dropdown-menu dropdown-menu-riht navbar-dropdown-menu">
+              <li>
+                <p>Les plus récents</p>
+              </li>
+              <li>
+                <p>Les plus populaires</p>
+              </li>
+              <li>
+                <p>Dernier jour</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+
 
 
       <!-- Right Navigation -->
