@@ -19,8 +19,8 @@
               <p> <%= seed.category.name %> </p>
               <div class="user-testimony">
                 <div class="user">
-                <%= seed.user.pseudo %>
                 <%= cl_image_tag(seed.user.photo.path, class: "seeder-picture")%>
+                <%= seed.user.pseudo %>
                 </div>
                 <%= seed.description %>
               </div>
