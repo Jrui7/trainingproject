@@ -14,12 +14,20 @@
   height: 60px;
 }
 
+/* Logo */
+#my-picks {
+  height: 45px;
+  margin-left: 70px;
+}
+
 .menu-links {
   flex: 0 0 675px;
   display: flex;
   justify-content: space-around;
   color: #616668;
   font-size: 20px;
+  margin-left: 150px;
+  margin-right: 80px;
 }
 
 
@@ -31,7 +39,6 @@
 
 
 .menu-links:hover {
-  color: #da552f;
   text-decoration: none;
 }
 
@@ -48,6 +55,7 @@
 .navbar-right {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 
