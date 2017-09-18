@@ -11,15 +11,19 @@
               </div>
             </div>
             <%= link_to seed_path(seed) do  %>
-              <%= cl_image_tag seed.photos.first.path, width: 300, height: 200, class: "product-image" %>
+              <%= cl_image_tag seed.photos.first.path, class: "product-image" %>
             <% end %>
 
             <div class='product-body'> <%= link_to seed_path(seed) do  %>
               <h3> <%= seed.title %></h3>
               <p> <%= seed.category.name %> </p>
-              <p><%= cl_image_tag(seed.user.photo.path, class: "seeder-picture")%> <%= seed.user.pseudo %></p>
-              <p> <%= seed.description%></p>
-
+              <div class="user-testimony">
+                <div class="user">
+                <%= seed.user.pseudo %>
+                <%= cl_image_tag(seed.user.photo.path, class: "seeder-picture")%>
+                </div>
+                <%= seed.description %>
+              </div>
               <% end %>
             </div>
 

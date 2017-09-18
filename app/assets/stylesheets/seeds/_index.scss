@@ -13,7 +13,7 @@
 
 
 .product {
-  background-color: #F9F9F9;
+  background-color: #FFFFFF;
   display: flex;
   align-items: center;
   padding: 20px;
@@ -28,16 +28,18 @@
 /* Body design */
 .product-body {
   flex: 1 1 auto;
+
 }
 .product-body h3 {
   font-weight: bold;
-  font-size: 23px;
+  font-size: 20px;
   margin-top: 0;
+  margin-bottom: 1px;
 }
 .product-body p {
-  font-weight: lighter;
   color: #999999;
   margin-bottom: 0;
+  font-size: 13px;
 }
 
 /* Product image */
@@ -57,6 +59,8 @@
   font-weight: bold;
   font-size: 13px;
   line-height: 20px;
+  display: flex;
+  align-items: flex-end;
 }
 .product-count {
   margin: 2px 0 0;
