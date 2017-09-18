@@ -5,11 +5,7 @@
       <div class="col-xs-8 col-xs-offset-2">
 
           <div class="product">
-            <div class='product-upvote'>
-              <div class="product-arrow"></div>
-                <div class='product-count'><%= seed.picks.size %>
-              </div>
-            </div>
+
             <%= link_to seed_path(seed) do  %>
               <%= cl_image_tag seed.photos.first.path, class: "product-image" %>
             <% end %>
@@ -18,13 +14,19 @@
               <h3> <%= seed.title %></h3>
               <p> <%= seed.category.name %> </p>
               <div class="user-testimony">
-                <div class="user">
                 <%= cl_image_tag(seed.user.photo.path, class: "seeder-picture")%>
-                <%= seed.user.pseudo %>
+                <div class="user">
+                  <p id= "pseudo"> <%= seed.user.pseudo %> </p>
+                  <p id="seed-description"> "<%= seed.description %>" </p>
                 </div>
-                <%= seed.description %>
               </div>
               <% end %>
+            </div>
+
+            <div class='product-upvote'>
+              <div class="product-arrow"></div>
+                <div class='product-count'><%= seed.picks.size %>
+              </div>
             </div>
 
           </div>

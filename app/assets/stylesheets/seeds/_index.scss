@@ -53,14 +53,14 @@
 
 /* Upvote design */
 .product-upvote {
-  padding-right: 20px;
-  text-align: center;
+  padding: 0 20px 0 20px;
   transition: all 0.15s ease;
   font-weight: bold;
   font-size: 13px;
   line-height: 20px;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: center;
 }
 .product-count {
   margin: 2px 0 0;
@@ -79,6 +79,21 @@
 
 .user-testimony {
   font-size: 13px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.user {
+  margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+ }
+#pseudo {
+  text-decoration: underline;
+}
+
+#seed-description {
+  font-style: italic;
 }
 
 .seeder-picture {
