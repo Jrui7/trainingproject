@@ -14,6 +14,12 @@
   height: 60px;
 }
 
+/* Logo */
+#my-picks {
+  height: 45px;
+  margin-left: 70px;
+}
+
 .menu-links {
   flex: 0 0 675px;
   display: flex;
@@ -49,6 +55,7 @@
 .navbar-right {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 

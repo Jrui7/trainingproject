@@ -1,16 +1,28 @@
-a { color: inherit; }
+.container {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 
-a:hover {
-  text-decoration:none;
+  a:hover {
+    text-decoration: none;
+  }
+
 }
 
 
+
 .product {
+  background-color: #F9F9F9;
   display: flex;
   align-items: center;
   padding: 20px;
   border-radius: 3px;
   transition: all 0.15s ease;
+  border: 1px;
+  border-style: solid;
+  padding: 15px;
+  border-color: #e8e8e8;
 }
 
 /* Body design */
@@ -32,6 +44,8 @@ a:hover {
 .product-image {
   border-radius: 10px;
   margin-right: 20px;
+  height: 85px;
+  width: 85px;
 
 }
 
@@ -60,8 +74,8 @@ a:hover {
 }
 
 .seeder-picture {
-  height: 35px;
-  width: 35px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
 }
 
