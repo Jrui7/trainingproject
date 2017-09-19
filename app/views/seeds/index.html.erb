@@ -1,17 +1,31 @@
 
-<div class="container">
+<div class="container col-xs-12">
 
   <div class="categories">
-    <h2>Catégories</h2>
-    <p>Sport</p>
-    <p>Sorties</p>
-    <p>Mode</p>
+    <div class="title">
+      <p id="categories-header">CATEGORIES</p>
+    </div>
+      <div class="sub-categories">
+        <div class="sub-title">
+          <p><%= image_tag "categories.jpg", class: "categories-icon" %></p>
+          <p>Sport</p>
+        </div>
+        <div class="sub-title">
+          <p><%= image_tag "categories.jpg", class: "categories-icon" %></p>
+          <p>Mode</p>
+        </div>
+        <div class="sub-title">
+          <p><%= image_tag "categories.jpg", class: "categories-icon" %></p>
+          <p>Sorties</p>
+        </div>
+
+      </div>
   </div>
 
   <div class="seed-presentation">
     <% @seeds.each do |seed| %>
       <div class="row">
-        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+        <div class="#">
 
             <div class="product">
 
@@ -40,6 +54,35 @@
               </div>
 
             </div>
+
+            <div class="product">
+
+              <%= link_to seed_path(seed) do  %>
+                <%= cl_image_tag("#{seed.photos.first.path}", :width=>250, :height=>250, :crop=>"fill", class: "product-image")%>
+              <% end %>
+
+              <div class='product-body'> <%= link_to seed_path(seed) do  %>
+                <h3> <%= seed.title %></h3>
+                <div class="user-testimony">
+                  <%= cl_image_tag(seed.user.photo.path, :crop=>"fit", class: "seeder-picture")%>
+                  <div class="user">
+                    <p id= "pseudo"> <%= seed.user.pseudo %> </p>
+                    <p id="seed-description"> "<%= seed.description %>" </p>
+                  </div>
+                </div>
+                <% end %>
+              </div>
+              <div class="product-right">
+                <p> <%= seed.category.name %> </p>
+                <div class='product-upvote'>
+                  <div class="product-arrow"></div>
+                    <div class='product-count'><%= seed.picks.size %>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
 
 
         </div>
