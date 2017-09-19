@@ -1,4 +1,9 @@
 .container {
+
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
   a {
     text-decoration: none;
     color: inherit;
@@ -15,9 +20,9 @@
 .product {
   background-color: #FFFFFF;
   display: flex;
-  align-items: center;
+  flex-grow: 1;
   padding: 20px;
-  border-radius: 3px;
+  border-radius: 3px; /*100px 0 0 100px; */
   transition: all 0.15s ease;
   border: 1px;
   border-style: solid;
@@ -44,11 +49,20 @@
 
 /* Product image */
 .product-image {
-  border-radius: 10px;
+  border-radius: 3px; /*3px */
   margin-right: 20px;
   height: 85px;
   width: 85px;
 
+
+}
+
+.product-right p {
+  border: 1px solid #e8e8e8;
+  color: #999999;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+  padding: 0 10px 0 10px;
 }
 
 /* Upvote design */
