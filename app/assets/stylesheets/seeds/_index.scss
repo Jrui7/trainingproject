@@ -1,8 +1,10 @@
 .container {
+}
 
+.display-elements {
   display: flex;
   justify-content: space-between;
-  position: relative;
+
 
   a {
     text-decoration: none;
@@ -18,8 +20,6 @@
 .categories {
   position: fixed;
   left: 85px;
-  border-style: solid;
-  border-color: black;
   padding: 0;
 
 }
@@ -41,6 +41,11 @@
   border: 1px;
   border-style: solid;
   border-color: #e8e8e8;
+  padding: 5px;
+
+  p {
+    margin: 0;
+  }
 
 }
 
