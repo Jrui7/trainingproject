@@ -17,19 +17,16 @@
 
 .categories {
   position: fixed;
-  /*
+  left: 85px;
+  border-style: solid;
+  border-color: black;
+  padding: 0;
 
-  top: 100px;
-  left: 75px;
-  background-color: grey;  suppprppppppppppppppppp */
 }
 
-.title {
-    display: flex;
-    align-items: center;
-    padding-right: 40px;
-    justify-content: space-between;
+#categories-header {
 }
+
 
 .categories-icon {
       height: 25px;
@@ -39,8 +36,16 @@
 .sub-title {
   display: flex;
   align-items: center;
-  padding-right: 40px;
   font-size: 13px;
+  transition: all 0.15s ease;
+  border: 1px;
+  border-style: solid;
+  border-color: #e8e8e8;
+
+}
+
+.seed-presentation {
+
 }
 
 
