@@ -1,0 +1,29 @@
+<% seeds.each do |seed| %>
+  <div class="product">
+
+    <%= link_to seed_path(seed) do  %>
+      <%= cl_image_tag("#{seed.photos.first.path}", :width=>250, :height=>250, :crop=>"fill", class: "product-image")%>
+    <% end %>
+
+    <div class='product-body'> <%= link_to seed_path(seed) do  %>
+      <h3> <%= seed.title %></h3>
+      <div class="user-testimony">
+        <%= cl_image_tag(seed.user.photo.path, :crop=>"fit", class: "seeder-picture")%>
+        <div class="user">
+          <p id= "pseudo"> <%= seed.user.pseudo %> </p>
+          <p class="hidden-xs" id="seed-description"> "<%= seed.description %>" </p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div class="product-right">
+      <p> <%= seed.category.name %> </p>
+      <div class='product-upvote'>
+        <div class="product-arrow"></div>
+          <div class='product-count'><%= seed.picks.size %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+<% end %>

@@ -1,7 +1,17 @@
 class SeedsController < ApplicationController
 
   def index
-    @seeds = Seed.all
+    @categories = Category.all
+    if params[:category]
+      @seeds = Seed.where(category: params[:category])
+    else
+      @seeds = Seed.all
+    end
+    respond_to do |format|
+      format.html {seeds_path}
+      format.js
+    end
+
   end
 
   def new
