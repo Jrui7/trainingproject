@@ -8,36 +8,14 @@
 
           <div class="sub-categories">
 
-            <div class="sub-title">
-              <p><%= image_tag "categories.jpg", class: "categories-icon" %></p>
-              <p>Sport</p>
-            </div>
+          <% @categories.each do |category| %>
 
             <div class="sub-title">
               <p><%= image_tag "categories.jpg", class: "categories-icon" %></p>
-              <p>Mode</p>
+              <p><%= link_to category.name, seeds_path(category: category.id), remote: true %></p>
             </div>
 
-            <div class="sub-title">
-              <p><%= image_tag "categories.jpg", class: "categories-icon" %></p>
-              <p>Sorties</p>
-            </div>
-
-            <div class="sub-title">
-              <p><%= image_tag "categories.jpg", class: "categories-icon" %></p>
-              <p>Sport</p>
-            </div>
-
-            <div class="sub-title">
-              <p><%= image_tag "categories.jpg", class: "categories-icon" %></p>
-              <p>Mode</p>
-            </div>
-
-            <div class="sub-title">
-              <p><%= image_tag "categories.jpg", class: "categories-icon" %></p>
-              <p>Sorties</p>
-            </div>
-
+          <% end %>
           </div>
         </div>
       </div>
@@ -45,66 +23,11 @@
 
       <div class="col-xs-8">
         <div class="seed-presentation">
-          <% @seeds.each do |seed| %>
-            <div class="product">
 
-              <%= link_to seed_path(seed) do  %>
-                <%= cl_image_tag("#{seed.photos.first.path}", :width=>250, :height=>250, :crop=>"fill", class: "product-image")%>
-              <% end %>
-
-              <div class='product-body'> <%= link_to seed_path(seed) do  %>
-                <h3> <%= seed.title %></h3>
-                <div class="user-testimony">
-                  <%= cl_image_tag(seed.user.photo.path, :crop=>"fit", class: "seeder-picture")%>
-                  <div class="user">
-                    <p id= "pseudo"> <%= seed.user.pseudo %> </p>
-                    <p class="hidden-xs" id="seed-description"> "<%= seed.description %>" </p>
-                  </div>
-                </div>
-                <% end %>
-              </div>
-              <div class="product-right">
-                <p> <%= seed.category.name %> </p>
-                <div class='product-upvote'>
-                  <div class="product-arrow"></div>
-                    <div class='product-count'><%= seed.picks.size %>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="product">
-
-              <%= link_to seed_path(seed) do  %>
-                <%= cl_image_tag("#{seed.photos.first.path}", :width=>250, :height=>250, :crop=>"fill", class: "product-image")%>
-              <% end %>
-
-              <div class='product-body'> <%= link_to seed_path(seed) do  %>
-                <h3> <%= seed.title %></h3>
-                <div class="user-testimony">
-                  <%= cl_image_tag(seed.user.photo.path, :crop=>"fit", class: "seeder-picture")%>
-                  <div class="user">
-                    <p id= "pseudo"> <%= seed.user.pseudo %> </p>
-                    <p class="hidden-xs" id="seed-description"> "<%= seed.description %>" </p>
-                  </div>
-                </div>
-                <% end %>
-              </div>
-              <div class="product-right">
-                <p> <%= seed.category.name %> </p>
-                <div class='product-upvote'>
-                  <div class="product-arrow"></div>
-                    <div class='product-count'><%= seed.picks.size %>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-          <% end %>
+          <%= render @seeds, seeds: @seeds%>
         </div>
       </div>
+
 
       <div class="col-xs-2">
         <div class="add-seed">
@@ -113,6 +36,8 @@
           <% end %>
         </div>
       </div>
+
+
 
   <div>
 </div>
