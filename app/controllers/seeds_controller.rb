@@ -2,7 +2,7 @@ class SeedsController < ApplicationController
 
   def index
     @categories = Category.all
-    if params[:category] && !Seed.where(category: params[:category]).empty?
+    if params[:category]
       @seeds = Seed.where(category: params[:category])
     else
       @seeds = Seed.all
