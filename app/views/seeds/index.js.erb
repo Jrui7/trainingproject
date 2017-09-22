@@ -3,3 +3,12 @@ $('.seed-presentation').html("<p>lol</p>");
 <% else %>
 $('.seed-presentation').html("<%= j render @seeds, seeds: @seeds %>");
 <% end %>
+
+
+
+document.querySelectorAll(".sub-title").forEach((sub-title) => {
+  sub-title.addEventListener("click", (event) => {
+    console.log(event);
+    console.log(event.currentTarget);
+  });
+});
