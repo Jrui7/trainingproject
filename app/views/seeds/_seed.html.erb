@@ -1,6 +1,6 @@
 
 
-  <div class="product">
+  <div class="product id-<%= seed.category_id%>">
 
     <%= link_to seed_path(seed) do  %>
       <%= cl_image_tag("#{seed.photos.first.path}", :width=>250, :height=>250, :crop=>"fill", class: "product-image")%>
