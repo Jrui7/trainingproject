@@ -1,51 +1,45 @@
 
 <div class="container">
-  <% @seeds.each do |seed| %>
-    <div class="row">
-      <div class="col-xs-8 col-xs-offset-2">
+  <div class="row">
 
-          <div class="product">
+    <div class="col-xs-2">
+        <div class="categories">
+          <p id="categories-header">CATEGORIES</p>
 
-            <%= link_to seed_path(seed) do  %>
-              <%= cl_image_tag seed.photos.first.path, class: "product-image" %>
-            <% end %>
+          <div class="sub-categories">
 
-            <div class='product-body'> <%= link_to seed_path(seed) do  %>
-              <h3> <%= seed.title %></h3>
-              <p> <%= seed.category.name %> </p>
-              <div class="user-testimony">
-                <%= cl_image_tag(seed.user.photo.path, class: "seeder-picture")%>
-                <div class="user">
-                  <p id= "pseudo"> <%= seed.user.pseudo %> </p>
-                  <p id="seed-description"> "<%= seed.description %>" </p>
-                </div>
-              </div>
-              <% end %>
+          <% @categories.each do |category| %>
+
+            <div class="sub-title">
+              <p><%= image_tag "categories.jpg", class: "categories-icon" %></p>
+              <p><%= link_to category.name, seeds_path(category: category.id), remote: true %></p>
             </div>
 
-            <div class='product-upvote'>
-              <div class="product-arrow"></div>
-                <div class='product-count'><%= seed.picks.size %>
-              </div>
-            </div>
-
+          <% end %>
           </div>
-
-
+        </div>
       </div>
-    </div>
-  <% end %>
+
+
+      <div class="col-xs-8">
+        <div class="seed-presentation">
+          <%= render @seeds, seeds: @seeds%>
+        </div>
+      </div>
+
+
+      <div class="col-xs-2">
+        <div class="add-seed">
+          <%= link_to new_seed_path do  %>
+            <%= image_tag "seed.svg", id: "add-seed" %>
+          <% end %>
+        </div>
+      </div>
+
+
+
+  <div>
 </div>
 
-<%= link_to "Créér un nouveau seed", new_seed_path, class: "btn btn-primary", id: "seed-suggestion-link"  %>
 
-
-
-<div class="container">
-  <ul>
-    <% Category.all.each do |category| %>
-    <li><%= lin %></li>
-  </ul>
-
-</div>
 

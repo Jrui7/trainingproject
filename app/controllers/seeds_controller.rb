@@ -1,9 +1,31 @@
 class SeedsController < ApplicationController
 
   def index
-    @seeds = Seed.all
-    @seed_cat = Seed.category(params[:id])
-    @sport_seeds = Seed.category()
+
+
+
+    #si on a rien dans les params, renvoie tous les seeds
+    #si on a des params mais pas de seed correspondant aux params, renvoie tous les seeds
+    #si on a des params et des seeds qui correspondent aux params, renvoies les seeds qui correspondent aux params
+
+    @categories = Category.all
+    @filter = params[:category]
+    @seeds = Seed.where(category: params[:category])
+    if @filter && @seeds.any?
+      @seeds
+      @filter
+    elsif @filter && @seeds.empty?
+      @seeds = Seed.all
+      @filter = false
+    else
+      @seeds = Seed.all
+      @filter = false
+    end
+    respond_to do |format|
+      format.html {seeds_path}
+      format.js
+    end
+
   end
 
   def new
@@ -48,3 +70,4 @@ class SeedsController < ApplicationController
 
 
 end
+
