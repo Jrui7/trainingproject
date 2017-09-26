@@ -10,7 +10,7 @@
 
           <% @categories.each do |category| %>
 
-            <div class="sub-title">
+            <div class="sub-title <%= category.id %>">
               <p><%= image_tag "categories.jpg", class: "categories-icon" %></p>
               <p><%= link_to category.name, seeds_path(category: category.id), remote: true %></p>
             </div>

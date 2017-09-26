@@ -8,6 +8,7 @@ $( document ).ready(function() {
    } else {
     $('.no-seed').hide()
     $('.product.id-<%= @filter %>').toggle();
+    $('.sub-title.<%= @filter %>').toggleClass("off");
   }
 
 });
