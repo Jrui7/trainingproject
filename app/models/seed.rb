@@ -12,4 +12,10 @@ class Seed < ApplicationRecord
     length: { minimum: 5 }
 
   has_attachments :photos, maximum: 5
+
+  scope :category, -> (category) { where(category_id: category) }
+
+  def self.category(category)
+    category
+  end
 end

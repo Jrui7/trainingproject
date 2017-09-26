@@ -2,6 +2,8 @@ class SeedsController < ApplicationController
 
   def index
     @seeds = Seed.all
+    @seed_cat = Seed.category(params[:id])
+    @sport_seeds = Seed.category()
   end
 
   def new
