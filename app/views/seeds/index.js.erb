@@ -2,9 +2,12 @@ $( document ).ready(function() {
 
    if  (<%= @filter == false %>) {
     $('.seed-presentation').html("<%= j render @seeds, seeds: @seeds %>")
+    $('.seed-presentation').prepend("<p class= 'no-seed'>Pas de seed pour la catégorie sélectionnée</p>")
+
 
    } else {
-    $('.product.id-<%= @filter %>').toggle()
+    $('.no-seed').hide()
+    $('.product.id-<%= @filter %>').toggle();
   }
 
 });
