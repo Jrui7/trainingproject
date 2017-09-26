@@ -1,5 +1,12 @@
 $( document ).ready(function() {
+
+   if  (<%= @filter == false %>) {
+    $(.'seed-presentation').html("<%= j render @seeds, seeds: @seeds %>")
+
+  } else {
     $( ".sub-title a" ).click(function() {
       $('.id-<%= @filter %>').toggle();
     });
+  }
+
 });

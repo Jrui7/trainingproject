@@ -3,8 +3,13 @@ class SeedsController < ApplicationController
   def index
     @categories = Category.all
     @filter = params[:category]
-    if params[:category]
-      @seeds = Seed.where(category: params[:category])
+    @seeds = Seed.where(category: params[:category])
+    if @filter && @seeds.any?
+      @seeds
+      @filter
+    elsif @filter && @seeds.empty?
+      @seeds = Seed.all
+      @filter = false
     else
       @seeds = Seed.all
     end
@@ -57,3 +62,4 @@ class SeedsController < ApplicationController
 
 
 end
+
