@@ -11,13 +11,7 @@ class SeedsController < ApplicationController
     @categories = Category.all
     @filter = params[:category]
     @seeds = Seed.where(category: params[:category])
-    if @filter && @seeds.any?
-      @seeds
-      @filter
-    elsif @filter && @seeds.empty?
-      @seeds = Seed.all
-      @filter = false
-    else
+    unless @filter && @seeds.any?
       @seeds = Seed.all
       @filter = false
     end
