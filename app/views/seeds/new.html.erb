@@ -6,11 +6,11 @@
         <h1>Ajouter un seed<h1>
         </div>
        <%= simple_form_for @seed do |b| %>
-         <%= b.input :title %>
-         <%= b.input :description %>
-         <%= b.input :category_id, collection: @categories, prompt: "Select category"%>
+         <%= b.input :title, label:"Titre", placeholder: "Exemple: Drone en mousse" %>
+         <%= b.input :description,label:"Décrire le produit", placeholder: "Exemple: Ce drone ne risque pas de se casser car il est fait en mousse. Ideal pour la montagne." %>
+         <%= b.input :category_id,label:"Catégorie", collection: @categories, prompt: "Selectionner une categorie"%>
          <%= b.input :photos, as: :attachinary %>
-         <%= b.submit class: "text-center btn btn-primary" %>
+         <%= b.submit value: "Ajouter", class: "text-center btn btn-primary" %>
        <% end %>
      </div>
  </div>
