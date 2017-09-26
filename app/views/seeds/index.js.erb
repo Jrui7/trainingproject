@@ -1,12 +1,22 @@
 $( document ).ready(function() {
 
    if  (<%= @filter == false %>) {
-    $(.'seed-presentation').html("<%= j render @seeds, seeds: @seeds %>")
+    $('.seed-presentation').html("<%= j render @seeds, seeds: @seeds %>")
 
-  } else {
-    $( ".sub-title a" ).click(function() {
-      $('.id-<%= @filter %>').toggle();
-    });
+   } else {
+    $('.product.id-<%= @filter %>').toggle()
   }
 
 });
+
+
+
+
+
+/*
+si on a rien dans les params, renvoie tous les seeds
+si on a des params mais pas de seed correspondant aux params, renvoie tous les seeds
+si on a des params et des seeds qui correspondent aux params, renvoies les seeds qui correspondent aux params
+
+*/
+

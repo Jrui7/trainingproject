@@ -12,4 +12,5 @@ class Seed < ApplicationRecord
     length: { minimum: 5 }
 
   has_attachments :photos, maximum: 5
+
 end
