@@ -2,15 +2,17 @@ $( document ).ready(function() {
 
 
 
-   if  (<%= @filter == false %>) {
-    $('.seed-presentation').html("<%= j render @seeds, seeds: @seeds %>")
-    $('.seed-presentation').prepend("<p class= 'no-seed'>Pas de seed pour la catégorie sélectionnée</p>")
-
+   if  (<%= @condition == false %>) {
+    $('.no-seed').hide();
+    $('.seed-presentation').prepend("<p class= 'no-seed'>Pas de seed pour la catégorie sélectionnée</p>");
+    $('.sub-title.<%= @filter %>').toggleClass("inactive");
 
 
    } else {
-    $('.no-seed').hide()
-    $('.product.id-<%= @filter %>').toggle();
+    $('.no-seed').hide();
+    $('.product').hide();
+    $('.product.id-<%= @filter %>').toggleClass("filtered");
+    $('.filtered').show();
     $('.sub-title.<%= @filter %>').toggleClass("inactive");
   }
 
@@ -20,10 +22,5 @@ $( document ).ready(function() {
 
 
 
-/*
-si on a rien dans les params, renvoie tous les seeds
-si on a des params mais pas de seed correspondant aux params, renvoie tous les seeds
-si on a des params et des seeds qui correspondent aux params, renvoies les seeds qui correspondent aux params
 
-*/
 

@@ -13,7 +13,7 @@ class SeedsController < ApplicationController
     @seeds = Seed.where(category: params[:category])
     unless @filter && @seeds.any?
       @seeds = Seed.all
-      @filter = false
+      @condition = false
     end
     respond_to do |format|
       format.html {seeds_path}
