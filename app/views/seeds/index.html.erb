@@ -1,16 +1,20 @@
+<% content_for(:title_tag) do %>
+  Bienvenue sur Seedoak
+<% end %>
+
 
 <div class="container">
   <div class="row">
 
     <div class="col-xs-2">
         <div class="categories">
-          <p id="categories-header">CATEGORIES</p>
+          <p id="categories-header">FILTRER</p>
 
           <div class="sub-categories">
 
           <% @categories.each do |category| %>
 
-            <div class="sub-title">
+            <div class="sub-title <%= category.id %>">
               <p><%= image_tag "categories.jpg", class: "categories-icon" %></p>
               <p><%= link_to category.name, seeds_path(category: category.id), remote: true %></p>
             </div>
@@ -26,6 +30,8 @@
           <%= render @seeds, seeds: @seeds%>
         </div>
       </div>
+
+
 
 
       <div class="col-xs-2">
