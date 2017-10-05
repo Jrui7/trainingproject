@@ -1,4 +1,5 @@
 /* Main navbar */
+
 .navbar {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: white;
@@ -7,6 +8,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 10;
+  width: 100%;
+
+
 }
 
 /* Logo */
@@ -24,10 +29,14 @@
   flex: 0 0 675px;
   display: flex;
   justify-content: space-around;
-  color: #616668;
   font-size: 20px;
   margin-left: 150px;
   margin-right: 80px;
+
+ a {
+  text-decoration: none;
+  color: #4c4c4c;
+  }
 }
 
 
@@ -35,6 +44,7 @@
 .navbar-item {
   cursor: pointer;
   padding: 0 20px;
+  color: #4c4c4c;
 }
 
 
