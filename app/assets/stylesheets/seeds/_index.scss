@@ -16,8 +16,10 @@ a:hover {
 }
 
 #categories-header {
-  font-size: 15px;
+  font-size: 12px;
   padding-left: 10px;
+  font-style: italic;
+  font-weight: bold;
 }
 
 
@@ -73,10 +75,12 @@ a:hover {
 
 }
 .product-body h3 {
+  font-family: 'Lato', sans-serif;
   font-weight: bold;
   font-size: 20px;
   margin-top: 0;
   margin-bottom: 1px;
+  color: #3F3933;
 }
 .product-body p {
   color: #999999;
