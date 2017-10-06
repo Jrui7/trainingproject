@@ -16,7 +16,7 @@
 
 /* Logo */
 #logo {
-  height: 60px;
+  height: 50px;
 }
 
 #my-picks {
@@ -24,10 +24,9 @@
 }
 
 .menu-links {
-  flex: 0 0 675px;
   display: flex;
   justify-content: space-around;
-  font-size: 20px;
+  font-size: 18px;
 
 
  a {
@@ -44,7 +43,7 @@
 /* Basic navbar item */
 .navbar-item {
   cursor: pointer;
-  padding: 0 20px;
+  padding: 0 30px;
   position: relative;
 
   &:hover,
