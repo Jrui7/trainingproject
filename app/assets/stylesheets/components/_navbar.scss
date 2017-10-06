@@ -44,9 +44,10 @@
 
 .menu-links {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   font-size: 18px;
   align-items: center;
+  padding: 35px;
 
 
  a {
@@ -64,7 +65,7 @@
 /* Basic navbar item */
 .navbar-item {
   cursor: pointer;
-  padding: 0 30px;
+  padding: 0 15px;
   position: relative;
 
   &:hover,
