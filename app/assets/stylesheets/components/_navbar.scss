@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  margin-bottom: 0;
 
 
 
@@ -54,6 +55,7 @@
 
     &:hover {
     color: rgba(15, 163, 177, 1);
+    text-decoration: none;
     }
   }
 }
@@ -87,9 +89,7 @@
 }
 
 
-.menu-links:hover {
-  text-decoration: none;
-}
+
 
 
 
