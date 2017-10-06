@@ -15,13 +15,31 @@
 }
 
 /* Logo */
-#logo {
-  height: 50px;
+.logo-box {
+  display: flex;
+  align-items: flex-start;
 }
 
-#my-picks {
-  height: 45px;
+#logo-text {
+  font-size: 25px;
+  font-style: italic;
+  color: rgba(15, 163, 177, 1);
+  margin-right: 4px;
+  a {
+  text-decoration: none;
+   &:hover{
+    text-decoration: none;
+    color: rgba(15, 163, 177, 1);
+   }
+  }
 }
+
+#logo-icon {
+  font-size: 30px;
+  color: rgba(15, 163, 177, 1);
+  text-decoration: none;
+}
+
 
 .menu-links {
   display: flex;
@@ -75,12 +93,7 @@
 
 
 
-/* User Avatar */
-.navbar .avatar {
-  height: 55px;
-  width: 55px;
-  border-radius: 50%;
-}
+
 
 /* Right section */
 .navbar-right {
@@ -89,9 +102,30 @@
   justify-content: space-between;
 }
 
+.fa-hand-lizard-o {
+  font-size: 20px;
+  color: #a0a0a0;
+
+}
+
+.fa-bullhorn {
+  font-size: 20px;
+  color: #a0a0a0;
+}
+
+.user-menu {
+  cursor: pointer;
+}
+
+/* User Avatar */
+.navbar .avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
 
 
-/* Dropdown menu */
+/* Dropdown */
 .navbar-dropdown-menu {
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
