@@ -12,7 +12,8 @@
         <%= cl_image_tag(seed.user.photo.path, :crop=>"fit", class: "seeder-picture")%>
         <div class="user">
           <p id= "pseudo"> <%= seed.user.pseudo %> </p>
-          <p class="hidden-xs" id="seed-description"> "<%= seed.description %>" </p>
+          <p class="hidden-xs hidden-sm" id="seed-description"> "<%= seed.description.first(65).capitalize + '... ' %>" </p>
+          <p class="hidden-md hidden-lg" id="seed-description"> "<%= seed.description.first(10).capitalize + '... ' %>" </p>
         </div>
       </div>
       <% end %>

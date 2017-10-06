@@ -8,6 +8,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+
 
 
 }
@@ -26,12 +28,15 @@
   display: flex;
   justify-content: space-around;
   font-size: 20px;
-  margin-left: 150px;
-  margin-right: 80px;
+
 
  a {
   text-decoration: none;
   color: #4c4c4c;
+
+    &:hover {
+    color: rgba(15, 163, 177, 1);
+    }
   }
 }
 
@@ -40,7 +45,27 @@
 .navbar-item {
   cursor: pointer;
   padding: 0 20px;
-  color: #4c4c4c;
+  position: relative;
+
+  &:hover,
+  &:focus,
+  &:active {
+    cursor: pointer;
+    &:after {
+      width: 100%;
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -2px;
+    height: 2px;
+    background-color: rgba(15, 163, 177, 1);
+    width: 0;
+    transition: width .4s;
+  }
+
 }
 
 

@@ -61,7 +61,7 @@ a:hover {
   display: flex;
   flex-grow: 1;
   padding: 20px;
-  border-radius: 3px; /*100px 0 0 100px; */
+  border-radius: 2px; /*100px 0 0 100px; */
   transition: all 0.15s ease;
   border: 1px;
   border-style: solid;
@@ -79,7 +79,7 @@ a:hover {
   font-weight: bold;
   font-size: 20px;
   margin-top: 0;
-  margin-bottom: 1px;
+  margin-bottom: 8px;
   color: #3F3933;
 }
 .product-body p {
@@ -135,7 +135,7 @@ a:hover {
 .user-testimony {
   font-size: 13px;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 .user {
