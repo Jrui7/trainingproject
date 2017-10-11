@@ -16,7 +16,11 @@ mode_femme = Category.create(name: "Mode femme")
 musique = Category.create(name: "Musique")
 sorties = Category.create(name: "Sorties")
 sport = Category.create(name: "Sport")
-categories = ["Mode homme", "Mode femme", "Musique", "Sorties", "Sport" ]
+loisir = Category.create(name: "Loisir")
+jeux_video = Category.create(name: "Jeux-video")
+lecture = Category.create(name: "Lecture")
+
+
 puts "Categories created !"
 puts "--------------------"
 
@@ -43,4 +47,5 @@ Seed.create(title: "Le tube d'Hendaye", user_id: thomas.id, category_id: sport.i
 Seed.create(title: "La balle fusion", user_id: jorge.id, category_id: sport.id, description: "Ca file au vent, pénétration idéale", photo_urls: ["http://res.cloudinary.com/dlddnk3pr/image/upload/v1504544452/yxdwojuuq0q71p2oemmz.jpg"])
 Seed.create(title: "L'oeuvre d'art des artistes", user_id: renan.id, category_id: sorties.id, description: "J'aime bien les chiens, regardez ma photo de profil, et ça c'est un super chien", photo_urls: ["http://res.cloudinary.com/dlddnk3pr/image/upload/v1504619657/wmjrhxdqczonc6jbz9g0.jpg"])
 
-
+puts "Seed created"
+puts "----------------------"
