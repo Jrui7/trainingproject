@@ -104,21 +104,35 @@
 }
 
 .fa-hand-lizard-o {
-  font-size: 20px;
-  color: #a0a0a0;
-  padding: 10px;
+  font-size: 25px;
+  color: rgba(15, 163, 177, 1);
+  padding: 0 15px;
+  a {
+  text-decoration: none;
+   &:hover{
+    text-decoration: none;
+    color: rgba(15, 163, 177, 1);
+   }
+  }
 
 }
 
 .fa-bullhorn {
-  font-size: 20px;
-  color: #a0a0a0;
-  padding: 10px;
+  font-size: 25px;
+  color: rgba(15, 163, 177, 1);
+  padding: 0 15px;
+  a {
+  text-decoration: none;
+   &:hover{
+    text-decoration: none;
+    color: rgba(15, 163, 177, 1);
+   }
+  }
 }
 
 .user-menu {
   cursor: pointer;
-  padding: 10px;
+  padding: 0 15px;
 }
 
 /* User Avatar */
