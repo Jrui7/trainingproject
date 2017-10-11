@@ -27,7 +27,7 @@
             </div>
             <div class="view-body">
               <div class="user-form">
-                <%= simple_form_for current_user do |f| %>
+                <%= simple_form_for @user do |f| %>
                   <%= f.input :pseudo, label: "Pseudo" %>
                   <%= f.input :first_name, label: "Prénom" %>
                   <%= f.input :last_name, label: "Nom" %>

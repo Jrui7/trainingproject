@@ -6,9 +6,9 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-xs-2">
+    <div class="hidden-xs hidden-sm col-md-2">
         <div class="categories">
-          <p id="categories-header">FILTRER</p>
+          <p id="categories-header"> <span class="glyphicon glyphicon-filter"></span>FILTRER </p>
 
           <div class="sub-categories">
 
@@ -25,26 +25,17 @@
       </div>
 
 
-      <div class="col-xs-8">
+      <div class="col-xs-12 col-md-7">
         <div class="seed-presentation">
+          <%= render @seeds, seeds: @seeds%>
+          <%= render @seeds, seeds: @seeds%>
           <%= render @seeds, seeds: @seeds%>
         </div>
       </div>
 
 
 
-
-      <div class="col-xs-2">
-        <div class="add-seed">
-          <%= link_to new_seed_path do  %>
-            <%= image_tag "seed.svg", id: "add-seed" %>
-          <% end %>
-        </div>
-      </div>
-
-
-
-  <div>
+  </div>
 </div>
 
 

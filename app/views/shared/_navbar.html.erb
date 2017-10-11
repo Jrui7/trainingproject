@@ -1,9 +1,14 @@
 <% if user_signed_in? %>
   <div class="navbar">
     <!-- Logo -->
+
     <%= link_to seeds_path do %>
-      <%= image_tag "seedoak-logo.png", id: "logo" %>
+      <div class="logo-box">
+        <p id="logo-text">Seedoak</p>
+        <span class="glyphicon glyphicon-leaf", id="logo-icon"></span>
+      </div>
     <% end %>
+
 
       <div class="menu-links">
 
@@ -26,7 +31,7 @@
 
         <div class="navbar-item">
           <div class="dropdown">
-            <%= link_to "Le concept", "#", class: "navigation dropdown-toggle", id: "navbar-menu", "data-toggle" => "dropdown" %>
+            <%= link_to "Concept", "#", class: "navigation dropdown-toggle", id: "navbar-menu", "data-toggle" => "dropdown" %>
             <ul class="dropdown-menu dropdown-menu-riht navbar-dropdown-menu">
               <li>
                 <p>Comment ça marche</p>
@@ -40,7 +45,7 @@
 
         <div class="navbar-item">
           <div class="dropdown">
-            <%= link_to "Qui sommes-nous?", "#", class: "navigation dropdown-toggle", id: "navbar-menu", "data-toggle" => "dropdown" %>
+            <%= link_to "About", "#", class: "navigation dropdown-toggle", id: "navbar-menu", "data-toggle" => "dropdown" %>
             <ul class="dropdown-menu dropdown-menu-riht navbar-dropdown-menu">
               <li>
                 <p>L'équipe</p>
@@ -62,12 +67,24 @@
 
       <div class="navbar-right">
         <!-- Avatar with dropdown menu -->
-        <div class="navbar-item">
+        <div class="my-picks">
+          <%= link_to new_seed_path do %>
+            <i class="fa fa-bullhorn" aria-hidden="true"></i>
+          <% end %>
+        </div>
+
+        <div class="my-picks">
+          <%= link_to my_picks_path do %>
+            <i class="fa fa-hand-lizard-o" aria-hidden="true"></i>
+          <% end %>
+        </div>
+
+        <div class="user-menu">
           <div class="dropdown">
             <% if current_user.photo? %>
               <%= cl_image_tag current_user.photo.path, class: "avatar dropdown-toggle", id: "navbar-menu", "data-toggle" => "dropdown" %>
             <% else %>
-              <%= image_tag "user.jpg", class: "avatar dropdown-toggle", id: "navbar-menu", "data-toggle" => "dropdown" %>
+              <i class="fa fa-user-o avatar dropdown-toggle" aria-hidden="true" id="navbar-menu", data-toggle="dropdown"></i>
             <% end %>
             <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
               <li>
@@ -82,11 +99,6 @@
               </li>
             </ul>
           </div>
-        </div>
-        <div class="my-picks">
-          <%= link_to my_picks_path do %>
-            <%= image_tag "pick-5x.png", id: "my-picks" %>
-          <% end %>
         </div>
     </div>
 

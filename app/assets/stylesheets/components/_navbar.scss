@@ -1,4 +1,5 @@
 /* Main navbar */
+
 .navbar {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: white;
@@ -7,49 +8,93 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  margin-bottom: 0;
+
+
+
 }
 
 /* Logo */
-#logo {
-  height: 60px;
+.logo-box {
+  display: flex;
+  align-items: flex-start;
 }
 
-/* Logo */
-#my-picks {
-  height: 45px;
-  margin-left: 70px;
+#logo-text {
+  font-size: 25px;
+  font-style: italic;
+  color: rgba(15, 163, 177, 1);
+  margin-right: 4px;
+  a {
+  text-decoration: none;
+   &:hover{
+    text-decoration: none;
+    color: rgba(15, 163, 177, 1);
+   }
+  }
 }
+
+#logo-icon {
+  font-size: 30px;
+  color: rgba(15, 163, 177, 1);
+  text-decoration: none;
+}
+
 
 .menu-links {
-  flex: 0 0 675px;
   display: flex;
-  justify-content: space-around;
-  color: #616668;
-  font-size: 20px;
-  margin-left: 150px;
-  margin-right: 80px;
+  justify-content: space-between;
+  font-size: 18px;
+  align-items: center;
+  padding: 35px;
+
+
+ a {
+  text-decoration: none;
+  color: #4c4c4c;
+
+    &:hover {
+    color: rgba(15, 163, 177, 1);
+    text-decoration: none;
+    }
+  }
 }
 
 
 /* Basic navbar item */
 .navbar-item {
   cursor: pointer;
-  padding: 0 20px;
+  padding: 0 15px;
+  position: relative;
+
+  &:hover,
+  &:focus,
+  &:active {
+    cursor: pointer;
+    &:after {
+      width: 100%;
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -2px;
+    height: 2px;
+    background-color: rgba(15, 163, 177, 1);
+    width: 0;
+    transition: width .4s;
+  }
+
 }
 
 
-.menu-links:hover {
-  text-decoration: none;
-}
 
 
 
-/* User Avatar */
-.navbar .avatar {
-  height: 55px;
-  width: 55px;
-  border-radius: 50%;
-}
+
+
 
 /* Right section */
 .navbar-right {
@@ -58,9 +103,47 @@
   justify-content: space-between;
 }
 
+.fa-hand-lizard-o {
+  font-size: 25px;
+  color: rgba(15, 163, 177, 1);
+  padding: 0 15px;
+  a {
+  text-decoration: none;
+   &:hover{
+    text-decoration: none;
+    color: rgba(15, 163, 177, 1);
+   }
+  }
+
+}
+
+.fa-bullhorn {
+  font-size: 25px;
+  color: rgba(15, 163, 177, 1);
+  padding: 0 15px;
+  a {
+  text-decoration: none;
+   &:hover{
+    text-decoration: none;
+    color: rgba(15, 163, 177, 1);
+   }
+  }
+}
+
+.user-menu {
+  cursor: pointer;
+  padding: 0 15px;
+}
+
+/* User Avatar */
+.navbar .avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
 
 
-/* Dropdown menu */
+/* Dropdown */
 .navbar-dropdown-menu {
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
