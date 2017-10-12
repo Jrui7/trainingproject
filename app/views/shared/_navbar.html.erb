@@ -1,13 +1,16 @@
 <% if user_signed_in? %>
-  <div class="navbar">
-    <!-- Logo -->
 
-    <%= link_to seeds_path do %>
-      <div class="logo-box">
-        <p id="logo-text">Seedoak</p>
-        <span class="glyphicon glyphicon-leaf", id="logo-icon"></span>
-      </div>
-    <% end %>
+  <div class="content-width">
+    <div class="navbar">
+
+      <!-- Logo -->
+      <%= link_to seeds_path do %>
+        <div class="logo-box">
+          <p id="logo-text">Seedoak</p>
+          <span class="glyphicon glyphicon-leaf", id="logo-icon"></span>
+        </div>
+      <% end %>
+
 
 
       <div class="menu-links">
@@ -58,13 +61,7 @@
         </div>
       </div>
 
-
-
-
-
       <!-- Right Navigation -->
-
-
       <div class="navbar-right">
         <!-- Avatar with dropdown menu -->
         <div class="my-picks">
@@ -100,8 +97,9 @@
             </ul>
           </div>
         </div>
+      </div>
+
+
     </div>
-
-
   </div>
 <% end %>
