@@ -1,12 +1,12 @@
 <% if user_signed_in? %>
-<div class="test">
-  <div class="content-width">
+
+  <div class="container">
     <div class="navbar">
 
       <!-- Logo -->
       <%= link_to seeds_path do %>
         <div class="logo-box">
-          <p id="logo-text">Seedoak</p>
+          <div id="logo-text">Seedoak</div>
           <span class="glyphicon glyphicon-leaf", id="logo-icon"></span>
         </div>
       <% end %>
@@ -101,6 +101,5 @@
 
 
     </div>
-  </div>
   </div>
 <% end %>
