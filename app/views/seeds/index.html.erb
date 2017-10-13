@@ -9,18 +9,33 @@
     <div class="categories hidden-xs">
 
       <div class="filter-title">
-        <p class="categories-header">SEEDS</p>
+        <p class="filter-header">SEEDS</p>
         <div class="sub-categories">
-          <p class="sub-title"><span class="filter-icon glyphicon glyphicon-globe"></span>Tous</p>
-          <p class="sub-title"><span class="filter-icon glyphicon glyphicon-fire"></span>Tendance</p>
-          <p class="sub-title"><span class="filter-icon glyphicon glyphicon-leaf"></span>Récents</p>
-          <p class="sub-title"><span class="filter-icon glyphicon glyphicon-flash"></span>Dernière chance</p>
-          <p class="sub-title"><span class="filter-icon glyphicon glyphicon-random"></span>Hasard</p>
+          <div class="sub-title">
+            <div class="filter-icon glyphicon glyphicon-globe"></div>
+            <p>Tous</p>
+          </div>
+          <div class="sub-title">
+            <div class="filter-icon glyphicon glyphicon-fire"></div>
+            <p>Tendance</p>
+          </div>
+          <div class="sub-title">
+            <div class="filter-icon glyphicon glyphicon-leaf"></div>
+            <p>Récents</p>
+          </div>
+          <div class="sub-title">
+            <div class="filter-icon glyphicon glyphicon-flash"></div>
+            <p>Dernière chance</p>
+          </div>
+          <div class="sub-title">
+            <div class="filter-icon glyphicon glyphicon-random"></div>
+            <p>Hasard</p>
+          </div>
         </div>
       </div>
 
       <div class="filter-title">
-        <p class="categories-header">CATEGORIES</p>
+        <p class="filter-header">CATEGORIES</p>
         <div class="sub-categories">
           <% @categories.each do |category| %>
             <div class="sub-title <%= category.id %>">

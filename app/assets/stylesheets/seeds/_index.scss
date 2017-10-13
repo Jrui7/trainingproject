@@ -34,7 +34,7 @@ a:hover {
   margin-bottom: 35px;
 }
 
-.categories-header {
+.filter-header {
   font-size: 12px;
   font-style: italic;
   font-weight: bold;
@@ -49,6 +49,27 @@ a:hover {
 
 .filter-icon {
   margin-right: 10px;
+  font-size: 20px;
+}
+
+.glyphicon-globe {
+  color: rgba(15, 163, 177, 1);
+}
+
+.glyphicon-fire {
+  color: red;
+}
+
+.glyphicon-leaf {
+  color: green;
+}
+
+.glyphicon-flash {
+  color: orange;
+}
+
+.glyphicon-random {
+  color: pink;
 }
 
 .sub-title {
@@ -56,7 +77,7 @@ a:hover {
   align-items: center;
   font-size: 13px;
   transition: all 0.15s ease;
-  padding: 5px 25px 5px 0;
+  padding: 5px 13px 5px 13px;
   margin-bottom: 2px;
   box-shadow: 0 1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(0,0,0,0.07);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
