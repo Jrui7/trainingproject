@@ -7,17 +7,29 @@
 
 
     <div class="categories hidden-xs">
-      <p id="categories-header"> <span class="glyphicon glyphicon-filter"></span>FILTRER </p>
 
-      <div class="sub-categories">
-        <% @categories.each do |category| %>
-          <div class="sub-title <%= category.id %>">
-            <p><%= image_tag "categories.jpg", class: "categories-icon" %>
-            </p>
-            <p><%= link_to category.name, seeds_path(category: category.id), remote: true %>
-            </p>
-          </div>
-        <% end %>
+      <div class="filter-title">
+        <p class="categories-header"> <span class="filter-icon glyphicon glyphicon-leaf"></span>SEEDS</p>
+        <div class="sub-categories">
+          <p class="sub-title">Tous</p>
+          <p class="sub-title">Les plus populaires</p>
+          <p class="sub-title">Les plus récents</p>
+          <p class="sub-title">Dernière chance</p>
+        </div>
+      </div>
+
+      <div class="filter-title">
+        <p class="categories-header"> <span class="filter-icon glyphicon glyphicon-filter"></span>CATEGORIES</p>
+        <div class="sub-categories">
+          <% @categories.each do |category| %>
+            <div class="sub-title <%= category.id %>">
+              <p><%= image_tag "categories.jpg", class: "categories-icon" %>
+              </p>
+              <p><%= link_to category.name, seeds_path(category: category.id), remote: true %>
+              </p>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
 
