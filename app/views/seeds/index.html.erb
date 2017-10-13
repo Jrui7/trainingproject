@@ -9,17 +9,18 @@
     <div class="categories hidden-xs">
 
       <div class="filter-title">
-        <p class="categories-header"> <span class="filter-icon glyphicon glyphicon-leaf"></span>SEEDS</p>
+        <p class="categories-header">SEEDS</p>
         <div class="sub-categories">
-          <p class="sub-title">Tous</p>
-          <p class="sub-title">Les plus populaires</p>
-          <p class="sub-title">Les plus récents</p>
-          <p class="sub-title">Dernière chance</p>
+          <p class="sub-title"><span class="filter-icon glyphicon glyphicon-globe"></span>Tous</p>
+          <p class="sub-title"><span class="filter-icon glyphicon glyphicon-fire"></span>Tendance</p>
+          <p class="sub-title"><span class="filter-icon glyphicon glyphicon-leaf"></span>Récents</p>
+          <p class="sub-title"><span class="filter-icon glyphicon glyphicon-flash"></span>Dernière chance</p>
+          <p class="sub-title"><span class="filter-icon glyphicon glyphicon-random"></span>Hasard</p>
         </div>
       </div>
 
       <div class="filter-title">
-        <p class="categories-header"> <span class="filter-icon glyphicon glyphicon-filter"></span>CATEGORIES</p>
+        <p class="categories-header">CATEGORIES</p>
         <div class="sub-categories">
           <% @categories.each do |category| %>
             <div class="sub-title <%= category.id %>">
