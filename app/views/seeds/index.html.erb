@@ -2,41 +2,34 @@
   Bienvenue sur Seedoak
 <% end %>
 
+<div class="page-container">
+  <div class="seed-feed">
 
-<div class="container">
-  <div class="row">
 
-    <div class="hidden-xs hidden-sm col-md-2">
-        <div class="categories">
-          <p id="categories-header"> <span class="glyphicon glyphicon-filter"></span>FILTRER </p>
+    <div class="categories hidden-xs">
+      <p id="categories-header"> <span class="glyphicon glyphicon-filter"></span>FILTRER </p>
 
-          <div class="sub-categories">
-
-          <% @categories.each do |category| %>
-
-            <div class="sub-title <%= category.id %>">
-              <p><%= image_tag "categories.jpg", class: "categories-icon" %></p>
-              <p><%= link_to category.name, seeds_path(category: category.id), remote: true %></p>
-            </div>
-
-          <% end %>
+      <div class="sub-categories">
+        <% @categories.each do |category| %>
+          <div class="sub-title <%= category.id %>">
+            <p><%= image_tag "categories.jpg", class: "categories-icon" %>
+            </p>
+            <p><%= link_to category.name, seeds_path(category: category.id), remote: true %>
+            </p>
           </div>
-        </div>
+        <% end %>
       </div>
+    </div>
 
-
-      <div class="col-xs-12 col-md-7">
-        <div class="seed-presentation">
-          <%= render @seeds, seeds: @seeds%>
-          <%= render @seeds, seeds: @seeds%>
-          <%= render @seeds, seeds: @seeds%>
-        </div>
-      </div>
-
-
+    <div class="seed-presentation">
+      <%= render @seeds, seeds: @seeds%>
+      <%= render @seeds, seeds: @seeds%>
+      <%= render @seeds, seeds: @seeds%>
+    </div>
 
   </div>
 </div>
+
 
 
 
