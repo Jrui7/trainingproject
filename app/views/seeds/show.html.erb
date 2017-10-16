@@ -1,43 +1,53 @@
-<h1>Seeds#show</h1>
-<p><%= @seed.title %></p>
-<p><%= @seed.description %></p>
-<% @seed.photos.each do |photo| %>
-  <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
-<% end %>
-<h2>
-<%= pluralize @seed.picks.size, "pick" %>
-</h2>
 
 
+<div class="page-container">
+  <div class="show">
+
+    <div class="left-section">
+
+      <div class="title-and-pick">
+        <h2><%= @seed.title %></h2>
+        <%= link_to new_seed_pick_path(@seed) do %>
+          <div class="pick-seed">
+            <p>Picker</p>
+            <i class="fa fa-hand-lizard-o" aria-hidden="true"></i>
+            <p>(<%=@seed.picks.size  %>)</p>
+          </div>
+        <% end %>
+      </div>
 
 
-  <% collections = [] %>
-  <% @user.picks.each do |pick| %>
-  <% collections << pick.seed.id  %>
-  <% end %>
+      <div class="seed-media">
+        <div class="seed-photos">
+          <% @seed.photos.each do |photo| %>
+            <%= cl_image_tag photo.path, width: 608, height: 380, crop: :fill %>
+          <% end %>
+        </div>
+        <div class="seed-social">
+          <div class="social-category">
+            <div class="filter-icon glyphicon glyphicon-eye-open"></div>
+            <p>Vues</p>
+          </div>
+          <div class="social-category">
+            <div class="filter-icon glyphicon glyphicon-heart-empty"></div>
+            <p>J'aime</p>
+          </div>
+          <div class="social-category">
+            <div class="filter-icon glyphicon glyphicon-share-alt"></div>
+            <p>Partager</p>
+          </div>
+          <div class="social-category">
+            <div class="filter-icon glyphicon glyphicon-exclamation-sign"></div>
+            <p>Signaler</p>
+          </div>
 
-  <% if collections.include? @seed.id %>
-    <p> <%= "Vous avez déjà pické"  %> </p>
-  <% else %>
-    <%= simple_form_for [@seed, @pick], url: seed_picks_path(@seed), :method => :post do |f| %>
-      <p><strong>Prix :</strong></p>
-      <%= f.input_field :price, as: :integer, class: 'input-sm form-control', id: 'start' %>
-      <%= f.submit "Enregistrer mon pick", class: "btn btn-success" %>
-    <% end %>
-  <% end %>
+        </div>
+      </div>
 
-  <p><%= link_to "Retour", seeds_path %></p>
+    </div>
 
-
- <% if @seed.picks.size > 0 %>
-  <ul>
-    <% @seed.picks.each do |pick| %>
-      <li>
-        <%= pick.price  %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+  </div>
+</div>
 
 
 
