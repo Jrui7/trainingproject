@@ -7,17 +7,45 @@
 
 
     <div class="categories hidden-xs">
-      <p id="categories-header"> <span class="glyphicon glyphicon-filter"></span>FILTRER </p>
 
-      <div class="sub-categories">
-        <% @categories.each do |category| %>
-          <div class="sub-title <%= category.id %>">
-            <p><%= image_tag "categories.jpg", class: "categories-icon" %>
-            </p>
-            <p><%= link_to category.name, seeds_path(category: category.id), remote: true %>
-            </p>
+      <div class="filter-title">
+        <p class="filter-header">SEEDS</p>
+        <div class="sub-categories">
+          <div class="sub-title">
+            <div class="filter-icon glyphicon glyphicon-globe"></div>
+            <p>Tous</p>
           </div>
-        <% end %>
+          <div class="sub-title">
+            <div class="filter-icon glyphicon glyphicon-fire"></div>
+            <p>Tendances</p>
+          </div>
+          <div class="sub-title">
+            <div class="filter-icon glyphicon glyphicon-leaf"></div>
+            <p>Récents</p>
+          </div>
+          <div class="sub-title">
+            <div class="filter-icon glyphicon glyphicon-flash"></div>
+            <p>Dernière chance</p>
+          </div>
+          <div class="sub-title">
+            <div class="filter-icon glyphicon glyphicon-random"></div>
+            <p>Hasard</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-title">
+        <p class="filter-header">CATEGORIES</p>
+        <div class="sub-categories">
+          <% @categories.each do |category| %>
+            <div class="sub-title <%= category.id %>">
+              <p><%= image_tag "categories.jpg", class: "categories-icon" %>
+              </p>
+              <p><%= link_to category.name, seeds_path(category: category.id), remote: true %>
+              </p>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
 
