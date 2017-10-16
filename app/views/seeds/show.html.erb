@@ -39,8 +39,25 @@
 
     <div class="right-section">
       <div class="pick-section">
-
+        <h2 class="number-of-picks">
+          <% if @seed.picks.any? %>
+            <%= pluralize @seed.picks.size, "pick" %>
+          <% else %>
+             <%="Soyez le premier à picker" %>
+          <% end %>
+        </h2>
       </div>
+
+
+        <% if @collections.include? @seed.id %>
+          <p> <%= "Vous avez déjà pické"  %> </p>
+        <% else %>
+          <%= simple_form_for [@seed, @pick], url: seed_picks_path(@seed), :method => :post do |f| %>
+            <p><strong>Prix :</strong></p>
+            <%= f.input_field :price, as: :integer, class: 'input-sm form-control', id: 'start' %>
+            <%= f.submit "Enregistrer mon pick", class: "btn btn-success" %>
+          <% end %>
+        <% end %>
 
     </div>
 
