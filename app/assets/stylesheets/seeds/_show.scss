@@ -4,20 +4,19 @@
  margin-top: 50px;
 }
 
-.show {
-  max-width: 1100px;
+.two-sections {
   margin-right: auto;
   margin-left: auto;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
   margin-bottom: 0px;
+  max-width: 1100px;
 }
 
 
 .title-and-pick {
   display: flex;
   align-items: center;
+
 
   h2 {
     margin: 0;
@@ -34,6 +33,7 @@
 
 .pick-seed {
   display: flex;
+  margin-left: 20px;
 
   a {
     text-decoration: none;
