@@ -223,3 +223,112 @@ a:hover {
 .product-upvote:hover .product-arrow {
   border-bottom: 9px solid #5898f1;
 }
+
+
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Archivo+Black");
+body {
+  font-family: Roboto;
+  color: #000;
+  background: #fff;
+}
+.Score {
+  padding: 30px 50px;
+  width: 80%;
+  max-width: 700px;
+  height: 60%;
+  min-height: 300px;
+  max-height: 500px;
+  background: #1b1b26;
+  box-shadow: 0 0 4px rgba(20,16,57,0.5), 0 0 15px rgba(0,0,0,0.5);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.Score-input {
+  text-align: center;
+  margin-top: 5%;
+}
+.Score-input a {
+  margin: 0 20px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  padding-bottom: 3px;
+  color: #fff7fe;
+  border-bottom: 2px solid rgba(255,255,255,0.2);
+  -webkit-transition: 0.2s all ease-out;
+  transition: 0.2s all ease-out;
+}
+.Score-input a:hover {
+  text-shadow: 0 0 50px rgba(255,255,255,0.2);
+  border-bottom: 1px solid #ffcaf5;
+}
+.Score-input input {
+  margin-bottom: 20px;
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 20px;
+  padding: 10px;
+  color: #fff7fe;
+  outline: none;
+  border: none;
+  max-width: 200px;
+  font-family: Roboto;
+  text-align: center;
+}
+.Score-input input::-webkit-input-placeholder {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+}
+.Score-input input::-webkit-outer-spin-button,
+.Score-input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.Score-display {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: auto;
+}
+.Score-display p {
+  font-size: 100px;
+  margin: -10px;
+}
+.Score-display p:first-child {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.8);
+}
+.Score-display p:last-child {
+  font-family: 'Archivo Black';
+  color: #ffcaf5;
+  font-size: 150px;
+  text-shadow: 0 2px 5px rgba(159,97,253,0.5), 5px 5px 0 rgba(70,87,194,0.5);
+}
