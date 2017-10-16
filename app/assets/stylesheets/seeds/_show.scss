@@ -10,25 +10,14 @@
   display: flex;
   margin-bottom: 0px;
   max-width: 1100px;
+  justify-content: space-between;
+}
+
+.left-section {
 }
 
 
-.title-and-pick {
-  display: flex;
-  align-items: center;
-
-
-  h2 {
-    margin: 0;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  .fa-hand-lizard-o {
-    padding: 0;
-  }
+.title {
 }
 
 .pick-seed {
@@ -66,3 +55,11 @@
     margin: 0;
   }
 }
+
+.right-section {
+  width: 100%;
+  border-style: solid;
+  border-color: black;
+}
+
+
