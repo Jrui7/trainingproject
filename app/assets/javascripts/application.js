@@ -18,7 +18,7 @@ $( "#start" ).keyup(function() {
     var $this = $(this),
         countTo = value;
 
-    $({ countNum: $this.text()}).animate({
+    $({ countNum: 0}).animate({
       countNum: countTo
     },
 
