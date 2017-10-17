@@ -24,21 +24,20 @@ $( "#start" ).keyup(function() {
 
     {
 
-      duration: 500,
+      duration: 1500,
       easing:'linear',
       step: function() {
         $this.text(Math.floor(this.countNum));
       },
       complete: function() {
         $this.text(this.countNum);
-        //alert('finished');
       }
 
     });
 
 
 
-  });
+    });
   })
   .keyup();
 
