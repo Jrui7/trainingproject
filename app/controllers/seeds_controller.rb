@@ -42,6 +42,11 @@ class SeedsController < ApplicationController
     @seed = Seed.find(params[:id])
     @pick = Pick.new
     @user = current_user
+
+    @collections = []
+    @user.picks.each do |pick|
+      @collections << pick.seed.id
+    end
   end
 
   def update

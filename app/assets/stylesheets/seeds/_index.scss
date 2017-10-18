@@ -53,23 +53,23 @@ a:hover {
 }
 
 .glyphicon-globe {
-  color: rgba(15, 163, 177, 1);
+  color: $blueworld;
 }
 
 .glyphicon-fire {
-  color: red;
+  color: $red;
 }
 
 .glyphicon-leaf {
-  color: green;
+  color: $green;
 }
 
 .glyphicon-flash {
-  color: orange;
+  color: $orange;
 }
 
 .glyphicon-random {
-  color: pink;
+  color: $pink;
 }
 
 .sub-title {
@@ -130,7 +130,6 @@ a:hover {
 .product-body p {
   color: #999999;
   margin-bottom: 0;
-  font-size: 13px;
 }
 
 /* Product image */
@@ -223,3 +222,5 @@ a:hover {
 .product-upvote:hover .product-arrow {
   border-bottom: 9px solid #5898f1;
 }
+
+
