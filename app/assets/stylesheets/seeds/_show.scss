@@ -13,7 +13,10 @@
   justify-content: space-between;
 }
 
+
+
 .left-section {
+  border: 1px solid #ccc;
 }
 
 
@@ -37,19 +40,19 @@
 
 .seed-media {
   display: flex;
+  flex-direction: column;
 }
 
 .seed-social {
   display: flex;
-  flex-direction: column;
   justify-content: flex-end;
-  margin-left: 12px;
 }
 
 
 .social-category {
   display: flex;
   align-items: center;
+  padding: 10px;
 
   p {
     margin: 0;
@@ -58,13 +61,12 @@
 
 .right-section {
   width: 100%;
-  border-style: solid;
-  border-color: black;
+  border: 1px solid #ccc;
 }
 
 
 #btn-pick {
-  border: 1px solid #F46A6A ;
+  border: 1px solid $blue ;
   padding: 10px 15px;
   text-align: center;
 
@@ -72,7 +74,7 @@
 
 
 .counter-body {
-  background-color: #F46A6A;
+  background-color: $blue;
   color:#fff;
   max-width:800px;
   margin: 100px auto 0;
@@ -84,7 +86,7 @@
   display: table-cell;
   margin:1.5%;
   font-size:50px;
-  background-color: #FF6F6F;
+  background-color: #4bbfe5;
   width:200px;
   border-radius: 50%;
   height:200px;

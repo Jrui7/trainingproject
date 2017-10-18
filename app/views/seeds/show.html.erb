@@ -2,71 +2,69 @@
 
 <div class="page-container">
   <div class="two-sections">
+    <div class="container">
+      <div class="row">
 
-    <div class="left-section">
+        <div class="col-xs-12 col-md-9 nopadding">
+          <div class="left-section">
+            <h3 class="title-and-pick"><%= @seed.title %></h3>
+            <div class="seed-media">
+              <div class="seed-photos">
+                <% @seed.photos.each do |photo| %>
+                  <%= cl_image_tag photo.path, width: 608, height: 380, crop: :fill %>
+                <% end %>
+              </div>
+              <div class="seed-social">
+                <div class="social-category">
+                  <div class="filter-icon glyphicon glyphicon-eye-open"></div>
+                  <p>Vues</p>
+                </div>
+                <div class="social-category">
+                  <div class="filter-icon glyphicon glyphicon-heart-empty"></div>
+                  <p>J'aime</p>
+                </div>
+                <div class="social-category">
+                  <div class="filter-icon glyphicon glyphicon-share-alt"></div>
+                  <p>Partager</p>
+                </div>
+                <div class="social-category">
+                  <div class="filter-icon glyphicon glyphicon-exclamation-sign"></div>
+                  <p>Signaler</p>
+                </div>
 
-      <h2 class="title-and-pick"><%= @seed.title %></h2>
-
-
-
-      <div class="seed-media">
-        <div class="seed-photos">
-          <% @seed.photos.each do |photo| %>
-            <%= cl_image_tag photo.path, width: 608, height: 380, crop: :fill %>
-          <% end %>
-        </div>
-        <div class="seed-social">
-          <div class="social-category">
-            <div class="filter-icon glyphicon glyphicon-eye-open"></div>
-            <p>Vues</p>
-          </div>
-          <div class="social-category">
-            <div class="filter-icon glyphicon glyphicon-heart-empty"></div>
-            <p>J'aime</p>
-          </div>
-          <div class="social-category">
-            <div class="filter-icon glyphicon glyphicon-share-alt"></div>
-            <p>Partager</p>
-          </div>
-          <div class="social-category">
-            <div class="filter-icon glyphicon glyphicon-exclamation-sign"></div>
-            <p>Signaler</p>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="right-section">
-      <div class="pick-section">
-        <h2 class="number-of-picks">
-          <% if @seed.picks.any? %>
-            <%= pluralize @seed.picks.size, "pick" %>
-          <% else %>
-             <%="Soyez le premier à picker" %>
-          <% end %>
-        </h2>
-      </div>
-
-
-        <% if @collections.include? @seed.id %>
-          <p> <%= "Vous avez déjà pické"  %> </p>
-        <% else %>
-          <%= simple_form_for [@seed, @pick], url: seed_picks_path(@seed), :method => :post do |f| %>
-            <p><strong>Prix :</strong></p>
-            <%= f.input_field :price, as: :integer, class: 'input-sm form-control pick', id: 'start', placeholder: 'Renseignez ici' %>
-            <div class="counter-body">
-              <div class="counter"></div>
+              </div>
             </div>
-            <%= f.submit "Enregistrer mon pick", class: "btn", id: "btn-pick" %>
-          <% end %>
+          </div>
+        </div>
 
+        <div class="col-xs-12 col-md-3 nopadding">
+          <div class="right-section">
+            <div class="pick-section">
+              <h3 class="number-of-picks">
+                <% if @seed.picks.any? %>
+                  <%= pluralize @seed.picks.size, "pick" %>
+                <% else %>
+                   <%="Soyez le premier à picker" %>
+                <% end %>
+              </h3>
+              <% if @collections.include? @seed.id %>
+                <p> <%= "Vous avez déjà pické"  %> </p>
+              <% else %>
+                <%= simple_form_for [@seed, @pick], url: seed_picks_path(@seed), :method => :post do |f| %>
+                  <p><strong>Prix :</strong></p>
+                  <%= f.input_field :price, as: :integer, class: 'input-sm form-control pick', id: 'start', placeholder: 'Renseignez ici' %>
+                  <div class="counter-body">
+                    <div class="counter"></div>
+                  </div>
+                  <%= f.submit "Enregistrer mon pick", class: "btn", id: "btn-pick" %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
 
-        <% end %>
-
-
+      </div>
     </div>
-
   </div>
 </div>
 
