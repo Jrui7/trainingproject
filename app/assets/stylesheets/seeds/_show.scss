@@ -17,6 +17,7 @@
 
 .left-section {
   border: 1px solid #ccc;
+  background-color: white;
 }
 
 
@@ -43,6 +44,10 @@
   flex-direction: column;
 }
 
+.seed-photos {
+  text-align: center;
+}
+
 .seed-social {
   display: flex;
   justify-content: flex-end;
@@ -62,6 +67,7 @@
 .right-section {
   width: 100%;
   border: 1px solid #ccc;
+  background-color: white;
 }
 
 

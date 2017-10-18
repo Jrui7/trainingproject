@@ -40,13 +40,13 @@
         <div class="col-xs-12 col-md-3 nopadding">
           <div class="right-section">
             <div class="pick-section">
-              <h3 class="number-of-picks">
+              <p class="number-of-picks">
                 <% if @seed.picks.any? %>
                   <%= pluralize @seed.picks.size, "pick" %>
                 <% else %>
                    <%="Soyez le premier à picker" %>
                 <% end %>
-              </h3>
+              </p>
               <% if @collections.include? @seed.id %>
                 <p> <%= "Vous avez déjà pické"  %> </p>
               <% else %>
