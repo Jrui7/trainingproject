@@ -8,7 +8,7 @@
 
 //= require owl.carousel
 
-//= require_tree.
+//= require_tree .
 
 $( "#start" ).keyup(function() {
     var value = $( this ).val();

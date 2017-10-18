@@ -11,7 +11,7 @@
          <%= b.input :title, label:"Titre", placeholder: "Exemple: Drone en mousse" %>
          <%= b.input :description,label:"Décrire le produit", placeholder: "Exemple: Ce drone ne risque pas de se casser car il est fait en mousse. Ideal pour la montagne." %>
          <%= b.association :category, label:"Catégorie", prompt: "Selectionner une categorie"%>
-         <%= b.input :photos, as: :attachinary %>
+         <%= b.input :photos, as: :attachinary, label: false, class: "upload" %>
          <%= b.submit value: "Ajouter", class: "text-center btn btn-primary" %>
        <% end %>
        </div>
