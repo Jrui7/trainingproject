@@ -7,7 +7,6 @@
 //= require attachinary
 
 //= require owl.carousel
-
 //= require_tree .
 
 
