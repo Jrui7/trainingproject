@@ -11,6 +11,8 @@ class Seed < ApplicationRecord
     presence: true,
     length: { minimum: 5 }
 
+   validates :category_id, presence: true
+
   has_attachments :photos, maximum: 5
 
 end

@@ -29,9 +29,10 @@ class SeedsController < ApplicationController
 
   def create
      @seed = current_user.seeds.build(seed_params)
-     @seed.save
-    flash[:notice] = "Votre seed est maintenant en ligne"
-    if @seed.save
+
+    if @seed.valid?
+      @seed.save
+      flash[:notice] = "Votre seed est maintenant en ligne"
       redirect_to seed_path(@seed)
     else
       render :new
