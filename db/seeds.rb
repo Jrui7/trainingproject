@@ -43,7 +43,7 @@ puts "Users preferences created !"
 puts "--------------------"
 
 
-Seed.create(title: "Le tube d'Hendaye", user_id: thomas.id, category_id: sport.id, description: "Perso Ma Men, c'est les plus grosses vagues que j'ai ridé", photo_urls: ["http://res.cloudinary.com/dlddnk3pr/image/upload/v1505138572/eecindhnvh2ltpxpitb9.jpg"])
+Seed.create(title: "Le tube d'Hendaye", user_id: thomas.id, category_id: sport.id, description: "Perso Ma Men, c'est les plus grosses vagues que j'ai ridé", photo_urls: ["http://res.cloudinary.com/dlddnk3pr/image/upload/v1505138572/eecindhnvh2ltpxpitb9.jpg", "http://res.cloudinary.com/dlddnk3pr/image/upload/v1504544452/yxdwojuuq0q71p2oemmz.jpg"])
 Seed.create(title: "La balle fusion", user_id: jorge.id, category_id: sport.id, description: "Ca file au vent, pénétration idéale", photo_urls: ["http://res.cloudinary.com/dlddnk3pr/image/upload/v1504544452/yxdwojuuq0q71p2oemmz.jpg"])
 Seed.create(title: "L'oeuvre d'art des artistes", user_id: renan.id, category_id: sorties.id, description: "J'aime bien les chiens, regardez ma photo de profil, et ça c'est un super chien", photo_urls: ["http://res.cloudinary.com/dlddnk3pr/image/upload/v1504619657/wmjrhxdqczonc6jbz9g0.jpg"])
 

@@ -2,21 +2,21 @@
   Bienvenue sur Seedoak
 <% end %>
 
-<h1>Seeds#new</h1>
 <div class="container">
   <div class="row">
      <div class="col-xs-12 col-sm-6 col-sm-offset-3 form">
        <div class="text-center">
         <h1>Ajouter un seed<h1>
-        </div>
        <%= simple_form_for @seed do |b| %>
          <%= b.input :title, label:"Titre", placeholder: "Exemple: Drone en mousse" %>
          <%= b.input :description,label:"Décrire le produit", placeholder: "Exemple: Ce drone ne risque pas de se casser car il est fait en mousse. Ideal pour la montagne." %>
-         <%= b.input :category_id,label:"Catégorie", collection: @categories, prompt: "Selectionner une categorie"%>
-         <%= b.input :photos, as: :attachinary %>
+         <%= b.association :category, label:"Catégorie", prompt: "Selectionner une categorie"%>
+         <%= b.input :photos, as: :attachinary, label: false, class: "upload" %>
          <%= b.submit value: "Ajouter", class: "text-center btn btn-primary" %>
        <% end %>
+       </div>
      </div>
- </div>
+  </div>
 </div>
+
 
