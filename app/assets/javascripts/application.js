@@ -6,7 +6,6 @@
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
 
-//= require owl.carousel
 //= require_tree .
 
 

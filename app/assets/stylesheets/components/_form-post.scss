@@ -1,0 +1,33 @@
+.form-post {
+  background: white;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 5px;
+
+  h3 {
+    text-align: center;
+    font-weight: bold;
+    color: $blue;
+    margin-bottom: 25px;
+    margin-top: 0;
+  }
+
+  .btn {
+    width: 50%;
+    padding: 10px;
+  }
+
+  .control-label {
+    font-size: 17px;
+    text-align: left !important;
+  }
+
+  .input-block {
+    padding: 20px;
+    font-size: 15px;
+    font-weight: normal;
+    color: $gray;
+  }
+
+
+}

@@ -4,15 +4,30 @@
 
 <div class="container">
   <div class="row">
-     <div class="col-xs-12 col-sm-6 col-sm-offset-3 form">
-       <div class="text-center">
-        <h1>Ajouter un seed<h1>
-       <%= simple_form_for @seed do |b| %>
-         <%= b.input :title, label:"Titre", placeholder: "Exemple: Drone en mousse" %>
-         <%= b.input :description,label:"Décrire le produit", placeholder: "Exemple: Ce drone ne risque pas de se casser car il est fait en mousse. Ideal pour la montagne." %>
-         <%= b.association :category, label:"Catégorie", prompt: "Selectionner une categorie"%>
-         <%= b.input :photos, as: :attachinary, label: false, class: "upload" %>
-         <%= b.submit value: "Ajouter", class: "text-center btn btn-primary" %>
+     <div class="col-xs-12 col-sm-8 col-sm-offset-2 form">
+      <div class="form-post">
+        <h3>Ajouter un seed<h3>
+        <%= simple_form_for @seed do |b| %>
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="input-block">
+                <%= b.input :title, label:"Titre", placeholder: "Exemple: Drone en mousse" %>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="input-block">
+                <%= b.association :category, label:"Catégorie", prompt: "Selectionner une categorie"%>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-block">
+            <%= b.input :description,label:"Décrire le produit", placeholder: "Exemple: Ce drone ne risque pas de se casser car il est fait en mousse. Ideal pour la montagne." %>
+          </div>
+          <div class="input-block">
+            <%= b.input :photos, as: :attachinary, label: false, class: "upload" %>
+          </div>
+         <%= b.submit value: "Ajouter", class: "btn btn-primary" %>
        <% end %>
        </div>
      </div>
