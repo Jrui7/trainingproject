@@ -3,18 +3,39 @@
   margin-top: 50px;
   padding: 20px;
   border-radius: 5px;
+  border: 1px solid #ccc;
 
-  h3 {
-    text-align: center;
-    font-weight: bold;
+  .form-title {
     color: $blue;
     margin-bottom: 25px;
     margin-top: 0;
+    text-align: center;
+    font-size: 30px;
+    font-family: $headers-font;
+  }
+
+  textarea {
+    width: 100%;
+    height: 150px;
+    line-height: 150%;
+    resize:vertical;
+}
+
+label {
+  font-weight: normal;
+}
+
+abbr {
+  display: none;
+}
+
+  .form-action {
+    padding: 10px;
+    text-align: center;
   }
 
   .btn {
     width: 50%;
-    padding: 10px;
   }
 
   .control-label {
@@ -23,10 +44,14 @@
   }
 
   .input-block {
-    padding: 20px;
     font-size: 15px;
     font-weight: normal;
     color: $gray;
+  }
+
+  .attachinary_container {
+    margin-top: 20px;
+
   }
 
 
