@@ -12,6 +12,10 @@ $.attachinary.config.template = '\
 ';
 
 $(document).ready(function() {
+  $(".chooseFile").click(function() {
+      $("#seed_photos").click();
+  });
+
   $('.attachinary-input').bind('fileuploaddone', function (event) {
     $(this).addClass('has-file');
     $(this).siblings('.attachinary_container').removeClass('loading');
