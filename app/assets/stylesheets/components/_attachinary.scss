@@ -1,8 +1,26 @@
 .attachinary_container {
   display: flex;
 
-  img {
+  .picture-upload {
+    position: relative;
     margin: 10px;
+
+
+    a {
+      color: white;
+      background-color: $gray;
+      position: absolute;
+      top: -11px;
+      right: -11px;
+      border: solid 1px;
+      padding: 5px;
+      border-radius: 50%;
+      font-size: 11px;
+
+    }
+
   }
+
+
 
 }
