@@ -70,8 +70,9 @@
 
 .right-section {
   width: 100%;
-  border: 1px solid #ccc;
+  border: 1px solid $blue;
   background-color: white;
+  border-radius: 4px;
 }
 
 .pick-section {
@@ -104,7 +105,7 @@
 
 
 .counter-body {
-  background-color: $blue;
+  background-color: white;
   color:#fff;
   max-width:800px;
   margin: 50px auto 50px;
