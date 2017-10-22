@@ -74,6 +74,26 @@
   background-color: white;
 }
 
+.pick-section {
+  padding: 0 15px;
+
+  .pick-title {
+    color: $blue;
+    font-size: 20px;
+    font-family: $headers-font;
+  }
+
+}
+
+.price {
+  margin-top: 25px;
+}
+
+.submit-pick {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
 
 #btn-pick {
   border: 1px solid $blue ;
@@ -87,7 +107,7 @@
   background-color: $blue;
   color:#fff;
   max-width:800px;
-  margin: 100px auto 0;
+  margin: 50px auto 50px;
   text-align: center;
   display: table;
 }
