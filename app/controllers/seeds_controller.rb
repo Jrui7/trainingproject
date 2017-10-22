@@ -43,6 +43,10 @@ class SeedsController < ApplicationController
     @seed = Seed.find(params[:id])
     @pick = Pick.new
     @user = current_user
+    @photos = []
+    @seed.photos.each do |photo|
+      @photos << photo
+    end
 
     @collections = []
     @user.picks.each do |pick|
