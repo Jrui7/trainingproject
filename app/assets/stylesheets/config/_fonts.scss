@@ -31,7 +31,22 @@ a {
   }
 }
 
-.nopadding {
-   padding: 0 !important;
-   margin: 0 !important;
+.nopadding-right {
+   padding-right: 0 !important;
+   margin-right: 0 !important;
+}
+
+.nopadding-left {
+   padding-left: 0 !important;
+   margin-left: 0 !important;
+}
+
+.nopadding-top {
+   padding-top: 0 !important;
+   margin-top: 0 !important;
+}
+
+.nopadding-bottom {
+   padding-bottom: 0 !important;
+   margin-bottom: 0 !important;
 }

@@ -5,7 +5,7 @@
     <div class="container">
       <div class="row">
 
-        <div class="col-xs-12 col-md-7 nopadding">
+        <div class="col-xs-12 col-md-9 nopadding-left">
           <div class="left-section">
             <h3 class="title-and-pick"><%= @seed.title %></h3>
             <div class="seed-media">
@@ -74,12 +74,12 @@
           </div>
         </div>
 
-        <div class="col-xs-12 col-md-4 col-md-offset-1">
+        <div class="pick-box col-xs-12 col-md-3">
           <div class="right-section">
             <div class="pick-section">
               <% if @seed.picks.any? %>
                 <h3 class="pick-title text-center">
-                  <%= pluralize @seed.picks.size, "pick" %>
+                  Picker ce seed
                 </h3>
               <% else %>
                 <h3 class="pick-title text-center"><%="Soyez le premier à picker" %>

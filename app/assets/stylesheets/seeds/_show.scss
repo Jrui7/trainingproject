@@ -70,6 +70,10 @@
   }
 }
 
+.pick-box {
+  padding-right: 0px;
+}
+
 .right-section {
   width: 100%;
   border: 2px solid $blue;
@@ -116,8 +120,8 @@
 .counter-body {
   background-color: white;
   color:#fff;
-  max-width:800px;
-  margin: 50px auto 50px;
+  max-width:100px;
+  margin: 30px auto 30px;
   text-align: center;
   display: table;
 }
@@ -127,8 +131,8 @@
   margin:1.5%;
   font-size:50px;
   background-color: #4bbfe5;
-  width:200px;
+  width:100px;
   border-radius: 50%;
-  height:200px;
+  height:100px;
   vertical-align: middle;
 }
