@@ -15,10 +15,28 @@
 
 
 
+
 .left-section {
   border: 1px solid #ccc;
   background-color: white;
+  border-radius: 4px;
+  padding: 0 30px;
 }
+
+.item {
+    text-align: center;
+    img {
+        margin: 0 auto;
+    }
+}
+
+.glyphicon-chevron-right {
+  right: 25% !important;
+  }
+
+.glyphicon-chevron-left {
+  left: 25% !important;
+  }
 
 
 .title {
@@ -46,11 +64,15 @@
 
 .seed-photos {
   text-align: center;
+
+  .item {
+    max-height: 380px;
+  }
 }
 
 .seed-social {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 
@@ -64,10 +86,42 @@
   }
 }
 
+.pick-box {
+  padding-right: 0px;
+}
+
 .right-section {
   width: 100%;
-  border: 1px solid #ccc;
+  border: 2px solid $blue;
   background-color: white;
+  border-radius: 4px;
+}
+
+.pick-section {
+
+
+  .pick-title {
+    color: white;
+    font-size: 20px;
+    font-family: $headers-font;
+    background-color: $blue;
+    margin: 0;
+    padding: 12px 5px;
+  }
+
+}
+
+.pick-form {
+  padding: 0 15px;
+}
+
+.price {
+  margin-top: 25px;
+}
+
+.submit-pick {
+  text-align: center;
+  padding-bottom: 50px;
 }
 
 
@@ -80,10 +134,10 @@
 
 
 .counter-body {
-  background-color: $blue;
+  background-color: white;
   color:#fff;
-  max-width:800px;
-  margin: 100px auto 0;
+  max-width:100px;
+  margin: 30px auto 30px;
   text-align: center;
   display: table;
 }
@@ -93,8 +147,8 @@
   margin:1.5%;
   font-size:50px;
   background-color: #4bbfe5;
-  width:200px;
+  width:100px;
   border-radius: 50%;
-  height:200px;
+  height:100px;
   vertical-align: middle;
 }
