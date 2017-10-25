@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170911131947) do
+ActiveRecord::Schema.define(version: 20171025172711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,9 +52,11 @@ ActiveRecord::Schema.define(version: 20170911131947) do
     t.date     "expiration"
     t.integer  "category_id"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.integer  "popularity"
+    t.string   "url"
+    t.string   "secondary_url"
     t.index ["category_id"], name: "index_seeds_on_category_id", using: :btree
     t.index ["user_id"], name: "index_seeds_on_user_id", using: :btree
   end
@@ -91,10 +93,19 @@ ActiveRecord::Schema.define(version: 20170911131947) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "videos", force: :cascade do |t|
+    t.string   "url"
+    t.integer  "seed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["seed_id"], name: "index_videos_on_seed_id", using: :btree
+  end
+
   add_foreign_key "picks", "seeds"
   add_foreign_key "picks", "users"
   add_foreign_key "seeds", "categories"
   add_foreign_key "seeds", "users"
   add_foreign_key "user_preferences", "categories"
   add_foreign_key "user_preferences", "users"
+  add_foreign_key "videos", "seeds"
 end
