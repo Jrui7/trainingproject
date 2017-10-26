@@ -22,6 +22,9 @@ gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 
+gem 'google-api-client'
+gem 'yt', '~> 0.28.0'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
