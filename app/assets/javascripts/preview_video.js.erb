@@ -19,6 +19,7 @@ function parseVideoUrl(videoUrl) {
 }
 
 function showVideoPreview(url) {
+  $('.media-preview').removeClass("hidden");
   $('#iframe').attr('src', url).show();
 }
 
