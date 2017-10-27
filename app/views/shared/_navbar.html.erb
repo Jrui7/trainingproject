@@ -16,20 +16,7 @@
       <div class="menu-links">
 
         <div class="navbar-item">
-          <div class="dropdown">
-            <%= link_to "Seeds", "#", class: "navigation dropdown-toggle", id: "navbar-menu", "data-toggle" => "dropdown" %>
-            <ul class="dropdown-menu dropdown-menu-riht navbar-dropdown-menu">
-              <li>
-                <p>Les plus récents</p>
-              </li>
-              <li>
-                <p>Les plus populaires</p>
-              </li>
-              <li>
-                <p>Dernier jour</p>
-              </li>
-            </ul>
-          </div>
+          <%= link_to "Seeds", seeds_path, class: "dropdown navigation dropdown-toggle", id: "navbar-menu" %>
         </div>
 
         <div class="navbar-item">

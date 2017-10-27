@@ -25,6 +25,7 @@ class SeedsController < ApplicationController
   def new
     @seed = Seed.new
     @categories = Category.all
+    @video = Yt::Video.new id: 'jNQXAC9IVRw'
   end
 
   def create
