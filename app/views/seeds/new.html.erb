@@ -21,21 +21,48 @@
             </div>
           </div>
 
-          <div class="input-block" id="description">
-            <%= b.input :description,label:"Décrire le produit", placeholder: "Exemple: Ce drone ne risque pas de se casser car il est fait en mousse. Ideal pour la montagne." %>
+          <div class="form-group">
+            <button type="button" class="chooseFile">Ajouter des photos
+            </button>
           </div>
-          <button type="button" class="chooseFile">Ajouter des photos</button>
           <div class="input-block">
             <%= b.input :photos, as: :attachinary, label: false, class: "upload" %>
           </div>
 
-
-
-          <div class="input-block">
-                <%= b.input :url, label:"Ajouter une video", placeholder: "coller ici url video youtube" %>
+          <div class="input-block" id="description">
+            <%= b.input :description,label:"Décrire le produit", placeholder: "Exemple: Ce drone ne risque pas de se casser car il est fait en mousse. Ideal pour la montagne." %>
           </div>
 
-          <%= @video.title %>
+          <div class="form-group">
+            <button type="button" class="chooseVideo" id="add-video-button">Ajouter une/des vidéos
+            </button>
+          </div>
+          <div class="from-group">
+            <div class="video-container hidden">
+              <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                  <div class="input-block">
+                    <%= b.input :url, label: "Vidéo 1", placeholder: "coller ici une url video  de youtube" %>
+
+                    <div class="media-preview hidden">
+                      <iframe id="iframe" src="">
+                      </iframe>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                  <div class="input-block">
+                    <%= b.input :secondary_url, label: "Vidéo 2", placeholder: "ex: https://www.youtube.com/watch?v=p4Qd-CJ" %>
+
+                    <div class="second-media-preview hidden">
+                      <iframe id="iframe-2" src="">
+                      </iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
 

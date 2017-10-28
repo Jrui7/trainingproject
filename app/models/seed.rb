@@ -4,14 +4,23 @@ class Seed < ApplicationRecord
   has_many :picks
 
   validates :title,
-    presence: true,
-    length: { minimum: 5 }
+    presence: {
+    message: "Donnez un titre au seed"
+    }
+
+  validates :title, length: { minimum: 5 }
 
   validates :description,
-    presence: true,
-    length: { minimum: 5 }
+    presence: {
+    message: "Description personnelle obligatoire"
+    }
 
-   validates :category_id, presence: true
+  validates :description,  length: { minimum: 5,
+    too_short: "%{count} carractères au minimum" }
+
+  validates :category_id, presence: {
+    message: "Attribuez une catégorie au seed"
+    }
 
   has_attachments :photos, maximum: 5
 
