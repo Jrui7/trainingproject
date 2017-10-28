@@ -64,8 +64,45 @@ abbr {
     overflow:hidden;
   }
 
-  .chooseFile {
-    margin: 20px  0 0 20px;
-  }
+
+}
+
+.media-preview {
+  padding: 0 20px;
+}
+
+.second-media-preview {
+  padding: 0 20px;
+}
+
+#iframe {
+  width: 100%;
+}
+
+#iframe-2 {
+  width: 100%;
+}
+
+
+.chooseFile {
+overflow: hidden;
+text-decoration: none;
+text-transform: uppercase;
+color: $blue;
+font-size: 14px;
+text-align: center;
+padding: 5px 14px;
+margin-right: 15px;
+
+}
+
+.chooseVideo {
+overflow: hidden;
+text-decoration: none;
+text-transform: uppercase;
+color: $blue;
+font-size: 14px;
+text-align: center;
+padding: 5px 14px;
 
 }
