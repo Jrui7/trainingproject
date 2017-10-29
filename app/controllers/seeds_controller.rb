@@ -1,9 +1,8 @@
 class SeedsController < ApplicationController
 
+
+
   def index
-
-
-
     #si on a rien dans les params, renvoie tous les seeds
     #si on a des params mais pas de seed correspondant aux params, renvoie tous les seeds
     #si on a des params et des seeds qui correspondent aux params, renvoies les seeds qui correspondent aux params
@@ -32,6 +31,7 @@ class SeedsController < ApplicationController
      @seed = current_user.seeds.build(seed_params)
 
     if @seed.valid?
+      @seed.set_expiration
       @seed.save
       flash[:notice] = "Votre seed est maintenant en ligne"
       redirect_to seed_path(@seed)
@@ -68,6 +68,8 @@ class SeedsController < ApplicationController
 
 
   private
+
+
 
   def seed_params
     params.require(:seed).permit(:title, :description, :category_id, :url, :secondary_url, photos: [])

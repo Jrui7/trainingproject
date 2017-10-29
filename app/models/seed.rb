@@ -1,4 +1,6 @@
 class Seed < ApplicationRecord
+
+
   belongs_to :category
   belongs_to :user
   has_many :picks
@@ -23,5 +25,23 @@ class Seed < ApplicationRecord
     }
 
   has_attachments :photos, maximum: 5
+
+
+  def set_expiration
+    self.expiration = DateTime.now.to_date + 3.days
+  end
+
+  def remaining
+      expired? ? 0 : (Date.today - self.expiration).to_i
+  end
+
+  def expired?
+    (Date.today - self.expiration).to_i >= 0
+  end
+
+  def last_day?
+    Date.today == self.expiration
+  end
+
 
 end
