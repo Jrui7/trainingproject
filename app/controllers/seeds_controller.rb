@@ -49,6 +49,8 @@ class SeedsController < ApplicationController
       @photos << photo
     end
 
+
+
     @collections = []
     @user.picks.each do |pick|
       @collections << pick.seed.id

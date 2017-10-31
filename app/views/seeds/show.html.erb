@@ -110,6 +110,30 @@
       </div>
     </div>
   </div>
+
+
+  <div class="video-container">
+    <div class="container">
+      <div class="row">
+        <% if @seed.url != "" %>
+          <div class="col-xs-4">
+            <iframe class="video-show" src="<%= @seed.url.gsub('watch?v=', 'embed/') %>"
+              frameborder="0">
+            </iframe>
+        </div>
+        <% end %>
+        <% if @seed.secondary_url != "" %>
+          <div class="col-xs-4">
+            <iframe class="video-show" src="<%= @seed.secondary_url.gsub('watch?v=', 'embed/') %>">
+            </iframe>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+
 </div>
 
 
