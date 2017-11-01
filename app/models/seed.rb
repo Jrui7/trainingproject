@@ -28,15 +28,15 @@ class Seed < ApplicationRecord
 
 
   def set_expiration
-    self.expiration = DateTime.now.to_date + 3.days
+    self.expiration = DateTime.now + 3.days
   end
 
   def remaining
-      expired? ? 0 : (Date.today - self.expiration).to_i
+      expired? ? 0 : (self.expiration - DateTime.now)
   end
 
   def expired?
-    (Date.today - self.expiration).to_i >= 0
+    (DateTime.now - self.expiration).to_i >= 0
   end
 
   def last_day?

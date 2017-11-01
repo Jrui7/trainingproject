@@ -39,7 +39,28 @@
   }
 
 
-.title {
+.title-and-pick {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.seed-infos-timer {
+  display: flex;
+  align-items: center;
+}
+
+#clockdiv {
+  display: flex;
+}
+
+.dynamic-timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+
 }
 
 .pick-seed {
