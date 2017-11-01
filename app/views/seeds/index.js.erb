@@ -1,16 +1,14 @@
 $( document ).ready(function() {
 
-
-
    if  (<%= @condition == false %>) {
-    unfilter();
+    filtered();
     $('.no-seed').hide();
     $('.seed-presentation').prepend("<p class= 'no-seed'>Pas de seed pour la catégorie sélectionnée</p>");
     $('.sub-title.<%= @filter %>').toggleClass("inactive");
 
 
    } else {
-    unfilter();
+    filtered();
     $('.no-seed').hide();
     $('.product').hide();
     $('.product.id-<%= @filter %>').toggleClass("filtered");
@@ -21,9 +19,11 @@ $( document ).ready(function() {
 });
 
 
-function unfilter() {
+function filtered() {
   $(".fa.fa-toggle-on").removeClass("hidden")
 }
+
+
 
 
 
