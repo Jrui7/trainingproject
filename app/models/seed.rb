@@ -32,7 +32,7 @@ class Seed < ApplicationRecord
   end
 
   def remaining
-      expired? ? 0 : (self.expiration - Date.today).to_i
+      expired? ? 0 : (self.expiration - DateTime.now)
   end
 
   def expired?

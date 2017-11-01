@@ -7,8 +7,35 @@
 
         <div class="col-xs-12 col-md-9 nopadding-left">
           <div class="left-section">
-            <h3 class="title-and-pick"><%= @seed.title %></h3>
-              <%= @seed.expiration - DateTime.now.utc %>
+
+            <div class="title-and-pick">
+              <h3><%= @seed.title %></h3>
+              <div class="seed-infos-timer">
+                <div id="timer" data-timer="<%= (@seed.expiration) %>">
+                  <%= render "seeds/timer"  %>
+                  <div id="clockdiv">
+                    <div class="dynamic-timer">
+                      <div class="smalltext">Days</div>
+                      <span class="days"></span>
+                    </div>
+                    <div class="dynamic-timer">
+                      <div class="smalltext">Hours</div>
+                      <span class="hours"></span>
+                    </div>
+                    <div class="dynamic-timer">
+                      <div class="smalltext">Minutes</div>
+                      <span class="minutes"></span>
+                    </div>
+                    <div class="dynamic-timer">
+                      <div class="smalltext">Seconds</div>
+                      <span class="seconds"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
             <div class="seed-media">
               <div class="seed-photos">
 
@@ -117,7 +144,7 @@
     <div class="container">
       <div class="row">
         <% if @seed.url != "" %>
-          <div class="col-xs-4">
+          <div class="col-xs-4 nopadding-left">
             <iframe class="video-show" src="<%= @seed.url.gsub('watch?v=', 'embed/') %>"
               frameborder="0">
             </iframe>
