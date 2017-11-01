@@ -1,14 +1,14 @@
 $( document ).ready(function() {
 
-
-
    if  (<%= @condition == false %>) {
+    filtered();
     $('.no-seed').hide();
     $('.seed-presentation').prepend("<p class= 'no-seed'>Pas de seed pour la catégorie sélectionnée</p>");
     $('.sub-title.<%= @filter %>').toggleClass("inactive");
 
 
    } else {
+    filtered();
     $('.no-seed').hide();
     $('.product').hide();
     $('.product.id-<%= @filter %>').toggleClass("filtered");
@@ -17,6 +17,17 @@ $( document ).ready(function() {
   }
 
 });
+
+
+function filtered() {
+  $(".fa.fa-toggle-on").removeClass("hidden")
+}
+
+
+
+
+
+
 
 
 

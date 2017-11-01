@@ -38,7 +38,23 @@ a:hover {
   font-size: 12px;
   font-style: italic;
   font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+
+  p {
+    margin: 0;
+  }
 }
+
+.fa-toggle-on {
+  color: $blue;
+  font-size: 20px;
+  padding-right: 3px;
+}
+
+
 
 
 
