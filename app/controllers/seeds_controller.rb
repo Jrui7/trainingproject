@@ -76,31 +76,16 @@ class SeedsController < ApplicationController
 
   def popular
     @categories = Category.all
-    @seeds = []
-    seeds = Seed.all
-    seeds.each do |seed|
-      if seed.last_day?
-        @seeds << seed
-      end
-    end
+    @seeds = Seed.popular
   end
 
   def newest
     @categories = Category.all
-    @seeds = []
-    seeds = Seed.all
-    seeds.each do |seed|
-      if seed.last_day?
-        @seeds << seed
-      end
-    end
+    @seeds = Seed.newest
   end
 
 
-
   private
-
-
 
   def seed_params
     params.require(:seed).permit(:title, :description, :category_id, :url, :secondary_url, photos: [])
