@@ -20,14 +20,18 @@
               <p>Tous</p>
             </div>
           <% end %>
-          <div class="sub-title">
-            <div class="filter-icon glyphicon glyphicon-fire"></div>
-            <p>Tendances</p>
-          </div>
-          <div class="sub-title">
-            <div class="filter-icon glyphicon glyphicon-leaf"></div>
-            <p>Récents</p>
-          </div>
+          <%= link_to popular_path do %>
+            <div class="sub-title">
+              <div class="filter-icon glyphicon glyphicon-fire"></div>
+              <p>Tendances</p>
+            </div>
+          <% end %>
+          <%= link_to newest_path do %>
+            <div class="sub-title">
+              <div class="filter-icon glyphicon glyphicon-leaf"></div>
+              <p>Récents</p>
+            </div>
+          <% end %>
           <%= link_to last_day_path do %>
             <div class="sub-title">
               <div class="filter-icon glyphicon glyphicon-flash"></div>

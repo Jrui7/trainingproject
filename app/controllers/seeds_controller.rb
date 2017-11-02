@@ -3,9 +3,6 @@ class SeedsController < ApplicationController
 
 
   def index
-    #si on a rien dans les params, renvoie tous les seeds
-    #si on a des params mais pas de seed correspondant aux params, renvoie tous les seeds
-    #si on a des params et des seeds qui correspondent aux params, renvoies les seeds qui correspondent aux params
 
     @categories = Category.all
     @filter = params[:category]
@@ -67,6 +64,28 @@ class SeedsController < ApplicationController
   end
 
   def last_day
+    @categories = Category.all
+    @seeds = []
+    seeds = Seed.all
+    seeds.each do |seed|
+      if seed.last_day?
+        @seeds << seed
+      end
+    end
+  end
+
+  def popular
+    @categories = Category.all
+    @seeds = []
+    seeds = Seed.all
+    seeds.each do |seed|
+      if seed.last_day?
+        @seeds << seed
+      end
+    end
+  end
+
+  def newest
     @categories = Category.all
     @seeds = []
     seeds = Seed.all
