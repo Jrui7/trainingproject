@@ -40,8 +40,17 @@ class Seed < ApplicationRecord
   end
 
   def last_day?
-    Date.today == self.expiration
+    secs = (self.expiration - DateTime.now).to_i
+    mins = (secs / 60).to_i
+    hours = (mins / 60).to_i
+    days = (hours / 24).to_i
+    days < 1
   end
+
+
+  scope :popular, -> { order(popularity: :asc) }
+  scope :newest, -> { order(expiration: :desc)}
+
 
 
 
