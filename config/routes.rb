@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users, only: [ :show, :edit, :update, :destroy]
 
+  get 'newest', to: 'seeds#newest'
+  get 'popular', to: 'seeds#popular'
+  get 'last_day', to: 'seeds#last_day'
   get 'my_seeds', to: 'my_seedoak#my_seeds'
   get 'my_picks', to: 'my_seedoak#my_picks'
 
