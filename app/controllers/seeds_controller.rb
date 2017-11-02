@@ -66,6 +66,17 @@ class SeedsController < ApplicationController
   def destroy
   end
 
+  def last_day
+    @categories = Category.all
+    @seeds = []
+    seeds = Seed.all
+    seeds.each do |seed|
+      if seed.last_day?
+        @seeds << seed
+      end
+    end
+  end
+
 
 
   private
