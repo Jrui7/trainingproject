@@ -34,10 +34,12 @@
               <p>Dernière chance</p>
             </div>
           <% end %>
+          <%= link_to seed_path(@seeds.sample) do %>
           <div class="sub-title">
             <div class="filter-icon glyphicon glyphicon-random"></div>
             <p>Hasard</p>
           </div>
+          <% end %>
         </div>
       </div>
 
