@@ -12,11 +12,14 @@
         <div class="filter-header">
           <p>TRIER</p>
         </div>
+
         <div class="sub-categories">
-          <div class="sub-title">
-            <div class="filter-icon glyphicon glyphicon-globe"></div>
-            <p>Tous</p>
-          </div>
+          <%= link_to seeds_path do %>
+            <div class="sub-title">
+              <div class="filter-icon glyphicon glyphicon-globe"></div>
+              <p>Tous</p>
+            </div>
+          <% end %>
           <div class="sub-title">
             <div class="filter-icon glyphicon glyphicon-fire"></div>
             <p>Tendances</p>
@@ -25,10 +28,12 @@
             <div class="filter-icon glyphicon glyphicon-leaf"></div>
             <p>Récents</p>
           </div>
-          <div class="sub-title">
-            <div class="filter-icon glyphicon glyphicon-flash"></div>
-            <p>Dernière chance</p>
-          </div>
+          <%= link_to last_day_path do %>
+            <div class="sub-title">
+              <div class="filter-icon glyphicon glyphicon-flash"></div>
+              <p>Dernière chance</p>
+            </div>
+          <% end %>
           <div class="sub-title">
             <div class="filter-icon glyphicon glyphicon-random"></div>
             <p>Hasard</p>
