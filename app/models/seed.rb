@@ -56,7 +56,14 @@ class Seed < ApplicationRecord
   scope :popular, -> { order(popularity: :asc) }
   scope :newest, -> { order(expiration: :desc)}
 
+  def set_view_counter
+    self.view_counter = 0
+  end
 
+  def increment_views
+    self.view_counter += 1
+    save!
+  end
 
 
 

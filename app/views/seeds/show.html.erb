@@ -10,6 +10,7 @@
 
             <div class="title-and-pick">
               <h3><%= @seed.title %></h3>
+              <p> vues: <%=@seed.view_counter %> </p>
               <div class="seed-infos-timer">
                 <div id="timer" data-timer="<%= (@seed.expiration) %>">
                   <%= render "seeds/timer"  %>
