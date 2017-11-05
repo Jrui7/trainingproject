@@ -53,7 +53,7 @@ class Seed < ApplicationRecord
     days < 1
   end
 
-  scope :popular, -> { order(view_counter: :desc) }
+  scope :popular, -> { order(popularity: :desc) }
   scope :newest, -> { order(expiration: :desc)}
 
   def set_view_counter
@@ -62,6 +62,15 @@ class Seed < ApplicationRecord
 
   def increment_views
     self.view_counter += 1
+    save!
+  end
+
+  def set_popularity
+    self.popularity = 0
+  end
+
+  def increment_popularity
+    self.popularity = (self.view_counter + self.picks.count * 5)
     save!
   end
 
