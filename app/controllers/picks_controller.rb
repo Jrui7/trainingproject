@@ -11,8 +11,10 @@ class PicksController < ApplicationController
   def create
     @pick = Pick.new(pick_params)
     @pick.user = current_user
+    @seed = Seed.find(params[:seed_id])
     @pick.seed = Seed.find(params[:seed_id])
     if @pick.save
+      @seed.increment_popularity
       redirect_to seed_path(params[:seed_id])
     else
       @seed = @pick.seed

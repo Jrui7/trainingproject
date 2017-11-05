@@ -30,6 +30,7 @@ class SeedsController < ApplicationController
     if @seed.valid?
       @seed.set_expiration
       @seed.set_view_counter
+      @seed.set_popularity
       @seed.save
       flash[:notice] = "Votre seed est maintenant en ligne"
       redirect_to seed_path(@seed)
@@ -41,6 +42,7 @@ class SeedsController < ApplicationController
   def show
     @seed = Seed.find(params[:id])
     @seed.increment_views
+    @seed.increment_popularity
     @pick = Pick.new
     @user = current_user
     @photos = []
