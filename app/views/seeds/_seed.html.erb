@@ -3,13 +3,11 @@
   <div class="product id-<%= seed.category_id%>">
 
     <%= link_to seed_path(seed) do  %>
-      <%= cl_image_tag("#{seed.photos.first.path}", :width=>250, :height=>250, :crop=>"fill", class: "product-image")%>
+      <%= cl_image_tag("#{seed.photos.first.path}", :width=>115, :height=>115, :crop=>"fill", class: "product-image")%>
     <% end %>
 
     <div class='product-body'> <%= link_to seed_path(seed) do  %>
-      <h3> <%= seed.title %> id<%= seed.id %> </h3>
-      <p> <%= seed.view_counter %> </p>
-      <p> <%= seed.popularity %> </p>
+      <h3> <%= seed.title %></h3>
       <div class="user-testimony">
         <%= cl_image_tag(seed.user.photo.path, :crop=>"fit", class: "seeder-picture")%>
         <div class="user">
@@ -19,15 +17,28 @@
         </div>
       </div>
       <% end %>
-    </div>
-    <div class="product-right">
-      <p> <%= seed.category.name %></p>
-      <div class='product-upvote'>
-        <div class="product-arrow"></div>
-          <div class='product-count'><%= seed.picks.size %>
+
+      <div class="bottom-sexion">
+        <div class="product-category">
+          <p class="<%= seed.category.name%>"> <%= seed.category.name.upcase %></p>
+        </div>
+
+        <div class="social-overview">
+          <div class="icon-and-number">
+            <div class="glyphicon glyphicon-eye-open"></div>
+            <p><%= seed.view_counter%></p>
+          </div>
+          <div class="icon-and-number">
+            <i class="fa fa-hand-lizard-o" aria-hidden="true"></i>
+            <p><%= seed.picks.count%></p>
+          </div>
         </div>
       </div>
+
     </div>
+
+
+
 
   </div>
 
