@@ -68,6 +68,7 @@ class SeedsController < ApplicationController
   end
 
   def last_day
+    @seed_sample = Seed.all.sample
     @categories = Category.all
     @seeds = []
     seeds = Seed.all
