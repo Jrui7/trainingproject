@@ -7,7 +7,7 @@
     <% end %>
 
     <div class='product-body'> <%= link_to seed_path(seed) do  %>
-      <h3> <%= seed.title %> id<%= seed.id %> </h3>
+      <h3> <%= seed.title %></h3>
       <div class="user-testimony">
         <%= cl_image_tag(seed.user.photo.path, :crop=>"fit", class: "seeder-picture")%>
         <div class="user">

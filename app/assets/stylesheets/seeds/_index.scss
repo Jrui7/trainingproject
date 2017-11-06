@@ -167,21 +167,6 @@ a:hover {
 }
 
 
-
-.product-category{
-  display: flex;
-
-  .product-category-name {
-
-    border: 1px solid #e8e8e8;
-    color: #999999;
-    background-color: #f8f8f8;
-    border-radius: 3px;
-    padding: 0 10px 0 10px;
-  }
-}
-
-
 .user-testimony {
   font-size: 13px;
   display: flex;
@@ -213,6 +198,18 @@ a:hover {
   justify-content: space-between;
 }
 
+.product-category{
+  display: flex;
+
+  .product-category-name {
+
+    border: 1px solid #e8e8e8;
+    color: #999999;
+    border-radius: 3px;
+    padding: 0 10px 0 10px;
+  }
+}
+
 .social-overview {
   display: flex;
   align-items: flex-end;
@@ -224,7 +221,6 @@ a:hover {
     margin-left: 15px;
     border: 1px solid #e8e8e8;
     color: #999999;
-    background-color: #f8f8f8;
     border-radius: 3px;
     padding: 0 10px 0 10px;
 
