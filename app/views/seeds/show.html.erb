@@ -136,30 +136,27 @@
         </div>
 
       </div>
-      <div class="row">
-        <% if @seed.url != "" %>
-          <div class="col-xs-4 nopadding-left">
-            <iframe class="video-show" src="<%= @seed.url.gsub('watch?v=', 'embed/') %>"
-              frameborder="0">
-            </iframe>
-        </div>
-        <% end %>
-        <% if @seed.secondary_url != ""%>
-          <div class="col-xs-4">
-            <iframe class="video-show" src="<%= @seed.secondary_url.gsub('watch?v=', 'embed/') %>">
-            </iframe>
+
+      <% if @seed.url != "" %>
+       <div class="video-container">
+          <div class="row">
+            <div class="col-xs-12 col-md-4 nopadding-left">
+              <iframe class="video-show" src="<%= @seed.url.gsub('watch?v=', 'embed/') %>"
+                frameborder="0">
+              </iframe>
           </div>
-        <% end %>
-      </div>
+          <% end %>
+          <% if @seed.secondary_url != ""%>
+            <div class="col-xs-12 col-md-4">
+              <iframe class="video-show" src="<%= @seed.secondary_url.gsub('watch?v=', 'embed/') %>">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
     </div>
   </div>
-
-
-
-
-
-
-
 
 </div>
 
