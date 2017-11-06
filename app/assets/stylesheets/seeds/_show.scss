@@ -52,6 +52,10 @@
 
 #clockdiv {
   display: flex;
+
+  .smalltext {
+    font-size: 11px;
+  }
 }
 
 .dynamic-timer {
@@ -99,7 +103,6 @@
 
 .social-category {
   display: flex;
-  align-items: center;
   padding: 10px;
 
   p {
