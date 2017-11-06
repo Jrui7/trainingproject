@@ -201,13 +201,57 @@ a:hover {
 .product-category{
   display: flex;
 
-  .product-category-name {
-
+  .Sport {
     border: 1px solid #e8e8e8;
-    color: #999999;
+    color: white;
     border-radius: 3px;
     padding: 0 10px 0 10px;
+    background-color: $red;
   }
+
+  .Sorties {
+    border: 1px solid #e8e8e8;
+    color: white;
+    border-radius: 3px;
+    padding: 0 10px 0 10px;
+    background-color: $green;
+  }
+
+  .Mode {
+    border: 1px solid #e8e8e8;
+    color: white;
+    border-radius: 3px;
+    padding: 0 10px 0 10px;
+    background-color: $anis;
+  }
+
+  .Loisir {
+    border: 1px solid #e8e8e8;
+    color: white;
+    border-radius: 3px;
+    padding: 0 10px 0 10px;
+    background-color: $orange;
+  }
+
+  .Beaute {
+    border: 1px solid #e8e8e8;
+    color: white;
+    border-radius: 3px;
+    padding: 0 10px 0 10px;
+    background-color: $blue;
+  }
+
+  .Art {
+    border: 1px solid #e8e8e8;
+    color: white;
+    border-radius: 3px;
+    padding: 0 10px 0 10px;
+    background-color: $darkgray;
+  }
+
+
+
+
 }
 
 .social-overview {
