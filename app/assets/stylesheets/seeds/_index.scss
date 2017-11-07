@@ -295,6 +295,16 @@ a:hover {
 @media screen and (max-width: 480px) {
   .social-overview .icon-and-number {
     margin-left: 10px;
+
+    p {
+      font-size: 11px;
+    }
+  }
+
+  .product-category{
+    p {
+      font-size: 11px;
+    }
   }
 
 }
