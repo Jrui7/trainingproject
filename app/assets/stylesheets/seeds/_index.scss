@@ -124,9 +124,6 @@ a:hover {
 .product {
   background-color: #FFFFFF;
   display: flex;
-
-
-  padding: 20px;
   border-radius: 2px;
   transition: all 0.15s ease;
   border: 1px solid #e8e8e8;
@@ -293,6 +290,12 @@ a:hover {
 
 
 @media screen and (max-width: 480px) {
+  .product-body {
+    h3 {
+      font-size: 15px;
+    }
+  }
+
   .social-overview .icon-and-number {
     margin-left: 10px;
 
