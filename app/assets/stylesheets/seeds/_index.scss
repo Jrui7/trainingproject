@@ -172,6 +172,14 @@ a:hover {
   font-size: 13px;
   display: flex;
   align-items: center;
+
+  .fa-user-o {
+    font-size: 17px;
+    background-color: $blue;
+    border-radius: 50%;
+    padding: 10px;
+    color: white;
+  }
 }
 
 .user {

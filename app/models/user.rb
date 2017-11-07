@@ -12,4 +12,9 @@ class User < ApplicationRecord
          has_many :user_preferences
 
 
+  def has_photo?
+    self.photo?
+  end
+
+
 end
