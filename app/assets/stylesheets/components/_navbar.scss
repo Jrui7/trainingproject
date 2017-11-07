@@ -173,6 +173,7 @@
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
+
 }
 .navbar-dropdown-menu li > a {
   transition: color 0.3s ease;
@@ -225,6 +226,38 @@
     width: 30px;
   }
 
+
+  .dropdown-menu {
+
+    a{
+
+      .fa-bullhorn {
+        font-size: 15px;
+        color: #999999;
+        padding: 0;
+
+      }
+
+      .fa-hand-lizard-o {
+        font-size: 15px;
+        color: #999999;
+        padding: 0;
+      }
+
+      &:hover {
+        .fa-bullhorn {
+          background: transparent !important;
+          color: black !important;
+        }
+
+        .fa-hand-lizard-o {
+          background: transparent !important;
+          color: black !important;
+        }
+      }
+    }
+
+  }
 
 
 
