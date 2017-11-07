@@ -201,9 +201,39 @@
 
 
 @media screen and (max-width: 480px) {
+
+  #logo-text {
+  font-size: 15px;
+  }
+
+  #logo-icon {
+    font-size: 20px;
+  }
+
   .navbar-item {
     padding: 0 10px;
     font-size: 15px;
   }
 
+  .user-menu {
+    padding: 0 10px;
+  }
+
+  /* User Avatar */
+  .navbar .avatar {
+    height: 20px;
+    width: 20px;
+  }
+
+
+
+
+
+
 }
+
+
+
+
+
+
