@@ -5,4 +5,10 @@ class PagesController < ApplicationController
     @seeds = Seed.last(3)
   end
 
+  def faq
+  end
+
+  def team
+  end
+
 end
