@@ -298,6 +298,13 @@ a:hover {
 
 
 @media screen and (max-width: 480px) {
+
+  .seed-feed {
+    width: 100%;
+    margin: 0;
+  }
+
+
   .product-body {
     h3 {
       font-size: 15px;
