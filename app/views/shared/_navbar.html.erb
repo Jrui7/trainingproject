@@ -21,29 +21,13 @@
 
         <div class="navbar-item">
           <div class="dropdown">
-            <%= link_to "FAQ", "#", class: "navigation dropdown-toggle", id: "navbar-menu", "data-toggle" => "dropdown" %>
-            <ul class="dropdown-menu dropdown-menu-riht navbar-dropdown-menu">
-              <li>
-                <p>Comment ça marche</p>
-              </li>
-              <li>
-                <p>Philosophie</p>
-              </li>
-            </ul>
+            <%= link_to "FAQ", faq_path, class: "navigation dropdown-toggle", id: "navbar-menu" %>
           </div>
         </div>
 
         <div class="navbar-item">
           <div class="dropdown">
-            <%= link_to "US", "#", class: "navigation dropdown-toggle", id: "navbar-menu", "data-toggle" => "dropdown" %>
-            <ul class="dropdown-menu dropdown-menu-riht navbar-dropdown-menu">
-              <li>
-                <p>L'équipe</p>
-              </li>
-              <li>
-                <p>Nous contacter</p>
-              </li>
-            </ul>
+            <%= link_to "US", team_path, class: "navigation dropdown-toggle", id: "navbar-menu" %>
           </div>
         </div>
       </div>

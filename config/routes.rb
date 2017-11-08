@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get 'newest', to: 'seeds#newest'
   get 'popular', to: 'seeds#popular'
   get 'last_day', to: 'seeds#last_day'
+  get 'faq', to: 'pages#faq'
+  get 'team', to: 'pages#team'
   get 'my_seeds', to: 'my_seedoak#my_seeds'
   get 'my_picks', to: 'my_seedoak#my_picks'
 
