@@ -1,0 +1,37 @@
+.faq-feed {
+  max-width: 1100px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 0px;
+}
+
+.panel-group .panel {
+    margin-bottom: 10px;
+    border-radius: 2px;
+}
+
+
+ .topic {
+   background-color: $white;
+   border-radius: 2px;
+   transition: all 0.15s ease;
+   border: 1px solid #e8e8e8;
+   padding: 30px;
+
+   a {
+    text-decoration: none;
+    display: flex;
+   }
+ }
+
+
+  .panel-default > .panel-heading {
+    background-color : $white;
+  }
+
+  .panel-group .panel-heading + .panel-collapse > .panel-body, .panel-group .panel-heading + .panel-collapse > .list-group {
+    border: none;
+  }
+
+
+
