@@ -21,8 +21,10 @@ a:hover {
   }
 
 .categories {
+  flex: 0 0 15%;
   margin-right: 70px;
-
+  position: sticky;
+  top: 30px;
 
   a {
     text-decoration: none;
@@ -118,6 +120,7 @@ a:hover {
 
 
 .seed-presentation {
+  flex: 0 0 60%;
 }
 
 
