@@ -8,7 +8,6 @@
 }
 
 .team-member {
-  display: flex;
   background-color: #FFFFFF;
   display: flex;
   border-radius: 2px;
@@ -46,7 +45,26 @@
 
 
 
+}
+
+@media(max-width: 992px) {
+
+}
+
+@media(max-width: 768px) {
+
+}
+
+@media(max-width: 480px) {
+  .team-feed {
+    justify-content: center;
   }
+
+  .team-member {
+    margin: 0 0 10px 0;
+  }
+}
+
 
 
 
