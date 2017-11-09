@@ -4,7 +4,7 @@
   margin-left: auto;
   margin-bottom: 0px;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .team-member {
@@ -15,12 +15,30 @@
   transition: all 0.15s ease;
   border: 1px solid #e8e8e8;
   padding: 15px;
+  margin: 0 20px 0 0;
+
+
+  .name-function {
+    display: flex;
+    flex-direction: column;
 
     .name {
       color: $blue;
       font-size: 20px;
       margin: 0;
+      font-weight: bold;
     }
+
+    p {
+      margin-bottom: 0;
+      background-color: $blue;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 3px;
+    }
+  }
+
+
 
   }
 
