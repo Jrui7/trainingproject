@@ -26,6 +26,11 @@ class Seed < ApplicationRecord
 
   has_attachments :photos, maximum: 5
 
+  scope :popular, -> { order(popularity: :desc) }
+  scope :newest, -> { order(expiration: :desc)}
+  scope :ongoing, -> { where('expiration > ?', DateTime.now)}
+  scope :last_dayy, -> { ongoing.where('expiration < ?', DateTime.now - 1)}
+
 
   def set_expiration
     self.expiration = DateTime.now + 3.days
@@ -53,8 +58,7 @@ class Seed < ApplicationRecord
     days < 1
   end
 
-  scope :popular, -> { order(popularity: :desc) }
-  scope :newest, -> { order(expiration: :desc)}
+
 
   def set_view_counter
     self.view_counter = 0
