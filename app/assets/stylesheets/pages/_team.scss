@@ -1,0 +1,32 @@
+.team-feed {
+  max-width: 1100px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.team-member {
+  display: flex;
+  background-color: #FFFFFF;
+  display: flex;
+  border-radius: 2px;
+  transition: all 0.15s ease;
+  border: 1px solid #e8e8e8;
+  padding: 15px;
+
+    .name {
+      color: $blue;
+      font-size: 20px;
+      margin: 0;
+    }
+
+  }
+
+
+
+
+
+
+

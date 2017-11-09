@@ -1,3 +1,31 @@
 <%= render 'shared/navbar' %>
-<h3>Meet the team</h3>
-<h3>Contact us</h3>
+
+
+<div class="page-container">
+  <div class="team-feed">
+
+    <div class='team-member'>
+      <div class="team-member-picture">
+        <%= cl_image_tag("k6fgmer3qbyxcowzrney.jpg", :transformation=>[
+        {:width=>800, :height=>800, :gravity=>"face", :radius=>"max", :crop=>"crop"},
+        {:width=>200, :crop=>"scale"}
+        ]) %>
+      </div>
+      <h3 class="name"> Jorge Ruivinho</h3>
+    </div>
+    <div class='team-member'>
+      <div class="team-member-picture">
+        <%= cl_image_tag("FullSizeRender_d2tg23.jpg", :transformation=>[
+        {:width=>700, :height=>700, :gravity=>"face", :radius=>"max", :crop=>"crop"},
+        {:width=>200, :crop=>"scale"}
+        ]) %>
+      </div>
+      <h3 class="name"> Jorge Ruivinho</h3>
+    </div>
+
+  </div>
+</div>
+
+
+
+
