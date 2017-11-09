@@ -1,0 +1,56 @@
+.team-feed {
+  max-width: 1100px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 0px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  display: flex;
+  background-color: #FFFFFF;
+  display: flex;
+  border-radius: 2px;
+  transition: all 0.15s ease;
+  border: 1px solid #e8e8e8;
+  padding: 15px;
+  margin: 0 20px 0 0;
+
+
+  .name-function {
+    display: flex;
+    flex-direction: column;
+
+    .name {
+      color: $blue;
+      font-size: 20px;
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .member-title {
+      display: flex;
+
+      p {
+        border: 1px solid #e8e8e8;
+        color: white;
+        border-radius: 3px;
+        padding: 0 10px 0 10px;
+        background-color: $blue;
+        margin: 4px 0 0 0;
+
+      }
+    }
+  }
+
+
+
+  }
+
+
+
+
+
+
+

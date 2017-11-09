@@ -16,11 +16,25 @@
    border-radius: 2px;
    transition: all 0.15s ease;
    border: 1px solid #e8e8e8;
-   padding: 30px;
+
+
+  .fa {
+    font-size: 16px;
+    padding-right: 15px;
+  }
 
    a {
     text-decoration: none;
     display: flex;
+    align-items: baseline;
+    flex: 0 0 100%;
+    padding: 30px;
+    font-weight: 600;
+
+    p {
+      margin: 0;
+      font-size: 16px;
+    }
    }
  }
 
