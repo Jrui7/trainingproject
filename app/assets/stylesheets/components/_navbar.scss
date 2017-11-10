@@ -204,8 +204,8 @@
 
 @media screen and (max-width: 480px) {
 
-  .navbar {
-    padding: 10px;
+  .logo-box {
+    padding-left: 10px;
   }
 
   #logo-text {
@@ -216,13 +216,10 @@
     font-size: 20px;
   }
 
-  .navbar-item {
-    padding: 0 10px;
-    font-size: 15px;
-  }
+
 
   .user-menu {
-    padding: 0 10px;
+    padding-right: 10px;
   }
 
   /* User Avatar */
