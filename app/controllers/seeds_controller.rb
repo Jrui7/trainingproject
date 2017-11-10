@@ -70,7 +70,7 @@ class SeedsController < ApplicationController
   def last_day
     @seed_sample = Seed.ongoing.sample
     @categories = Category.all
-    @seeds = Seed.last_day.ongoing
+    @seeds = Seed.ongoing.last_day
   end
 
   def popular
@@ -80,7 +80,7 @@ class SeedsController < ApplicationController
 
   def newest
     @categories = Category.all
-    @seeds = Seed.newest.ongoing
+    @seeds = Seed.ongoing.newest
   end
 
 
