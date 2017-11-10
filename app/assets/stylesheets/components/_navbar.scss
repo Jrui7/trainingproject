@@ -1,10 +1,10 @@
 .navbar-container {
-  width: 100%;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: white;
-  transition: all 0.3s ease;
   height: 70px;
   padding: 0;
+  display: flex;
+  justify-content: center;
 
 }
 
@@ -14,14 +14,12 @@
 
 .navbar {
   max-width: 1100px;
-  margin-right: auto;
-  margin-left: auto;
+  flex: 0 0 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 70px;
   margin-bottom: 0px;
-  flex: 0 0 100%;
 
 
 }
