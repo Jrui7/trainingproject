@@ -70,13 +70,7 @@ class SeedsController < ApplicationController
   def last_day
     @seed_sample = Seed.ongoing.sample
     @categories = Category.all
-    @seeds = []
-    seeds = Seed.ongoing
-    seeds.each do |seed|
-      if seed.last_day?
-        @seeds << seed
-      end
-    end
+    @seeds = Seed.last_day.ongoing
   end
 
   def popular
@@ -86,7 +80,7 @@ class SeedsController < ApplicationController
 
   def newest
     @categories = Category.all
-    @seeds = Seed.ongoing.newest
+    @seeds = Seed.newest.ongoing
   end
 
 

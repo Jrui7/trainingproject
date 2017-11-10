@@ -29,35 +29,13 @@ class Seed < ApplicationRecord
   scope :popular, -> { order(popularity: :desc) }
   scope :newest, -> { order(expiration: :desc)}
   scope :ongoing, -> { where('expiration > ?', DateTime.now)}
-  scope :last_dayy, -> { ongoing.where('expiration < ?', DateTime.now - 1)}
+  scope :expired, -> { where('expiration < ?', DateTime.now)}
+  scope :last_day, -> { where('expiration < ?', (DateTime.now + 1.days))}
 
 
   def set_expiration
     self.expiration = DateTime.now + 3.days
   end
-
-  def remaining
-      expired? ? 0 : (self.expiration - DateTime.now)
-  end
-
-  def expired?
-    (self.expiration - DateTime.now).to_i <= 0
-  end
-
-  def ongoing?
-    !expired?
-  end
-
-
-
-  def last_day?
-    secs = (self.expiration - DateTime.now).to_i
-    mins = (secs / 60).to_i
-    hours = (mins / 60).to_i
-    days = (hours / 24).to_i
-    days < 1
-  end
-
 
 
   def set_view_counter
