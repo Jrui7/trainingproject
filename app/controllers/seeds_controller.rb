@@ -6,9 +6,9 @@ class SeedsController < ApplicationController
 
     @categories = Category.all
     @filter = params[:category]
-    @seeds = Seed.where(category: params[:category])
+    @seeds = Seed.ongoing.where(category: params[:category])
     unless @filter && @seeds.any?
-      @seeds = Seed.all
+      @seeds = Seed.ongoing
       @condition = false
     end
     respond_to do |format|
@@ -68,10 +68,10 @@ class SeedsController < ApplicationController
   end
 
   def last_day
-    @seed_sample = Seed.all.sample
+    @seed_sample = Seed.ongoing.sample
     @categories = Category.all
     @seeds = []
-    seeds = Seed.all
+    seeds = Seed.ongoing
     seeds.each do |seed|
       if seed.last_day?
         @seeds << seed
@@ -81,12 +81,12 @@ class SeedsController < ApplicationController
 
   def popular
     @categories = Category.all
-    @seeds = Seed.popular
+    @seeds = Seed.ongoing.popular
   end
 
   def newest
     @categories = Category.all
-    @seeds = Seed.newest
+    @seeds = Seed.ongoing.newest
   end
 
 
