@@ -5,7 +5,9 @@
   margin-bottom: 0px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
+
 
 .team-member {
   background-color: #FFFFFF;
@@ -14,7 +16,7 @@
   transition: all 0.15s ease;
   border: 1px solid #e8e8e8;
   padding: 15px;
-  margin: 0 20px 0 0;
+  margin: 0 20px 20px 0;
 
 
   .name-function {
@@ -56,9 +58,7 @@
 }
 
 @media(max-width: 480px) {
-  .team-feed {
-    justify-content: center;
-  }
+
 
   .team-member {
     margin: 0 0 10px 0;
