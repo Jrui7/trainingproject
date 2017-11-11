@@ -23,6 +23,7 @@ gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 
 gem 'yt', '~> 0.28.0'
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 
 group :development, :test do
   gem 'pry-byebug'
