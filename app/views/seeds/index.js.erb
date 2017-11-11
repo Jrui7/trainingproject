@@ -1,33 +1,27 @@
 $( document ).ready(function() {
 
-  filter();
-  unfilter();
+   if  (<%= @condition == false %>) {
+    filtered();
+    $('.no-seed').hide();
+    $('.seed-presentation').prepend("<p class= 'no-seed'>Pas de seed pour la catégorie sélectionnée</p>");
+    $('.sub-title.<%= @filter %>').toggleClass("inactive");
 
-});
 
-
-function filter() {
-  if  (<%= @filter %>) {
+   } else {
+    filtered();
+    $('.no-seed').hide();
     $('.product').hide();
     $('.product.id-<%= @filter %>').toggleClass("filtered");
     $('.filtered').show();
     $('.sub-title.<%= @filter %>').toggleClass("inactive");
-    $(".fa-toggle-on").removeClass("hidden");
-
   }
+
+});
+
+
+function filtered() {
+  $(".fa.fa-toggle-on").removeClass("hidden")
 }
-
-function unfilter(){
-  $(".fa-toggle-on").click(function(event){
-    event.preventDefault();
-    location.reload();
-  });
-
-}
-
-
-
-
 
 
 
