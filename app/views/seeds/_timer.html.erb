@@ -15,8 +15,6 @@
       'seconds': seconds
     };
   }
-
-
   function initializeClock(id, endtime) {
     var clock = document.getElementById(id);
     var daysSpan = clock.querySelector('.days');
@@ -46,7 +44,5 @@
   var seeddue = $('#timer').data('timer')
   var deadline = new Date(Date.parse(seeddue.replace(/-/g, '/')));
   initializeClock('clockdiv', deadline);
-
-
   </script>
 <% end %>

@@ -3,20 +3,13 @@ class SeedsController < ApplicationController
 
 
   def index
-
+    @sample = Seed.ongoing.sample
     @categories = Category.all
     @filter = params[:category]
-    @seeds = Seed.ongoing.where(category: params[:category])
-    unless @filter && @seeds.any?
-      @seeds = Seed.ongoing
-      @condition = false
-    end
-    respond_to do |format|
-      format.html {seeds_path}
-      format.js
-    end
+    @seeds = Seed.ongoing
 
   end
+
 
   def new
     @seed = Seed.new
