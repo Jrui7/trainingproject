@@ -6,21 +6,10 @@ class SeedsController < ApplicationController
     @sample = Seed.ongoing.sample
     @categories = Category.all
     @filter = params[:category]
-    if @filter
-      @seeds = Seed.ongoing.where(category: params[:category])
-    else
-      @seeds = Seed.ongoing
-
-    respond_to do |format|
-      format.html
-      format.js
-    end
-
-
-    end
-
+    @seeds = Seed.ongoing
 
   end
+
 
   def new
     @seed = Seed.new

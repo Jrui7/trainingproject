@@ -1,6 +1,7 @@
 $( document ).ready(function() {
 
   filter();
+  unfilter();
 
 });
 
@@ -19,10 +20,7 @@ function filter() {
 function unfilter(){
   $(".fa-toggle-on").click(function(event){
     event.preventDefault();
-    $.ajax({
-      type: "GET",
-      url: "<%= seeds_path%>"
-    });
+    location.reload();
   });
 
 }
