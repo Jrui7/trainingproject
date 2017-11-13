@@ -17,4 +17,9 @@ class User < ApplicationRecord
   end
 
 
+  def has_picked?(seed)
+    seed.picks.where(user: self).any?
+  end
+
+
 end

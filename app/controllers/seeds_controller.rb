@@ -38,17 +38,6 @@ class SeedsController < ApplicationController
     @seed.increment_popularity
     @pick = Pick.new
     @user = current_user
-    @photos = []
-    @seed.photos.each do |photo|
-      @photos << photo
-    end
-
-
-
-    @collections = []
-    @user.picks.each do |pick|
-      @collections << pick.seed.id
-    end
   end
 
   def update
