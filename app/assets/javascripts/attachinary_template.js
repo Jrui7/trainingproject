@@ -18,6 +18,11 @@ $(document).ready(function() {
       $("#seed_photos").click();
   });
 
+  $(".choosePhoto").click(function() {
+      $("#user_photo").click();
+  });
+
+
   $('.attachinary-input').bind('fileuploaddone', function (event) {
     $(this).addClass('has-file');
     $(this).siblings('.attachinary_container').removeClass('loading');
