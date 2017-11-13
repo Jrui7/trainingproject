@@ -11,17 +11,14 @@ class PicksController < ApplicationController
     @pick.user = current_user
     @seed = Seed.find(params[:seed_id])
     @pick.seed = Seed.find(params[:seed_id])
-    if @pick.save
+    @pick.save
       @seed.increment_popularity
       respond_to do |format|
         format.html { redirect_to seed_path(@seed) }
         format.js
       end
 
-    else
-      @seed = @pick.seed
-      render 'seeds/show'
-    end
+
 
   end
 

@@ -7,4 +7,6 @@ class Pick < ApplicationRecord
     message: "Pick non validé"
     }
 
+  validates :seed_id, uniqueness: { scope: :user_id }
+
 end

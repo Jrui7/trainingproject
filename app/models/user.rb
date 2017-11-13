@@ -18,8 +18,7 @@ class User < ApplicationRecord
 
 
   def has_picked?(seed)
-    collection = self.picks.select {|pick| pick.id == seed.id}
-    collection.any?
+    seed.picks.where(user: self).any?
   end
 
 
