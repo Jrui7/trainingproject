@@ -101,32 +101,7 @@
         <div class="pick-box col-xs-8 col-md-3">
           <div class="right-section">
             <div class="pick-section">
-              <% if @seed.picks.any? %>
-                <h3 class="pick-title text-center">
-                  Picker ce seed
-                </h3>
-              <% else %>
-                <h3 class="pick-title text-center"><%="Soyez le premier à picker" %>
-                </h3>
-              <% end %>
-              <% if @collections.include? @seed.id %>
-                <h3 class="pick-title text-center"> <%= "Vous avez déjà pické"  %> </h3>
-              <% else %>
-                <%= simple_form_for [@seed, @pick], url: seed_picks_path(@seed), :method => :post do |f| %>
-                  <div class="pick-form">
-                    <div class="price">
-                      <p><strong>Prix :</strong></p>
-                      <%= f.input_field :price, as: :integer, class: 'input-sm form-control pick', id: 'start', placeholder: 'Renseignez ici' %>
-                    </div>
-                    <div class="counter-body">
-                      <div class="counter"></div>
-                    </div>
-                    <div class="submit-pick">
-                      <%= f.submit "Enregistrer mon pick", class: "btn", id: "btn-pick" %>
-                    </div>
-                  </div>
-                <% end %>
-              <% end %>
+              <%= render "seeds/pick"%>
             </div>
           </div>
         </div>

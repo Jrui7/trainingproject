@@ -42,13 +42,6 @@ class SeedsController < ApplicationController
     @seed.photos.each do |photo|
       @photos << photo
     end
-
-
-
-    @collections = []
-    @user.picks.each do |pick|
-      @collections << pick.seed.id
-    end
   end
 
   def update

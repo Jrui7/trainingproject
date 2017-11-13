@@ -1,0 +1,21 @@
+<% if @user.has_picked?(@seed) %>
+    <h3 class="pick-title text-center"> <%= "Seed pické"  %> </h3>
+  <% else %>
+  <h3 class="pick-title text-center"><%="Soyez le premier à picker" %>
+  </h3>
+  <%= simple_form_for [@seed, @pick], url: seed_picks_path(@seed), remote: true,method: :post do |f| %>
+    <div class="pick-form">
+      <div class="price">
+        <p><strong>Prix :</strong></p>
+        <%= f.input_field :price, as: :integer, class: 'input-sm form-control pick', id: 'start', placeholder: 'Renseignez ici' %>
+      </div>
+      <div class="counter-body">
+        <div class="counter"></div>
+      </div>
+      <div class="submit-pick">
+        <%= f.submit "Enregistrer mon pick", class: "btn", id: "btn-pick" %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
