@@ -1,5 +1,5 @@
 
-<div class="container-fluid">
+<div class="container">
   <div class="row dashboard">
     <div class="col-xs-12 col-md-3">
       <div class="profile-details ">
@@ -19,13 +19,13 @@
     </div>
 
     <div class="col-xs-12 col-md-9">
-      <div class="view">
+      <div class="col-xs-12 col-md-10 view">
       <!-- Modifier mon profil -->
           <div class="tab-content" id="edit">
             <div class="view-header">
               <h1>Mes infos</h1>
             </div>
-            <div class="view-body">
+            <div class="col-xs-12 view-body">
               <div class="user-form">
                 <%= simple_form_for @user do |f| %>
                   <%= f.input :pseudo, label: "Pseudo" %>
@@ -39,7 +39,7 @@
                   <div class="input-block">
                     <%= f.input :photo, as: :attachinary, label: false, class: "upload" %>
                   </div>
-                  <%= f.button :submit, value: "Enregistrer" %>
+                  <%= f.button :submit, value: "Enregistrer", id: "update-user" %>
                 <% end %>
               </div>
             </div>

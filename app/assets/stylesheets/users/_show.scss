@@ -1,5 +1,13 @@
+.container {
+  margin-top: 50px;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
 .dashboard {
-  background-color: #E6E6E7;
+  padding: 0 25px;
+  margin: 0;
 
   .profile-details {
     border-radius: 3px;
@@ -156,30 +164,41 @@
 
   //  ----------------------------------- EDIT
 
-  .form-control {
-    -webkit-box-shadow: none;
-    box-shadow: none;
+
+
+
+  .user-form {
+    padding: 20px 20px;
+  }
+
+  label {
+    margin-right: 15px;
+    width: 10%;
   }
 
   .control-label {
-    text-align: right;
+    text-align: left;
     margin-right: 15px;
     color: #a6a6ae;
     font-weight: normal;
   }
 
-  .user-form {
-    padding: 20px 40px;
-  }
-
-  label {
-    margin-right: 15px;
-  }
-
 
   .form-group {
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+
+
   }
+
+  .form-control {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    width: 50%;
+  }
+
+
 
   .choosePhoto {
   overflow: hidden;
@@ -195,5 +214,9 @@
 
   #user_photo {
     display: none;
+  }
+
+  #update-user {
+    margin: 20px 0;
   }
 }
