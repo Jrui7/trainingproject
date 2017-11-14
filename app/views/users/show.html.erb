@@ -14,7 +14,7 @@
 
         <h2><%= current_user.pseudo %></h2>
         <div class="tab edit-tab" data-target="#edit">
-          <div class="edit-button hidden-xs">Enregistrer</div>
+          <div class="edit-button hidden-xs">Sauvegarder</div>
         </div>
       </div>
     </div>
@@ -42,7 +42,7 @@
                       <%= f.input :photo, as: :attachinary, label: false, class: "upload" %>
 
                   </div>
-                  <div class="hidden-sm hidden-md hidden-lg">
+                  <div class="hidden-sm hidden-md hidden-lg text-center">
                     <%= f.button :submit, value: "Enregistrer", id: "update-user" %>
                   </div>
                 <% end %>

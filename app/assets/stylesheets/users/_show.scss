@@ -244,12 +244,45 @@
 
     @media(max-width: 480px) {
 
+      .container {
+        margin-bottom: 0;
+      }
+
       .dashboard {
+        padding: 0;
+
+        .profile-details {
+          margin: 0 0 10px 0;
+          padding: 20px 0 0 0;
+        }
+
+        .view {
+          margin: 10px 0 0 0;
+        }
+
+        .user-form {
+          padding: 20px 5px;
+        }
+
+        .form-group {
+          justify-content: space-between;
+        }
+
+        .form-control {
+          width: 75%;
+          margin-left: 0;
+        }
+
+      }
+
+      .view-body {
         padding: 0;
       }
 
+
+
       .low-padding {
-        padding: 5px;
+        padding: 0px;
       }
 
     }
