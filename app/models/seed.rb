@@ -56,6 +56,14 @@ class Seed < ApplicationRecord
     save!
   end
 
+  def extract_seed_photos
+    collection = []
+    self.photos.each do |photo|
+      collection << photo
+    end
+    collection
+  end
+
 
 
 end
