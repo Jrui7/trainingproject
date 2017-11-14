@@ -54,11 +54,10 @@
                   </ol>
                   <!-- Wrapper for slides -->
                   <div class="carousel-inner">
+                  <% photos = @seed.extract_seed_photos %>
                     <div class="item active">
-                      <%= cl_image_tag @seed.photos.first.path, :height=>350, :crop=>"scale" %>
+                      <%= cl_image_tag photos.first.path, :height=>350, :crop=>"scale" %>
                     </div>
-                    <% photos = @seed.extract_seed_photos %>
-
 
                     <% if photos.size >= 2 %>
                       <% photos.delete_at(0) %>
