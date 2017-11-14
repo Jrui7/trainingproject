@@ -14,7 +14,7 @@
 
         <h2><%= current_user.pseudo %></h2>
         <div class="tab edit-tab" data-target="#edit">
-          <p class="edit-button">Editer</p>
+          <div class="edit-button">Enregistrer</div>
         </div>
       </div>
     </div>
@@ -35,8 +35,9 @@
                   <%= f.input :email, label: "Email" %>
 
                   <div class="photo-update">
-                      <button type="button" class="choosePhoto">Changer photo
-                      </button>
+
+
+                      <div class="btn btn-primary choosePhoto">Changer photo</div>
 
                       <%= f.input :photo, as: :attachinary, label: false, class: "upload" %>
 
