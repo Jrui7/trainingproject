@@ -61,7 +61,7 @@ class Seed < ApplicationRecord
     self.photos.each do |photo|
       collection << photo
     end
-    collection
+    return collection
   end
 
 

@@ -59,9 +59,9 @@
                     </div>
                     <% photos = @seed.extract_seed_photos %>
 
+
                     <% if photos.size >= 2 %>
                       <% photos.delete_at(0) %>
-
                       <% photos.each do |photo| %>
                         <div class="item">
                           <%= cl_image_tag photo.path, :height=>350, :crop=>"scale" %>
