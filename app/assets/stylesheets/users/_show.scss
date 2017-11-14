@@ -219,13 +219,16 @@
 
   }
 
+  .glyphicon-trash {
+    display: none;
+  }
+
   #user_photo {
     display: none;
   }
 
   #update-user {
     margin: 20px 0;
-    display: none;
   }
 }
 
@@ -243,6 +246,10 @@
 
       .dashboard {
         padding: 0;
+      }
+
+      .low-padding {
+        padding: 5px;
       }
 
     }

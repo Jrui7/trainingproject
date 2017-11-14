@@ -1,7 +1,7 @@
 
 <div class="container">
   <div class="row dashboard">
-    <div class="col-xs-12 col-md-3">
+    <div class="col-xs-12 col-md-3 low-padding">
       <div class="profile-details ">
         <div id="avatar">
           <% if current_user.photo? %>
@@ -14,12 +14,12 @@
 
         <h2><%= current_user.pseudo %></h2>
         <div class="tab edit-tab" data-target="#edit">
-          <div class="edit-button">Enregistrer</div>
+          <div class="edit-button hidden-xs">Enregistrer</div>
         </div>
       </div>
     </div>
 
-    <div class="col-xs-12 col-md-9">
+    <div class="col-xs-12 col-md-9 low-padding">
       <div class="col-xs-12 col-md-10 view">
       <!-- Modifier mon profil -->
           <div class="tab-content" id="edit">
@@ -42,9 +42,9 @@
                       <%= f.input :photo, as: :attachinary, label: false, class: "upload" %>
 
                   </div>
-
-                  <%= f.button :submit, value: "Enregistrer", id: "update-user" %>
-
+                  <div class="hidden-sm hidden-md hidden-lg">
+                    <%= f.button :submit, value: "Enregistrer", id: "update-user" %>
+                  </div>
                 <% end %>
               </div>
             </div>
