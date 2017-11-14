@@ -1,39 +1,50 @@
 
-<div class="container-fluid">
+<div class="container">
   <div class="row dashboard">
-    <div class="col-xs-12 col-md-4">
+    <div class="col-xs-12 col-md-3 low-padding">
       <div class="profile-details ">
         <div id="avatar">
           <% if current_user.photo? %>
             <%= cl_image_tag(current_user.photo.path, width: 150, height: 150, radius: :max, crop: :fill)%>
           <% else %>
-            <%= image_tag "user.jpg", id: "avatar-placeholder-img"%>
+            <i class="fa fa-user-o dropdown-toggle" aria-hidden="true" id="avatar-placeholder-img"></i>
           <% end %>
         </div>
 
+
         <h2><%= current_user.pseudo %></h2>
         <div class="tab edit-tab" data-target="#edit">
-          <p class="edit-button">Editer mes infos</p>
+          <div class="edit-button hidden-xs">Sauvegarder</div>
         </div>
       </div>
     </div>
 
-    <div class="col-xs-12 col-md-8">
-      <div class="view">
+    <div class="col-xs-12 col-md-9 low-padding">
+      <div class="col-xs-12 col-md-10 view">
       <!-- Modifier mon profil -->
           <div class="tab-content" id="edit">
             <div class="view-header">
               <h1>Mes infos</h1>
             </div>
-            <div class="view-body">
+            <div class="col-xs-12 view-body">
               <div class="user-form">
                 <%= simple_form_for @user do |f| %>
                   <%= f.input :pseudo, label: "Pseudo" %>
                   <%= f.input :first_name, label: "Prénom" %>
                   <%= f.input :last_name, label: "Nom" %>
                   <%= f.input :email, label: "Email" %>
-                  <%= f.input :photo, as: :attachinary %>
-                  <%= f.button :submit %>
+
+                  <div class="photo-update">
+
+
+                      <div class="btn btn-primary choosePhoto">Changer photo</div>
+
+                      <%= f.input :photo, as: :attachinary, label: false, class: "upload" %>
+
+                  </div>
+                  <div class="hidden-sm hidden-md hidden-lg text-center">
+                    <%= f.button :submit, value: "Enregistrer", id: "update-user" %>
+                  </div>
                 <% end %>
               </div>
             </div>

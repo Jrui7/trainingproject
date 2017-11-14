@@ -14,9 +14,20 @@ $.attachinary.config.template = '\
 ';
 
 $(document).ready(function() {
+
+  updateUserPhoto();
+
   $(".chooseFile").click(function() {
       $("#seed_photos").click();
+
   });
+
+
+
+
+
+
+
 
   $('.attachinary-input').bind('fileuploaddone', function (event) {
     $(this).addClass('has-file');
@@ -31,3 +42,17 @@ $(document).ready(function() {
     $(this).find('.attachinary-input').removeClass('has-file');
   });
 });
+
+
+function updateUserPhoto() {
+    $(".choosePhoto").click(function() {
+        $(".glyphicon.glyphicon-trash").click();
+        $("#user_photo").click();
+        $(".edit-button").click(function(){
+          $("#update-user").click();
+        })
+
+    });
+  }
+
+

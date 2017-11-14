@@ -1,11 +1,21 @@
+.container {
+  margin-top: 50px;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+
+}
+
 .dashboard {
-  background-color: #E6E6E7;
+  padding: 0 25px;
+  margin: 0;
+
+
 
   .profile-details {
     border-radius: 3px;
     background-color: #ffffff;
     margin: 20px 0;
-    height: 40vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -14,7 +24,8 @@
     padding: 20px;
     border: 1px solid #ddd;
     #avatar-placeholder-img {
-      height: 200px;
+      font-size: 100px;
+      padding: 30px;
     }
     h2 {
       font-size: 20px;
@@ -27,12 +38,12 @@
   }
 
   .edit-button {
-    color: #a6a6ae;
-    border: solid 1px #a6a6ae;
+    color: $blue;
+    border: solid 1px $blue;
     padding: 7px 10px;
-    border-radius: 2px;
+    border-radius: 0px;
     font-size: 13px;
-    margin: 10px 50px;
+
     &:hover {
       background-color: rgba(0, 0, 0, 0.03);
       text-decoration: none;
@@ -44,7 +55,6 @@
     background-color: #fff;
     border-radius: 3px;
     border: 1px solid #ddd;
-    height: fit-content;
   }
 
   .view-header {
@@ -57,7 +67,6 @@
   }
 
   .view-body {
-    height: 520px;
     overflow: auto;
   }
 
@@ -127,7 +136,9 @@
     justify-content: space-between;
   }
 
-
+  #edit {
+    height: 60vh;
+  }
 
   #review-content {
     color: rgba(136, 136, 136, 1)
@@ -158,28 +169,120 @@
 
   //  ----------------------------------- EDIT
 
-  .form-control {
-    -webkit-box-shadow: none;
-    box-shadow: none;
+
+
+  .user-form {
+    padding: 20px 20px;
+  }
+
+  label {
+    margin-right: 15px;
+    width: 15%;
   }
 
   .control-label {
-    text-align: right;
+    text-align: left;
     margin-right: 15px;
     color: #a6a6ae;
     font-weight: normal;
   }
 
-  .user-form {
-    padding: 20px 40px;
-  }
-
-  label {
-    margin-right: 15px;
-  }
-
 
   .form-group {
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+
+
+  }
+
+  .form-control {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    margin-left: 15px;
+    width: 50%;
+  }
+
+
+
+
+  .choosePhoto {
+  overflow: hidden;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  padding: 5px 14px;
+  margin: 20px 0 10px 0;
+  border-radius: 5px;
+
+  }
+
+  .glyphicon-trash {
+    display: none;
+  }
+
+  #user_photo {
+    display: none;
+  }
+
+  #update-user {
+    margin: 20px 0;
   }
 }
+
+
+@media(max-width: 992px) {
+
+  }
+
+  @media(max-width: 768px) {
+
+
+    }
+
+    @media(max-width: 480px) {
+
+      .container {
+        margin-bottom: 0;
+      }
+
+      .dashboard {
+        padding: 0;
+
+        .profile-details {
+          margin: 0 0 10px 0;
+          padding: 20px 0 0 0;
+        }
+
+        .view {
+          margin: 10px 0 0 0;
+        }
+
+        .user-form {
+          padding: 20px 5px;
+        }
+
+        .form-group {
+          justify-content: space-between;
+        }
+
+        .form-control {
+          width: 75%;
+          margin-left: 0;
+        }
+
+      }
+
+      .view-body {
+        padding: 0;
+      }
+
+
+
+      .low-padding {
+        padding: 0px;
+      }
+
+    }
