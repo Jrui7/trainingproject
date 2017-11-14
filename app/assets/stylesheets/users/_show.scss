@@ -3,11 +3,14 @@
   width: 100%;
   padding: 0;
   margin-bottom: 20px;
+
 }
 
 .dashboard {
   padding: 0 25px;
   margin: 0;
+
+
 
   .profile-details {
     border-radius: 3px;
@@ -174,7 +177,7 @@
 
   label {
     margin-right: 15px;
-    width: 10%;
+    width: 15%;
   }
 
   .control-label {
@@ -196,8 +199,10 @@
   .form-control {
     -webkit-box-shadow: none;
     box-shadow: none;
+    margin-left: 15px;
     width: 50%;
   }
+
 
 
 
@@ -205,11 +210,12 @@
   overflow: hidden;
   text-decoration: none;
   text-transform: uppercase;
-  color: $blue;
-  font-size: 14px;
+  color: #4BBFE5;
+  font-size: 12px;
   text-align: center;
   padding: 5px 14px;
-  margin-right: 15px;
+  margin: 20px 0 10px 0;
+  border-radius: 5px;
 
   }
 

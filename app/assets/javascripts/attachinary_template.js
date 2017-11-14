@@ -14,13 +14,19 @@ $.attachinary.config.template = '\
 ';
 
 $(document).ready(function() {
+
+  updateUserPhoto();
+
   $(".chooseFile").click(function() {
       $("#seed_photos").click();
+
   });
 
-  $(".choosePhoto").click(function() {
-      $("#user_photo").click();
-  });
+
+
+
+
+
 
 
   $('.attachinary-input').bind('fileuploaddone', function (event) {
@@ -36,3 +42,14 @@ $(document).ready(function() {
     $(this).find('.attachinary-input').removeClass('has-file');
   });
 });
+
+
+function updateUserPhoto() {
+    $(".choosePhoto").click(function() {
+        $(".glyphicon.glyphicon-trash").click();
+        $("#user_photo").click();
+
+    });
+  }
+
+

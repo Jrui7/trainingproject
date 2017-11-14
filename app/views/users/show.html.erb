@@ -11,9 +11,10 @@
           <% end %>
         </div>
 
+
         <h2><%= current_user.pseudo %></h2>
         <div class="tab edit-tab" data-target="#edit">
-          <p class="edit-button">Editer mes infos</p>
+          <p class="edit-button">Editer</p>
         </div>
       </div>
     </div>
@@ -32,10 +33,17 @@
                   <%= f.input :first_name, label: "Prénom" %>
                   <%= f.input :last_name, label: "Nom" %>
                   <%= f.input :email, label: "Email" %>
-                  <div class="input-block">
-                    <%= f.input :photo, as: :attachinary, label: false, class: "upload" %>
+
+                  <div class="photo-update">
+                      <button type="button" class="choosePhoto">Changer photo
+                      </button>
+
+                      <%= f.input :photo, as: :attachinary, label: false, class: "upload" %>
+
                   </div>
+
                   <%= f.button :submit, value: "Enregistrer", id: "update-user" %>
+
                 <% end %>
               </div>
             </div>
