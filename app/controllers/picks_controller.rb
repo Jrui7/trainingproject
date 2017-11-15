@@ -4,13 +4,17 @@ class PicksController < ApplicationController
     @picks = current_user.picks
   end
 
+  def new
+    @pick = Pick.new
+    @seed = Seed.find(params[:seed_id])
+    @user = current_user
+    @pick.user = current_user
+    @pick.seed = Seed.find(params[:seed_id])
+
+  end
 
   def create
     @pick = Pick.new(pick_params)
-    @user = current_user
-    @pick.user = current_user
-    @seed = Seed.find(params[:seed_id])
-    @pick.seed = Seed.find(params[:seed_id])
     @pick.save
       @seed.increment_popularity
       respond_to do |format|

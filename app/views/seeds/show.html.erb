@@ -1,129 +1,113 @@
 
 
 <div class="page-container">
+
   <div class="two-sections">
-    <div class="container">
-      <div class="row first">
-
-        <div class="col-xs-12 col-md-9 nopadding-left">
-          <div class="left-section">
-
-            <div class="title-and-pick">
-              <h1><%= @seed.title %></h1>
-              <div class="seed-infos-timer">
-                <div id="timer" data-timer="<%= (@seed.expiration) %>">
-                  <%= render "seeds/timer"  %>
-                  <div id="clockdiv">
-                    <div class="dynamic-timer">
-                      <div class="smalltext">Days</div>
-                      <span class="days"></span>
-                    </div>
-                    <div class="dynamic-timer">
-                      <div class="smalltext">Hours</div>
-                      <span class="hours"></span>
-                    </div>
-                    <div class="dynamic-timer">
-                      <div class="smalltext">Minutes</div>
-                      <span class="minutes"></span>
-                    </div>
-                    <div class="dynamic-timer">
-                      <div class="smalltext">Seconds</div>
-                      <span class="seconds"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+    <h1><%= @seed.title %></h1>
+      <%= link_to "Pick-it", new_seed_pick_path(@seed) %>
+      <div class="seed-infos-timer">
+        <div id="timer" data-timer="<%= (@seed.expiration) %>">
+          <%= render "seeds/timer"  %>
+          <div id="clockdiv">
+            <div class="dynamic-timer">
+              <div class="smalltext">Days</div>
+              <span class="days"></span>
             </div>
-
-
-            <div class="seed-media">
-              <div class="seed-photos">
-
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                  <!-- Indicators -->
-                  <ol class="carousel-indicators">
-                    <% turns = @seed.photos.size - 1 %>
-                    <% slide_index = 1 %>
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <% if @seed.photos.size > 1 %>
-                      <% turns.times do  %>
-                        <li data-target="#myCarousel" data-slide-to="<%= slide_index%>"></li>
-                        <% slide_index += 1 %>
-                      <% end %>
-                    <% end %>
-                  </ol>
-                  <!-- Wrapper for slides -->
-                  <div class="carousel-inner">
-                  <% photos = @seed.extract_seed_photos %>
-                    <div class="item active">
-                      <%= cl_image_tag photos.first.path, :height=>350, :crop=>"scale" %>
-                    </div>
-
-                    <% if photos.size >= 2 %>
-                      <% photos.delete_at(0) %>
-                      <% photos.each do |photo| %>
-                        <div class="item">
-                          <%= cl_image_tag photo.path, :height=>350, :crop=>"scale" %>
-                        </div>
-                      <% end %>
-                    <% end %>
-                  </div>
-
-                  <!-- Left and right controls -->
-
-                </div>
-              </div>
-
-              <div class="seed-social">
-                <div class="social-category">
-                  <div class="filter-icon glyphicon glyphicon-eye-open"></div>
-                  <p><%=@seed.view_counter%></p>
-                </div>
-                <div class="social-category">
-                  <div class="filter-icon glyphicon glyphicon-share-alt"></div>
-                  <p>Partager</p>
-                </div>
-                <div class="social-category">
-                  <div class="filter-icon glyphicon glyphicon-exclamation-sign"></div>
-                  <p>Signaler</p>
-                </div>
-              </div>
-
+            <div class="dynamic-timer">
+              <div class="smalltext">Hours</div>
+              <span class="hours"></span>
+            </div>
+            <div class="dynamic-timer">
+              <div class="smalltext">Minutes</div>
+              <span class="minutes"></span>
+            </div>
+            <div class="dynamic-timer">
+              <div class="smalltext">Seconds</div>
+              <span class="seconds"></span>
             </div>
           </div>
         </div>
-
-        <div class="pick-box col-xs-8 col-md-3">
-          <div class="right-section">
-            <div class="pick-section">
-              <%= render "seeds/pick"%>
-            </div>
-          </div>
-        </div>
-
       </div>
 
-      <% if @seed.url != "" %>
-       <div class="video-container">
-          <div class="row">
-            <div class="col-xs-12 col-md-4 nopadding-left">
-              <iframe class="video-show" src="<%= @seed.url.gsub('watch?v=', 'embed/') %>"
-                frameborder="0">
-              </iframe>
-          </div>
-          <% end %>
-          <% if @seed.secondary_url != ""%>
-            <div class="col-xs-12 col-md-4">
-              <iframe class="video-show" src="<%= @seed.secondary_url.gsub('watch?v=', 'embed/') %>">
-              </iframe>
+    <div class="row first">
+
+      <div class="col-xs-12 col-md-7 nopadding-left">
+        <div class="left-section">
+          <div class="seed-media">
+            <div class="seed-photos">
+              <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  <% turns = @seed.photos.size - 1 %>
+                  <% slide_index = 1 %>
+                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                  <% if @seed.photos.size > 1 %>
+                    <% turns.times do  %>
+                      <li data-target="#myCarousel" data-slide-to="<%= slide_index%>"></li>
+                      <% slide_index += 1 %>
+                    <% end %>
+                  <% end %>
+                </ol>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                <% photos = @seed.extract_seed_photos %>
+                  <div class="item active">
+                    <%= cl_image_tag photos.first.path, :height=>300, :crop=>"scale" %>
+                  </div>
+                  <% if photos.size >= 2 %>
+                    <% photos.delete_at(0) %>
+                    <% photos.each do |photo| %>
+                      <div class="item">
+                        <%= cl_image_tag photo.path, :height=>300, :crop=>"scale" %>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <div class="seed-social">
+              <div class="social-category">
+                <div class="filter-icon glyphicon glyphicon-eye-open"></div>
+                <p><%=@seed.view_counter%></p>
+              </div>
+              <div class="social-category">
+                <div class="filter-icon glyphicon glyphicon-share-alt"></div>
+                <p>Partager</p>
+              </div>
+              <div class="social-category">
+                <div class="filter-icon glyphicon glyphicon-exclamation-sign"></div>
+                <p>Signaler</p>
+              </div>
             </div>
           </div>
         </div>
-      <% end %>
+      </div>
+
+
+      <div class="col-xs-12 col-md-5">
+        <div class="right-section">
+          <% if @seed.url != "" %>
+            <div class="video-container">
+              <iframe allowfullscreen class="video" src="<%= @seed.url.gsub('watch?v=', 'embed/') %>"
+                    frameborder="0">
+              </iframe>
+            </div>
+        <% end %>
+        <% if @seed.secondary_url != "" %>
+          <div class="video-container">
+            <iframe allowfullscreen class="video" src="<%= @seed.url.gsub('watch?v=', 'embed/') %>"
+                  frameborder="0">
+            </iframe>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+
+
 
     </div>
   </div>
-
 </div>
 
 
