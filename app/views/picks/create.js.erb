@@ -1,4 +1,5 @@
 $(document).ready(function(){
-  $(".pick-section").html('<%= j render 'seeds/pick', user: @user %>')
+  $("#close-modal").click();
+  $(".pick-section").html('<%= j render 'seeds/pick-section', user: @user %>')
 
 })
