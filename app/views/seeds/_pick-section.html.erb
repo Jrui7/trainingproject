@@ -1,5 +1,5 @@
 <% if @user.has_picked?(@seed) %>
-  <p>Seed pické !</p>
+  <p class="has_picked">Seed pické</p>
 <% else %>
   <%= link_to "#myModal", data: { toggle: "modal" } do%>
     <div class="pick-link">
