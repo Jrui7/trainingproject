@@ -34,12 +34,9 @@
                 </div>
               </div>
             </div>
-            <%= link_to "#myModal", data: { toggle: "modal" } do%>
-              <div class="pick-link">
-                <i class="fa fa-hand-lizard-o" aria-hidden="true"> </i>
-                <p>Pick it</p>
+              <div class="pick-section">
+                <%= render "seeds/pick-section" %>
               </div>
-            <% end %>
           </div>
         </div>
       </div>
@@ -58,14 +55,14 @@
             <div class="modal-body">
               <div class="pick-box col-xs-8 col-md-3">
                 <div class="right-section">
-                  <div class="pick-section">
-                    <%= render "seeds/pick"%>
+                  <div class="pick-modal">
+                    <%= render "seeds/pick-form"%>
                   </div>
                 </div>
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" id="close-modal" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
           </div>
 
