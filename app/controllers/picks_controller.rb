@@ -10,7 +10,10 @@ class PicksController < ApplicationController
     @pick = @seed.picks.new(pick_params)
     if @pick.save
       @seed.increment_popularity
-      redirect_to seed_path(@seed)
+      respond_to do |format|
+        format.html { redirect_to seed_path(@seed) }
+        format.js
+      end
     end
   end
 
