@@ -5,20 +5,61 @@
  background-color: #F9F9F9;
 
 
-  .first {
-    padding: 0;
-    margin: 0;
-  }
 
-  .two-sections {
+
+  .page-sections {
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 0px;
     width: 1100px;
+  }
 
-     h1 {
-      font-size: 22px;
-      font-weight: bold;
+  .head {
+
+    .title {
+       h1 {
+        font-size: 22px;
+        font-weight: bold;
+        margin: 0;
+      }
+    }
+
+    .timer-and-pick {
+      display: flex;
+      align-items: center;
+      padding: 5px 0 15px 0;
+
+    }
+
+
+
+
+    .pick-link {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+
+
+      p {
+        margin: 0 0 0 4px;
+        font-size: 18px;
+      }
+    }
+
+    .fa-hand-lizard-o {
+      font-size: 20px;
+      background-color: $blue;
+      border-radius: 50%;
+      padding: 10px;
+      color: white;
+
+        a {
+        text-decoration: none;
+         &:hover{
+          text-decoration: none;
+          color: white;
+         }
+      }
     }
 
     .seed-infos-timer {
@@ -43,10 +84,15 @@
       padding: 0 10px;
       color: $red;
     }
-
   }
 
 
+
+
+  .body {
+    padding: 0;
+    margin: 0;
+  }
 
 
   .left-section {
@@ -117,6 +163,7 @@
       width: 100%;
       height: 0;
       padding-bottom: 56.25%;
+      margin-bottom: 20px;
   }
   .video {
       position: absolute;

@@ -2,36 +2,79 @@
 
 <div class="page-container">
 
-  <div class="two-sections">
-    <h1><%= @seed.title %></h1>
-      <%= link_to "Pick-it", new_seed_pick_path(@seed) %>
-      <div class="seed-infos-timer">
-        <div id="timer" data-timer="<%= (@seed.expiration) %>">
-          <%= render "seeds/timer"  %>
-          <div id="clockdiv">
-            <div class="dynamic-timer">
-              <div class="smalltext">Days</div>
-              <span class="days"></span>
+  <div class="page-sections">
+
+    <div class="head">
+      <div class="title">
+        <h1><%= @seed.title %></h1>
+      </div>
+      <div class="row head">
+        <div class="col-xs-12 col-sm-7">
+          <div class="timer-and-pick">
+            <div class="seed-infos-timer">
+              <div id="timer" data-timer="<%= (@seed.expiration) %>">
+                <%= render "seeds/timer"  %>
+                <div id="clockdiv">
+                  <div class="dynamic-timer">
+                    <div class="smalltext">Days</div>
+                    <span class="days"></span>
+                  </div>
+                  <div class="dynamic-timer">
+                    <div class="smalltext">Hours</div>
+                    <span class="hours"></span>
+                  </div>
+                  <div class="dynamic-timer">
+                    <div class="smalltext">Minutes</div>
+                    <span class="minutes"></span>
+                  </div>
+                  <div class="dynamic-timer">
+                    <div class="smalltext">Seconds</div>
+                    <span class="seconds"></span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="dynamic-timer">
-              <div class="smalltext">Hours</div>
-              <span class="hours"></span>
-            </div>
-            <div class="dynamic-timer">
-              <div class="smalltext">Minutes</div>
-              <span class="minutes"></span>
-            </div>
-            <div class="dynamic-timer">
-              <div class="smalltext">Seconds</div>
-              <span class="seconds"></span>
-            </div>
+            <%= link_to "#myModal", data: { toggle: "modal" } do%>
+              <div class="pick-link">
+                <i class="fa fa-hand-lizard-o" aria-hidden="true"> </i>
+                <p>Pick it</p>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
+    </div>
 
-    <div class="row first">
+    <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
 
-      <div class="col-xs-12 col-md-7 nopadding-left">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+              <div class="pick-box col-xs-8 col-md-3">
+                <div class="right-section">
+                  <div class="pick-section">
+                    <%= render "seeds/pick"%>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    <div class="row body">
+
+      <div class="col-xs-12 col-sm-7 nopadding-left">
         <div class="left-section">
           <div class="seed-media">
             <div class="seed-photos">
@@ -83,25 +126,26 @@
         </div>
       </div>
 
-
-      <div class="col-xs-12 col-md-5">
-        <div class="right-section">
-          <% if @seed.url != "" %>
+      <% if (@seed.url != "") || (@seed.secondary_url != "") %>
+        <div class="col-xs-12 col-sm-5">
+          <div class="right-section">
+            <% if @seed.url != "" %>
+              <div class="video-container">
+                <iframe allowfullscreen class="video" src="<%= @seed.url.gsub('watch?v=', 'embed/') %>"
+                      frameborder="0">
+                </iframe>
+              </div>
+          <% end %>
+          <% if @seed.secondary_url != "" %>
             <div class="video-container">
-              <iframe allowfullscreen class="video" src="<%= @seed.url.gsub('watch?v=', 'embed/') %>"
+              <iframe allowfullscreen class="video" src="<%= @seed.secondary_url.gsub('watch?v=', 'embed/') %>"
                     frameborder="0">
               </iframe>
             </div>
-        <% end %>
-        <% if @seed.secondary_url != "" %>
-          <div class="video-container">
-            <iframe allowfullscreen class="video" src="<%= @seed.url.gsub('watch?v=', 'embed/') %>"
-                  frameborder="0">
-            </iframe>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
-    </div>
+    <% end %>
 
 
 
