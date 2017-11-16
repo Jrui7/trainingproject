@@ -44,7 +44,7 @@
 
     <!-- Modal -->
       <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-sm">
 
           <!-- Modal content-->
           <div class="modal-content">
@@ -88,13 +88,58 @@
                 <div class="carousel-inner">
                 <% photos = @seed.extract_seed_photos %>
                   <div class="item active">
-                    <%= cl_image_tag photos.first.path, :height=>300, :crop=>"scale" %>
+                    <%= link_to "#photo#{@seed.id}first", data: {toggle: "modal"} do %>
+                      <%= cl_image_tag photos.first.path, :height=>300, :crop=>"scale" %>
+                    <% end %>
                   </div>
+                  <!-- Modal -->
+                  <div class="modal fade" id="photo<%=@seed.id%>first" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title"><%= @seed.title %> </h4>
+                        </div>
+                        <div class="modal-body">
+                              <div class="img-modal">
+                                <%= cl_image_tag photos.first.path, :height=>400, :crop=>"scale" %>
+                              </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" id="close-modal" class="btn btn-default text-center" data-dismiss="modal">Fermer</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                   <% if photos.size >= 2 %>
                     <% photos.delete_at(0) %>
-                    <% photos.each do |photo| %>
+                    <% photos.each_with_index do |photo, i| %>
                       <div class="item">
-                        <%= cl_image_tag photo.path, :height=>300, :crop=>"scale" %>
+                        <%= link_to "#photo#{@seed.id}#{i}", data: {toggle: "modal"} do %>
+                          <%= cl_image_tag photo.path, :height=>300, :crop=>"scale" %>
+                        <% end %>
+                      </div>
+                      <!-- Modal -->
+                      <div class="modal fade" id="photo<%=@seed.id%><%=i%>" role="dialog">
+                        <div class="modal-dialog modal-lg">
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title"><%= @seed.title %> </h4>
+                            </div>
+                            <div class="modal-body">
+                                  <div class="img-modal">
+                                    <%= cl_image_tag photos.first.path, :height=>400, :crop=>"scale" %>
+                                  </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" id="close-modal" class="btn btn-default text-center" data-dismiss="modal">Fermer</button>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     <% end %>
                   <% end %>
