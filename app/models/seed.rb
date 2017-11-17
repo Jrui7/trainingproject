@@ -4,6 +4,8 @@ class Seed < ApplicationRecord
   belongs_to :category
   belongs_to :user
   has_many :picks
+  has_many :signal_seed
+
 
   validates :title,
     presence: {
