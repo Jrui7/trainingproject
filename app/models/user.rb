@@ -10,6 +10,8 @@ class User < ApplicationRecord
          has_many :picks
          has_attachment :photo
          has_many :user_preferences
+         has_many :signal_seed
+
 
 
   def has_photo?
@@ -19,6 +21,10 @@ class User < ApplicationRecord
 
   def has_picked?(seed)
     seed.picks.where(user: self).any?
+  end
+
+  def has_signaled?(seed)
+      seed.signal_seed.where(user: self).any?
   end
 
 
