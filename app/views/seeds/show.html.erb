@@ -166,19 +166,9 @@
                 <p>Partager</p>
               </div>
               <div class="social-category">
-                <%if current_user.has_signaled?(@seed) %>
-                  <%= link_to signal_seed_path(current_user.signal_seed.where(seed: @seed).first), method: :delete do %>
-                    <div class="filter-icon glyphicon glyphicon-exclamation-sign"></div>
-                    <p>Signaler</p>
-                    <%= @seed.signal_seed.size %>
-                  <% end %>
-                <% else %>
-                  <%= link_to seed_signal_seeds_path(@seed), method: :post do %>
-                  <div class="filter-icon glyphicon glyphicon-exclamation-sign"></div>
-                  <p>Signaler</p>
-                  <%= @seed.signal_seed.size %>
-                  <% end %>
-                <% end %>
+                <div class="signal">
+                  <%= render "signal_seeds/signal" %>
+                </div>
               </div>
             </div>
           </div>
