@@ -98,7 +98,7 @@ a:hover {
   display: flex;
   align-items: center;
   font-size: 13px;
-  transition: all 0.15s ease;
+  transition: all 0.5s;
   padding: 5px 13px 5px 13px;
   margin-bottom: 2px;
   box-shadow: 0 1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(0,0,0,0.07);
@@ -107,9 +107,6 @@ a:hover {
   box-shadow: 0 5px 10px rgba(0,0,0,0.25), 2px 5px 5px rgba(0,0,0,0.22);
   background-color: #FFFFFF;
   padding: 5px 13px 5px 13px;
-  border: 1px;
-  border-style: solid;
-  border-color: #e8e8e8;
   margin-bottom: 2px;
 }
   a {
