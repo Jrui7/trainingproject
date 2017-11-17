@@ -19,6 +19,7 @@
     margin: 0;
 
     .title {
+      padding: 0 0 0 5px;
        h1 {
         font-size: 22px;
         font-weight: bold;
@@ -98,7 +99,7 @@
 
     #clockdiv {
       display: flex;
-      padding: 0 0 0 15px;
+      padding: 0 0 0 5px;
 
       .smalltext {
         font-size: 11px;
@@ -221,7 +222,6 @@
 
   .pick-seed {
     display: flex;
-    margin-left: 20px;
 
     a {
       text-decoration: none;
@@ -317,39 +317,41 @@
       padding: 20px 10px;
     }
 
-    .page-container .head .pick-link {
-            display: flex;
-            align-items: center;
-            margin-left: 15px;
-            text-decoration: none;
-            background-color: $blue;
+    .page-container .head  {
+      .pick-link {
+      display: flex;
+      align-items: center;
+      margin-left: 15px;
+      text-decoration: none;
+      background-color: $blue;
 
 
-            .fa-hand-lizard-o {
-              font-size: 15px;
-              color: white;
-              padding: 0;
-            }
+        .fa-hand-lizard-o {
+          font-size: 15px;
+          color: white;
+          padding: 0;
+        }
 
 
-            p {
-              margin: 0 0 0 10px;
-              font-size: 15px;
-              color: white;
-            }
+        p {
+          margin: 0 0 0 10px;
+          font-size: 14px;
+          color: white;
+        }
+      }
 
-            .has_picked {
-              background-color: $orange;
-              border-radius: 4px;
-              color: white;
-              margin: 0;
-              text-transform: uppercase;
-              padding: 10px;
-              margin-left: 15px;
-            }
+      .has_picked {
+        background-color: $orange;
+        border-radius: 4px;
+        color: white;
+        margin: 0;
+        text-transform: uppercase;
+        padding: 6px;
+        margin-left: 15px;
+      }
 
 
-          }
+    }
 
 
   }
