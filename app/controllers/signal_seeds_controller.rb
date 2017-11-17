@@ -10,11 +10,12 @@ class SignalSeedsController < ApplicationController
   end
 
   def destroy
-    @seed = Seed.find(params[:id])
     unsignal = SignalSeed.find(params[:id])
+    @seed = unsignal.seed
     unsignal.destroy
     respond_to do |format|
       format.html {redirect_to seed_path(@seed)}
+      format.js
     end
   end
 
