@@ -67,7 +67,7 @@
 
     <div class="row body">
 
-      <div class="col-xs-12 col-sm-7 nopadding-left">
+      <div class="col-xs-12 col-sm-7 nopadding-left nopadding-right">
         <div class="left-section">
           <div class="seed-media">
             <div class="seed-photos">
@@ -85,7 +85,7 @@
                   <% end %>
                 </ol>
                 <!-- Wrapper for slides -->
-                <div class="carousel-inner">
+                <div class="carousel-inner" role="listbox" style=" width:100%; height: 310px !important;">
                 <% photos = @seed.extract_seed_photos %>
                   <div class="item active">
                     <%= link_to "#photo#{@seed.id}first", data: {toggle: "modal"} do %>
@@ -165,7 +165,7 @@
       </div>
 
       <% if (@seed.url != "") || (@seed.secondary_url != "") %>
-        <div class="col-xs-12 col-sm-5">
+        <div class="col-xs-12 col-sm-5 nopadding-left nopadding-right">
           <div class="right-section">
             <% if @seed.url != "" %>
               <div class="video-container">

@@ -131,7 +131,7 @@
     box-shadow: 0 1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(0,0,0,0.07);
     background-color: #FFFFFF;
     border-radius: 4px;
-    padding: 20px 20px 5px 20px;
+    padding: 20px 0px;
     margin-right: 20px;
     border: 1px solid #e8e8e8;
 
@@ -183,7 +183,6 @@
     background-color: #FFFFFF;
     border-radius: 4px;
     padding: 20px;
-    margin-right: 20px;
     border: 1px solid #e8e8e8;
     width: 100%;
 
@@ -289,4 +288,30 @@
     border-radius: 50%;
     height:100px;
     vertical-align: middle;
+  }
+
+
+@media(max-width: 992px) {
+
+  }
+
+  @media(max-width: 768px) {
+
+
+    }
+
+    @media(max-width: 480px) {
+
+      .page-container .head .title h1 {
+          font-size: 17px;
+          font-weight: bold;
+          margin: 0 0 5px 5px;
+      }
+
+    .page-container .left-section {
+      margin-right: 0px;
+      padding: 20px 10px;
+    }
+
+
   }
