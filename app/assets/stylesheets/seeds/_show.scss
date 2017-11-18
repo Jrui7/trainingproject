@@ -185,6 +185,13 @@
       }
     }
 
+    .signal {
+      a {
+      text-decoration: none;
+      color: inherit;
+      }
+    }
+
     .seed-social {
       display: flex;
       justify-content: center;
@@ -198,6 +205,20 @@
       p {
         margin: 0;
       }
+    }
+
+    .signal-box {
+      display: flex;
+      align-items: baseline;
+    }
+
+    .media-filter-icon {
+      padding: 0 5px;
+    }
+
+    .action-count {
+      padding: 0 5px;
+
     }
 
   }
