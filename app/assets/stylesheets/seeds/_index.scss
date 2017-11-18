@@ -67,7 +67,19 @@ a:hover {
 .categories-icon {
       height: 25px;
       margin-right: 15px;
-    }
+
+}
+
+.name-and-count {
+  display: flex;
+  align-items: flex-start;
+}
+
+.number-of-seeds {
+  padding-left: 4px;
+  font-size: 12px;
+
+}
 
 .filter-icon {
   margin-right: 10px;
