@@ -11,6 +11,7 @@ function filter() {
     $('.product.id-<%= @filter %>').toggleClass("filtered");
     $('.filtered').show();
     $('.sub-title.<%= @filter %>').toggleClass("inactive");
+    $(".number-of-seeds.<%= @filter %>").toggleClass("hidden");
     $(".fa-toggle-on").removeClass("hidden");
 
   }
