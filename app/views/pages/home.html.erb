@@ -10,16 +10,18 @@
       <div id="logo-home">Seedoak</div>
       <span class="glyphicon glyphicon-leaf", id="logo-home"></span>
     </div>
-    <ul class="nav">
-      <li><a href="#">Features</a></li>
-      <li><%= link_to "Connectez-vous", seeds_path, class: "sign-in" %></li>
-    </ul>
+    <div class="log-in-home">
+      <%= render "devise/sessions/login" %>
+    </div>
   </header>
   <div class="banner-content">
     <div class="enter">
       <h1>Les meilleures nouveautés</h1>
       <%= link_to "Inscrivez-vous", new_user_registration_path, class: "btn btn-primary btn-lg " %>
     </div>
+  </div>
+  <div class="homer-footer">
+    <p>T</p>
   </div>
 </div>
 
