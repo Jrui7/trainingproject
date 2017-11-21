@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   mount Attachinary::Engine => "/attachinary"
 
-  root to: 'pages#home'
+
+
+  root to: "devise/sessions#new", constraints: lambda { |r| r.env["warden"].authenticate? }
+      root to: 'pages#home'
 
   devise_for :users
   resources :seeds, shallow: true do
@@ -20,3 +23,4 @@ Rails.application.routes.draw do
   get 'my_picks', to: 'my_seedoak#my_picks'
 
 end
+
