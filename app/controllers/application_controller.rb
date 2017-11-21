@@ -17,5 +17,14 @@ class ApplicationController < ActionController::Base
   { host: ENV["HOST"] || "localhost:3000" }
   end
 
+  private
+    def authenticate_user!
+      if user_signed_in?
+        super
+      else
+        redirect_to root_path, notice: "Vous devez vous identifier ou créér un compte pour commencer" if request.original_fullpath != root_path
+      end
+    end
+
 
 end

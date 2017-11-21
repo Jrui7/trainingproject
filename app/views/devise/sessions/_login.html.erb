@@ -10,9 +10,11 @@
     </div>
     <div class="password">
       <%= f.password_field :password, class: "password-input" %>
-      <%= link_to "Forgot your password?", new_password_path(:user) %>
+      <%= link_to "Forgot your password?", new_password_path(:user), class: "forgot-link" %>
     </div>
+    <div class="validate-zone">
     <%= f.submit 'Sign in', class: "form-action" %>
+    </div>
   </div>
 <% end %>
 

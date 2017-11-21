@@ -52,9 +52,32 @@
   display: flex;
 }
 
+.email {
+  padding: 10px;
+}
+
+#user_email {
+  background-color: #FFF;
+}
+
+.remember-label {
+  color: white;
+}
+
 .password {
+  padding: 10px;
   display: flex;
   flex-direction: column;
+}
+
+.forgot-link {
+  text-decoration: none;
+  color: white;
+}
+
+
+.validate-zone {
+  padding: 10px;
 }
 
 
