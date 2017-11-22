@@ -3,8 +3,11 @@ Rails.application.routes.draw do
 
 
 
-  root to: "devise/sessions#new", constraints: lambda { |r| r.env["warden"].authenticate? }
-      root to: 'pages#home'
+  authenticated :user do
+    root :to => 'seeds#index', :as => :authenticated_root
+  end
+  root :to => redirect('/users/sign_in')
+
 
   devise_for :users
   resources :seeds, shallow: true do
