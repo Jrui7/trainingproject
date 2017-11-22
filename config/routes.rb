@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   mount Attachinary::Engine => "/attachinary"
 
-  root to: 'pages#home'
+
+
+  authenticated :user do
+    root :to => 'seeds#index', :as => :authenticated_root
+  end
+  root :to => redirect('/users/sign_in')
+
 
   devise_for :users
   resources :seeds, shallow: true do
@@ -20,3 +26,4 @@ Rails.application.routes.draw do
   get 'my_picks', to: 'my_seedoak#my_picks'
 
 end
+
