@@ -105,10 +105,18 @@
   .form-space {
     box-shadow: 0 1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(0,0,0,0.07);
     background-color: #E1F8F8;
-    border-radius: 4px;
-    padding: 70px 70px;
+    padding: 120px;
     border: 1px solid #e8e8e8;
+    border-radius: 50%;
 
+  }
+
+  h3 {
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    color: $red;
+    font-size: 20px;
+    font-weight: bold;
   }
 
   #new_user {
@@ -119,10 +127,13 @@
   input {
     margin: 7px;
     padding: 0 5px 0 5px;
+    font-size: 13px;
   }
 
   .btn-primary {
     padding: 10px;
+    font-size: 17px;
+    margin-top: 30px;
   }
 
 }
