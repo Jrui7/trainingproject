@@ -35,15 +35,15 @@
 
       <div class="form-xs hidden">
         <div class="form-login-xs hidden">
-          <a href="#">
+          <%= link_to root_path do %>
             <span class="glyphicon glyphicon-remove"></span>
-          </a>
+          <% end %>
           <%= render "devise/sessions/login" %>
         </div>
         <div class="form-sign-up-xs hidden">
-          <a href="#">
+          <%= link_to root_path do %>
             <span class="glyphicon glyphicon-remove"></span>
-          </a>
+          <% end %>
           <%= render "devise/sessions/sign-up" %>
         </div>
       </div>
