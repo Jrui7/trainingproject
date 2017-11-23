@@ -1,9 +1,18 @@
+.page {
+  width: 100%;
+
+  .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
 .form-post {
   background: white;
   margin-top: 50px;
   padding: 20px;
   border-radius: 5px;
-  border: 1px solid $blue;
+  border: 1px solid #e8e8e8;
 
   .form-group {
     margin-bottom: 0;

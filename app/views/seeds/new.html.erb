@@ -1,77 +1,78 @@
 <% content_for(:title_tag) do %>
   Bienvenue sur Seedoak
 <% end %>
-
-<div class="container">
-  <div class="row">
-     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-      <div class="form-post">
-        <div class="form-title">Ajouter un seed</div>
-        <%= simple_form_for @seed do |b| %>
-          <div class="row">
-            <div class="col-xs-12 col-sm-6">
-              <div class="input-block">
-                <%= b.input :title, label:"Titre", placeholder: "Exemple: Drone en mousse" %>
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-              <div class="input-block">
-                <%= b.association :category, label:"Catégorie", prompt: "Selectionner une categorie"%>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <button type="button" class="chooseFile">Ajouter des photos
-            </button>
-          </div>
-          <div class="input-block">
-            <%= b.input :photos, as: :attachinary, label: false, class: "upload" %>
-          </div>
-
-          <div class="input-block" id="description">
-            <%= b.input :description,label:"Décrire le produit", placeholder: "Exemple: Ce drone ne risque pas de se casser car il est fait en mousse. Ideal pour la montagne." %>
-          </div>
-
-          <div class="form-group">
-            <button type="button" class="chooseVideo" id="add-video-button">Ajouter une/des vidéos
-            </button>
-          </div>
-          <div class="from-group">
-            <div class="video-container hidden">
-              <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                  <div class="input-block">
-                    <%= b.input :url, label: "Vidéo 1", placeholder: "coller ici une url video  de youtube" %>
-
-                    <div class="media-preview hidden">
-                      <iframe id="iframe" src="">
-                      </iframe>
-                    </div>
-                  </div>
+<div class="page">
+  <div class="container">
+    <div class="row">
+       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <div class="form-post">
+          <div class="form-title">Ajouter un seed</div>
+          <%= simple_form_for @seed do |b| %>
+            <div class="row">
+              <div class="col-xs-12 col-sm-6">
+                <div class="input-block">
+                  <%= b.input :title, label:"Titre", placeholder: "Exemple: Drone en mousse" %>
                 </div>
-                <div class="col-xs-12 col-sm-6">
-                  <div class="input-block">
-                    <%= b.input :secondary_url, label: "Vidéo 2", placeholder: "ex: https://www.youtube.com/watch?v=p4Qd-CJ" %>
-
-                    <div class="second-media-preview hidden">
-                      <iframe id="iframe-2" src="">
-                      </iframe>
-                    </div>
-                  </div>
+              </div>
+              <div class="col-xs-12 col-sm-6">
+                <div class="input-block">
+                  <%= b.association :category, label:"Catégorie", prompt: "Selectionner une categorie"%>
                 </div>
               </div>
             </div>
-          </div>
+
+            <div class="form-group">
+              <button type="button" class="chooseFile">Ajouter des photos
+              </button>
+            </div>
+            <div class="input-block">
+              <%= b.input :photos, as: :attachinary, label: false, class: "upload" %>
+            </div>
+
+            <div class="input-block" id="description">
+              <%= b.input :description,label:"Décrire le produit", placeholder: "Exemple: Ce drone ne risque pas de se casser car il est fait en mousse. Ideal pour la montagne." %>
+            </div>
+
+            <div class="form-group">
+              <button type="button" class="chooseVideo" id="add-video-button">Ajouter une/des vidéos
+              </button>
+            </div>
+            <div class="from-group">
+              <div class="video-container hidden">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-6">
+                    <div class="input-block">
+                      <%= b.input :url, label: "Vidéo 1", placeholder: "coller ici une url video  de youtube" %>
+
+                      <div class="media-preview hidden">
+                        <iframe id="iframe" src="">
+                        </iframe>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-6">
+                    <div class="input-block">
+                      <%= b.input :secondary_url, label: "Vidéo 2", placeholder: "ex: https://www.youtube.com/watch?v=p4Qd-CJ" %>
+
+                      <div class="second-media-preview hidden">
+                        <iframe id="iframe-2" src="">
+                        </iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
 
 
-          <div class="form-action">
-          <%= b.submit value: "POSTER", class: "btn btn-primary" %>
-          </div>
-       <% end %>
+            <div class="form-action">
+            <%= b.submit value: "POSTER", class: "btn btn-primary" %>
+            </div>
+         <% end %>
+         </div>
        </div>
-     </div>
+    </div>
   </div>
 </div>
 
