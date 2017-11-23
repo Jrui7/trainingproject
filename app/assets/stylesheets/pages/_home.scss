@@ -103,9 +103,18 @@
 
   }
 
+     .moto {
+      font-style: italic;
+    }
+
+    .join-us-now {
+      font-weight: bold;
+    }
+
   h2 {
     color: white;
     margin: 0;
+    font-weight: bold;
   }
 
   p {
@@ -159,6 +168,10 @@
 
   #logo-home {
   font-size: 30px;
+  }
+
+  .banner-content {
+    margin: 0;
   }
 
   .glyphicon-remove {
@@ -255,13 +268,6 @@
       font-weight: bold;
     }
 
-    .moto {
-      font-style: italic;
-    }
-
-    .join-us-now {
-      font-weight: bold;
-    }
 
     .form-sign-up-xs {
       padding: 15px;
