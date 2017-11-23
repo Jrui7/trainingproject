@@ -1,42 +1,55 @@
 <div class="container-home">
+
   <header class="header-home">
-    <div class="logo-box">
-      <div id="logo-home">Seedoak</div>
-      <span class="glyphicon glyphicon-leaf", id="logo-home"></span>
-    </div>
-    <div class="log-in-home">
-      <%= render "devise/sessions/login" %>
-    </div>
-  </header>
-  <div class="banner-content">
-    <div class="enter">
-      <div class="container" id="new-user-session">
-        <div class="row">
-          <div class="col-xs-8 col-xs-offset-2">
-              <h2>Première visite?</h2>
-              <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-                <%= devise_error_messages! %>
-
-                <div><%= f.label :pseudo %><br />
-                <%= f.text_field :pseudo %></div>
-
-                <div><%= f.label :email %><br />
-                <%= f.email_field :email %></div>
-
-                <div><%= f.label :password %><br />
-                <%= f.password_field :password %></div>
-
-                <div><%= f.label :password_confirmation %><br />
-                <%= f.password_field :password_confirmation %></div>
-
-                <div><%= f.submit "Sign up" %></div>
-              <% end %>
-          </div>
-        </div>
+    <div class="logo-and-log">
+      <div class="logo-box">
+        <div id="logo-home">Seedoak</div>
+        <span class="glyphicon glyphicon-leaf", id="logo-home"></span>
+      </div>
+      <div class="log-in-home hidden-xs hidden-sm">
+        <%= render "devise/sessions/login" %>
       </div>
     </div>
+  </header>
+
+  <div class="banner-content">
+    <div class="enter">
+      <div class="teaser-seedoak hidden-xs hidden-sm">
+        <h2>Une expérience d'achat inédite</h2>
+        <p>Découvrez et faites découvrir les meilleures nouveautés</p>
+        <p>Rejoignez-nous dès maintenant</p>
+      </div>
+      <div class="form-space hidden-xs hidden-sm">
+        <%= render "devise/sessions/sign-up" %>
+      </div>
+
+      <div class="hidden-md hidden-lg" id="action-xs">
+        <h2>Une expérience d'achat inédite</h2>
+        <p class="moto">Découvrez et faites découvrir les meilleures nouveautés</p>
+        <p class="join-us-now">Rejoignez-nous dès maintenant</p>
+        <div class="action-buttons">
+          <div class="btn btn-primary" id= "sign-in">Connexion</div>
+          <div class="btn btn-warning" id= "sign-up">Inscription</div>
+        </div>
+      </div>
+
+      <div class="form-xs hidden">
+        <div class="form-login-xs hidden">
+          <%= link_to root_path do %>
+            <span class="glyphicon glyphicon-remove"></span>
+          <% end %>
+          <%= render "devise/sessions/login" %>
+        </div>
+        <div class="form-sign-up-xs hidden">
+          <%= link_to root_path do %>
+            <span class="glyphicon glyphicon-remove"></span>
+          <% end %>
+          <%= render "devise/sessions/sign-up" %>
+        </div>
+      </div>
+
+
+    </div>
   </div>
-  <div class="homer-footer">
-    <p>T</p>
-  </div>
+
 </div>

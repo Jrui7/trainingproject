@@ -2,26 +2,29 @@
 
 .container-home {
   width: 100%;
-  height: 100vh;
   font-family: Helvetica;
   background-size: cover;
   background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://res.cloudinary.com/dlddnk3pr/image/upload/v1510669930/wave_ifp56a.jpg');
   background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  height: 100vh;
 
 }
 
 .header-home {
   width: 90%;
   margin: 0 auto;
-  height: 70px;
+  height: 100px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 70px;
+  height: 100px;
   margin-bottom: 0px;
+
+}
+
+.logo-and-log {
+  width: 100%;
+  display: flex;
+  justify-content: space-between
 
 }
 
@@ -46,57 +49,104 @@
   text-decoration: none;
 }
 
+.email-box {
+  background-color: white;
 
+}
 
 .login-form {
   display: flex;
-}
-
-.email {
-  padding: 10px;
-}
-
-#user_email {
-  background-color: #FFF;
-}
-
-.remember-label {
-  color: white;
-}
-
-.password {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-}
-
-.forgot-link {
-  text-decoration: none;
-  color: white;
-}
 
 
-.validate-zone {
-  padding: 10px;
+  .email {
+    padding: 0 10px;
+  }
+
+  input {
+    font-size: 14px;
+  }
+
+  label {
+    color: white;
+    font-size: 14px;
+  }
+
+
+  .password {
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .forgot-link {
+    text-decoration: none;
+    color: white;
+  }
+
+
+  .validate-zone {
+    padding: 0 10px;
+  }
 }
 
 
 
 .banner-content {
-  max-width: 1100px;
-  margin: 0 auto;
+  margin-top: 60px;
 
   .enter {
+    max-width: 1100px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
 
   }
 
-  h1 {
+  h2 {
     color: white;
-    margin-bottom: 20px;
+    margin: 0;
+  }
+
+  p {
+    color: white;
+    margin-top: 15px;
+    font-size: 18px;
+    padding: 5px;
+  }
+
+  .form-space {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(0,0,0,0.07);
+    background-color: brown;
+    padding: 120px;
+    border: 1px solid #e8e8e8;
+    border-radius: 50%;
+
+  }
+
+  h3 {
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    color: #F2F2F2;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  #new_user {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input {
+    margin: 7px;
+    padding: 0 5px 0 5px;
+    font-size: 13px;
+  }
+
+  .btn-primary {
+    padding: 10px;
+    font-size: 17px;
+    margin-top: 30px;
   }
 
 }
@@ -108,12 +158,125 @@
   }
 
   #logo-home {
-  font-size: 20px;
+  font-size: 30px;
   }
 
-  .enter {
-    h1 {
-      font-size: 23px;
+  .glyphicon-remove {
+    color: white;
+    background-color: $blue;
+    padding: 5px;
+    border-radius: 50%;
+    margin-bottom: 35px;
+    font-size: 12px;
+  }
+
+  .form-login-xs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .login-form {
+    display: block;
+    padding: 30px;
+
+
+
+
+  .email {
+    padding: 0;
+  }
+
+  input {
+    font-size: 20px;
+    margin: 4px;
+  }
+
+  label {
+    color: white;
+    font-size: 14px;
+  }
+
+
+  .password {
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .forgot-link {
+    text-decoration: none;
+    color: white;
+  }
+
+
+  .validate-zone {
+    padding: 10px 0px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .form-action {
+    color: white;
+    background-color: $blue;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+  }
+}
+
+  .banner-content .enter {
+    padding: 30px;
+    justify-content: center;
+
+    #action-xs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .action-buttons {
+      display: flex;
+    }
+
+    .btn-primary {
+      font-size: 20px;
+    }
+
+    .btn-warning {
+      padding: 10px;
+      font-size: 20px;
+      margin-top: 30px;
+    }
+
+    h2 {
+      font-size: 35px;
+      font-weight: bold;
+    }
+
+    .moto {
+      font-style: italic;
+    }
+
+    .join-us-now {
+      font-weight: bold;
+    }
+
+    .form-sign-up-xs {
+      padding: 15px;
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #new_user {
+      padding: 0 25px;
+    }
+
+    input#user_email.email-input {
+      background-color: white;
     }
   }
 
