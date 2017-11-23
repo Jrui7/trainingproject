@@ -18,3 +18,11 @@ function loadSignUp() {
     $(".form-sign-up-xs").removeClass("hidden");
   })
 }
+
+function goback() {
+  $(".glyphicon-remove").click(function(){
+    $("#action-xs").hide();
+    $(".form-xs").removeClass("hidden");
+    $(".form-sign-up-xs").removeClass("hidden");
+  })
+}

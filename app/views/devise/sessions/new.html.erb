@@ -17,22 +17,33 @@
       <div class="teaser-seedoak hidden-xs hidden-sm">
         <h2>Une expérience d'achat inédite</h2>
         <p>Découvrez et faites découvrir les meilleures nouveautés</p>
-        <p>Rejoignez-vous dès maintenant</p>
+        <p>Rejoignez-nous dès maintenant</p>
       </div>
       <div class="form-space hidden-xs hidden-sm">
         <%= render "devise/sessions/sign-up" %>
       </div>
 
       <div class="hidden-md hidden-lg" id="action-xs">
-        <div class="btn btn-primary" id= "sign-in">Connexion</div>
-        <div class="btn btn-warning" id= "sign-up">Inscription</div>
+        <h2>Une expérience d'achat inédite</h2>
+        <p>Découvrez et faites découvrir les meilleures nouveautés</p>
+        <p>Rejoignez-nous dès maintenant</p>
+        <div class="action-buttons">
+          <div class="btn btn-primary" id= "sign-in">Connexion</div>
+          <div class="btn btn-warning" id= "sign-up">Inscription</div>
+        </div>
       </div>
 
       <div class="form-xs hidden">
         <div class="form-login-xs hidden">
+          <a href="#">
+            <span class="glyphicon glyphicon-remove"></span>
+          </a>
           <%= render "devise/sessions/login" %>
         </div>
         <div class="form-sign-up-xs hidden">
+          <a href="#">
+            <span class="glyphicon glyphicon-remove"></span>
+          </a>
           <%= render "devise/sessions/sign-up" %>
         </div>
       </div>
