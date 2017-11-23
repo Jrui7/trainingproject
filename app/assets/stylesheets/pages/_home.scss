@@ -49,38 +49,44 @@
   text-decoration: none;
 }
 
+.email-box {
+  background-color: white;
 
+}
 
 .login-form {
   display: flex;
-}
-
-.email {
-  padding: 0 10px;
-}
-
-#user_email {
-  background-color: #FFF;
-}
-
-.remember-label {
-  color: white;
-}
-
-.password {
-  padding: 0 10px;
-  display: flex;
-  flex-direction: column;
-}
-
-.forgot-link {
-  text-decoration: none;
-  color: white;
-}
 
 
-.validate-zone {
-  padding: 0 10px;
+  .email {
+    padding: 0 10px;
+  }
+
+  input {
+    font-size: 14px;
+  }
+
+  label {
+    color: white;
+    font-size: 14px;
+  }
+
+
+  .password {
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .forgot-link {
+    text-decoration: none;
+    color: white;
+  }
+
+
+  .validate-zone {
+    padding: 0 10px;
+  }
 }
 
 
@@ -102,9 +108,16 @@
     margin: 0;
   }
 
+  p {
+    color: white;
+    margin-top: 15px;
+    font-size: 18px;
+    padding: 5px;
+  }
+
   .form-space {
     box-shadow: 0 1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(0,0,0,0.07);
-    background-color: #E1F8F8;
+    background-color: brown;
     padding: 120px;
     border: 1px solid #e8e8e8;
     border-radius: 50%;
@@ -114,7 +127,7 @@
   h3 {
     margin: 0 0 20px 0;
     text-transform: uppercase;
-    color: $red;
+    color: #F2F2F2;
     font-size: 20px;
     font-weight: bold;
   }
@@ -148,9 +161,81 @@
   font-size: 20px;
   }
 
-  .enter {
-    h1 {
+  .login-form {
+  display: block;
+  background-color: brown;
+  padding: 30px;
+
+
+  .email {
+    padding: 10px 0;
+  }
+
+  input {
+    font-size: 14px;
+    margin: 4px;
+  }
+
+  label {
+    color: white;
+    font-size: 14px;
+  }
+
+
+  .password {
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .forgot-link {
+    text-decoration: none;
+    color: white;
+  }
+
+
+  .validate-zone {
+    padding: 10px 0px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .form-action {
+    color: white;
+    background-color: $blue;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+  }
+}
+
+  .banner-content .enter {
+    padding: 30px;
+    justify-content: center;
+
+
+    .btn-warning {
+      padding: 10px;
+      font-size: 17px;
+      margin-top: 30px;
+    }
+
+    h3 {
       font-size: 23px;
+    }
+
+    .form-space {
+      box-shadow: 0 1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(0,0,0,0.07);
+      background-color: brown;
+      padding: 50px;
+      border: 1px solid #e8e8e8;
+      border-radius: 2px;
+
+    }
+
+    input#user_email.email-input {
+      background-color: white;
     }
   }
 

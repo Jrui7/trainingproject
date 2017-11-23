@@ -6,7 +6,7 @@
         <div id="logo-home">Seedoak</div>
         <span class="glyphicon glyphicon-leaf", id="logo-home"></span>
       </div>
-      <div class="log-in-home">
+      <div class="log-in-home hidden-xs hidden-sm">
         <%= render "devise/sessions/login" %>
       </div>
     </div>
@@ -14,18 +14,30 @@
 
   <div class="banner-content">
     <div class="enter">
-      <h2>Première visite?</h2>
-      <div class="form-space">
-        <h3>Découvrez Seedoak</h3>
-        <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-          <%= devise_error_messages! %>
-          <%= f.text_field :pseudo, placeholder: 'Pseudo' %>
-          <%= f.email_field :email, placeholder: 'Email' %>
-          <%= f.password_field :password, placeholder: 'Mot de passe' %>
-          <%= f.password_field :password_confirmation, placeholder: 'Confirmer mot de passe' %>
-          <%= f.submit "Rejoignez-nous", class: 'btn btn-primary' %>
-        <% end %>
+      <div class="teaser-seedoak hidden-xs hidden-sm">
+        <h2>Une expérience d'achat inédite</h2>
+        <p>Découvrez et faites découvrir les meilleures nouveautés</p>
+        <p>Rejoignez-vous dès maintenant</p>
       </div>
+      <div class="form-space hidden-xs hidden-sm">
+        <%= render "devise/sessions/sign-up" %>
+      </div>
+
+      <div class="hidden-md hidden-lg" id="action-xs">
+        <div class="btn btn-primary" id= "sign-in">Connexion</div>
+        <div class="btn btn-warning" id= "sign-up">Inscription</div>
+      </div>
+
+      <div class="form-xs hidden">
+        <div class="form-login-xs hidden">
+          <%= render "devise/sessions/login" %>
+        </div>
+        <div class="form-sign-up-xs hidden">
+          <%= render "devise/sessions/sign-up" %>
+        </div>
+      </div>
+
+
     </div>
   </div>
 
