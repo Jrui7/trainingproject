@@ -9,4 +9,5 @@ class Pick < ApplicationRecord
 
   validates :seed_id, uniqueness: { scope: :user_id }
 
+
 end

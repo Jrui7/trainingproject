@@ -1,6 +1,7 @@
 class PicksController < ApplicationController
 
   def index
+    @user = current_user
     @picks = current_user.picks
   end
 

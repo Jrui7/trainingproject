@@ -1,31 +1,52 @@
+<% content_for(:title_tag) do %>
+  Bienvenue sur Seedoak
+<% end %>
 
 
-<div class="container">
-  <div class="row">
-    <h1>My picks</h1>
-    <p>L'historique de vos picks</p>
+<div class="page-container">
+  <div class="seed-feed">
+    <div class="seed-presentation">
+    <%if @seeds.any? %>
+    <% @seeds.each do |seed| %>
 
-    <% @picks.each do |pick| %>
-      <div class="product">
-
-          <div class='product-upvote'>
-            <div class="product-arrow"></div>
-
-              <div class='product-count'><%= pick.seed.picks.size %> </div>
-      </div>
-       <%  seed = pick.seed  %>
-       <%= link_to seed_path(seed) do  %>
-        <%= cl_image_tag seed.photos.first.path, width: 300, height: 200, class: "product-image" %>
+      <div class="product id-<%= seed.category_id%>">
+        <%= link_to seed_path(seed) do  %>
+          <%= cl_image_tag("#{seed.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "product-image")%>
         <% end %>
-
-          <div class='product-body'> <%= link_to seed_path(seed) do  %>
-            <h3> <%= seed.title %></h3>
-            <p>présenté par <%= cl_image_tag(seed.user.photo.path, class: "seeder-picture")%> <%= seed.user.pseudo %></p>
-            <p> <%= seed.description%></p>
+        <div class='product-body'> <%= link_to seed_path(seed) do  %>
+          <h3> <%= seed.title %></h3>
+          <div class="user-testimony">
+            <%if seed.user.has_photo? %>
+            <%= cl_image_tag(seed.user.photo.path, :crop=>"fit", class: "seeder-picture")%>
+            <% else %>
+              <i class="fa fa-user-o"></i>
             <% end %>
+            <div class="user">
+              <p id= "pseudo"> <%= seed.user.pseudo %> </p>
+              <p class="hidden-xs hidden-sm" id="seed-description"> "<%= seed.description.first(65).capitalize + '... ' %>" </p>
+              <p class="hidden-md hidden-lg" id="seed-description"> "<%= seed.description.first(15).capitalize + '... ' %>" </p>
+            </div>
           </div>
-
-     </div>
-    <% end %>
+          <% end %>
+          <div class="bottom-sexion">
+            <div class="product-category">
+              <p class="<%= seed.category.name%>"> <%= seed.category.name.upcase %></p>
+            </div>
+            <div class="social-overview">
+              <div class="icon-and-number">
+                <div class="glyphicon glyphicon-eye-open"></div>
+                <p><%= seed.view_counter%></p>
+              </div>
+              <div class="icon-and-number">
+                <i class="fa fa-hand-lizard-o" aria-hidden="true"></i>
+                <p class="seed-counter"><%= seed.picks.count%></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
