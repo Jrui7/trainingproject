@@ -1,0 +1,274 @@
+.page-container {
+  width: 100%;
+  margin-top: 50px;
+  padding: 0;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.pick-feed {
+  max-width: 1100px;
+  flex: 0 0 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 0px;
+  padding: 30px;
+  border: 1px solid #DDDDDD;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+
+}
+
+a:hover {
+    text-decoration: none;
+
+  }
+
+
+
+
+.seed-presentation {
+  flex: 0 0 60%;
+
+  h2 {
+    margin-bottom: 25px;
+    margin-top: 0px;
+    color: $blue;
+    font-size: 25px;
+  }
+}
+
+
+.product {
+  background-color: #f7f7fa;
+  display: flex;
+  border-radius: 2px;
+  transition: all 0.15s ease;
+  border: 1px solid #e8e8e8;
+  padding: 15px;
+}
+
+/* Hover effects */
+.product:hover {
+  background: #FFFFFF;
+  cursor: pointer;
+}
+
+/* Product image */
+.product-image {
+  border-radius: 3px; /*3px */
+  margin-right: 15px;
+
+}
+
+/* Body design */
+.product-body {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.product-body h3 {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #3F3933;
+}
+.product-body p {
+  color: #999999;
+  margin-bottom: 0;
+}
+
+
+.user-testimony {
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+
+  .fa-user-o {
+    font-size: 17px;
+    background-color: $blue;
+    border-radius: 50%;
+    padding: 10px;
+    color: white;
+  }
+}
+
+.user {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+ }
+#pseudo {
+  text-decoration: underline;
+}
+
+#seed-description {
+  font-style: italic;
+}
+
+.seeder-picture {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.bottom-sexion {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.product-category{
+  display: flex;
+
+  .Sport {
+    border: 1px solid #e8e8e8;
+    color: white;
+    border-radius: 3px;
+    padding: 0 10px 0 10px;
+    background-color: $red;
+  }
+
+  .Sorties {
+    border: 1px solid #e8e8e8;
+    color: white;
+    border-radius: 3px;
+    padding: 0 10px 0 10px;
+    background-color: $green;
+  }
+
+  .Mode {
+    border: 1px solid #e8e8e8;
+    color: white;
+    border-radius: 3px;
+    padding: 0 10px 0 10px;
+    background-color: $anis;
+  }
+
+  .Loisir {
+    border: 1px solid #e8e8e8;
+    color: white;
+    border-radius: 3px;
+    padding: 0 10px 0 10px;
+    background-color: $orange;
+  }
+
+  .Beaute {
+    border: 1px solid #e8e8e8;
+    color: white;
+    border-radius: 3px;
+    padding: 0 10px 0 10px;
+    background-color: $blue;
+  }
+
+  .Art {
+    border: 1px solid #e8e8e8;
+    color: white;
+    border-radius: 3px;
+    padding: 0 10px 0 10px;
+    background-color: $darkgray;
+  }
+
+
+
+
+}
+
+.social-overview {
+  display: flex;
+  align-items: flex-end;
+
+  .icon-and-number {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 15px;
+    border: 1px solid #e8e8e8;
+    color: #999999;
+    border-radius: 3px;
+    padding: 0 10px 0 10px;
+
+
+    .glyphicon {
+      top: 0;
+      font-size: 14px;
+    }
+
+    .fa-hand-lizard-o {
+      font-size: 14px;
+      color: inherit;
+      padding: 0;
+    }
+
+    p {
+      margin: 0 0 0 7px;
+      font-size: 14px;
+    }
+  }
+}
+
+
+
+
+
+
+@media(max-width: 992px) {
+
+  }
+
+  @media(max-width: 768px) {
+
+      .seed-presentation {
+        flex: 0 0 60%;
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+
+    @media(max-width: 480px) {
+
+      .seed-feed {
+        margin: 0;
+        width: 100%;
+      }
+
+      .seed-presentation {
+        flex: 0 0 100%;
+      }
+
+      .product {
+        padding: 8px;
+      }
+
+
+      .product-body {
+
+        h3 {
+          font-size: 16px;
+        }
+      }
+
+      .social-overview .icon-and-number {
+        margin-left: 5px;
+
+        p {
+          font-size: 10px;
+        }
+      }
+
+      .product-category{
+        p {
+          font-size: 10px;
+        }
+      }
+
+    }
+
