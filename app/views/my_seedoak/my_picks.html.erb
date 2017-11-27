@@ -15,7 +15,8 @@
             <% end %>
             <div class='product-body'> <%= link_to seed_path(pick.seed) do  %>
               <h3> <%= pick.seed.title %></h3>
-              <%= pick.created_at.strftime("%d/%m/%y") %>
+              <p>Pické le <%= pick.created_at.strftime("%d/%m/%y")%></p>
+              <p class="price-pick"><%= pick.price %>€</p>
               <% end %>
             </div>
           </div>
