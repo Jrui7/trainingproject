@@ -5,16 +5,17 @@
 
 <div class="page-container">
   <div class="pick-feed">
-    <%if @seeds.any? %>
+    <%if @picks.any? %>
       <div class="seed-presentation">
         <h2>Historique de vos picks</h2>
-        <% @seeds.each do |seed| %>
-          <div class="product id-<%= seed.category_id%>">
-            <%= link_to seed_path(seed) do  %>
-              <%= cl_image_tag("#{seed.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "product-image")%>
+        <% @picks.each do |pick| %>
+          <div class="product id-<%= pick.seed.category_id%>">
+            <%= link_to seed_path(pick.seed) do  %>
+              <%= cl_image_tag("#{pick.seed.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "product-image")%>
             <% end %>
-            <div class='product-body'> <%= link_to seed_path(seed) do  %>
-              <h3> <%= seed.title %></h3>
+            <div class='product-body'> <%= link_to seed_path(pick.seed) do  %>
+              <h3> <%= pick.seed.title %></h3>
+              <%= pick.created_at.strftime("%d/%m/%y") %>
               <% end %>
             </div>
           </div>

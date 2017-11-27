@@ -19,7 +19,6 @@ class MySeedoakController < ApplicationController
   def my_picks
     @user = current_user
     @picks = current_user.picks
-    @seeds = @user.user_picked
   end
 
 end
