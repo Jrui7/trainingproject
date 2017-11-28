@@ -16,8 +16,6 @@
   justify-content: flex-start;
   margin-bottom: 0px;
   padding: 30px;
-  border: 1px solid #DDDDDD;
-  border-radius: 2px;
   background-color: #FFFFFF;
 
 }
@@ -47,7 +45,7 @@ a:hover {
 
 
 .product {
-  background-color: #f7f7fa;
+  background-color: #FFFFFF;
   display: flex;
   border-radius: 2px;
   transition: all 0.15s ease;
@@ -57,7 +55,7 @@ a:hover {
 
 /* Hover effects */
 .product:hover {
-  background: #FFFFFF;
+  background: #f7f7fa;
   cursor: pointer;
 }
 
