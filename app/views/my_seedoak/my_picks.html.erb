@@ -7,20 +7,7 @@
   <div class="pick-feed">
     <%if @picks.any? %>
       <div class="seed-presentation">
-        <h2>Historique de vos picks</h2>
-        <% @picks.each do |pick| %>
-          <div class="product id-<%= pick.seed.category_id%>">
-            <%= link_to seed_path(pick.seed) do  %>
-              <%= cl_image_tag("#{pick.seed.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "product-image")%>
-            <% end %>
-            <div class='product-body'> <%= link_to seed_path(pick.seed) do  %>
-              <h3> <%= pick.seed.title %></h3>
-              <p>Pické le <%= pick.created_at.strftime("%d/%m/%y")%></p>
-              <p class="price-pick"><%= pick.price %>€</p>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
+        <%= render "my_seedoak/pick-history", picks: @picks %>
       </div>
     <% end %>
 

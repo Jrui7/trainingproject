@@ -10,34 +10,36 @@
       </div>
       <div class="row head">
         <div class="col-xs-12 col-sm-7 nopadding-right nopadding-left">
-          <div class="timer-and-pick">
-            <div class="seed-infos-timer">
-              <div id="timer" data-timer="<%= (@seed.expiration) %>">
-                <%= render "seeds/timer"  %>
-                <div id="clockdiv">
-                  <div class="dynamic-timer">
-                    <div class="smalltext">Days</div>
-                    <span class="days"></span>
-                  </div>
-                  <div class="dynamic-timer">
-                    <div class="smalltext">Hours</div>
-                    <span class="hours"></span>
-                  </div>
-                  <div class="dynamic-timer">
-                    <div class="smalltext">Minutes</div>
-                    <span class="minutes"></span>
-                  </div>
-                  <div class="dynamic-timer">
-                    <div class="smalltext">Seconds</div>
-                    <span class="seconds"></span>
+          <% if @seed.ongoing? %>
+            <div class="timer-and-pick">
+              <div class="seed-infos-timer">
+                <div id="timer" data-timer="<%= (@seed.expiration) %>">
+                  <%= render "seeds/timer"  %>
+                  <div id="clockdiv">
+                    <div class="dynamic-timer">
+                      <div class="smalltext">Days</div>
+                      <span class="days"></span>
+                    </div>
+                    <div class="dynamic-timer">
+                      <div class="smalltext">Hours</div>
+                      <span class="hours"></span>
+                    </div>
+                    <div class="dynamic-timer">
+                      <div class="smalltext">Minutes</div>
+                      <span class="minutes"></span>
+                    </div>
+                    <div class="dynamic-timer">
+                      <div class="smalltext">Seconds</div>
+                      <span class="seconds"></span>
+                    </div>
                   </div>
                 </div>
               </div>
+                <div class="pick-section">
+                  <%= render "seeds/pick-section" %>
+                </div>
             </div>
-              <div class="pick-section">
-                <%= render "seeds/pick-section" %>
-              </div>
-          </div>
+          <% end %>
         </div>
       </div>
     </div>

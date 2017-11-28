@@ -8,6 +8,7 @@ class Pick < ApplicationRecord
     }
 
   validates :seed_id, uniqueness: { scope: :user_id }
+  scope :newest, -> { order(created_at: :desc)}
 
 
 end

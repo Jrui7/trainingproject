@@ -22,6 +22,9 @@ class PicksController < ApplicationController
 
   def destroy
     @pick = Pick.find(params[:id])
+    @pick.destroy
+    redirect_to my_picks_path
+
   end
 
   private

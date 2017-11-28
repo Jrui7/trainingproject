@@ -18,7 +18,7 @@ class MySeedoakController < ApplicationController
 
   def my_picks
     @user = current_user
-    @picks = current_user.picks
+    @picks = current_user.picks.newest
   end
 
 end

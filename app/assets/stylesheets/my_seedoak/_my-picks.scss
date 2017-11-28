@@ -15,7 +15,6 @@
   align-items: flex-start;
   justify-content: flex-start;
   margin-bottom: 0px;
-  padding: 30px;
   background-color: #FFFFFF;
 
 }
@@ -39,7 +38,21 @@ a:hover {
   }
 
   .price-pick {
-    color: $blue;
+    display: flex;
+    align-items: baseline;
+
+    .price-display {
+      color: $blue;
+      font-size: 20px;
+      margin-right: 10px;
+    }
+
+    .glyphicon {
+      color: $gray;
+      font-size: 11px;
+      margin-left: 5px;
+      text-decoration: none;
+    }
   }
 }
 
