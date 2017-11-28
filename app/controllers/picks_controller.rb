@@ -20,6 +20,18 @@ class PicksController < ApplicationController
     end
   end
 
+  def update
+    @picks = current_user.picks.newest
+    @pick = Pick.find(params[:id])
+    @seed = @pick.seed
+    if @pick.update(pick_params)
+      respond_to do |format|
+        format.html {redirect_to my_picks_path}
+        format.js
+      end
+    end
+  end
+
   def destroy
     @pick = Pick.find(params[:id])
     @seed = @pick.seed

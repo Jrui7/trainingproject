@@ -1,0 +1,15 @@
+
+  <%= simple_form_for [seed, pick], url: pick_path(pick), remote: true do |f| %>
+    <div class="pick-form">
+      <div class="price">
+        <p><strong>Prix :</strong></p>
+        <%= f.input_field :price, as: :integer, class: 'input-sm form-control pick', id: 'start', placeholder: 'Renseignez ici' %>
+      </div>
+      <div class="counter-body">
+        <div class="counter"></div>
+      </div>
+      <div class="submit-pick">
+        <%= f.submit "Enregistrer mon pick", class: "btn", id: "pick-update" %>
+      </div>
+    </div>
+  <% end %>
