@@ -1,0 +1,5 @@
+$(document).ready(function(){
+  $("#close-modal").click();
+  $(".seed-presentation").html('<%= j render 'my_seedoak/pick-history', picks: @picks %>')
+
+})
