@@ -1,10 +1,8 @@
 
   <div class="product id-<%= seed.category_id%>">
-
     <%= link_to seed_path(seed) do  %>
       <%= cl_image_tag("#{seed.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "product-image")%>
     <% end %>
-
     <div class='product-body'> <%= link_to seed_path(seed) do  %>
       <h3> <%= seed.title %></h3>
       <div class="user-testimony">
@@ -20,12 +18,10 @@
         </div>
       </div>
       <% end %>
-
       <div class="bottom-sexion">
         <div class="product-category">
           <p class="<%= seed.category.name%>"> <%= seed.category.name.upcase %></p>
         </div>
-
         <div class="social-overview">
           <div class="icon-and-number">
             <div class="glyphicon glyphicon-eye-open"></div>
@@ -37,9 +33,7 @@
           </div>
         </div>
       </div>
-
     </div>
-
   </div>
 
 

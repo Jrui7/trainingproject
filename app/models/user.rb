@@ -27,5 +27,14 @@ class User < ApplicationRecord
       seed.signal_seed.where(user: self).any?
   end
 
+  def user_picked
+    picks = Pick.where(user: self)
+    seeds = []
+    picks.each do |pick|
+      seeds << pick.seed
+    end
+    seeds
+  end
+
 
 end

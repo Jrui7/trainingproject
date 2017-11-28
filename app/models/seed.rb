@@ -66,6 +66,10 @@ class Seed < ApplicationRecord
     return collection
   end
 
+  def ongoing?
+    self.expiration > DateTime.now
+  end
+
 
 
 end

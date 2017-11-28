@@ -17,7 +17,8 @@ class MySeedoakController < ApplicationController
   end
 
   def my_picks
-    @picks = Pick.where(user_id: current_user)
+    @user = current_user
+    @picks = current_user.picks.newest
   end
 
 end

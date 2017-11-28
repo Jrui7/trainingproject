@@ -1,6 +1,7 @@
 class PicksController < ApplicationController
 
   def index
+    @user = current_user
     @picks = current_user.picks
   end
 
@@ -21,6 +22,14 @@ class PicksController < ApplicationController
 
   def destroy
     @pick = Pick.find(params[:id])
+    @seed = @pick.seed
+    @pick.destroy
+    respond_to do |format|
+      format.html {redirect_to my_picks_path}
+      format.js
+    end
+    @seed.increment_popularity
+
   end
 
   private
