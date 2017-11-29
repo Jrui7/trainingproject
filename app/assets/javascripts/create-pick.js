@@ -1,6 +1,5 @@
 $(document).ready(function() {
-
-  $( "#start" ).keyup(function() {
+   $( ".input-sm.form-control.pick" ).keyup(function() {
       var value = $( this ).val();
 
 
@@ -29,5 +28,9 @@ $(document).ready(function() {
 
       });
     })
-    .keyup();
+
+    $(".glyphicon.glyphicon-pencil").click(function(){
+      $(".counter").html("");
+    });
+
   });
