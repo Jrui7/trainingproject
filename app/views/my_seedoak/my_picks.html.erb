@@ -7,7 +7,34 @@
   <div class="pick-feed">
     <%if @picks.any? %>
       <div class="seed-presentation">
-        <%= render "my_seedoak/pick-history", picks: @picks %>
+        <h2>Historique de vos picks</h2>
+        <% @picks.each do |pick| %>
+          <div class="product id-<%= pick.id%>">
+          <%= render "my_seedoak/pick-history", pick: pick %>
+          </div>
+          <!-- Modal -->
+            <div class="modal fade" id="myPick-<%= pick.id%>" role="dialog">
+              <div class="modal-dialog modal-sm">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><%= pick.seed.title %> </h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="pick-modal">
+                      <%= render "picks/edit-form", seed: pick.seed, pick: pick %>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" id="close-modal" class="btn btn-default text-center" data-dismiss="modal">Fermer</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+        <% end %>
       </div>
     <% end %>
 
