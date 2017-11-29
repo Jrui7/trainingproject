@@ -1,8 +1,6 @@
 $(document).ready(function() {
-
-  $( "#start" ).keyup(function() {
+   $( ".input-sm.form-control.pick" ).keyup(function() {
       var value = $( this ).val();
-
 
       $('.counter').each(function() {
       var $this = $(this),
@@ -29,5 +27,5 @@ $(document).ready(function() {
 
       });
     })
-    .keyup();
+
   });

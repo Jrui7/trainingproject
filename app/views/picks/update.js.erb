@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $("#close-modal").click();
-  $(".seed-presentation").html('<%= j render 'my_seedoak/pick-history', picks: @picks %>')
+  $("#close-modal-<%= @pick.id%>").click();
+  $(".product.id-<%= @pick.id%>").html('<%= j render 'my_seedoak/pick-history', pick: @pick %>');
 
 })
