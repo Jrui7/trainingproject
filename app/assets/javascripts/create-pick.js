@@ -2,7 +2,6 @@ $(document).ready(function() {
    $( ".input-sm.form-control.pick" ).keyup(function() {
       var value = $( this ).val();
 
-
       $('.counter').each(function() {
       var $this = $(this),
           countTo = value;
@@ -28,9 +27,5 @@ $(document).ready(function() {
 
       });
     })
-
-    $(".glyphicon.glyphicon-pencil").click(function(){
-      $(".counter").html("");
-    });
 
   });

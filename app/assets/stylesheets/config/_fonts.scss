@@ -30,8 +30,10 @@ p {
 
 a {
   text-decoration: none;
+  outline: 0 !important;
   &:focus {
     text-decoration: none;
+    outline: 0 !important;
   }
 }
 
