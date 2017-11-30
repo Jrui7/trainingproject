@@ -19,6 +19,7 @@ $(document).ready(function() {
 
   $(".chooseFile").click(function() {
       $("#seed_photos").click();
+      $(".input-block.attach").removeClass("hidden");
 
   });
 
