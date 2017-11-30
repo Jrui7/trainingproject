@@ -1,0 +1,42 @@
+.page-container {
+  width: 100%;
+  margin-top: 50px;
+  padding: 0;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.pick-content {
+  max-width: 1100px;
+  flex: 0 0 100%;
+
+}
+
+.pick-data {
+  display: flex;
+}
+
+.column {
+  border-top: solid 1px;
+  border-left: solid 1px;
+  border-bottom: solid 1px;
+
+  h4 {
+    margin: 0;
+    padding: 0 10px;
+    border-bottom: solid 1px;
+    background-color: $blue;
+    color: white;
+  }
+
+  p {
+    padding: 0 10px;
+    margin: 0;
+  }
+}
+
+.last {
+  border-right: solid 1px;
+}

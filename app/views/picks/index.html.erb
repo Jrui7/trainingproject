@@ -1,0 +1,67 @@
+
+<div class="page-container">
+  <div class="pick-content">
+  <h2><%= @seed.title %> <%= @seed.picks.count %> picks</h2>
+    <div class="pick-data">
+
+      <div class="column text-center">
+        <h4>Picker</h4>
+        <% @seed.picks.each do |pick| %>
+          <p><%= pick.user.pseudo %></p>
+        <% end %>
+      </div>
+
+      <div class="column text-center">
+        <h4>Email</h4>
+        <% @seed.picks.each do |pick| %>
+          <p><%= pick.user.email %></p>
+        <% end %>
+      </div>
+
+      <div class="column text-center">
+        <h4>First-name</h4>
+        <% @seed.picks.each do |pick| %>
+          <p><%= pick.user.first_name %></p>
+        <% end %>
+      </div>
+
+      <div class="column text-center">
+        <h4>Last-name</h4>
+        <% @seed.picks.each do |pick| %>
+          <p><%= pick.user.last_name %></p>
+        <% end %>
+      </div>
+
+      <div class="column text-center">
+        <h4>Address</h4>
+        <% @seed.picks.each do |pick| %>
+          <p><%= pick.user.address %></p>
+        <% end %>
+      </div>
+
+      <div class="column text-center">
+        <h4>Sex</h4>
+        <% @seed.picks.each do |pick| %>
+          <p><%= pick.user.sex %></p>
+        <% end %>
+      </div>
+
+      <div class="column text-center">
+        <h4>Birthdate</h4>
+        <% @seed.picks.each do |pick| %>
+          <p><%= pick.user.date_of_birth %></p>
+        <% end %>
+      </div>
+
+      <div class="column last text-center">
+        <h4>Price</h4>
+        <% @seed.picks.each do |pick| %>
+          <p><%= pick.price %></p>
+        <% end %>
+      </div>
+
+
+    </div>
+   </div>
+</div>
+

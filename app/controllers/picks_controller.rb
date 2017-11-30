@@ -2,7 +2,7 @@ class PicksController < ApplicationController
 
   def index
     @user = current_user
-    @picks = current_user.picks
+    @seed = Seed.find(params[:seed_id])
   end
 
 
