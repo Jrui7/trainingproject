@@ -1,7 +1,11 @@
 
 <div class="page-container">
   <div class="pick-content">
-  <h2><%= @seed.title %> <%= @seed.picks.count %> picks</h2>
+  <h2><%= @seed.title %></h2>
+  <h4>Stats</h4>
+  <p><%= @seed.picks.count %> picks</p>
+  <p><%= @seed.view_counter %> vues</p>
+  <p>Taux de transfo: <%= ((@seed.picks.count)*100 / (@seed.view_counter)) %>%</p>
     <div class="pick-data">
 
       <div class="column text-center">
@@ -59,6 +63,7 @@
           <p><%= pick.price %></p>
         <% end %>
       </div>
+
 
 
     </div>
