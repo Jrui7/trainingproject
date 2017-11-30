@@ -37,12 +37,17 @@
                   <div class="photo-update">
 
 
-                      <div class="btn btn-primary choosePhoto">Changer photo</div>
+                      <div class="btn btn-primary choosePhoto"><%if @user.photo?%>
+                          Changer de photo
+                        <% else %>
+                          Ajouter photo
+                        <% end %>
+                      </div>
 
                       <%= f.input :photo, as: :attachinary, label: false, class: "upload" %>
 
                   </div>
-                  <div class="hidden-sm hidden-md hidden-lg text-center">
+                  <div class="text-center">
                     <%= f.button :submit, value: "Enregistrer", id: "update-user" %>
                   </div>
                 <% end %>
