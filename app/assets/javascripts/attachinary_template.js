@@ -48,10 +48,6 @@ function updateUserPhoto() {
     $(".choosePhoto").click(function() {
         $(".glyphicon.glyphicon-trash").click();
         $("#user_photo").click();
-        $(".edit-button").click(function(){
-          $("#update-user").click();
-        })
-
     });
   }
 
