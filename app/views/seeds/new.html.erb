@@ -21,11 +21,11 @@
               </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group" id="photos-button">
               <button type="button" class="chooseFile">Ajouter des photos
               </button>
             </div>
-            <div class="input-block">
+            <div class="input-block attach hidden">
               <%= b.input :photos, as: :attachinary, label: false, class: "upload" %>
             </div>
 
@@ -33,8 +33,8 @@
               <%= b.input :description,label:"Décrire le produit", placeholder: "Exemple: Ce drone ne risque pas de se casser car il est fait en mousse. Ideal pour la montagne." %>
             </div>
 
-            <div class="form-group">
-              <button type="button" class="chooseVideo" id="add-video-button">Ajouter une/des vidéos
+            <div class="form-group" id="add-video-button">
+              <button type="button" class="chooseVideo">Ajouter une/des vidéos
               </button>
             </div>
             <div class="from-group">

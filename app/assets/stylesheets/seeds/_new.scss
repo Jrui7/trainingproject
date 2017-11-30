@@ -9,7 +9,6 @@
 
 .form-post {
   background: white;
-  margin-top: 50px;
   padding: 20px;
   border-radius: 5px;
   border: 1px solid #e8e8e8;
@@ -19,7 +18,7 @@
     padding: 20px;
   }
 
-  .form-title {
+.form-title {
     color: $blue;
     margin-bottom: 25px;
     margin-top: 0;
@@ -63,14 +62,23 @@ abbr {
     color: $gray;
   }
 
-  .attachinary_container {
-    margin-top: 20px;
+  #photos-button {
+    display: flex;
+    justify-content: center;
+  }
 
+  .attachinary_container {
   }
 
   #seed_photos {
     height: 0px;
     overflow:hidden;
+  }
+
+
+  #add-video-button {
+    display: flex;
+    justify-content: center;
   }
 
 
