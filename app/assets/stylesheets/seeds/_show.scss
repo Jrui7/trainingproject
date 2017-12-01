@@ -41,6 +41,8 @@
 
     .title {
       padding: 0 0 0 5px;
+      display: flex;
+      justify-content: space-between;
        h1 {
         font-size: 22px;
         font-weight: bold;
