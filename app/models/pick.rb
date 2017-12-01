@@ -12,12 +12,12 @@ class Pick < ApplicationRecord
   scope :newest, -> { order(created_at: :desc)}
 
   def self.all_with_seed_details
-      Pick.select("picks.*, seeds.title as seed_title, users.first_name as user_first_name").joins(:seed, :user)
+      Pick.select("picks.*, seeds.title as seed_title, users.first_name as user_first_name, users.last_name as user_last_name, users.sex as user_sex, users.date_of_birth as user_birthdate, users.email as user_email, users.address as user_address").joins(:seed, :user)
   end
 
   def self.as_csv
     CSV.generate do |csv|
-      columns = %w(id price seed_title user_first_name)
+      columns = %w(seed_title id price user_first_name user_last_name user_birthdate user_sex user_address user_email)
       csv << columns.map(&:humanize)
       all_with_seed_details.each do |pick|
         csv << pick.attributes.values_at(*columns)

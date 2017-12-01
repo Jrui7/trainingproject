@@ -1,7 +1,11 @@
 
 <div class="page-container">
   <div class="pick-content">
-  <h2><%= @seed.title %></h2>
+  <div class="title-and-export">
+    <h2><%= @seed.title %></h2>
+    <div class="export-link"><%= link_to "Export CSV", seed_picks_path(id: @seed, format: :csv) %>
+    </div>
+  </div>
   <h4>Stats</h4>
   <p><%= @seed.picks.count %> picks</p>
   <p><%= @seed.view_counter %> vues</p>
@@ -63,8 +67,6 @@
           <p><%= pick.price %></p>
         <% end %>
       </div>
-
-
 
     </div>
    </div>

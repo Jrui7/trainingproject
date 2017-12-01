@@ -3,7 +3,7 @@ class PicksController < ApplicationController
   def index
     @user = current_user
     @seed = Seed.find(params[:seed_id])
-    @picks = Pick.where(seed_id: @seed)
+    @picks = Pick.where(seed_id: @seed).order(price: :desc )
 
     respond_to do |format|
     format.html
