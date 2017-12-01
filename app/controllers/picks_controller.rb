@@ -2,7 +2,14 @@ class PicksController < ApplicationController
 
   def index
     @user = current_user
-    @picks = current_user.picks
+    @seed = Seed.find(params[:seed_id])
+    @picks = Pick.where(seed_id: @seed)
+
+    respond_to do |format|
+    format.html
+    format.csv { send_data @picks.as_csv }
+    end
+
   end
 
 
