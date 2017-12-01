@@ -17,7 +17,6 @@
       <div class="teaser-seedoak hidden-xs hidden-sm">
         <h2>Une expérience d'achat inédite</h2>
         <p class="moto">Découvrez et faites découvrir les meilleures nouveautés</p>
-        <p class="join-us-now">Rejoignez-nous dès maintenant</p>
       </div>
       <div class="form-space hidden-xs hidden-sm">
         <%= render "devise/sessions/sign-up" %>
@@ -26,7 +25,6 @@
       <div class="hidden-md hidden-lg" id="action-xs">
         <h2>Une expérience d'achat inédite</h2>
         <p class="moto">Découvrez et faites découvrir les meilleures nouveautés</p>
-        <p class="join-us-now">Rejoignez-nous dès maintenant</p>
         <div class="action-buttons">
           <div class="btn btn-primary" id= "sign-in">Connexion</div>
           <div class="btn btn-warning" id= "sign-up">Inscription</div>
@@ -48,11 +46,20 @@
         </div>
       </div>
 
+    </div>
 
+    <div class="bottom-images">
+      <div class="small-tree-image">
+        <%= cl_image_tag("acorn-t_mwydjr.png", :height=>100, :crop=>"scale") %>
+      </div>
+      <div class="small-tree-image">
+        <%= cl_image_tag("small-tree_kebaln.png", :height=>200, :crop=>"scale") %>
+      </div>
+      <div class="seed-image">
+        <%= cl_image_tag("tree2_rckrqz.png", :height=>300, :crop=>"scale") %>
+      </div>
     </div>
-    <div class="seed-image">
-      <%= cl_image_tag("acorn-t_mwydjr.png", :height=>300, :crop=>"scale") %>
-    </div>
+
   </div>
 
 </div>
