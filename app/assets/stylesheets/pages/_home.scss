@@ -16,7 +16,7 @@
   height: 100px;
   display: flex;
   align-items: center;
-  height: 100px;
+  height: 15%;
   margin-bottom: 0px;
 
 }
@@ -104,27 +104,40 @@
 
 
 .banner-content {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  height: 85%;
 
 
   .enter {
     width: 90%;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+  }
+
+  .teaser-seedoak {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .squirrel-image {
+    align-self: flex-end;
+    margin-bottom: 10px;
+  }
+
+  .seed-image {
 
   }
 
-  .bottom-images {
-    width: 70%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
 
      .moto {
       font-style: italic;
+      display: flex;
+      p {
+        margin: 0;
+      }
     }
 
     .join-us-now {
@@ -145,12 +158,12 @@
   }
 
   .form-space {
-    box-shadow: 0 1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(0,0,0,0.07);
-    background-color: white;
+    background-color: transparent;
     padding: 30px;
-    border: 1px solid #e8e8e8;
     border-radius: 2px;
     margin-right: 10px;
+    display: flex;
+    flex-direction: column;
 
   }
 
@@ -159,6 +172,7 @@
     text-transform: uppercase;
     font-size: 17px;
     font-weight: bold;
+    color: white;
   }
 
   #new_user {
@@ -176,6 +190,7 @@
     padding: 10px;
     font-size: 17px;
     margin: 20px 0 0 0;
+    background-color: $red;
   }
 
 
