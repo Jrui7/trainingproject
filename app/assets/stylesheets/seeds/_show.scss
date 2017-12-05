@@ -257,6 +257,15 @@
       align-items: baseline;
     }
 
+    .seed-signaled {
+      .glyphicon-exclamation-sign {
+        color: black;
+      }
+      p {
+        color: black;
+      }
+    }
+
     .media-filter-icon {
       padding: 0 5px;
     }
