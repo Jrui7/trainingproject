@@ -157,6 +157,7 @@
     display: inline-block;
     text-align: left;
     vertical-align: middle;
+    position: relative;
   }
 
 
@@ -169,16 +170,18 @@
     border-radius: 3px;
     position: relative;
 
-    .close {
-      position: absolute;
-      top: 10px;
-      right: -50px;
-      background-color: white;
-      border-radius: 50%;
-      color: black;
-      padding: 5px 10px;
-      opacity: 1;
-    }
+
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: -50px;
+    background-color: white;
+    border-radius: 50%;
+    color: black;
+    padding: 5px 10px;
+    opacity: 1;
   }
 
   .modal-body {
@@ -252,6 +255,15 @@
     .signal-box {
       display: flex;
       align-items: baseline;
+    }
+
+    .seed-signaled {
+      .glyphicon-exclamation-sign {
+        color: black;
+      }
+      p {
+        color: black;
+      }
     }
 
     .media-filter-icon {
