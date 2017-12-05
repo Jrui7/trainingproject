@@ -13,7 +13,13 @@
  *= require_self
  *= require owl.carousel
  *= require owl.theme
+  *= require swipebox
+
 */
+
+
+
+
 
 // Graphical variables
 @import "config/fonts";
@@ -46,5 +52,6 @@
 
 
 @import "my_seedoak/my-picks";
+@import "src/css/swipebox.css";
 
 
