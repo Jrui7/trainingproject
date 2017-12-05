@@ -71,7 +71,7 @@
         <div class="user-menu">
           <div class="dropdown">
             <% if current_user.photo? %>
-              <%= cl_image_tag current_user.photo.path, class: "avatar dropdown-toggle", id: "navbar-menu", "data-toggle" => "dropdown" %>
+              <%= cl_image_tag current_user.photo.path, :width=>35, :height=>35, :radius=>"max", :crop=>"thumb", class: "dropdown-toggle", id: "navbar-menu", "data-toggle" => "dropdown" %>
             <% else %>
               <i class="fa fa-user-o dropdown-toggle" aria-hidden="true" id="navbar-menu", data-toggle="dropdown"></i>
             <% end %>
