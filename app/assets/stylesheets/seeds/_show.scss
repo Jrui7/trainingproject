@@ -239,6 +239,14 @@
       display: flex;
       justify-content: center;
       border-bottom: 1px solid #e8e8e8;
+
+      .glyphicon {
+        color: #A0A0A0;
+      }
+
+      p {
+        color: #A0A0A0;
+      }
     }
 
 
@@ -258,10 +266,10 @@
 
     .seed-signaled {
       .glyphicon-exclamation-sign {
-        color: black;
+        color: $blue;
       }
       p {
-        color: black;
+        color: $blue;
       }
     }
 
@@ -280,16 +288,33 @@
 
     .seeder {
       display: flex;
+      align-items: center;
     }
 
     .user-show {
       display: flex;
       flex-direction: column;
+
+      #pseudo-bold {
+        font-weight: bold;
+        margin: 0 0 0 10px;
+      }
+
+      p {
+        margin: 0 0 0 10px;
+      }
     }
 
-    #pseudo-bold {
-      font-weight: bold;
+    .seeder-insight {
+      margin-top: 30px;
     }
+
+    .p-bold {
+      font-weight: bold;
+      margin: 3px;
+    }
+
+
 
 
 
