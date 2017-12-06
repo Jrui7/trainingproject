@@ -137,6 +137,19 @@
               </div>
             </div>
           </div>
+          <div class="show-seed-description">
+            <div class="seeder">
+              <%if @seed.user.has_photo? %>
+              <%= cl_image_tag(@seed.user.photo.path, :width=>50, :height=>50, :radius=>"max", :crop=>"thumb")%>
+              <% else %>
+                <i class="fa fa-user-o"></i>
+              <% end %>
+              <div class="user-show">
+                <p id= "pseudo-bold"> <%= @seed.user.pseudo %> </p>
+              </div>
+            </div>
+            <p id="seed-description"> "<%= @seed.description.capitalize  %>" </p>
+          </div>
         </div>
       </div>
 
