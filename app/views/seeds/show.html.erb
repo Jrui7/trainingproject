@@ -150,14 +150,21 @@
                 <p>SEEDER INFOS</p>
               </div>
             </div>
-            <div class="paraph-description">
-              <p class="p-bold">AVIS PERSONNEL</p>
-              <p id="personal-description"> "<%= @seed.description.capitalize  %>" </p>
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#avis">AVIS PERSONNEL</a></li>
+                <li><a href="#descriptif">DESCRIPTIF PRODUIT</a></li>
+            </ul>
+            <div class="tab-content">
+              <div id="avis" class="tab-pane fade in active">
+                <h3>AVIS</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <div id="descriptif" class="tab-pane fade">
+                <h3>DESCRI</h3>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </div>
             </div>
-            <div class="paraph-description">
-              <p class="p-bold">DESCRIPTIF OFFICIEL</p>
-              <p id="personal-description"> Lorem ipsum add official description in the seed form blablabla les chiensbla bla bla </p>
-            </div>
+
           </div>
         </div>
       </div>
