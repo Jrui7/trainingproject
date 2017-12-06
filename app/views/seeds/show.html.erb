@@ -92,7 +92,7 @@
                 <div class="carousel-inner" role="listbox" style=" width:100%;">
                 <% photos = @seed.extract_seed_photos %>
                   <div class="item active">
-                    <a href="<%= cl_image_path photos.first.path %>" class="swipebox" title="My Caption">
+                    <a href="<%= cl_image_path photos.first.path %>" class="swipebox" title="<%= @seed.title %>">
                       <div class="hidden-xs">
                         <%= cl_image_tag photos.first.path, :height=>300, :crop=>"scale" %>
                       </div>
@@ -106,7 +106,7 @@
                     <% photos.delete_at(0) %>
                     <% photos.each_with_index do |photo, i| %>
                       <div class="item">
-                        <a href="<%= cl_image_path photo.path %>" class="swipebox" title="My Caption">
+                        <a href="<%= cl_image_path photo.path %>" class="swipebox" title="<%= @seed.title %>">
                           <div class="hidden-xs">
                              <%= cl_image_tag photo.path, :height=>300, :crop=>"scale" %>
                            </div>
@@ -135,6 +135,28 @@
                   <%= render "signal_seeds/signal" %>
                 </div>
               </div>
+            </div>
+          </div>
+          <div class="show-seed-description">
+            <div class="seeder">
+              <%if @seed.user.has_photo? %>
+              <%= cl_image_tag(@seed.user.photo.path, :width=>50, :height=>50, :radius=>"max", :crop=>"thumb")%>
+              <% else %>
+                <i class="fa fa-user-o"></i>
+              <% end %>
+              <div class="user-show">
+                <p id= "pseudo-bold"> <%= @seed.user.pseudo %>
+                </p>
+                <p>SEEDER INFOS</p>
+              </div>
+            </div>
+            <div class="paraph-description">
+              <p class="p-bold">AVIS PERSONNEL</p>
+              <p id="personal-description"> "<%= @seed.description.capitalize  %>" </p>
+            </div>
+            <div class="paraph-description">
+              <p class="p-bold">DESCRIPTIF OFFICIEL</p>
+              <p id="personal-description"> Lorem ipsum add official description in the seed form blablabla les chiensbla bla bla </p>
             </div>
           </div>
         </div>
