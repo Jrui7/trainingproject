@@ -9,7 +9,6 @@
 
 User.destroy_all
 Category.destroy_all
-UserPreference.destroy_all
 
 mode = Category.create(name: "Mode")
 beauté = Category.create(name: "Beaute")

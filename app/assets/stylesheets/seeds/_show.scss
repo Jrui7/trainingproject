@@ -238,7 +238,6 @@
     .seed-social {
       display: flex;
       justify-content: center;
-      border-bottom: 1px solid #e8e8e8;
 
       .glyphicon {
         color: #A0A0A0;
@@ -298,6 +297,7 @@
       #pseudo-bold {
         font-weight: bold;
         margin: 0 0 0 10px;
+        color: #270000;
       }
 
       p {
@@ -309,9 +309,31 @@
       margin-top: 30px;
     }
 
+    .descriptif-content {
+      margin: 15px;
+    }
 
+    .nav-tabs {
 
+      a:hover {
+        color: $blue;
+      }
 
+      li {
+        a {
+          text-decoration: none;
+          color: #4d4d5e;
+        }
+      }
+
+      .active {
+        a {
+          color: #270000;
+          text-decoration: none;
+        }
+      }
+
+    }
 
   }
 
@@ -493,6 +515,19 @@
       bottom: 20px;
 
     }
+
+    .nav-tabs {
+
+      li {
+        a {
+          padding: 10px;
+          font-size: 14px;
+        }
+      }
+
+
+    }
+
 
 
   }
