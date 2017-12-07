@@ -147,19 +147,19 @@
               <div class="user-show">
                 <p id= "pseudo-bold"> <%= @seed.user.pseudo %>
                 </p>
-                <p>SEEDER INFOS</p>
+                <p>Seeder infos</p>
               </div>
             </div>
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#avis">AVIS PERSONNEL</a></li>
-                <li><a href="#descriptif">DESCRIPTIF PRODUIT</a></li>
+                <li><a href="#descriptif">DESCRIPTIF OFFICIEL</a></li>
             </ul>
             <div class="tab-content">
               <div id="avis" class="tab-pane fade in active">
-                <p><%= @seed.description %></p>
+                <p class="descriptif-content"><%= @seed.description %></p>
               </div>
               <div id="descriptif" class="tab-pane fade">
-                <p>Migration à prévoir pour ajouter cette partie</p>
+                <p class="descriptif-content">Migration à prévoir pour ajouter cette partie</p>
               </div>
             </div>
 
