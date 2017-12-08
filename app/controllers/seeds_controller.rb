@@ -6,7 +6,7 @@ class SeedsController < ApplicationController
     @sample = Seed.ongoing.sample
     @categories = Category.all
     @filter = params[:category]
-    @seeds = Seed.ongoing
+    @seeds = Seed.ongoing.includes(:user, :category)
 
   end
 
@@ -52,17 +52,17 @@ class SeedsController < ApplicationController
   def last_day
     @seed_sample = Seed.ongoing.sample
     @categories = Category.all
-    @seeds = Seed.ongoing.last_day
+    @seeds = Seed.ongoing.includes(:user, :category).last_day
   end
 
   def popular
     @categories = Category.all
-    @seeds = Seed.ongoing.popular
+    @seeds = Seed.ongoing.includes(:user, :category).popular
   end
 
   def newest
     @categories = Category.all
-    @seeds = Seed.ongoing.newest
+    @seeds = Seed.ongoing.includes(:user, :category).newest
   end
 
 

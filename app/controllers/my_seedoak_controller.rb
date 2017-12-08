@@ -18,7 +18,7 @@ class MySeedoakController < ApplicationController
 
   def my_picks
     @user = current_user
-    @picks = current_user.picks.newest
+    @picks = current_user.picks.includes(:seed).newest
   end
 
 end
