@@ -140,7 +140,7 @@
           <div class="show-seed-description">
             <div class="seeder">
               <%if @seed.user.has_photo? %>
-              <%= cl_image_tag(@seed.user.photo.path, :width=>50, :height=>50, :radius=>"max", :crop=>"thumb")%>
+              <%= cl_image_tag(@seed.user.photo.path, :width=>50, :height=>50, :radius=>"max", :crop=>"fill")%>
               <% else %>
                 <i class="fa fa-user-o"></i>
               <% end %>
