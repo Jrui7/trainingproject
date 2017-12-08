@@ -58,6 +58,9 @@ GEM
     bootstrap-will_paginate (1.0.0)
       will_paginate
     builder (3.2.3)
+    bullet (5.7.0)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.10.0)
     byebug (9.1.0)
     cloudinary (1.1.7)
       aws_cf_signer
@@ -212,6 +215,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.4)
+    uniform_notifier (1.10.0)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.5.1)
@@ -234,6 +238,7 @@ DEPENDENCIES
   autoprefixer-rails
   bootstrap-sass
   bootstrap-will_paginate (~> 1.0)
+  bullet
   cloudinary (= 1.1.7)
   coffee-rails
   devise
