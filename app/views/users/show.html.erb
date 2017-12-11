@@ -5,7 +5,7 @@
       <div class="profile-details ">
         <div id="avatar">
           <% if current_user.photo? %>
-            <%= cl_image_tag(current_user.photo.path, width: 150, height: 150, radius: :max, crop: :fill)%>
+            <%= cl_image_tag(current_user.photo.path, class: "seeder-picture-big")%>
           <% else %>
             <i class="fa fa-user-o dropdown-toggle" aria-hidden="true" id="avatar-placeholder-img"></i>
           <% end %>
