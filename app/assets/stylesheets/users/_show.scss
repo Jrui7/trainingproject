@@ -233,6 +233,7 @@
 
     label {
       width: auto;
+      font-size: 15px;
     }
   }
 
@@ -317,9 +318,32 @@
         .form-control {
           width: 75%;
           margin-left: 0;
+          font-size: 12px;
         }
 
       }
+
+      label {
+        font-size: 12px;
+      }
+
+      .sex-label {
+        font-size: 12px;
+      }
+
+      .sex-inputs {
+
+        label {
+          font-size: 12px;
+        }
+      }
+
+      .form-inline {
+        width: 75%;
+        display: flex;
+        justify-content: space-between;
+      }
+
 
       .view-body {
         padding: 0;

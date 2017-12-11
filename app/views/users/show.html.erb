@@ -38,9 +38,9 @@
                   <%= f.input :first_name, label: "Prénom" %>
                   <%= f.input :last_name, label: "Nom" %>
                   <%= f.input :email, label: "Email" %>
-                  <%= f.input :date_of_birth, label:"Date de naissance", as: :date,  start_year: Date.today.year - 90,
+                  <%= f.input :date_of_birth, label:"Naissance", as: :date,  start_year: Date.today.year - 90,
                                                 end_year: Date.today.year - 12,
-                                                order: [:day, :month, :year], :prompt => { :month => 'Mois', :year => 'Année', :day => 'Jour' }  %>
+                                                order: [:day, :month, :year], :prompt => { :month => 'MM', :year => 'AAAA', :day => 'JJ' }  %>
 
 
 
