@@ -43,6 +43,10 @@
     }
   }
 
+  .form-inline {
+    display: flex;
+  }
+
   .edit-button {
     color: $blue;
     border: solid 1px $blue;
@@ -207,6 +211,13 @@
     box-shadow: none;
     margin-left: 15px;
     width: 50%;
+  }
+
+  .user_date_of_birth {
+    .form-control {
+      width: auto;
+    }
+
   }
 
 
