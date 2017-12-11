@@ -7,7 +7,7 @@
           <% if current_user.photo? %>
             <%= cl_image_tag(current_user.photo.path, class: "seeder-picture-big")%>
           <% else %>
-            <i class="fa fa-user-o dropdown-toggle" aria-hidden="true" id="avatar-placeholder-img"></i>
+            <i class="fa fa-user-o text-center dropdown-toggle" aria-hidden="true" id="avatar-placeholder-img"></i>
           <% end %>
         </div>
 
@@ -24,20 +24,30 @@
       <!-- Modifier mon profil -->
           <div class="tab-content" id="edit">
             <div class="view-header">
-              <h1>Mes infos</h1>
+              <h1>Infos privées</h1>
             </div>
             <div class="col-xs-12 view-body">
               <div class="user-form">
                 <%= simple_form_for @user do |f| %>
-                  <%= f.input :pseudo, label: "Pseudo" %>
+                  <div class="sex-attributes">
+                    <div class="sex-label">Civilité</div>
+                    <div class="sex-inputs">
+                    <%= f.collection_radio_buttons :sex, [["man", 'Homme'] ,["woman", 'Femme']], :first, :last %>
+                    </div>
+                  </div>
                   <%= f.input :first_name, label: "Prénom" %>
                   <%= f.input :last_name, label: "Nom" %>
                   <%= f.input :email, label: "Email" %>
+                  <%= f.input :date_of_birth, label:"Date de naissance", as: :date,  start_year: Date.today.year - 90,
+                                                end_year: Date.today.year - 12,
+                                                order: [:day, :month, :year], :prompt => { :month => 'Mois', :year => 'Année', :day => 'Jour' }  %>
+
+
 
                   <div class="photo-update">
 
 
-                      <div class="btn btn-primary choosePhoto"><%if @user.photo?%>
+                      <div class="btn btn-danger choosePhoto"><%if @user.photo?%>
                           Changer de photo
                         <% else %>
                           Ajouter photo
@@ -47,8 +57,8 @@
                       <%= f.input :photo, as: :attachinary, label: false, class: "upload" %>
 
                   </div>
-                  <div class="text-center">
-                    <%= f.button :submit, value: "Enregistrer", id: "update-user" %>
+                  <div class="text-right">
+                    <%= f.button :submit, value: "Enregistrer", class: "btn btn-primary", id: "update-user" %>
                   </div>
                 <% end %>
               </div>

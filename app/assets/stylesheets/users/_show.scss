@@ -29,10 +29,12 @@
     text-align: center;
     padding: 20px;
     border: 1px solid #ddd;
-    #avatar-placeholder-img {
+
+    .fa-user-o {
       font-size: 100px;
       padding: 30px;
     }
+
     h2 {
       font-size: 20px;
       margin: 10px;
@@ -41,6 +43,11 @@
       color: #a6a6ae;
       font-size: 14px;
     }
+
+  }
+
+  .form-inline {
+    display: flex;
   }
 
   .edit-button {
@@ -207,6 +214,39 @@
     box-shadow: none;
     margin-left: 15px;
     width: 50%;
+  }
+
+  .sex-attributes {
+    display: flex;
+  }
+
+  .sex-label {
+    width: 15%;
+    margin-right: 15px;
+    color: #a6a6ae;
+  }
+
+  .sex-inputs {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+
+    label {
+      width: auto;
+    }
+  }
+
+
+
+  .collection_radio_buttons {
+    margin-left: 10px;
+  }
+
+  .user_date_of_birth {
+    .form-control {
+      width: auto;
+    }
+
   }
 
 
