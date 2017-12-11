@@ -193,6 +193,18 @@
     background-color: $red;
   }
 
+  .sex-attributes {
+    display: flex;
+    align-items: center;
+  }
+
+  label {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+
 
 
 }

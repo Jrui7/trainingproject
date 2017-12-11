@@ -6,6 +6,12 @@
           <%= f.error_notification %>
 
           <div class="form-inputs">
+          <%= f.collection_radio_buttons :sex, [["man", 'Homme'] ,["woman", 'Femme']], :first, :last %>
+          <%= f.input :date_of_birth, label:"Date de naissance", as: :date, start_year: Date.today.year - 90,
+                                        end_year: Date.today.year - 12,
+                                        placeholder: { year: 'Année', month: 'mois', day: 'jour' },
+                                        order: [:day, :month, :year]  %>
+
             <%= f.input :pseudo, required: true, autofocus: true %>
             <%= f.input :email, required: true, autofocus: true %>
             <%= f.input :password, required: true, hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length) %>
