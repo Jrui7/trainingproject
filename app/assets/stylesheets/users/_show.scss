@@ -138,12 +138,15 @@
 
   .user-form {
     padding: 20px 20px;
+
+      label {
+        margin-right: 15px;
+        width: 15%;
+        margin-bottom: 0px;
+      }
   }
 
-  label {
-    margin-right: 15px;
-    width: 15%;
-  }
+
 
   .control-label {
     text-align: left;

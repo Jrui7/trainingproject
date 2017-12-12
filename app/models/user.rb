@@ -5,7 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
          validates :pseudo, uniqueness: true
-         validates :sex, presence: true
 
          has_many :seeds
          has_many :picks
