@@ -267,6 +267,11 @@
 
       .container {
         margin-bottom: 0;
+        margin-top: 0px;
+      }
+
+      .dashboard {
+        padding: 0 1px;
       }
 
 
@@ -293,6 +298,21 @@
           font-size: 12px;
         }
 
+        .tabs-infos {
+          margin-top: 20px;
+        }
+
+      .nav-tabs {
+
+            li {
+              a {
+                padding: 10px;
+                font-size: 12px;
+              }
+            }
+
+
+          }
 
 
       label {
@@ -327,6 +347,10 @@
 
       .low-padding {
         padding: 0px;
+      }
+
+      .small-padding {
+        padding: 5px 10px;
       }
 
     }
