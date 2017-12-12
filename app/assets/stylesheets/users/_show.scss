@@ -85,50 +85,7 @@
 
       }
 
-  #reviews {
-    margin: 30px;
-  }
 
-  .dashboard-review {
-    padding: 28px;
-    border-bottom: solid 1px rgba(136, 136, 136, 1);
-  }
-
-
-
-  .header {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  #edit {
-    height: 60vh;
-  }
-
-  #review-content {
-    color: rgba(136, 136, 136, 1)
-  }
-
-  .dashboard-button {
-    color: #fff;
-    background-color: #B69FBF;
-    border: 1px solid #B69FBF;
-    border-radius: 2px;
-    padding: 10px 15px;
-    &:hover {
-      text-decoration: none;
-      color: #B69FBF;
-      background-color: rgba(0, 0, 0, 0);
-    }
-  }
-
-  .dashboard-link {
-    color: #fff;
-    &:hover {
-      text-decoration: none;
-      color: #B69FBF;
-    }
-  }
 
 
 
@@ -143,6 +100,45 @@
         margin-right: 15px;
         width: 15%;
         margin-bottom: 0px;
+      }
+
+      .fa {
+
+        font-size: 25px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+      }
+
+      .fa-instagram {
+        color: white;
+        background: #f09433;
+        background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+        background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+      }
+
+      .fa-snapchat-ghost {
+        background: #fffc00;
+        color: white;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      }
+
+      .fa-facebook {
+        background: #3B5998;
+        color: white;
+      }
+
+      .fa-youtube {
+        background: #bb0000;
+        color: white;
       }
   }
 
@@ -168,21 +164,69 @@
     -webkit-box-shadow: none;
     box-shadow: none;
     margin-left: 15px;
-    width: 40%;
+    width: 30%;
   }
 
-  .sex-attributes {
+  #user_mini_bio {
+    height: 90px;
+  }
+
+  .social-options {
+    margin-top: 30px;
+
+    h4 {
+      font-size: 20px;
+    }
+
+    .icons-and-form {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .social-group {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .no-label {
+      margin-right: 30px;
+      .written-label {
+        margin-right: 0;
+      }
+      .attached-inputs {
+        margin-left: 0;
+      }
+    }
+
+
+    .written-label {
+      width: auto;
+      margin-right: 15px;
+      color: #a6a6ae;
+    }
+
+    .form-control {
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      margin-left: 15px;
+      width: auto;
+    }
+
+
+  }
+
+  .no-label {
     display: flex;
     margin-bottom: 15px;
   }
 
-  .sex-label {
+  .written-label {
     width: 15%;
     margin-right: 15px;
     color: #a6a6ae;
   }
 
-  .sex-inputs {
+  .attached-inputs {
     display: flex;
     align-items: center;
     margin-left: 15px;
@@ -221,6 +265,8 @@
   border-radius: 5px;
 
   }
+
+
 
   .glyphicon-trash {
 
@@ -302,12 +348,12 @@
         font-size: 12px;
       }
 
-      .sex-label {
+      .written-label {
         font-size: 12px;
       }
 
 
-        .sex-inputs {
+        .attached-inputs {
 
           label {
             font-size: 12px;
