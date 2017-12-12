@@ -1,14 +1,16 @@
-.container {
-  margin-top: 50px;
-  width: 100%;
-  padding: 0;
-  margin-bottom: 20px;
+  .container {
+      margin-top: 50px;
+      width: 100%;
+      padding: 0;
+      margin-bottom: 20px;
+  }
 
-}
 
-.dashboard {
-  padding: 0 25px;
-  margin: 0;
+
+  .dashboard {
+      padding: 0 25px;
+      margin: 0;
+  }
 
   .seeder-picture-big {
     width: 150px;
@@ -21,7 +23,6 @@
   .profile-details {
     border-radius: 3px;
     background-color: #ffffff;
-    margin: 20px 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -83,55 +84,27 @@
     overflow: auto;
   }
 
-  .tabs {
-    display: flex;
-    justify-content:  space-around;
-    flex-direction: column;
-    width: 100%;
-    background-color: #fff;
-    border-radius: 3px;
-    border: 1px solid #ddd;
-  }
+  .nav-tabs {
 
-  .tab-title {
-    margin-left: 10px;
-    color: #a6a6ae;
-  }
+        a:hover {
+          color: $blue;
+        }
 
-  .tab {
-    justify-content: space-between;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    p {
-      color: rgba(136, 136, 136, 1);
-      margin: 0;
-    }
-    img {
-      width: 5px;
-    }
-  }
+        li {
+          a {
+            text-decoration: none;
+            color: #4d4d5e;
+          }
+        }
 
-  .box-tab {
-    border-bottom: 1px solid #ddd;
-    padding: 5px 25px 5px 20px;
-    &:last-child {
-      border-bottom: none;
-    }
-  }
+        .active {
+          a {
+            color: #270000;
+            text-decoration: none;
+          }
+        }
 
-  .tab.active {
-    background-color: rgba(0, 0, 0, 0.03);
-    p {
-    color: #000;
-    font-weight: bold;
-    }
-  }
-
-  .tabs a:hover {
-    text-decoration: none;
-  }
+      }
 
   #reviews {
     margin: 30px;
@@ -202,7 +175,7 @@
 
 
   .form-group {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     display: flex;
     align-items: center;
 
@@ -213,11 +186,12 @@
     -webkit-box-shadow: none;
     box-shadow: none;
     margin-left: 15px;
-    width: 50%;
+    width: 40%;
   }
 
   .sex-attributes {
     display: flex;
+    margin-bottom: 15px;
   }
 
   .sex-label {
@@ -277,7 +251,7 @@
   #update-user {
     margin: 20px 0;
   }
-}
+
 
 
 @media(max-width: 992px) {
@@ -295,8 +269,6 @@
         margin-bottom: 0;
       }
 
-      .dashboard {
-        padding: 0;
 
         .profile-details {
           margin: 0 0 10px 0;
@@ -321,7 +293,7 @@
           font-size: 12px;
         }
 
-      }
+
 
       label {
         font-size: 12px;
@@ -331,7 +303,6 @@
         font-size: 12px;
       }
 
-      .dashboard {
 
         .sex-inputs {
 
@@ -339,7 +310,7 @@
             font-size: 12px;
           }
         }
-      }
+
 
       .form-inline {
         width: 75%;
