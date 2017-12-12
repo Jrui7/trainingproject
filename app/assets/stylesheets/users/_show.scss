@@ -167,6 +167,54 @@
     width: 30%;
   }
 
+  #user_mini_bio {
+    height: 90px;
+  }
+
+  .social-options {
+    margin-top: 30px;
+
+    h4 {
+      font-size: 20px;
+    }
+
+    .icons-and-form {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .social-group {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .no-label {
+      margin-right: 30px;
+      .written-label {
+        margin-right: 0;
+      }
+      .attached-inputs {
+        margin-left: 0;
+      }
+    }
+
+
+    .written-label {
+      width: auto;
+      margin-right: 15px;
+      color: #a6a6ae;
+    }
+
+    .form-control {
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      margin-left: 15px;
+      width: auto;
+    }
+
+
+  }
+
   .no-label {
     display: flex;
     margin-bottom: 15px;
