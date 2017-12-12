@@ -40,13 +40,17 @@
                     <%= f.collection_radio_buttons :sex, [["man", 'Homme'] ,["woman", 'Femme']], :first, :last %>
                     </div>
                   </div>
-                  <%= f.input :date_of_birth, label:"Naissance", as: :date,  start_year: Date.today.year - 90,
-                                                end_year: Date.today.year - 12,
-                                                order: [:day, :month, :year], :prompt => { :month => 'MM', :year => 'AAAA', :day => 'JJ' }  %>
+                  <%= f.input :date_of_birth, label:"Date de naissance", as: :date,  start_year: Date.today.year - 18,
+                                                end_year: 1900,
+                                                order: [:day, :month, :year], :prompt => { :month => 'Mois', :year => 'Année', :day => 'Jour' }, use_month_numbers: true  %>
                   <%= f.input :first_name, label: "Prénom" %>
                   <%= f.input :last_name, label: "Nom" %>
                   <%= f.input :email, label: "Email" %>
                   <%= f.input :address, label: "Adresse", placeholder: "64 rue de la Tour" %>
+                  <%= f.input :address_complement, label: "Complément d'adresse", placeholder: "Digicode, Batiment, Société " %>
+                  <%= f.input :zip_code, label: "Code postal", placeholder: "75116" %>
+                  <%= f.input :city, label: "Ville", placeholder: "Paris" %>
+                  <%= f.input :phone_number, label: "Téléphone", placeholder: "0605040302" %>
 
                   <div class="text-right">
                     <%= f.button :submit, value: "Enregistrer", class: "btn btn-primary", id: "update-user" %>
