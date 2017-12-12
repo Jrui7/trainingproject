@@ -1,26 +1,10 @@
 
 <div class="container">
-  <div class="row dashboard">
-    <div class="col-xs-12 col-md-3 low-padding">
-      <div class="profile-details ">
-        <div id="avatar">
-          <% if current_user.photo? %>
-            <%= cl_image_tag(current_user.photo.path, class: "seeder-picture-big")%>
-          <% else %>
-            <i class="fa fa-user-o text-center dropdown-toggle" aria-hidden="true" id="avatar-placeholder-img"></i>
-          <% end %>
-        </div>
+  <div class="page-section">
+    <div class="row dashboard">
 
 
-        <h2><%= current_user.pseudo %></h2>
-        <div class="tab edit-tab" data-target="#edit">
-          <div class="edit-button hidden-xs">Power Seeder</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-xs-12 col-md-9 low-padding tabs-infos">
-      <div class="col-xs-12 col-md-10 low-padding">
+      <div class="col-xs-12 tabs-info">
         <ul class="nav nav-tabs">
             <li class="active"><a href="#public-profile">PROFIL PUBLIC</a></li>
             <li><a href="#personal-infos">INFOS PRIVEES</a></li>

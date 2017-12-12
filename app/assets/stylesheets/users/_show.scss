@@ -5,47 +5,26 @@
       margin-bottom: 20px;
   }
 
+  .page-section {
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 0px;
+      max-width: 1100px;
+    }
+
 
 
   .dashboard {
-      padding: 0 25px;
+      padding: 0;
       margin: 0;
   }
 
-  .seeder-picture-big {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+  .tabs-info {
+    padding: 0;
   }
 
 
 
-  .profile-details {
-    border-radius: 3px;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-    border: 1px solid #ddd;
-
-    .fa-user-o {
-      font-size: 100px;
-      padding: 30px;
-    }
-
-    h2 {
-      font-size: 20px;
-      margin: 10px;
-    }
-    p {
-      color: #a6a6ae;
-      font-size: 14px;
-    }
-
-  }
 
   .form-inline {
     display: flex;
@@ -280,10 +259,6 @@
           padding: 20px;
         }
 
-        .seeder-picture-big {
-            width: 100px;
-            height: 100px;
-        }
 
         .view {
           margin: 10px 0 0 0;
@@ -303,8 +278,8 @@
           font-size: 12px;
         }
 
-        .tabs-infos {
-          margin-top: 20px;
+        .tabs-info {
+          margin-top: 40px;
         }
 
       .nav-tabs {
