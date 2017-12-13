@@ -63,7 +63,7 @@
   }
 
   .cache{
-      visibility:hidden;
+      visibility: hidden;
       opacity: 0;
       -moz-transition: opacity 1s, visibility 1.3s;
       -webkit-transition: opacity 1s, visibility 1.3s;
@@ -71,7 +71,7 @@
       transition: opacity 1s, visibility 1.3s;
   }
   .montre{
-      visibility:visible;
+      visibility: visible;
       opacity: 1;
       -moz-transition: opacity 1s, visibility 1.3s;
       -webkit-transition: opacity 1s, visibility 1.3s;
