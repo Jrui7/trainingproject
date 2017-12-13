@@ -9,7 +9,7 @@
           <div class="form-title">Ajouter un seed</div>
           <%= simple_form_for @seed do |f| %>
             <div class="row">
-              <div class="col-xs-12 col-sm-5">
+              <div class="col-xs-12 col-sm-6">
                 <div class="input-block">
                   <%= f.input :title, label:"Titre", placeholder: "Exemple: Drone en mousse" %>
                 </div>
@@ -17,51 +17,30 @@
                   <%= f.association :category, label:"Catégorie", prompt: "Selectionner une categorie"%>
                 </div>
               </div>
-              <div class="col-xs-12 col-sm-7">
+              <div class="col-xs-12 col-sm-6">
                 <div class="input-block" id="description">
                   <%= f.input :description,label:"Pourquoi appréciez-vous ce produit?", placeholder: "Exemple: Ce drône est juste top, je l'ai essayé, super autonomie, facilement rangeable, et clairement indestructible grace à ses rebords en mousse." %>
                 </div>
               </div>
             </div>
+
             <div class="row">
-              <h5>Ou avez-vous découvert ce seed?</h5>
-              <div class="col-xs-12 col-sm-5">
-                <%= f.collection_radio_buttons :sale_point, [["internet", 'Grace aux internets 3.0'] ,["traditional", 'Dans la rue, à l ancienne ']], :first, :last %>
-              </div>
-              <div class="col-xs-12 col-sm-7">
-                <div class="help-us cache">
-                  <div class="shop internet hidden">
-                    <p class="magn-left">Aidez-nous à contacter l'entreprise vendeuse</p>
-                    <%= f.input :sale_point_url, label:"url", placeholder: "http://www..." %>
-                    <%= f.input :sale_point_contact, label:"contact", placeholder: "dronemousse@contact.com" %>
-                  </div>
-                  <div class="shop traditional hidden">
-                    <p class="magn-left">Aidez-nous à contacter l'entreprise vendeuse</p>
-                    <%= f.input :sale_point_address, label:"adresse", placeholder: "Dronesen mousse, 1 rue de Paradis..." %>
-                    <%= f.input :sale_point_contact, label:"contact", placeholder: "Email, site internet ou téléphone" %>
-                  </div>
+              <div class="col-xs-12">
+                <div class="chooseFile">
+                  <div><span class="glyphicon glyphicon-picture"></span>Ajoutez jusqu'à 5 photos du seed</div>
+                </div>
+                <div class="input-block attach hidden">
+                  <%= f.input :photos, as: :attachinary, label: false, class: "upload" %>
                 </div>
               </div>
-            </div>
 
-
-
-            <div class="chooseFile">
-              <div><span class="glyphicon glyphicon-picture"></span>Ajoutez jusqu'à 5 photos du seed</div>
-            </div>
-            <div class="input-block attach hidden">
-              <%= f.input :photos, as: :attachinary, label: false, class: "upload" %>
-            </div>
-
-
-
-
-            <div class="chooseVideo">
-              <div><span class="glyphicon glyphicon-play"></span>Ajoutez jusqu'à 2 vidéos du Seed</div>
-            </div>
-            <div class="from-group">
-              <div class="video-container hidden">
-                <div class="row">
+              <div class="col-xs-12">
+                <div class="chooseVideo">
+                  <div><span class="glyphicon glyphicon-play"></span>Ajoutez jusqu'à 2 vidéos du Seed</div>
+                </div>
+              </div>
+              <div class="from-group">
+                <div class="video-container hidden">
                   <div class="col-xs-12 col-sm-6">
                     <div class="input-block">
                       <%= f.input :url, label: "Vidéo 1", placeholder: "coller ici une url video  de youtube" %>
@@ -85,6 +64,41 @@
                 </div>
               </div>
             </div>
+
+            <div class="supplier-infos">
+              <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                  <h5>Ou avez-vous découvert ce seed?</h5>
+                  <%= f.collection_radio_buttons :sale_point, [["internet", 'Grace aux internets 3.0'] ,["traditional", 'Dans la rue, à l ancienne ']], :first, :last %>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                  <div class="input-block" id="description">
+                    <%= f.input :official_description,label:"Collez-ici le descriptif officiel du vendeur", placeholder: "Exemple: dimentions, autonomie, composants..." %>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+                  <div class="help-us cache">
+                    <div class="shop internet hidden">
+                      <p class="magn-left">Aidez-nous à contacter les vendeurs</p>
+                      <%= f.input :sale_point_url, label:"Url", placeholder: "http://www..." %>
+                      <%= f.input :sale_point_contact, label:"Contact", placeholder: "dronemousse@contact.com" %>
+                    </div>
+                    <div class="shop traditional hidden">
+                      <p class="magn-left">Aidez-nous à contacter les vendeurs</p>
+                      <%= f.input :sale_point_address, label:"Adresse", placeholder: "Dronesen mousse, 1 rue de Paradis..." %>
+                      <%= f.input :sale_point_contact, label:"Contact", placeholder: "Email, site internet ou téléphone" %>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+
+
+
+
+
 
 
 
