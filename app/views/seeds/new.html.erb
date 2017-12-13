@@ -71,13 +71,10 @@
                   <h5>Ou avez-vous découvert ce seed?</h5>
                   <%= f.collection_radio_buttons :sale_point, [["internet", 'Grace aux internets 3.0'] ,["traditional", 'Dans la rue, à l ancienne ']], :first, :last %>
                 </div>
-                <div class="col-xs-12 col-sm-6">
-                  <div class="input-block" id="description">
-                    <%= f.input :official_description,label:"Collez-ici le descriptif officiel du vendeur", placeholder: "Exemple: dimentions, autonomie, composants..." %>
-                  </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-                  <div class="help-us cache">
+              </div>
+              <div class="row">
+                <div class="help-us cache">
+                  <div class="col-xs-12 col-sm-6">
                     <div class="shop internet hidden">
                       <p class="magn-left">Aidez-nous à contacter les vendeurs</p>
                       <%= f.input :sale_point_url, label:"Url", placeholder: "http://www..." %>
@@ -89,19 +86,14 @@
                       <%= f.input :sale_point_contact, label:"Contact", placeholder: "Email, site internet ou téléphone" %>
                     </div>
                   </div>
+                  <div class="col-xs-12 col-sm-6">
+                    <div class="input-block" id="description">
+                      <%= f.input :official_description,label:"Collez-ici le descriptif officiel du vendeur", placeholder: "Exemple: dimentions, autonomie, composants..." %>
+                    </div>
+                  </div>
                 </div>
-
               </div>
             </div>
-
-
-
-
-
-
-
-
-
             <div class="form-action">
             <%= f.submit value: "POSTER", class: "btn btn-primary" %>
             </div>
