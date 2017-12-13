@@ -26,7 +26,7 @@
             <div class="row">
               <h5>Ou avez-vous découvert ce seed?</h5>
               <div class="col-xs-12 col-sm-5">
-                <%= f.collection_radio_buttons :sale_point, [["internet", 'Grace aux internets 3.0'] ,["traditional", 'Dans la rue, avec mes pieds']], :first, :last %>
+                <%= f.collection_radio_buttons :sale_point, [["internet", 'Grace aux internets 3.0'] ,["traditional", 'Dans la rue, à l ancienne ']], :first, :last %>
               </div>
               <div class="col-xs-12 col-sm-7">
                 <div class="help-us cache">
@@ -45,9 +45,9 @@
             </div>
 
 
-            <div class="form-group" id="photos-button">
-              <div class="chooseFile">Ajouter des photos
-              </div>
+
+            <div class="chooseFile">
+              <div><span class="glyphicon glyphicon-picture"></span>Ajoutez jusqu'à 5 photos du seed</div>
             </div>
             <div class="input-block attach hidden">
               <%= f.input :photos, as: :attachinary, label: false, class: "upload" %>
@@ -55,9 +55,9 @@
 
 
 
-            <div class="form-group" id="add-video-button">
-              <button type="button" class="chooseVideo">Ajouter une/des vidéos
-              </button>
+
+            <div class="chooseVideo">
+              <div><span class="glyphicon glyphicon-play"></span>Ajoutez jusqu'à 2 vidéos du Seed</div>
             </div>
             <div class="from-group">
               <div class="video-container hidden">
