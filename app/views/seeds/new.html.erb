@@ -1,77 +1,110 @@
 <% content_for(:title_tag) do %>
   Bienvenue sur Seedoak
 <% end %>
-<div class="page">
-  <div class="container">
-    <div class="row">
-       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-        <div class="form-post">
+<div class="container">
+  <div class="page-section">
+    <div class="row head">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 remove-padding-xs">
+        <div class="form-post-seed">
           <div class="form-title">Ajouter un seed</div>
-          <%= simple_form_for @seed do |b| %>
-            <div class="row">
-              <div class="col-xs-12 col-sm-6">
-                <div class="input-block">
-                  <%= b.input :title, label:"Titre", placeholder: "Exemple: Drone en mousse" %>
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-6">
-                <div class="input-block">
-                  <%= b.association :category, label:"Catégorie", prompt: "Selectionner une categorie"%>
-                </div>
-              </div>
-            </div>
+          <%= simple_form_for @seed do |f| %>
 
-            <div class="form-group" id="photos-button">
-              <button type="button" class="chooseFile">Ajouter des photos
-              </button>
-            </div>
-            <div class="input-block attach hidden">
-              <%= b.input :photos, as: :attachinary, label: false, class: "upload" %>
-            </div>
-
-            <div class="input-block" id="description">
-              <%= b.input :description,label:"Décrire le produit", placeholder: "Exemple: Ce drone ne risque pas de se casser car il est fait en mousse. Ideal pour la montagne." %>
-            </div>
-
-            <div class="form-group" id="add-video-button">
-              <button type="button" class="chooseVideo">Ajouter une/des vidéos
-              </button>
-            </div>
-            <div class="from-group">
-              <div class="video-container hidden">
-                <div class="row">
-                  <div class="col-xs-12 col-sm-6">
-                    <div class="input-block">
-                      <%= b.input :url, label: "Vidéo 1", placeholder: "coller ici une url video  de youtube" %>
-
-                      <div class="media-preview hidden">
-                        <iframe id="iframe" src="">
-                        </iframe>
-                      </div>
-                    </div>
+            <div class="seeder-infos">
+              <div class="row head">
+                <div class="col-xs-12 col-sm-6 nopadding-right nopadding-left">
+                  <div class="input-block">
+                    <%= f.input :title, label:"Titre", placeholder: "Exemple: Drone en mousse" %>
                   </div>
-                  <div class="col-xs-12 col-sm-6">
-                    <div class="input-block">
-                      <%= b.input :secondary_url, label: "Vidéo 2", placeholder: "ex: https://www.youtube.com/watch?v=p4Qd-CJ" %>
-
-                      <div class="second-media-preview hidden">
-                        <iframe id="iframe-2" src="">
-                        </iframe>
-                      </div>
-                    </div>
+                  <div class="input-block">
+                    <%= f.association :category, label:"Catégorie", prompt: "Selectionner une categorie"%>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 nopadding-right nopadding-left">
+                  <div class="input-block" id="description">
+                    <%= f.input :description,label:"Pourquoi appréciez-vous ce produit?", placeholder: "Exemple: Ce drône est juste top, je l'ai essayé, super autonomie, facilement rangeable, et clairement indestructible grace à ses rebords en mousse." %>
                   </div>
                 </div>
               </div>
             </div>
 
+            <div class="media-display">
+              <div class="row head">
+                <div class="col-xs-12 nopadding-right nopadding-left">
+                  <div class="chooseFile">
+                    <div><span class="glyphicon glyphicon-plus"></span>Ajouter des photos<span style="color: lightcoral; font-size: 13px; font-weight: bold; margin-left: 10px;">(min-1 / max-5)</span></div>
+                  </div>
+                  <div class="input-block attach hidden">
+                    <%= f.input :photos, as: :attachinary, label: false, class: "upload" %>
+                  </div>
+                </div>
+                <div class="col-xs-12 nopadding-right nopadding-left">
+                  <div class="chooseVideo">
+                    <div><span class="glyphicon glyphicon-plus"></span>Ajouter une vidéo</div>
+                  </div>
+                </div>
+                <div class="from-group">
+                  <div class="video-container cache">
+                    <div class="col-xs-12 col-md-6 nopadding-right nopadding-left">
+                      <div class="input-block video-block hidden">
+                        <%= f.input :url, label: "Vidéo 1", placeholder: "coller ici une url video  de youtube" %>
 
+                        <div class="media-preview hidden">
+                          <iframe id="iframe" src="">
+                          </iframe>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 nopadding-right nopadding-left">
+                      <div class="input-block video-block hidden">
+                        <%= f.input :secondary_url, label: "Vidéo 2", placeholder: "ex: https://www.youtube.com/watch?v=p4Qd-CJ" %>
+
+                        <div class="second-media-preview hidden">
+                          <iframe id="iframe-2" src="">
+                          </iframe>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="supplier-infos">
+              <div class="row head">
+                <div class="col-xs-12 col-sm-6 nopadding-right nopadding-left">
+                  <h5>Ou est vendu ce seed?</h5>
+                  <%= f.collection_radio_buttons :sale_point, [["internet", 'Sur les internets 3.0'] ,["traditional", 'Dans une boutique sympathique']], :first, :last %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="help-us cache">
+                  <div class="col-xs-12 col-sm-6 nopadding-right nopadding-left">
+                    <div class="shop internet hidden">
+                      <p class="magn-left">Aidez-nous à contacter les vendeurs</p>
+                      <%= f.input :sale_point_url, label:"Url", placeholder: "http://www..." %>
+                      <%= f.input :sale_point_contact, label:"Contact", placeholder: "dronemousse@contact.com" %>
+                    </div>
+                    <div class="shop traditional hidden">
+                      <p class="magn-left">Aidez-nous à contacter les vendeurs</p>
+                      <%= f.input :sale_point_address, label:"Adresse", placeholder: "Dronesen mousse, 1 rue de Paradis..." %>
+                      <%= f.input :sale_point_contact, label:"Contact", placeholder: "Email, site internet ou téléphone" %>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-6">
+                    <div class="official_description hidden">
+                      <%= f.input :official_description,label:"Collez-ici le descriptif officiel du vendeur", placeholder: "Exemple: dimentions, autonomie, composants..." %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <div class="form-action">
-            <%= b.submit value: "POSTER", class: "btn btn-primary" %>
+            <%= f.submit value: "POSTER", class: "btn btn-danger" %>
             </div>
-         <% end %>
-         </div>
-       </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
