@@ -43,9 +43,9 @@
                   </div>
                 </div>
                 <div class="from-group">
-                  <div class="video-container hidden">
-                    <div class="col-xs-12 col-sm-6">
-                      <div class="input-block">
+                  <div class="video-container cache">
+                    <div class="col-xs-12 col-md-6">
+                      <div class="input-block video-block hidden">
                         <%= f.input :url, label: "Vidéo 1", placeholder: "coller ici une url video  de youtube" %>
 
                         <div class="media-preview hidden">
@@ -54,8 +54,8 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6">
-                      <div class="input-block">
+                    <div class="col-xs-12 col-md-6">
+                      <div class="input-block video-block hidden">
                         <%= f.input :secondary_url, label: "Vidéo 2", placeholder: "ex: https://www.youtube.com/watch?v=p4Qd-CJ" %>
 
                         <div class="second-media-preview hidden">

@@ -22,8 +22,9 @@ $(document).ready(function() {
 
   });
 
-  $("#add-video-button").click(function() {
-    $(".video-container").removeClass("hidden");
+  $(".chooseVideo").click(function() {
+    $(".video-block").toggleClass("hidden");
+    $(".video-container").toggleClass("cache montre");
   });
 
 });

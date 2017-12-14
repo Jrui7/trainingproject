@@ -20,6 +20,9 @@ margin-bottom: 35px;
     display: flex;
     flex-wrap: wrap;
   }
+  .video-block {
+    margin-top: 20px;
+  }
 }
 
 .supplier-infos {
@@ -189,10 +192,13 @@ abbr {
 
 #iframe {
   width: 100%;
+  margin-top: 10px;
 }
 
 #iframe-2 {
   width: 100%;
+  margin-top: 10px;
+
 }
 
 
