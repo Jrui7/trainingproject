@@ -4,60 +4,64 @@
 <div class="container">
   <div class="page-section">
     <div class="row">
-       <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
         <div class="form-post-seed">
           <div class="form-title">Ajouter un seed</div>
           <%= simple_form_for @seed do |f| %>
-            <div class="row">
-              <div class="col-xs-12 col-sm-6">
-                <div class="input-block">
-                  <%= f.input :title, label:"Titre", placeholder: "Exemple: Drone en mousse" %>
+
+            <div class="seeder-infos">
+              <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                  <div class="input-block">
+                    <%= f.input :title, label:"Titre", placeholder: "Exemple: Drone en mousse" %>
+                  </div>
+                  <div class="input-block">
+                    <%= f.association :category, label:"Catégorie", prompt: "Selectionner une categorie"%>
+                  </div>
                 </div>
-                <div class="input-block">
-                  <%= f.association :category, label:"Catégorie", prompt: "Selectionner une categorie"%>
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-6">
-                <div class="input-block" id="description">
-                  <%= f.input :description,label:"Pourquoi appréciez-vous ce produit?", placeholder: "Exemple: Ce drône est juste top, je l'ai essayé, super autonomie, facilement rangeable, et clairement indestructible grace à ses rebords en mousse." %>
+                <div class="col-xs-12 col-sm-6">
+                  <div class="input-block" id="description">
+                    <%= f.input :description,label:"Pourquoi appréciez-vous ce produit?", placeholder: "Exemple: Ce drône est juste top, je l'ai essayé, super autonomie, facilement rangeable, et clairement indestructible grace à ses rebords en mousse." %>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div class="row">
-              <div class="col-xs-12">
-                <div class="chooseFile">
-                  <div><span class="glyphicon glyphicon-picture"></span>Ajoutez jusqu'à 5 photos du seed</div>
+            <div class="media-display">
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="chooseFile">
+                    <div><span class="glyphicon glyphicon-picture"></span>Ajoutez jusqu'à 5 photos du seed</div>
+                  </div>
+                  <div class="input-block attach hidden">
+                    <%= f.input :photos, as: :attachinary, label: false, class: "upload" %>
+                  </div>
                 </div>
-                <div class="input-block attach hidden">
-                  <%= f.input :photos, as: :attachinary, label: false, class: "upload" %>
+                <div class="col-xs-12">
+                  <div class="chooseVideo">
+                    <div><span class="glyphicon glyphicon-play"></span>Ajoutez jusqu'à 2 vidéos du Seed</div>
+                  </div>
                 </div>
-              </div>
+                <div class="from-group">
+                  <div class="video-container hidden">
+                    <div class="col-xs-12 col-sm-6">
+                      <div class="input-block">
+                        <%= f.input :url, label: "Vidéo 1", placeholder: "coller ici une url video  de youtube" %>
 
-              <div class="col-xs-12">
-                <div class="chooseVideo">
-                  <div><span class="glyphicon glyphicon-play"></span>Ajoutez jusqu'à 2 vidéos du Seed</div>
-                </div>
-              </div>
-              <div class="from-group">
-                <div class="video-container hidden">
-                  <div class="col-xs-12 col-sm-6">
-                    <div class="input-block">
-                      <%= f.input :url, label: "Vidéo 1", placeholder: "coller ici une url video  de youtube" %>
-
-                      <div class="media-preview hidden">
-                        <iframe id="iframe" src="">
-                        </iframe>
+                        <div class="media-preview hidden">
+                          <iframe id="iframe" src="">
+                          </iframe>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-xs-12 col-sm-6">
-                    <div class="input-block">
-                      <%= f.input :secondary_url, label: "Vidéo 2", placeholder: "ex: https://www.youtube.com/watch?v=p4Qd-CJ" %>
+                    <div class="col-xs-12 col-sm-6">
+                      <div class="input-block">
+                        <%= f.input :secondary_url, label: "Vidéo 2", placeholder: "ex: https://www.youtube.com/watch?v=p4Qd-CJ" %>
 
-                      <div class="second-media-preview hidden">
-                        <iframe id="iframe-2" src="">
-                        </iframe>
+                        <div class="second-media-preview hidden">
+                          <iframe id="iframe-2" src="">
+                          </iframe>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -94,12 +98,13 @@
                 </div>
               </div>
             </div>
+
             <div class="form-action">
-            <%= f.submit value: "POSTER", class: "btn btn-primary" %>
+            <%= f.submit value: "POSTER", class: "btn btn-danger" %>
             </div>
-         <% end %>
-         </div>
-       </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
