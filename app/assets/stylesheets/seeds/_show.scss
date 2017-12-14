@@ -526,13 +526,17 @@
 
       li {
         a {
-          padding: 10px;
-          font-size: 12px;
+          padding: 5px;
+          margin-right: 0;
         }
       }
 
       h5 {
-        font-size: 14px;
+        font-size: 13px;
+      }
+
+      .nopadding-right {
+        border-right: 0px;
       }
 
 
