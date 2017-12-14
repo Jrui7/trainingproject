@@ -26,6 +26,10 @@ class Seed < ApplicationRecord
     message: "Attribuez une catégorie au seed"
     }
 
+  validates :photos, presence: {
+    message: "Ajoutez au moins une photo"
+    }
+
   has_attachments :photos, maximum: 5
 
   scope :popular, -> { order(popularity: :desc) }
