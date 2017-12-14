@@ -15,6 +15,11 @@ margin-bottom: 35px;
 .media-display {
 padding: 0 20px;
 margin-bottom: 35px;
+  .attachinary_container {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .supplier-infos {
@@ -25,7 +30,7 @@ margin-bottom: 35px;
 .form-post-seed {
   background: white;
   border-radius: 3px;
-  border: 1px solid #e8e8e8;
+  border: 6px solid $blue;
 
 
   .form-group {
@@ -199,6 +204,7 @@ font-size: 17px;
 cursor: pointer;
 margin: 0;
 padding-left: 20px;
+margin-bottom: 30px;
 
   span {
     margin-left: 0;
