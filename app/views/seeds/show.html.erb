@@ -139,36 +139,36 @@
           </div>
           <div class="show-seed-description">
             <div class="seeder">
-              <%if @user.has_photo? %>
-              <%= cl_image_tag(@seed.user.photo.path, class: "seeder-picture-big")%>
+              <%if @seeder.has_photo? %>
+              <%= cl_image_tag(@seeder.photo.path, class: "seeder-picture-big")%>
               <% else %>
                 <i class="fa fa-user-o"></i>
               <% end %>
               <div class="user-show">
-                <p id= "pseudo-bold"> <%= @seed.user.pseudo %>
+                <p id= "pseudo-bold"> <%= @seeder.pseudo %>
                 </p>
                 <p class="seeder-infos-media">Seeder infos</p>
               </div>
             </div>
             <div class="social-card-user">
-              <% if @user.mini_bio? %>
+              <% if @seeder.mini_bio? %>
                 <div class="mini-bio">
-                  <p><%= @seed.user.mini_bio %></p>
+                  <p><%= @seeder.mini_bio %></p>
                 </div>
               <% end %>
-              <% if @seed.user.social_links? %>
+              <% if @seeder.social_links? %>
                 <div class="social-group">
                   <% if @seed.user.insta?  %>
-                    <a target="_blank" href="<%= @user.insta %>" class="fa fa-instagram"></a>
+                    <a target="_blank" href="<%= @seeder.insta %>" class="fa fa-instagram"></a>
                   <% end %>
-                  <% if @seed.user.youtube? %>
-                    <a target="_blank" href="<%= @user.youtube %>" class="fa fa-youtube"></a>
+                  <% if @seeder.youtube? %>
+                    <a target="_blank" href="<%= @seeder.youtube %>" class="fa fa-youtube"></a>
                   <% end %>
-                  <% if @seed.user.snap? %>
-                    <a target="_blank" href="<%= @user.snap %>" class="fa fa-snapchat-ghost"></a>
+                  <% if @seeder.snap? %>
+                    <a target="_blank" href="<%= @seeder.snap %>" class="fa fa-snapchat-ghost"></a>
                   <% end %>
-                  <% if @seed.user.facebook? %>
-                    <a target="_blank" href="<%= @user.facebook %>" class="fa fa-facebook"></a>
+                  <% if @seeder.facebook? %>
+                    <a target="_blank" href="<%= @seeder.facebook %>" class="fa fa-facebook"></a>
                   <% end %>
                 </div>
               <% end %>
