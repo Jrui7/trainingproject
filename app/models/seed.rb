@@ -30,6 +30,11 @@ class Seed < ApplicationRecord
     message: "Ajoutez au moins une photo"
     }
 
+  validates :url, url: true
+  validates :secondary_url, url: true
+
+
+
   has_attachments :photos, maximum: 5
 
   scope :popular, -> { order(popularity: :desc) }
