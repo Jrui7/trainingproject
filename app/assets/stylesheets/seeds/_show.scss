@@ -309,6 +309,20 @@
       p {
         margin: 0 0 0 10px;
       }
+
+      .seeder-infos-media {
+        cursor: pointer;
+      }
+    }
+
+    .social-card-user {
+      margin-top: 20px;
+      padding-left: 60px;
+    }
+
+    .social-group {
+      display: flex;
+      flex-wrap: wrap;
     }
 
     .nav-tabs {
