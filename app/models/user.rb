@@ -6,6 +6,14 @@ class User < ApplicationRecord
 
          validates :pseudo, uniqueness: true
          validates :pseudo, presence: true
+         validates :insta, url: true
+         validates :facebook, url: true
+         validates :youtube, url: true
+         validates :snap, url: true
+
+
+
+
 
          has_many :seeds
          has_many :picks
@@ -37,5 +45,28 @@ class User < ApplicationRecord
     seeds
   end
 
+  def mini_bio?
+    !self.mini_bio.blank?
+  end
+
+  def facebook?
+    !self.facebook.blank?
+  end
+
+  def insta?
+    !self.insta.blank?
+  end
+
+  def youtube?
+    !self.youtube.blank?
+  end
+
+  def snap?
+    !self.snap.blank?
+  end
+
+  def social_links?
+    facebook? || insta? || youtube? || snap?
+  end
 
 end

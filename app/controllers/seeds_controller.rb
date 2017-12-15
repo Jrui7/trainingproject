@@ -34,6 +34,7 @@ class SeedsController < ApplicationController
 
   def show
     @seed = Seed.find(params[:id])
+    @seeder = @seed.user
     @seed.increment_views
     @seed.increment_popularity
     @pick = Pick.new

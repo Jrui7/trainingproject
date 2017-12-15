@@ -139,16 +139,39 @@
           </div>
           <div class="show-seed-description">
             <div class="seeder">
-              <%if @seed.user.has_photo? %>
-              <%= cl_image_tag(@seed.user.photo.path, class: "seeder-picture-big")%>
+              <%if @seeder.has_photo? %>
+              <%= cl_image_tag(@seeder.photo.path, class: "seeder-picture-big")%>
               <% else %>
                 <i class="fa fa-user-o"></i>
               <% end %>
               <div class="user-show">
-                <p id= "pseudo-bold"> <%= @seed.user.pseudo %>
+                <p id= "pseudo-bold"> <%= @seeder.pseudo %>
                 </p>
-                <p>Seeder infos</p>
+                <p class="seeder-infos-media">Seeder infos</p>
               </div>
+            </div>
+            <div class="social-card-user">
+              <% if @seeder.mini_bio? %>
+                <div class="mini-bio">
+                  <p><%= @seeder.mini_bio %></p>
+                </div>
+              <% end %>
+              <% if @seeder.social_links? %>
+                <div class="social-group">
+                  <% if @seed.user.insta?  %>
+                    <a target="_blank" href="<%= @seeder.insta %>" class="fa fa-instagram"></a>
+                  <% end %>
+                  <% if @seeder.youtube? %>
+                    <a target="_blank" href="<%= @seeder.youtube %>" class="fa fa-youtube"></a>
+                  <% end %>
+                  <% if @seeder.snap? %>
+                    <a target="_blank" href="<%= @seeder.snap %>" class="fa fa-snapchat-ghost"></a>
+                  <% end %>
+                  <% if @seeder.facebook? %>
+                    <a target="_blank" href="<%= @seeder.facebook %>" class="fa fa-facebook"></a>
+                  <% end %>
+                </div>
+              <% end %>
             </div>
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#avis"><h5>AVIS PERSONNEL</h5></a></li>
@@ -159,7 +182,7 @@
                 <p class="descriptif-content"><%= @seed.description %></p>
               </div>
               <div id="descriptif" class="tab-pane fade">
-                <p class="descriptif-content">Migration à prévoir pour ajouter cette partie</p>
+                <p class="descriptif-content"><%= @seed.official_description %></p>
               </div>
             </div>
 
