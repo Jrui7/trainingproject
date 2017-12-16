@@ -3,19 +3,21 @@
 <% end %>
 
 <div class="page-container">
+
+  <div class="filter-xs hidden-sm hidden-md hidden-lg">
+
+  </div>
+
   <div class="seed-feed">
 
-
     <div class="categories hidden-xs">
-
       <div class="filter-title">
         <div class="filter-header">
           <p>TRIER</p>
         </div>
-
         <div class="sub-categories">
           <%= link_to seeds_path do %>
-            <div class="sub-title">
+            <div class="selected-category">
               <div class="filter-icon glyphicon glyphicon-globe"></div>
               <p>Tous</p>
             </div>
@@ -57,12 +59,14 @@
         <div class="sub-categories">
           <% @categories.each do |category| %>
             <%= link_to seeds_path(category: category.id), remote: true do %>
-              <div class="sub-title <%= category.id %>">
-                <p><%= image_tag "categories.jpg", class: "categories-icon" %>
-                </p>
-                <div class="name-and-count">
-                  <p><%= category.name%></p>
-                  <p class="number-of-seeds <%=category.id%> hidden">(<%=@seeds.where(category: category).count%>)</p>
+              <div>
+                <div class="sub-title <%= category.id %>">
+                  <p><%= image_tag "categories.jpg", class: "categories-icon" %>
+                  </p>
+                  <div class="name-and-count">
+                    <p><%= category.name%></p>
+                    <p class="number-of-seeds <%=category.id%> hidden">(<%=@seeds.where(category: category).count%>)</p>
+                  </div>
                 </div>
               </div>
             <% end %>
@@ -77,7 +81,6 @@
 
 
   </div>
-
 </div>
 
 
