@@ -72,12 +72,12 @@ a:hover {
 
 .name-and-count {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .number-of-seeds {
   padding-left: 4px;
-  font-size: 12px;
+  font-size: 14px;
 
 }
 
@@ -126,6 +126,32 @@ a:hover {
   }
   p {
     margin: 0;
+  }
+
+}
+
+.selected-category {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  transition: all 0.5s;
+  padding: 5px 13px 5px 13px;
+  margin-bottom: 2px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.25), 2px 5px 5px rgba(0,0,0,0.22);
+
+
+    &:hover {
+  box-shadow: 0 5px 10px rgba(0,0,0,0.25), 2px 5px 5px rgba(0,0,0,0.22);
+  background-color: #FFFFFF;
+  padding: 5px 13px 5px 13px;
+  margin-bottom: 2px;
+}
+  a {
+    text-decoration: none;
+  }
+  p {
+    margin: 0;
+    font-weight: bold;
   }
 
 }

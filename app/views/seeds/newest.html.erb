@@ -27,7 +27,7 @@
             </div>
           <% end %>
           <%= link_to newest_path do %>
-            <div class="sub-title">
+            <div class="selected-category">
               <div class="filter-icon glyphicon glyphicon-leaf"></div>
               <p>Récents</p>
             </div>
@@ -56,12 +56,18 @@
         </div>
         <div class="sub-categories">
           <% @categories.each do |category| %>
-            <div class="sub-title <%= category.id %>">
-              <p><%= image_tag "categories.jpg", class: "categories-icon" %>
-              </p>
-              <p><%= link_to category.name, seeds_path(category: category.id), remote: true %>
-              </p>
-            </div>
+            <%= link_to seeds_path(category: category.id), remote: true do %>
+              <div>
+                <div class="sub-title <%= category.id %>">
+                  <p><%= image_tag "categories.jpg", class: "categories-icon" %>
+                  </p>
+                  <div class="name-and-count">
+                    <p><%= category.name%></p>
+                    <p class="number-of-seeds <%=category.id%> hidden">(<%=@seeds.where(category: category).count%>)</p>
+                  </div>
+                </div>
+              </div>
+            <% end %>
           <% end %>
         </div>
       </div>
