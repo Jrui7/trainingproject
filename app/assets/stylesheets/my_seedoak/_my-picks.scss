@@ -87,6 +87,14 @@ a:hover {
   flex-direction: column;
   justify-content: space-between;
 
+  .homepage-link {
+    text-align: right;
+  }
+
+  #red-p {
+    color: $red;
+  }
+
 }
 
 .product-body h3 {
