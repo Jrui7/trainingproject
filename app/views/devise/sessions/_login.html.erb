@@ -2,14 +2,14 @@
 <%= form_for(:user, :url => session_path(:user)) do |f| %>
   <div class="login-form">
     <div class="email">
-      <%= f.text_field :email %>
+      <%= f.text_field :email, id:"email" %>
       <div class="remember-box">
         <%= f.check_box :remember_me %>
         <%= f.label :remember_me, class: "remember-label" %>
       </div>
     </div>
     <div class="password">
-      <%= f.password_field :password %>
+      <%= f.password_field :password, id: "password" %>
       <%= link_to "Forgot your password?", new_password_path(:user), class: "forgot-link" %>
     </div>
     <div class="validate-zone">
