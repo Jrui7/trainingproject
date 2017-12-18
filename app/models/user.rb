@@ -9,7 +9,6 @@ class User < ApplicationRecord
          validates :insta, url: true
          validates :facebook, url: true
          validates :youtube, url: true
-         validates :snap, url: true
 
 
 
