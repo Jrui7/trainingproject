@@ -6,65 +6,32 @@
         <div id="logo-home">Seedoak</div>
         <span class="glyphicon glyphicon-leaf", id="logo-home"></span>
       </div>
-      <div class="log-in-home hidden-xs hidden-sm">
+      <div class="connect-button">
+        <div class="btn">
+          CONNEXION
+        </div>
+      </div>
+      <div class="log-in-home hidden">
         <%= render "devise/sessions/login" %>
       </div>
     </div>
   </header>
 
   <div class="banner-content">
-    <div class="enter">
-
-      <div class="teaser-seedoak hidden-xs hidden-sm">
-        <h2>Une expérience d'achat inédite</h2>
-        <div class="moto"> <p>Découvrez et faites découvrir les meilleures nouveautés</p>
-          <div class="seed-image">
-            <%= cl_image_tag("acorn-t_mwydjr.png", :height=>30, :crop=>"scale") %>
+    <div class="banner-container">
+      <div class="row">
+        <div class="col-xs-12 col-md-9">
+          <div class="teaser-seedoak">
+            <h2>Décidons ensemble du prix de nos coups de coeur</h2>
           </div>
-          <div class="seed-image">
-            <%= cl_image_tag("acorn-t_mwydjr.png", :height=>30, :crop=>"scale") %>
-          </div>
-          <div class="seed-image">
-            <%= cl_image_tag("acorn-t_mwydjr.png", :height=>30, :crop=>"scale") %>
+        </div>
+        <div class="col-xs-8 col-md-3">
+          <div class="form-space">
+            <%= render "devise/sessions/sign-up" %>
           </div>
         </div>
       </div>
-
-      <div class="form-space hidden-xs hidden-sm">
-        <div class="squirrel-image">
-          <%= cl_image_tag("squirrel_ymaliq.png", :height=>200, :crop=>"scale") %>
-        </div>
-        <%= render "devise/sessions/sign-up" %>
-      </div>
-
-      <div class="hidden-md hidden-lg" id="action-xs">
-        <h2>Une expérience d'achat inédite</h2>
-        <p class="moto">Découvrez et faites découvrir les meilleures nouveautés</p>
-        <div class="action-buttons">
-          <div class="btn btn-primary" id= "sign-in">Connexion</div>
-          <div class="btn btn-warning" id= "sign-up">Inscription</div>
-        </div>
-      </div>
-
-      <div class="form-xs hidden">
-        <div class="form-login-xs hidden">
-          <%= link_to root_path do %>
-            <span class="glyphicon glyphicon-remove"></span>
-          <% end %>
-          <%= render "devise/sessions/login" %>
-        </div>
-        <div class="form-sign-up-xs hidden">
-          <%= link_to root_path do %>
-            <span class="glyphicon glyphicon-remove"></span>
-          <% end %>
-          <%= render "devise/sessions/sign-up" %>
-        </div>
-      </div>
-
-
-
     </div>
-
   </div>
 
 </div>

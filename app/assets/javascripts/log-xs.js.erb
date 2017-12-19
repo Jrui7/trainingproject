@@ -1,6 +1,7 @@
 $(document).ready(function(){
   loadLogIn();
   loadSignUp();
+  connexion();
 })
 
 function loadLogIn() {
@@ -19,4 +20,10 @@ function loadSignUp() {
   })
 }
 
+function connexion() {
+  $(".connect-button").click(function(){
+      $(".connect-button").toggle();
+      $(".log-in-home").removeClass("hidden");
+  });
 
+}
