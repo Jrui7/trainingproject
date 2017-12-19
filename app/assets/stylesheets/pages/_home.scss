@@ -122,7 +122,7 @@
   justify-content: space-between;
 
   .banner-container {
-    margin-top: 50px;
+    margin-top: 100px;
     width: 100%;
     height: 70vh;
     padding: 0;
@@ -136,8 +136,7 @@
   }
 
   .teaser-seedoak {
-    display: flex;
-    align-items: center;
+    text-align: center;
   }
 
 
@@ -165,8 +164,7 @@
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    padding: 40px;
-    border: 1px solid white;
+    padding: 100px;
 
   }
 
@@ -232,24 +230,11 @@
     margin: 0;
   }
 
-  .glyphicon-remove {
-    color: white;
-    background-color: $blue;
-    padding: 5px;
-    border-radius: 50%;
-    margin-bottom: 35px;
-    font-size: 12px;
+  .logo-and-log {
+    padding-top: 30px;
   }
 
-  .form-login-xs {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
 
-  .login-form {
-    display: block;
-    padding: 30px;
 
 
 
@@ -295,44 +280,25 @@
     border: none;
     border-radius: 3px;
   }
-}
 
-  .banner-content .enter {
-    padding: 25px;
-    justify-content: center;
 
-    #action-xs {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+  .banner-content  {
+    width: 100%;
+    padding: 50px 10px;
+
+    .teaser-seedoak {
+      display: block;
+      text-align: center;
     }
 
-    .action-buttons {
-      display: flex;
-    }
-
-    .btn-primary {
-      font-size: 20px;
-    }
-
-    .btn-warning {
-      padding: 10px;
-      font-size: 20px;
-      margin-top: 20px;
-    }
 
     h2 {
-      font-size: 30px;
-      font-weight: bold;
+      font-size: 29px;
     }
 
 
-    .form-sign-up-xs {
-      padding: 15px;
-      border-radius: 2px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .form-space {
+      padding: 50px 0;
     }
 
     #new_user {

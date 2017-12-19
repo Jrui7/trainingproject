@@ -1,14 +1,14 @@
 $(document).ready(function() {
-   $( ".input-sm.form-control.pick" ).keyup(function() {
+   $( "#start-pick" ).keyup(function() {
       var value = $( this ).val();
 
       $('.counter').each(function() {
       var $this = $(this),
           countTo = value;
 
-      $({ countNum: 0}).animate({
-        countNum: countTo
-      },
+      $({ countNum: $this.text()}).animate({
+          countNum: countTo
+        },
 
       {
 
@@ -27,5 +27,5 @@ $(document).ready(function() {
 
       });
     })
-   .keyup();
+
   });
