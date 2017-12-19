@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.3.4'
 
+git_source(:github) { |name| "https://github.com/#{name}.git" }
+
 gem 'devise'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
