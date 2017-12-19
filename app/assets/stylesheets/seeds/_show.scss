@@ -175,8 +175,8 @@
 
   .close {
     position: absolute;
-    top: 10px;
-    right: -50px;
+    top: -60px;
+    left: 40%;
     background-color: white;
     border-radius: 50%;
     color: black;
@@ -476,6 +476,16 @@
 
   .price {
     margin-top: 25px;
+    display: flex;
+    align-items: center;
+
+    p {
+      margin: 0;
+    }
+
+    .form-control {
+      width: 55%;
+    }
   }
 
   .submit-pick {
@@ -533,6 +543,20 @@
     .page-container .left-section {
       margin-right: 0px;
       padding: 20px 10px;
+    }
+
+    .price {
+      margin-top: 25px;
+      display: flex;
+      align-items: center;
+
+      p {
+        margin: 0;
+      }
+
+      .form-control {
+        margin-left: 10px;
+      }
     }
 
     .page-container .head  {
