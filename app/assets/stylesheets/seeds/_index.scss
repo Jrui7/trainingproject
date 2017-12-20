@@ -2,7 +2,7 @@
 .page-container {
   width: 100%;
   margin-top: 50px;
-  padding: 0;
+  padding: 0 0 45px 0;
   margin-bottom: 20px;
   display: flex;
   justify-content: center;
@@ -26,7 +26,8 @@
     right: 10px;
     bottom: 10px;
     padding: 10px 15px;
-    border: 1px solid $light-gray;
+    border: 1px solid #4d4d5e;
+    background-color: white;
     border-radius: 50%;
     text-decoration: none;
     outline: none;
@@ -436,6 +437,7 @@ a:hover {
     }
 
     @media(max-width: 480px) {
+
 
       .seed-feed {
         margin: 0;
