@@ -1,5 +1,6 @@
 $(document).ready(function(){
   triggerModal();
+  triggerCatModal();
   validateFilter();
 })
 
@@ -13,5 +14,11 @@ function triggerModal() {
 function validateFilter() {
   $(".validate-filter").click(function(){
     $(".close").click();
+  })
+}
+
+function triggerCatModal() {
+  $("#fixed-modal-trigger-cat").click(function(){
+    $("#real-trigger-cat").click();
   })
 }

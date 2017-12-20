@@ -21,9 +21,21 @@
 
 .filter-xs {
 
-  #fixed-modal-trigger {
+  #fixed-modal-trigger  {
     position: fixed;
     right: 10px;
+    bottom: 10px;
+    padding: 10px 14px;
+    border: 1px solid #4d4d5e;
+    background-color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    outline: none;
+  }
+
+  #fixed-modal-trigger-cat {
+    position: fixed;
+    left: 10px;
     bottom: 10px;
     padding: 10px 14px;
     border: 1px solid #4d4d5e;
