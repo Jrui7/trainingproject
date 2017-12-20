@@ -1,0 +1,17 @@
+$(document).ready(function(){
+  triggerModal();
+  validateFilter();
+})
+
+
+function triggerModal() {
+  $("#fixed-modal-trigger").click(function(){
+    $("#real-trigger").click();
+  })
+}
+
+function validateFilter() {
+  $(".validate-filter").click(function(){
+    $(".close").click();
+  })
+}
