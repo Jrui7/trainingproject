@@ -64,15 +64,17 @@
     font-size: 30px;
   }
 
+  .sub-categories {
+    width: 50%;
+  }
+
 
   .sub-title-xs {
-    width: 50%;
     display: flex;
     align-items: center;
     font-size: 13px;
     transition: all 0.1s;
-    padding: 15px 13px 15px 13px;
-    margin-bottom: 2px;
+    padding: 13px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(0,0,0,0.07);
 
 
