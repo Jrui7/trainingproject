@@ -140,7 +140,8 @@
     }
   }
 
-  .modal {
+  .pick-modal {
+    .modal {
     text-align: center;
     padding: 0!important;
   }
@@ -161,17 +162,7 @@
   }
 
 
-  .modal-content {
-    box-shadow: 1px 0 6px 0 rgba(0,0,0,.3);
-    border-radius: 3px;
-  }
 
-  .modal-header {
-    border-radius: 3px;
-    position: relative;
-
-
-  }
 
   .close {
     position: absolute;
@@ -183,9 +174,6 @@
     padding: 5px 10px;
     opacity: 1;
   }
-
-  .modal-body {
-    border-radius: 3px;
   }
 
 

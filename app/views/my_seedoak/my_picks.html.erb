@@ -12,6 +12,8 @@
           <div class="product id-<%= pick.id%>">
           <%= render "my_seedoak/pick-history", pick: pick %>
           </div>
+
+          <div class="pick-modal">
           <!-- Modal -->
             <div class="modal fade" id="myPick-<%= pick.id%>" role="dialog">
               <div class="modal-dialog modal-sm">
@@ -34,6 +36,7 @@
 
               </div>
             </div>
+          </div>
         <% end %>
       </div>
       <% else %>
