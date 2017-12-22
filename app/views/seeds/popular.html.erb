@@ -3,6 +3,114 @@
 <% end %>
 
 <div class="page-container">
+  <div class=" filter-xs hidden-sm hidden-md hidden-lg">
+    <!-- Trigger the modal with a button -->
+    <div id="fixed-modal-trigger"><span class="glyphicon glyphicon-filter"></span></div>
+
+    <button type="button" class="btn hidden" id="real-trigger" data-toggle="modal" data-target="#filter-xs"></button>
+
+    <!-- Modal -->
+    <div id="filter-xs" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Trier</h4>
+          </div>
+          <div class="modal-body">
+            <div class="filter-title">
+              <div class="filter-header">
+               <p class="filter-before">FILTRER</p>
+               <%= link_to seeds_path do %>
+                <i class="fa fa-toggle-on xs-fa hidden" aria-hidden="true"></i>
+               <% end %>
+              </div>
+              <div class="sub-categories">
+                <% @categories.each do |category| %>
+                  <%= link_to seeds_path(category: category.id), remote: true do %>
+                    <div class="sub-title-xs <%= category.id %>">
+                      <p><%= image_tag "categories.jpg", class: "categories-icon" %>
+                      </p>
+                      <div class="name-and-count">
+                        <p><%= category.name%></p>
+                        <p class="number-of-seeds <%=category.id%> hidden">(<%=@seeds.where(category: category).count%>)</p>
+                      </div>
+                    </div>
+
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+              <div class="btn btn-primary validate-filter">Valider</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class=" filter-xs hidden-sm hidden-md hidden-lg">
+    <!-- Trigger the modal with a button -->
+    <div id="fixed-modal-trigger-cat"><span class="glyphicon glyphicon-th-list"></span></div>
+
+    <button type="button" class="btn hidden" id="real-trigger-cat" data-toggle="modal" data-target="#filter-xs-cat"></button>
+
+    <!-- Modal -->
+    <div id="filter-xs-cat" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Trier</h4>
+          </div>
+          <div class="modal-body">
+            <div class="filter-title">
+              <div class="filter-header">
+                <p>TRIER</p>
+              </div>
+              <div class="sub-categories">
+                <%= link_to seeds_path do %>
+                  <div class="sub-title">
+                    <div class="filter-icon glyphicon glyphicon-globe"></div>
+                    <p>Tous</p>
+                  </div>
+                <% end %>
+                <%= link_to popular_path do %>
+                  <div class="selected-category">
+                    <div class="filter-icon glyphicon glyphicon-fire"></div>
+                    <p>Tendances</p>
+                  </div>
+                <% end %>
+                <%= link_to newest_path do %>
+                  <div class="sub-title">
+                    <div class="filter-icon glyphicon glyphicon-leaf"></div>
+                    <p>Récents</p>
+                  </div>
+                <% end %>
+                <%= link_to last_day_path do %>
+                  <div class="sub-title">
+                    <div class="filter-icon glyphicon glyphicon-flash"></div>
+                    <p>Dernier jour</p>
+                  </div>
+                <% end %>
+                <%= link_to seed_path(@seeds.sample) do %>
+                <div class="sub-title">
+                  <div class="filter-icon glyphicon glyphicon-random"></div>
+                  <p>Hasard</p>
+                </div>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="btn btn-primary validate-filter">Valider</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="seed-feed">
 
 
