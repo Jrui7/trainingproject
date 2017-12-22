@@ -164,16 +164,15 @@ a:hover {
 }
 
 .filter-header {
-  font-size: 12px;
-  font-style: italic;
-  font-weight: bold;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding-bottom: 15px;
 
   p {
     margin: 0;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: bold;
   }
 }
 
