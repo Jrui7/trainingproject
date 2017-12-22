@@ -5,13 +5,20 @@
 
   .carousel-indicators {
 
+    bottom: 5px;
+
     li {
-      border: 2px solid $blue;
+      background-color: gray;
+      border: none;
+      margin: 0px;
+      width: 12px;
+      height: 12px;
     }
 
     .active {
       background-color: $blue;
       color: $blue;
+
     }
 
 
@@ -585,10 +592,29 @@
       height: 180px !important;
     }
 
+
     .carousel-indicators {
+
       bottom: 20px;
 
+      li {
+        background-color: gray;
+        border: none;
+        margin: 0px;
+        width: 10px;
+        height: 10px;
+      }
+
+      .active {
+        background-color: $blue;
+        color: $blue;
+        width: 10px;
+        height: 10px;
+      }
+
+
     }
+
 
     .nav-tabs {
 
