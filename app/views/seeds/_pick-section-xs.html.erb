@@ -1,0 +1,12 @@
+<% if @user.has_picked?(@seed) %>
+    <div class="picked-bar-xs hidden-md hidden-lg">
+      <p class="has_picked">Seed pické</p>
+    </div>
+  <% else %>
+    <%= link_to "#myModal", data: { toggle: "modal" }, class: "xs-pick" do%>
+      <div class="pick-bar-xs hidden-md hidden-lg">
+        <i class="fa fa-hand-lizard-o" aria-hidden="true"> </i>
+        <p>Pick it</p>
+      </div>
+    <% end %>
+  <% end %>

@@ -219,17 +219,11 @@
 
     </div>
   </div>
-  <div class="pick-bar-xs hidden-md hidden-lg">
-    <% if @user.has_picked?(@seed) %>
-      <p class="has_picked">Seed pické</p>
-    <% else %>
-      <%= link_to "#myModal", data: { toggle: "modal" }, class: "xs-pick" do%>
-          <i class="fa fa-hand-lizard-o" aria-hidden="true"> </i>
-          <p>Pick it</p>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
+
+</div>
+
+<div class="pick-container-xs">
+  <%= render "seeds/pick-section-xs" %>
 </div>
 
 
