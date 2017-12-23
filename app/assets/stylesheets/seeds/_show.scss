@@ -514,6 +514,51 @@
     vertical-align: middle;
   }
 
+  .pick-bar-xs  {
+    position: fixed;
+    bottom: 0px;
+    background-color: $blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    outline: none;
+    width: 100%;
+    padding: 10px;
+
+
+    .fa-hand-lizard-o {
+      color: white;
+      padding: 0;
+    }
+
+    p {
+      color: white;
+      margin: 0 5px;
+      font-size: 20px;
+    }
+  }
+
+  .picked-bar-xs  {
+    position: fixed;
+    bottom: 0px;
+    background-color: $orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    outline: none;
+    width: 100%;
+    padding: 10px;
+
+    p {
+      color: white;
+      margin: 0;
+      font-size: 20px;
+    }
+
+  }
+
 
 @media(max-width: 992px) {
 
