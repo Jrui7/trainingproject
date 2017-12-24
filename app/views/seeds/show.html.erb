@@ -150,7 +150,7 @@
               <div class="user-show">
                 <p id= "pseudo-bold"> <%= @seeder.pseudo %>
                 </p>
-                <% if @seeder.seeder_other_seeds > 0 %>
+                <% if @seeder.seeder_other_seeds? %>
                   <p id="other_posts_link">Autres posts</p>
                   <div class="other_posts">
                     <% @seeder.seeder_other_seeds_list(@seed).each do |seed| %>

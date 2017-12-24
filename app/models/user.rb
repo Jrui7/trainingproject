@@ -68,8 +68,8 @@ class User < ApplicationRecord
     facebook? || insta? || youtube? || snap?
   end
 
-  def seeder_other_seeds
-    self.seeds.count - 1
+  def seeder_other_seeds?
+    self.seeds.count - 1 > 0
   end
 
   def seeder_other_seeds_list(seed)
