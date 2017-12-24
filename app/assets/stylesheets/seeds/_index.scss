@@ -19,12 +19,26 @@
 }
 
 
+
+
 .filter-xs {
 
-  .glyphicon {
+  .glyphicon-filter {
     color: white;
     font-size: 14px;
   }
+
+  .glyphicon-th-list {
+    color: white;
+    font-size: 14px;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+
 
   #fixed-modal-trigger  {
     position: fixed;
@@ -57,7 +71,6 @@
   .modal-content {
     height: 100%;
     border-radius: 0;
-    color:white;
     overflow:auto;
   }
 
@@ -87,9 +100,9 @@
   .sub-title-xs {
     display: flex;
     align-items: center;
-    font-size: 13px;
+    font-size: 10px;
     transition: all 0.1s;
-    padding: 13px;
+    padding: 10px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(0,0,0,0.07);
 
 
@@ -99,7 +112,7 @@
     p {
       margin: 0;
       color: #4d4d5e;
-      font-size: 17px;
+      font-size: 13px;
     }
   }
 
