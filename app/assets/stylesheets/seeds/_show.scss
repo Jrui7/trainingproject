@@ -300,6 +300,17 @@
         color: #270000;
       }
 
+      #other_posts_link {
+        cursor: pointer;
+      }
+
+      .other_posts {
+        display: none;
+        p {
+          margin: 5px 0 0 0;
+        }
+      }
+
 
 
       .seeder-infos-media {
