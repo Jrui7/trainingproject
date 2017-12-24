@@ -150,6 +150,16 @@
               <div class="user-show">
                 <p id= "pseudo-bold"> <%= @seeder.pseudo %>
                 </p>
+                <% if @seeder.seeder_other_seeds > 0 %>
+                  <p id="other_posts_link">Autres posts</p>
+                  <div class="other_posts">
+                    <% @seeder.seeder_other_seeds_list(@seed).each do |seed| %>
+                    <p><%= link_to "#{seed.title}", seed_path(seed) %></p>
+                    <% end %>
+                  </div>
+                 <% else %>
+                  <p>Premier post</p>
+                <% end %>
                 <div class="social-card-user">
                   <% if @seeder.mini_bio? %>
                     <div class="mini-bio">
