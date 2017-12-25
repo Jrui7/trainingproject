@@ -300,8 +300,16 @@
         color: #270000;
       }
 
+      .post-date {
+        color: #7A7A7A;
+        p {
+          margin: 0 0 5px;
+        }
+      }
+
       #other_posts_link {
         cursor: pointer;
+        text-decoration: underline;
       }
 
       .other_posts {
