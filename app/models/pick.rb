@@ -7,6 +7,10 @@ class Pick < ApplicationRecord
     presence: {
     message: "Pick non validé"
     }
+  validates :price,
+  numericality: {
+    greater_than_or_equal_to: 1
+     }
 
   validates :seed_id, uniqueness: { scope: :user_id }
   scope :newest, -> { order(created_at: :desc)}
