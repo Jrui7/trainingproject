@@ -1,0 +1,8 @@
+<h1>Pick confirmé</h1>
+<ul>
+  <li>Status: <%= @pick.state %></li>
+  <li>Item: <%= @pick.seed.title %></li>
+  <li>Original price: <%= @pick.seed.price %></li>
+  <li>You picked for <%= @pick.price %></li>
+  <li>Acount: <%= humanized_money_with_symbol(@pick.amount) %></li>
+<ul>
