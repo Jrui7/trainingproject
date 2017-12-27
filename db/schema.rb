@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171213165752) do
+ActiveRecord::Schema.define(version: 20171227132245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,8 +40,11 @@ ActiveRecord::Schema.define(version: 20171213165752) do
     t.integer  "price"
     t.integer  "seed_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "amount_cents", default: 0, null: false
+    t.string   "state"
+    t.jsonb    "payment"
     t.index ["seed_id"], name: "index_picks_on_seed_id", using: :btree
     t.index ["user_id"], name: "index_picks_on_user_id", using: :btree
   end
@@ -52,8 +55,8 @@ ActiveRecord::Schema.define(version: 20171213165752) do
     t.datetime "expiration"
     t.integer  "category_id"
     t.integer  "user_id"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.integer  "popularity"
     t.string   "url"
     t.string   "secondary_url"
@@ -63,6 +66,7 @@ ActiveRecord::Schema.define(version: 20171213165752) do
     t.string   "sale_point_address"
     t.string   "sale_point_contact"
     t.text     "official_description"
+    t.integer  "price_cents",          default: 0, null: false
     t.index ["category_id"], name: "index_seeds_on_category_id", using: :btree
     t.index ["user_id"], name: "index_seeds_on_user_id", using: :btree
   end

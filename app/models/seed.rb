@@ -5,6 +5,7 @@ class Seed < ApplicationRecord
   belongs_to :user
   has_many :picks
   has_many :signal_seed
+  monetize :price_cents
 
 
   validates :title,

@@ -12,12 +12,18 @@ class PicksController < ApplicationController
 
   end
 
+  def show
+    @pick = Pick.find(params[:id])
+  end
+
 
   def create
     @user = current_user
     @seed = Seed.find(params[:seed_id])
     @pick = @seed.picks.new(pick_params)
     @pick.user_id = @user.id
+    @pick.amount = @seed.price * 0.2
+    @pick.state = "pending"
     if @pick.save
       @seed.increment_popularity
       respond_to do |format|
