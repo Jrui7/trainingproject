@@ -40,6 +40,7 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'bullet', group: 'development'
+  gem "letter_opener", group: :development
 end
 
 gem 'owlcarousel-rails'
