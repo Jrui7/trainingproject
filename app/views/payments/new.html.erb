@@ -3,19 +3,23 @@
   <article>
     <label class="amount">
       <span>Un versement de <%= humanized_money_with_symbol(@pick.amount)%> vous est demandé pour bloquer votre participation au deal</span>
+
     </label>
   </article>
 
   <p>Ce versement vous sera reversé si votre pick n'est pas validé</p>
   <p>Vous serez débité du différetiel avec votre pick en cas de succès</p>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
     data-name="<%= @pick.seed.title %>"
     data-email="<%= current_user.email %>"
     data-description="<%= @pick.seed.title %>"
     data-amount="<%= @pick.amount_cents %>"
     data-currency="<%= @pick.amount.currency %>"
-    data-label="Paiement sécurisé"></script>
+    data-label="Procéder au versement">
+
+  </script>
 
 <% end %>
