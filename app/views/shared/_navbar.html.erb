@@ -31,16 +31,14 @@
       <!-- Right Navigation -->
       <div class="hidden-xs">
         <div class="navbar-right">
-          <div class="my-picks">
+          <div class="new-seed">
             <%= link_to new_seed_path do %>
               <i class="fa fa-bullhorn" aria-hidden="true"></i>
             <% end %>
           </div>
 
           <div class="my-picks">
-            <%= link_to my_picks_path do %>
-              <i class="fa fa-hand-lizard-o" aria-hidden="true"></i>
-            <% end %>
+            <%= render "shared/pending-picks" %>
           </div>
 
           <div class="user-menu">
