@@ -112,12 +112,12 @@
 }
 
 .new-seed {
-  margin-left: 15px;
+  margin: 0 10px;
 
 }
 
 .my-picks {
-  margin-left: 15px;
+  margin: 0 10px;
 }
 
 
@@ -143,11 +143,13 @@
     height: 20px;
     margin: 0;
     font-size: 12px;
+    font-weight: bold;
     color: white;
     background-color: $red;
-    padding: 5px;
     border-radius: 50%;
-    text-align:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
   }
 
@@ -168,7 +170,7 @@
 
 .user-menu {
   cursor: pointer;
-  margin-left: 15px;
+  margin-left: 10px;
 }
 
 #dropdown-photo {
