@@ -2,4 +2,5 @@ $(document).ready(function(){
   $("#close-modal").click();
   $(".pick-section").html('<%= j render 'seeds/pick-section' %>');
   $(".pick-container-xs").html('<%= j render 'seeds/pick-section-xs' %>');
+  $(".my-picks").html('<%= j render 'shared/pending-picks' %> ');
 })
