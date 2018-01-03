@@ -3,7 +3,11 @@ class SeedsController < ApplicationController
 
 
   def index
-    @sample = Seed.ongoing.sample
+    if Seed.ongoing.any? == true
+      @sample = Seed.ongoing.sample
+    else
+      @sample = Seed.expired.sample
+    end
     @categories = Category.all
     @filter = params[:category]
     @seeds = Seed.ongoing.includes(:user, :category)
@@ -51,17 +55,31 @@ class SeedsController < ApplicationController
   end
 
   def last_day
-    @seed_sample = Seed.ongoing.sample
+    if Seed.ongoing.any? == true
+      @sample = Seed.ongoing.sample
+    else
+      @sample = Seed.expired.sample
+    end
     @categories = Category.all
     @seeds = Seed.ongoing.includes(:user, :category).last_day
   end
 
   def popular
+    if Seed.ongoing.any? == true
+      @sample = Seed.ongoing.sample
+    else
+      @sample = Seed.expired.sample
+    end
     @categories = Category.all
     @seeds = Seed.ongoing.includes(:user, :category).popular
   end
 
   def newest
+    if Seed.ongoing.any? == true
+      @sample = Seed.ongoing.sample
+    else
+      @sample = Seed.expired.sample
+    end
     @categories = Category.all
     @seeds = Seed.ongoing.includes(:user, :category).newest
   end

@@ -111,16 +111,46 @@
   justify-content: space-between;
 }
 
+.new-seed {
+  margin: 0 10px;
+
+}
+
+.my-picks {
+  margin: 0 10px;
+}
+
+
+
 .fa-hand-lizard-o {
+  position: relative;
   font-size: 25px;
   color: $blue;
   padding: 0 15px;
+  display: flex;
   a {
   text-decoration: none;
    &:hover{
     text-decoration: none;
     color: rgba(15, 163, 177, 1);
    }
+  }
+
+  .picks-pending {
+    position: absolute;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    background-color: $red;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
   }
 
 }
@@ -140,7 +170,7 @@
 
 .user-menu {
   cursor: pointer;
-  padding: 0 15px;
+  margin-left: 10px;
 }
 
 #dropdown-photo {
