@@ -22,6 +22,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'swipebox'
+gem 'postmark-rails'
 
 gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'
