@@ -29,11 +29,23 @@ p {
 
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
   outline: 0 !important;
+
   &:focus {
-    text-decoration: none;
+    text-decoration: none !important;
     outline: 0 !important;
+  }
+  &:hover {
+    text-decoration: none !important;
+  }
+
+  &:active {
+    text-decoration: none !important;
+  }
+
+  &:-webkit-any-link {
+    text-decoration: none !important;
   }
 }
 
