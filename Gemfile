@@ -22,6 +22,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'swipebox'
+gem 'postmark-rails'
 
 gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'
@@ -40,6 +41,7 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'bullet', group: 'development'
+  gem "letter_opener", group: :development
 end
 
 gem 'owlcarousel-rails'

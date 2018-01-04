@@ -4,21 +4,19 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-         validates :pseudo, uniqueness: true
-         validates :pseudo, presence: true
-         validates :insta, url: true
-         validates :facebook, url: true
-         validates :youtube, url: true
+   validates :pseudo, uniqueness: true
+   validates :pseudo, presence: true
+   validates :insta, url: true
+   validates :facebook, url: true
+   validates :youtube, url: true
 
+   has_many :seeds
+   has_many :picks
+   has_attachment :photo
+   has_many :user_preferences
+   has_many :signal_seed
 
-
-
-
-         has_many :seeds
-         has_many :picks
-         has_attachment :photo
-         has_many :user_preferences
-         has_many :signal_seed
+  after_create :send_welcome_email
 
 
 
@@ -74,6 +72,13 @@ class User < ApplicationRecord
 
   def seeder_other_seeds_list(seed)
     self.seeds.reject{|current| current == seed}
+  end
+
+
+  private
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver_now
   end
 
 end
