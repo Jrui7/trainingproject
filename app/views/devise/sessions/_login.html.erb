@@ -10,7 +10,9 @@
     </div>
     <div class="password">
       <%= f.password_field :password, id: "password" %>
-      <%= link_to "Forgot your password?", new_password_path(:user), class: "forgot-link" %>
+      <%= link_to "#lostModal", data: { toggle: "modal" } do%>
+          <div class="forgot-link">Mot de passe oublié?</div>
+      <% end %>
     </div>
     <div class="validate-zone">
     <%= f.submit 'Connecter', class: "form-action" %>
