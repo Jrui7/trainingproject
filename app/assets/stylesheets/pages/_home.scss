@@ -237,44 +237,48 @@
 
 
 
+  .login-form {
 
 
-  .email {
-    padding: 0;
-  }
 
-  input {
-    font-size: 20px;
-    margin: 4px;
-  }
+    .email {
+      padding: 0;
+    }
 
-  label {
-    color: white;
-    font-size: 14px;
-  }
+    input {
+      font-size: 20px;
+      margin: 4px;
+    }
 
-
-  .password {
-    padding: 0px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .forgot-link {
-    text-decoration: none;
-    color: white;
-  }
+    label {
+      color: white;
+      font-size: 14px;
+    }
 
 
-  .validate-zone {
-    padding: 10px 0px;
-    display: flex;
-    justify-content: center;
+    .password {
+      padding: 0px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .forgot-link {
+      text-decoration: none;
+      color: white;
+    }
+
+
+    .validate-zone {
+      padding: 10px 0px;
+      display: flex;
+      justify-content: center;
+    }
+
+
   }
 
   .form-action {
     color: white;
-    background-color: $blue;
     font-weight: bold;
     padding: 10px;
     border: none;

@@ -144,32 +144,34 @@
         background: #bb0000;
         color: white;
       }
+
+      .control-label {
+        text-align: left;
+        margin-right: 15px;
+        color: #a6a6ae;
+        font-weight: normal;
+      }
+
+
+      .form-group {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+
+
+      }
+
+      .form-control {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        margin-left: 15px;
+        width: 30%;
+      }
   }
 
 
 
-  .control-label {
-    text-align: left;
-    margin-right: 15px;
-    color: #a6a6ae;
-    font-weight: normal;
-  }
 
-
-  .form-group {
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-
-
-  }
-
-  .form-control {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    margin-left: 15px;
-    width: 30%;
-  }
 
   #user_mini_bio {
     height: 90px;
@@ -319,17 +321,19 @@
 
         .user-form {
           padding: 20px 5px;
+
+          .form-group {
+            justify-content: space-between;
+          }
+
+          .form-control {
+            width: 75%;
+            margin-left: 0;
+            font-size: 12px;
+          }
         }
 
-        .form-group {
-          justify-content: space-between;
-        }
 
-        .form-control {
-          width: 75%;
-          margin-left: 0;
-          font-size: 12px;
-        }
 
         .tabs-info {
           margin-top: 40px;
