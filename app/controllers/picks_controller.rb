@@ -3,7 +3,7 @@ class PicksController < ApplicationController
   def index
     @user = current_user
     @seed = Seed.find(params[:seed_id])
-    @picks = Pick.where(seed_id: @seed).order(price: :desc )
+    @picks = Pick.where(seed_id: @seed, state: "paid").order(price: :desc )
 
     respond_to do |format|
     format.html
@@ -47,6 +47,15 @@ class PicksController < ApplicationController
 
   def destroy
     @pick = Pick.find(params[:id])
+    if @pick.state == "paid"
+      payment_string_object = @pick.payment
+      payment_hash = JSON.parse(payment_string_object)
+      payment_id = payment_hash["id"]
+      Stripe::Refund.create(
+        charge: payment_id
+      )
+    end
+
     @seed = @pick.seed
     @pick.destroy
     respond_to do |format|

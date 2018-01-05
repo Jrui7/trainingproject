@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :seeds, shallow: true do
     resources :picks, only: [:index, :show, :create, :update, :destroy] do
-      resources :payments, only: [:new, :create]
+      resources :payments, only: [:new, :create, :destroy]
     end
     resources :signal_seeds, only: [:create, :destroy]
   end
