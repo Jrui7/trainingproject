@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180105135518) do
+ActiveRecord::Schema.define(version: 20180105160037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(version: 20180105135518) do
     t.datetime "expiration"
     t.integer  "category_id"
     t.integer  "user_id"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.integer  "popularity"
     t.string   "url"
     t.string   "secondary_url"
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20180105135518) do
     t.string   "sale_point_address"
     t.string   "sale_point_contact"
     t.text     "official_description"
-    t.integer  "price_cents",          default: 0, null: false
+    t.integer  "price_cents"
     t.index ["category_id"], name: "index_seeds_on_category_id", using: :btree
     t.index ["user_id"], name: "index_seeds_on_user_id", using: :btree
   end

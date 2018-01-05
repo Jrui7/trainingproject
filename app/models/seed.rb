@@ -27,6 +27,10 @@ class Seed < ApplicationRecord
     message: "Attribuez une catégorie au seed"
     }
 
+  validates :price, presence: {
+    message: "A quel prix est-il actuellement vendu?"
+    }
+
   validates :photos, presence: {
     message: "Ajoutez au moins une photo"
     }
