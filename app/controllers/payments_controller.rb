@@ -3,6 +3,10 @@ class PaymentsController < ApplicationController
     before_action :set_pick
 
     def new
+      @user = current_user
+      unless current_user.customer_id.blank?
+        @customer_infos = Stripe::Customer.retrieve(@user.customer_id)
+      end
     end
 
     def create
