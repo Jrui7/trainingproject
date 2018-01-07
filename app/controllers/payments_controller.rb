@@ -22,7 +22,16 @@ class PaymentsController < ApplicationController
         current_user.save
 
       else
-        customer_id = current_user.customer_id
+        if params[:stripeToken]
+          cu = Stripe::Customer.retrieve("#{current_user.customer_id}")
+          cu.source = params[:stripeToken] # obtained with Stripe.js
+          cu.save
+          customer_id = current_user.customer_id
+          current_user.customer_id = customer_id
+          current_user.save
+        else
+          customer_id = current_user.customer_id
+        end
       end
 
 
