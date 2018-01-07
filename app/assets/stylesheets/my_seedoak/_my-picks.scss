@@ -282,6 +282,7 @@ a:hover {
 
 
       .product-body {
+        padding-right: 4px;
 
         h3 {
           font-size: 16px;
@@ -299,6 +300,13 @@ a:hover {
       .product-category{
         p {
           font-size: 10px;
+        }
+      }
+
+      .payment-link, .payment-recap {
+        .btn {
+          font-size: 13px;
+          padding: 6px 10px;
         }
       }
 

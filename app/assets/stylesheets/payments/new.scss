@@ -1,8 +1,53 @@
 .booking-confirmation {
   max-width: 1100px;
-  flex: 0 0 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: block;
   margin-bottom: 0px;
+
+  .btn-primary {
+    margin-top: 25px;
+  }
+
+  .btn-warning {
+    margin-left: -1px;
+  }
 }
+
+.stripe-infos {
+  display: flex;
+
+  .input-group {
+    margin-top: 25px;
+  }
+
+  .form-control {
+    display: flex;
+    width: auto;
+  }
+
+  .stripe-block {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .fa-circle {
+    font-size: 11px;
+    margin-right: 2px;
+  }
+
+  .accept-reject {
+    padding: 6px 12px;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1;
+    color: #1F1F26;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+  }
+
+
+}
+
+

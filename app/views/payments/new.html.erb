@@ -1,21 +1,64 @@
  <div class="page-container">
-  <div class="booking-confirmation">
-    <h1>Confirmer participation au deal</h1>
+
 
     <% if current_user.customer_id.blank? %>
-      <%= form_tag pick_payments_path(@pick) do %>
-        <article>
-          <label class="amount">
-            <span>Un versement de <%= humanized_money_with_symbol(@pick.amount)%> vous est demandé pour bloquer votre participation au deal</span>
+      <div class="booking-confirmation">
+        <h2>Confirmer participation au deal</h2>
+        <%= form_tag pick_payments_path(@pick) do %>
+          <article>
+            <label class="amount">
+              <span>Un versement de <%= humanized_money_with_symbol(@pick.amount)%> vous est demandé pour bloquer votre participation au deal</span>
 
-          </label>
-        </article>
+            </label>
+          </article>
 
-        <p>Ce versement vous sera retourné si votre pick n'est pas validé</p>
-        <p>Vous serez débité du différetiel avec votre pick en cas de succès</p>
+          <p>Ce versement vous sera retourné si votre pick n'est pas validé</p>
+          <p>Vous serez débité du différetiel avec votre pick en cas de succès</p>
+
+          <script
+            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-name="<%= @pick.seed.title %>"
+            data-email="<%= current_user.email %>"
+            data-description="<%= @pick.seed.title %>"
+            data-amount="<%= @pick.amount_cents %>"
+            data-currency="<%= @pick.amount.currency %>"
+            data-label="Procéder au versement">
+          </script>
+        <% end %>
+      </div>
+
+
+
+
+  <% else %>
+    <div class="booking-confirmation">
+      <h2>Confirmer participation au deal</h2>
+      <div>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</div>
+
+      <div class="stripe-infos">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-credit-card fa-fw"></i></span>
+          <div class="form-control">
+            <div class="stripe-block"><%= @customer_infos.sources.data[0]["brand"]%></div>
+            <div class="stripe-block">
+              <i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><%= @customer_infos.sources.data[0]["last4"] %>
+            </div>
+            <div class="stripe-block">
+              <%= @customer_infos.sources.data[0]["exp_month"]%>/<%= @customer_infos.sources.data[0]["exp_year"] %>
+            </div>
+          </div>
+          <a id="update-customer-stripe" class="btn btn-warning" aria-label="edit">
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <%= form_tag pick_payments_path(@pick), class: "hidden" do %>
 
         <script
-          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          src="https://checkout.stripe.com/checkout.js"
+          class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-name="<%= @pick.seed.title %>"
           data-email="<%= current_user.email %>"
@@ -26,11 +69,8 @@
         </script>
       <% end %>
 
-    <% else %>
-      <%= link_to "Procéder au versement", pick_payments_path(@pick), method: :post %>
+      <%= link_to "Procéder au versement", pick_payments_path(@pick), class: "btn btn-primary",  method: :post %>
 
-    <% end %>
-
-
-  </div>
+    </div>
+  <% end %>
 </div>
