@@ -52,9 +52,13 @@ class PaymentsController < ApplicationController
 
 
 
+
+
   private
 
     def set_pick
       @pick = Pick.where(state: 'pending').find(params[:pick_id])
     end
+
+
 end
