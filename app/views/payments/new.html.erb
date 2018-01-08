@@ -1,8 +1,10 @@
  <div class="page-container">
-
+  <div class="booking-confirmation">
+    <h2>Confirmer participation au deal</h2>
+    <div>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</div>
 
     <% if current_user.customer_id.blank? %>
-      <div class="booking-confirmation">
+
         <h2>Confirmer participation au deal</h2>
         <%= form_tag pick_payments_path(@pick) do %>
           <article>
@@ -18,12 +20,15 @@
           <script
             src="https://checkout.stripe.com/checkout.js" class="stripe-button"
             data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-            data-name="<%= @pick.seed.title %>"
+            data-name="Seedlap"
+            data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
             data-email="<%= current_user.email %>"
             data-description="<%= @pick.seed.title %>"
             data-amount="<%= @pick.amount_cents %>"
             data-currency="<%= @pick.amount.currency %>"
-            data-label="Procéder au versement">
+            data-locale="auto"
+            data-billing-address="true"
+            data-allow-remember-me="false"            data-label="Procéder au versement">
           </script>
         <% end %>
       </div>
@@ -32,45 +37,76 @@
 
 
   <% else %>
-    <div class="booking-confirmation">
-      <h2>Confirmer participation au deal</h2>
-      <div>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</div>
+    <div class="stripe-infos">
+      <div class="col-xs-12 col-md-6 nopadding-left">
 
-      <div class="stripe-infos">
+  <!--    <div class="delivery">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-user-circle-o fa-fw"></i></span>
+          <div class="form-control">
+            <div class="stripe-block"><%= @customer_infos.sources.data[0]["name"]%></div>
+          </div>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-map-marker fa-fw"></i></span>
+          <div class="form-control">
+            <div class="stripe-block"><%= @customer_infos.sources.data[0]["address_line1"]%></div>
+          </div>
+          <div class="form-control">
+            <div class="left-part">
+              <div class="stripe-block"><%= @customer_infos.sources.data[0]["address_zip"]%>,</div>
+              <div class="stripe-block"><%= @customer_infos.sources.data[0]["address_city"]%></div>
+            </div>
+            <a class="update-customer-address" aria-label="edit">
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    -->
+      <div class="card-infos">
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-credit-card fa-fw"></i></span>
           <div class="form-control">
-            <div class="stripe-block"><%= @customer_infos.sources.data[0]["brand"]%></div>
-            <div class="stripe-block">
-              <i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><%= @customer_infos.sources.data[0]["last4"] %>
+            <div class="left-part">
+              <div class="stripe-block"><%= @customer_infos.sources.data[0]["brand"]%></div>
+              <div class="stripe-block">
+                <i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><%= @customer_infos.sources.data[0]["last4"] %>
+              </div>
+              <div class="stripe-block">
+                <%= @customer_infos.sources.data[0]["exp_month"]%>/<%= @customer_infos.sources.data[0]["exp_year"] %>
+              </div>
             </div>
-            <div class="stripe-block">
-              <%= @customer_infos.sources.data[0]["exp_month"]%>/<%= @customer_infos.sources.data[0]["exp_year"] %>
-            </div>
+            <a id="update-customer-stripe" aria-label="edit">
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            </a>
           </div>
-          <a id="update-customer-stripe" class="btn btn-warning" aria-label="edit">
-            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-          </a>
         </div>
       </div>
-
-      <%= form_tag pick_payments_path(@pick), class: "hidden" do %>
-
-        <script
-          src="https://checkout.stripe.com/checkout.js"
-          class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-name="<%= @pick.seed.title %>"
-          data-email="<%= current_user.email %>"
-          data-description="<%= @pick.seed.title %>"
-          data-amount="<%= @pick.amount_cents %>"
-          data-currency="<%= @pick.amount.currency %>"
-          data-label="Procéder au versement">
-        </script>
-      <% end %>
-
-      <%= link_to "Procéder au versement", pick_payments_path(@pick), class: "btn btn-primary",  method: :post %>
-
+      <%= link_to "Versement sécurisé", pick_payments_path(@pick), class: "btn btn-primary",  method: :post %>
     </div>
-  <% end %>
+
+    <%= form_tag pick_payments_path(@pick), class: "hidden" do %>
+      <script
+        src="https://checkout.stripe.com/checkout.js"
+        class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-name="Seedlap"
+        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+        data-email="<%= current_user.email %>"
+        data-description="<%= @pick.seed.title %>"
+        data-amount="<%= @pick.amount_cents %>"
+        data-currency="<%= @pick.amount.currency %>"
+        data-allow-remember-me="false"
+        data-locale="auto"
+        data-currency="eur"
+        data-label="update">
+      </script>
+    <% end %>
+
+
+
+    <% end %>
+  </div>
 </div>

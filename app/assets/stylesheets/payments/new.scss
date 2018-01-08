@@ -4,30 +4,48 @@
   margin-bottom: 0px;
 
   .btn-primary {
-    margin-top: 25px;
+    margin-top: 30px;
   }
 
-  .btn-warning {
-    margin-left: -1px;
-  }
 }
 
 .stripe-infos {
-  display: flex;
+  display: block;
+  margin-top: 40px;
+
+  .delivery {
+    margin: 25px 0;
+  }
+
+  .name-and-address {
+    display: flex;
+  }
 
   .input-group {
-    margin-top: 25px;
   }
 
   .form-control {
     display: flex;
-    width: auto;
+    justify-content: space-between;
+  }
+
+  .left-part {
+    display: flex;
+  }
+
+  #update-customer-stripe {
+    cursor: pointer;
+  }
+
+  .update-customer-address {
+    cursor: pointer;
   }
 
   .stripe-block {
     margin-right: 10px;
     display: flex;
     align-items: center;
+
   }
 
   .fa-circle {
