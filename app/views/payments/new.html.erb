@@ -1,21 +1,20 @@
  <div class="page-container">
   <div class="booking-confirmation">
     <h2>Confirmer participation au deal</h2>
-    <div>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</div>
+    <article>
+      <label class="amount">
+        <span>Un versement de <%= humanized_money_with_symbol(@pick.amount)%> vous est demandé pour bloquer votre participation au deal</span>
+
+      </label>
+    </article>
+
+    <p>Ce versement vous sera retourné si votre pick n'est pas validé</p>
+    <p>Vous serez débité du différetiel avec votre pick en cas de succès</p>
+
 
     <% if current_user.customer_id.blank? %>
 
-        <h2>Confirmer participation au deal</h2>
         <%= form_tag pick_payments_path(@pick) do %>
-          <article>
-            <label class="amount">
-              <span>Un versement de <%= humanized_money_with_symbol(@pick.amount)%> vous est demandé pour bloquer votre participation au deal</span>
-
-            </label>
-          </article>
-
-          <p>Ce versement vous sera retourné si votre pick n'est pas validé</p>
-          <p>Vous serez débité du différetiel avec votre pick en cas de succès</p>
 
           <script
             src="https://checkout.stripe.com/checkout.js" class="stripe-button"

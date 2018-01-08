@@ -1,2 +1,0 @@
-class UpdateUsersFromPaymentsController < ApplicationController
-end
