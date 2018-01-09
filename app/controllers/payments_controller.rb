@@ -49,9 +49,11 @@ class PaymentsController < ApplicationController
       @pick.update(payment: charge.to_json, state: 'paid')
       redirect_to pick_path(@pick)
 
-    rescue Stripe::CardError => e
+      rescue Stripe::CardError => e
       flash[:alert] = e.message
       redirect_to new_pick_payment_path(@pick)
+
+
     end
 
 
@@ -63,6 +65,7 @@ class PaymentsController < ApplicationController
     def set_pick
       @pick = Pick.where(state: 'pending').find(params[:pick_id])
     end
+
 
 
 end
