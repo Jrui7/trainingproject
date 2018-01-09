@@ -8,16 +8,16 @@ class UsersController < ApplicationController
     url = Rails.application.routes.recognize_path(request.referrer)
     last_controller = url[:controller]
     pick_id = url[:pick_id]
-    @user = User.find(params[:id])
+
 
     if last_controller == "payments"
-      if @user.update(user_params_form_payment)
+      if current_user.update(user_params_form_payment)
         redirect_to new_pick_payment_path(pick_id)
       else
         redirect_to new_pick_payment_path(pick_id)
       end
     else
-      if @user.update(user_params)
+      if current_user.update(user_params)
         redirect_to user_path(current_user)
       else
         render :show
