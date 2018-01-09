@@ -191,8 +191,6 @@
 
   .left-section {
     background-color: #FFFFFF;
-    border-radius: 4px;
-    padding: 20px 0px;
     margin-right: 20px;
 
 
@@ -210,6 +208,10 @@
     .seed-media {
       display: flex;
       flex-direction: column;
+      padding: 20px 0;
+      border-radius: 4px;
+
+
     }
 
     .seed-photos {
@@ -232,11 +234,11 @@
       justify-content: center;
 
       .glyphicon {
-        color: #A0A0A0;
+        color: #282828;
       }
 
       p {
-        color: #A0A0A0;
+        color: #282828;
       }
     }
 
@@ -417,8 +419,10 @@
   .right-section {
     background-color: #FFFFFF;
     border-radius: 4px;
-    padding: 20px;
     width: 100%;
+    padding: 20px;
+
+
 
   }
 
@@ -601,7 +605,7 @@
 
     .page-container .left-section {
       margin-right: 0px;
-      padding: 20px 10px;
+      padding: 0;
     }
 
     .price {
@@ -616,7 +620,16 @@
       .form-control {
         margin-left: 10px;
       }
+
     }
+
+  .page-container .left-section .seeder {
+    padding: 0 15px;
+    }
+
+  .page-container .right-section {
+    padding: 0;
+  }
 
     .page-container .head  {
       .pick-link {
