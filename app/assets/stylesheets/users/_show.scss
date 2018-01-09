@@ -102,6 +102,13 @@
         margin-bottom: 0px;
       }
 
+      .attached-inputs {
+        .form-group {
+          margin-bottom: 0px;
+        }
+
+      }
+
       .help-block {
         margin-left: 10px;
       }
@@ -154,11 +161,8 @@
 
 
       .form-group {
-        margin-bottom: 15px;
         display: flex;
         align-items: center;
-
-
       }
 
       .form-control {
@@ -192,6 +196,9 @@
     .social-group {
       display: flex;
       flex-wrap: wrap;
+      .form-control {
+        width: 100%;
+      }
     }
 
     .no-label {
@@ -358,6 +365,9 @@
 
       .written-label {
         font-size: 12px;
+        .form-group {
+          margin-bottom: 0;
+        }
       }
 
 
@@ -389,6 +399,16 @@
 
       .small-padding {
         padding: 5px 10px;
+      }
+
+      .social-options .no-label .attached-inputs {
+          margin-left: 10px;
+      }
+
+      .social-group {
+        .form-control {
+          width: 100%;
+        }
       }
 
     }

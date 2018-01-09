@@ -120,14 +120,16 @@
   margin: 0 10px;
 }
 
+.pending {
+  position: relative;
+  display: flex;
 
+}
 
 .fa-hand-lizard-o {
-  position: relative;
   font-size: 25px;
   color: $blue;
   padding: 0 15px;
-  display: flex;
   a {
   text-decoration: none;
    &:hover{

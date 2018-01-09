@@ -1,6 +1,6 @@
 <%= link_to my_picks_path do %>
   <div class="complete-link">
-    <i class="fa fa-hand-lizard-o" aria-hidden="true">
+    <i class="fa fa-hand-lizard-o pending" aria-hidden="true">
       <%pending_picks = current_user.picks.where(state: 'pending') %>
       <% if pending_picks.any?  %>
         <div class="picks-pending">
