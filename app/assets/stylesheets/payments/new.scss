@@ -13,13 +13,93 @@
   display: block;
   margin-top: 40px;
 
-  .delivery {
-    margin: 25px 0;
+  .user-update-form {
+
+    .title-and-save {
+      display: flex;
+      align-items: stretch;
+      .fa-floppy-o {
+        background-color: $blue;
+        color: white;
+        border: none;
+        cursor: pointer;
+        width: auto;
+        border-radius: 2px;
+        padding: 0 10px;
+      }
+
+    }
+
+    h3 {
+      color: $red;
+      text-decoration: underline;
+      margin: 0;
+    }
+
+
+    .input-and-icon {
+      display: flex;
+      align-items: stretch;
+      width: auto;
+      margin-bottom: 5px;
+    }
+
+    .fields-address {
+      width: auto;
+    }
+
+    .zip-city {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .form-group {
+      margin: 0;
+      width: auto;
+    }
+    .form-control {
+      padding: 0 10px;
+      margin: 0;
+      border: none;
+      box-shadow: none;
+      cursor: pointer;
+      border-radius: 0px;
+
+      &:hover, &:active, &:focus {
+        border-right: 1px solid $red;
+        border-bottom: 1px solid $red;
+        border-top: 1px solid $red;
+        text-decoration: none;
+
+      }
+
+
+      }
+    #user_city {
+
+      &:hover, &:active, &:focus {
+        border-left: 1px solid $red;
+        text-decoration: none;
+      }
+
+    }
+    i {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $red;
+      width: 45px;
+      color: white;
+      background-color: $red;
+    }
+
   }
 
-  .name-and-address {
-    display: flex;
+  #update-user-payment, #update-delivery-infos {
+    display: none;
   }
+
+
 
   .input-group {
   }

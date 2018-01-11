@@ -36,6 +36,6 @@ class UsersController < ApplicationController
   end
 
   def user_params_form_payment
-    params.require(:user).permit(:first_name, :last_name, :email, :address, :address_complement, :zip_code, :city, :phone_number)
+    params.require(:user).permit(:last_name, :first_name, :address, :address_complement, :zip_code, :city, :phone_number)
   end
 end

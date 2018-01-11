@@ -23,6 +23,8 @@ class PaymentsController < ApplicationController
         current_user.zip_code = params["stripeBillingAddressZip"]
         current_user.city = params["stripeBillingAddressCity"]
         current_user.last_name = params["stripeBillingName"]
+        current_user.first_name = params["stripeBillingName"]
+
         current_user.save
 
       else

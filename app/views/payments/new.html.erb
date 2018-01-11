@@ -37,69 +37,91 @@
 
   <% else %>
     <div class="stripe-infos">
-      <div class="col-xs-12 col-md-6 nopadding-left">
+      <div class="col-xs-12 col-md-8 noadding-left">
 
-  <div class="delivery">
-  <!--
-        <div class="input-group">
-          <span class="input-group-addon"><i class="fa fa-user-circle-o fa-fw"></i></span>
-          <div class="form-control">
-            <div class="stripe-block"><%= @customer_infos.sources.data[0]["name"]%></div>
-          </div>
-        </div>
-        <div class="input-group">
-          <span class="input-group-addon"><i class="fa fa-map-marker fa-fw"></i></span>
-          <div class="form-control">
-            <div class="stripe-block"><%= @customer_infos.sources.data[0]["address_line1"]%></div>
-          </div>
-          <div class="form-control">
-            <div class="left-part">
-              <div class="stripe-block"><%= @customer_infos.sources.data[0]["address_zip"]%>,</div>
-              <div class="stripe-block"><%= @customer_infos.sources.data[0]["address_city"]%></div>
-            </div>
-            <a class="update-customer-address" aria-label="edit">
-              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
-    -->
 
+        <div class="user-update-form">
+          <div class="title-and-save">
+            <h3>Ma livraison</h3>
+            <i class="fa fa-floppy-o" aria-hidden="true">ENREGISTRER</i>
+          </div>
           <%= simple_form_for @user, :url => user_path(current_user), :method => :patch do |f| %>
-            <%= f.input :first_name, label: "Prénom" %>
-            <%= f.input :last_name, label: "Nom" %>
-            <%= f.input :email, label: "Email" %>
-            <%= f.input :address, label: "Adresse de livraison", placeholder: "64 rue de la Tour" %>
-            <%= f.input :address_complement, label: "Complément d'adresse", placeholder: "Digicode, Batiment, Société " %>
-            <%= f.input :zip_code, label: "Code postal", placeholder: "75116" %>
-            <%= f.input :city, label: "Ville", placeholder: "Paris" %>
-            <%= f.input :phone_number, label: "Téléphone", placeholder: "0605040302" %>
+            <div class="input-and-icon">
+              <i class="fa fa-user"></i>
+              <%= f.input :last_name, class: "input-group-field", label: false %>
+            </div>
 
-            <div class="text-right">
-              <%= f.button :submit, value: "Enregistrer", class: "btn btn-primary", id: "update-user" %>
+            <div class="input-and-icon">
+              <i class="fa fa-truck"></i>
+              <div class="fields-address">
+                <%= f.input :address, class: "input-group-field", label: false %>
+                <div class="zip-city">
+                  <%= f.input :zip_code, class: "input-group-field", label: false %>
+                  <%= f.input :city, class: "input-group-field", label: false %>
+                </div>
+                <%= f.input :address_complement, class: "input-group-field", label: false, placeholder: "Infos complémentaires: Digicode, Batiment, Société " %>
+              </div>
+            </div>
+
+            <div class="input-and-icon">
+              <i class="fa fa-mobile-phone"></i>
+              <%= f.input :phone_number, class: "input-group-field", label: false %>
+            </div>
+
+            <div class="text-center">
+              <%= f.button :submit, value: "Enregistrer", class: "btn btn-primary", id: "update-delivery-infos" %>
             </div>
           <% end %>
+        </div>
 
-      </div>
-
-      <div class="card-infos">
-        <div class="input-group">
-          <span class="input-group-addon"><i class="fa fa-credit-card fa-fw"></i></span>
-          <div class="form-control">
-            <div class="left-part">
-              <div class="stripe-block"><%= @customer_infos.sources.data[0]["brand"]%></div>
-              <div class="stripe-block">
-                <i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><%= @customer_infos.sources.data[0]["last4"] %>
+        <div class="card-infos">
+          <div class="user-update-form">
+            <%= simple_form_for @user, :url => user_path(current_user), :method => :patch do |f| %>
+              <div class="input-and-icon">
+                <i class="fa fa-user"></i>
+                <%= f.input :first_name, class: "input-group-field", label: false %>
               </div>
-              <div class="stripe-block">
-                <%= @customer_infos.sources.data[0]["exp_month"]%>/<%= @customer_infos.sources.data[0]["exp_year"] %>
+              <div class="text-center">
+                <%= f.button :submit, value: "Enregistrer", class: "btn btn-primary", id: "update-user-payment" %>
               </div>
+            <% end %>
+          </div>
+          <div class="input-and-icon">
+            <i class="fa fa-credit-card"></i>
+            <div class="form-control">
+              <div class="left-part">
+                <div class="stripe-block"><%= @customer_infos.sources.data[0]["brand"]%></div>
+                <div class="stripe-block">
+                  <i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><%= @customer_infos.sources.data[0]["last4"] %>
+                </div>
+                <div class="stripe-block">
+                  <%= @customer_infos.sources.data[0]["exp_month"]%>/<%= @customer_infos.sources.data[0]["exp_year"] %>
+                </div>
+              </div>
+              <a id="update-customer-stripe" aria-label="edit">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              </a>
             </div>
-            <a id="update-customer-stripe" aria-label="edit">
-              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-            </a>
+
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-credit-card fa-fw"></i></span>
+            <div class="form-control">
+              <div class="left-part">
+                <div class="stripe-block"><%= @customer_infos.sources.data[0]["brand"]%></div>
+                <div class="stripe-block">
+                  <i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><%= @customer_infos.sources.data[0]["last4"] %>
+                </div>
+                <div class="stripe-block">
+                  <%= @customer_infos.sources.data[0]["exp_month"]%>/<%= @customer_infos.sources.data[0]["exp_year"] %>
+                </div>
+              </div>
+              <a id="update-customer-stripe" aria-label="edit">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
       <%= link_to "Versement sécurisé", pick_payments_path(@pick), class: "btn btn-primary",  method: :post %>
     </div>
 
