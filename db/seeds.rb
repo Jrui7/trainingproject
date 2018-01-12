@@ -23,8 +23,8 @@ puts "--------------------"
 
 
 jorge = User.create(sex: "Homme", email: "jorge.ruivinho@me.com", password: "password", pseudo: "Jrui7", photo_url: "http://res.cloudinary.com/dlddnk3pr/image/upload/v1504805315/chx9ggnqbpz9ojb9pjnb.jpg")
-renan = User.create(sex: "Homme", email: "renan.legall@gmail.com", password: "password", pseudo: "TheVoice", photo_url: "http://res.cloudinary.com/dlddnk3pr/image/upload/v1504809025/pfzlmedhzlieyalaczxr.jpg")
-thomas = User.create(sex: "Homme", email: "thomas@birdies.com", password: "password", pseudo: "SurfMousse", photo_url: "http://res.cloudinary.com/dlddnk3pr/image/upload/v1505133796/sgb463x8acjlumv7ht86.jpg")
+renan = User.create(sex: "Homme", email: "jenniferschwientek@gmail.com", password: "password", pseudo: "TheVoice", photo_url: "http://res.cloudinary.com/dlddnk3pr/image/upload/v1504809025/pfzlmedhzlieyalaczxr.jpg")
+thomas = User.create(sex: "Homme", email: "studentouch@gmail.com", password: "password", pseudo: "SurfMousse", photo_url: "http://res.cloudinary.com/dlddnk3pr/image/upload/v1505133796/sgb463x8acjlumv7ht86.jpg")
 
 puts "Users created !"
 puts "--------------------"
