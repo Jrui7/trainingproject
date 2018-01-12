@@ -22,13 +22,18 @@ puts "Categories created !"
 puts "--------------------"
 
 
-jorge = User.create(sex: "Homme", email: "jorge.ruivinho@me.com", password: "password", first_name: "Jorge", last_name: "Ruivinho", pseudo: "Jrui7", photo_url: "http://res.cloudinary.com/dlddnk3pr/image/upload/v1504805315/chx9ggnqbpz9ojb9pjnb.jpg")
-renan = User.create(sex: "Homme", email: "renan.legall@gmail.com", password: "password", first_name: "Renan", last_name: "Legall", pseudo: "TheVoice", photo_url: "http://res.cloudinary.com/dlddnk3pr/image/upload/v1504809025/pfzlmedhzlieyalaczxr.jpg")
-thomas = User.create(sex: "Homme", email: "thomas@birdies.com", password: "password", first_name: "Thomas", last_name: "Caillol", pseudo: "SurfMousse", photo_url: "http://res.cloudinary.com/dlddnk3pr/image/upload/v1505133796/sgb463x8acjlumv7ht86.jpg")
+jorge = User.create(sex: "Homme", email: "jorge.ruivinho@me.com", password: "password", pseudo: "Jrui7", photo_url: "http://res.cloudinary.com/dlddnk3pr/image/upload/v1504805315/chx9ggnqbpz9ojb9pjnb.jpg")
+renan = User.create(sex: "Homme", email: "renan.legall@gmail.com", password: "password", pseudo: "TheVoice", photo_url: "http://res.cloudinary.com/dlddnk3pr/image/upload/v1504809025/pfzlmedhzlieyalaczxr.jpg")
+thomas = User.create(sex: "Homme", email: "thomas@birdies.com", password: "password", pseudo: "SurfMousse", photo_url: "http://res.cloudinary.com/dlddnk3pr/image/upload/v1505133796/sgb463x8acjlumv7ht86.jpg")
 
 puts "Users created !"
 puts "--------------------"
 
+j = Address.create(user_id: jorge.id, full_name: "Jorge Ruivinho", street: "64 rue de la Pompe", zip_code: "75116", city: "Paris")
+t = Address.create(user_id: thomas.id, full_name: "Thomas Caillol", street: "1 rue de la falaise", zip_code: "13000", city: "Marseille")
+
+puts "Addreses created !"
+puts "--------------------"
 
 
 seed_sport  = Seed.create(price: 100, popularity: 0, view_counter: 0, url: "https://www.youtube.com/watch?v=5AhY_-qUb4w" , secondary_url: "https://www.youtube.com/watch?v=sKeslrZ-i6k", title: "Le tube d'Hendaye", expiration: DateTime.now.utc + 3.days, user_id: thomas.id, category_id: sport.id, description: "Perso Ma Men, c'est les plus grosses vagues que j'ai ridé", photo_urls: ["http://res.cloudinary.com/dlddnk3pr/image/upload/v1505138572/eecindhnvh2ltpxpitb9.jpg", "http://res.cloudinary.com/dlddnk3pr/image/upload/v1504544452/yxdwojuuq0q71p2oemmz.jpg"])

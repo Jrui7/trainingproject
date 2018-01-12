@@ -12,6 +12,7 @@ class User < ApplicationRecord
 
    has_many :seeds
    has_many :picks
+   has_many :addresses, dependent: :destroy
    has_attachment :photo
    has_many :user_preferences
    has_many :signal_seed

@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180105160037) do
+ActiveRecord::Schema.define(version: 20180112192910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "user_id"
+    t.string   "full_name"
+    t.string   "street"
+    t.string   "zip_code"
+    t.string   "city"
+    t.string   "phone_number"
+    t.string   "address_complement"
+    t.string   "address_title"
+    t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
+  end
 
   create_table "attachinary_files", force: :cascade do |t|
     t.string   "attachinariable_type"
@@ -40,11 +54,17 @@ ActiveRecord::Schema.define(version: 20180105160037) do
     t.integer  "price"
     t.integer  "seed_id"
     t.integer  "user_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.integer  "amount_cents", default: 0, null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "amount_cents",       default: 0, null: false
     t.string   "state"
     t.jsonb    "payment"
+    t.string   "full_name"
+    t.string   "street"
+    t.string   "zip_code"
+    t.string   "city"
+    t.string   "phone_number"
+    t.string   "address_complement"
     t.index ["seed_id"], name: "index_picks_on_seed_id", using: :btree
     t.index ["user_id"], name: "index_picks_on_user_id", using: :btree
   end
@@ -102,17 +122,11 @@ ActiveRecord::Schema.define(version: 20180105160037) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
-    t.string   "first_name"
-    t.string   "last_name"
     t.string   "pseudo"
     t.string   "sex"
-    t.string   "address"
     t.date     "date_of_birth"
     t.boolean  "admin",                  default: false
-    t.string   "zip_code"
     t.string   "city"
-    t.string   "phone_number"
-    t.string   "address_complement"
     t.text     "mini_bio"
     t.string   "insta"
     t.string   "youtube"
@@ -123,6 +137,7 @@ ActiveRecord::Schema.define(version: 20180105160037) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "addresses", "users"
   add_foreign_key "picks", "seeds"
   add_foreign_key "picks", "users"
   add_foreign_key "seeds", "categories"

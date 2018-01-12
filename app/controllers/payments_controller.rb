@@ -6,6 +6,7 @@ class PaymentsController < ApplicationController
       @user = current_user
       unless current_user.customer_id.blank?
         @customer_infos = Stripe::Customer.retrieve(@user.customer_id)
+        @customer_address = current_user.addresses.first
       end
     end
 
@@ -19,11 +20,8 @@ class PaymentsController < ApplicationController
 
         customer_id = customer.id
         current_user.customer_id = customer_id
-        current_user.address = params["stripeBillingAddressLine1"]
-        current_user.zip_code = params["stripeBillingAddressZip"]
-        current_user.city = params["stripeBillingAddressCity"]
-        current_user.last_name = params["stripeBillingName"]
         current_user.save
+        Address.create(user_id: current_user.id, full_name: params["stripeBillingName"], street: params["stripeBillingAddressLine1"], zip_code: params["stripeBillingAddressZip"], city: params["stripeBillingAddressCity"])
 
       else
         if params[:stripeToken]
@@ -46,7 +44,9 @@ class PaymentsController < ApplicationController
         currency:     @pick.amount.currency
       )
 
-      @pick.update(payment: charge.to_json, state: 'paid')
+      pick_address = current_user.addresses.last
+
+      @pick.update(payment: charge.to_json, state: 'paid', full_name: pick_address.full_name, street: pick_address.street, address_complement: pick_address.address_complement, zip_code: pick_address.zip_code, city: pick_address.city, phone_number: pick_address.phone_number)
       redirect_to pick_path(@pick)
 
       rescue Stripe::CardError => e
