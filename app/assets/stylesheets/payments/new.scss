@@ -23,7 +23,6 @@
   }
 
     h3 {
-      color: $blue;
       text-decoration: underline;
       margin-bottom: 20px;
     }
@@ -31,7 +30,14 @@
     .title-and-validation {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+    }
+
+    .update-delivery-infos {
+      color: #E67E22;
+      padding: 2px 10px;
+      font-size: 14px;
+      margin-left: 30px;
+      border: 1px solid;
     }
 
 
@@ -66,13 +72,16 @@
       border-radius: 0px;
       height:30px;
 
-        border-right: 2px solid $blue;
-        border-bottom: 2px solid $blue;
-        text-decoration: none;
 
       &:hover  {
         background-color:$blue;
         color:white;
+      }
+
+      &:active, &:focus {
+        border-right: 2px solid $blue;
+        border-bottom: 2px solid $blue;
+        text-decoration: none;
       }
 
 
@@ -99,14 +108,11 @@
     display: flex;
   }
 
-  #update-delivery-infos {
-    background-color: $orange;
-    border: none;
-    color: white;
-  }
+
 
   #update-customer-stripe {
     cursor: pointer;
+    display: flex;
     .form-control {
       width: auto;
     }

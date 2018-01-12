@@ -32,12 +32,12 @@
           </div>
         <% else %>
           <div class="stripe-infos">
-            <div class="col-xs-12 col-md-7 nopadding-left">
+            <div class="col-xs-12 col-md-6 nopadding-left">
               <div class="user-update-form">
                 <%= simple_form_for @user, :url => user_path(current_user), :method => :patch do |f| %>
                     <div class="title-and-validation">
                       <h3>Livraison</h3>
-                      <%= f.button :submit, value: "Enregistrer", class: "btn", id: "update-delivery-infos" %>
+                      <%= f.button :submit, value: "Enregistrer", class: "btn update-delivery-infos hidden" %>
                     </div>
 
                     <div class="inputs">
@@ -66,24 +66,28 @@
                 <% end %>
               </div>
               <div id="update-customer-stripe">
-                <h3 class="text-left">Paiement</h3>
-                <div class="input-and-icon">
-                  <i class="fa fa-credit-card fa-fw left-icon"></i>
-                  <div class="form-control">
-                    <div class="left-part">
-                      <div class="stripe-block"><%= @customer_infos.sources.data[0]["brand"]%></div>
-                      <div class="stripe-block">
-                        <i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><%= @customer_infos.sources.data[0]["last4"] %>
-                      </div>
-                      <div class="stripe-block">
-                        <%= @customer_infos.sources.data[0]["exp_month"]%>/<%= @customer_infos.sources.data[0]["exp_year"] %>
+                <div>
+                  <div class="title-and-validation">
+                    <h3>Paiement</h3>
+                  </div>
+                  <div class="input-and-icon">
+                    <i class="fa fa-credit-card fa-fw left-icon"></i>
+                    <div class="form-control">
+                      <div class="left-part">
+                        <div class="stripe-block"><%= @customer_infos.sources.data[0]["brand"]%></div>
+                        <div class="stripe-block">
+                          <i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><%= @customer_infos.sources.data[0]["last4"] %>
+                        </div>
+                        <div class="stripe-block">
+                          <%= @customer_infos.sources.data[0]["exp_month"]%>/<%= @customer_infos.sources.data[0]["exp_year"] %>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-xs-12 col-md-5">
+            <div class="col-xs-12 col-md-6">
               <%= link_to "Versement sécurisé", pick_payments_path(@pick), class: "btn btn-primary",  method: :post %>
             </div>
           </div>
