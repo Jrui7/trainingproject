@@ -34,7 +34,7 @@
           <div class="stripe-infos">
             <div class="col-xs-12 col-md-6 nopadding-left">
               <div class="user-update-form">
-                <%= simple_form_for @user, :url => user_path(current_user), :method => :patch do |f| %>
+                <%= simple_form_for @customer_address, :url => address_path(@customer_address), :method => :patch do |f| %>
                     <div class="title-and-validation">
                       <h3>Livraison</h3>
                       <%= f.button :submit, value: "Enregistrer", class: "btn update-delivery-infos hidden" %>
@@ -43,13 +43,13 @@
                     <div class="inputs">
                       <div class="input-and-icon">
                         <i class="fa fa-user left-icon"></i>
-                        <%= f.input :last_name, class: "input-group-field", label: false %>
+                        <%= f.input :full_name, class: "input-group-field", label: false %>
                       </div>
 
                       <div class="input-and-icon">
                         <i class="fa fa-truck left-icon"></i>
                         <div class="fields-address">
-                          <%= f.input :address, class: "input-group-field", label: false %>
+                          <%= f.input :street, class: "input-group-field", label: false %>
                           <div class="zip-city">
                             <%= f.input :zip_code, class: "input-group-field", label: false %>
                             <%= f.input :city, class: "input-group-field", label: false %>
@@ -119,3 +119,5 @@
     </div>
   </div>
 </div>
+
+

@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users, only: [ :show, :edit, :update, :destroy]
+  resources :addresses, only: [:update, :destroy]
+
 
 
   get 'newest', to: 'seeds#newest'
