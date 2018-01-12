@@ -1,10 +1,15 @@
 .booking-confirmation {
-  max-width: 1100px;
-  display: block;
+  margin-right: auto;
+  margin-left: auto;
   margin-bottom: 0px;
+  width: 1100px;
 
   .btn-primary {
     margin-top: 30px;
+  }
+
+  .row {
+    margin: 0;
   }
 
 }
@@ -14,34 +19,27 @@
   margin-top: 40px;
 
   .user-update-form {
-
-    .title-and-save {
-      display: flex;
-      align-items: stretch;
-      .fa-floppy-o {
-        background-color: $blue;
-        color: white;
-        border: none;
-        cursor: pointer;
-        width: auto;
-        border-radius: 2px;
-        padding: 0 10px;
-      }
-
-    }
+    display: flex;
+  }
 
     h3 {
-      color: $red;
+      color: $blue;
       text-decoration: underline;
-      margin: 0;
+      margin-bottom: 20px;
+    }
+
+    .title-and-validation {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
 
     .input-and-icon {
       display: flex;
       align-items: stretch;
-      width: auto;
       margin-bottom: 5px;
+      flex: auto;
     }
 
     .fields-address {
@@ -58,63 +56,60 @@
       width: auto;
     }
     .form-control {
+      display: flex;
+      justify-content: space-between;
       padding: 0 10px;
       margin: 0;
       border: none;
       box-shadow: none;
       cursor: pointer;
       border-radius: 0px;
+      height:30px;
 
-      &:hover, &:active, &:focus {
-        border-right: 1px solid $red;
-        border-bottom: 1px solid $red;
-        border-top: 1px solid $red;
+        border-right: 2px solid $blue;
+        border-bottom: 2px solid $blue;
         text-decoration: none;
 
+      &:hover  {
+        background-color:$blue;
+        color:white;
       }
 
 
-      }
-    #user_city {
 
-      &:hover, &:active, &:focus {
-        border-left: 1px solid $red;
-        text-decoration: none;
+
       }
 
-    }
-    i {
+    .left-icon {
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid $red;
+      border: 1px solid $blue;
       width: 45px;
       color: white;
-      background-color: $red;
+      background-color: $blue;
+      flex-shrink: 0;
     }
 
-  }
-
-  #update-user-payment, #update-delivery-infos {
-    display: none;
-  }
-
-
-
-  .input-group {
-  }
-
-  .form-control {
-    display: flex;
-    justify-content: space-between;
-  }
+    .fa-mobile-phone {
+      font-size: 20px;
+    }
 
   .left-part {
     display: flex;
   }
 
+  #update-delivery-infos {
+    background-color: $orange;
+    border: none;
+    color: white;
+  }
+
   #update-customer-stripe {
     cursor: pointer;
+    .form-control {
+      width: auto;
+    }
   }
 
   .update-customer-address {
@@ -133,16 +128,13 @@
     margin-right: 2px;
   }
 
-  .accept-reject {
-    padding: 6px 12px;
-    font-size: 16px;
-    font-weight: normal;
-    line-height: 1;
-    color: #1F1F26;
-    text-align: center;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 2px;
+  .validation-button {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .btn {
+    border-radius: 0;
   }
 
 
