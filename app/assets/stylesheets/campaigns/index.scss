@@ -3,9 +3,23 @@ h1 {
   font-size: 25px;
 }
 
+.head-seed {
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-icons {
+  display: flex;
+  align-items: baseline;
+  .fa-hand-lizard-o {
+    font-size: 17px;
+  }
+}
+
 .signal-box {
   display: flex;
   align-items: baseline;
+  margin-left: 5px;
 }
 
 .seed-signaled {

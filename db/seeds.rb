@@ -46,3 +46,15 @@ seed_test = Seed.create(price: 400, popularity: 0, view_counter: 0, url: "https:
 
 puts "Seed created"
 puts "----------------------"
+
+campaign1 = Campaign.create(seed_id: seed_sport.id)
+campaign2 = Campaign.create(seed_id: seed_mode.id)
+campaign3 = Campaign.create(seed_id: seed_loisir.id)
+campaign4 = Campaign.create(seed_id: seed_beauté.id)
+campaign5 = Campaign.create(seed_id: seed_art.id)
+campaign6 = Campaign.create(seed_id: seed_sorties.id)
+campaign7 = Campaign.create(seed_id: seed_test.id)
+
+puts "Campaigns created"
+puts "-----------------------"
+

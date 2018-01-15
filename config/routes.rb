@@ -19,12 +19,14 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users, only: [ :show, :edit, :update, :destroy]
   resources :addresses, only: [:update, :destroy]
-  resources :campaigns, only: [:index]
+  resources :campaigns, only: [:index, :update]
 
 
   get 'signaled', to: 'campaigns#signaled'
-  get 'expired', to: 'campaigns#expired'
-  get 'ongoing', to: 'campaigns#ongoing'
+  get 'pending', to: 'campaigns#pending'
+  get 'success', to: 'campaigns#success'
+  get 'fail', to: 'campaigns#fail'
+
 
   get 'newest', to: 'seeds#newest'
   get 'popular', to: 'seeds#popular'

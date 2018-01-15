@@ -2,19 +2,32 @@
     <%= link_to seed_path(seed) do  %>
       <%= cl_image_tag("#{seed.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "product-image")%>
     <% end %>
-    <div class='product-body'> <%= link_to seed_path(seed) do  %>
-      <h3> <%= seed.title %></h3>
-
+    <div class='product-body'>
+      <div class="head-seed">
+      <%= link_to seed_path(seed) do  %>
+        <h3> <%= seed.title %>: id <%= seed.id %></h3>
       <% end %>
+        <div class="export-link"><%= link_to "Export CSV", seed_picks_path(seed_id: seed, format: :csv) %>
+        </div>
+      </div>
+
       <div class="bottom-sexion">
         <div class="product-category">
-          <p class="<%= seed.category.name%>"> <%= seed.category.name.upcase %></p>
+          <p>To do</p>
         </div>
-        <div class="signal-box">
-          <div class="media-filter-icon glyphicon glyphicon-exclamation-sign"></div>
-          <p>Signalements</p>
-          <p class="action-count">(<%= seed.signal_seed.count%>)</p>
-          </%>
+        <div class="right-icons">
+          <div class="signal-box">
+            <div class="media-filter-icon fa fa-hand-lizard-o"></div>
+            <p>Picks</p>
+            <p class="action-count">(<%= seed.picks.count%>)</p>
+            </%>
+          </div>
+          <div class="signal-box">
+            <div class="media-filter-icon glyphicon glyphicon-exclamation-sign"></div>
+            <p>Signalements</p>
+            <p class="action-count">(<%= seed.signal_seed.count%>)</p>
+            </%>
+          </div>
         </div>
 
       </div>

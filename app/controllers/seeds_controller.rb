@@ -22,15 +22,16 @@ class SeedsController < ApplicationController
 
 
   def create
-     @seed = current_user.seeds.build(seed_params)
+     seed = current_user.seeds.build(seed_params)
 
-    if @seed.valid?
-      @seed.set_expiration
-      @seed.set_view_counter
-      @seed.set_popularity
-      @seed.save
+    if seed.valid?
+      seed.set_expiration
+      seed.set_view_counter
+      seed.set_popularity
+      seed.save
+      Campaign.create(seed_id: seed.id)
       flash[:notice] = "Votre seed est maintenant en ligne"
-      redirect_to seed_path(@seed)
+      redirect_to seed_path(seed)
     else
       render :new
     end

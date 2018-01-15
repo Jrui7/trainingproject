@@ -1,18 +1,29 @@
 class CampaignsController < ApplicationController
 
   def index
-    @seeds = Seed.all.includes(:category)
+    @pending = Seed.joins(:campaign).where(campaigns: {status: "pending"}).count
+    @signaled = Seed.joins(:signal_seed).distinct.count
+  end
+
+  def update
+
+  end
+
+  def pending
+    @seeds = Seed.joins(:campaign).where(campaigns: {status: "pending"})
+  end
+
+  def success
+    @seeds = Seed.joins(:campaign).where(campaigns: {status: "success"})
+  end
+
+  def fail
+    @seeds = Seed.joins(:campaign).where(campaigns: {status: "fail"})
   end
 
   def signaled
-    @seeds = Seed.joins(:signal_seed).distinct
+    @seeds = Seed.where(admin_validation: false).joins(:signal_seed).distinct
+    @signaled = Seed.joins(:signal_seed).distinct.count
   end
 
-  def expired
-    @seeds = Seed.expired.includes(:category)
-  end
-
-  def ongoing
-    @seeds = Seed.ongoing.includes(:category)
-  end
 end
