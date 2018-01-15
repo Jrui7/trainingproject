@@ -1,0 +1,20 @@
+.signal-box {
+  display: flex;
+  align-items: baseline;
+}
+
+.seed-signaled {
+  .glyphicon-exclamation-sign {
+    color: $blue;
+  }
+  p {
+    color: $blue;
+  }
+}
+
+.media-filter-icon {
+  padding: 0 5px;
+}
+.action-count {
+    padding: 0 5px;
+}

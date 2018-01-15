@@ -1,0 +1,18 @@
+<% content_for(:title_tag) do %>
+  Bienvenue sur Seedlap
+<% end %>
+
+<div class="page-container">
+
+  <div class="seed-feed">
+
+
+    <div class="seed-presentation">
+      <h1>Admin dashboard</h1>
+      <%= render partial: "campaigns/seed", collection: @seeds %>
+    </div>
+
+
+
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="product id-<%= seed.category_id%>">
+    <%= link_to seed_path(seed) do  %>
+      <%= cl_image_tag("#{seed.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "product-image")%>
+    <% end %>
+    <div class='product-body'> <%= link_to seed_path(seed) do  %>
+      <h3> <%= seed.title %></h3>
+
+      <% end %>
+      <div class="bottom-sexion">
+        <div class="product-category">
+          <p class="<%= seed.category.name%>"> <%= seed.category.name.upcase %></p>
+        </div>
+        <div class="signal-box">
+          <div class="media-filter-icon glyphicon glyphicon-exclamation-sign"></div>
+          <p>Signalements</p>
+          <p class="action-count">(<%= seed.signal_seed.count%>)</p>
+          </%>
+        </div>
+
+      </div>
+    </div>
+  </div>
