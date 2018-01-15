@@ -5,6 +5,14 @@ class CampaignsController < ApplicationController
   end
 
   def signaled
-    @seeds = Seed.all.joins(:signal_seed)
+    @seeds = Seed.joins(:signal_seed).distinct
+  end
+
+  def expired
+    @seeds = Seed.expired.includes(:category)
+  end
+
+  def ongoing
+    @seeds = Seed.ongoing.includes(:category)
   end
 end

@@ -23,6 +23,9 @@ Rails.application.routes.draw do
 
 
   get 'signaled', to: 'campaigns#signaled'
+  get 'expired', to: 'campaigns#expired'
+  get 'ongoing', to: 'campaigns#ongoing'
+
   get 'newest', to: 'seeds#newest'
   get 'popular', to: 'seeds#popular'
   get 'last_day', to: 'seeds#last_day'

@@ -48,7 +48,6 @@ class Seed < ApplicationRecord
   scope :expired, -> { where('expiration < ?', DateTime.now)}
   scope :last_day, -> { where('expiration < ?', (DateTime.now + 1.days))}
 
-
   def set_expiration
     self.expiration = DateTime.now + 3.days
   end

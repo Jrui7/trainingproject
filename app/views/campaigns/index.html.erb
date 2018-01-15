@@ -5,10 +5,40 @@
 <div class="page-container">
 
   <div class="seed-feed">
+      <div class="categories hidden-xs">
+        <div class="filter-title">
+          <div class="sub-categories">
+            <%= link_to campaigns_path do %>
+              <div class="selected-category">
+                <div class="filter-icon glyphicon glyphicon-globe"></div>
+                <p>Index</p>
+              </div>
+            <% end %>
+            <%= link_to expired_path do %>
+              <div class="sub-title">
+                <div class="filter-icon glyphicon glyphicon-eye-close"></div>
+                <p>Expired</p>
+              </div>
+            <% end %>
+            <%= link_to ongoing_path do %>
+              <div class="sub-title">
+                <div class="filter-icon glyphicon glyphicon-eye-open"></div>
+                <p>Ongoing</p>
+              </div>
+            <% end %>
+            <%= link_to signaled_path do %>
+              <div class="sub-title">
+                <div class="filter-icon glyphicon glyphicon-exclamation-sign"></div>
+                <p>Signaled</p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
 
 
     <div class="seed-presentation">
-      <h1>Admin dashboard</h1>
+      <h1>Admin dashboard > Index</h1>
       <%= render partial: "campaigns/seed", collection: @seeds %>
     </div>
 
