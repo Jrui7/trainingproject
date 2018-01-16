@@ -1,6 +1,6 @@
 class Seed < ApplicationRecord
 
-  has_one :campaign
+  has_one :campaign, dependent: :destroy
   belongs_to :category
   belongs_to :user
   has_many :picks, dependent: :destroy
@@ -49,7 +49,7 @@ class Seed < ApplicationRecord
   scope :last_day, -> { where('expiration < ?', (DateTime.now + 1.days))}
 
   def set_expiration
-    self.expiration = DateTime.now + 3.days
+    self.expiration = DateTime.now + 7.days
   end
 
 
@@ -83,7 +83,15 @@ class Seed < ApplicationRecord
     self.expiration > DateTime.now
   end
 
-  def destroy_seed_and_refund
+  def self.seed_selection
+    ongoing.where.not(admin_review:"Invalide").includes(:user, :category)
+  end
+
+  def self.seed_sample_expired
+    where.not(admin_review:"Invalide").includes(:user, :category)
+  end
+
+  def refund_seed
     self.picks.each do |pick|
       if pick.state == "paid"
         payment_hash = JSON.parse(pick.payment)

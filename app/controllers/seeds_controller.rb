@@ -1,17 +1,11 @@
 class SeedsController < ApplicationController
 
-
+  before_action :set_sample, only: [:index, :last_day, :popular, :newest]
 
   def index
-    if Seed.ongoing.any? == true
-      @sample = Seed.ongoing.sample
-    else
-      @sample = Seed.expired.sample
-    end
     @categories = Category.all
     @filter = params[:category]
-    @seeds = Seed.ongoing.includes(:user, :category)
-
+    @seeds = Seed.seed_selection
   end
 
 
@@ -56,8 +50,8 @@ class SeedsController < ApplicationController
       redirect_to signaled_path
 
     else
-      seed.destroy_seed_and_refund
-      seed.destroy
+      seed.refund_seed
+      seed.update(admin_review_params)
       redirect_to signaled_path
     end
 
@@ -68,33 +62,18 @@ class SeedsController < ApplicationController
   end
 
   def last_day
-    if Seed.ongoing.any? == true
-      @sample = Seed.ongoing.sample
-    else
-      @sample = Seed.expired.sample
-    end
     @categories = Category.all
-    @seeds = Seed.ongoing.includes(:user, :category).last_day
+    @seeds = Seed.seed_selection.last_day
   end
 
   def popular
-    if Seed.ongoing.any? == true
-      @sample = Seed.ongoing.sample
-    else
-      @sample = Seed.expired.sample
-    end
     @categories = Category.all
-    @seeds = Seed.ongoing.includes(:user, :category).popular
+    @seeds = Seed.seed_selection.popular
   end
 
   def newest
-    if Seed.ongoing.any? == true
-      @sample = Seed.ongoing.sample
-    else
-      @sample = Seed.expired.sample
-    end
     @categories = Category.all
-    @seeds = Seed.ongoing.includes(:user, :category).newest
+    @seeds = Seed.seed_selection.newest
   end
 
 
@@ -106,6 +85,14 @@ class SeedsController < ApplicationController
 
   def admin_review_params
     params.require(:seed).permit(:admin_review)
+  end
+
+  def set_sample
+    if Seed.ongoing.any? == true
+      @sample = Seed.seed_selection.sample
+    else
+      @sample = Seed.seed_sample_expired.sample
+    end
   end
 
 
