@@ -54,6 +54,11 @@ class SeedsController < ApplicationController
     if admin_review == "Valide"
       seed.update(admin_review_params)
       redirect_to signaled_path
+
+    else
+      seed.destroy_seed_and_refund
+      seed.destroy
+      redirect_to signaled_path
     end
 
   end

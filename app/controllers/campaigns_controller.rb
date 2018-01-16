@@ -2,7 +2,7 @@ class CampaignsController < ApplicationController
 
   def index
     @pending = Seed.joins(:campaign).where(campaigns: {status: "pending"}).count
-    @signaled = Seed.where(admin_review: "not-reviewed").joins(:signal_seed).count
+    @signaled = Seed.where(admin_review: "not-reviewed").joins(:signal_seed).distinct.count
   end
 
   def update
@@ -22,8 +22,11 @@ class CampaignsController < ApplicationController
   end
 
   def signaled
-    @seeds = Seed.where(admin_review: "not-reviewed").joins(:signal_seed)
-    @signaled = Seed.where(admin_review: "not-reviewed").joins(:signal_seed).count
+    @seeds = Seed.where(admin_review: "not-reviewed").joins(:signal_seed).distinct
+    @signaled = Seed.where(admin_review: "not-reviewed").joins(:signal_seed).distinct.count
+  end
+
+  def destroy
   end
 
 end

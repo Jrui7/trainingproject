@@ -3,8 +3,8 @@ class Seed < ApplicationRecord
   has_one :campaign
   belongs_to :category
   belongs_to :user
-  has_many :picks
-  has_many :signal_seed
+  has_many :picks, dependent: :destroy
+  has_many :signal_seed, dependent: :destroy
   monetize :price_cents
 
 
@@ -81,6 +81,17 @@ class Seed < ApplicationRecord
 
   def ongoing?
     self.expiration > DateTime.now
+  end
+
+  def destroy_seed_and_refund
+    self.picks.each do |pick|
+      if pick.state == "paid"
+        payment_hash = JSON.parse(pick.payment)
+         Stripe::Refund.create(
+           charge: payment_hash["id"]
+         )
+      end
+    end
   end
 
 

@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users, only: [ :show, :edit, :update, :destroy]
   resources :addresses, only: [:update, :destroy]
-  resources :campaigns, only: [:index, :update]
+  resources :campaigns, only: [:index, :update, :destroy]
 
 
   get 'signaled', to: 'campaigns#signaled'
