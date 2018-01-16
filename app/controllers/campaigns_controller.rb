@@ -1,7 +1,7 @@
 class CampaignsController < ApplicationController
 
   def index
-    @pending = Seed.joins(:campaign).where(campaigns: {status: "pending"}).count
+    @pending = Seed.seed_selection.joins(:campaign).where(campaigns: {status: "pending"}).count
     @signaled = Seed.where(admin_review: "not-reviewed").joins(:signal_seed).distinct.count
   end
 
@@ -10,7 +10,7 @@ class CampaignsController < ApplicationController
   end
 
   def pending
-    @seeds = Seed.joins(:campaign).where(campaigns: {status: "pending"})
+    @seeds = Seed.seed_selection.joins(:campaign).where(campaigns: {status: "pending"})
   end
 
   def success
