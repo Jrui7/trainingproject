@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
 
   devise_for :users
-  resources :seeds, shallow: true do
+  resources :seeds, only: [:index, :new, :create, :update, :show, :destroy], shallow: true do
     resources :picks, only: [:index, :show, :create, :update, :destroy] do
       resources :payments, only: [:new, :create, :destroy]
     end
@@ -19,7 +19,13 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users, only: [ :show, :edit, :update, :destroy]
   resources :addresses, only: [:update, :destroy]
+  resources :campaigns, only: [:index, :update, :destroy]
 
+
+  get 'signaled', to: 'campaigns#signaled'
+  get 'pending', to: 'campaigns#pending'
+  get 'success', to: 'campaigns#success'
+  get 'fail', to: 'campaigns#fail'
 
 
   get 'newest', to: 'seeds#newest'

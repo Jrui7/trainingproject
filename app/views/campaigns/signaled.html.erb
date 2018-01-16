@@ -1,0 +1,85 @@
+<% content_for(:title_tag) do %>
+  Bienvenue sur Seedlap
+<% end %>
+
+<div class="page-container">
+  <div class="seed-feed">
+
+    <div class="categories hidden-xs">
+      <div class="filter-title">
+        <div class="sub-categories">
+          <%= link_to campaigns_path do %>
+            <div class="sub-title">
+              <div class="filter-icon glyphicon glyphicon-globe"></div>
+              <p>Dashboard</p>
+            </div>
+          <% end %>
+          <%= link_to pending_path do %>
+            <div class="sub-title">
+              <div class="filter-icon fa fa-pause"></div>
+              <p>Pending</p>
+            </div>
+          <% end %>
+          <%= link_to success_path do %>
+            <div class="sub-title">
+              <div class="filter-icon fa fa-thumbs-o-up"></div>
+              <p>Success</p>
+            </div>
+          <% end %>
+          <%= link_to fail_path do %>
+            <div class="sub-title">
+              <div class="filter-icon fa fa-thumbs-o-down"></div>
+              <p>Fail</p>
+            </div>
+          <% end %>
+          <%= link_to signaled_path do %>
+            <div class="selected-category">
+              <div class="filter-icon glyphicon glyphicon-exclamation-sign"></div>
+              <p>Signaled (<%= @signaled %>)</p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="seed-presentation">
+      <h1>Admin dashboard > Signaled</h1>
+      <% @seeds.each do |seed| %>
+      <div class="product id-<%= seed.category_id%>">
+          <%= link_to seed_path(seed) do  %>
+            <%= cl_image_tag("#{seed.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "product-image")%>
+          <% end %>
+          <div class='product-body'>
+            <div class="head-seed">
+            <%= link_to seed_path(seed) do  %>
+              <h3> <%= seed.title %>: id <%= seed.id %></h3>
+            <% end %>
+            <div class="right-icons">
+              <div class="signal-box">
+                <div class="media-filter-icon fa fa-hand-lizard-o"></div>
+                <p>Picks</p>
+                <p class="action-count">(<%= seed.picks.count%>)</p>
+              </div>
+              <div class="signal-box">
+                <div class="media-filter-icon glyphicon glyphicon-exclamation-sign"></div>
+                <p>Signalements</p>
+                <p class="action-count">(<%= seed.signal_seed.count%>)</p>
+              </div>
+            </div>
+            </div>
+
+            <div class="bottom-sexion">
+              <div class="product-category">
+                <%= simple_form_for seed do |f| %>
+                  <%= f.collection_radio_buttons :admin_review, [["Valide", 'Valider'] ,["Invalide", 'Rejetter']], :first, :last %>
+                  <%= f.button :submit, value: "Enregistrer"%>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

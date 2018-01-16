@@ -1,0 +1,52 @@
+<% content_for(:title_tag) do %>
+  Bienvenue sur Seedlap
+<% end %>
+
+<div class="page-container">
+
+  <div class="seed-feed">
+    <div class="categories hidden-xs">
+      <div class="filter-title">
+        <div class="sub-categories">
+          <%= link_to campaigns_path do %>
+            <div class="sub-title">
+              <div class="filter-icon glyphicon glyphicon-globe"></div>
+              <p>Dashboard</p>
+            </div>
+          <% end %>
+          <%= link_to pending_path do %>
+            <div class="sub-title">
+              <div class="filter-icon fa fa-pause"></div>
+              <p>Pending</p>
+            </div>
+          <% end %>
+          <%= link_to success_path do %>
+            <div class="sub-title">
+              <div class="filter-icon fa fa-thumbs-o-up"></div>
+              <p>Success</p>
+            </div>
+          <% end %>
+          <%= link_to fail_path do %>
+            <div class="selected-category">
+              <div class="filter-icon fa fa-thumbs-o-down"></div>
+              <p>Fail</p>
+            </div>
+          <% end %>
+          <%= link_to signaled_path do %>
+            <div class="sub-title">
+              <div class="filter-icon glyphicon glyphicon-exclamation-sign"></div>
+              <p>Signaled</p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="seed-presentation">
+      <h1>Admin dashboard > Fail</h1>
+      <%= render partial: "campaigns/seed", collection: @seeds %>
+    </div>
+
+  </div>
+</div>

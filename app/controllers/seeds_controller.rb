@@ -1,17 +1,11 @@
 class SeedsController < ApplicationController
 
-
+  before_action :set_sample, only: [:index, :last_day, :popular, :newest]
 
   def index
-    if Seed.ongoing.any? == true
-      @sample = Seed.ongoing.sample
-    else
-      @sample = Seed.expired.sample
-    end
     @categories = Category.all
     @filter = params[:category]
-    @seeds = Seed.ongoing.includes(:user, :category)
-
+    @seeds = Seed.seed_selection
   end
 
 
@@ -22,15 +16,16 @@ class SeedsController < ApplicationController
 
 
   def create
-     @seed = current_user.seeds.build(seed_params)
+     seed = current_user.seeds.build(seed_params)
 
-    if @seed.valid?
-      @seed.set_expiration
-      @seed.set_view_counter
-      @seed.set_popularity
-      @seed.save
+    if seed.valid?
+      seed.set_expiration
+      seed.set_view_counter
+      seed.set_popularity
+      seed.save
+      Campaign.create(seed_id: seed.id)
       flash[:notice] = "Votre seed est maintenant en ligne"
-      redirect_to seed_path(@seed)
+      redirect_to seed_path(seed)
     else
       render :new
     end
@@ -46,42 +41,39 @@ class SeedsController < ApplicationController
   end
 
   def update
+    seed = Seed.find(params["id"])
+    admin_review = params["seed"]["admin_review"]
+
+
+    if admin_review == "Valide"
+      seed.update(admin_review_params)
+      redirect_to signaled_path
+
+    else
+      seed.refund_seed
+      seed.update(admin_review_params)
+      redirect_to signaled_path
+    end
+
   end
 
-  def edit
-  end
 
   def destroy
   end
 
   def last_day
-    if Seed.ongoing.any? == true
-      @sample = Seed.ongoing.sample
-    else
-      @sample = Seed.expired.sample
-    end
     @categories = Category.all
-    @seeds = Seed.ongoing.includes(:user, :category).last_day
+    @seeds = Seed.seed_selection.last_day
   end
 
   def popular
-    if Seed.ongoing.any? == true
-      @sample = Seed.ongoing.sample
-    else
-      @sample = Seed.expired.sample
-    end
     @categories = Category.all
-    @seeds = Seed.ongoing.includes(:user, :category).popular
+    @seeds = Seed.seed_selection.popular
   end
 
   def newest
-    if Seed.ongoing.any? == true
-      @sample = Seed.ongoing.sample
-    else
-      @sample = Seed.expired.sample
-    end
     @categories = Category.all
-    @seeds = Seed.ongoing.includes(:user, :category).newest
+    @seeds = Seed.seed_selection.newest
   end
 
 
@@ -89,6 +81,18 @@ class SeedsController < ApplicationController
 
   def seed_params
     params.require(:seed).permit(:title, :price, :description, :official_description, :sale_point, :sale_point_url, :sale_point_address, :sale_point_contact, :category_id, :url, :secondary_url, photos: [])
+  end
+
+  def admin_review_params
+    params.require(:seed).permit(:admin_review)
+  end
+
+  def set_sample
+    if Seed.ongoing.any? == true
+      @sample = Seed.seed_selection.sample
+    else
+      @sample = Seed.seed_sample_expired.sample
+    end
   end
 
 

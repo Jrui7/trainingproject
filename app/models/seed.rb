@@ -1,10 +1,10 @@
 class Seed < ApplicationRecord
 
-
+  has_one :campaign, dependent: :destroy
   belongs_to :category
   belongs_to :user
-  has_many :picks
-  has_many :signal_seed
+  has_many :picks, dependent: :destroy
+  has_many :signal_seed, dependent: :destroy
   monetize :price_cents
 
 
@@ -48,9 +48,8 @@ class Seed < ApplicationRecord
   scope :expired, -> { where('expiration < ?', DateTime.now)}
   scope :last_day, -> { where('expiration < ?', (DateTime.now + 1.days))}
 
-
   def set_expiration
-    self.expiration = DateTime.now + 3.days
+    self.expiration = DateTime.now + 7.days
   end
 
 
@@ -82,6 +81,25 @@ class Seed < ApplicationRecord
 
   def ongoing?
     self.expiration > DateTime.now
+  end
+
+  def self.seed_selection
+    ongoing.where.not(admin_review:"Invalide").includes(:user, :category)
+  end
+
+  def self.seed_sample_expired
+    where.not(admin_review:"Invalide").includes(:user, :category)
+  end
+
+  def refund_seed
+    self.picks.each do |pick|
+      if pick.state == "paid"
+        payment_hash = JSON.parse(pick.payment)
+         Stripe::Refund.create(
+           charge: payment_hash["id"]
+         )
+      end
+    end
   end
 
 
