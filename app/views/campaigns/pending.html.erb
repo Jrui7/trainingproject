@@ -45,8 +45,42 @@
 
     <div class="seed-presentation">
       <h1>Admin dashboard > Pending</h1>
-      <%= render partial: "campaigns/seed", collection: @seeds %>
-    </div>
+      <% @seeds.each do |seed| %>
+      <div class="product id-<%= seed.category_id%>">
+          <%= link_to seed_path(seed) do  %>
+            <%= cl_image_tag("#{seed.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "product-image")%>
+          <% end %>
+          <div class='product-body'>
+            <div class="head-seed">
+            <%= link_to seed_path(seed) do  %>
+              <h3> <%= seed.title %>: id <%= seed.id %></h3>
+            <% end %>
+            </div>
 
+            <div class="bottom-sexion">
+              <div class="product-category">
+                <div class="btn btn-success">Success</div>
+                <div class="btn btn-danger">Fail</div>
+              </div>
+              <div class="right-icons">
+                <div class="signal-box">
+                  <div class="media-filter-icon fa fa-hand-lizard-o"></div>
+                  <p>Picks</p>
+                  <p class="action-count">(<%= seed.picks.count%>)</p>
+                  </%>
+                </div>
+                <div class="signal-box">
+                  <div class="media-filter-icon glyphicon glyphicon-exclamation-sign"></div>
+                  <p>Signalements</p>
+                  <p class="action-count">(<%= seed.signal_seed.count%>)</p>
+                  </%>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

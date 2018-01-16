@@ -47,10 +47,17 @@ class SeedsController < ApplicationController
   end
 
   def update
+    seed = Seed.find(params["id"])
+    admin_review = params["seed"]["admin_review"]
+
+
+    if admin_review == "Valide"
+      seed.update(admin_review_params)
+      redirect_to signaled_path
+    end
+
   end
 
-  def edit
-  end
 
   def destroy
   end
@@ -90,6 +97,10 @@ class SeedsController < ApplicationController
 
   def seed_params
     params.require(:seed).permit(:title, :price, :description, :official_description, :sale_point, :sale_point_url, :sale_point_address, :sale_point_contact, :category_id, :url, :secondary_url, photos: [])
+  end
+
+  def admin_review_params
+    params.require(:seed).permit(:admin_review)
   end
 
 
