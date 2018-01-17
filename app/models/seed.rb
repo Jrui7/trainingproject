@@ -84,11 +84,11 @@ class Seed < ApplicationRecord
   end
 
   def self.seed_selection
-    ongoing.where.not(admin_review:"Invalide").includes(:user, :category)
+    ongoing.where.not(admin_review:"Invalide")
   end
 
   def self.seed_sample_expired
-    where.not(admin_review:"Invalide").includes(:user, :category)
+    where.not(admin_review:"Invalide")
   end
 
   def refund_seed
@@ -98,6 +98,8 @@ class Seed < ApplicationRecord
          Stripe::Refund.create(
            charge: payment_hash["id"]
          )
+         pick.state = "refounded"
+         pick.save
       end
     end
   end
