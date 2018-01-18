@@ -39,7 +39,8 @@ class Campaign < ApplicationRecord
            )
           pick.update(state: "campaign_failed")
         end
-      pick.update(state: "campaign_closed")
+      else
+        pick.update(state: "campaign_closed")
       end
     end
   end
