@@ -6,11 +6,14 @@ class CampaignsController < ApplicationController
   end
 
   def update
-
+    campaign = Campaign.find(params[:id])
+    campaign.update(pending_campaign_params)
+    campaign.finalize_campaign
+    redirect_to pending_path
   end
 
   def pending
-    @seeds = Seed.seed_selection.joins(:campaign).where(campaigns: {status: "pending"})
+    @seeds = Seed.seed_selection.includes(:campaign).joins(:campaign).where(campaigns: {status: "pending"})
   end
 
   def success
@@ -27,6 +30,12 @@ class CampaignsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def pending_campaign_params
+    params.require(:campaign).permit(:status, :price)
   end
 
 end
