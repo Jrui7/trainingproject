@@ -49,9 +49,11 @@
       <div class="product id-<%= seed.category_id%>">
           <div class='product-body'>
             <div class="head-seed">
-            <%= link_to seed_path(seed) do  %>
-              <h3> <%= seed.title %>: id <%= seed.id %></h3>
-            <% end %>
+              <%= link_to seed_path(seed) do  %>
+                <h3> <%= seed.title %>: id <%= seed.id %></h3>
+              <% end %>
+              <div class="export-link"><%= link_to "Export CSV", seed_picks_path(seed_id: seed, format: :csv) %>
+              </div>
             </div>
 
             <div class="bottom-sexion">

@@ -47,9 +47,6 @@
       <h1>Admin dashboard > Signaled</h1>
       <% @seeds.each do |seed| %>
       <div class="product id-<%= seed.category_id%>">
-          <%= link_to seed_path(seed) do  %>
-            <%= cl_image_tag("#{seed.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "product-image")%>
-          <% end %>
           <div class='product-body'>
             <div class="head-seed">
             <%= link_to seed_path(seed) do  %>
