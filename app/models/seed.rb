@@ -98,9 +98,11 @@ class Seed < ApplicationRecord
          Stripe::Refund.create(
            charge: payment_hash["id"]
          )
-         pick.state = "refounded"
-         pick.save
+         pick.state = "refunded"
+      else
+        pick.state = "cancelled"
       end
+      pick.save
     end
   end
 
