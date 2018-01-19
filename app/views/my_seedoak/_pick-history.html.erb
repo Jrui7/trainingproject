@@ -31,7 +31,21 @@
 <% else %>
   <div class="payment-recap">
     <%= link_to pick_path(pick) do %>
-      <div class="btn btn-warning">Détail</div>
+      <% case pick.state when "finalized" %>
+        <div class="btn btn-warning">Finalized</div>
+      <% when "paid" %>
+        <div class="btn btn-warning">Paid</div>
+      <% when "campaign_failed" %>
+        <div class="btn btn-warning">Campaign_failed</div>
+      <% when "pick_failed" %>
+        <div class="btn btn-warning">Pick_failed</div>
+      <% when "campaign_closed" %>
+        <div class="btn btn-warning">Campaign closed</div>
+      <% when "refunded" %>
+        <div class="btn btn-warning">Refunded</div>
+      <% when "cancelled" %>
+        <div class="btn btn-warning">Cancelled</div>
+      <% end %>
     <% end %>
   </div>
 <% end %>

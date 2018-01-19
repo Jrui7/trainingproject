@@ -48,13 +48,6 @@ class PicksController < ApplicationController
   def destroy
     @pick = Pick.find(params[:id])
     @seed = @pick.seed
-    @pick.destroy
-    respond_to do |format|
-      format.html {redirect_to my_picks_path}
-      format.js
-    end
-
-    @seed.increment_popularity
     if @pick.state == "paid"
       payment_string_object = @pick.payment
       payment_hash = JSON.parse(payment_string_object)
@@ -63,6 +56,15 @@ class PicksController < ApplicationController
         charge: payment_id
       )
     end
+    @pick.destroy
+    @seed.increment_popularity
+    respond_to do |format|
+      format.html {redirect_to my_picks_path}
+      format.js
+    end
+
+
+
 
   end
 
