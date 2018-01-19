@@ -23,3 +23,17 @@ $border-radius-large: 2px;
 $border-radius-small: 2px;
 
 // Override other variables below!
+
+.alert-danger-custom {
+  background-color: $red;
+}
+
+.has-error {
+  label, span {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    display: flex;
+  }
+}
