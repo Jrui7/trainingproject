@@ -84,7 +84,7 @@ class Seed < ApplicationRecord
   end
 
   def self.seed_selection
-    ongoing.where.not(admin_review:"Invalide")
+    ongoing.where.not(admin_review:"Invalide").includes(:user, :category)
   end
 
   def self.seed_sample_expired

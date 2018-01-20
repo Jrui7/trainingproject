@@ -23,3 +23,34 @@ $border-radius-large: 2px;
 $border-radius-small: 2px;
 
 // Override other variables below!
+
+.recover-form {
+  h2 {
+    color: white;
+  }
+}
+
+#new_user {
+ .form-actions {
+  text-align: center;
+  margin-top: 30px;
+ }
+}
+
+.alert-danger-custom {
+  background-color: $red;
+  padding: 15px;
+  border-radius: 2px;
+  text-align: center;
+  color: white;
+  margin-bottom: 22px;
+}
+
+.has-error {
+  label, span {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin: 0px 10px;
+    display: flex;
+  }
+}

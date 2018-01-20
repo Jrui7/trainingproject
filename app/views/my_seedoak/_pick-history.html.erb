@@ -2,13 +2,44 @@
 <%= link_to seed_path(pick.seed) do  %>
   <%= cl_image_tag("#{pick.seed.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "product-image")%>
 <% end %>
-<div class='product-body'> <%= link_to seed_path(pick.seed) do  %>
-  <h3> <%= pick.seed.title %></h3>
-  <p>Pické le <%= pick.created_at.strftime("%d/%m/%y")%></p>
+<div class="product-body">
+  <%= link_to seed_path(pick.seed) do  %>
+    <div class="title-pick-date">
+      <h3> <%= pick.seed.title %></h3>
+      <% if pick.state == "pending" %>
+        <div class="timer-and-pick">
+          <div class="seed-infos-timer">
+            <div id="timer" data-timer="<%= (pick.seed.expiration) %>">
+              <%= render "my_seedoak/timer"  %>
+              <div id="clockdiv">
+                <div class="dynamic-timer">
+                  <div class="smalltext">Jours</div>
+                  <span class="days"></span>
+                </div>
+                <div class="dynamic-timer">
+                  <div class="smalltext">Heures</div>
+                  <span class="hours"></span>
+                </div>
+                <div class="dynamic-timer">
+                  <div class="smalltext">Minutes</div>
+                  <span class="minutes"></span>
+                </div>
+                <div class="dynamic-timer">
+                  <div class="smalltext">Secondes</div>
+                  <span class="seconds"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
   <div class="price-pick">
-    <p class="price-display"><%= pick.price %>€</p>
-    <% if pick.seed.ongoing? %>
+    <% if pick.state == "pending" %>
 
+    <div class="pick-state">
+      <p class="price-display">Pické pour <%= pick.price %>€</p>
     <%= link_to "#myPick-#{pick.id}", data: {toggle: "modal"} do %>
       <span class="glyphicon glyphicon-pencil"></span>
     <% end %>
@@ -16,11 +47,31 @@
       <%= link_to pick_path(pick.id), method: :delete, remote: true do %>
         <span class="glyphicon glyphicon-trash"></span>
       <% end %>
+    </div>
+    <% else %>
+      <div class="pick-state">
+        <% case pick.state when "finalized" %>
+          <div>Finalized</div>
+        <% when "paid" %>
+          <div>Paid</div>
+        <% when "campaign_failed" %>
+          <div>Campaign_failed</div>
+        <% when "pick_failed" %>
+          <div>Pick_failed</div>
+        <% when "campaign_closed" %>
+          <div>Campaign closed</div>
+        <% when "refunded" %>
+          <div>Refunded</div>
+        <% when "cancelled" %>
+          <div>Cancelled</div>
+        <% end %>
+      </div>
+
     <% end %>
   </div>
-
-<% end %>
 </div>
+
+
 
 <% if pick.state == "pending" %>
   <div class="payment-link">
@@ -31,21 +82,7 @@
 <% else %>
   <div class="payment-recap">
     <%= link_to pick_path(pick) do %>
-      <% case pick.state when "finalized" %>
-        <div class="btn btn-warning">Finalized</div>
-      <% when "paid" %>
-        <div class="btn btn-warning">Paid</div>
-      <% when "campaign_failed" %>
-        <div class="btn btn-warning">Campaign_failed</div>
-      <% when "pick_failed" %>
-        <div class="btn btn-warning">Pick_failed</div>
-      <% when "campaign_closed" %>
-        <div class="btn btn-warning">Campaign closed</div>
-      <% when "refunded" %>
-        <div class="btn btn-warning">Refunded</div>
-      <% when "cancelled" %>
-        <div class="btn btn-warning">Cancelled</div>
-      <% end %>
+      <div class="btn btn-warning">Détails</div>
     <% end %>
   </div>
 <% end %>
