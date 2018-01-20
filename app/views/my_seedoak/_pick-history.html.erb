@@ -6,14 +6,40 @@
   <%= link_to seed_path(pick.seed) do  %>
     <div class="title-pick-date">
       <h3> <%= pick.seed.title %></h3>
-      <p class="price-display">Pické pour <%= pick.price %>€</p>
+      <% if pick.state == "pending" %>
+        <div class="timer-and-pick">
+          <div class="seed-infos-timer">
+            <div id="timer" data-timer="<%= (pick.seed.expiration) %>">
+              <%= render "my_seedoak/timer"  %>
+              <div id="clockdiv">
+                <div class="dynamic-timer">
+                  <div class="smalltext">Jours</div>
+                  <span class="days"></span>
+                </div>
+                <div class="dynamic-timer">
+                  <div class="smalltext">Heures</div>
+                  <span class="hours"></span>
+                </div>
+                <div class="dynamic-timer">
+                  <div class="smalltext">Minutes</div>
+                  <span class="minutes"></span>
+                </div>
+                <div class="dynamic-timer">
+                  <div class="smalltext">Secondes</div>
+                  <span class="seconds"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   <% end %>
   <div class="price-pick">
     <% if pick.state == "pending" %>
 
     <div class="pick-state">
-
+      <p class="price-display">Pické pour <%= pick.price %>€</p>
     <%= link_to "#myPick-#{pick.id}", data: {toggle: "modal"} do %>
       <span class="glyphicon glyphicon-pencil"></span>
     <% end %>
