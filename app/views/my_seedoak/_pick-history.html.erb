@@ -2,12 +2,17 @@
 <%= link_to seed_path(pick.seed) do  %>
   <%= cl_image_tag("#{pick.seed.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "product-image")%>
 <% end %>
-<div class='product-body'> <%= link_to seed_path(pick.seed) do  %>
-  <h3> <%= pick.seed.title %></h3>
-  <p>Pické le <%= pick.created_at.strftime("%d/%m/%y")%></p>
+<div class="product-body">
+  <%= link_to seed_path(pick.seed) do  %>
+    <div class="title-pick-date">
+      <h3> <%= pick.seed.title %></h3>
+      <p class="price-display">Pické pour <%= pick.price %>€</p>
+    </div>
+  <% end %>
   <div class="price-pick">
-    <p class="price-display"><%= pick.price %>€</p>
     <% if pick.state == "pending" %>
+
+    <div class="pick-state">
 
     <%= link_to "#myPick-#{pick.id}", data: {toggle: "modal"} do %>
       <span class="glyphicon glyphicon-pencil"></span>
@@ -16,6 +21,7 @@
       <%= link_to pick_path(pick.id), method: :delete, remote: true do %>
         <span class="glyphicon glyphicon-trash"></span>
       <% end %>
+    </div>
     <% else %>
       <div class="pick-state">
         <% case pick.state when "finalized" %>
@@ -37,9 +43,9 @@
 
     <% end %>
   </div>
-
-<% end %>
 </div>
+
+
 
 <% if pick.state == "pending" %>
   <div class="payment-link">
