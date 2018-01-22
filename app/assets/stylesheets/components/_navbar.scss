@@ -60,7 +60,7 @@
 
  a {
   text-decoration: none;
-  color: #4c4c4c;
+  color: $blue;
 
     &:hover {
     color: $blue;
@@ -68,39 +68,6 @@
     }
   }
 }
-
-
-/* Basic navbar item */
-.navbar-item {
-  cursor: pointer;
-  padding: 0 25px;
-  position: relative;
-
-  &:hover,
-  &:focus,
-  &:active {
-    cursor: pointer;
-    &:after {
-      width: 100%;
-    }
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    left: 0; bottom: -2px;
-    height: 2px;
-    background-color: $blue;
-    width: 0;
-    transition: width .4s;
-  }
-
-}
-
-
-
-
-
 
 
 
@@ -128,8 +95,8 @@
 
 .fa-hand-lizard-o {
   font-size: 25px;
+  padding: 10px;
   color: $blue;
-  padding: 0 15px;
   a {
   text-decoration: none;
    &:hover{
@@ -140,7 +107,7 @@
 
   .picks-pending {
     position: absolute;
-    left: 2px;
+    left: -2px;
     min-width: 20px;
     min-height: 20px;
     margin: 0;
@@ -159,8 +126,9 @@
 
 .fa-bullhorn {
   font-size: 25px;
+  padding: 10px;
   color: $blue;
-  padding: 0 15px;
+
   a {
   text-decoration: none;
    &:hover{
@@ -172,7 +140,7 @@
 
 .user-menu {
   cursor: pointer;
-  margin-left: 10px;
+  margin: 0 10px;
 }
 
 #dropdown-photo {
@@ -201,10 +169,27 @@
 
 }
 
+.glyphicon-option-vertical {
+  padding: 10px;
+  color: $blue;
+  font-size: 17px;
+}
+
+.drop-item {
+  display: flex;
+  align-items: center;
+  i {
+    width: 20px
+  }
+  p {
+    margin: 0;
+  }
+}
+
 
 /* Dropdown */
 .navbar-dropdown-menu {
-  margin-top: 15px;
+  margin-top: 16px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
 
