@@ -190,15 +190,14 @@
 /* Dropdown */
 .navbar-dropdown-menu {
   margin-top: 16px;
-  box-shadow: 1px 1px 4px #535252;
-  border-color: #535252;
-  background-color: #535252;
+  border-color: $blue;
+  background-color: $blue;
 
 }
 .navbar-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: #E5E5E5 !important;
+  color: white !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
@@ -214,10 +213,10 @@
   position: absolute;
   right: 10px;
   top: -6px;
-  background-color: #535252;
+  background-color: $blue;
   transform: rotate(45deg);
-  border-left: 1px solid #535252;
-  border-top: 1px solid #535252;
+  border-left: 1px solid $blue;
+  border-top: 1px solid $blue;
 }
 
 
