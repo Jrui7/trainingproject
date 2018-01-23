@@ -12,7 +12,7 @@ function counter() {
         $('.counter').html("€");
       }
     }
-    else {
+    else if (event.keyCode != 13) {
       var value = $( this ).val();
         $('.counter').html("");
       $('.counter').each(function() {
