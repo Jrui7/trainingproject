@@ -1,7 +1,20 @@
 $(document).ready(function() {
-   $( "#start-pick" ).keyup(function() {
-      var value = $( this ).val();
 
+   counter();
+
+  });
+
+
+function counter() {
+  $('#start-pick').on('keyup', function(event) {
+    if (event.keyCode == 8) {
+      if ($('#start-pick').val() == "") {
+        $('.counter').html("€");
+      }
+    }
+    else {
+      var value = $( this ).val();
+        $('.counter').html("");
       $('.counter').each(function() {
       var $this = $(this),
           countTo = value;
@@ -26,6 +39,9 @@ $(document).ready(function() {
 
 
       });
-    })
+    }
+  })
+}
 
-  });
+
+
