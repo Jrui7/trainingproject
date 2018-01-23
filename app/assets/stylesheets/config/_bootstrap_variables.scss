@@ -24,6 +24,15 @@ $border-radius-small: 2px;
 
 // Override other variables below!
 
+.modal-content {
+  border-radius: 3px !important;
+
+}
+
+.nav-tabs > li.active > a {
+  border: none !important;
+}
+
 .recover-form {
   h2 {
     color: white;

@@ -32,16 +32,23 @@ a:hover {
 
   .price-display {
     color: $blue;
-    font-size: 17px;
+    font-size: 22px;
     margin-right: 10px;
   }
 
-  .glyphicon {
-    color: $gray;
-    font-size: 14px;
-    margin-left: 5px;
-    margin-right: 5px;
-    text-decoration: none;
+  .pick-state {
+    display: flex;
+    align-items: center;
+
+
+    .glyphicon {
+      color: $gray;
+      font-size: 14px;
+      margin-left: 5px;
+      margin-right: 5px;
+      text-decoration: none;
+    }
+
   }
 
   .title-pick-date {
@@ -67,9 +74,7 @@ a:hover {
 
   }
 
-  .pick-state {
-    display: flex;
-  }
+
 
   .submit-pick {
     padding: 50px 0;

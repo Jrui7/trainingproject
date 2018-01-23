@@ -60,7 +60,7 @@
 
  a {
   text-decoration: none;
-  color: #4c4c4c;
+  color: $blue;
 
     &:hover {
     color: $blue;
@@ -68,39 +68,6 @@
     }
   }
 }
-
-
-/* Basic navbar item */
-.navbar-item {
-  cursor: pointer;
-  padding: 0 25px;
-  position: relative;
-
-  &:hover,
-  &:focus,
-  &:active {
-    cursor: pointer;
-    &:after {
-      width: 100%;
-    }
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    left: 0; bottom: -2px;
-    height: 2px;
-    background-color: $blue;
-    width: 0;
-    transition: width .4s;
-  }
-
-}
-
-
-
-
-
 
 
 
@@ -128,8 +95,8 @@
 
 .fa-hand-lizard-o {
   font-size: 25px;
+  padding: 10px;
   color: $blue;
-  padding: 0 15px;
   a {
   text-decoration: none;
    &:hover{
@@ -140,7 +107,7 @@
 
   .picks-pending {
     position: absolute;
-    left: 2px;
+    left: -2px;
     min-width: 20px;
     min-height: 20px;
     margin: 0;
@@ -159,8 +126,9 @@
 
 .fa-bullhorn {
   font-size: 25px;
+  padding: 10px;
   color: $blue;
-  padding: 0 15px;
+
   a {
   text-decoration: none;
    &:hover{
@@ -172,7 +140,7 @@
 
 .user-menu {
   cursor: pointer;
-  margin-left: 10px;
+  margin: 0 10px;
 }
 
 #dropdown-photo {
@@ -201,25 +169,42 @@
 
 }
 
+.glyphicon-option-vertical {
+  padding: 10px;
+  color: $blue;
+  font-size: 17px;
+}
+
+.drop-item {
+  display: flex;
+  align-items: center;
+  i {
+    width: 20px
+  }
+  p {
+    margin: 0;
+  }
+}
+
 
 /* Dropdown */
 .navbar-dropdown-menu {
-  margin-top: 15px;
-  box-shadow: 1px 1px 4px #E6E6E6;
-  border-color: #E6E6E6;
+  margin-top: 16px;
+  border-color: $blue;
+  background-color: $blue;
 
 }
 .navbar-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: #999999 !important;
+  color: white !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
 }
 .navbar-dropdown-menu li > a:hover {
-  background: transparent !important;
-  color: black !important;
+  background-color: #6d6c6c !important;
+  color: white !important;
 }
 .navbar-dropdown-menu:before {
   content: ' ';
@@ -228,10 +213,10 @@
   position: absolute;
   right: 10px;
   top: -6px;
-  background-color: white;
+  background-color: $blue;
   transform: rotate(45deg);
-  border-left: 1px solid #E6E6E6;
-  border-top: 1px solid #E6E6E6;
+  border-left: 1px solid $blue;
+  border-top: 1px solid $blue;
 }
 
 

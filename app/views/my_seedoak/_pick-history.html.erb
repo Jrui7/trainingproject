@@ -6,11 +6,11 @@
   <%= link_to seed_path(pick.seed) do  %>
     <div class="title-pick-date">
       <h3> <%= pick.seed.title %></h3>
-      <% if pick.state == "pending" %>
+      <% if pick.seed.ongoing? %>
         <div class="timer-and-pick">
           <div class="seed-infos-timer">
             <div id="timer" data-timer="<%= (pick.seed.expiration) %>">
-              <%= render "my_seedoak/timer"  %>
+              <%= render "my_seedoak/timer" , pick: pick  %>
               <div id="clockdiv">
                 <div class="dynamic-timer">
                   <div class="smalltext">Jours</div>
@@ -36,24 +36,22 @@
     </div>
   <% end %>
   <div class="price-pick">
-    <% if pick.state == "pending" %>
-
     <div class="pick-state">
       <p class="price-display">Pické pour <%= pick.price %>€</p>
-    <%= link_to "#myPick-#{pick.id}", data: {toggle: "modal"} do %>
-      <span class="glyphicon glyphicon-pencil"></span>
-    <% end %>
+    <% if pick.seed.ongoing? %>
+      <%= link_to "#myPick-#{pick.id}", data: {toggle: "modal"} do %>
+        <span class="glyphicon glyphicon-pencil"></span>
+      <% end %>
 
       <%= link_to pick_path(pick.id), method: :delete, remote: true do %>
-        <span class="glyphicon glyphicon-trash"></span>
+          <span class="glyphicon glyphicon-trash"></span>
       <% end %>
-    </div>
     <% else %>
       <div class="pick-state">
         <% case pick.state when "finalized" %>
           <div>Finalized</div>
-        <% when "paid" %>
-          <div>Paid</div>
+        <% when "pending" %>
+          <div>Expired</div>
         <% when "campaign_failed" %>
           <div>Campaign_failed</div>
         <% when "pick_failed" %>
@@ -66,14 +64,15 @@
           <div>Cancelled</div>
         <% end %>
       </div>
-
     <% end %>
+    </div>
+
   </div>
 </div>
 
 
 
-<% if pick.state == "pending" %>
+<% if pick.state == "pending" && pick.seed.ongoing? %>
   <div class="payment-link">
     <%= link_to new_pick_payment_path(pick) do %>
       <div class="btn btn-primary">Finaliser pick</div>
