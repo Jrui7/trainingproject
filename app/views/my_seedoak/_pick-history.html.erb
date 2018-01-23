@@ -10,7 +10,7 @@
         <div class="timer-and-pick">
           <div class="seed-infos-timer">
             <div id="timer" data-timer="<%= (pick.seed.expiration) %>">
-              <%= render "my_seedoak/timer"  %>
+              <%= render "my_seedoak/timer" , pick: pick  %>
               <div id="clockdiv">
                 <div class="dynamic-timer">
                   <div class="smalltext">Jours</div>
@@ -46,25 +46,27 @@
       <%= link_to pick_path(pick.id), method: :delete, remote: true do %>
           <span class="glyphicon glyphicon-trash"></span>
       <% end %>
+    <% else %>
+      <div class="pick-state">
+        <% case pick.state when "finalized" %>
+          <div>Finalized</div>
+        <% when "pending" %>
+          <div>Expired</div>
+        <% when "campaign_failed" %>
+          <div>Campaign_failed</div>
+        <% when "pick_failed" %>
+          <div>Pick_failed</div>
+        <% when "campaign_closed" %>
+          <div>Campaign closed</div>
+        <% when "refunded" %>
+          <div>Refunded</div>
+        <% when "cancelled" %>
+          <div>Cancelled</div>
+        <% end %>
+      </div>
     <% end %>
     </div>
-    <div class="pick-state">
-      <% case pick.state when "finalized" %>
-        <div>Finalized</div>
-      <% when "pending" %>
-        <div>Expired</div>
-      <% when "campaign_failed" %>
-        <div>Campaign_failed</div>
-      <% when "pick_failed" %>
-        <div>Pick_failed</div>
-      <% when "campaign_closed" %>
-        <div>Campaign closed</div>
-      <% when "refunded" %>
-        <div>Refunded</div>
-      <% when "cancelled" %>
-        <div>Cancelled</div>
-      <% end %>
-    </div>
+
   </div>
 </div>
 
