@@ -157,6 +157,10 @@
       background: -o-linear-gradient(right,#1a2980, #26d0ce); /* For Opera 11.1 to 12.0 */
       background: -moz-linear-gradient(right,#1a2980, #26d0ce); /* For Firefox 3.6 to 15 */
     }
+
+    h3 {
+      text-align: center;
+    }
   }
 
 
@@ -499,22 +503,23 @@
   }
 
   .price {
-    margin-top: 25px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin: 25px;
 
     p {
       margin: 0 10px 0 0;
     }
 
     .form-control {
-      width: 55%;
+      width: 25%;
     }
   }
 
   .submit-pick {
-    text-align: right;
-    padding-bottom: 20px;
+    text-align: center;
+    padding-top: 20px;
   }
 
 
@@ -529,8 +534,7 @@
 
   .counter-body {
     color: $blue;
-    max-width:100px;
-    margin: 30px auto 30px;
+    margin-left: -10px;
     text-align: center;
     display: table;
   }
@@ -538,11 +542,11 @@
   .counter {
     display: table-cell;
     margin:1.5%;
-    font-size:50px;
+    font-size:30px;
     background-color: #FFFFFF;
-    width:100px;
+    width: 70px;
     border-radius: 50%;
-    height:100px;
+    height: 70px;
     vertical-align: middle;
   }
 
