@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
   var target = $('#start-pick');
   var counter = $(".counter");
@@ -47,14 +48,6 @@ function setCounterValueAndAction(target, counter) {
     }
   })
 }
-
-
-
-// compter si retour arrière et valeur != ""
-
-// compter si keyup != retour arrière et enter
-
-// clear counter si keyup == retour arrière et val == ""
 
 
 

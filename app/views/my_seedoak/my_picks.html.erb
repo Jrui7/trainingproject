@@ -16,7 +16,7 @@
           <div class="pick-modal">
           <!-- Modal -->
             <div class="modal fade" id="myPick-<%= pick.id%>" role="dialog">
-              <div class="modal-dialog modal-sm">
+              <div class="modal-dialog modal">
 
                 <!-- Modal content-->
                 <div class="modal-content">
@@ -25,6 +25,7 @@
                     <h4 class="modal-title"><%= pick.seed.title %> </h4>
                   </div>
                   <div class="modal-body">
+                    <h3>Modifier votre prix </h3>
                     <div class="pick-modal">
                       <%= render "picks/edit-form", seed: pick.seed, pick: pick %>
                     </div>
