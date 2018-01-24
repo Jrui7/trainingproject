@@ -152,8 +152,14 @@
     color: #FFFFFF;
 
     .modal-content {
-      background-image: url('/assets/pick.jpg');
-      background-size: cover;
+      background: linear-gradient(-225deg, #1a2980, #26d0ce 50%);
+      background: -webkit-linear-gradient(left, #1a2980, #26d0ce); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(right,#1a2980, #26d0ce); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(right,#1a2980, #26d0ce); /* For Firefox 3.6 to 15 */
+    }
+
+    h3 {
+      text-align: center;
     }
   }
 
@@ -497,37 +503,38 @@
   }
 
   .price {
-    margin-top: 25px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin: 25px;
 
     p {
       margin: 0 10px 0 0;
     }
 
     .form-control {
-      width: 55%;
+      width: 25%;
     }
   }
 
   .submit-pick {
     text-align: center;
-    padding-bottom: 50px;
+    padding-top: 20px;
   }
 
 
   #btn-pick {
-    border: 1px solid $blue ;
+    border: 1px solid #FFFFFF ;
     padding: 10px 15px;
     text-align: center;
+    background-color: #FFFFFF;
+    color: $blue;
 
   }
 
   .counter-body {
-    background-color: white;
-    color:#fff;
-    max-width:100px;
-    margin: 30px auto 30px;
+    color: $blue;
+    margin-left: -10px;
     text-align: center;
     display: table;
   }
@@ -535,11 +542,11 @@
   .counter {
     display: table-cell;
     margin:1.5%;
-    font-size:50px;
-    background-color: #4bbfe5;
-    width:100px;
+    font-size:30px;
+    background-color: #FFFFFF;
+    width: 70px;
     border-radius: 50%;
-    height:100px;
+    height: 70px;
     vertical-align: middle;
   }
 
