@@ -14,6 +14,7 @@ class PicksController < ApplicationController
 
   def show
     @pick = Pick.find(params[:id])
+    authorize @pick
   end
 
 
@@ -47,6 +48,7 @@ class PicksController < ApplicationController
 
   def destroy
     @pick = Pick.find(params[:id])
+    authorize @pick
     @seed = @pick.seed
     if @pick.state == "paid"
       payment_string_object = @pick.payment
