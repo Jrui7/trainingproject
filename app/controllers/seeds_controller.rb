@@ -5,23 +5,24 @@ class SeedsController < ApplicationController
   def index
     @categories = Category.all
     @filter = params[:category]
-    @seeds = Seed.seed_selection
+    @seeds = policy_scope(Seed).seed_selection
   end
 
 
   def new
     @seed = Seed.new
-    @categories = Category.all
+    authorize @seed
   end
 
 
   def create
-     @seed = current_user.seeds.build(seed_params)
-    if @seed.valid?
+     @seed = Seed.new(seed_params)
+     @seed.user = current_user
+     authorize @seed
+    if @seed.save
       @seed.set_expiration
       @seed.set_view_counter
       @seed.set_popularity
-      @seed.save
       Campaign.create(seed_id: @seed.id)
       flash[:notice] = "Votre seed est maintenant en ligne"
       redirect_to seed_path(@seed)
@@ -32,6 +33,7 @@ class SeedsController < ApplicationController
 
   def show
     @seed = Seed.find(params[:id])
+    authorize @seed
     @seeder = @seed.user
     @seed.increment_views
     @seed.increment_popularity

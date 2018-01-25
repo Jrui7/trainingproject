@@ -1,4 +1,4 @@
-<% if @user.has_picked?(@seed) %>
+<% if current_user.has_picked?(@seed) %>
   <p class="has_picked">Seed pické</p>
 <% else %>
   <%= link_to "#myModal", data: { toggle: "modal" } do%>
