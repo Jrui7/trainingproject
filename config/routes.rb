@@ -33,8 +33,8 @@ Rails.application.routes.draw do
   get 'last_day', to: 'seeds#last_day'
   get 'faq', to: 'pages#faq'
   get 'team', to: 'pages#team'
-  get 'my_seeds', to: 'my_seedoak#my_seeds'
-  get 'my_picks', to: 'my_seedoak#my_picks'
+  get 'my_seeds', to: 'my_seedlap#my_seeds'
+  get 'my_picks', to: 'my_seedlap#my_picks'
 
 end
 

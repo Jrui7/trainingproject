@@ -23,6 +23,7 @@ class SeedsController < ApplicationController
       @seed.set_expiration
       @seed.set_view_counter
       @seed.set_popularity
+      @seed.save
       Campaign.create(seed_id: @seed.id)
       flash[:notice] = "Votre seed est maintenant en ligne"
       redirect_to seed_path(@seed)
