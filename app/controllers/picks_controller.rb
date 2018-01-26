@@ -1,6 +1,5 @@
 class PicksController < ApplicationController
 
-  include Pundit
     after_action :verify_authorized
 
   def index
