@@ -5,19 +5,20 @@ class SeedsController < ApplicationController
   def index
     @categories = Category.all
     @filter = params[:category]
-    @seeds = Seed.seed_selection
+    @seeds = policy_scope(Seed).seed_selection
   end
 
 
   def new
     @seed = Seed.new
-    @categories = Category.all
+    authorize @seed
   end
 
 
   def create
      @seed = current_user.seeds.build(seed_params)
-    if @seed.valid?
+     authorize @seed
+    if @seed.save
       @seed.set_expiration
       @seed.set_view_counter
       @seed.set_popularity
@@ -32,6 +33,7 @@ class SeedsController < ApplicationController
 
   def show
     @seed = Seed.find(params[:id])
+    authorize @seed
     @seeder = @seed.user
     @seed.increment_views
     @seed.increment_popularity
@@ -40,39 +42,46 @@ class SeedsController < ApplicationController
   end
 
   def update
-    seed = Seed.find(params["id"])
+    @seed = Seed.find(params["id"])
     admin_review = params["seed"]["admin_review"]
-
+    authorize @seed
 
     if admin_review == "Valide"
-      seed.update(admin_review_params)
+      @seed.update(admin_review_params)
       redirect_to signaled_path
 
     else
-      seed.refund_seed
-      seed.update(admin_review_params)
+      @seed.refund_seed
+      @seed.update(admin_review_params)
       redirect_to signaled_path
     end
 
   end
 
 
-  def destroy
-  end
-
   def last_day
     @categories = Category.all
     @seeds = Seed.seed_selection.last_day
+    authorize @seeds
   end
 
   def popular
     @categories = Category.all
     @seeds = Seed.seed_selection.popular
+    authorize @seeds
   end
 
   def newest
     @categories = Category.all
     @seeds = Seed.seed_selection.newest
+    authorize @seeds
+  end
+
+  def admin
+    @pending = Seed.seed_selection.joins(:campaign).where(campaigns: {status: "pending"})
+    @signaled = Seed.where(admin_review: "not-reviewed").joins(:signal_seed).distinct
+    authorize @pending
+    authorize @signaled
   end
 
 

@@ -169,6 +169,20 @@
 
 }
 
+.fa-user-plus {
+  font-size: 20px;
+  padding: 10px;
+  color: $gray;
+
+  a {
+  text-decoration: none;
+   &:hover{
+    text-decoration: none;
+   }
+  }
+
+}
+
 .glyphicon-option-vertical {
   padding: 10px;
   color: $blue;

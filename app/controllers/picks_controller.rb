@@ -1,9 +1,12 @@
 class PicksController < ApplicationController
 
+    after_action :verify_authorized
+
   def index
     @user = current_user
     @seed = Seed.find(params[:seed_id])
-    @picks = Pick.where(seed_id: @seed, state: "paid").order(price: :desc )
+    @picks = policy_scope(Pick).where(seed_id: @seed, state: "paid").order(price: :desc )
+    authorize @picks
 
     respond_to do |format|
     format.html
@@ -14,16 +17,17 @@ class PicksController < ApplicationController
 
   def show
     @pick = Pick.find(params[:id])
+    authorize @pick
   end
 
 
   def create
-    @user = current_user
     @seed = Seed.find(params[:seed_id])
     @pick = @seed.picks.new(pick_params)
-    @pick.user_id = @user.id
+    @pick.user_id = current_user.id
     @pick.amount = @seed.price * 0.2
     @pick.state = "pending"
+    authorize @pick
     if @pick.save
       @seed.increment_popularity
       respond_to do |format|
@@ -34,9 +38,9 @@ class PicksController < ApplicationController
   end
 
   def update
-    @picks = current_user.picks.newest
     @pick = Pick.find(params[:id])
     @seed = @pick.seed
+    authorize @pick
     if @pick.update(pick_params)
       respond_to do |format|
         format.html {redirect_to my_picks_path}
@@ -47,6 +51,7 @@ class PicksController < ApplicationController
 
   def destroy
     @pick = Pick.find(params[:id])
+    authorize @pick
     @seed = @pick.seed
     if @pick.state == "paid"
       payment_string_object = @pick.payment

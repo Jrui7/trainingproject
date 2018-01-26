@@ -13,6 +13,7 @@ gem 'redis'
 gem 'coffee-script'
 gem 'money-rails'
 gem 'stripe'
+gem 'pundit'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'

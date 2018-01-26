@@ -64,6 +64,7 @@ class PaymentsController < ApplicationController
 
     def set_pick
       @pick = Pick.where(state: 'pending').find(params[:pick_id])
+      authorize @pick
     end
 
 
