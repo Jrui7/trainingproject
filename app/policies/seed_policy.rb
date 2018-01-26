@@ -17,6 +17,18 @@ class SeedPolicy < ApplicationPolicy
     user.admin == true
   end
 
+  def last_day?
+    true
+  end
+
+  def popular?
+    true
+  end
+
+  def newest?
+    true
+  end
+
   def admin?
     user.admin == true
   end

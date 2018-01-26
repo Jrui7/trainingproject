@@ -62,16 +62,19 @@ class SeedsController < ApplicationController
   def last_day
     @categories = Category.all
     @seeds = Seed.seed_selection.last_day
+    authorize @seeds
   end
 
   def popular
     @categories = Category.all
     @seeds = Seed.seed_selection.popular
+    authorize @seeds
   end
 
   def newest
     @categories = Category.all
     @seeds = Seed.seed_selection.newest
+    authorize @seeds
   end
 
   def admin
