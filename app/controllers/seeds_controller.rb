@@ -16,8 +16,7 @@ class SeedsController < ApplicationController
 
 
   def create
-     @seed = Seed.new(seed_params)
-     @seed.user = current_user
+     @seed = current_user.seeds.build(seed_params)
      authorize @seed
     if @seed.save
       @seed.set_expiration
@@ -43,25 +42,22 @@ class SeedsController < ApplicationController
   end
 
   def update
-    seed = Seed.find(params["id"])
+    @seed = Seed.find(params["id"])
     admin_review = params["seed"]["admin_review"]
-
+    authorize @seed
 
     if admin_review == "Valide"
-      seed.update(admin_review_params)
+      @seed.update(admin_review_params)
       redirect_to signaled_path
 
     else
-      seed.refund_seed
-      seed.update(admin_review_params)
+      @seed.refund_seed
+      @seed.update(admin_review_params)
       redirect_to signaled_path
     end
 
   end
 
-
-  def destroy
-  end
 
   def last_day
     @categories = Category.all
@@ -76,6 +72,13 @@ class SeedsController < ApplicationController
   def newest
     @categories = Category.all
     @seeds = Seed.seed_selection.newest
+  end
+
+  def admin
+    @pending = Seed.seed_selection.joins(:campaign).where(campaigns: {status: "pending"})
+    @signaled = Seed.where(admin_review: "not-reviewed").joins(:signal_seed).distinct
+    authorize @pending
+    authorize @signaled
   end
 
 

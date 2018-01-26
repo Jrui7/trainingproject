@@ -1,14 +1,12 @@
 class CampaignsController < ApplicationController
 
-  def index
-    @pending = Seed.seed_selection.joins(:campaign).where(campaigns: {status: "pending"}).count
-    @signaled = Seed.where(admin_review: "not-reviewed").joins(:signal_seed).distinct.count
-  end
+  before_action :set_and_authorize_campaign, only: [:pending, :success, :fail, :signaled]
 
   def update
-    campaign = Campaign.find(params[:id])
-    campaign.update(pending_campaign_params)
-    campaign.finalize_campaign
+    @campaign = Campaign.find(params[:id])
+    authorize @campaign
+    @campaign.update(pending_campaign_params)
+    @campaign.finalize_campaign
     redirect_to pending_path
   end
 
@@ -29,13 +27,16 @@ class CampaignsController < ApplicationController
     @signaled = Seed.where(admin_review: "not-reviewed").joins(:signal_seed).distinct.count
   end
 
-  def destroy
-  end
 
   private
 
   def pending_campaign_params
     params.require(:campaign).permit(:status, :price)
+  end
+
+  def set_and_authorize_campaign
+    @campaign = Campaign.first
+    authorize @campaign
   end
 
 end

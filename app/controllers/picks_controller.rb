@@ -1,9 +1,13 @@
 class PicksController < ApplicationController
 
+  include Pundit
+    after_action :verify_authorized
+
   def index
     @user = current_user
     @seed = Seed.find(params[:seed_id])
-    @picks = Pick.where(seed_id: @seed, state: "paid").order(price: :desc )
+    @picks = policy_scope(Pick).where(seed_id: @seed, state: "paid").order(price: :desc )
+    authorize @picks
 
     respond_to do |format|
     format.html

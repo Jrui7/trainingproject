@@ -1,8 +1,12 @@
 class PickPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope
+      scope.all
     end
+  end
+
+  def index?
+    user.admin == true
   end
 
   def create?
