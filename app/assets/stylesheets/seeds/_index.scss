@@ -72,6 +72,10 @@
     height: 100%;
     border-radius: 0;
     overflow:auto;
+    background: linear-gradient(-225deg, #1a2980, #26d0ce 50%);
+    background: -webkit-linear-gradient(left, #1a2980, #26d0ce); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right,#1a2980, #26d0ce); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right,#1a2980, #26d0ce); /* For Firefox 3.6 to 15 */
   }
 
   .modal-header {
@@ -97,13 +101,12 @@
   }
 
 
-  .sub-title-xs {
+  .sub-title {
     display: flex;
     align-items: center;
     font-size: 10px;
     transition: all 0.1s;
-    padding: 10px;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(0,0,0,0.07);
+    padding: 5px 13px 5px 13px;
 
 
     a {
@@ -111,7 +114,7 @@
     }
     p {
       margin: 0;
-      color: #4d4d5e;
+      color: #FFFFFF;
       font-size: 13px;
     }
   }
@@ -121,14 +124,15 @@
     align-items: center;
     font-size: 13px;
     transition: all 0.1s;
-    padding: 15px 13px 15px 13px;
+    padding: 5px 13px 5px 13px;
     margin-bottom: 2px;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(0,0,0,0.07);
+    color: white;
 
 
       &:hover {
     box-shadow: 0 1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(0,0,0,0.07);
     background-color: #FFFFFF;
+    color: $blue;
     padding: 5px 13px 5px 13px;
     margin-bottom: 2px;
   }
