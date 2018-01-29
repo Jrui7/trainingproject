@@ -28,6 +28,10 @@
     font-size: 14px;
   }
 
+  .glyphicon-globe {
+    color: darkgray;
+  }
+
   .glyphicon-th-list {
     color: white;
     font-size: 14px;
@@ -72,10 +76,14 @@
     height: 100%;
     border-radius: 0;
     overflow:auto;
+    background: linear-gradient(-225deg, #1a2980, #26d0ce 50%);
+    background: -webkit-linear-gradient(left, #1a2980, #26d0ce); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right,#1a2980, #26d0ce); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right,#1a2980, #26d0ce); /* For Firefox 3.6 to 15 */
   }
 
   .modal-header {
-    color: $blue;
+    color: white;
     text-align: center;
   }
 
@@ -84,8 +92,8 @@
   }
 
   .filter-before {
-    color: #4d4d5e;
-    font-size: 18px;
+    color: #FFFFFF;
+    font-size: 17px;
   }
 
   .xs-fa {
@@ -96,14 +104,23 @@
     width: 50%;
   }
 
+  .fa-toggle-on {
+    color: #FFFFFF;
+  }
 
-  .sub-title-xs {
+
+  .sub-title {
     display: flex;
     align-items: center;
-    font-size: 10px;
+    font-size: 15px;
     transition: all 0.1s;
-    padding: 10px;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(0,0,0,0.07);
+    padding: 5px 13px 5px 13px;
+    box-shadow: none;
+
+
+    &:hover{
+      background-color: inherit;
+    }
 
 
     a {
@@ -111,27 +128,24 @@
     }
     p {
       margin: 0;
-      color: #4d4d5e;
-      font-size: 13px;
+      color: #FFFFFF;
+      font-size: 15px;
     }
   }
 
   .selected-category {
     display: flex;
     align-items: center;
-    font-size: 13px;
     transition: all 0.1s;
-    padding: 15px 13px 15px 13px;
-    margin-bottom: 2px;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(0,0,0,0.07);
-
-
-      &:hover {
-    box-shadow: 0 1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(0,0,0,0.07);
-    background-color: #FFFFFF;
     padding: 5px 13px 5px 13px;
     margin-bottom: 2px;
-  }
+    box-shadow: none;
+
+    &:hover{
+      background-color: inherit;
+    }
+
+
     a {
       text-decoration: none;
     }
@@ -139,6 +153,28 @@
       margin: 0;
       font-weight: bold;
       text-decoration: underline;
+      font-size: 15px;
+      color: white;
+
+
+    }
+
+  }
+
+  .inactive {
+    background-color: inherit;
+  }
+
+  .sub-title-xs {
+    padding: 5px 13px 5px 13px;
+
+    a {
+      text-decoration: none;
+    }
+    p {
+      margin: 0;
+      color: #FFFFFF;
+      font-size: 15px;
     }
 
   }
@@ -147,6 +183,9 @@
     position: fixed;
     bottom: 15px;
     right: 15px;
+    background-color: #FFFFFF;
+    color: $blue;
+    padding: 4px 12px;
   }
 }
 
@@ -174,6 +213,7 @@ a:hover {
 
 .filter-title {
   margin-bottom: 35px;
+
 }
 
 .filter-header {
@@ -188,6 +228,7 @@ a:hover {
     font-weight: bold;
   }
 }
+
 
 .fa-toggle-on {
   color: $blue;
@@ -519,6 +560,13 @@ a:hover {
       .product-category{
         p {
           font-size: 10px;
+        }
+      }
+
+      .filter-header {
+        p {
+          color: darkgray;
+          font-size: 16px;
         }
       }
 
