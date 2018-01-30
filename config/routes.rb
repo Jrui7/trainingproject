@@ -3,10 +3,7 @@ Rails.application.routes.draw do
 
 
 
-  authenticated :user do
-    root :to => 'seeds#index', :as => :authenticated_root
-  end
-  root :to => redirect('/users/sign_in')
+ root :to => 'pages#home'
 
 
   devise_for :users
@@ -31,6 +28,8 @@ Rails.application.routes.draw do
   get 'popular', to: 'seeds#popular'
   get 'last_day', to: 'seeds#last_day'
   get 'faq', to: 'pages#faq'
+  get 'home', to: 'pages#home'
+
   get 'team', to: 'pages#team'
   get 'my_seeds', to: 'my_seedlap#my_seeds'
   get 'my_picks', to: 'my_seedlap#my_picks'
