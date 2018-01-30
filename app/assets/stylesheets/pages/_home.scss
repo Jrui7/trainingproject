@@ -170,10 +170,12 @@
 
   .how-it-works {
     background-color: #FFFFFF;
-    padding: 20px;
-    .fa-hand-lizard-o {
-      padding: 0;
-      color: inherit;
+    width: 90%;
+    margin: 0 auto;
+
+
+    p {
+      font-size: 15px;
     }
   }
 
@@ -182,7 +184,29 @@
   }
 
   .icon-header{
-    text-align: center;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+
+
+    .fa {
+      font-size: 35px;
+      margin-right: 15px;
+    }
+
+    .fa-share-alt {
+      color: $red;
+    }
+
+    .fa-hand-lizard-o {
+      color: $blue;
+      padding: 0;
+    }
+
+    .fa-money {
+      color: #2ecc71;
+    }
   }
 
 
