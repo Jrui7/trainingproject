@@ -1,0 +1,74 @@
+<div class="container-home">
+  <div class="nav-and-banner">
+    <%= render "pages/unauthentified-navbar" %>
+    <div class="banner-container">
+      <h1 class="moto-centered">
+        <div>Vous aimez un produit ?</div>
+        <div>Décidez de son prix</div>
+      </h1>
+      <div class="concept">
+        <p>Seedlap est la première plateforme ou les clients
+        décident des prix des produits qu'ils voudraient acheter
+        </p>
+        <%= link_to seeds_path do %>
+          <div class="btn join-us-now">
+              Découvrir
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="boucing-icon text-right">
+      <a href="#features">
+        <i class="fa fa-arrow-circle-down bounce" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+  <div class="how-it-works" id="features">
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        <div class="icon-header-body">
+          <div class="icon-header">
+            <i class="fa fa-share-alt" aria-hidden="true"></i>
+            <h3>Share</h3>
+          </div>
+          <p><b>Partagez vos découvertes avec nous</b>
+          <br>Comme-vous, certains utilisateurs aiment le produit mais ne sont pas prêts à payer le prix demandé</p>
+          <p class="italic-statement">“J’aime ce produit, mais 90€…”</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="icon-header-body">
+          <div class="icon-header">
+            <i class="fa fa-hand-lizard-o" aria-hidden="true"></i>
+            <h3>Pick</h3>
+          </div>
+          <p><b>Magnifestez votre volonté d’achat</b>
+          <br>Chacun fait anonymement part du prix qu’il est prêt à payer pour le produit</p>
+          <p class="italic-statement">“Pour 75€ je fonce !”</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="icon-header-body">
+          <div class="icon-header">
+            <i class="fa fa-money" aria-hidden="true"></i>
+            <h3>Save</h3>
+          </div>
+          <p><b>Faites des économies</b>
+          <br>
+          Notre algorithme préconise au vendeur le prix le plus juste à pratiquer pour conclure le deal
+          </p>
+          <p class="italic-statement">“Je ne paye plus que 70€ !”</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+
+
+<% content_for(:after_js) do %>
+  <%= javascript_include_tag 'home'%>
+<% end %>

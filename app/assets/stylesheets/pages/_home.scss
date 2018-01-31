@@ -3,12 +3,33 @@
 .container-home {
   width: 100%;
   font-family: Helvetica;
-  background: linear-gradient(-225deg, #1a2980, #26d0ce 50%);
-  background: -webkit-linear-gradient(left, #1a2980, #26d0ce); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right,#1a2980, #26d0ce); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right,#1a2980, #26d0ce); /* For Firefox 3.6 to 15 */
-  height: 100vh;
 }
+
+.nav-and-banner {
+  background-image: linear-gradient(-225deg, rgba(0, 101, 168, 1) 30%, rgba(38, 208, 206, 0.6) 50%), url("pick.jpg");
+  background-position: right center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 99%, 0 75%);
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 99%, 0 75%);
+
+
+}
+
+.boucing-icon {
+  position: relative;
+  bottom: 100px;
+  right: 50px;
+}
+
+.fa-arrow-circle-down {
+  font-size: 70px;
+  color: $blue;
+
+}
+
 
 .header-home {
   width: 90%;
@@ -16,7 +37,7 @@
   height: 100px;
   display: flex;
   align-items: center;
-  height: 15%;
+  height: 70px;
   margin-bottom: 0px;
 
 }
@@ -63,12 +84,18 @@
 
 .email-box {
   background-color: white;
-
 }
 
 .remember-box {
   display: flex;
   align-items: center;
+  margin: 4px 0;
+  padding: 0 0 0 1px;
+
+}
+
+#user_remember_me {
+  margin: 0 2px 0 0;
 }
 
 .login-form {
@@ -81,17 +108,15 @@
 
   input {
     font-size: 13px;
+    margin: 0;
   }
 
   label {
     color: white;
     font-size: 13px;
-    margin: 2px;
+    margin: 0;
   }
 
-  #user_remember_me {
-    margin: 2px;
-  }
 
 
   .password {
@@ -104,6 +129,8 @@
     text-decoration: none;
     color: white;
     font-size: 13px;
+    margin: 4px 0;
+    padding: 0 0 0 1px;
   }
 
 
@@ -112,52 +139,123 @@
   }
 }
 
+.forgot-modal {
+  height: 0;
+}
 
 
 
-.banner-content {
-  display: flex;
-  width: 90%;
-  margin: 0 auto;
-  justify-content: space-between;
+.banner-container {
+    width: 90%;
+    margin: 0 auto;
+    height: 65vh;
+    padding-top: 70px;
+    color: #FFFFFF;
+    position: relative;
 
-  .banner-container {
-    margin-top: 100px;
-    width: 100%;
-    height: 70vh;
-    padding: 0;
-    margin-bottom: 20px;
   }
 
 
-  .enter {
-    display: flex;
-    justify-content: space-between;
+  .moto-centered {
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   }
 
-  .teaser-seedoak {
-    text-align: center;
+  .concept {
+    margin: 50px 0 0 0;
+    max-width: 450px;
+
+
+    p {
+      font-size: 25px;
+    }
   }
 
 
+  .join-us-now {
+    border-radius: 22px;
+    border: 3px solid white;
+    background-color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px 40px;
+    font-size: 15px;
+    margin-top: 40px;
+    color: #333333;
 
-    .join-us-now {
-      font-weight: bold;
+    &:hover {
+      color: $blue;
+
     }
 
-  h2 {
-    color: white;
-    margin: 0;
-    font-weight: bold;
-    font-size: 35px;
   }
 
-  p {
-    color: white;
-    margin-top: 15px;
-    font-size: 18px;
-    padding: 5px;
+  #features {
+    &:focus {
+      outline: none;
+    }
   }
+
+  .how-it-works {
+    margin: 0 auto;
+    color: #333333;
+    padding: 30px 60px;
+    height: 100vh;
+
+    .italic-statement {
+      font-style: italic;
+      color: $red;
+      font-size: 17px;
+    }
+
+
+    p {
+      font-size: 15px;
+      margin-bottom: 2px;
+    }
+  }
+
+  .icon-header-body {
+    padding: 30px;
+    border-radius: 3px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.1), 1px 1px 1px rgba(0,0,0,0.07);
+
+  }
+
+  .icon-header{
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+
+    h3 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+
+    .fa {
+      font-size: 30px;
+      margin-right: 10px;
+      color: $blue;
+    }
+
+    .fa-hand-lizard-o {
+      padding: 0;
+      font-size: 30px;
+    }
+
+    .fa-money {
+      color: #2ecc71;
+    }
+
+    .fa-share-alt {
+      color: #FDB631;
+    }
+
+  }
+
+
 
   .form-space {
     background-color: transparent;
@@ -168,14 +266,6 @@
 
   }
 
-  h3 {
-    margin: 0 0 12px 0;
-    text-transform: uppercase;
-    font-size: 17px;
-    font-weight: bold;
-    color: white;
-    text-align: center;
-  }
 
   #new_user {
     display: flex;
@@ -195,11 +285,6 @@
     background-color: $red;
   }
 
-  .sex-attributes {
-    display: flex;
-    align-items: center;
-  }
-
   label {
     color: white;
     font-size: 14px;
@@ -208,8 +293,6 @@
   }
 
 
-
-}
 
 @media screen and (max-width: 480px) {
 
@@ -315,4 +398,47 @@
   }
 
 }
+
+.bounce {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  -moz-animation: bounce 2s infinite linear;
+  -o-animation: bounce 2s infinite linear;
+  -webkit-animation: bounce 2s infinite linear;
+  animation: bounce 2s infinite linear;
+}
+
+@-webkit-keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}
+@-moz-keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}
+@-o-keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}
+@-ms-keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}
+@keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}
+
+
 

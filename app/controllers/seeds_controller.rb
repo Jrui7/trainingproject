@@ -1,6 +1,8 @@
 class SeedsController < ApplicationController
 
   before_action :set_sample, only: [:index, :last_day, :popular, :newest]
+  skip_before_action :authenticate_user!, only: [:index, :last_day, :popular, :newest]
+
 
   def index
     @categories = Category.all
