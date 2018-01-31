@@ -10,12 +10,12 @@
         <p>Seedlap est la première plateforme ou les clients
         décident des prix des produits qu'ils veulent acheter
         </p>
+        <%= link_to seeds_path do %>
+          <div class="btn join-us-now">
+              Découvrir
+          </div>
+        <% end %>
       </div>
-      <%= link_to seeds_path do %>
-        <div class="btn join-us-now">
-            Découvrir
-        </div>
-      <% end %>
     </div>
   </div>
   <div class="how-it-works">
@@ -24,33 +24,35 @@
         <div class="icon-header-body">
           <div class="icon-header">
             <i class="fa fa-share-alt" aria-hidden="true"></i>
-            Share
+            <h3>Share</h3>
           </div>
-          <p>Partagez vos découvertes avec les membres de la communauté</p>
-          <p>“J’aime ce produit, mais 90€…”</p>
-          <p>Comme-vous, certains aiment le produit mais ne sont pas prêts à payer le prix demandé</p>
+          <p class="italic-statement">“J’aime ce produit, mais 90€…”</p>
+          <p><b>Partagez vos découvertes avec nous</b>
+          <br>Comme-vous, certains aiment le produit mais ne sont pas prêts à payer le prix demandé</p>
         </div>
       </div>
       <div class="col-xs-12 col-md-4">
         <div class="icon-header-body">
           <div class="icon-header">
             <i class="fa fa-hand-lizard-o" aria-hidden="true"></i>
-            Pick
+            <h3>Pick</h3>
           </div>
-          <p>Magnifestez votre volonté d’achat</p>
-          <p>“Pour 75€ je fonce!”</p>
-          <p>Chacun fait anonymement part du prix qu’il est prêt à payer pour le produit</p>
+          <p class="italic-statement">“Pour 75€ je fonce!”</p>
+          <p><b>Magnifestez votre volonté d’achat</b>
+          <br>Chacun fait anonymement part du prix qu’il est prêt à payer pour le produit</p>
         </div>
       </div>
       <div class="col-xs-12 col-md-4">
         <div class="icon-header-body">
           <div class="icon-header">
             <i class="fa fa-money" aria-hidden="true"></i>
-            Save
+            <h3>Save</h3>
           </div>
-          <p>Faites des économies</p>
-          <p>“Cher client, vous ne payez plus que 70€!”</p>
-          <p>Notre algorithme préconise au vendeur le prix le plus juste à pratiquer pour conclure le deal. </p>
+          <p class="italic-statement">“Cher client, vous ne payez plus que 70€!”</p>
+          <p><b>Faites des économies</b>
+          <br>
+          Notre algorithme préconise au vendeur le prix le plus juste à pratiquer pour conclure le deal
+          </p>
         </div>
       </div>
     </div>
