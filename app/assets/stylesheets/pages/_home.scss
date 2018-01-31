@@ -10,12 +10,26 @@
   background-position: right center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   height: 100vh;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 95%, 0 85%);
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 95%, 0 85%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 99%, 0 75%);
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 99%, 0 75%);
 
 
 }
+
+.boucing-icon {
+  position: relative;
+  bottom: 100px;
+  right: 50px;
+}
+
+.fa-arrow-circle-down {
+  font-size: 70px;
+  color: $blue;
+
+}
+
 
 .header-home {
   width: 90%;
@@ -137,6 +151,8 @@
     height: 65vh;
     padding-top: 70px;
     color: #FFFFFF;
+    position: relative;
+
   }
 
 
@@ -175,10 +191,16 @@
 
   }
 
+  #features {
+    &:focus {
+      outline: none;
+    }
+  }
+
   .how-it-works {
     margin: 0 auto;
     color: #333333;
-    padding: 0 60px 30px 60px;
+    padding: 30px 60px;
 
     .italic-statement {
       font-style: italic;
@@ -374,5 +396,83 @@
     }
   }
 
+}
+
+.bounce {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  -moz-animation: bounce 2s infinite linear;
+  -o-animation: bounce 2s infinite linear;
+  -webkit-animation: bounce 2s infinite linear;
+  animation: bounce 2s infinite linear;
+}
+
+@-webkit-keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}
+@-moz-keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}
+@-o-keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}
+@-ms-keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}
+@keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}
+
+.appearIn {
+  opacity: 0;
+  animation: appearIn 2s 0.5s ease forwards;
+  -moz-animation: appearIn 2s 0.5s ease forwards;
+  -o-animation: appearIn 2s 0.5s ease forwards;
+  -webkit-animation: appearIn 2s 0.5s ease forwards;
+}
+
+@keyframes appearIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes appearIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+}
+@-moz-keyframes appearIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
 }
 
