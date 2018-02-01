@@ -203,17 +203,17 @@
     margin: 0 auto;
     color: #333333;
     padding: 30px 60px;
-    height: 100vh;
+    height: 50vh;
 
     .italic-statement {
       font-style: italic;
       color: $red;
-      font-size: 17px;
+      font-size: 19px;
     }
 
 
     p {
-      font-size: 15px;
+      font-size: 17px;
       margin-bottom: 2px;
     }
   }
@@ -221,30 +221,31 @@
   .icon-header-body {
     padding: 30px;
     border-radius: 3px;
-    box-shadow: 0 2px 2px rgba(0,0,0,0.1), 1px 1px 1px rgba(0,0,0,0.07);
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .icon-header{
     display: flex;
+    flex-direction: column;
     align-items: center;
-    padding-bottom: 20px;
 
     h3 {
       margin: 0;
-      font-size: 20px;
+      font-size: 45px;
+      margin: 20px 0;
     }
 
 
     .fa {
-      font-size: 30px;
-      margin-right: 10px;
+      font-size: 36px;
       color: $blue;
     }
 
     .fa-hand-lizard-o {
       padding: 0;
-      font-size: 30px;
+      font-size: 36px;
     }
 
     .fa-money {
@@ -254,6 +255,16 @@
     .fa-share-alt {
       color: #FDB631;
     }
+
+  }
+
+
+  .share-explained {
+    height: 50vh;
+  }
+
+  .blue-back {
+    background-color: #dae4f3;
 
   }
 

@@ -24,6 +24,10 @@ $border-radius-small: 2px;
 
 // Override other variables below!
 
+:focus {
+  outline: none !important;
+}
+
 .modal-content {
   border-radius: 3px !important;
 
