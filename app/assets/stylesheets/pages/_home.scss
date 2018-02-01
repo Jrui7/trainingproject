@@ -261,11 +261,23 @@
 
   .share-explained {
     height: 50vh;
+    display: flex;
+    align-items: center;
   }
 
   .blue-back {
-    background-color: #dae4f3;
+    background: linear-gradient(-225deg, rgba(0, 101, 168, 1) 30%, rgba(38, 208, 206, 1) 50%);
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 
+  }
+
+  .explanation-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
   }
 
 
