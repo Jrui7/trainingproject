@@ -259,7 +259,7 @@
 
 
   .problem-explained {
-    background-image: linear-gradient(-225deg, rgba(0,101,168,0.9) 0%, rgba(0,36,61,0.93) 50%), image-url("problem.png");
+    background-image: linear-gradient(-225deg, rgba(0,101,168,0.93) 0%, rgba(0,36,61,0.93) 50%), image-url("problem.png");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -280,11 +280,15 @@
 
     h3 {
       font-size: 45px;
+      margin-bottom: 30px;
+      font-style: italic;
+
     }
 
     p {
       font-size: 20px;
     }
+
   }
 
 
@@ -307,6 +311,19 @@
 
   .explanation-text-black {
     color: #333333;
+    h3 {
+      font-size: 45px;
+      margin-bottom: 30px;
+      font-style: italic;
+
+    }
+
+    p {
+      font-size: 20px;
+    }
+
+
+
   }
 
   #problem, #magnifest, #balance {
