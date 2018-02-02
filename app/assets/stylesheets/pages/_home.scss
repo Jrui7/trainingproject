@@ -203,17 +203,17 @@
     margin: 0 auto;
     color: #333333;
     padding: 30px 60px;
-    height: 100vh;
+    height: 50vh;
 
     .italic-statement {
       font-style: italic;
       color: $red;
-      font-size: 17px;
+      font-size: 19px;
     }
 
 
     p {
-      font-size: 15px;
+      font-size: 17px;
       margin-bottom: 2px;
     }
   }
@@ -221,30 +221,31 @@
   .icon-header-body {
     padding: 30px;
     border-radius: 3px;
-    box-shadow: 0 2px 2px rgba(0,0,0,0.1), 1px 1px 1px rgba(0,0,0,0.07);
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .icon-header{
     display: flex;
+    flex-direction: column;
     align-items: center;
-    padding-bottom: 20px;
 
     h3 {
       margin: 0;
-      font-size: 20px;
+      font-size: 45px;
+      margin: 20px 0;
     }
 
 
     .fa {
-      font-size: 30px;
-      margin-right: 10px;
+      font-size: 36px;
       color: $blue;
     }
 
     .fa-hand-lizard-o {
       padding: 0;
-      font-size: 30px;
+      font-size: 36px;
     }
 
     .fa-money {
@@ -255,6 +256,36 @@
       color: #FDB631;
     }
 
+  }
+
+
+  .share-explained {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .blue-back {
+    background: linear-gradient(-225deg, rgba(0, 101, 168, 1) 30%, rgba(38, 208, 206, 1) 50%);
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+
+  }
+
+  .explanation-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+  }
+
+  #share {
+    height: 80vh;
+  }
+
+  #justice {
+    height: 80vh;
   }
 
 
@@ -280,12 +311,6 @@
     font-size: 13px;
   }
 
-  .btn-primary {
-    padding: 10px;
-    font-size: 17px;
-    margin: 20px 0 0 0;
-    background-color: $red;
-  }
 
   label {
     color: white;
@@ -371,32 +396,42 @@
   }
 
 
-  .banner-content  {
-    width: 100%;
-    padding: 50px 10px;
+  .banner-container {
+    padding-top: 55px;
+  }
 
-    .teaser-seedoak {
-      display: block;
-      text-align: center;
+  .moto-centered {
+    font-size: 23px;
+    text-align: center;
+  }
+
+  .concept {
+    text-align: center;
+    p {
+    font-size: 18px;
     }
+  }
+
+  .join-us-now {
+    font-weight: bold;
+    padding: 5px 20px;
+    font-size: 13px;
+    margin-top: 25px;
+  }
+
+  .connect-button .btn {
+      padding: 5px;
+      font-size: 12px;
+  }
 
 
-    h2 {
-      font-size: 29px;
-    }
+  .boucing-icon {
+    bottom: 65px;
+    right: 17px;
+  }
 
-
-    .form-space {
-      padding: 50px 0;
-    }
-
-    #new_user {
-      padding: 0 25px;
-    }
-
-    input#user_email.email-input {
-      background-color: white;
-    }
+  .fa-arrow-circle-down {
+    font-size: 50px;
   }
 
 }
