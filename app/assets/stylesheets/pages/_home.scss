@@ -258,19 +258,40 @@
   }
 
 
-  .share-explained {
-  }
-
-  .blue-back {
-    background: linear-gradient(-225deg, rgba(0, 101, 168, 1) 30%, rgba(38, 208, 206, 1) 50%);
+  .problem-explained {
+    background-image: linear-gradient(-225deg, rgba(0,101,168,0.9) 0%, rgba(0,36,61,0.93) 50%), image-url("problem.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-
   }
+
+  .problem-text {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    width: 50%;
+    margin: 0 auto;
+
+    h3 {
+      font-size: 45px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+  }
+
 
   .image-and-explanation {
     display: flex;
     align-items: center;
+    justify-content: center;
     max-width: 100%;
     max-height: 100%;
   }
@@ -288,7 +309,7 @@
     color: #333333;
   }
 
-  #share, #magnifest, #balance {
+  #problem, #magnifest, #balance {
     max-width: 100%;
     max-height: 100%;
   }
