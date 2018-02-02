@@ -284,6 +284,10 @@
     height: 80vh;
   }
 
+  #justice {
+    height: 80vh;
+  }
+
 
 
   .form-space {
@@ -424,6 +428,32 @@
     input#user_email.email-input {
       background-color: white;
     }
+  }
+
+  .moto-centered {
+    font-size: 23px;
+  }
+
+  .content p {
+    font-size: 18px;
+  }
+
+  .join-us-now {
+    font-weight: bold;
+    padding: 7px 30px;
+    font-size: 15px;
+    margin-top: 30px;
+  }
+
+  .connect-button .btn {
+      padding: 5px;
+      font-size: 12px;
+  }
+
+
+  .boucing-icon {
+    bottom: 65px;
+    right: 17px;
   }
 
 }
