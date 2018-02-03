@@ -262,6 +262,7 @@
 
   .image-and-explanation {
     display: flex;
+    align-items: center;
     padding: 30px;
     width: 100%;
   }
@@ -289,9 +290,11 @@
   }
 
   #problem {
-    width: 500px;
+    width: 600px;
     height: 200px;
     object-fit: cover;
+    -webkit-clip-path: polygon(30% 0, 0 0, 30% 50%, 0 100%, 30% 100%, 50% 70%, 70% 100%, 100% 100%, 70% 50%, 100% 0, 70% 0, 50% 30%);
+    clip-path: polygon(30% 0, 0 0, 30% 50%, 0 100%, 30% 100%, 50% 70%, 70% 100%, 100% 100%, 70% 50%, 100% 0, 70% 0, 50% 30%);
   }
 
   #magnifest, {
