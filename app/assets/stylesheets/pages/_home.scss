@@ -262,7 +262,6 @@
 
   .image-and-explanation {
     display: flex;
-    justify-content: space-between;
     padding: 30px;
     width: 100%;
   }
@@ -280,24 +279,6 @@
       color: $orange;
     }
 
-    h4 {
-      margin-bottom: 30px;
-      margin-top: 45px;
-      font-size: 25px;
-    }
-
-    .cases-container {
-      max-width: 800px;
-    }
-
-
-    h5 {
-      color: $orange;
-      font-size: 20px;
-      font-weight: bold;
-      margin: 0;
-    }
-
 
     p {
       font-size: 20px;
@@ -307,11 +288,13 @@
 
   }
 
-  .image-container {
-    flex: 0 50%;
+  #problem {
+    width: 500px;
+    height: 200px;
+    object-fit: cover;
   }
 
-  #magnifest, #problem {
+  #magnifest, {
     width: 100%;
   }
 
