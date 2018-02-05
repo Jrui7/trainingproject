@@ -3,7 +3,7 @@
     <%= render "pages/unauthentified-navbar" %>
     <div class="banner-container">
       <h1 class="moto-centered">
-        <div>Vous aimez un produit ?</div>
+        <div>Vous aimez une nouveauté ?</div>
         <div>Décidez de son prix</div>
       </h1>
       <div class="concept">
@@ -20,78 +20,65 @@
   </div>
   <div>
     <div class="boucing-icon text-right">
-      <a href="#features">
+      <a href="#share">
         <i class="fa fa-arrow-circle-down bounce" aria-hidden="true"></i>
       </a>
     </div>
   </div>
-  <div class="how-it-works" id="features">
-    <div class="row">
-      <div class="col-xs-12 col-md-4">
-        <div class="icon-header-body">
-          <div class="icon-header">
-            <i class="fa fa-share-alt" aria-hidden="true"></i>
-            <h3>Share</h3>
+
+  <div class="features">
+    <div class="all-features"  id="share">
+      <div class="image-and-explanation">
+        <div class="explanation-text-problem">
+          <h3>"J’aime ce produit, mais 90€…"</h3>
+          <p>Me voilà découvrant un super produit ou service mais y rennonçant à en faire l'acquisition à cause de son prix.</p>
+          <div class="icon-header-body">
+            <div class="icon-header">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+              <h4>Share</h4>
+            </div>
+            <p>Partagez vos meilleures découvertes avec nous, on a une idée qui va rendre tout le monde heureux.
+            </p>
           </div>
-          <p class="text-center">Partagez vos découvertes avec nous
-          </p>
-          <p class="italic-statement">“J’aime ce produit, mais 90€…”</p>
+        </div>
+        <%= image_tag "sad-puppy.png", id: "puppy" %>
+      </div>
+    </div>
+    <div class="all-features" id="pick">
+      <div class="image-and-explanation">
+        <%= image_tag "roar.png", id: "roar" %>
+        <div class="explanation-text-problem">
+          <h3>"Pour 75€ je fonce!!!"</h3>
+          <p>Faites entendre votre voix. Comme-vous, certaines personnes aiment le produit mais ne sont pas prêtes à payer le prix demandé.</p>
+          <div class="icon-header-body">
+            <div class="icon-header">
+              <i class="fa fa-hand-lizard-o" aria-hidden="true"></i>
+              <h4>Pick</h4>
+            </div>
+            <p>L'idée derrière Seedlap? Rassembler les clients intéressés par un même produit et démontrer au vendeur qu'une modification de prix, en plus de satisfaire ses clients, lui sera profitable.
+            </p>
+          </div>
         </div>
       </div>
-      <div class="col-xs-12 col-md-4">
-        <div class="icon-header-body">
-          <div class="icon-header">
-            <i class="fa fa-hand-lizard-o" aria-hidden="true"></i>
-            <h3>Pick</h3>
+    </div>
+    <div  class= "all-features" id="save">
+      <div class="image-and-explanation">
+        <div class="explanation-text-problem">
+          <h3>"Je ne paye plus que 70€"</h3>
+          <p>C'est gagné</p>
+          <div class="icon-header-body">
+            <div class="icon-header">
+              <i class="fa fa-money" aria-hidden="true"></i>
+              <h4>Save</h4>
+            </div>
+            <p>Partagez vos meilleures découvertes avec nous, on a une idée qui va rendre tout le monde heureux.
+            </p>
           </div>
-          <p class="text-center">Magnifestez votre volonté d’achat
-          </p>
-          <p class="italic-statement">“Pour 75€ je fonce !”</p>
         </div>
-      </div>
-      <div class="col-xs-12 col-md-4">
-        <div class="icon-header-body">
-          <div class="icon-header">
-            <i class="fa fa-money" aria-hidden="true"></i>
-            <h3>Save</h3>
-          </div>
-          <p class="text-center">Faites des économies
-          </p>
-          <p class="italic-statement">“Je ne paye plus que 70€ !”</p>
-        </div>
+        <%= image_tag "victory.jpg", id: "victory" %>
       </div>
     </div>
-  </div>
-  <div class="share-explained blue-back">
-    <div class="image-and-explanation">
-      <div class="image-container">
-        <%= image_tag "share.png", id: "share" %>
-      </div>
-      <div class="explanation-text">
-        <h3>Exprimez-vos envies</h3>
-        <p>Comme-vous, certains utilisateurs aiment le produit mais ne sont pas prêts à payer le prix demandé</p>
-      </div>
-    </div>
-  </div>
-  <div class="share-explained">
-    <div class="image-and-explanation">
-      <div class="explanation-text-black">
-        <p>Comme-vous, certains utilisateurs aiment le produit mais ne sont pas prêts à payer le prix demandé</p>
-      </div>
-      <div class="image-container">
-        <%= image_tag "magnifest.png", id: "magnifest" %>
-      </div>
-    </div>
-  </div>
-  <div class="share-explained blue-back">
-    <div class="image-and-explanation">
-      <div class="image-container">
-        <%= image_tag "balance.png", id: "balance" %>
-      </div>
-      <div class="explanation-text">
-        <p>Comme-vous, certains utilisateurs aiment le produit mais ne sont pas prêts à payer le prix demandé</p>
-      </div>
-    </div>
+
   </div>
 </div>
 
