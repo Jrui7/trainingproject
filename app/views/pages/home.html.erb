@@ -27,7 +27,7 @@
   </div>
 
   <div class="features">
-    <div id="share">
+    <div class="all-features"  id="share">
       <div class="image-and-explanation">
         <div class="explanation-text-problem">
           <h3>"J’aime ce produit, mais 90€…"</h3>
@@ -44,23 +44,41 @@
         <%= image_tag "sad-puppy.png", id: "puppy" %>
       </div>
     </div>
-    <div id="pick">
+    <div class="all-features" id="pick">
       <div class="image-and-explanation">
         <%= image_tag "roar.png", id: "roar" %>
         <div class="explanation-text-problem">
           <h3>"Pour 75€ je fonce!!!"</h3>
-          <p>Comme-vous, certaines personnes aiment le produit mais ne sont pas prêtes à payer le prix demandé. Et le vendeur ne le saura jamais si vous ne vous exprimez pas.</p>
+          <p>Faites entendre votre voix. Comme-vous, certaines personnes aiment le produit mais ne sont pas prêtes à payer le prix demandé.</p>
           <div class="icon-header-body">
             <div class="icon-header">
               <i class="fa fa-hand-lizard-o" aria-hidden="true"></i>
               <h4>Pick</h4>
             </div>
-            <p>L'idée derrière Seedlap? Rassembler les clients intéressés par un même produit et démontrer au vendeur qu'une modification de prix, en plus de satisfaire ses clients, lui sera profitable. Faites donc entendre votre voix !
+            <p>L'idée derrière Seedlap? Rassembler les clients intéressés par un même produit et démontrer au vendeur qu'une modification de prix, en plus de satisfaire ses clients, lui sera profitable.
             </p>
           </div>
         </div>
       </div>
     </div>
+    <div  class= "all-features" id="save">
+      <div class="image-and-explanation">
+        <div class="explanation-text-problem">
+          <h3>"Je ne paye plus que 70€"</h3>
+          <p>C'est gagné</p>
+          <div class="icon-header-body">
+            <div class="icon-header">
+              <i class="fa fa-money" aria-hidden="true"></i>
+              <h4>Save</h4>
+            </div>
+            <p>Partagez vos meilleures découvertes avec nous, on a une idée qui va rendre tout le monde heureux.
+            </p>
+          </div>
+        </div>
+        <%= image_tag "victory.jpg", id: "victory" %>
+      </div>
+    </div>
+
   </div>
 </div>
 
