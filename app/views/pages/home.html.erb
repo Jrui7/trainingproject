@@ -70,6 +70,9 @@
     </div>
     <div  class= "all-features" id="save">
       <div class="image-and-explanation">
+        <div class="hidden-md hidden-lg">
+          <%= image_tag "victory.jpg", id: "victory-xs"%>
+        </div>
         <div class="explanation-text">
           <h3>"Je ne paye plus que 70€ !"</h3>
           <p>Je gagne, tu gagnes, il/elle...</p>
@@ -87,7 +90,9 @@
             </p>
           </div>
         </div>
-        <%= image_tag "victory.jpg", id: "victory" %>
+        <div class="hidden-xs hidden-md">
+          <%= image_tag "victory.jpg", id: "victory"%>
+        </div>
       </div>
     </div>
 
