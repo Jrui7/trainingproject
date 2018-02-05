@@ -193,7 +193,9 @@
 
   }
 
-
+.features {
+  background: linear-gradient(160deg, #fff 30%, $blue 30%, $blue 50%, #fff 50%, #fff 50.5%, $blue 50.5%, $blue 50.7%, #fff 50.7%)
+}
 
 
 
@@ -202,20 +204,7 @@
       padding: 15px;
       max-width: 1300px;
       margin: 40px auto;
-      background-color: #FFFFFF;
 
-    }
-
-    #share, #pick {
-      &:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 25%;
-        border-bottom: 1px solid $blue;
-        width: 50%;
-        display: block;
-      }
     }
 
 
@@ -224,16 +213,19 @@
 
   .image-and-explanation {
     display: flex;
-    align-items: center;
     padding: 30px;
 
   }
 
 
 
-  .explanation-text-problem {
+  .explanation-text {
     color: #333333;
-    padding: 0 50px;
+    padding: 40px 50px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0 0 1px rgba(0,0,0,0.5);
+
 
     h3 {
       font-size: 45px;
