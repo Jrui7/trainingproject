@@ -20,81 +20,48 @@
   </div>
   <div>
     <div class="boucing-icon text-right">
-      <a href="#features">
+      <a href="#share">
         <i class="fa fa-arrow-circle-down bounce" aria-hidden="true"></i>
       </a>
     </div>
   </div>
-  <div class="how-it-works" id="features">
-    <div class="row">
-      <div class="col-xs-12 col-md-4">
-        <div class="icon-header-body">
-          <div class="icon-header">
-            <i class="fa fa-share-alt" aria-hidden="true"></i>
-            <h3>Share</h3>
+
+  <div class="features">
+    <div id="share">
+      <div class="image-and-explanation">
+        <div class="explanation-text-problem">
+          <h3>"J’aime ce produit, mais 90€…"</h3>
+          <p>Me voilà découvrant un super produit ou service mais y rennonçant à en faire l'acquisition à cause de son prix.</p>
+          <div class="icon-header-body">
+            <div class="icon-header">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+              <h4>Share</h4>
+            </div>
+            <p>Partagez vos meilleures découvertes avec nous, on a une idée qui va rendre tout le monde heureux.
+            </p>
           </div>
-          <p class="text-center">Partagez vos meilleures découvertes avec nous
-          </p>
-          <p class="italic-statement">“J’aime ce produit, mais 90€…”</p>
         </div>
-      </div>
-      <div class="col-xs-12 col-md-4">
-        <div class="icon-header-body">
-          <div class="icon-header">
-            <i class="fa fa-hand-lizard-o" aria-hidden="true"></i>
-            <h3>Pick</h3>
-          </div>
-          <p class="text-center">Magnifestez votre volonté d’achat
-          </p>
-          <p class="italic-statement">“Pour 75€ je fonce !”</p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-4">
-        <div class="icon-header-body">
-          <div class="icon-header">
-            <i class="fa fa-money" aria-hidden="true"></i>
-            <h3>Save</h3>
-          </div>
-          <p class="text-center">Faites des économies
-          </p>
-          <p class="italic-statement">“Je ne paye plus que 70€ !”</p>
-        </div>
+        <%= image_tag "sad-puppy.png", id: "puppy" %>
       </div>
     </div>
-  </div>
-
-
-  <div class="image-and-explanation">
-    <%= image_tag "problem.png", id: "problem" %>
-    <div class="explanation-text-problem">
-      <h3>"Houston, we have a problem."</h3>
-      <p>Je viens de découvrir un super produit ou service mais je renonce à en faire l'acquisition à cause de son prix. C'est dommage. Et comme d'autres personnes sont dans le même cas que moi, c'est encore plus dommage...</p>
+    <div id="pick">
+      <div class="image-and-explanation">
+        <%= image_tag "roar.png", id: "roar" %>
+        <div class="explanation-text-problem">
+          <h3>"Pour 75€ je fonce!!!"</h3>
+          <p>Comme-vous, certaines personnes aiment le produit mais ne sont pas prêtes à payer le prix demandé. Et le vendeur ne le saura jamais si vous ne vous exprimez pas.</p>
+          <div class="icon-header-body">
+            <div class="icon-header">
+              <i class="fa fa-hand-lizard-o" aria-hidden="true"></i>
+              <h4>Pick</h4>
+            </div>
+            <p>L'idée derrière Seedlap? Rassembler les clients intéressés par un même produit et démontrer au vendeur qu'une modification de prix, en plus de satisfaire ses clients, lui sera profitable. Faites donc entendre votre voix !
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-
-  <div class="image-and-explanation">
-    <div class="explanation-text-black">
-      <h3>"You are not alone"</h3>
-      <p>
-      Les personnes qui renoncent à un achat à cause du prix représentent potentiellement un manque à gagner pour le vendeur.
-      Comme-vous, certains utilisateurs aiment le produit mais ne sont pas prêtes à payer le prix demandé. L'idée derrière Seedlap? Rassembler les clients intéressés par un même produit et démontrer au vendeur qu'une modification de prix, en plus de satisfaire ses clients, lui sera profitable!</p>
-    </div>
-    <div class="image-container">
-      <%= image_tag "magnifest.png", id: "magnifest" %>
-    </div>
-  </div>
-  <div class="image-and-explanation">
-    <div class="image-container">
-      <%= image_tag "magnifest.png", id: "magnifest" %>
-    </div>
-    <div class="explanation-text-black">
-      <h3>"Tout le monde il est content"</h3>
-      <p>Comme-vous, certains utilisateurs aiment le produit mais ne sont pas prêts à payer le prix demandé. Rassembler les clients intéressés par un même produit, demander quel prix déclencherait pour chacun l’acte d’achat, analyser ces retours pour déterminer le prix qui va satisfaire clients et vendeurs</p>
-    </div>
-  </div>
-
-
 </div>
 
 
