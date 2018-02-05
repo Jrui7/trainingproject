@@ -17,6 +17,7 @@
         <% end %>
       </div>
     </div>
+    <%= image_tag "pick-horizontal.png", id: "pick-image" %>
   </div>
   <div>
     <div class="boucing-icon text-right">
@@ -29,9 +30,12 @@
   <div class="features">
     <div class="all-features"  id="share">
       <div class="image-and-explanation">
+        <div class="hidden-md hidden-lg">
+          <%= image_tag "sad-puppy.png", id: "puppy-xs"%>
+        </div>
         <div class="explanation-text">
           <h3>"J’aime ce produit, mais 90€…"</h3>
-          <p>Me voilà découvrant un super produit ou service mais y rennonçant à en faire l'acquisition à cause de son prix.</p>
+          <p>Me voilà découvrant un super produit ou service mais rennonçant à en faire l'acquisition à cause de son prix.</p>
           <div class="icon-header-body">
             <div class="icon-header">
               <i class="fa fa-share-alt" aria-hidden="true"></i>
@@ -41,7 +45,9 @@
             </p>
           </div>
         </div>
-        <%= image_tag "sad-puppy.png", id: "puppy" %>
+        <div class="hidden-xs hidden-md">
+          <%= image_tag "sad-puppy.png", id: "puppy"%>
+        </div>
       </div>
     </div>
     <div class="all-features" id="pick">
@@ -55,7 +61,8 @@
               <i class="fa fa-hand-lizard-o" aria-hidden="true"></i>
               <h4>Pick</h4>
             </div>
-            <p>L'idée derrière Seedlap? Rassembler les clients intéressés par un même produit et démontrer au vendeur qu'une modification de prix, en plus de satisfaire ses clients, lui sera économiquement profitable.
+            <p>
+            Je "pick" le produit qui m'intéresse en donnant le prix le plus juste que je suis prêt à payer pour en faire l'acquisition.
             </p>
           </div>
         </div>
@@ -64,14 +71,19 @@
     <div  class= "all-features" id="save">
       <div class="image-and-explanation">
         <div class="explanation-text">
-          <h3>"Je ne paye plus que 70€."</h3>
-          <p>Je gagne, tu gagnes, il-elle...</p>
+          <h3>"Je ne paye plus que 70€ !"</h3>
+          <p>Je gagne, tu gagnes, il/elle...</p>
           <div class="icon-header-body">
             <div class="icon-header">
               <i class="fa fa-money" aria-hidden="true"></i>
-              <h4>Save</h4>
+              <h4>Win-Win</h4>
             </div>
-            <p>Nous voulons que tout le monde y gagne. Pour cela, nous calculons grace à nos algorythmes, le prix optimal qui permettra au vendeur de
+            <p>L'idée derrière Seedlap est un algorythme qui permet de déterminer le prix de vente le plus juste qui saura satisfaire le vendeur et ses clients.
+            <br>
+            <span>
+              <br>Si le montant de votre pick est suppérieur ou équivalent au nouveau prix du produit, on vous rembourse la différence!
+              <br>S'il est inférieur nous vous remboursons intégralement, mais vous ne profitez pas du deal.
+            </span>
             </p>
           </div>
         </div>
