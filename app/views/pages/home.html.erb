@@ -27,77 +27,70 @@
     </div>
   </div>
 
-  <div class="features">
-    <div class="all-features"  id="share">
-      <div class="image-and-explanation">
-        <div class="img-container hidden-md hidden-lg">
-          <%= image_tag "sad-puppy.png", id: "puppy-xs"%>
-        </div>
-        <div class="explanation-text">
-          <h3>"J’aime ce produit, mais 90€…"</h3>
-          <p>Me voilà découvrant un super produit ou service mais rennonçant à en faire l'acquisition à cause de son prix.</p>
-          <div class="icon-header-body">
-            <div class="icon-header">
-              <i class="fa fa-share-alt" aria-hidden="true"></i>
-              <h4>Share</h4>
-            </div>
-            <p>Partagez vos meilleures découvertes avec nous, on a une idée qui va rendre tout le monde heureux.
-            </p>
+  <div class="features-container">
+    <div class="row"  id="share">
+      <div class="col-xs-12 img-container hidden-md hidden-lg">
+        <%= image_tag "sad-puppy.png", id: "puppy-xs"%>
+      </div>
+      <div class="col-xs-12 col-md-7 explanation-text">
+        <h3>"J’aime ce produit, mais 90€…"</h3>
+        <p>Me voilà découvrant un super produit ou service mais rennonçant à en faire l'acquisition à cause de son prix.</p>
+        <div class="icon-header-body">
+          <div class="icon-header">
+            <i class="fa fa-share-alt" aria-hidden="true"></i>
+            <h4>Share</h4>
           </div>
+          <p>Partagez vos meilleures découvertes avec nous, on a une idée qui va rendre tout le monde heureux.
+          </p>
         </div>
-        <div class="img-container hidden-xs hidden-sm">
-          <%= image_tag "sad-puppy.png", id: "puppy"%>
+      </div>
+      <div class="col-md-4 col-md-offset-1 img-container hidden-xs hidden-sm">
+        <%= image_tag "sad-puppy.png", id: "puppy"%>
+      </div>
+    </div>
+    <div class="row" id="pick">
+      <div class="col-xs-12 col-md-4 col-md-offset-1 img-container">
+        <%= image_tag "roar.png", id: "roar" %>
+      </div>
+      <div class="col-xs-12 col-md-7 explanation-text">
+        <h3>"Pour 75€ je fonce."</h3>
+        <p>Je me fais entendre. Comme-moi, certaines personnes aiment le produit mais ne sont pas prêtes à payer le prix demandé.</p>
+        <div class="icon-header-body">
+          <div class="icon-header">
+            <i class="fa fa-hand-lizard-o" aria-hidden="true"></i>
+            <h4>Pick</h4>
+          </div>
+          <p>
+          Je "pick" le produit qui m'intéresse en donnant le prix le plus juste que je suis prêt à payer pour en faire l'acquisition.
+          </p>
         </div>
       </div>
     </div>
-    <div class="all-features" id="pick">
-      <div class="image-and-explanation">
-        <div class="img-container">
-          <%= image_tag "roar.png", id: "roar" %>
-        </div>
-        <div class="explanation-text">
-          <h3>"Pour 75€ je fonce."</h3>
-          <p>Je me fais entendre. Comme-moi, certaines personnes aiment le produit mais ne sont pas prêtes à payer le prix demandé.</p>
-          <div class="icon-header-body">
-            <div class="icon-header">
-              <i class="fa fa-hand-lizard-o" aria-hidden="true"></i>
-              <h4>Pick</h4>
-            </div>
-            <p>
-            Je "pick" le produit qui m'intéresse en donnant le prix le plus juste que je suis prêt à payer pour en faire l'acquisition.
-            </p>
+    <div  class= "row" id="save">
+      <div class="col-xs-12 img-container hidden-md hidden-lg">
+        <%= image_tag "victory.jpg", id: "victory-xs"%>
+      </div>
+      <div class="col-xs-12 col-md-7 explanation-text">
+        <h3>"Je ne paye plus que 70€ !"</h3>
+        <p>Je gagne, tu gagnes, il/elle...</p>
+        <div class="icon-header-body">
+          <div class="icon-header">
+            <i class="fa fa-money" aria-hidden="true"></i>
+            <h4>Win-Win</h4>
           </div>
+          <p>L'idée derrière Seedlap est un algorythme qui permet de déterminer le prix de vente le plus juste qui saura satisfaire le vendeur et ses clients.
+          <br>
+          <span>
+            <br>Si le montant de votre pick est suppérieur ou équivalent au nouveau prix du produit, vous ne payez que le montant du nouveau prix.
+            <br>S'il est inférieur nous vous remboursons intégralement, mais vous ne profitez pas du deal.
+          </span>
+          </p>
         </div>
       </div>
-    </div>
-    <div  class= "all-features" id="save">
-      <div class="image-and-explanation">
-        <div class="img-container hidden-md hidden-lg">
-          <%= image_tag "victory.jpg", id: "victory-xs"%>
-        </div>
-        <div class="explanation-text">
-          <h3>"Je ne paye plus que 70€ !"</h3>
-          <p>Je gagne, tu gagnes, il/elle...</p>
-          <div class="icon-header-body">
-            <div class="icon-header">
-              <i class="fa fa-money" aria-hidden="true"></i>
-              <h4>Win-Win</h4>
-            </div>
-            <p>L'idée derrière Seedlap est un algorythme qui permet de déterminer le prix de vente le plus juste qui saura satisfaire le vendeur et ses clients.
-            <br>
-            <span>
-              <br>Si le montant de votre pick est suppérieur ou équivalent au nouveau prix du produit, vous ne payez que le montant du nouveau prix.
-              <br>S'il est inférieur nous vous remboursons intégralement, mais vous ne profitez pas du deal.
-            </span>
-            </p>
-          </div>
-        </div>
-        <div class="img-container hidden-xs hidden-sm">
-          <%= image_tag "victory.jpg", id: "victory"%>
-        </div>
+      <div class="col-md-4 col-md-offset-1 img-container hidden-xs hidden-sm">
+        <%= image_tag "victory.jpg", id: "victory"%>
       </div>
     </div>
-
   </div>
 </div>
 
