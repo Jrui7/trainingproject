@@ -120,10 +120,10 @@
 
       <% else %>
         <div class="navbar-right">
-          <%= link_to  new_user_session_path do%>
+          <%= link_to  new_user_session_path, class: "sign-links" do%>
             Se connecter
           <% end %>
-          <%= link_to new_user_registration_path do %>
+          <%= link_to new_user_registration_path, class: "sign-links" do %>
             Créer un compte
           <% end %>
         </div>
