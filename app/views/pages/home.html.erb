@@ -20,7 +20,7 @@
     <%= image_tag "pick-horizontal.png", id: "pick-image" %>
   </div>
   <div>
-    <div class="boucing-icon text-right">
+    <div class="boucing-icon text-right" style="height: 0">
       <a href="#share">
         <i class="fa fa-arrow-circle-down bounce" aria-hidden="true"></i>
       </a>
@@ -30,7 +30,7 @@
   <div class="features">
     <div class="all-features"  id="share">
       <div class="image-and-explanation">
-        <div class="hidden-md hidden-lg">
+        <div class="img-container hidden-md hidden-lg">
           <%= image_tag "sad-puppy.png", id: "puppy-xs"%>
         </div>
         <div class="explanation-text">
@@ -45,14 +45,16 @@
             </p>
           </div>
         </div>
-        <div class="hidden-xs hidden-md">
+        <div class="img-container hidden-xs hidden-sm">
           <%= image_tag "sad-puppy.png", id: "puppy"%>
         </div>
       </div>
     </div>
     <div class="all-features" id="pick">
       <div class="image-and-explanation">
-        <%= image_tag "roar.png", id: "roar" %>
+        <div class="img-container">
+          <%= image_tag "roar.png", id: "roar" %>
+        </div>
         <div class="explanation-text">
           <h3>"Pour 75€ je fonce."</h3>
           <p>Je me fais entendre. Comme-moi, certaines personnes aiment le produit mais ne sont pas prêtes à payer le prix demandé.</p>
@@ -70,7 +72,7 @@
     </div>
     <div  class= "all-features" id="save">
       <div class="image-and-explanation">
-        <div class="hidden-md hidden-lg">
+        <div class="img-container hidden-md hidden-lg">
           <%= image_tag "victory.jpg", id: "victory-xs"%>
         </div>
         <div class="explanation-text">
@@ -84,13 +86,13 @@
             <p>L'idée derrière Seedlap est un algorythme qui permet de déterminer le prix de vente le plus juste qui saura satisfaire le vendeur et ses clients.
             <br>
             <span>
-              <br>Si le montant de votre pick est suppérieur ou équivalent au nouveau prix du produit, on vous rembourse la différence!
+              <br>Si le montant de votre pick est suppérieur ou équivalent au nouveau prix du produit, vous ne payez que le montant du nouveau prix.
               <br>S'il est inférieur nous vous remboursons intégralement, mais vous ne profitez pas du deal.
             </span>
             </p>
           </div>
         </div>
-        <div class="hidden-xs hidden-md">
+        <div class="img-container hidden-xs hidden-sm">
           <%= image_tag "victory.jpg", id: "victory"%>
         </div>
       </div>

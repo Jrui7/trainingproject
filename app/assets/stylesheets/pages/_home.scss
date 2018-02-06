@@ -224,16 +224,21 @@
 
   .image-and-explanation {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     padding: 30px;
 
+  }
+
+  .img-container {
+    flex: 0 35%
   }
 
 
 
   .explanation-text {
     color: #333333;
-    max-width: 700px;
+    flex: 0 65%;
     padding: 40px;
     background-color: #FFFFFF;
     border-radius: 5px;
@@ -251,7 +256,6 @@
     p {
       font-size: 20px;
       text-align: justify;
-      max-width: 600px;
 
     }
 
@@ -277,14 +281,20 @@
 
   }
 
-  #puppy, #roar{
-    height: 400px;
+  #puppy, #puppy-xs {
+    max-width: 100%;
     border-radius: 40%;
   }
 
-  #victory {
-    height: 300px;
-    margin-left: 50px;
+  #roar {
+    max-width: 100%;
+    border-radius: 25%;
+  }
+
+  #victory, #victory-xs {
+    max-width: 100%;
+    border-radius: 5px;
+    border: 10px solid $blue;
   }
 
 
