@@ -4,11 +4,17 @@
         <div id="logo-home">Seedlap</div>
         <span class="glyphicon glyphicon-leaf", id="logo-home"></span>
       </div>
-      <div class="connect-button">
+      <div class="hidden-xs hidden-sm connect-button">
         <div class="btn">
           CONNEXION
         </div>
       </div>
+      <div class="connexion-xs hidden-md hidden-lg">
+        <%= link_to new_user_session_path do%>
+          CONNEXION
+        <% end %>
+      </div>
+
       <div class="log-in-home hidden">
         <%= render "devise/sessions/login" %>
       </div>

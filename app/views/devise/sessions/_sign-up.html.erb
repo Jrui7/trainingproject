@@ -1,9 +1,0 @@
-<h3>Nouveau membre</h3>
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <%= f.text_field :pseudo, placeholder: 'Pseudo' %>
-  <%= f.email_field :email, placeholder: 'Email' %>
-  <%= f.password_field :password, placeholder: 'Mot de passe' %>
-  <%= f.submit "Rejoignez-nous", class: 'btn btn-primary' %>
-<% end %>

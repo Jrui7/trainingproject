@@ -1,0 +1,49 @@
+.sign-container {
+  padding: 50px;
+  background-color: #F1F1F1;
+  min-height: calc(100vh - 70px);
+
+
+
+  .sign-form {
+    padding: 30px 60px;
+    border-radius: 5px;
+    box-shadow: 0 0 1px rgba(0,0,0,0.5);
+    background-color: #FFFFFF;
+
+  }
+
+  label {
+    border-bottom: 8px solid $blue;
+    margin-bottom: 10px;
+  }
+
+  .btn-default {
+    border-radius: 50px;
+    border: 3px solid $blue;
+    color: $blue;
+    padding: 6px 12px;
+    font-size: 20px;
+  }
+
+  .optional {
+    border-bottom: none;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    .sign-container {
+      padding: 50px 25px;
+    }
+
+    .form-control {
+      font-size: 14px;
+    }
+
+    label {
+        font-size: 17px;
+    }
+
+  }
