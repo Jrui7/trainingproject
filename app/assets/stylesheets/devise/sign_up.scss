@@ -1,0 +1,17 @@
+.sign-container {
+  padding: 50px;
+  background-color: #F1F1F1;
+
+  .sign-form {
+    padding: 30px 60px;
+    border-radius: 5px;
+    box-shadow: 0 0 1px rgba(0,0,0,0.5);
+    background-color: #FFFFFF;
+
+  }
+
+  label {
+    border-bottom: 8px solid $blue;
+  }
+
+}

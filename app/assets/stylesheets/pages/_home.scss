@@ -3,6 +3,98 @@
 .container-home {
   max-width: 100%;
   font-family: Helvetica;
+
+  .email-box {
+    background-color: white;
+  }
+
+  .remember-box {
+    display: flex;
+    align-items: center;
+    margin: 4px 0;
+    padding: 0 0 0 1px;
+
+  }
+
+  #user_remember_me {
+    margin: 0 2px 0 0;
+  }
+
+  .login-form {
+    display: flex;
+
+
+    .email {
+      padding: 0 10px;
+    }
+
+    input {
+      font-size: 13px;
+      margin: 0;
+    }
+
+    label {
+      color: white;
+      font-size: 13px;
+      margin: 0;
+    }
+
+
+
+    .password {
+      padding: 0 10px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .forgot-link {
+      text-decoration: none;
+      color: white;
+      font-size: 13px;
+      margin: 4px 0;
+      padding: 0 0 0 1px;
+    }
+
+
+    .validate-zone {
+      padding: 0 10px;
+    }
+  }
+
+  .forgot-modal {
+    height: 0;
+  }
+
+  .form-space {
+    background-color: transparent;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+
+  }
+
+
+  #new_user {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input {
+    margin: 7px;
+    padding: 0 5px 0 5px;
+    font-size: 13px;
+  }
+
+
+  label {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+
+
 }
 
 .nav-and-banner {
@@ -95,66 +187,22 @@
   }
 }
 
-.email-box {
-  background-color: white;
-}
-
-.remember-box {
-  display: flex;
-  align-items: center;
-  margin: 4px 0;
-  padding: 0 0 0 1px;
-
-}
-
-#user_remember_me {
-  margin: 0 2px 0 0;
-}
-
-.login-form {
-  display: flex;
-
-
-  .email {
-    padding: 0 10px;
-  }
-
-  input {
-    font-size: 13px;
-    margin: 0;
-  }
-
-  label {
+.connexion-xs {
+  border-radius: 50px;
+  border: 3px solid white;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 15px;
+  a {
     color: white;
-    font-size: 13px;
-    margin: 0;
-  }
-
-
-
-  .password {
-    padding: 0 10px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .forgot-link {
-    text-decoration: none;
-    color: white;
-    font-size: 13px;
-    margin: 4px 0;
-    padding: 0 0 0 1px;
-  }
-
-
-  .validate-zone {
-    padding: 0 10px;
+    &:hover {
+      color: white;
+    }
   }
 }
 
-.forgot-modal {
-  height: 0;
-}
 
 
 
@@ -203,6 +251,7 @@
     }
 
   }
+
 
 .features-container {
   background: linear-gradient(160deg, #fff 30%, $blue 30%, $blue 50%, #fff 50%, #fff 50.5%, $blue 50.5%, $blue 50.7%, #fff 50.7%);
@@ -285,38 +334,62 @@
 
 
 
-  .form-space {
-    background-color: transparent;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    padding: 100px;
-
-  }
-
-
-  #new_user {
-    display: flex;
-    flex-direction: column;
-  }
-
-  input {
-    margin: 7px;
-    padding: 0 5px 0 5px;
-    font-size: 13px;
-  }
-
-
-  label {
-    color: white;
-    font-size: 14px;
-    margin-bottom: 0;
-    margin-right: 10px;
-  }
 
 
 
 @media screen and (max-width: 480px) {
+
+  .container-home {
+    .login-form {
+
+
+
+      .email {
+        padding: 0;
+      }
+
+      input {
+        font-size: 20px;
+        margin: 4px;
+      }
+
+      label {
+        color: white;
+        font-size: 14px;
+      }
+
+
+      .password {
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .forgot-link {
+        text-decoration: none;
+        color: white;
+      }
+
+
+      .validate-zone {
+        padding: 10px 0px;
+        display: flex;
+        justify-content: center;
+      }
+
+
+    }
+
+    .form-action {
+      color: white;
+      font-weight: bold;
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+    }
+
+
+  }
 
   .header-home {
     height: 50px;
@@ -342,53 +415,6 @@
 
 
 
-  .login-form {
-
-
-
-    .email {
-      padding: 0;
-    }
-
-    input {
-      font-size: 20px;
-      margin: 4px;
-    }
-
-    label {
-      color: white;
-      font-size: 14px;
-    }
-
-
-    .password {
-      padding: 0px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .forgot-link {
-      text-decoration: none;
-      color: white;
-    }
-
-
-    .validate-zone {
-      padding: 10px 0px;
-      display: flex;
-      justify-content: center;
-    }
-
-
-  }
-
-  .form-action {
-    color: white;
-    font-weight: bold;
-    padding: 10px;
-    border: none;
-    border-radius: 3px;
-  }
 
 
   .banner-container {
@@ -408,6 +434,10 @@
     padding: 10px;
     text-align: center;
     }
+  }
+
+  #pick-image {
+    width: 250px;
   }
 
 

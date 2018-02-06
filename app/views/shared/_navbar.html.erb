@@ -1,18 +1,17 @@
-<% if user_signed_in? %>
+<div class="navbar-container">
+  <div class="navbar">
 
-  <div class="navbar-container">
-    <div class="navbar">
-
-      <!-- Logo -->
-      <%= link_to seeds_path do %>
-        <div class="logo-box">
-          <div id="logo-text">Seedlap</div>
-          <span class="glyphicon glyphicon-leaf", id="logo-icon"></span>
-        </div>
-      <% end %>
+    <!-- Logo -->
+    <%= link_to seeds_path do %>
+      <div class="logo-box">
+        <div id="logo-text">Seedlap</div>
+        <span class="glyphicon glyphicon-leaf", id="logo-icon"></span>
+      </div>
+    <% end %>
 
 
-      <!-- Right Navigation -->
+    <!-- Right Navigation -->
+    <% if user_signed_in? %>
       <div class="hidden-xs">
         <div class="navbar-right">
           <div class="new-seed">
@@ -119,9 +118,16 @@
         </div>
       </div>
 
+      <% else %>
+        <div class="navbar-right">
+          <%= link_to  new_user_session_path do%>
+            Se connecter
+          <% end %>
+          <%= link_to new_user_registration_path do %>
+            Créer un compte
+          <% end %>
+        </div>
 
-    </div>
+    <% end %>
   </div>
-<% else %>
-  <%= render "pages/unauthentified-navbar" %>
-<% end %>
+</div>
