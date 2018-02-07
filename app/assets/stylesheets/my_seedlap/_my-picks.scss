@@ -51,20 +51,6 @@ a:hover {
 
   }
 
-  .title-pick-date {
-    #clockdiv {
-      display: flex;
-    }
-
-    .dynamic-timer {
-      margin-right: 10px;
-      color: $red;
-      font-size: 13px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  }
 
   .price-pick {
     display: flex;
@@ -88,189 +74,78 @@ a:hover {
 }
 
 
-.product {
+.pick {
+  margin-bottom: 25px;
   background-color: #FFFFFF;
-  display: flex;
   border-radius: 2px;
   transition: all 0.15s ease;
-  border: 1px solid #e8e8e8;
-  padding: 15px;
+  border-top: 1px solid $blue;
+  border-left: 1px solid $blue;
+  border-right: 1px solid $blue;
+
 }
 
 /* Hover effects */
-.product:hover {
+.pick:hover {
   background: #f7f7fa;
   cursor: pointer;
 }
 
-/* Product image */
-.product-image {
+.pick-container {
+  display: flex;
+  padding: 15px;
+}
+
+.pick-validation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF;
+  transition: all 0.15s ease;
+  background-color: $blue;
+  color: #FFFFFF;
+  padding: 10px 20px;
+
+  p {
+    margin: 0;
+  }
+
+  .btn {
+    border-radius: 50px;
+    border: 3px solid #FFFFFF;
+    color: #FFFFFF;
+    padding: 6px 12px;
+    font-size: 15px;
+  }
+}
+
+/* pick image */
+.pick-image {
   border-radius: 3px; /*3px */
   margin-right: 15px;
 
 }
 
 /* Body design */
-.product-body {
+.pick-body {
   display: flex;
   flex-grow: 1;
   flex-direction: column;
   justify-content: space-between;
 
-  .homepage-link {
-    text-align: right;
-  }
-
-  #red-p {
-    color: $red;
-  }
-
 }
 
-.product-body h3 {
+.pick-body h3 {
   font-weight: bold;
   font-size: 20px;
   margin-top: 0;
   margin-bottom: 5px;
   color: #3F3933;
 }
-.product-body p {
+.pick-body p {
   color: #999999;
   margin-bottom: 0;
 }
-
-
-.user-testimony {
-  font-size: 13px;
-  display: flex;
-  align-items: center;
-
-  .fa-user-o {
-    font-size: 17px;
-    background-color: $blue;
-    border-radius: 50%;
-    padding: 10px;
-    color: white;
-  }
-}
-
-.user {
-  margin-left: 10px;
-  display: flex;
-  flex-direction: column;
- }
-#pseudo {
-  text-decoration: underline;
-}
-
-#seed-description {
-  font-style: italic;
-}
-
-.seeder-picture {
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-}
-
-.bottom-sexion {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-
-.product-category{
-  display: flex;
-
-  .Sport {
-    border: 1px solid #e8e8e8;
-    color: white;
-    border-radius: 3px;
-    padding: 0 10px 0 10px;
-    background-color: $red;
-  }
-
-  .Sorties {
-    border: 1px solid #e8e8e8;
-    color: white;
-    border-radius: 3px;
-    padding: 0 10px 0 10px;
-    background-color: $green;
-  }
-
-  .Mode {
-    border: 1px solid #e8e8e8;
-    color: white;
-    border-radius: 3px;
-    padding: 0 10px 0 10px;
-    background-color: $anis;
-  }
-
-  .Loisir {
-    border: 1px solid #e8e8e8;
-    color: white;
-    border-radius: 3px;
-    padding: 0 10px 0 10px;
-    background-color: $orange;
-  }
-
-  .Beaute {
-    border: 1px solid #e8e8e8;
-    color: white;
-    border-radius: 3px;
-    padding: 0 10px 0 10px;
-    background-color: $blue;
-  }
-
-  .Art {
-    border: 1px solid #e8e8e8;
-    color: white;
-    border-radius: 3px;
-    padding: 0 10px 0 10px;
-    background-color: $darkgray;
-  }
-
-
-
-
-}
-
-.social-overview {
-  display: flex;
-  align-items: flex-end;
-
-  .icon-and-number {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 15px;
-    border: 1px solid #e8e8e8;
-    color: #999999;
-    border-radius: 3px;
-    padding: 0 10px 0 10px;
-
-
-    .glyphicon {
-      top: 0;
-      font-size: 14px;
-    }
-
-    .fa-hand-lizard-o {
-      font-size: 14px;
-      color: inherit;
-      padding: 0;
-    }
-
-    p {
-      margin: 0 0 0 7px;
-      font-size: 14px;
-    }
-  }
-}
-
-
-
-
 
 
 @media(max-width: 992px) {
@@ -303,12 +178,11 @@ a:hover {
         padding: 0;
       }
 
-      .product {
-        padding: 8px;
+      .pick {
       }
 
 
-      .product-body {
+      .pick-body {
         padding-right: 4px;
 
         h3 {
@@ -324,7 +198,7 @@ a:hover {
         }
       }
 
-      .product-category{
+      .pick-category{
         p {
           font-size: 10px;
         }

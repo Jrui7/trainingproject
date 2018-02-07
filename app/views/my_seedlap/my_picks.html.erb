@@ -9,7 +9,7 @@
       <div class="seed-presentation">
         <h2>Historique de vos picks</h2>
         <% @picks.each do |pick| %>
-          <div class="product id-<%= pick.id%>">
+          <div class="pick id-<%= pick.id%>">
           <%= render "my_seedlap/pick-history", pick: pick %>
           </div>
 
@@ -44,9 +44,9 @@
         <div class="seed-presentation">
           <h2>Historique de vos picks</h2>
           <div class="desert">
-            <div class="product id-desert">
-              <%= cl_image_tag("no-seed_nwo26u.jpg", :width=>150, :height=>150, :gravity=>"east", :crop=>"fill", class: "product-image")%>
-              <div class='product-body'>
+            <div class="pick id-desert">
+              <%= cl_image_tag("no-seed_nwo26u.jpg", :width=>150, :height=>150, :gravity=>"east", :crop=>"fill", class: "pick-image")%>
+              <div class='pick-body'>
                 <div class="div">
                   <h3>Un désert...</h3>
                   <p id="red-p">Le champ de vos picks est aride</p>
