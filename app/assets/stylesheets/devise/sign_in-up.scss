@@ -35,15 +35,27 @@
 @media screen and (max-width: 480px) {
 
     .sign-container {
-      padding: 50px 25px;
+      padding: 0;
+
+      .row {
+        margin: 0;
+      }
+
+      .sign-form {
+        border-radius: 0;
+      }
+
+
+      .form-control {
+        font-size: 14px;
+      }
+
+      label {
+          font-size: 17px;
+      }
+
     }
 
-    .form-control {
-      font-size: 14px;
-    }
 
-    label {
-        font-size: 17px;
-    }
 
   }
