@@ -79,9 +79,6 @@ a:hover {
   background-color: #FFFFFF;
   border-radius: 2px;
   transition: all 0.15s ease;
-  border-top: 1px solid $blue;
-  border-left: 1px solid $blue;
-  border-right: 1px solid $blue;
 
 }
 
@@ -94,16 +91,16 @@ a:hover {
 .pick-container {
   display: flex;
   padding: 15px;
+  border-top: 1px solid lightgray;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
 }
 
-.pick-validation {
+.campaign-status {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #FFFFFF;
   transition: all 0.15s ease;
-  background-color: $blue;
-  color: #FFFFFF;
   padding: 10px 20px;
 
   p {
@@ -112,11 +109,30 @@ a:hover {
 
   .btn {
     border-radius: 50px;
-    border: 3px solid #FFFFFF;
-    color: #FFFFFF;
     padding: 6px 12px;
     font-size: 15px;
   }
+}
+
+.pick-pending {
+  color: #FFFFFF;
+  border: 1px solid $blue;
+  background-color: $blue;
+
+  .btn {
+    border: 3px solid #FFFFFF;
+    color: #FFFFFF;
+
+  }
+
+}
+
+.pick-other {
+  border: 1px solid $blue;
+  .btn {
+    border: 3px solid $blue;
+  }
+
 }
 
 /* pick image */

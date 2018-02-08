@@ -46,20 +46,24 @@
 </div>
 
 
-<div class="pick-validation">
-  <p>Fin de la campagne: <%= pick.seed.expiration %></p>
   <% if pick.state == "pending" && pick.seed.ongoing? %>
-    <div class="payment-link">
-      <%= link_to new_pick_payment_path(pick) do %>
-        <div class="btn">Finaliser pick</div>
-      <% end %>
+    <div class="campaign-status pick-pending">
+      <p>Fin de la campagne: <%= pick.seed.expiration.strftime("%d/%m/%Y") %></p>
+      <div class="payment-link">
+        <%= link_to new_pick_payment_path(pick) do %>
+          <div class="btn">Finaliser pick</div>
+        <% end %>
+      </div>
     </div>
   <% else %>
-    <div class="payment-recap">
-      <%= link_to pick_path(pick) do %>
-        <div class="btn">Détails</div>
-      <% end %>
+    <div class="campaign-status pick-other">
+    <p>Fin de la campagne: <%= pick.seed.expiration.strftime("%d/%m/%Y") %></p>
+      <div class="payment-recap">
+        <%= link_to pick_path(pick) do %>
+          <div class="btn">Détails</div>
+        <% end %>
+      </div>
     </div>
   <% end %>
-</div>
+
 
