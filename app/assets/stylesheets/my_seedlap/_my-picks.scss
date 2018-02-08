@@ -30,6 +30,12 @@ a:hover {
     font-size: 25px;
   }
 
+  .title-and-delete {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   .price-display {
     color: $blue;
     font-size: 22px;
@@ -128,9 +134,14 @@ a:hover {
 }
 
 .pick-other {
-  border: 1px solid $blue;
+  color: #FFFFFF;
+  border: 1px solid $gray;
+  background-color: $gray;
+
   .btn {
-    border: 3px solid $blue;
+    border: 3px solid #FFFFFF;
+    color: #FFFFFF;
+
   }
 
 }

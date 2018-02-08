@@ -4,9 +4,11 @@
   <% end %>
   <div class="pick-body">
     <%= link_to seed_path(pick.seed) do  %>
-      <div class="title-pick-date">
+      <div class="title-and-delete">
         <h3> <%= pick.seed.title %></h3>
-
+        <%= link_to pick_path(pick.id), method: :delete, remote: true do %>
+          <i class="fa fa-times-circle"></i>
+        <% end %>
       </div>
     <% end %>
     <div class="price-pick">
@@ -15,10 +17,6 @@
       <% if pick.seed.ongoing? %>
         <%= link_to "#myPick-#{pick.id}", data: {toggle: "modal"} do %>
           <span class="glyphicon glyphicon-pencil"></span>
-        <% end %>
-
-        <%= link_to pick_path(pick.id), method: :delete, remote: true do %>
-            <span class="glyphicon glyphicon-trash"></span>
         <% end %>
       <% else %>
         <div class="pick-state">
