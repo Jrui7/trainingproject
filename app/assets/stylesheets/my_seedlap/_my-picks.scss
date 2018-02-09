@@ -6,7 +6,7 @@
   flex: 0 0 100%;
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
   margin-bottom: 0px;
   background-color: #FFFFFF;
 
@@ -26,8 +26,13 @@ a:hover {
   h2 {
     margin-bottom: 25px;
     margin-top: 0px;
-    color: $blue;
     font-size: 25px;
+  }
+
+  .title-and-delete {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .price-display {
@@ -74,14 +79,11 @@ a:hover {
 }
 
 
-.pick {
+.pick-iterate {
   margin-bottom: 25px;
   background-color: #FFFFFF;
   border-radius: 2px;
   transition: all 0.15s ease;
-  border-top: 1px solid $blue;
-  border-left: 1px solid $blue;
-  border-right: 1px solid $blue;
 
 }
 
@@ -94,16 +96,16 @@ a:hover {
 .pick-container {
   display: flex;
   padding: 15px;
+  border-top: 1px solid lightgray;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
 }
 
-.pick-validation {
+.campaign-status {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #FFFFFF;
   transition: all 0.15s ease;
-  background-color: $blue;
-  color: #FFFFFF;
   padding: 10px 20px;
 
   p {
@@ -112,11 +114,35 @@ a:hover {
 
   .btn {
     border-radius: 50px;
-    border: 3px solid #FFFFFF;
-    color: #FFFFFF;
     padding: 6px 12px;
     font-size: 15px;
   }
+}
+
+.pick-pending {
+  color: #FFFFFF;
+  border: 1px solid $blue;
+  background-color: $blue;
+
+  .btn {
+    border: 3px solid #FFFFFF;
+    color: #FFFFFF;
+
+  }
+
+}
+
+.pick-other {
+  color: #FFFFFF;
+  border: 1px solid $gray;
+  background-color: $gray;
+
+  .btn {
+    border: 3px solid #FFFFFF;
+    color: #FFFFFF;
+
+  }
+
 }
 
 /* pick image */
@@ -129,17 +155,16 @@ a:hover {
 /* Body design */
 .pick-body {
   display: flex;
-  flex-grow: 1;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
 
 }
 
 .pick-body h3 {
   font-weight: bold;
   font-size: 20px;
-  margin-top: 0;
-  margin-bottom: 5px;
+  margin: 0;
   color: #3F3933;
 }
 .pick-body p {
