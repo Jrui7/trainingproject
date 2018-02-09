@@ -3,14 +3,16 @@
     <%= cl_image_tag("#{pick.seed.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "pick-image")%>
   <% end %>
   <div class="pick-body">
-    <%= link_to seed_path(pick.seed) do  %>
       <div class="title-and-delete">
-        <h3> <%= pick.seed.title %></h3>
-        <%= link_to pick_path(pick.id), method: :delete, remote: true do %>
-          <i class="fa fa-times-circle"></i>
+        <%= link_to seed_path(pick.seed) do  %>
+          <h3><%= pick.seed.title %></h3>
+        <% end %>
+        <% if pick.seed.ongoing? %>
+          <%= link_to pick_path(pick.id), method: :delete, remote: true do %>
+            <i class="fa fa-times-circle"></i>
+          <% end %>
         <% end %>
       </div>
-    <% end %>
     <div class="price-pick">
       <div class="pick-state">
         <p class="price-display">Pické pour <%= pick.price %>€</p>
@@ -19,23 +21,21 @@
           <span class="glyphicon glyphicon-pencil"></span>
         <% end %>
       <% else %>
-        <div class="pick-state">
-          <% case pick.state when "finalized" %>
-            <div>Finalized</div>
-          <% when "pending" %>
-            <div>Expired</div>
-          <% when "campaign_failed" %>
-            <div>Campaign_failed</div>
-          <% when "pick_failed" %>
-            <div>Pick_failed</div>
-          <% when "campaign_closed" %>
-            <div>Campaign closed</div>
-          <% when "refunded" %>
-            <div>Refunded</div>
-          <% when "cancelled" %>
-            <div>Cancelled</div>
-          <% end %>
-        </div>
+        <% case pick.state when "finalized" %>
+          <div>Finalized</div>
+        <% when "pending" %>
+          <div>Expired</div>
+        <% when "campaign_failed" %>
+          <div>Campaign_failed</div>
+        <% when "pick_failed" %>
+          <div>Pick_failed</div>
+        <% when "campaign_closed" %>
+          <div>Campaign closed</div>
+        <% when "refunded" %>
+          <div>Refunded</div>
+        <% when "cancelled" %>
+          <div>Cancelled</div>
+        <% end %>
       <% end %>
       </div>
 

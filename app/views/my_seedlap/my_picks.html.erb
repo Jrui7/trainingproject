@@ -9,7 +9,7 @@
       <div class="seed-presentation">
         <h2>Historique de vos picks</h2>
         <% @picks.each do |pick| %>
-          <div class="pick id-<%= pick.id%>">
+          <div class="pick-iterate id-<%= pick.id%>">
           <%= render "my_seedlap/pick-history", pick: pick %>
           </div>
 
