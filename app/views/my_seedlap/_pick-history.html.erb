@@ -20,22 +20,6 @@
         <%= link_to "#myPick-#{pick.id}", data: {toggle: "modal"} do %>
           <span class="glyphicon glyphicon-pencil"></span>
         <% end %>
-      <% else %>
-        <% case pick.state when "finalized" %>
-          <div>Finalized</div>
-        <% when "pending" %>
-          <div>Expired</div>
-        <% when "campaign_failed" %>
-          <div>Campaign_failed</div>
-        <% when "pick_failed" %>
-          <div>Pick_failed</div>
-        <% when "campaign_closed" %>
-          <div>Campaign closed</div>
-        <% when "refunded" %>
-          <div>Refunded</div>
-        <% when "cancelled" %>
-          <div>Cancelled</div>
-        <% end %>
       <% end %>
       </div>
 
@@ -46,7 +30,7 @@
 
   <% if pick.state == "pending" && pick.seed.ongoing? %>
     <div class="campaign-status pick-pending">
-      <p>Fin de la campagne: <%= pick.seed.expiration.strftime("%d/%m/%Y") %></p>
+      Vous avez jusqu'au <%= pick.seed.expiration.strftime("%d/%m/%Y") %> pour finaliser votre pick.
       <div class="payment-link">
         <%= link_to new_pick_payment_path(pick) do %>
           <div class="btn">Finaliser pick</div>
@@ -55,7 +39,23 @@
     </div>
   <% else %>
     <div class="campaign-status pick-other">
-    <p>Fin de la campagne: <%= pick.seed.expiration.strftime("%d/%m/%Y") %></p>
+      <% case pick.state when "finalized" %>
+        <div>Succès</div>
+      <% when "pending" %>
+        <div>Pick Expiré</div>
+      <% when "campaign_failed" %>
+        <div>Campagne échouée</div>
+      <% when "pick_failed" %>
+        <div>Pick échoué</div>
+      <% when "campaign_closed" %>
+        <div>Campagne fermée</div>
+      <% when "refunded" %>
+        <div>Remboursé</div>
+      <% when "cancelled" %>
+        <div>Annulé</div>
+      <% when "paid" %>
+        <div>En attente</div>
+      <% end %>
       <div class="payment-recap">
         <%= link_to pick_path(pick) do %>
           <div class="btn">Détails</div>

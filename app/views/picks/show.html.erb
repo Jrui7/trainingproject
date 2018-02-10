@@ -5,25 +5,11 @@
 <% end %>
 
 
-<div class="page-container">
-  <div class="pick-feed">
-      <div class="seed-presentation">
-        <% case @pick.state when "finalized" %>
-          <div class="btn btn-warning">Finalized</div>
-        <% when "paid" %>
-          <div class="btn btn-warning">Paid</div>
-        <% when "campaign_failed" %>
-          <div class="btn btn-warning">Campaign_failed</div>
-        <% when "pick_failed" %>
-          <div class="btn btn-warning">Pick_failed</div>
-        <% when "campaign_closed" %>
-          <div class="btn btn-warning">Campaign closed</div>
-        <% when "refunded" %>
-          <div class="btn btn-warning">Refunded</div>
-        <% when "cancelled" %>
-          <div class="btn btn-warning">Cancelled</div>
-        <% end %>
-      </div>
+<div class="pick-details-container">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2 pick-detail">
+      <h2  class="pick-title"><%= @pick.seed.title %></h2>
 
+    </div>
   </div>
 </div>

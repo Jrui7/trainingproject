@@ -11,7 +11,7 @@ class CampaignsController < ApplicationController
   end
 
   def pending
-    @seeds = Seed.seed_selection.includes(:campaign).joins(:campaign).where(campaigns: {status: "pending"})
+    @seeds = Seed.where.not(admin_review:"Invalide").includes(:user, :category).includes(:campaign).joins(:campaign).where(campaigns: {status: "pending"})
   end
 
   def success
