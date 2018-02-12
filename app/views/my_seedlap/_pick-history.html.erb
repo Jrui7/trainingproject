@@ -3,9 +3,10 @@
     <%= cl_image_tag("#{pick.seed.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "pick-image")%>
   <% end %>
   <div class="pick-body">
+    <div class="title-delete-price">
       <div class="title-and-delete">
         <%= link_to seed_path(pick.seed) do  %>
-          <h3><%= pick.seed.title %></h3>
+            <h3><%= pick.seed.title %></h3>
         <% end %>
         <% if pick.seed.ongoing? %>
           <%= link_to pick_path(pick.id), method: :delete, remote: true do %>
@@ -13,6 +14,8 @@
           <% end %>
         <% end %>
       </div>
+      <p>Prix original: <%= pick.seed.price %>€</p>
+    </div>
     <div class="price-pick">
       <div class="pick-state">
         <p class="price-display">Pické pour <%= pick.price %>€</p>
@@ -42,7 +45,7 @@
       <% case pick.state when "finalized" %>
         <div>Succès</div>
       <% when "pending" %>
-        <div>Pick Expiré</div>
+        <div>Pick expiré</div>
       <% when "campaign_failed" %>
         <div>Campagne échouée</div>
       <% when "pick_failed" %>

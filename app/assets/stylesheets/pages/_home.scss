@@ -315,20 +315,19 @@
     margin-bottom: 15px;
   }
 
-  #puppy {
+  #cry {
     max-width: 100%;
-    border-radius: 40%;
+    border-radius: 50%;
   }
 
-  #roar {
+  #go {
     max-width: 100%;
     border-radius: 25%;
   }
 
   #victory {
-    max-width: 100%;
+    width: 100%;
     border-radius: 5px;
-    border: 10px solid $blue;
   }
 
 
@@ -487,9 +486,9 @@
     }
   }
 
-  #puppy-xs {
+  #cry-xs {
     max-width: 60%;
-    border-radius: 40%;
+    border-radius: 50%;
   }
 
   #roar {
