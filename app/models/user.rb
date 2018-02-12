@@ -76,6 +76,11 @@ class User < ApplicationRecord
   end
 
 
+  def pending_picks
+    self.picks.where(state: "pending").select {|pick| pick.seed.ongoing? == true}
+  end
+
+
   private
 
   def send_welcome_email

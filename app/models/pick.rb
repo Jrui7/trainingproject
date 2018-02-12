@@ -31,4 +31,12 @@ class Pick < ApplicationRecord
   end
 
 
+
+
+
+
+
+
+
+
 end
