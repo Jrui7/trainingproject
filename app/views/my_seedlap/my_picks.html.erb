@@ -6,8 +6,8 @@
 <div class="page-container">
   <div class="pick-feed">
     <%if @picks.any? %>
-      <div class="seed-presentation">
-        <h2>Historique de vos picks</h2>
+      <div class="pick-presentation">
+        <h2>Vos picks</h2>
         <% @picks.each do |pick| %>
           <div class="pick-iterate id-<%= pick.id%>">
           <%= render "my_seedlap/pick-history", pick: pick %>
