@@ -17,6 +17,8 @@ class PicksController < ApplicationController
 
   def show
     @pick = Pick.find(params[:id])
+    @exchanges = @pick.exchanges
+    @exchange = Exchange.new
     authorize @pick
   end
 

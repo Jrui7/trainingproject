@@ -10,6 +10,20 @@
     <div class="col-xs-12 col-md-8 col-md-offset-2 pick-detail">
       <h2  class="pick-title"><%= @pick.seed.title %></h2>
 
+      <div id="exchanges">
+        <% if @pick.exchanges.blank? %>
+          Vous pouvez nous adresser une question
+        <% else %>
+          <% @pick.exchanges.each do |exchange| %>
+            <%= render 'exchanges/exchange', exchange: exchange %>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div id="exchange_form">
+        <%= render 'exchanges/form', pick: @pick, exchange: @exchange %>
+      </div>
+
     </div>
   </div>
 </div>

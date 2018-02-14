@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   mount Attachinary::Engine => "/attachinary"
 
 
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :seeds, only: [:index, :new, :create, :update, :show], shallow: true do
     resources :picks, only: [:index, :show, :create, :update, :destroy] do
+      resources :exchanges, only: [:create, :destroy]
       resources :payments, only: [:new, :create, :destroy]
     end
     resources :signal_seeds, only: [:create, :destroy]

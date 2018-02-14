@@ -2,6 +2,7 @@ class Pick < ApplicationRecord
   require 'csv'
   belongs_to :seed
   belongs_to :user
+  has_many :exchanges
   monetize :amount_cents
 
   validates :price,

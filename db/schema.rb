@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180119175027) do
+ActiveRecord::Schema.define(version: 20180214072014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,14 @@ ActiveRecord::Schema.define(version: 20180119175027) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "exchanges", force: :cascade do |t|
+    t.integer  "pick_id"
+    t.text     "question"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pick_id"], name: "index_exchanges_on_pick_id", using: :btree
   end
 
   create_table "picks", force: :cascade do |t|
@@ -141,6 +149,7 @@ ActiveRecord::Schema.define(version: 20180119175027) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "campaigns", "seeds"
+  add_foreign_key "exchanges", "picks"
   add_foreign_key "picks", "seeds"
   add_foreign_key "picks", "users"
   add_foreign_key "seeds", "categories"

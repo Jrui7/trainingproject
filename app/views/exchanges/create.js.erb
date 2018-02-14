@@ -1,0 +1,15 @@
+$(document).ready(function(){
+    <% if @exchange.errors.any? %>
+      $("#exchange_form").html("<%= j render 'exchanges/form', pick: @pick, exchange: @exchange %>");
+    <% else %>
+      $("#exchange_form").html("<%= j render 'exchanges/form', pick: @pick, exchange: Exchange.new %>");
+      var newExchange = $("<%= j render 'exchanges/exchange', exchange: @exchange %>");
+      newExchange.hide();
+      $("#exchanges").append(newExchange);
+      newExchange.slideDown();
+    <% end %>
+})
+
+
+
+
