@@ -1,5 +1,6 @@
 
-<%= simple_form_for([pick, exchange], remote: true) do |f| %>
-  <%= f.input_field :question, label:"Une question ?", placeholder:"Tapez ici votre question" %>
-  <%= f.submit value: "POSTER", class: "btn btn-danger" %>
-<% end %>
+  <%= simple_form_for([pick, exchange]) do |f| %>
+    <%= f.input_field :question, label:"Une question ?", placeholder:"Tapez ici votre question" %>
+    <%= f.submit value: "POSTER", class: "btn btn-danger" %>
+  <% end %>
+

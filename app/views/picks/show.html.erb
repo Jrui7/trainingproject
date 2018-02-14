@@ -15,7 +15,9 @@
           Vous pouvez nous adresser une question
         <% else %>
           <% @pick.exchanges.each do |exchange| %>
-            <%= render 'exchanges/exchange', exchange: exchange %>
+            <p data-review-id="<%= exchange.id %>">
+              <%= exchange.question %>
+            </p>
           <% end %>
         <% end %>
       </div>
