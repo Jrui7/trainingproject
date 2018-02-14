@@ -17,6 +17,14 @@ class ExchangesController < ApplicationController
   end
 
   def destroy
+    @exchange = Exchange.find(params[:id])
+    @pick = @exchange.pick
+    @exchange.destroy
+
+    respond_to do |format|
+      format.html { redirect_to pick_path(@pick) }
+      format.js # render views/reviews/destroy.js.erb
+    end
   end
 
   private
