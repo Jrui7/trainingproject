@@ -28,7 +28,7 @@ class CampaignsController < ApplicationController
   end
 
   def message
-    @picks = Pick.joins(:exchanges).distinct
+    @picks =  Pick.joins(:exchanges).where(exchanges: { admin_review: false }).distinct
   end
 
 
