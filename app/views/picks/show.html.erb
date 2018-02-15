@@ -9,21 +9,41 @@
   <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2 pick-detail">
       <h2  class="pick-title"><%= @pick.seed.title %></h2>
-
-      <div id="exchanges">
-        <% if @pick.exchanges.blank? %>
-          Vous pouvez nous adresser une question
-        <% else %>
-          <% @pick.exchanges.each do |exchange| %>
-            <p data-review-id="<%= exchange.id %>">
-              <%= exchange.question %>
-            </p>
+      <div class="exchanges-and-questions">
+        <div id="exchanges">
+          <% if @pick.exchanges.blank? %>
+            <div class="exchange-header">Une question? Comment pouvons-nous vous aider?</div>
+          <% else %>
+            <div class="exchange-header">Nos échanges</div>
+            <div class="all-messages">
+              <% @pick.exchanges.each do |exchange| %>
+                <div class="message-block <%= exchange.message_author %>">
+                  <div class="avatar-author-date">
+                    <%if exchange.user.photo? %>
+                      <%= cl_image_tag exchange.user.photo.path, class: "author-avatar pic"%>
+                    <% else %>
+                      <i class="fa fa-user-o dropdown-toggle" class="author-avatar"></i>
+                    <% end %>
+                    <div class="author-and-date">
+                      <div class="message-sent"><%= exchange.created_at.strftime("%d/%m/%Y") %>
+                      </div>
+                      <div class="user-pseudo">
+                        <%= exchange.user.pseudo %>:
+                      </div>
+                    </div>
+                  </div>
+                  <div class="question-content">
+                    <%= exchange.question %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
           <% end %>
-        <% end %>
-      </div>
+        </div>
 
-      <div id="exchange_form">
-        <%= render 'exchanges/form', pick: @pick, exchange: @exchange %>
+        <div id="exchange_form">
+          <%= render 'exchanges/form', pick: @pick, exchange: @exchange %>
+        </div>
       </div>
 
     </div>

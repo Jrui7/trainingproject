@@ -26,8 +26,8 @@ class ApplicationController < ActionController::Base
     # Uncomment when you *really understand* Pundit!
      rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
      def user_not_authorized
-       flash[:alert] = "Accès non autorisé aux pirates des internets."
-       redirect_to(root_path)
+       flash[:alert] = "Erreur d'accès"
+       redirect_to(seeds_path)
      end
 
     private

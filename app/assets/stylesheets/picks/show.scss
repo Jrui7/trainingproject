@@ -1,6 +1,5 @@
 .pick-details-container {
   padding: 50px;
-  background-color: #F1F1F1;
   min-height: calc(100vh - 70px);
 }
 
@@ -8,5 +7,71 @@
   padding: 30px 60px;
   border-radius: 5px;
   box-shadow: 0 0 1px rgba(0,0,0,0.5);
-  background-color: #FFFFFF;
+  text-align: center;
 }
+
+.exchange-header {
+  margin-bottom: 15px;
+}
+
+.exchanges-and-questions {
+  text-align: center;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.all-messages {
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  border-top: 1px solid #dddddd;
+
+
+}
+
+.message-block {
+  display: block;
+  text-align: left;
+  padding: 6px 12px;
+  border-bottom: 1px solid #dddddd;
+
+  .avatar-author-date {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: #999999;
+  }
+
+  .pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  .author-and-date{
+    margin-left: 5px;
+  }
+}
+
+.admin {
+  background-color: #f1f8fc;
+}
+
+#exchanges, #exchange_form {
+  text-align: center;
+  margin-bottom: 25px;
+  .btn-default {
+    border-radius: 50px !important;
+    border: 3px solid $blue !important;
+    color: $blue !important;
+    padding: 6px 12px !important;
+    font-size: 16px !important;
+  }
+}
+
+#exchange_question {
+  width: 100%;
+  height: 80px;
+  padding: 5px;
+}
+

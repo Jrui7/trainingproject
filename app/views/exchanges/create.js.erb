@@ -1,6 +1,6 @@
 
   $("#exchange_form").html("<%= j render 'exchanges/form', pick: @pick, exchange: Exchange.new %>");
-  $("#exchanges").append("<%= j render 'exchanges/exchange', exchange: @exchange %>");
+  $(".all-messages").append("<%= j render 'exchanges/exchange', exchange: @exchange %>");
 
 
 

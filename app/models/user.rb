@@ -12,6 +12,7 @@ class User < ApplicationRecord
 
    has_many :seeds
    has_many :picks
+   has_many :exchanges
    has_many :addresses, dependent: :destroy
    has_attachment :photo
    has_many :user_preferences
@@ -24,7 +25,6 @@ class User < ApplicationRecord
   def has_photo?
     self.photo?
   end
-
 
   def has_picked?(seed)
     seed.picks.where(user: self).any?
