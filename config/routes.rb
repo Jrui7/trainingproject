@@ -25,14 +25,19 @@ Rails.application.routes.draw do
   get 'pending', to: 'campaigns#pending'
   get 'success', to: 'campaigns#success'
   get 'fail', to: 'campaigns#fail'
+
+  get 'message', to: 'campaigns#message'
+
+
   get 'admin', to: 'seeds#admin'
   get 'newest', to: 'seeds#newest'
   get 'popular', to: 'seeds#popular'
   get 'last_day', to: 'seeds#last_day'
+
   get 'faq', to: 'pages#faq'
   get 'home', to: 'pages#home'
-
   get 'team', to: 'pages#team'
+
   get 'my_seeds', to: 'my_seedlap#my_seeds'
   get 'my_picks', to: 'my_seedlap#my_picks'
 

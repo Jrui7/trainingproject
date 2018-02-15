@@ -1,6 +1,6 @@
 class CampaignsController < ApplicationController
 
-  before_action :set_and_authorize_campaign, only: [:pending, :success, :fail, :signaled]
+  before_action :set_and_authorize_campaign, only: [:pending, :success, :fail, :signaled, :message]
 
   def update
     @campaign = Campaign.find(params[:id])
@@ -25,6 +25,10 @@ class CampaignsController < ApplicationController
   def signaled
     @seeds = Seed.where(admin_review: "not-reviewed").joins(:signal_seed).distinct
     @signaled = Seed.where(admin_review: "not-reviewed").joins(:signal_seed).distinct.count
+  end
+
+  def message
+    @picks = Pick.joins(:exchanges).distinct
   end
 
 

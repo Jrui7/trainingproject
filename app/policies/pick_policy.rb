@@ -10,7 +10,7 @@ class PickPolicy < ApplicationPolicy
   end
 
   def show?
-    record.user == user
+    record.user == user || user.admin == true
   end
 
   def create?
@@ -28,5 +28,6 @@ class PickPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
 
 end

@@ -70,8 +70,6 @@ class PicksController < ApplicationController
     end
 
 
-
-
   end
 
   private
