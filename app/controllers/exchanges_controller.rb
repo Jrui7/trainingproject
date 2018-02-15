@@ -4,7 +4,10 @@ class ExchangesController < ApplicationController
     @exchange = @pick.exchanges.build(exchange_params)
     authorize @exchange
     if @exchange.save
-      redirect_to pick_path(@pick)
+      respond_to do |format|
+        format.html { redirect_to pick_path(@pick) }
+        format.js
+      end
     else
       render "picks/show"
     end
