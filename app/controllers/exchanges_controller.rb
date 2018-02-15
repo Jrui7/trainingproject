@@ -15,6 +15,15 @@ class ExchangesController < ApplicationController
 
   end
 
+  def update
+    @exchange = Exchange.find(params[:id])
+    authorize @exchange
+    @pick = @exchange.pick
+    @pick.mark_exchanges_as_answered
+    redirect_to admin_path
+  end
+
+
 
 
   private
