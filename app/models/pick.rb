@@ -31,13 +31,12 @@ class Pick < ApplicationRecord
     end
   end
 
-
-
-
-
-
-
-
+  def mark_exchanges_as_answered
+     self.exchanges.not_answered.each do |exchange|
+        exchange.admin_review = true
+        exchange.save
+     end
+  end
 
 
 end

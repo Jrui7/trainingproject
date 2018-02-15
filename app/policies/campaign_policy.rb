@@ -25,5 +25,9 @@ class CampaignPolicy < ApplicationPolicy
     user.admin == true
   end
 
+  def message?
+    user.admin == true
+  end
+
 
 end

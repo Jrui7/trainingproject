@@ -17,7 +17,7 @@
           <% else %>
             <div class="exchange-header">Nos échanges</div>
             <div class="all-messages">
-              <% @pick.exchanges.each do |exchange| %>
+              <% @pick.exchanges.includes(:user).each do |exchange| %>
                 <div class="message-block <%= exchange.message_author %>">
                   <div class="avatar-author-date">
                     <%if exchange.user.photo? %>
@@ -41,6 +41,13 @@
             </div>
           <% end %>
         </div>
+        <% if current_user.admin == true && @pick.exchanges.any? %>
+          <div class="validate-link">
+            <%= link_to exchange_path(@pick.exchanges.last), :method => :patch do%>
+              <div class="btn btn-default">Questions toute répondues: ok</div>
+            <% end %>
+          </div>
+        <% end %>
 
         <div id="exchange_form">
           <%= render 'exchanges/form', pick: @pick, exchange: @exchange %>
