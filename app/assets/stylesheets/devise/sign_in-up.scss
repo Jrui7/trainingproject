@@ -13,9 +13,21 @@
 
   }
 
+  #registrate {
+    margin: 30px 0;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
   label {
     border-bottom: 8px solid $blue;
     margin-bottom: 10px;
+  }
+
+  .form-actions {
+    text-align: center;
   }
 
   .btn-default {
@@ -28,6 +40,12 @@
 
   .optional {
     border-bottom: none;
+  }
+
+  .forgot-link {
+    text-align: center;
+    color: #4d4d5e;
+    font-size: 17px;
   }
 
 }
