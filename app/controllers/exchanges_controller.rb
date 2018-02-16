@@ -20,7 +20,7 @@ class ExchangesController < ApplicationController
     authorize @exchange
     @pick = @exchange.pick
     @pick.mark_exchanges_as_answered
-    redirect_to admin_path
+    redirect_to message_path
   end
 
 

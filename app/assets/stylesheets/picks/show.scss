@@ -58,8 +58,8 @@
 }
 
 .validate-link {
-  text-align: right;
   margin: 20px 0;
+  color: $blue;
   .btn-default {
     border-radius: 50px !important;
     border: 3px solid $red !important;
@@ -85,10 +85,46 @@
 #exchange_question {
   width: 100%;
   height: 80px;
-  padding: 5px;
+  padding: 5px 10px;
+  border: 1px solid $blue;
+  border-radius: 5px;
 }
 
 .post-question {
   margin-top: 20px;
 }
+
+
+
+@media(max-width: 992px) {
+
+  }
+
+  @media(max-width: 768px) {
+
+
+    }
+
+    @media(max-width: 480px) {
+
+    .pick-details-container {
+      padding: 0 15px;
+    }
+
+    .pick-detail {
+      padding: 0;
+      min-height: calc(100vh - 70px);
+
+    }
+
+    .exchanges-and-questions {
+      width: 90%;
+      margin-top: 30px;
+    }
+
+
+
+    }
+
+
 

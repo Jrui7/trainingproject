@@ -43,8 +43,9 @@
         </div>
         <% if current_user.admin == true && @pick.exchanges.any? %>
           <div class="validate-link">
+            <p>Toutes les questions client ont trouvé une réponse?</p>
             <%= link_to exchange_path(@pick.exchanges.last), :method => :patch do%>
-              <div class="btn btn-default">Questions toute répondues: ok</div>
+              <div class="btn btn-default">Oui</div>
             <% end %>
           </div>
         <% end %>

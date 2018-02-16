@@ -15,13 +15,13 @@
             </div>
           <% end %>
           <%= link_to message_path do %>
-            <div class="sub-title">
+            <div class="selected-category">
               <div class="filter-icon fa fa-envelope"></div>
               <p>Messages (<%= @picks.size %>)</p>
             </div>
           <% end %>
           <%= link_to pending_path do %>
-            <div class="selected-category">
+            <div class="sub-title">
               <div class="filter-icon fa fa-pause"></div>
               <p>Pending</p>
             </div>
