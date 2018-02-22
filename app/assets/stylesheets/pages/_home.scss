@@ -256,7 +256,7 @@
 
 
 .features-container {
-  background: linear-gradient(160deg, #fff 30%, #42D1FF 30%, #42D1FF 50%, #fff 50%, #fff 50.5%, #42D1FF 50.5%, #42D1FF 50.7%, #fff 50.7%);
+  background: linear-gradient(160deg, #fff 30%, #42D1FF 30%, #42D1FF 50%, #fff 50%, #fff 50.5%, #42D1FF 50.5%, #42D1FF 60.7%, #fff 60.7%);
 }
 
 #pick, #share, #save {
@@ -331,6 +331,25 @@
     width: 100%;
     border-radius: 5px;
   }
+
+
+  .home-blue-background-bottom {
+    padding: 50px 30px;
+    background-color: #42D1FF;
+  }
+
+  .how-it-works {
+    background-color: #FFF;
+    box-shadow: 0 0 7px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    padding: 30px;
+
+    h3 {
+      text-align: center;
+    }
+  }
+
+
 
 
 
