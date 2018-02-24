@@ -343,31 +343,56 @@
     box-shadow: 0 0 7px rgba(0,0,0,0.2);
     border-radius: 5px;
     padding: 30px;
+    text-align: center;
+
+
+
+
+
 
   }
 
   .how-it-works-head {
     margin-bottom: 30px;
+    text-align: center;
+
      h3{
       color: $blue;
-      text-align: center;
       font-size: 30px;
+      margin-bottom: 25px;
     }
     p {
-      font-size: 16px;
-      text-align: center;
-
-    }
-
-    #red-subt-title {
-      color: $red;
-      margin-top: 30px;
       font-size: 20px;
-      text-align: center;
     }
-
 
   }
+
+  .step{
+    margin-bottom: 40px;
+  }
+
+  .step-title {
+    font-weight: bold;
+    color: $red;
+    padding: 10px;
+    text-decoration: underline;
+    font-size: 20px;
+  }
+
+  .step-number {
+    display: flex;
+    justify-content: center;
+    background-color: $blue;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    align-items: center;
+    color: white;
+    margin: auto;
+    font-size: 25px;
+  }
+
+
 
 
 
