@@ -256,7 +256,7 @@
 
 
 .features-container {
-  background: linear-gradient(160deg, #fff 30%, #42D1FF 30%, #42D1FF 50%, #fff 50%, #fff 50.5%, #42D1FF 50.5%, #42D1FF 60.7%, #fff 60.7%);
+  background: linear-gradient(160deg, #fff 30%, #42D1FF 30%, #42D1FF 53%, #fff 53%, #fff 53.5%, #42D1FF 53.5%, #42D1FF 53.7%, #fff 53.7%);
 }
 
 #pick, #share, #save {
@@ -358,7 +358,7 @@
 
      h3{
       color: $blue;
-      font-size: 30px;
+      font-size: 35px;
       margin-bottom: 25px;
     }
     p {
@@ -368,15 +368,9 @@
   }
 
   .step{
-    margin-bottom: 40px;
-  }
-
-  .step-title {
-    font-weight: bold;
-    color: $red;
-    padding: 10px;
-    text-decoration: underline;
+    margin-bottom: 50px;
     font-size: 20px;
+    padding: 0 30px;
   }
 
   .step-number {
@@ -391,6 +385,20 @@
     margin: auto;
     font-size: 25px;
   }
+
+
+  .step-title {
+    font-weight: bold;
+    color: $red;
+    padding: 10px;
+    text-decoration: underline;
+  }
+
+  .step-text {
+    text-align: justify;
+    font-size: 17px;
+  }
+
 
 
 
