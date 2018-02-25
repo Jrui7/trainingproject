@@ -334,7 +334,7 @@
 
 
   .home-blue-background-bottom {
-    padding: 50px 30px;
+    padding: 50px 150px;
     background-color: #42D1FF;
   }
 
@@ -367,10 +367,18 @@
 
   }
 
+  .steps{
+    margin-bottom: 60px;
+  }
+
   .step{
-    margin-bottom: 50px;
     font-size: 20px;
     padding: 0 30px;
+  }
+  .list {
+    font-size: 20px;
+    padding: 0 30px;
+    text-align: left;
   }
 
   .step-number {
@@ -392,6 +400,15 @@
     color: $red;
     padding: 10px;
     text-decoration: underline;
+    font-size: 20px;
+  }
+
+  .step-sub-explanation{
+    margin-bottom: 50px;
+    font-size: 17px;
+    font-weight: bold;
+    width: 60%;
+    margin: 0 auto 50px auto;
   }
 
   .step-text {
@@ -593,7 +610,13 @@
     margin: 0;
   }
 
+  .home-blue-background-bottom {
+      padding: 50px 30px;
+    }
+
 }
+
+
 
 .bounce {
   position: relative;
