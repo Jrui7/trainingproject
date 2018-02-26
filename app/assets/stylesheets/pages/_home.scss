@@ -396,22 +396,7 @@
     padding: 0 30px;
   }
 
-  .list {
-    font-size: 17px;
-    padding: 0 30px;
-    text-align: left;
-  }
 
-  .pick-validated{
-    margin: 0 auto;
-    padding: 15px;
-    width: 50%;
-    text-align: center;
-    background-color: $blue;
-    color: white;
-    border-radius: 5px;
-    margin-bottom: 25px;
-  }
 
   .step-number {
     display: flex;
@@ -431,18 +416,11 @@
     font-weight: bold;
     color: $red;
     padding: 10px;
-    text-decoration: underline;
     font-size: 20px;
-    margin-top: 25px;
+    margin-top: 10px;
+
   }
 
-  .step-sub-explanation{
-    margin-bottom: 50px;
-    font-size: 17px;
-    font-weight: bold;
-    width: 60%;
-    margin: 0 auto 50px auto;
-  }
 
   .step-text {
     text-align: justify;
@@ -450,6 +428,32 @@
     line-height: 1.7;
   }
 
+  .finalization-title {
+      font-weight: bold;
+      color: $red;
+      padding: 10px;
+      font-size: 20px;
+      margin: 20px 0 25px 0;
+
+    }
+
+
+  .list {
+    font-size: 17px;
+    padding: 0 30px;
+    text-align: left;
+  }
+
+  .pick-validated{
+    margin: 0 auto;
+    padding: 15px;
+    width: 50%;
+    text-align: center;
+    background-color: $blue;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 25px;
+  }
 
 
 
