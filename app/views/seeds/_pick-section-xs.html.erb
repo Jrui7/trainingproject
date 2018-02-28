@@ -1,4 +1,6 @@
-<% if current_user.has_picked?(@seed) %>
+
+<% if current_user %>
+  <% if current_user.has_picked?(@seed) %>
     <div class="picked-bar-xs hidden-md hidden-lg">
       <p class="has_picked">Seed pické</p>
     </div>
@@ -10,3 +12,11 @@
       </div>
     <% end %>
   <% end %>
+<% else %>
+  <%= link_to new_user_session_path do %>
+    <div class="pick-bar-xs hidden-md hidden-lg">
+      <i class="fa fa-hand-lizard-o" aria-hidden="true"> </i>
+      <p>Pick it</p>
+    </div>
+  <% end %>
+<% end %>
