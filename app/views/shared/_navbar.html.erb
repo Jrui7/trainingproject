@@ -16,12 +16,15 @@
         <div class="navbar-right">
           <div class="new-seed">
             <%= link_to new_seed_path do %>
-              <i class="fa fa-bullhorn" aria-hidden="true"></i>
+              <i class="fa fa-plus" aria-hidden="true">
+              </i>
             <% end %>
+            <span class="tooltiptext">Poster un produit</span>
           </div>
 
           <div class="my-picks">
             <%= render "shared/pending-picks" %>
+            <span class="tooltiptext">Mes picks</span>
           </div>
 
           <div class="user-menu">
@@ -94,7 +97,7 @@
                 </li>
                 <li>
                   <%= link_to new_seed_path do %>
-                    <i class="fa fa-bullhorn" aria-hidden="true"></i> <%= t(".new_seed_xs", default: "Poster") %>
+                    <i class="fa fa-plus" aria-hidden="true"></i> <%= t(".new_seed_xs", default: "Poster") %>
                   <% end %>
                 </li>
                 <li>

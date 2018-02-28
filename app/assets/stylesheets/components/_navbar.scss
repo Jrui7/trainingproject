@@ -84,11 +84,64 @@
 
 .new-seed {
   margin: 0 10px;
+  position: relative;
+  display: inline-block;
 
+  .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: $blue;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+  }
+
+  .tooltiptext::after {
+      visibility: visible;
+  }
+
+  &:hover .tooltiptext {
+      visibility: visible;
+  }
+}
+
+.menu-links-text{
+  font-size:15px;
 }
 
 .my-picks {
   margin: 0 10px;
+  position: relative;
+  display: inline-block;
+
+  .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: $blue;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+  }
+
+  .tooltiptext::after {
+      visibility: visible;
+  }
+
+  &:hover .tooltiptext {
+      visibility: visible;
+  }
 }
 
 .pending {
@@ -107,7 +160,10 @@
     text-decoration: none;
     color: rgba(15, 163, 177, 1);
    }
+
   }
+
+
 
   .picks-pending {
     position: absolute;
@@ -128,7 +184,7 @@
 
 }
 
-.fa-bullhorn {
+.fa-plus {
   font-size: 25px;
   padding: 10px;
   color: $blue;
@@ -265,7 +321,7 @@
 
     a{
 
-      .fa-bullhorn {
+      .fa-plus {
         font-size: 15px;
         color: white;
         padding: 0;
@@ -279,7 +335,7 @@
       }
 
       &:hover {
-        .fa-bullhorn {
+        .fa-plus {
           background: transparent !important;
           color: black !important;
         }
