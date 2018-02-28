@@ -1,6 +1,6 @@
 class SeedsController < ApplicationController
 
-  before_action :set_sample, only: [:index, :last_day, :popular, :newest]
+  before_action :set_sample, only: [:index, :last_day, :popular, :newest, :show, :new]
   skip_before_action :authenticate_user!, only: [:index, :last_day, :popular, :newest, :show]
 
 
@@ -99,13 +99,6 @@ class SeedsController < ApplicationController
     params.require(:seed).permit(:admin_review)
   end
 
-  def set_sample
-    if Seed.ongoing.any? == true
-      @sample = Seed.seed_selection.sample
-    else
-      @sample = Seed.seed_sample_expired.sample
-    end
-  end
 
 
 end

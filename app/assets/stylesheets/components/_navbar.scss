@@ -1,6 +1,5 @@
 .navbar-container {
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
+  background: $blue;
 }
 
 .navbar:before, .navbar:after {
@@ -23,27 +22,28 @@
 .logo-box {
   display: flex;
   align-items: flex-start;
+  color: white;
+
 
 }
 
 #logo-text {
   font-size: 25px;
   font-style: italic;
-  color: $blue;
   margin-right: 4px;
   a {
   text-decoration: none;
    &:hover{
     text-decoration: none;
-    color: $blue;
+    color: white;
    }
   }
 }
 
 #logo-icon {
   font-size: 30px;
-  color: $blue;
   text-decoration: none;
+  color: white;
 }
 
 
@@ -55,10 +55,10 @@
 
  a {
   text-decoration: none;
-  color: $blue;
+  color: white;
 
     &:hover {
-    color: $blue;
+    color: white;
     text-decoration: none;
     }
   }
@@ -71,30 +71,39 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: white;
 }
 
 .sign-links {
   padding: 5px 10px;
+  color: white;
+
+  &:hover{
+    color: white;
+  }
 }
 
 .new-seed {
   margin: 0 10px;
   position: relative;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   .tooltiptext {
     visibility: hidden;
-    width: 120px;
-    background-color: $blue;
-    color: white;
+    background-color: white;
+    color: #49c4f4;
+    border: 1px solid #49c4f4;
     text-align: center;
     border-radius: 6px;
-    padding: 5px 0;
+    padding: 5px;
     position: absolute;
     z-index: 1;
-    top: 100%;
-    left: 50%;
-    margin-left: -60px;
+    top: 90%;
+    min-width: 90px;
+    font-size: 15px;
   }
 
   .tooltiptext::after {
@@ -113,21 +122,24 @@
 .my-picks {
   margin: 0 10px;
   position: relative;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   .tooltiptext {
     visibility: hidden;
-    width: 120px;
-    background-color: $blue;
-    color: white;
+    background-color: white;
+    color: $blue;
+    border: 1px solid $blue;
     text-align: center;
     border-radius: 6px;
-    padding: 5px 0;
+    padding: 5px;
     position: absolute;
     z-index: 1;
-    top: 100%;
-    left: 50%;
-    margin-left: -60px;
+    top: 90%;
+    min-width: 90px;
+    font-size: 15px;
   }
 
   .tooltiptext::after {
@@ -148,12 +160,11 @@
 .fa-hand-lizard-o {
   font-size: 25px;
   padding: 10px;
-  color: $blue;
+  color: white;
   a {
   text-decoration: none;
    &:hover{
     text-decoration: none;
-    color: rgba(15, 163, 177, 1);
    }
 
   }
@@ -182,13 +193,13 @@
 .fa-plus {
   font-size: 25px;
   padding: 10px;
-  color: $blue;
+  color: white;
 
   a {
   text-decoration: none;
    &:hover{
     text-decoration: none;
-    color: $blue;
+    color: white;
    }
   }
 }
@@ -209,16 +220,16 @@
 
 .fa-user-o {
   font-size: 17px;
-  background-color: $blue;
+  background-color: white;
   border-radius: 50%;
   padding: 10px;
-  color: white;
+  color: $blue;
 
   a {
   text-decoration: none;
    &:hover{
     text-decoration: none;
-    color: white;
+    color: $blue;
    }
   }
 
@@ -227,7 +238,7 @@
 .fa-user-plus {
   font-size: 20px;
   padding: 10px;
-  color: $gray;
+  color: white;
 
   a {
   text-decoration: none;
@@ -240,7 +251,7 @@
 
 .glyphicon-option-vertical {
   padding: 10px;
-  color: $blue;
+  color: white;
   font-size: 17px;
 }
 
@@ -259,14 +270,14 @@
 /* Dropdown */
 .navbar-dropdown-menu {
   margin-top: 16px;
-  border-color: $blue;
-  background-color: $blue;
+  border-color: white;
+  background-color: white;
 
 }
 .navbar-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: white !important;
+  color: $blue !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
@@ -282,14 +293,14 @@
   position: absolute;
   right: 10px;
   top: -6px;
-  background-color: $blue;
+  background-color: white;
   transform: rotate(45deg);
-  border-left: 1px solid $blue;
-  border-top: 1px solid $blue;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
 }
 
 .sub-container{
-
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
 }
 
 .sub-nav {
@@ -298,13 +309,46 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 70px;
+  height: 50px;
   margin-bottom: 0px;
 
-  .item{
-    padding: 5px 10px;
+}
+
+
+
+.cat {
+  display: flex;
+  align-items: center;
+  transition: all 0.1s;
+  padding: 5px 30px;
+  color: #4c4c4c;
+  text-transform: uppercase;
+  position: relative;
+
+  &:after {
+    border-left: 1px solid #4c4c4c;
+    height: 50%;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 25%;
   }
 
+
+    &:hover {
+}
+  a {
+    text-decoration: none;
+  }
+  p {
+    margin: 0;
+    font-size: 16px;
+  }
+
+}
+
+.selected {
+  color: $blue;
 }
 
 
@@ -334,19 +378,18 @@
 
 
   .dropdown-menu {
-
     a{
 
       .fa-plus {
         font-size: 15px;
-        color: white;
+        color: $blue;
         padding: 0;
 
       }
 
       .fa-hand-lizard-o {
         font-size: 15px;
-        color: white;
+        color: $blue;
         padding: 0;
       }
 

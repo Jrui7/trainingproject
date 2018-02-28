@@ -1,0 +1,34 @@
+<div class="sub-container hidden-xs">
+  <div class="sub-nav">
+    <%= link_to seeds_path do %>
+      <div class="cat">
+        <div class="filter-icon glyphicon glyphicon-globe"></div>
+        <p>Tous</p>
+      </div>
+    <% end %>
+    <%= link_to popular_path do %>
+      <div class="cat">
+        <div class="filter-icon glyphicon glyphicon-fire"></div>
+        <p>Tendances</p>
+      </div>
+    <% end %>
+    <%= link_to newest_path do %>
+      <div class="cat">
+        <div class="filter-icon glyphicon glyphicon-leaf"></div>
+        <p>Récents</p>
+      </div>
+    <% end %>
+    <%= link_to last_day_path do %>
+      <div class="cat">
+        <div class="filter-icon glyphicon glyphicon-flash"></div>
+        <p>Dernier jour</p>
+      </div>
+    <% end %>
+    <%= link_to seed_path(@sample) do %>
+    <div class="cat">
+      <div class="filter-icon glyphicon glyphicon-random"></div>
+      <p>Hasard</p>
+    </div>
+    <% end %>
+  </div>
+</div>
