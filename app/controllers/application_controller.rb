@@ -3,6 +3,13 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  def set_sample
+    if Seed.ongoing.any? == true
+      @sample = Seed.seed_selection.sample
+    else
+      @sample = Seed.seed_sample_expired.sample
+    end
+  end
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
@@ -35,6 +42,8 @@ class ApplicationController < ActionController::Base
     def skip_pundit?
       devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
     end
+
+
 
 
 

@@ -1,6 +1,6 @@
 class PicksController < ApplicationController
 
-    after_action :verify_authorized
+  after_action :verify_authorized
 
   def index
     @user = current_user

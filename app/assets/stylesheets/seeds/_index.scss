@@ -108,30 +108,6 @@
   }
 
 
-  .sub-title {
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    transition: all 0.1s;
-    padding: 5px 13px 5px 13px;
-    box-shadow: none;
-
-
-    &:hover{
-      background-color: inherit;
-    }
-
-
-    a {
-      text-decoration: none;
-    }
-    p {
-      margin: 0;
-      color: #FFFFFF;
-      font-size: 15px;
-    }
-  }
-
   .selected-category {
     display: flex;
     align-items: center;
@@ -261,25 +237,7 @@ a:hover {
   font-size: 18px;
 }
 
-.glyphicon-globe {
-  color: $blueworld;
-}
 
-.glyphicon-fire {
-  color: $red;
-}
-
-.glyphicon-leaf {
-  color: $green;
-}
-
-.glyphicon-flash {
-  color: $orange;
-}
-
-.glyphicon-random {
-  color: $pink;
-}
 
 .sub-title {
   display: flex;

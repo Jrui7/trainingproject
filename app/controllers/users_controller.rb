@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+  before_action :set_sample, only: [:show]
+
+
   def show
     @user = current_user
     @addresses = @user.addresses
@@ -24,6 +27,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:photo, :insta, :youtube, :facebook, :snap, :mini_bio, :pseudo, :email, :sex, :date_of_birth)
   end
+
 
 
 end
