@@ -13,6 +13,9 @@
             <%= f.button :submit, "Connexion" %>
           </div>
         <% end %>
+        <%= link_to new_user_registration_path do %>
+          <div class="sign-link">Je n'ai pas encore de compte</div>
+        <% end %>
         <%= link_to "#lostModal", data: { toggle: "modal" } do%>
             <div class="forgot-link">Mot de passe oublié?</div>
         <% end %>
