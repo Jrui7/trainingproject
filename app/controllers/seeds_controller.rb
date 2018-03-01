@@ -80,7 +80,7 @@ class SeedsController < ApplicationController
   end
 
   def admin
-    @pending = Seed.seed_selection.joins(:campaign).where(campaigns: {status: "pending"})
+    @pending = Seed.where.not(admin_review:"Invalide").includes(:campaign).joins(:campaign).where(campaigns: {status: "pending"})
     @signaled = Seed.where(admin_review: "not-reviewed").joins(:signal_seed).distinct
     @picks =  Pick.joins(:exchanges).where(exchanges: { admin_review: false }).distinct
 
