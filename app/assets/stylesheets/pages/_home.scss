@@ -426,7 +426,7 @@ clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 68% 100%, 0 100%, 0% 80%, 0
       font-weight: bold;
       padding: 10px;
       font-size: 20px;
-      margin: 20px 0 25px 0;
+      margin: 20px 0 0 0;
 
     }
 
@@ -445,7 +445,7 @@ clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 68% 100%, 0 100%, 0% 80%, 0
     background-color: $blue;
     color: white;
     border-radius: 5px;
-    margin-bottom: 25px;
+    margin: 25px auto;
   }
 
 
@@ -632,6 +632,9 @@ clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 68% 100%, 0 100%, 0% 80%, 0
 
   .how-it-works {
     padding: 15px 20px;
+    p{
+      font-size: 15px;
+    }
   }
 
   .all-features {
@@ -639,8 +642,28 @@ clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 68% 100%, 0 100%, 0% 80%, 0
   }
 
   .home-blue-background-bottom {
-      padding: 50px 30px;
+      padding: 50px 20px;
     }
+  .how-it-works-head  {
+     h3{
+      font-size: 25px;
+     }
+    .cog-and-text {
+      .fa {
+        font-size: 25px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .step {
+    font-size: 20px;
+    padding: 10px 10px;
+}
+
+.step-text{
+  font-size: 15px;
+}
 
 }
 
