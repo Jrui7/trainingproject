@@ -82,6 +82,10 @@
 
       <div class="hidden-sm hidden-md hidden-lg">
         <div class="navbar-right">
+          <div class="my-picks">
+            <%= render "shared/pending-picks" %>
+            <span class="tooltiptext">Mes picks</span>
+          </div>
           <div class="user-menu">
             <div class="dropdown">
               <% if current_user.photo? %>
@@ -98,11 +102,6 @@
                 <li>
                   <%= link_to new_seed_path do %>
                     <i class="fa fa-plus" aria-hidden="true"></i> <%= t(".new_seed_xs", default: "Poster") %>
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to my_picks_path do %>
-                    <i class="fa fa-hand-lizard-o"></i> <%= t(".my_picks_xs", default: "Mes picks") %>
                   <% end %>
                 </li>
                 <li>
