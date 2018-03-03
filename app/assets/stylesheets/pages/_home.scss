@@ -221,7 +221,7 @@ clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 68% 100%, 0 100%, 0% 80%, 0
   .concept {
     max-width: 600px;
     text-align: center;
-    margin: 50px auto 0 auto;
+    margin: 0 auto;
 
 
     p {
@@ -540,11 +540,9 @@ clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 68% 100%, 0 100%, 0% 80%, 0
   .banner-container {
     padding-top: 55px;
   }
-
-  .moto-centered {
-    font-size: 23px;
-    text-align: center;
-  }
+.moto{
+  font-size: 45px;
+}
 
   .concept {
     margin: 10px auto 0 auto;
@@ -619,9 +617,7 @@ clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 68% 100%, 0 100%, 0% 80%, 0
   }
 
   #victory-xs {
-    max-width: 90%;
-    border-radius: 5px;
-    border: 5px solid $blue;
+    max-width: 100%;
   }
 
 
