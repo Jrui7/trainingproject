@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+=begin
 User.destroy_all
 Category.destroy_all
 
@@ -34,6 +35,22 @@ t = Address.create(user_id: thomas.id, full_name: "Thomas Caillol", street: "1 r
 
 puts "Addreses created !"
 puts "--------------------"
+=end
+
+
+
+mode = Category.where(name: "Mode").first
+beauté = Category.where(name: "Beaute").first
+art = Category.where(name: "Art").first
+sorties = Category.where(name: "Sorties").first
+sport = Category.where(name: "Sport").first
+loisir = Category.where(name: "Loisir").first
+
+jorge = User.first
+renan = User.where(pseudo: "TheVoice").first
+thomas = User.where(pseudo: "SurfMousse").first
+
+Seed.destroy_all
 
 
 seed_sport  = Seed.create(price: 100, popularity: 0, view_counter: 0, url: "https://www.youtube.com/watch?v=5AhY_-qUb4w" , secondary_url: "https://www.youtube.com/watch?v=sKeslrZ-i6k", title: "Le tube d'Hendaye", expiration: DateTime.now.utc + 3.days, user_id: thomas.id, category_id: sport.id, description: "Perso Ma Men, c'est les plus grosses vagues que j'ai ridé", photo_urls: ["http://res.cloudinary.com/dlddnk3pr/image/upload/v1505138572/eecindhnvh2ltpxpitb9.jpg", "http://res.cloudinary.com/dlddnk3pr/image/upload/v1504544452/yxdwojuuq0q71p2oemmz.jpg"])
