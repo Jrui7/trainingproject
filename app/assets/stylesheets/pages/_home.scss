@@ -658,11 +658,15 @@ clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 68% 100%, 0 100%, 0% 80%, 0
 
   .step {
     font-size: 20px;
-    padding: 10px 10px;
+    padding: 10px;
 }
 
 .step-text{
   font-size: 15px;
+}
+
+.list {
+  padding: 0 10px;
 }
 
 }
