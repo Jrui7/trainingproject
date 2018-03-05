@@ -369,6 +369,7 @@ a:hover {
 
 .product-category{
   display: flex;
+  text-transform: uppercase;
 
   .Sport {
     border: 1px solid #e8e8e8;
@@ -378,7 +379,15 @@ a:hover {
     background-color: $red;
   }
 
-  .Sorties {
+  .Enfants {
+    border: 1px solid #e8e8e8;
+    color: white;
+    border-radius: 3px;
+    padding: 0 10px 0 10px;
+    background-color: pink;
+  }
+
+  .Animaux {
     border: 1px solid #e8e8e8;
     color: white;
     border-radius: 3px;
@@ -402,7 +411,7 @@ a:hover {
     background-color: $orange;
   }
 
-  .Beaute {
+  .Maison {
     border: 1px solid #e8e8e8;
     color: white;
     border-radius: 3px;
@@ -410,7 +419,7 @@ a:hover {
     background-color: $blue;
   }
 
-  .Art {
+  .Tech {
     border: 1px solid #e8e8e8;
     color: white;
     border-radius: 3px;
