@@ -1,4 +1,3 @@
 class Category < ApplicationRecord
-  has_many :seeds
-  has_many :user_preferences
+  has_many :seeds, dependent: :destroy
 end

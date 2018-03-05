@@ -1,22 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 
 =begin
 User.destroy_all
-Category.destroy_all
 
-mode = Category.create(name: "Mode")
-beauté = Category.create(name: "Beaute")
-art = Category.create(name: "Art")
-sorties = Category.create(name: "Sorties")
-sport = Category.create(name: "Sport")
-loisir = Category.create(name: "Loisir")
 
 
 puts "Categories created !"
@@ -37,14 +22,16 @@ puts "Addreses created !"
 puts "--------------------"
 =end
 
+Category.destroy_all
 
+mode = Category.create(name: "Mode & Beauté")
+sport = Category.create(name: "Sport")
+tech = Category.create(name: "Tech")
+loisir = Category.create(name: "Loisir & Sorties")
+maison = Category.create(name: "Maison")
+enfants = Category.create(name: "Enfants")
+animaux = Category.create(name: "Animaux")
 
-mode = Category.where(name: "Mode").first
-beauté = Category.where(name: "Beaute").first
-art = Category.where(name: "Art").first
-sorties = Category.where(name: "Sorties").first
-sport = Category.where(name: "Sport").first
-loisir = Category.where(name: "Loisir").first
 
 jorge = User.first
 renan = User.where(pseudo: "TheVoice").first
@@ -52,25 +39,24 @@ thomas = User.where(pseudo: "SurfMousse").first
 
 Seed.destroy_all
 
-
-seed_sport  = Seed.create(price: 100, popularity: 0, view_counter: 0, url: "https://www.youtube.com/watch?v=5AhY_-qUb4w" , secondary_url: "https://www.youtube.com/watch?v=sKeslrZ-i6k", title: "Le tube d'Hendaye", expiration: DateTime.now.utc + 3.days, user_id: thomas.id, category_id: sport.id, description: "Perso Ma Men, c'est les plus grosses vagues que j'ai ridé", photo_urls: ["http://res.cloudinary.com/dlddnk3pr/image/upload/v1505138572/eecindhnvh2ltpxpitb9.jpg", "http://res.cloudinary.com/dlddnk3pr/image/upload/v1504544452/yxdwojuuq0q71p2oemmz.jpg"])
 seed_mode = Seed.create(price: 150, popularity: 0, view_counter: 0, url: "https://www.youtube.com/watch?v=5AhY_-qUb4w" ,secondary_url: "", title: "T-shirt Psycha", expiration: DateTime.now.utc + 3.days, user_id: thomas.id, category_id: mode.id, description: "Avec ça Men, tu peux même parler boulot après 19h00", photo_urls: ["http://res.cloudinary.com/dlddnk3pr/image/upload/v1509956287/hdecr3jxijppwsukhi0l.jpg", "http://res.cloudinary.com/dlddnk3pr/image/upload/v1509623265/ridfuoa67vz6ewlb3zop.jpg", "http://res.cloudinary.com/dlddnk3pr/image/upload/v1505138572/eecindhnvh2ltpxpitb9.jpg"])
+seed_sport  = Seed.create(price: 100, popularity: 0, view_counter: 0, url: "https://www.youtube.com/watch?v=5AhY_-qUb4w" , secondary_url: "https://www.youtube.com/watch?v=sKeslrZ-i6k", title: "Le tube d'Hendaye", expiration: DateTime.now.utc + 3.days, user_id: thomas.id, category_id: sport.id, description: "Perso Ma Men, c'est les plus grosses vagues que j'ai ridé", photo_urls: ["http://res.cloudinary.com/dlddnk3pr/image/upload/v1505138572/eecindhnvh2ltpxpitb9.jpg", "http://res.cloudinary.com/dlddnk3pr/image/upload/v1504544452/yxdwojuuq0q71p2oemmz.jpg"])
+seed_tech = Seed.create(price: 250, popularity: 0, view_counter: 0, url: "https://www.youtube.com/watch?v=XkA6UAfmJjc" ,secondary_url: "", title: "Pour être beau comme un prince", expiration: DateTime.now.utc + 2.days, user_id: jorge.id, category_id: tech.id, description: "C'est l'astuce pour transformer n'importe qui en super-model", photo_urls: ["http://res.cloudinary.com/dlddnk3pr/image/upload/v1509787225/upljdsxonu1c9skxuemd.jpg", "http://res.cloudinary.com/dlddnk3pr/image/upload/v1505138572/eecindhnvh2ltpxpitb9.jpg"])
 seed_loisir = Seed.create(price: 200, popularity: 0, view_counter: 0, url: "https://www.youtube.com/watch?v=XkA6UAfmJjc" ,secondary_url: "", title: "La balle fusion", expiration: DateTime.now.utc + 2.days, user_id: jorge.id, category_id: loisir.id, description: "Ca file au vent, pénétration idéale", photo_urls: ["http://res.cloudinary.com/dlddnk3pr/image/upload/v1504544452/yxdwojuuq0q71p2oemmz.jpg", "http://res.cloudinary.com/dlddnk3pr/image/upload/v1505138572/eecindhnvh2ltpxpitb9.jpg"])
-seed_beauté = Seed.create(price: 250, popularity: 0, view_counter: 0, url: "https://www.youtube.com/watch?v=XkA6UAfmJjc" ,secondary_url: "", title: "Pour être beau comme un prince", expiration: DateTime.now.utc + 2.days, user_id: jorge.id, category_id: beauté.id, description: "C'est l'astuce pour transformer n'importe qui en super-model", photo_urls: ["http://res.cloudinary.com/dlddnk3pr/image/upload/v1509787225/upljdsxonu1c9skxuemd.jpg", "http://res.cloudinary.com/dlddnk3pr/image/upload/v1505138572/eecindhnvh2ltpxpitb9.jpg"])
-seed_art = Seed.create(price: 300, popularity: 0, view_counter: 0, url: "https://www.youtube.com/watch?v=KNuUGEahHg8" , secondary_url: "", title: "L'oeuvre d'art des artistes", expiration: DateTime.now.utc + 4.days, user_id: renan.id, category_id: art.id, description: "J'aime bien les chiens, regardez ma photo de profil, et ça c'est un super chien", photo_urls: ["http://res.cloudinary.com/dlddnk3pr/image/upload/v1504619657/wmjrhxdqczonc6jbz9g0.jpg", "http://res.cloudinary.com/dlddnk3pr/image/upload/v1505138572/eecindhnvh2ltpxpitb9.jpg"])
-seed_sorties = Seed.create(price: 350, popularity: 0, view_counter: 0, url: "https://www.youtube.com/watch?v=VHYUjNh0T1w" ,secondary_url: "", title: "Meilleure table vegan de Los Angeles", expiration: DateTime.now.utc + 4.days, user_id: renan.id, category_id: sorties.id, description: "Avec des plats comme ceux-ci, plus d'excuse pour ne pas tenter de changer son alimentation", photo_urls: ["http://res.cloudinary.com/dlddnk3pr/image/upload/v1509986837/vegan_xiomv3.jpg", "http://res.cloudinary.com/dlddnk3pr/image/upload/v1505138572/eecindhnvh2ltpxpitb9.jpg"])
-seed_test = Seed.create(price: 400, popularity: 0, view_counter: 0, url: "https://www.youtube.com/watch?v=VHYUjNh0T1w" ,secondary_url: "", title: "Test si ça marche", expiration: DateTime.now.utc + 1.minutes, user_id: renan.id, category_id: sorties.id, description: "Avec des plats comme ceux-ci, plus d'excuse pour ne pas tenter de changer son alimentation", photo_urls: ["http://res.cloudinary.com/dlddnk3pr/image/upload/v1509986837/vegan_xiomv3.jpg", "http://res.cloudinary.com/dlddnk3pr/image/upload/v1505138572/eecindhnvh2ltpxpitb9.jpg"])
+seed_maison = Seed.create(price: 300, popularity: 0, view_counter: 0, url: "https://www.youtube.com/watch?v=KNuUGEahHg8" , secondary_url: "", title: "L'oeuvre d'art des artistes", expiration: DateTime.now.utc + 4.days, user_id: renan.id, category_id: maison.id, description: "J'aime bien les chiens, regardez ma photo de profil, et ça c'est un super chien", photo_urls: ["http://res.cloudinary.com/dlddnk3pr/image/upload/v1504619657/wmjrhxdqczonc6jbz9g0.jpg", "http://res.cloudinary.com/dlddnk3pr/image/upload/v1505138572/eecindhnvh2ltpxpitb9.jpg"])
+seed_enfants = Seed.create(price: 350, popularity: 0, view_counter: 0, url: "https://www.youtube.com/watch?v=VHYUjNh0T1w" ,secondary_url: "", title: "Meilleure table vegan de Los Angeles", expiration: DateTime.now.utc + 4.days, user_id: renan.id, category_id:enfants.id, description: "Avec des plats comme ceux-ci, plus d'excuse pour ne pas tenter de changer son alimentation", photo_urls: ["http://res.cloudinary.com/dlddnk3pr/image/upload/v1509986837/vegan_xiomv3.jpg", "http://res.cloudinary.com/dlddnk3pr/image/upload/v1505138572/eecindhnvh2ltpxpitb9.jpg"])
+seed_animaux = Seed.create(price: 400, popularity: 0, view_counter: 0, url: "https://www.youtube.com/watch?v=VHYUjNh0T1w" ,secondary_url: "", title: "Test si ça marche", expiration: DateTime.now.utc + 1.minutes, user_id: renan.id, category_id: animaux.id, description: "Avec des plats comme ceux-ci, plus d'excuse pour ne pas tenter de changer son alimentation", photo_urls: ["http://res.cloudinary.com/dlddnk3pr/image/upload/v1509986837/vegan_xiomv3.jpg", "http://res.cloudinary.com/dlddnk3pr/image/upload/v1505138572/eecindhnvh2ltpxpitb9.jpg"])
 
 puts "Seed created"
 puts "----------------------"
 
-campaign1 = Campaign.create(seed_id: seed_sport.id)
-campaign2 = Campaign.create(seed_id: seed_mode.id)
-campaign3 = Campaign.create(seed_id: seed_loisir.id)
-campaign4 = Campaign.create(seed_id: seed_beauté.id)
-campaign5 = Campaign.create(seed_id: seed_art.id)
-campaign6 = Campaign.create(seed_id: seed_sorties.id)
-campaign7 = Campaign.create(seed_id: seed_test.id)
+campaign1 = Campaign.create(seed_id: seed_mode.id)
+campaign2 = Campaign.create(seed_id: seed_sport.id)
+campaign3 = Campaign.create(seed_id: seed_tech.id)
+campaign4 = Campaign.create(seed_id: seed_loisir.id)
+campaign5 = Campaign.create(seed_id: seed_maison.id)
+campaign6 = Campaign.create(seed_id: seed_enfants.id)
+campaign7 = Campaign.create(seed_id: seed_animaux.id)
 
 puts "Campaigns created"
 puts "-----------------------"

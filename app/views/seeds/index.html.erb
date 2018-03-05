@@ -63,17 +63,7 @@
                <% end %>
               </div>
               <div class="sub-categories">
-                <% @categories.each do |category| %>
-                  <%= link_to seeds_path(category: category.id), remote: true do %>
-                    <div class="sub-title-xs <%= category.id %>">
-                      <div class="name-and-count">
-                        <p><%= category.name%></p>
-                        <p class="number-of-seeds <%=category.id%> hidden">(<%=@seeds.where(category: category).count%>)</p>
-                      </div>
-                    </div>
-
-                  <% end %>
-                <% end %>
+                <%= render "shared/categories", categories: @categories %>
               </div>
             </div>
               <div class="btn validate-filter">Valider</div>
@@ -152,20 +142,7 @@
          <% end %>
         </div>
         <div class="sub-categories">
-          <% @categories.each do |category| %>
-            <%= link_to seeds_path(category: category.id), remote: true do %>
-              <div>
-                <div class="sub-title <%= category.id %>">
-                  <p><%= image_tag "categories.jpg", class: "categories-icon" %>
-                  </p>
-                  <div class="name-and-count">
-                    <p><%= category.name%></p>
-                    <p class="number-of-seeds <%=category.id%> hidden">(<%=@seeds.where(category: category).count%>)</p>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
+        <%= render "shared/categories", categories: @categories %>
         </div>
       </div>
     </div>
