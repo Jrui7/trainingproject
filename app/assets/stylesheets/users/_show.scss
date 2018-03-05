@@ -103,7 +103,6 @@
 
   .user-form {
     padding: 20px 20px;
-    box-shadow: 0 8px 6px -6px;
 
 
       label {
@@ -302,6 +301,17 @@
 
   #update-user {
     margin: 20px 0;
+  }
+
+  .seedlap {
+    border-radius: 50px;
+    border: 3px solid $blue;
+    color: $blue;
+    background-color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 15px;
   }
 
 

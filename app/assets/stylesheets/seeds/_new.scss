@@ -187,6 +187,16 @@ abbr {
     width: 50%;
   }
 
+  .seedlap-danger {
+    border-radius: 50px;
+    border: 3px solid $red;
+    color: $red;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 15px;
+  }
+
 
   .input-block {
     font-size: 15px;
