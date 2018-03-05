@@ -140,19 +140,7 @@
     background-color: inherit;
   }
 
-  .sub-title-xs {
-    padding: 5px 13px 5px 13px;
 
-    a {
-      text-decoration: none;
-    }
-    p {
-      margin: 0;
-      color: #FFFFFF;
-      font-size: 15px;
-    }
-
-  }
 
   .validate-filter {
     position: fixed;
@@ -218,6 +206,7 @@ a:hover {
 .categories-icon {
       height: 25px;
       margin-right: 15px;
+      border-radius: 3px;
 
 }
 
@@ -246,7 +235,6 @@ a:hover {
   transition: all 0.1s;
   padding: 5px 13px 5px 13px;
   margin-bottom: 2px;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(0,0,0,0.07);
 
     &:hover {
   box-shadow: 0 5px 10px rgba(0,0,0,0.25), 2px 5px 5px rgba(0,0,0,0.22);
@@ -530,6 +518,17 @@ a:hover {
           color: darkgray;
           font-size: 16px;
         }
+      }
+
+      .sub-title{
+        &:hover{
+          background-color: inherit;
+        }
+      }
+
+      .name-and-count{
+        color: white;
+        font-size: 15px;
       }
 
     }
