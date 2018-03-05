@@ -1,5 +1,5 @@
 .navbar-container {
-  background: $blue;
+  border-bottom: 1px solid #d3d3d3;
 }
 
 .navbar:before, .navbar:after {
@@ -22,7 +22,7 @@
 .logo-box {
   display: flex;
   align-items: flex-start;
-  color: white;
+  color: $blue;
 
 
 }
@@ -35,7 +35,7 @@
   text-decoration: none;
    &:hover{
     text-decoration: none;
-    color: white;
+    color: $blue;
    }
   }
 }
@@ -43,7 +43,7 @@
 #logo-icon {
   font-size: 30px;
   text-decoration: none;
-  color: white;
+  color: $blue;
 }
 
 
@@ -55,10 +55,10 @@
 
  a {
   text-decoration: none;
-  color: white;
+  color: $blue;
 
     &:hover {
-    color: white;
+    color: $blue;
     text-decoration: none;
     }
   }
@@ -71,15 +71,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: white;
+  color: $blue;
 }
 
 .sign-links {
   padding: 5px 10px;
-  color: white;
+  color: $blue;
 
   &:hover{
-    color: white;
+    color: $blue;
   }
 }
 
@@ -94,8 +94,8 @@
   .tooltiptext {
     visibility: hidden;
     background-color: white;
-    color: #49c4f4;
-    border: 1px solid #49c4f4;
+    color: $blue;
+    border: 1px solid $blue;
     text-align: center;
     border-radius: 6px;
     padding: 5px;
@@ -160,7 +160,7 @@
 .fa-hand-lizard-o {
   font-size: 25px;
   padding: 10px;
-  color: white;
+  color: $blue;
   a {
   text-decoration: none;
    &:hover{
@@ -193,13 +193,13 @@
 .fa-plus {
   font-size: 25px;
   padding: 10px;
-  color: white;
+  color: $blue;
 
   a {
   text-decoration: none;
    &:hover{
     text-decoration: none;
-    color: white;
+    color: $blue;
    }
   }
 }
@@ -238,7 +238,7 @@
 .fa-user-plus {
   font-size: 20px;
   padding: 10px;
-  color: white;
+  color: $blue;
 
   a {
   text-decoration: none;
@@ -251,7 +251,7 @@
 
 .glyphicon-option-vertical {
   padding: 10px;
-  color: white;
+  color: $blue;
   font-size: 17px;
 }
 
@@ -314,6 +314,12 @@
 
 }
 
+.fa-home{
+  color: $blue;
+  margin-right: 50px;
+  font-size: 30px;
+}
+
 
 
 .cat {
@@ -336,6 +342,7 @@
 
 
     &:hover {
+      color: $blue;
 }
   a {
     text-decoration: none;
