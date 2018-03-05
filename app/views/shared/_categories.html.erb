@@ -17,7 +17,6 @@
           <% when "Animaux" %>
             <%= image_tag "animaux.jpg", class: "categories-icon" %>
           <% end %>
-        </p>
         <div class="name-and-count">
           <p><%= category.name%></p>
           <p class="number-of-seeds <%=category.id%> hidden">(<%=@seeds.where(category: category).count%>)</p>
