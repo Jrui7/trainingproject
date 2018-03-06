@@ -105,8 +105,8 @@
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
- -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 68% 100%, 0 100%, 0% 80%, 0 0);
-clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 68% 100%, 0 100%, 0% 80%, 0 0);
+   -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 95%, 0 85%);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 95%, 0 85%);
 
 
 }
@@ -257,6 +257,10 @@ clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 68% 100%, 0 100%, 0% 80%, 0
   margin: 40px auto;
   max-width: 1300px;
   padding: 15px;
+}
+
+.feature-images {
+  height: 400px;
 }
 
 
@@ -564,7 +568,6 @@ clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 68% 100%, 0 100%, 0% 80%, 0
     font-weight: bold;
     padding: 5px 20px;
     font-size: 13px;
-    margin-top: 25px;
   }
 
   .connect-button .btn {
