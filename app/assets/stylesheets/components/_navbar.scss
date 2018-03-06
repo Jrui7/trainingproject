@@ -358,6 +358,16 @@
   color: $blue;
 }
 
+.seedlap-connect {
+  border-radius: 50px;
+  border: 3px solid #49c4f4;
+  color: #49c4f4;
+  background-color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 15px;
+}
 
 
 
@@ -418,6 +428,12 @@
   .sign-links {
     padding: 5px 5px 5px 0px;
     font-size: 14px;
+  }
+
+  .seedlap-connect {
+    padding: 7px;
+    font-size: 13px;
+    margin-right: 10px;
   }
 
 
