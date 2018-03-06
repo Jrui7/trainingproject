@@ -305,6 +305,7 @@
     }
 
     .user-show {
+      flex-grow: 1;
       display: flex;
       flex-direction: column;
       margin-left: 10px;
@@ -352,14 +353,21 @@
 
 
     .social-group {
-      display: flex;
-      flex-wrap: wrap;
+      padding: 0;
+      p{
+        margin: 0 0 5px 0;
+        color: black;
+      }
+      .kill-padding {
+        padding: 0;
+        margin: 5px 0;
+      }
 
       .icon-and-pseudo{
         display: flex;
         align-items: center;
         p{
-          margin: 0 10px 0 0;
+          margin: 0;
         }
       }
 
@@ -368,7 +376,7 @@
         font-size: 25px;
         text-align: center;
         text-decoration: none;
-        margin: 0 15px 0 0;
+        margin: 0 10px 0 0;
         width: 30px;
         height: 30px;
         display: flex;
@@ -402,12 +410,15 @@
         background: #bb0000;
         color: white;
       }
+
+
     }
-
-
     .descriptif-content {
-      margin: 15px;
-    }
+         margin: 15px;
+       }
+
+
+
 
     .nav-tabs {
       margin-top: 30px;

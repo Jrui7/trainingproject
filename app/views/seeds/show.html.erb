@@ -159,8 +159,6 @@
                     <p><%= link_to "#{seed.title}", seed_path(seed) %></p>
                     <% end %>
                   </div>
-                 <% else %>
-                  <p>Premier post</p>
                 <% end %>
                 <div class="social-card-user">
                   <% if @seeder.mini_bio? %>
@@ -169,29 +167,38 @@
                     </div>
                   <% end %>
                   <% if @seeder.social_links? %>
-                    <div class="social-group">
+                    <div class="col-xs-12 social-group">
+                      <p>Social-links:</p>
                       <% if @seed.user.insta?  %>
-                        <div class="icon-and-pseudo">
+                        <div class="col-xs-6 col-md-3 kill-padding">
+                          <div class="icon-and-pseudo">
                           <div class="fa fa-instagram"></div>
                           <p><%= @seeder.insta %></p>
                         </div>
+                        </div>
                       <% end %>
                       <% if @seeder.youtube? %>
-                        <div class="icon-and-pseudo">
+                        <div class="col-xs-6 col-md-3 kill-padding">
+                          <div class="icon-and-pseudo">
                           <div class="fa fa-youtube"></div>
                           <p><%= @seeder.youtube %></p>
                         </div>
+                        </div>
                       <% end %>
                       <% if @seeder.snap? %>
-                        <div class="icon-and-pseudo">
+                        <div class="col-xs-6 col-md-3 kill-padding">
+                          <div class="icon-and-pseudo">
                           <div class="fa fa-snapchat-ghost"></div>
                           <p><%= @seeder.snap %></p>
                         </div>
+                        </div>
                       <% end %>
                       <% if @seeder.facebook? %>
-                        <div class="icon-and-pseudo">
+                        <div class="col-xs-6 col-md-3 kill-padding">
+                          <div class="icon-and-pseudo">
                           <div class="fa fa-facebook"></div>
                           <p><%= @seeder.facebook %></p>
+                        </div>
                         </div>
                       <% end %>
                     </div>
