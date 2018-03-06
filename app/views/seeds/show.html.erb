@@ -171,16 +171,28 @@
                   <% if @seeder.social_links? %>
                     <div class="social-group">
                       <% if @seed.user.insta?  %>
-                        <a target="_blank" href="<%= @seeder.insta %>" class="fa fa-instagram"></a>
+                        <div class="icon-and-pseudo">
+                          <div class="fa fa-instagram"></div>
+                          <p><%= @seeder.insta %></p>
+                        </div>
                       <% end %>
                       <% if @seeder.youtube? %>
-                        <a target="_blank" href="<%= @seeder.youtube %>" class="fa fa-youtube"></a>
+                        <div class="icon-and-pseudo">
+                          <div class="fa fa-youtube"></div>
+                          <p><%= @seeder.youtube %></p>
+                        </div>
                       <% end %>
                       <% if @seeder.snap? %>
-                        <a target="_blank" href="<%= @seeder.snap %>" class="fa fa-snapchat-ghost"></a>
+                        <div class="icon-and-pseudo">
+                          <div class="fa fa-snapchat-ghost"></div>
+                          <p><%= @seeder.snap %></p>
+                        </div>
                       <% end %>
                       <% if @seeder.facebook? %>
-                        <a target="_blank" href="<%= @seeder.facebook %>" class="fa fa-facebook"></a>
+                        <div class="icon-and-pseudo">
+                          <div class="fa fa-facebook"></div>
+                          <p><%= @seeder.facebook %></p>
+                        </div>
                       <% end %>
                     </div>
                   <% end %>
