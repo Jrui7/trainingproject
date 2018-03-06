@@ -28,7 +28,7 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
     <%= render "devise/shared/links" %>
   </div>
 <div class="container-home">
-  <div class="nav-and-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+  <div class="nav-and-banner" style="background-attachment: fixed;background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
          url('https://res.cloudinary.com/dlddnk3pr/image/upload/v1520011589/souhaiter_h0suob.jpg')">
     <%= render "pages/unauthentified-navbar" %>
     <div class="banner-container">
@@ -77,10 +77,10 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
       </div>
     </div>
     <div class="row" id="pick">
-      <div class="col-xs-12 col-md-4 col-md-offset-1 img-container">
-        <%= cl_image_tag("go_ftlnqa.gif", id: "go") %>
+      <div class="col-xs-12 col-md-4 img-container">
+        <%= image_tag "rocket.png", class: "feature-images" %>
       </div>
-      <div class="col-xs-12 col-md-7 explanation-text">
+      <div class="col-xs-12 col-md-7 col-md-offset-1 explanation-text">
         <h3>"Pour 75€ je fonce."</h3>
         <p>Chaque personne intéressée par un produit a sept jours pour manifester sa volonté d'achat.</p>
         <div class="icon-header-body">
@@ -96,7 +96,7 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
     </div>
     <div  class= "row" id="save">
       <div class="col-xs-12 img-container hidden-md hidden-lg">
-        <%= cl_image_tag("victory_canznv.gif", id: "victory-xs") %>
+        <%= image_tag "champagne.png", class: "feature-images" %>
       </div>
       <div class="col-xs-12 col-md-7 explanation-text">
         <h3>"Je ne paye plus que 70€ !"</h3>
@@ -111,7 +111,7 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
         </div>
       </div>
       <div class="col-md-4 col-md-offset-1 img-container hidden-xs hidden-sm">
-        <%= cl_image_tag("victory_canznv.gif", id: "victory") %>
+        <%= image_tag "champagne.png", class: "feature-images" %>
       </div>
     </div>
   </div>
@@ -132,21 +132,21 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
       <div class="row">
         <div class="col-xs-12 steps">
           <div class="col-xs-12 col-md-4 step">
-            <div class="step-number">1</div>
+            <%= image_tag "people.png", class: "how-it-works-images"%>
             <div class="step-title">Rassembler</div>
             <div class="step-text">
               Lorsqu'un utilisateur poste un produit, nous collectons pendant 7 jours les propositions d'achat des personnes intéressées. Enregistrez votre participation à la campagne d'achat en versant un acompte qui vous sera remboursé à la fin de celle-ci.
             </div>
           </div>
           <div class="col-xs-12 col-md-4 step">
-            <div class="step-number">2</div>
+            <%= image_tag "chart.png", class: "how-it-works-images"%>
             <div class="step-title">Analyser</div>
             <div class="step-text">
               Nous contactons le(s) vendeur(s) du produit, et sur la base de tous les picks récoltés, nous calculons grâce à notre algorithme, le prix optimal qui va permettre aux acheteurs de bénéficier de la meilleure remise possible tout en maintenant la rentabilité du vendeur.
             </div>
           </div>
           <div class="col-xs-12 col-md-4 step">
-            <div class="step-number">3</div>
+            <%= image_tag "goal.png", class: "how-it-works-images"%>
             <div class="step-title">Finaliser</div>
             <div class="step-text">
               Nous remboursons tous les acomptes de participation à la campagne. Les "pickers" dont le prix est supérieur ou égal au prix optimal Seedlap remportent le deal à ce prix. Les autres ne peuvent en bénéficier. Voir ci-dessous.

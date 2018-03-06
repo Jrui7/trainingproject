@@ -105,8 +105,8 @@
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
- -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 68% 100%, 0 100%, 0% 80%, 0 0);
-clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 68% 100%, 0 100%, 0% 80%, 0 0);
+   -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 95%, 0 85%);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 95%, 0 85%);
 
 
 }
@@ -136,7 +136,7 @@ clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 68% 100%, 0 100%, 0% 80%, 0
   height: 100px;
   display: flex;
   align-items: center;
-  height: 70px;
+  height: 80px;
   margin-bottom: 0px;
 
 }
@@ -257,6 +257,10 @@ clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 68% 100%, 0 100%, 0% 80%, 0
   margin: 40px auto;
   max-width: 1300px;
   padding: 15px;
+}
+
+.feature-images {
+  height: 400px;
 }
 
 
@@ -555,16 +559,13 @@ clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 68% 100%, 0 100%, 0% 80%, 0
     }
   }
 
-  #pick-image {
-    width: 250px;
-  }
+
 
 
   .join-us-now {
     font-weight: bold;
     padding: 5px 20px;
     font-size: 13px;
-    margin-top: 25px;
   }
 
   .connect-button .btn {
@@ -612,12 +613,9 @@ clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 68% 100%, 0 100%, 0% 80%, 0
     border-radius: 50%;
   }
 
-  #roar {
-    max-width: 60%;
-  }
 
-  #victory-xs {
-    max-width: 100%;
+  .feature-images{
+    height: 200px;
   }
 
 
