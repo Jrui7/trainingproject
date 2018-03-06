@@ -355,6 +355,14 @@
       display: flex;
       flex-wrap: wrap;
 
+      .icon-and-pseudo{
+        display: flex;
+        align-items: center;
+        p{
+          margin: 0 10px 0 0;
+        }
+      }
+
       .fa {
 
         font-size: 25px;
