@@ -1,17 +1,24 @@
 
- <div class="container">
+ <div class="paiement-container">
   <div class="booking-confirmation">
     <div class="row">
       <div class="col-xs-12 col-md-8 col-md-offset-2 booking-form">
-        <h2>Confirmer participation au deal</h2>
-
-          <h3 class="amount">
-            Un versement de <%= humanized_money_with_symbol(@pick.amount)%> vous est demandé pour bloquer votre participation au deal
-          </h3>
-          <p>Ce versement vous sera retourné si votre pick n'est pas validé</p>
-          <p>Vous serez débité du différetiel avec votre pick en cas de succès</p>
-
-
+        <div class="head">
+          <h2>Confirmer participation au deal</h2>
+          <div class="title-and-validation">
+            <h3>Récap</h3>
+            <div class="explanation">
+              <%= cl_image_tag @pick.seed.photos.first.path, :height=>75, :crop=>"scale" %>
+              <div class="explanation-paragraph">
+                <h4><%= @pick.seed.title %></h4>
+                <p>Prix original: <%= @pick.seed.price %> €</p>
+                <p class="picked">Votre pick: <%= @pick.price %> €
+                </p>
+              </div>
+            </div>
+            <div class="acompt-detail">Le versement d'un acompte de <%= humanized_money_with_symbol(@pick.amount)%> vous est demandé pour bloquer votre participation. Il vous sera remboursé à la fin de la campagne.</div>
+          </div>
+        </div>
         <% if current_user.customer_id.blank? %>
           <div class="new-user-form">
             <%= form_tag pick_payments_path(@pick) do %>
@@ -33,63 +40,66 @@
           </div>
         <% else %>
           <div class="stripe-infos">
-              <div class="user-update-form">
-                <%= simple_form_for @customer_address, :url => address_path(@customer_address), :method => :patch do |f| %>
-                    <div class="title-and-validation">
-                      <h3>Livraison</h3>
-                      <%= f.button :submit, value: "Enregistrer", class: "btn update-delivery-infos hidden" %>
-                    </div>
-
-                    <div class="inputs">
-                      <div class="input-and-icon">
-                        <i class="fa fa-user left-icon"></i>
-                        <%= f.input :full_name, class: "input-group-field", label: false %>
-                      </div>
-
-                      <div class="input-and-icon">
-                        <i class="fa fa-truck left-icon"></i>
-                        <div class="fields-address">
-                          <%= f.input :street, class: "input-group-field", label: false %>
-                          <div class="zip-city">
-                            <%= f.input :zip_code, class: "input-group-field", label: false %>
-                            <%= f.input :city, class: "input-group-field", label: false %>
-                          </div>
-                          <%= f.input :address_complement, class: "input-group-field", label: false, placeholder: "Infos complémentaires: Digicode, Batiment, Société " %>
-                        </div>
-                      </div>
-
-                      <div class="input-and-icon">
-                        <i class="fa fa-mobile-phone left-icon"></i>
-                        <%= f.input :phone_number, class: "input-group-field", label: false %>
-                      </div>
-                    </div>
-                <% end %>
-              </div>
-              <div id="update-customer-stripe">
-                <div>
+            <div class="user-update-form">
+              <%= simple_form_for @customer_address, :url => address_path(@customer_address), :method => :patch do |f| %>
                   <div class="title-and-validation">
-                    <h3>Paiement</h3>
+                    <h3>Livraison</h3>
+                    <%= f.button :submit, value: "Enregistrer", class: "btn update-delivery-infos hidden" %>
                   </div>
-                  <div class="input-and-icon">
-                    <i class="fa fa-credit-card fa-fw left-icon"></i>
-                    <div class="form-control">
-                      <div class="left-part">
-                        <div class="stripe-block"><%= @customer_infos.sources.data[0]["brand"]%></div>
-                        <div class="stripe-block">
-                          <i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><%= @customer_infos.sources.data[0]["last4"] %>
+
+                  <div class="inputs">
+                    <div class="input-and-icon">
+                      <i class="fa fa-user left-icon"></i>
+                      <%= f.input :full_name, class: "input-group-field", label: false %>
+                    </div>
+
+                    <div class="input-and-icon">
+                      <i class="fa fa-truck left-icon"></i>
+                      <div class="fields-address">
+                        <%= f.input :street, class: "input-group-field", label: false %>
+                        <div class="zip-city">
+                          <%= f.input :zip_code, class: "input-group-field", label: false %>
+                          <%= f.input :city, class: "input-group-field", label: false %>
                         </div>
-                        <div class="stripe-block">
-                          <%= @customer_infos.sources.data[0]["exp_month"]%>/<%= @customer_infos.sources.data[0]["exp_year"] %>
-                        </div>
+                        <%= f.input :address_complement, class: "input-group-field", label: false, placeholder: "Autres instructions de livraison: Digicode, Batiment, Société " %>
+                      </div>
+                    </div>
+
+                    <div class="input-and-icon">
+                      <i class="fa fa-mobile-phone left-icon"></i>
+                      <%= f.input :phone_number, class: "input-group-field", label: false, placeholder: "Vous joindre par téléphone" %>
+                    </div>
+                  </div>
+              <% end %>
+            </div>
+            <div id="update-customer-stripe">
+              <div>
+                <div class="title-and-validation">
+                  <h3>Paiement</h3>
+                </div>
+                <div class="input-and-icon">
+                  <i class="fa fa-credit-card fa-fw left-icon"></i>
+                  <div class="form-control">
+                    <div class="left-part">
+                      <div class="stripe-block"><%= @customer_infos.sources.data[0]["brand"]%></div>
+                      <div class="stripe-block">
+                        <i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><%= @customer_infos.sources.data[0]["last4"] %>
+                      </div>
+                      <div class="stripe-block">
+                        <%= @customer_infos.sources.data[0]["exp_month"]%>/<%= @customer_infos.sources.data[0]["exp_year"] %>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-                <%= link_to "Versement sécurisé", pick_payments_path(@pick), class: "btn btn-primary",  method: :post %>
+            </div>
           </div>
-
-
+          <div class="booking-link">
+            <%= link_to pick_payments_path(@pick), class: "btn book",  method: :post do %>
+              <i class="fa fa-lock"></i>
+              <p>Confirmer participation</p>
+            <% end %>
+          </div>
           <%= form_tag user_update_card_path(@user), method: :patch, class: "hidden" do %>
           <script
             src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -103,11 +113,6 @@
             data-locale="auto">
             </script>
           <% end %>
-
-
-
-
-
 
           <% end %>
         </div>
