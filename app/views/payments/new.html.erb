@@ -5,11 +5,19 @@
       <div class="col-xs-12 col-md-8 col-md-offset-2 booking-form">
         <div class="head">
           <h2>Confirmer participation au deal</h2>
-          <h3 class="amount">
-              Un versement de <%= humanized_money_with_symbol(@pick.amount)%> vous est demandé pour bloquer votre participation au deal
-          </h3>
-          <p>Ce versement vous sera retourné si votre pick n'est pas validé</p>
-          <p>Vous serez débité du différetiel avec votre pick en cas de succès</p>
+          <div class="title-and-validation">
+            <h3>Récap</h3>
+            <div class="explanation">
+              <%= cl_image_tag @pick.seed.photos.first.path, :height=>75, :crop=>"scale" %>
+              <div class="explanation-paragraph">
+                <h4><%= @pick.seed.title %></h4>
+                <p>Prix original: <%= @pick.seed.price %> €</p>
+                <p class="picked">Votre pick: <%= @pick.price %> €
+                </p>
+              </div>
+            </div>
+            <div class="acompt-detail">Le versement d'un acompte de <%= humanized_money_with_symbol(@pick.amount)%> vous est demandé pour bloquer votre participation. Il vous sera remboursé à la fin de la campagne.</div>
+          </div>
         </div>
         <% if current_user.customer_id.blank? %>
           <div class="new-user-form">
@@ -92,8 +100,6 @@
               <p>Confirmer participation</p>
             <% end %>
           </div>
-
-
           <%= form_tag user_update_card_path(@user), method: :patch, class: "hidden" do %>
           <script
             src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -107,11 +113,6 @@
             data-locale="auto">
             </script>
           <% end %>
-
-
-
-
-
 
           <% end %>
         </div>

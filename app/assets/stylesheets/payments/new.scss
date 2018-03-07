@@ -28,18 +28,62 @@
   background-color: #FFF;
 
 .head{
-  text-align: center;
+  border-bottom: 1px solid #f4f4f4;
+  padding-bottom: 25px;
 }
 
-h2{
-  margin: 7px;
-}
+  h2{
+    margin: 7px 0 50px;
+    text-align: center;
+    color: $blue;
+  }
+
+  h3{
+    margin: 22px 0 20px 0;
+  }
+
+  .explanation{
+    display: flex;
+  }
+
+  img {
+    border-radius: 3px;
+  }
+
+  .explanation-paragraph{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 10px;
+
+    h4{
+      margin-top: 0;
+      color: #3F3933;
+    }
+    p{
+      margin-bottom: 0;
+      font-size: 16px;
+    }
+
+    .picked{
+      color: $red;
+    }
+  }
+
+  .acompt-detail{
+    padding: 20px;
+    margin: 20px 0 0 0;
+    background-color: #f1f8fc;
+    text-align: justify;
+    color: #3F3933;
+
+
+  }
 
 }
 
 .stripe-infos {
   display: block;
-  margin-top: 40px;
 
   .user-update-form {
   }
@@ -200,8 +244,27 @@ h2{
 }
 
 @media(max-width: 480px) {
+  .paiement-container{
+    padding-top: 0;
+    margin-bottom: 0;
+  }
   .booking-form {
-    padding: 30px;
+    padding: 20px 20px 30px 20px;
+    border-radius: 0;
+    box-shadow: none;
+    h2{
+      font-size: 30px;
+      width: 85%;
+      margin: 7px auto 45px auto;
+    }
+
+    h3 {
+      font-size: 25px;
+    }
+
+    h4{
+      font-size: 17px;
+    }
   }
 }
 
