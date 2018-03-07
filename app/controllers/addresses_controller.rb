@@ -8,9 +8,10 @@ class AddressesController < ApplicationController
     authorize @address
 
     if @address.update(address_params_form_payment)
-      redirect_to new_pick_payment_path(pick)
-    else
-      redirect_to new_pick_payment_path(pick)
+      respond_to do |format|
+        format.html { redirect_to new_pick_payment_path(pick)}
+        format.js
+      end
     end
   end
 

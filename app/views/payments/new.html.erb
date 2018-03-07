@@ -41,36 +41,7 @@
         <% else %>
           <div class="stripe-infos">
             <div class="user-update-form">
-              <%= simple_form_for @customer_address, :url => address_path(@customer_address), :method => :patch do |f| %>
-                  <div class="title-and-validation">
-                    <h3>Livraison</h3>
-                    <%= f.button :submit, value: "Enregistrer", class: "btn update-delivery-infos hidden" %>
-                  </div>
-
-                  <div class="inputs">
-                    <div class="input-and-icon">
-                      <i class="fa fa-user left-icon"></i>
-                      <%= f.input :full_name, class: "input-group-field", label: false %>
-                    </div>
-
-                    <div class="input-and-icon">
-                      <i class="fa fa-truck left-icon"></i>
-                      <div class="fields-address">
-                        <%= f.input :street, class: "input-group-field", label: false %>
-                        <div class="zip-city">
-                          <%= f.input :zip_code, class: "input-group-field", label: false %>
-                          <%= f.input :city, class: "input-group-field", label: false %>
-                        </div>
-                        <%= f.input :address_complement, class: "input-group-field", label: false, placeholder: "Autres instructions de livraison: Digicode, Batiment, Société " %>
-                      </div>
-                    </div>
-
-                    <div class="input-and-icon">
-                      <i class="fa fa-mobile-phone left-icon"></i>
-                      <%= f.input :phone_number, class: "input-group-field", label: false, placeholder: "Vous joindre par téléphone" %>
-                    </div>
-                  </div>
-              <% end %>
+              <%= render "payments/address", customer_address: @customer_address %>
             </div>
             <div id="update-customer-stripe">
               <div>
