@@ -24,18 +24,8 @@ class PaymentsController < ApplicationController
         Address.create(user_id: current_user.id, full_name: params["stripeBillingName"], street: params["stripeBillingAddressLine1"], zip_code: params["stripeBillingAddressZip"], city: params["stripeBillingAddressCity"])
 
       else
-        if params[:stripeToken]
-          cu = Stripe::Customer.retrieve("#{current_user.customer_id}")
-          cu.source = params[:stripeToken] # obtained with Stripe.js
-          cu.save
-          customer_id = current_user.customer_id
-          current_user.customer_id = customer_id
-          current_user.save
-        else
-          customer_id = current_user.customer_id
-        end
+        customer_id = current_user.customer_id
       end
-
 
       charge = Stripe::Charge.create(
         customer:     customer_id,   # You should store this customer id and re-use it.
@@ -52,9 +42,9 @@ class PaymentsController < ApplicationController
       rescue Stripe::CardError => e
       flash[:alert] = e.message
       redirect_to new_pick_payment_path(@pick)
-
-
     end
+
+
 
 
 
@@ -66,6 +56,7 @@ class PaymentsController < ApplicationController
       @pick = Pick.where(state: 'pending').find(params[:pick_id])
       authorize @pick
     end
+
 
 
 

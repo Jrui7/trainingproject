@@ -12,4 +12,8 @@ class UserPolicy < ApplicationPolicy
   def update?
     record == user
   end
+
+  def update_card?
+    record == user
+  end
 end

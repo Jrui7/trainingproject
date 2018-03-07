@@ -1,5 +1,6 @@
 class AddressesController < ApplicationController
 
+
   def update
     url = Rails.application.routes.recognize_path(request.referrer)
     pick = Pick.find(url[:pick_id])
@@ -13,8 +14,6 @@ class AddressesController < ApplicationController
     end
   end
 
-  def destroy
-  end
 
   private
 
