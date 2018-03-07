@@ -16,8 +16,10 @@ Rails.application.routes.draw do
     resources :signal_seeds, only: [:create, :destroy]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :users, only: [ :show, :edit, :update, :destroy]
-  resources :addresses, only: [:update, :destroy]
+  resources :users, only: [ :show, :edit, :update] do
+    patch :update_card
+  end
+  resources :addresses, only: [:update]
   resources :campaigns, only: [:update]
 
 

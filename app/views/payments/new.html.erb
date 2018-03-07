@@ -33,12 +33,11 @@
           </div>
         <% else %>
           <div class="stripe-infos">
-            <div class="col-xs-12 col-md-6 nopadding-left">
               <div class="user-update-form">
                 <%= simple_form_for @customer_address, :url => address_path(@customer_address), :method => :patch do |f| %>
                     <div class="title-and-validation">
                       <h3>Livraison</h3>
-                      <%= f.button :submit, value: "Modifier", class: "btn update-delivery-infos hidden" %>
+                      <%= f.button :submit, value: "Enregistrer", class: "btn update-delivery-infos hidden" %>
                     </div>
 
                     <div class="inputs">
@@ -87,30 +86,26 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-xs-12 col-md-6">
-              <%= link_to "Versement sécurisé", pick_payments_path(@pick), class: "btn btn-primary",  method: :post %>
-            </div>
+                <%= link_to "Versement sécurisé", pick_payments_path(@pick), class: "btn btn-primary",  method: :post %>
           </div>
 
 
-          <%= form_tag pick_payments_path(@pick), class: "hidden" do %>
-            <script
-              src="https://checkout.stripe.com/checkout.js"
-              class="stripe-button"
-              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-              data-name="Seedlap"
-              data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-              data-email="<%= current_user.email %>"
-              data-description="<%= @pick.seed.title %>"
-              data-amount="<%= @pick.amount_cents %>"
-              data-currency="<%= @pick.amount.currency %>"
-              data-allow-remember-me="false"
-              data-locale="auto"
-              data-currency="eur"
-              data-label="update">
+          <%= form_tag user_update_card_path(@user), method: :patch, class: "hidden" do %>
+          <script
+            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-key="pk_test_vLvpA9ucqPkcgXW1QQIQdnUA"
+            data-name="Infos paiement"
+            data-email="<%= current_user.email %>"
+            data-panel-label="Modifier ma carte"
+            data-label="Modifier ma carte"
+            data-allow-remember-me=false
+            data-locale="auto">
             </script>
           <% end %>
+
+
+
 
 
 
