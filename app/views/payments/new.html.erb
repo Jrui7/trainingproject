@@ -44,25 +44,7 @@
               <%= render "payments/address", customer_address: @customer_address %>
             </div>
             <div id="update-customer-stripe">
-              <div>
-                <div class="title-and-validation">
-                  <h3>Paiement</h3>
-                </div>
-                <div class="input-and-icon">
-                  <i class="fa fa-credit-card fa-fw left-icon"></i>
-                  <div class="form-control">
-                    <div class="left-part">
-                      <div class="stripe-block"><%= @customer_infos.sources.data[0]["brand"]%></div>
-                      <div class="stripe-block">
-                        <i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><%= @customer_infos.sources.data[0]["last4"] %>
-                      </div>
-                      <div class="stripe-block">
-                        <%= @customer_infos.sources.data[0]["exp_month"]%>/<%= @customer_infos.sources.data[0]["exp_year"] %>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <%= render "payments/card", customer_infos: @customer_infos %>
             </div>
           </div>
           <div class="booking-link">
@@ -71,7 +53,7 @@
               <p>Confirmer participation</p>
             <% end %>
           </div>
-          <%= form_tag user_update_card_path(@user), method: :patch, class: "hidden" do %>
+          <%= form_tag update_card_users_path(@user), method: :patch, class: "hidden", remote: true do %>
           <script
             src="https://checkout.stripe.com/checkout.js" class="stripe-button"
             data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
