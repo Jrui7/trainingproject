@@ -92,23 +92,24 @@
       margin-bottom: 20px;
     }
 
-    .title-and-validation {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
 
     .user-update-form{
       border-bottom: 1px solid #f4f4f4;
       padding-bottom: 25px;
     }
 
+    .update-address-button{
+      text-align: center;
+      margin-top: 25px;
+    }
+
     .update-delivery-infos {
-      color: #E67E22;
+      color: white;
+      background-color: $orange;
       padding: 2px 10px;
       font-size: 14px;
-      margin-left: 30px;
-      border: 1px solid;
+      border: 1px solid $orange;
+      border-radius: 50px;
     }
 
 
@@ -208,9 +209,7 @@
     align-items: flex-end;
   }
 
-  .btn {
-    border-radius: 0;
-  }
+
 }
 
 .booking-link{

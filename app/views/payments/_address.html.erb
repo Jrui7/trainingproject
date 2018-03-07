@@ -1,9 +1,5 @@
 <%= simple_form_for customer_address, :url => address_path(customer_address), :method => :patch, remote: true do |f| %>
-    <div class="title-and-validation">
-      <h3>Livraison</h3>
-      <%= f.button :submit, value: "Enregistrer", class: "btn update-delivery-infos hidden" %>
-    </div>
-
+    <h3>Livraison</h3>
     <div class="inputs">
       <div class="input-and-icon">
         <i class="fa fa-user left-icon"></i>
@@ -26,5 +22,8 @@
         <i class="fa fa-mobile-phone left-icon"></i>
         <%= f.input :phone_number, class: "input-group-field", label: false, placeholder: "Vous joindre par téléphone" %>
       </div>
+    </div>
+    <div class="update-address-button">
+      <%= f.button :submit, value: "Enregistrer", class: "btn update-delivery-infos hidden" %>
     </div>
 <% end %>
