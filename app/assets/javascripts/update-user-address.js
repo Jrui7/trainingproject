@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $(".form-control").click(function(){
+  $(".user-update-form").click(function(){
     $(".update-delivery-infos").removeClass("hidden");
   })
 })

@@ -1,0 +1,19 @@
+<div class="display-card">
+  <div class="title-and-validation">
+    <h3>Paiement</h3>
+  </div>
+  <div class="input-and-icon">
+    <i class="fa fa-credit-card fa-fw left-icon"></i>
+    <div class="form-control">
+      <div class="left-part">
+        <div class="stripe-block"><%= customer_infos.sources.data[0]["brand"]%></div>
+        <div class="stripe-block">
+          <i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><%= customer_infos.sources.data[0]["last4"] %>
+        </div>
+        <div class="stripe-block">
+          <%= customer_infos.sources.data[0]["exp_month"]%>/<%= customer_infos.sources.data[0]["exp_year"] %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
