@@ -53,17 +53,17 @@
               <p>Confirmer participation</p>
             <% end %>
           </div>
-          <%= form_tag update_card_users_path(@user), method: :patch, class: "hidden", remote: true do %>
-          <script
-            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-            data-key="pk_test_vLvpA9ucqPkcgXW1QQIQdnUA"
-            data-name="Infos paiement"
-            data-email="<%= current_user.email %>"
-            data-panel-label="Modifier ma carte"
-            data-label="Modifier ma carte"
-            data-allow-remember-me=false
-            data-locale="auto">
+          <%= form_tag update_card_user_path(@user), method: :patch, class: "hidden" do %>
+            <script
+              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-key="pk_test_vLvpA9ucqPkcgXW1QQIQdnUA"
+              data-name="Infos paiement"
+              data-email="<%= current_user.email %>"
+              data-panel-label="Modifier ma carte"
+              data-label="Modifier ma carte"
+              data-allow-remember-me=false
+              data-locale="auto">
             </script>
           <% end %>
 

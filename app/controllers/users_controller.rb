@@ -30,9 +30,7 @@ class UsersController < ApplicationController
     cu = Stripe::Customer.retrieve("#{@user.customer_id}")
     cu.source = params[:stripeToken] # obtained with Stripe.js
     cu.save
-
     redirect_to new_pick_payment_path(pick)
-
   end
 
   private
