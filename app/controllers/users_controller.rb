@@ -12,8 +12,6 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     authorize @user
-    @customer_infos = Stripe::Customer.retrieve(@user.customer_id)
-
     if @user.update(user_params)
       redirect_to user_path(@user)
     else
