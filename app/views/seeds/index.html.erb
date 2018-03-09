@@ -140,10 +140,14 @@
 
       <div class="filter-title">
         <div class="filter-header">
-         <p class="filter-before">FILTRER</p>
-         <%= link_to seeds_path do %>
-          <i class="fa fa-toggle-on hidden" aria-hidden="true"></i>
-         <% end %>
+        <% if @filter %>
+           <p class="filter-before">DEFILTRER</p>
+           <%= link_to seeds_path do %>
+            <i class="fa fa-toggle-on" aria-hidden="true"></i>
+           <% end %>
+          <% else %>
+            <p class="filter-before">FILTRER</p>
+          <% end %>
         </div>
         <div class="sub-categories">
         <%= render "shared/categories", categories: @categories %>
@@ -152,7 +156,10 @@
     </div>
 
     <div class="seed-presentation">
-      <%= render "seeds/seeds", seeds: @seeds%>
+      <%= render @seeds%>
+      <div id="infinite-scrolling">
+        <%= will_paginate @seeds %>
+      </div>
     </div>
 
 

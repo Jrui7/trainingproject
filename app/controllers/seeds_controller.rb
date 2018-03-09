@@ -13,6 +13,10 @@ class SeedsController < ApplicationController
     else
       @seeds = policy_scope(Seed).seed_selection.includes(:category, :user).paginate(page: params[:page])
     end
+    respond_to do |format|
+      format.html
+      format.js { render 'shared/seed_page' }
+    end
   end
 
 

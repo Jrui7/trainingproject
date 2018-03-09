@@ -1,8 +1,0 @@
-$(document).ready(function(){
-  $(".seed-presentation").html('<%= j render 'seeds/seeds', seeds: @seeds %>');
-  $(".sub-title.inactive").removeClass("inactive");
-  $('.sub-title.<%= @filter %>').addClass("inactive");
-  $('.sub-title-xs.<%= @filter %>').addClass("inactive");
-  $(".fa-toggle-on").removeClass("hidden");
-  $(".filter-before").text("REINITIALISER");
-})
