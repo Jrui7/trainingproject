@@ -6,13 +6,12 @@ class SeedsController < ApplicationController
 
   def index
     @categories = Category.all
-    @seeds = policy_scope(Seed).seed_selection.includes(:category, :user)
     if params[:category].present?
       @filter = params[:category]
+      @seeds = policy_scope(Seed).seed_selection.includes(:category, :user).paginate(page: params[:page])
       @seeds = @seeds.category(@filter)
-      respond_to do |format|
-        format.js
-      end
+    else
+      @seeds = policy_scope(Seed).seed_selection.includes(:category, :user).paginate(page: params[:page])
     end
   end
 

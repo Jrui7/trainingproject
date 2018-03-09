@@ -8,6 +8,7 @@ class Seed < ApplicationRecord
   monetize :price_cents
 
 
+
   validates :title,
     presence: {
     message: "Donnez un titre au seed"

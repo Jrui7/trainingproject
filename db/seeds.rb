@@ -13,18 +13,26 @@ puts "--------------------"
 
 =end
 
-Category.destroy_all
+# Category.destroy_all
 
-mode = Category.create(name: "Mode & Beauté")
-sport = Category.create(name: "Sport")
-tech = Category.create(name: "Tech")
-loisir = Category.create(name: "Loisir & Sorties")
-maison = Category.create(name: "Maison")
-enfants = Category.create(name: "Enfants")
-animaux = Category.create(name: "Animaux")
+# mode = Category.create(name: "Mode & Beauté")
+# sport = Category.create(name: "Sport")
+# tech = Category.create(name: "Tech")
+# loisir = Category.create(name: "Loisir & Sorties")
+# maison = Category.create(name: "Maison")
+# enfants = Category.create(name: "Enfants")
+# animaux = Category.create(name: "Animaux")
 
-puts "Categories created !"
-puts "--------------------"
+mode = Category.where(name: "Mode & Beauté").first
+sport = Category.where(name: "Sport").first
+tech = Category.where(name: "Tech").first
+loisir = Category.where(name: "Loisir & Sorties").first
+maison = Category.where(name: "Maison").first
+enfants = Category.where(name: "Enfants").first
+animaux = Category.where(name: "Animaux").first
+
+# puts "Categories created !"
+# puts "--------------------"
 
 jorge = User.first
 jennifer = User.where(pseudo: "Jenny").first
@@ -32,16 +40,16 @@ thomas = User.where(pseudo: "SurfMousse").first
 
 
 
-j = Address.create(user_id: jorge.id, full_name: "Jorge Ruivinho", street: "64 rue de la Pompe", zip_code: "75116", city: "Paris")
-t = Address.create(user_id: thomas.id, full_name: "Thomas Caillol", street: "1 rue de la falaise", zip_code: "13000", city: "Marseille")
+# j = Address.create(user_id: jorge.id, full_name: "Jorge Ruivinho", street: "64 rue de la Pompe", zip_code: "75116", city: "Paris")
+# t = Address.create(user_id: thomas.id, full_name: "Thomas Caillol", street: "1 rue de la falaise", zip_code: "13000", city: "Marseille")
 
-puts "Addreses created !"
-puts "--------------------"
-
-
+# puts "Addreses created !"
+# puts "--------------------"
 
 
-Seed.destroy_all
+
+
+# Seed.destroy_all
 
 seed_mode = Seed.create(price: 150, popularity: 0, view_counter: 0, url: "https://www.youtube.com/watch?v=5AhY_-qUb4w" ,secondary_url: "", title: "T-shirt Psycha", expiration: DateTime.now.utc + 3.days, user_id: thomas.id, category_id: mode.id, description: "Avec ça Men, tu peux même parler boulot après 19h00", photo_urls: ["http://res.cloudinary.com/dlddnk3pr/image/upload/v1509956287/hdecr3jxijppwsukhi0l.jpg", "http://res.cloudinary.com/dlddnk3pr/image/upload/v1509623265/ridfuoa67vz6ewlb3zop.jpg", "http://res.cloudinary.com/dlddnk3pr/image/upload/v1505138572/eecindhnvh2ltpxpitb9.jpg"])
 seed_sport  = Seed.create(price: 100, popularity: 0, view_counter: 0, url: "https://www.youtube.com/watch?v=5AhY_-qUb4w" , secondary_url: "https://www.youtube.com/watch?v=sKeslrZ-i6k", title: "Le tube d'Hendaye", expiration: DateTime.now.utc + 3.days, user_id: thomas.id, category_id: sport.id, description: "Perso Ma Men, c'est les plus grosses vagues que j'ai ridé", photo_urls: ["http://res.cloudinary.com/dlddnk3pr/image/upload/v1505138572/eecindhnvh2ltpxpitb9.jpg", "http://res.cloudinary.com/dlddnk3pr/image/upload/v1504544452/yxdwojuuq0q71p2oemmz.jpg"])
