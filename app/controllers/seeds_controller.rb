@@ -6,8 +6,14 @@ class SeedsController < ApplicationController
 
   def index
     @categories = Category.all
-    @filter = params[:category]
-    @seeds = policy_scope(Seed).seed_selection
+    @seeds = policy_scope(Seed).seed_selection.includes(:category, :user)
+    if params[:category].present?
+      @filter = params[:category]
+      @seeds = @seeds.category(@filter)
+      respond_to do |format|
+        format.js
+      end
+    end
   end
 
 

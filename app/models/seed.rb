@@ -42,6 +42,7 @@ class Seed < ApplicationRecord
 
   has_attachments :photos, maximum: 5
 
+  scope :category, -> (category) { where category: category}
   scope :popular, -> { order(popularity: :desc) }
   scope :newest, -> { order(expiration: :desc)}
   scope :ongoing, -> { where('expiration > ?', DateTime.now)}
@@ -84,7 +85,7 @@ class Seed < ApplicationRecord
   end
 
   def self.seed_selection
-    ongoing.where.not(admin_review:"Invalide").includes(:user, :category)
+    ongoing.where.not(admin_review:"Invalide")
   end
 
   def self.seed_sample_expired

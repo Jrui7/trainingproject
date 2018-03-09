@@ -1,7 +1,7 @@
 <% @categories.each do |category| %>
   <%= link_to seeds_path(category: category.id), remote: true do %>
     <div>
-      <div class="sub-title <%= category.id %>">
+      <div class="sub-title <%= category.id%>">
           <% case category.name when "Sport" %>
             <%= image_tag "sport.jpg", class: "categories-icon" %>
           <% when "Mode & Beauté" %>
