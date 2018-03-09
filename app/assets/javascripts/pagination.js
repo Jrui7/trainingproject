@@ -1,11 +1,9 @@
 $(document).on('ready page:load', function () {
   var isLoading = false;
   if ($('#infinite-scrolling').size() > 0) {
-    $('.layout').on('scroll', function() {
+    $(window).on('scroll', function() {
       var more_posts_url = $('.pagination a.next_page').attr('href');
-      console.log($('.seed-presentation').height() - $('.layout').scrollTop())
-      if (!isLoading && more_posts_url && ($('.seed-presentation').height() - $('.layout').scrollTop()) < 650 ) {
-        console.log('Chargement!');
+      if (!isLoading && more_posts_url && $(window).scrollTop() > $(document).height() - $(window).height() - 60) {
         isLoading = true;
         $.getScript(more_posts_url).done(function (data,textStatus,jqxhr) {
           isLoading = false;
@@ -16,4 +14,3 @@ $(document).on('ready page:load', function () {
     });
   }
 });
-
