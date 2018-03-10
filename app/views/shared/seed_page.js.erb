@@ -1,0 +1,8 @@
+$('.seed-presentation').append('<%= j render @seeds %>');
+<% if @seeds.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate @seeds %>');
+<% else %>
+  $('.layout').off('scroll');
+  $('.pagination').remove();
+<% end %>
+

@@ -7,6 +7,10 @@ class Seed < ApplicationRecord
   has_many :signal_seed, dependent: :destroy
   monetize :price_cents
 
+  self.per_page = 10
+
+
+
 
   validates :title,
     presence: {
@@ -42,6 +46,7 @@ class Seed < ApplicationRecord
 
   has_attachments :photos, maximum: 5
 
+  scope :category, -> (category) { where category: category}
   scope :popular, -> { order(popularity: :desc) }
   scope :newest, -> { order(expiration: :desc)}
   scope :ongoing, -> { where('expiration > ?', DateTime.now)}
@@ -84,7 +89,7 @@ class Seed < ApplicationRecord
   end
 
   def self.seed_selection
-    ongoing.where.not(admin_review:"Invalide").includes(:user, :category)
+    ongoing.where.not(admin_review:"Invalide")
   end
 
   def self.seed_sample_expired
