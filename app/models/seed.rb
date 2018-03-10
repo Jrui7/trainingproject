@@ -7,7 +7,7 @@ class Seed < ApplicationRecord
   has_many :signal_seed, dependent: :destroy
   monetize :price_cents
 
-  self.per_page = 5
+  self.per_page = 10
 
 
 
