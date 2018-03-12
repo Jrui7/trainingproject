@@ -1,52 +1,10 @@
 <% @categories.each do |category| %>
   <%= link_to popular_path(category: category.id) do %>
-    <div>
-      <% if category.id.to_s == @filter %>
-        <div class="sub-title <%= category.id%> inactive">
-            <% case category.name when "Sport" %>
-              <%= image_tag "sport.jpg", class: "categories-icon" %>
-            <% when "Mode & Beauté" %>
-              <%= image_tag "mode.jpg", class: "categories-icon" %>
-            <% when "Loisir & Sorties" %>
-              <%= image_tag "loisir.jpg", class: "categories-icon" %>
-            <% when "Tech" %>
-              <%= image_tag "tech.jpg", class: "categories-icon" %>
-            <% when "Maison" %>
-              <%= image_tag "maison.jpg", class: "categories-icon" %>
-            <% when "Enfants" %>
-              <%= image_tag "enfants.jpg", class: "categories-icon" %>
-            <% when "Animaux" %>
-              <%= image_tag "animaux.jpg", class: "categories-icon" %>
-            <% end %>
-          <div class="name-and-count">
-            <p><%= category.name%></p>
-            <p class="number-of-seeds <%=category.id%> hidden">(<%=@seeds.where(category: category).count%>)</p>
-          </div>
+      <div class="sub-title <%=category.id%> <%='inactive' if category.id.to_s == @filter %>">
+        <%= image_tag "#{category.name.downcase.gsub(' ', '_')}.jpg", class: "categories-icon" %>
+        <div class="name-and-count">
+          <p><%= category.name%></p>
         </div>
-      <% else %>
-        <div class="sub-title <%= category.id%>">
-            <% case category.name when "Sport" %>
-              <%= image_tag "sport.jpg", class: "categories-icon" %>
-            <% when "Mode & Beauté" %>
-              <%= image_tag "mode.jpg", class: "categories-icon" %>
-            <% when "Loisir & Sorties" %>
-              <%= image_tag "loisir.jpg", class: "categories-icon" %>
-            <% when "Tech" %>
-              <%= image_tag "tech.jpg", class: "categories-icon" %>
-            <% when "Maison" %>
-              <%= image_tag "maison.jpg", class: "categories-icon" %>
-            <% when "Enfants" %>
-              <%= image_tag "enfants.jpg", class: "categories-icon" %>
-            <% when "Animaux" %>
-              <%= image_tag "animaux.jpg", class: "categories-icon" %>
-            <% end %>
-          <div class="name-and-count">
-            <p><%= category.name%></p>
-            <p class="number-of-seeds <%=category.id%> hidden">(<%=@seeds.where(category: category).count%>)</p>
-          </div>
-        </div>
-      <% end %>
-
-    </div>
+      </div>
   <% end %>
 <% end %>

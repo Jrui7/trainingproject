@@ -231,13 +231,13 @@ a:hover {
   align-items: center;
   font-size: 13px;
   transition: all 0.1s;
-  padding: 5px 13px 5px 13px;
+  padding: 5px 10px 5px 10px;
   margin-bottom: 2px;
 
     &:hover {
   box-shadow: 0 5px 10px rgba(0,0,0,0.25), 2px 5px 5px rgba(0,0,0,0.22);
   background-color: #FFFFFF;
-  padding: 5px 13px 5px 13px;
+  padding: 5px 10px 5px 10px;
   margin-bottom: 2px;
 }
   a {

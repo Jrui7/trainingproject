@@ -13,23 +13,23 @@ puts "--------------------"
 
 =end
 
-# Category.destroy_all
+Category.destroy_all
 
-# mode = Category.create(name: "Mode & Beauté")
-# sport = Category.create(name: "Sport")
-# tech = Category.create(name: "Tech")
-# loisir = Category.create(name: "Loisir & Sorties")
-# maison = Category.create(name: "Maison")
-# enfants = Category.create(name: "Enfants")
-# animaux = Category.create(name: "Animaux")
+mode = Category.create(name: "Mode & Beauté")
+sport = Category.create(name: "Sport")
+tech = Category.create(name: "Tech")
+loisir = Category.create(name: "Loisirs & Sorties")
+maison = Category.create(name: "Maison")
+enfants = Category.create(name: "Enfants")
+animaux = Category.create(name: "Animaux")
 
-mode = Category.where(name: "Mode & Beauté").first
-sport = Category.where(name: "Sport").first
-tech = Category.where(name: "Tech").first
-loisir = Category.where(name: "Loisir & Sorties").first
-maison = Category.where(name: "Maison").first
-enfants = Category.where(name: "Enfants").first
-animaux = Category.where(name: "Animaux").first
+# mode = Category.where(name: "Mode & Beauté").first
+# sport = Category.where(name: "Sport").first
+# tech = Category.where(name: "Tech").first
+# loisir = Category.where(name: "Loisirs & Sorties").first
+# maison = Category.where(name: "Maison").first
+# enfants = Category.where(name: "Enfants").first
+# animaux = Category.where(name: "Animaux").first
 
 # puts "Categories created !"
 # puts "--------------------"
