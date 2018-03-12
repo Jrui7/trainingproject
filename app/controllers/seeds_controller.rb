@@ -19,6 +19,55 @@ class SeedsController < ApplicationController
     end
   end
 
+  def last_day
+    @categories = Category.all
+    if params[:category].present?
+      @filter = params[:category]
+      @seeds = Seed.seed_selection.last_day.includes(:category, :user).paginate(page: params[:page])
+      @seeds = @seeds.category(@filter)
+    else
+      @seeds = Seed.seed_selection.last_day.includes(:category, :user).paginate(page: params[:page])
+    end
+    authorize @seeds
+    respond_to do |format|
+      format.html
+      format.js { render 'shared/seed_page' }
+    end
+  end
+
+  def popular
+    @categories = Category.all
+    if params[:category].present?
+      @filter = params[:category]
+      @seeds = Seed.seed_selection.popular.includes(:category, :user).paginate(page: params[:page])
+      @seeds = @seeds.category(@filter)
+    else
+      @seeds = Seed.seed_selection.popular.includes(:category, :user).paginate(page: params[:page])
+    end
+    authorize @seeds
+    respond_to do |format|
+      format.html
+      format.js { render 'shared/seed_page' }
+    end
+  end
+
+  def newest
+    @categories = Category.all
+    if params[:category].present?
+      @filter = params[:category]
+      @seeds = Seed.seed_selection.newest.includes(:category, :user).paginate(page: params[:page])
+      @seeds = @seeds.category(@filter)
+    else
+      @seeds = Seed.seed_selection.newest.includes(:category, :user).paginate(page: params[:page])
+    end
+    authorize @seeds
+    respond_to do |format|
+      format.html
+      format.js { render 'shared/seed_page' }
+    end
+  end
+
+
 
   def new
     @seed = Seed.new
@@ -70,23 +119,6 @@ class SeedsController < ApplicationController
   end
 
 
-  def last_day
-    @categories = Category.all
-    @seeds = Seed.seed_selection.last_day
-    authorize @seeds
-  end
-
-  def popular
-    @categories = Category.all
-    @seeds = Seed.seed_selection.popular
-    authorize @seeds
-  end
-
-  def newest
-    @categories = Category.all
-    @seeds = Seed.seed_selection.newest
-    authorize @seeds
-  end
 
   def admin
     @pending = Seed.where.not(admin_review:"Invalide").includes(:campaign).joins(:campaign).where(campaigns: {status: "pending"})

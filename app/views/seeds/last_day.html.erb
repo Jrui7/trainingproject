@@ -61,12 +61,12 @@
             <div class="filter-title">
               <div class="filter-header">
                <p class="filter-before">CHOISIR</p>
-               <%= link_to seeds_path do %>
+               <%= link_to last_day_path do %>
                 <i class="fa fa-toggle-on xs-fa hidden" aria-hidden="true"></i>
                <% end %>
               </div>
               <div class="sub-categories">
-                <%= render "shared/categories", categories: @categories %>
+                <%= render "shared/last_day_categories", categories: @categories %>
               </div>
             </div>
               <div class="btn validate-filter">Valider</div>
@@ -139,19 +139,26 @@
 
       <div class="filter-title">
         <div class="filter-header">
-         <p>FILTRER</p>
-         <%= link_to last_day_path do %>
-          <i class="fa fa-toggle-on hidden" aria-hidden="true"></i>
-         <% end %>
+        <% if @filter %>
+           <p class="filter-before">DEFILTRER</p>
+           <%= link_to last_day_path do %>
+            <i class="fa fa-toggle-on" aria-hidden="true"></i>
+           <% end %>
+          <% else %>
+            <p class="filter-before">FILTRER</p>
+          <% end %>
         </div>
         <div class="sub-categories">
-          <%= render "shared/categories", categories: @categories %>
+          <%= render "shared/last_day_categories", categories: @categories %>
         </div>
       </div>
     </div>
 
     <div class="seed-presentation">
-      <%= render @seeds, seeds: @seeds%>
+      <div id="infinite-scrolling">
+        <%= will_paginate @seeds %>
+      </div>
+      <%= render @seeds%>
     </div>
 
   </div>
