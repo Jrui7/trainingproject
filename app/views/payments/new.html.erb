@@ -21,7 +21,7 @@
         </div>
         <% if current_user.customer_id.blank? %>
           <div class="new-user-form">
-            <%= form_tag pick_payments_path(@pick) do %>
+            <%= form_tag pick_payments_path(@pick), class: "hidden" do %>
               <script
                 src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                 data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
@@ -37,6 +37,12 @@
                 data-label="Procéder au versement">
               </script>
             <% end %>
+          </div>
+          <div class="booking-link">
+            <div class="book new-user-book">
+              <i class="fa fa-lock"></i>
+              <p>Confirmer participation</p>
+            </div>
           </div>
         <% else %>
           <div class="stripe-infos">
