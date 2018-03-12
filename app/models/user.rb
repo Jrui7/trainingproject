@@ -14,6 +14,7 @@ class User < ApplicationRecord
    has_many :picks
    has_many :exchanges
    has_many :addresses, dependent: :destroy
+   accepts_nested_attributes_for :addresses
    has_attachment :photo
    has_many :user_preferences
    has_many :signal_seed

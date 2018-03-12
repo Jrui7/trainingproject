@@ -1,6 +1,6 @@
  <% if current_user %>
   <% if current_user.has_picked?(@seed) %>
-    <p class="has_picked">Seed pické</p>
+    <p class="has_picked">Mon pick : <%= Pick.my_pick(current_user, @seed).first.price%> € </p>
   <% else %>
     <%= link_to "#myModal", data: { toggle: "modal" } do%>
       <div class="btn btn-primary pick-link">

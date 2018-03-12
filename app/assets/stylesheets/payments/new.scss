@@ -222,6 +222,11 @@
   text-align: center;
   margin-top: 50px;
 
+  p {
+    max-width: 350px;
+    margin: 0 auto 30px;
+  }
+
   .fa-lock{
     color: white;
     font-size: 24px;

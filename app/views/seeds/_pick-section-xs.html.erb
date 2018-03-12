@@ -2,7 +2,7 @@
 <% if current_user %>
   <% if current_user.has_picked?(@seed) %>
     <div class="picked-bar-xs hidden-md hidden-lg">
-      <p class="has_picked">Seed pické</p>
+      <p class="has_picked">Mon pick : <%= Pick.my_pick(current_user, @seed).first.price%> €</p>
     </div>
   <% else %>
     <%= link_to "#myModal", data: { toggle: "modal" }, class: "xs-pick" do%>

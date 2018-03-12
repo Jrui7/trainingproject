@@ -38,5 +38,9 @@ class Pick < ApplicationRecord
      end
   end
 
+  def self.my_pick(user, seed)
+    Pick.where(user_id: user.id, seed_id: seed.id)
+  end
+
 
 end

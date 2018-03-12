@@ -6,7 +6,7 @@
     <h3> <%= seed.title %></h3>
     <div class="user-testimony">
       <%if seed.user.has_photo? %>
-      <%= cl_image_tag(seed.user.photo.path, class: "seeder-picture")%>
+      <%= cl_image_tag(seed.user.photo.path, class: "seeder-picture", :quality=> 40)%>
       <% else %>
         <i class="fa fa-user-o"></i>
       <% end %>
