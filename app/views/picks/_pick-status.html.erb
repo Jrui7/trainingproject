@@ -1,0 +1,41 @@
+<% case pick.state when "paid" %>
+  <div class="pick-status">
+    <h3>En attente</h3>
+    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€. La campagne se termine le <%= pick.seed.expiration.strftime("%d/%m/%Y") %>, et nous revenons vers vous dès que la négo avec le vendeur est terminée . </div>
+  </div>
+  <% when "finalized" %>
+  <div class="pick-status">
+    <h3>Finalisé</h3>
+    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€, et payé seulement <%= pick.seed.campagne.price %> €</div>
+  </div>
+  <% when "campaign_failed" %>
+  <div class="pick-status">
+    <h3>Echec</h3>
+    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€. Le vendeur n'a pas voulu finaliser le deal avec nous. Nous vous remboursons l'acompte que vous nous aviez versé pour bloquer votre participation au deal. </div>
+  </div>
+  <% when "campaign_closed" %>
+  <div class="pick-status">
+    <h3>Campagne terminée</h3>
+    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€ mais n'avez pas bloqué votre participation à la campagne qui est maintenant fermée. </div>
+  </div>
+  <% when "refunded" %>
+  <div class="pick-status">
+    <h3>Remboursé</h3>
+    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€. Nous avons fermé la campagne et vous avons remboursé car le produit ne respecte pas les CGU . </div>
+  </div>
+  <% when "cancelled" %>
+  <div class="pick-status">
+    <h3>Annulé</h3>
+    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€. Nous avons fermé la campagne car le produit ne respecte pas les CGU . Vous ne pouvez plus valider votre pick. </div>
+  </div>
+  <% when "error" %>
+  <div class="pick-status">
+    <h3>Erreur</h3>
+    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€ mais nous n'avons pas réussi à valider le paiement final. Merci de suivre ce lien . </div>
+  </div>
+  <% when "pick_failed" %>
+  <div class="pick-status">
+    <h3>Echec</h3>
+    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€. Le prix Seedlap négocié est de <%= pick.seed.campagne.price %>, nous vous remboursons votre acompte, mais vous ne bénéficiez pas du deal . </div>
+  </div>
+<% end %>
