@@ -6,12 +6,12 @@
     <i class="fa fa-credit-card fa-fw left-icon"></i>
     <div class="form-control">
       <div class="left-part">
-        <div class="stripe-block"><%= customer_infos.sources.data[0]["brand"]%></div>
+        <div class="stripe-block"><%= customer_infos["brand"]%></div>
         <div class="stripe-block">
-          <i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><%= customer_infos.sources.data[0]["last4"] %>
+          <i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><%= customer_infos["last4"] %>
         </div>
         <div class="stripe-block">
-          <%= customer_infos.sources.data[0]["exp_month"]%>/<%= customer_infos.sources.data[0]["exp_year"] %>
+          <%= customer_infos["exp_month"]%>/<%= customer_infos["exp_year"] %>
         </div>
       </div>
     </div>

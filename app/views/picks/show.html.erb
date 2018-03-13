@@ -9,49 +9,66 @@
   <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2 pick-detail">
       <h2  class="pick-title"><%= @pick.seed.title %></h2>
-      <div class="exchanges-and-questions">
-        <div id="exchanges">
-          <% if @pick.exchanges.blank? %>
-            <div class="exchange-header">Une question? Comment pouvons-nous vous aider?</div>
-            <div class="all-messages hidden"></div>
-          <% else %>
-            <div class="exchange-header">Nos échanges</div>
-            <div class="all-messages">
-              <% @pick.exchanges.includes(:user).each do |exchange| %>
-                <div class="message-block <%= exchange.message_author %>">
-                  <div class="avatar-author-date">
-                    <%if exchange.user.photo? %>
-                      <%= cl_image_tag exchange.user.photo.path, class: "author-avatar pic"%>
-                    <% else %>
-                      <i class="fa fa-user-o dropdown-toggle" class="author-avatar"></i>
-                    <% end %>
-                    <div class="author-and-date">
-                      <div class="message-sent"><%= exchange.created_at.strftime("%d/%m/%Y") %>
-                      </div>
-                      <div class="user-pseudo">
-                        <%= exchange.user.pseudo %>:
+      <div class="ship-and-payment">
+            <div class="item">
+              <%= render 'picks/update_address', pick: @pick  %>
+            </div>
+            <div class="item">
+              <h3>Paiement</h3>
+              <div class="stripe-block"><%= @customer_infos["brand"]%></div>
+              <div class="stripe-block">
+                <i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><%= @customer_infos["last4"] %>
+              </div>
+              <div class="stripe-block">
+                <%= @customer_infos["exp_month"]%>/<%= @customer_infos["exp_year"] %>
+              </div>
+            </div>
+        </div>
+      <div class="col-xs-12">
+        <div class="exchanges-and-questions">
+          <div id="exchanges">
+            <% if @pick.exchanges.blank? %>
+              <div class="exchange-header">Une question? Comment pouvons-nous vous aider?</div>
+              <div class="all-messages hidden"></div>
+            <% else %>
+              <div class="exchange-header">Nos échanges</div>
+              <div class="all-messages">
+                <% @pick.exchanges.includes(:user).each do |exchange| %>
+                  <div class="message-block <%= exchange.message_author %>">
+                    <div class="avatar-author-date">
+                      <%if exchange.user.photo? %>
+                        <%= cl_image_tag exchange.user.photo.path, class: "author-avatar pic"%>
+                      <% else %>
+                        <i class="fa fa-user-o dropdown-toggle" class="author-avatar"></i>
+                      <% end %>
+                      <div class="author-and-date">
+                        <div class="message-sent"><%= exchange.created_at.strftime("%d/%m/%Y") %>
+                        </div>
+                        <div class="user-pseudo">
+                          <%= exchange.user.pseudo %>:
+                        </div>
                       </div>
                     </div>
+                    <div class="question-content">
+                      <%= exchange.question %>
+                    </div>
                   </div>
-                  <div class="question-content">
-                    <%= exchange.question %>
-                  </div>
-                </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+          <% if current_user.admin == true && @pick.exchanges.any? %>
+            <div class="validate-link">
+              <p>Toutes les questions client ont trouvé une réponse?</p>
+              <%= link_to exchange_path(@pick.exchanges.last), :method => :patch do%>
+                <div class="btn btn-default">Oui</div>
               <% end %>
             </div>
           <% end %>
-        </div>
-        <% if current_user.admin == true && @pick.exchanges.any? %>
-          <div class="validate-link">
-            <p>Toutes les questions client ont trouvé une réponse?</p>
-            <%= link_to exchange_path(@pick.exchanges.last), :method => :patch do%>
-              <div class="btn btn-default">Oui</div>
-            <% end %>
-          </div>
-        <% end %>
 
-        <div id="exchange_form">
-          <%= render 'exchanges/form', pick: @pick, exchange: @exchange %>
+          <div id="exchange_form">
+            <%= render 'exchanges/form', pick: @pick, exchange: @exchange %>
+          </div>
         </div>
       </div>
 

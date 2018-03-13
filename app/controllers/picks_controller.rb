@@ -18,6 +18,7 @@ class PicksController < ApplicationController
   def show
     @pick = Pick.find(params[:id])
     authorize @pick
+    @customer_infos = JSON.parse(@pick.payment)["source"]
     @exchange = Exchange.new
   end
 
@@ -50,6 +51,7 @@ class PicksController < ApplicationController
     end
   end
 
+
   def destroy
     @pick = Pick.find(params[:id])
     authorize @pick
@@ -77,6 +79,7 @@ class PicksController < ApplicationController
   def pick_params
     params.require(:pick).permit(:price)
   end
+
 
 
 end
