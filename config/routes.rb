@@ -40,12 +40,11 @@ Rails.application.routes.draw do
   get 'last_day', to: 'seeds#last_day'
 
   get 'home', to: 'pages#home'
-  get 'infos', to: 'pages#infos'
   get 'faq', to: 'pages#faq'
   get 'contact', to: 'pages#contact'
   get 'mentions_legales', to: 'pages#mentions_legales'
-  get 'CGV', to: 'pages#CGV'
-  get 'CGU', to: 'pages#CGU'
+  get 'cgv', to: 'pages#cgv'
+  get 'cgu', to: 'pages#cgu'
 
 
   get 'my_seeds', to: 'my_seedlap#my_seeds'
