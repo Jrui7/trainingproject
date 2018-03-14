@@ -1,5 +1,7 @@
   .carousel-inner {
     height: 300px !important;
+    position: relative;
+
 
   }
 
@@ -11,13 +13,16 @@
       background-color: gray;
       border: none;
       margin: 0px;
-      width: 12px;
-      height: 12px;
+      width: 30px;
+      height: 3px;
+      border-radius: 0;
     }
 
     .active {
       background-color: $blue;
       color: $blue;
+      width: 30px;
+      height: 3px;
 
     }
 
@@ -720,15 +725,15 @@
         background-color: gray;
         border: none;
         margin: 0px;
-        width: 10px;
-        height: 10px;
+        width: 30px;
+        height: 3px;
       }
 
       .active {
         background-color: $blue;
         color: $blue;
-        width: 10px;
-        height: 10px;
+        width: 30px;
+        height: 3px;
       }
 
 
