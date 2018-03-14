@@ -18,7 +18,9 @@ class PicksController < ApplicationController
   def show
     @pick = Pick.find(params[:id])
     authorize @pick
-    @customer_infos = JSON.parse(@pick.payment)["source"]
+    unless @pick.payment.blank?
+      @customer_infos = JSON.parse(@pick.payment)["source"]
+    end
     @exchange = Exchange.new
   end
 
