@@ -1,0 +1,10 @@
+<h3>Livraison</h3>
+<div class="address-input"><%= pick.full_name %></div>
+<div class="address-input"><%= pick.street %></div>
+<div class="address-input"><%= pick.zip_code %> <%= pick.city %></div>
+<% unless pick.address_complement.blank? %>
+  <div class="address-input"><%= pick.address_complement %></div>
+<% end %>
+<% unless  pick.phone_number.blank? %>
+  <div class="address-input"><%= pick.phone_number %></div>
+<% end %>

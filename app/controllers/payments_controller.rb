@@ -5,7 +5,7 @@ class PaymentsController < ApplicationController
     def new
       @user = current_user
       unless current_user.customer_id.blank?
-        @customer_infos = Stripe::Customer.retrieve(@user.customer_id)
+        @customer_infos = Stripe::Customer.retrieve(@user.customer_id).sources.data[0]
         @customer_address = current_user.addresses.first
       end
     end

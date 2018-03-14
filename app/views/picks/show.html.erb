@@ -9,6 +9,24 @@
   <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2 pick-detail">
       <h2  class="pick-title"><%= @pick.seed.title %></h2>
+      <%= render 'picks/pick-status', pick: @pick %>
+      <% if @customer_infos %>
+        <div class="ship-and-payment">
+          <div class="item ship">
+            <%= render 'picks/show_address', pick: @pick  %>
+          </div>
+          <div class="item payment">
+            <h3>Paiement</h3>
+            <div class="card-input"><%= @customer_infos["brand"]%></div>
+            <div class="card-input">
+              <i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><%= @customer_infos["last4"] %>
+            </div>
+            <div class="card-input">
+              <%= @customer_infos["exp_month"]%>/<%= @customer_infos["exp_year"] %>
+            </div>
+          </div>
+        </div>
+      <% end %>
       <div class="exchanges-and-questions">
         <div id="exchanges">
           <% if @pick.exchanges.blank? %>

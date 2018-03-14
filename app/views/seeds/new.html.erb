@@ -35,7 +35,7 @@
                   <div class="chooseFile">
                     <div><span class="glyphicon glyphicon-plus"></span>Ajouter des photos<span style="color: lightcoral; font-size: 13px; font-weight: bold; margin-left: 10px;">(min-1 / max-5)</span></div>
                   </div>
-                  <div class="input-block attach hidden">
+                  <div class="input-block attach">
                     <%= f.input :photos, as: :attachinary, label: false, class: "upload" %>
                   </div>
                 </div>
@@ -48,7 +48,7 @@
                   <div class="video-container cache">
                     <div class="col-xs-12 col-md-6 nopadding-right nopadding-left">
                       <div class="input-block video-block hidden">
-                        <%= f.input :url, label: "Vidéo 1", placeholder: "coller ici une url video  de youtube" %>
+                        <%= f.input :url, label: "Vidéo 1", placeholder: "coller ici l'url d'une video youtube" %>
 
                         <div class="media-preview hidden">
                           <iframe id="iframe" src="">
@@ -74,8 +74,8 @@
             <div class="supplier-infos">
               <div class="row head">
                 <div class="col-xs-12 col-sm-6 nopadding-right nopadding-left">
-                  <h5>Ou est vendu ce seed?</h5>
-                  <%= f.collection_radio_buttons :sale_point, [["internet", 'Sur les internets 3.0'] ,["traditional", 'Dans une boutique sympathique']], :first, :last %>
+                  <h5>Ou peut on acheter ce produit ?</h5>
+                  <%= f.collection_radio_buttons :sale_point, [["internet", 'Sur internet'] ,["traditional", 'Commerce traditionnel']], :first, :last %>
                 </div>
               </div>
               <div class="row">
@@ -84,7 +84,7 @@
                     <div class="shop internet hidden">
                       <div class="magn-left text-center">Aidez-nous à contacter les vendeurs</div>
                       <%= f.input :sale_point_url, label:"Url", placeholder: "http://www..." %>
-                      <%= f.input :sale_point_contact, label:"Contact", placeholder: "dronemousse@contact.com" %>
+                      <%= f.input :sale_point_contact, label:"Contact", placeholder: "email, téléphone..." %>
                     </div>
                     <div class="shop traditional hidden">
                       <div class="magn-left text-center">Aidez-nous à contacter les vendeurs</div>
@@ -94,7 +94,7 @@
                   </div>
                   <div class="col-xs-12 col-sm-6">
                     <div class="official_description hidden">
-                      <%= f.input :official_description,label:"Collez-ici le descriptif officiel du vendeur", placeholder: "Exemple: dimentions, autonomie, composants..." %>
+                      <%= f.input :official_description,label:"Collez-ici le descriptif officiel du vendeur", placeholder: "Exemple: dimensions, autonomie, composants..." %>
                     </div>
                   </div>
                 </div>

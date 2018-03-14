@@ -1,6 +1,19 @@
 .pick-details-container {
   padding: 50px;
   min-height: calc(100vh - 70px);
+
+  .pick-title{
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+
+  h3{
+    margin-bottom: 6px;
+    margin-top: 0;
+    font-size: 19px;
+  }
+
+
 }
 
 .pick-detail {
@@ -10,8 +23,51 @@
   text-align: center;
 }
 
+.ship-and-payment{
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  width: 80%;
+  display: flex;
+
+    .item{
+      padding: 6px;
+      text-align: left;
+    }
+
+    .ship{
+      flex: 1;
+      border-right: 1px solid #ddd;
+
+    }
+
+    .fa{
+      font-size: 13px;
+    }
+
+    .payment{
+      flex: 1;
+    }
+}
+
+.pick-status{
+  margin-bottom: 15px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  padding: 8px;
+  background: #fceb97;
+  margin: 0 auto;
+  width: 80%;
+  text-align: left;
+}
+
 .exchange-header {
   margin-bottom: 15px;
+  border: 1px solid #ddd;
+  padding: 8px;
+  background: #f3f3f3;
+  margin-top: 30px;
+  text-align: center;
 }
 
 .exchanges-and-questions {
