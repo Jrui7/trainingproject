@@ -1,0 +1,23 @@
+<%= render "shared/navbar" %>
+<%= render 'shared/sub-navbar' %>
+<div class="container">
+  <div class="infos-container">
+    <div class="row">
+      <div class="col-md-2">
+        <div class="navigation-menu">
+        <%= render 'pages/navigation', page: @page %>
+        </div>
+      </div>
+      <div class="col-md-8 col-md-offset-1">
+        <div class="content-box">
+          <div class="title">
+            <h1>CGV</h1>
+            <p class="intro">Voici les CGV</p>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

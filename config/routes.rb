@@ -39,9 +39,13 @@ Rails.application.routes.draw do
   get 'popular', to: 'seeds#popular'
   get 'last_day', to: 'seeds#last_day'
 
-  get 'faq', to: 'pages#faq'
   get 'home', to: 'pages#home'
-  get 'team', to: 'pages#team'
+  get 'faq', to: 'pages#faq'
+  get 'contact', to: 'pages#contact'
+  get 'mentions_legales', to: 'pages#mentions_legales'
+  get 'cgv', to: 'pages#cgv'
+  get 'cgu', to: 'pages#cgu'
+
 
   get 'my_seeds', to: 'my_seedlap#my_seeds'
   get 'my_picks', to: 'my_seedlap#my_picks'

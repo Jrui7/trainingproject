@@ -4,6 +4,7 @@
 $body-font: 'Roboto';
 $headers-font: 'Varela Round', sans-serif;
 
+
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";
@@ -15,7 +16,7 @@ $headers-font: 'Varela Round', sans-serif;
 // $my-font: "Font Name";
 
 body {
-
+  font-family: 'Lato' !important;
 }
 
 
