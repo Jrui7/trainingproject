@@ -24,6 +24,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'swipebox'
 gem 'mailjet'
+gem 'social-share-button'
 
 
 gem 'cloudinary', '1.1.7'
