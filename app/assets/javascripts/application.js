@@ -6,6 +6,7 @@
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
 //= require swipebox
+//= require social-share-button
 
 //= require_tree .
 
