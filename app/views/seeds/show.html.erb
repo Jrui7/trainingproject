@@ -139,7 +139,7 @@
                   </div>
                 </div>
                 <div class="social-category">
-                  <%= social_share_button_tag(@seed.title) %>
+                  <%= social_share_button_tag('Partager sur Facebook', :url => seed_path(@seed), desc: @seed.title) %>
                 </div>
               <% end %>
             </div>
