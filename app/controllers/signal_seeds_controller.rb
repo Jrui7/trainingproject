@@ -2,7 +2,7 @@ class SignalSeedsController < ApplicationController
 
 
   def create
-    @seed = Seed.find(params[:seed_id])
+    @seed = Seed.friendly.find(params[:seed_id])
     @seed.signal_seed.create! user: current_user
     authorize @seed
     respond_to do |format|

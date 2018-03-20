@@ -21,6 +21,8 @@ class User < ApplicationRecord
 
   after_create :send_welcome_email
 
+  extend FriendlyId
+  friendly_id :pseudo, use: :slugged
 
 
   def has_photo?

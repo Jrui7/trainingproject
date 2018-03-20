@@ -33,6 +33,7 @@ gem 'coffee-rails'
 
 gem 'yt', '~> 0.28.0'
 gem 'will_paginate'
+gem 'friendly_id', '~> 5.2', '>= 5.2.3'
 
 group :development, :test do
   gem 'pry-byebug'
