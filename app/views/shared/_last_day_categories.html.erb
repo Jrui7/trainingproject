@@ -1,5 +1,5 @@
 <% @categories.each do |category| %>
-  <%= link_to last_day_path(category: category.id) do %>
+  <%= link_to last_day_path(category: category) do %>
       <div class="sub-title <%=category.id%> <%='inactive' if category.id.to_s == @filter %>">
         <%= image_tag "#{category.name.downcase.gsub(' ', '_')}.jpg", class: "categories-icon" %>
         <div class="name-and-count">

@@ -7,7 +7,7 @@ class SeedsController < ApplicationController
   def index
     @categories = Category.all
     if params[:category].present?
-      @filter = params[:category]
+      @filter = Category.friendly.find(params[:category])
       @seeds = policy_scope(Seed).seed_selection.includes(:category, :user).paginate(page: params[:page])
       @seeds = @seeds.category(@filter)
     else
@@ -22,7 +22,7 @@ class SeedsController < ApplicationController
   def last_day
     @categories = Category.all
     if params[:category].present?
-      @filter = params[:category]
+      @filter = Category.friendly.find(params[:category])
       @seeds = Seed.seed_selection.last_day.includes(:category, :user).paginate(page: params[:page])
       @seeds = @seeds.category(@filter)
     else
@@ -38,7 +38,7 @@ class SeedsController < ApplicationController
   def popular
     @categories = Category.all
     if params[:category].present?
-      @filter = params[:category]
+      @filter = Category.friendly.find(params[:category])
       @seeds = Seed.seed_selection.popular.includes(:category, :user).paginate(page: params[:page])
       @seeds = @seeds.category(@filter)
     else
@@ -54,7 +54,7 @@ class SeedsController < ApplicationController
   def newest
     @categories = Category.all
     if params[:category].present?
-      @filter = params[:category]
+      @filter = Category.friendly.find(params[:category])
       @seeds = Seed.seed_selection.newest.includes(:category, :user).paginate(page: params[:page])
       @seeds = @seeds.category(@filter)
     else
@@ -92,7 +92,7 @@ class SeedsController < ApplicationController
   end
 
   def show
-    @seed = Seed.find(params[:id])
+    @seed = Seed.friendly.find(params[:id])
     authorize @seed
     @seeder = @seed.user
     @seed.increment_views
@@ -102,7 +102,7 @@ class SeedsController < ApplicationController
   end
 
   def update
-    @seed = Seed.find(params["id"])
+    @seed = Seed.friendly.find(params["id"])
     admin_review = params["seed"]["admin_review"]
     authorize @seed
 

@@ -1,5 +1,8 @@
 class Seed < ApplicationRecord
 
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   has_one :campaign, dependent: :destroy
   belongs_to :category
   belongs_to :user
