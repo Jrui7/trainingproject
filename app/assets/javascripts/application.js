@@ -6,6 +6,7 @@
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
 //= require swipebox
+//= require cookies_eu
 
 //= require_tree .
 

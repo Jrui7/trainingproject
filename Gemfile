@@ -24,6 +24,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'swipebox'
 gem 'mailjet'
+gem 'cookies_eu', '~> 1.6', '>= 1.6.3'
 
 
 gem 'cloudinary', '1.1.7'
