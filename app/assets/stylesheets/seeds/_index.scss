@@ -236,9 +236,11 @@ a:hover {
   transition: all 0.1s;
   padding: 5px 10px 5px 10px;
   margin-bottom: 2px;
+  border: 1px solid #FFF;
+
 
     &:hover {
-  box-shadow: 0 5px 10px rgba(0,0,0,0.25), 2px 5px 5px rgba(0,0,0,0.22);
+  border: 1px solid #e8e8e8;
   background-color: #FFFFFF;
   padding: 5px 10px 5px 10px;
   margin-bottom: 2px;
@@ -258,11 +260,10 @@ a:hover {
   transition: all 0.1s;
   padding: 5px 13px 5px 13px;
   margin-bottom: 2px;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(0,0,0,0.07);
-
+  border: 1px solid #e8e8e8;
 
     &:hover {
-  box-shadow: 0 1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(0,0,0,0.07);
+  border: 1px solid #e8e8e8;
   background-color: #FFFFFF;
   padding: 5px 13px 5px 13px;
   margin-bottom: 2px;
