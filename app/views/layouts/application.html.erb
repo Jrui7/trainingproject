@@ -12,13 +12,19 @@
 
       gtag('config', 'UA-115055409-1');
     </script>
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
 
 
-    <title>Seedlap - Décidez du prix des meilleures nouveautés</title>
-  <meta name="description" content="Seedlap révolutionne la façon dont les clients achètent... et les vendeurs vendent !">
-  <meta property="og:title" content="Seedlap - Décidez du prix des meilleures nouveautés">
-    <meta property="og:image" content="goal.png">
-    <meta property="og:description" content="Seedlap révolutionne la façon dont les clients achètent... Vous y gagnez à tous les coups !">
+
     <meta property="og:site_name" content="Seedlap"/>
     <%= favicon_link_tag 'favicon.png' %>
     <%= csrf_meta_tags %>
