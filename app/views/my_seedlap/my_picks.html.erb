@@ -45,19 +45,20 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title"><%= pick.seed.title %> </h4>
+                    <h4 class="modal-title">Supprimer votre pick ? </h4>
                   </div>
                   <div class="modal-body">
-                    <h3>Annuler votre pick </h3>
-                    <div class="pick-modal">
-                      <%= link_to pick_path(pick.id), method: :delete, remote: true do %>
-                        <p>Ok</p>
-                      <% end %>
-
-                    </div>
+                    <% if pick.state == "pending" %>
+                      <h5>Cliquez sur "Supprimer mon pick" pour retirer "<%= pick.seed.title %>"" de vos picks.</h5>
+                    <% else %>
+                      <h5>En supprimant votre pick vous annulez votre participation à la campagne d'achat pour obtenir <%= pick.seed.title %>. Nous vous remboursons dès maintenant l'intégralité de l'acompte que vous aviez versé. </h5>
+                    <% end %>
                   </div>
-                  <div class="modal-footer hidden">
-                    <button type="button" id="close-modal-destroy-<%= pick.id%>" class="btn btn-default text-center" data-dismiss="modal">Fermer</button>
+                  <div class="modal-footer">
+                    <%= link_to pick_path(pick.id), class: "mid-width", method: :delete, remote: true do %>
+                        <div class="btn seedlap">Supprimer mon pick</div>
+                      <% end %>
+                    <button type="button" id="close-modal-destroy-<%= pick.id%>" class="btn seedlap  mid-width text-center" data-dismiss="modal">Fermer</button>
                   </div>
                 </div>
 
