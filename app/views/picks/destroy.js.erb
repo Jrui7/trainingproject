@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  $("#close-modal-destroy-<%= @pick.id%>").click();
   $(".pick-iterate.id-<%=@pick.id%>").slideUp();
   $(".my-picks").html('<%= j render 'shared/pending-picks' %> ');
 
