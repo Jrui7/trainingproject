@@ -9,7 +9,7 @@
             <h3><%= pick.seed.title %></h3>
         <% end %>
         <% if pick.seed.ongoing? %>
-          <%= link_to pick_path(pick.id), method: :delete, remote: true do %>
+          <%= link_to "#destroyPick-#{pick.id}", data: {toggle: "modal"} do %>
             <i class="fa fa-times-circle"></i>
           <% end %>
         <% end %>

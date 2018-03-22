@@ -4,7 +4,7 @@ class PicksController < ApplicationController
 
   def index
     @user = current_user
-    @seed = Seed.find(params[:seed_id])
+    @seed = Seed.friendly.find(params[:seed_id])
     @picks = policy_scope(Pick).where(seed_id: @seed, state: "paid").order(price: :desc )
     authorize @picks
 
@@ -26,7 +26,7 @@ class PicksController < ApplicationController
 
 
   def create
-    @seed = Seed.find(params[:seed_id])
+    @seed = Seed.friendly.find(params[:seed_id])
     @pick = @seed.picks.new(pick_params)
     @pick.user_id = current_user.id
     @pick.amount = @seed.price * 0.2

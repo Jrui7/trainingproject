@@ -193,6 +193,19 @@
 
   }
 
+  .modal-footer{
+    border-top: none !important;
+    display: flex;
+
+    .mid-width{
+      flex: 0 0 50%;
+    }
+
+    .seedlap{
+      width: 100%;
+    }
+  }
+
 
 
 
