@@ -1,5 +1,4 @@
-meta_product_name: "Nom du Product"
-meta_title: "Nom du Product - Tagline du Product"
-meta_description: "Description percutante"
-meta_image: "image.jpg"                           # Une image dans votre dossier app/assets/images/
-twitter_account: "@nomdevotrecompte"              # indispensable pour les Twitter Cards
+meta_product_name: "Seedlap"
+meta_title: "Seedlap - Décidez du prix des meilleures nouveautés"
+meta_description: "Avec Seedlap vous bénéficiez du meilleur prix possible: celui qui contente le plus grand nombre d'acheteurs tout en permettant au vendeur de maintenir sa rentabilité"
+meta_image: "tech.jpg"                           # Une image dans votre dossier app/assets/images/              # indispensable pour les Twitter Cards
