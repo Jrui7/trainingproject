@@ -13,25 +13,26 @@ puts "--------------------"
 
 =end
 
-# Category.destroy_all
+Category.destroy_all
 
-# mode = Category.create(name: "Mode & Beauté")
-# sport = Category.create(name: "Sport")
-# tech = Category.create(name: "Tech")
-# loisir = Category.create(name: "Loisirs & Sorties")
-# maison = Category.create(name: "Maison")
-# enfants = Category.create(name: "Enfants")
-# animaux = Category.create(name: "Animaux")
-# puts "Categories created !"
-# puts "--------------------"
+mode = Category.create(name: "Mode")
+beauté = Category.create(name: "Beauté")
+sport = Category.create(name: "Sport")
+tech = Category.create(name: "Tech")
+loisir = Category.create(name: "Loisirs & Sorties")
+maison = Category.create(name: "Maison")
+enfants = Category.create(name: "Enfants")
+animaux = Category.create(name: "Animaux")
+puts "Categories created !"
+puts "--------------------"
 
-mode = Category.where(name: "Mode & Beauté").first
-sport = Category.where(name: "Sport").first
-tech = Category.where(name: "Tech").first
-loisir = Category.where(name: "Loisirs & Sorties").first
-maison = Category.where(name: "Maison").first
-enfants = Category.where(name: "Enfants").first
-animaux = Category.where(name: "Animaux").first
+# mode = Category.where(name: "Mode & Beauté").first
+# sport = Category.where(name: "Sport").first
+# tech = Category.where(name: "Tech").first
+# loisir = Category.where(name: "Loisirs & Sorties").first
+# maison = Category.where(name: "Maison").first
+# enfants = Category.where(name: "Enfants").first
+# animaux = Category.where(name: "Animaux").first
 
 
 
@@ -50,7 +51,7 @@ thomas = User.where(pseudo: "SurfMousse").first
 
 
 
-# Seed.destroy_all
+Seed.destroy_all
 
 seed_mode = Seed.create(price: 150, popularity: 0, view_counter: 0, url: "https://www.youtube.com/watch?v=5AhY_-qUb4w" ,secondary_url: "", title: "T-shirt Psycha", expiration: DateTime.now.utc + 3.days, user_id: thomas.id, category_id: mode.id, description: "Avec ça Men, tu peux même parler boulot après 19h00", photo_urls: ["http://res.cloudinary.com/dlddnk3pr/image/upload/v1509956287/hdecr3jxijppwsukhi0l.jpg", "http://res.cloudinary.com/dlddnk3pr/image/upload/v1509623265/ridfuoa67vz6ewlb3zop.jpg", "http://res.cloudinary.com/dlddnk3pr/image/upload/v1505138572/eecindhnvh2ltpxpitb9.jpg"])
 seed_sport  = Seed.create(price: 100, popularity: 0, view_counter: 0, url: "https://www.youtube.com/watch?v=5AhY_-qUb4w" , secondary_url: "https://www.youtube.com/watch?v=sKeslrZ-i6k", title: "Le tube d'Hendaye", expiration: DateTime.now.utc + 3.days, user_id: thomas.id, category_id: sport.id, description: "Perso Ma Men, c'est les plus grosses vagues que j'ai ridé", photo_urls: ["http://res.cloudinary.com/dlddnk3pr/image/upload/v1505138572/eecindhnvh2ltpxpitb9.jpg", "http://res.cloudinary.com/dlddnk3pr/image/upload/v1504544452/yxdwojuuq0q71p2oemmz.jpg"])

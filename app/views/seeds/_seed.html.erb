@@ -19,7 +19,7 @@
     <% end %>
     <div class="bottom-sexion">
       <div class="product-category">
-        <p class="<%= seed.category.name%>"> <%= seed.category.name %></p>
+        <p class="<%= seed.category.name.downcase.gsub('é', 'e')%>"> <%= seed.category.name %></p>
       </div>
       <div class="social-overview">
         <div class="icon-and-number">

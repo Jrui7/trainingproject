@@ -74,7 +74,7 @@
             <div class="supplier-infos">
               <div class="row head">
                 <div class="col-xs-12 col-sm-6 nopadding-right nopadding-left">
-                  <h5>Ou peut on acheter ce produit ?</h5>
+                  <h5>Ou avez-vous découvert produit ?</h5>
                   <%= f.collection_radio_buttons :sale_point, [["internet", 'Sur internet'] ,["traditional", 'Commerce traditionnel']], :first, :last %>
                 </div>
               </div>
@@ -83,7 +83,7 @@
                   <div class="col-xs-12 col-sm-6 nopadding-right nopadding-left">
                     <div class="shop internet hidden">
                       <div class="magn-left text-center">Aidez-nous à contacter les vendeurs</div>
-                      <%= f.input :sale_point_url, label:"Url", placeholder: "http://www..." %>
+                      <%= f.input :sale_point_url, label:"Site internet", placeholder: "http://www..." %>
                       <%= f.input :sale_point_contact, label:"Contact", placeholder: "email, téléphone..." %>
                     </div>
                     <div class="shop traditional hidden">
