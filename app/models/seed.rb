@@ -37,6 +37,7 @@ class Seed < ApplicationRecord
   validates :price, presence: {
     message: "A quel prix est-il actuellement vendu?"
     }
+  validates :price, numericality: true
 
   validates :photos, presence: {
     message: "Ajoutez au moins une photo"
@@ -45,7 +46,7 @@ class Seed < ApplicationRecord
   validates :url, url: true
   validates :secondary_url, url: true
 
-  validates :size_guide, presence: true, if: :mode_seed?
+  validates :size_guide, presence: true, if: :mode?
 
 
 
@@ -117,7 +118,7 @@ class Seed < ApplicationRecord
     end
   end
 
-  def mode_seed?
+  def mode?
     category.name == "Mode" if self.category
   end
 

@@ -15,12 +15,12 @@
                     <%= f.input :title, label:"Titre", placeholder: "Exemple: Drone en mousse" %>
                   </div>
                   <div class="input-block">
-                    <%= f.input :price, label:"Prix original en €", placeholder: "exemple: 15" %>
+                    <%= f.input :price, label:"Prix original en €", placeholder: "exemple: 15", error: "Veuillez entrer un prix" %>
                   </div>
                   <div class="input-block">
                     <%= f.association :category, label:"Catégorie", prompt: "Selectionner une categorie"%>
                   </div>
-                  <div class="input-block size-guide-input hidden">
+                  <div class="input-block size-guide-input <%= 'hidden' unless @seed.mode? %>">
                     <p class= "size-explain">Afin d'aider les participants à la campagne à choisir la taille qui leur convient, merci de coller ci-dessous le lien vers le guide des tailles du produit.</p>
                     <%= f.input :size_guide, label:"Guide des tailles", placeholder: "url du site"%>
                   </div>
