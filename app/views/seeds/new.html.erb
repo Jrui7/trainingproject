@@ -15,10 +15,14 @@
                     <%= f.input :title, label:"Titre", placeholder: "Exemple: Drone en mousse" %>
                   </div>
                   <div class="input-block">
-                    <%= f.association :category, label:"Catégorie", prompt: "Selectionner une categorie"%>
+                    <%= f.input :price, label:"Prix original en €", placeholder: "exemple: 15" %>
                   </div>
                   <div class="input-block">
-                    <%= f.input :price, label:"Prix original en €", placeholder: "exemple: 15" %>
+                    <%= f.association :category, label:"Catégorie", prompt: "Selectionner une categorie"%>
+                  </div>
+                  <div class="input-block size-guide-input hidden">
+                    <p class= "size-explain">Afin d'aider les participants à la campagne à choisir la taille qui leur convient, merci de coller ci-dessous le lien vers le guide des tailles du produit.</p>
+                    <%= f.input :size_guide, label:"Guide des tailles", placeholder: "url du site"%>
                   </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 nopadding-right nopadding-left">
@@ -74,7 +78,7 @@
             <div class="supplier-infos">
               <div class="row head">
                 <div class="col-xs-12 col-sm-6 nopadding-right nopadding-left">
-                  <h5>Ou peut on acheter ce produit ?</h5>
+                  <h5>Ou avez-vous découvert produit ?</h5>
                   <%= f.collection_radio_buttons :sale_point, [["internet", 'Sur internet'] ,["traditional", 'Commerce traditionnel']], :first, :last %>
                 </div>
               </div>
@@ -83,7 +87,7 @@
                   <div class="col-xs-12 col-sm-6 nopadding-right nopadding-left">
                     <div class="shop internet hidden">
                       <div class="magn-left text-center">Aidez-nous à contacter les vendeurs</div>
-                      <%= f.input :sale_point_url, label:"Url", placeholder: "http://www..." %>
+                      <%= f.input :sale_point_url, label:"Site internet", placeholder: "http://www..." %>
                       <%= f.input :sale_point_contact, label:"Contact", placeholder: "email, téléphone..." %>
                     </div>
                     <div class="shop traditional hidden">
@@ -110,7 +114,6 @@
     </div>
   </div>
 </div>
-
 
 
 

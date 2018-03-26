@@ -1,7 +1,7 @@
 // Import Google fonts
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,300,700|Lato:400,300,700|Varela+Round:400,300,700");
 // Define fonts for body and headers
-$body-font: 'Roboto';
+$body-font: 'Lato';
 $headers-font: 'Varela Round', sans-serif;
 
 
@@ -15,11 +15,6 @@ $headers-font: 'Varela Round', sans-serif;
 // }
 // $my-font: "Font Name";
 
-
-
-body {
-  font-family: 'Lato' !important;
-}
 
 
 h3 {

@@ -374,7 +374,7 @@ a:hover {
   display: flex;
   text-transform: uppercase;
 
-  .Sport {
+  .sport {
     border: 1px solid #e8e8e8;
     color: white;
     border-radius: 3px;
@@ -382,7 +382,7 @@ a:hover {
     background-color: $red;
   }
 
-  .Enfants {
+  .enfants {
     border: 1px solid #e8e8e8;
     color: white;
     border-radius: 3px;
@@ -390,7 +390,7 @@ a:hover {
     background-color: $orange;
   }
 
-  .Animaux {
+  .animaux {
     border: 1px solid #e8e8e8;
     color: white;
     border-radius: 3px;
@@ -398,7 +398,7 @@ a:hover {
     background-color: $green;
   }
 
-  .Mode {
+  .mode {
     border: 1px solid #e8e8e8;
     color: white;
     border-radius: 3px;
@@ -406,7 +406,15 @@ a:hover {
     background-color: $anis;
   }
 
-  .Loisirs {
+  .beaute {
+    border: 1px solid #e8e8e8;
+    color: white;
+    border-radius: 3px;
+    padding: 0 10px 0 10px;
+    background-color: $blueworld;
+  }
+
+  .loisirs {
     border: 1px solid #e8e8e8;
     color: white;
     border-radius: 3px;
@@ -414,7 +422,7 @@ a:hover {
     background-color: purple;
   }
 
-  .Maison {
+  .maison {
     border: 1px solid #e8e8e8;
     color: white;
     border-radius: 3px;
@@ -422,7 +430,7 @@ a:hover {
     background-color: $blue;
   }
 
-  .Tech {
+  .tech {
     border: 1px solid #e8e8e8;
     color: white;
     border-radius: 3px;

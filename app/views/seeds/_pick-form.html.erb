@@ -1,6 +1,7 @@
 
   <%= simple_form_for [@seed, @pick], url: seed_picks_path(@seed), remote: true,method: :post do |f| %>
     <div class="pick-form">
+      <h3>Quel prix pour souhaitez-vous payer?</h3>
       <div class="price">
         <p><strong>Prix :</strong></p>
         <%= f.input_field :price, as: :integer, class: 'input-sm form-control pick', id: 'start-pick', placeholder: 'Exemple: 15'%>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320164022) do
+ActiveRecord::Schema.define(version: 20180323172917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -124,6 +124,7 @@ ActiveRecord::Schema.define(version: 20180320164022) do
     t.integer  "price_cents"
     t.string   "admin_review",         default: "not-reviewed"
     t.string   "slug"
+    t.string   "size_guide"
     t.index ["category_id"], name: "index_seeds_on_category_id", using: :btree
     t.index ["slug"], name: "index_seeds_on_slug", unique: true, using: :btree
     t.index ["user_id"], name: "index_seeds_on_user_id", using: :btree

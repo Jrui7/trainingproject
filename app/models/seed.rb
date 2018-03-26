@@ -45,6 +45,9 @@ class Seed < ApplicationRecord
   validates :url, url: true
   validates :secondary_url, url: true
 
+  validates :size_guide, presence: true, if: :mode_seed?
+
+
 
 
   has_attachments :photos, maximum: 5
@@ -112,6 +115,14 @@ class Seed < ApplicationRecord
       end
       pick.save
     end
+  end
+
+  def mode_seed?
+    category.name == "Mode" if self.category
+  end
+
+  def size_guide_error
+    errors.add(:size_guide, "doit etre rempli") if size_guide.blank?
   end
 
 

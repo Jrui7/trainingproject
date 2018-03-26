@@ -1,0 +1,18 @@
+$(document).ready(function(){
+  $("#seed_category_id").change(function(){
+      var userInput  = $("#seed_category_id").val();
+      var mode = $("<%= Category.where(name: "Mode").first.id %>");
+      var string_mode = JSON.parse(mode["selector"]);
+      console.log(string_mode);
+      if (userInput == string_mode){
+        $(".size-guide-input").removeClass("hidden");
+      } else{
+        if (!$(".size-guide-input").hasClass('hidden')) {
+          $(".size-guide-input").addClass("hidden");
+        }
+      }
+
+
+
+  })
+})
