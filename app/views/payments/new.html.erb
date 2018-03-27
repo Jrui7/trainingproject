@@ -56,11 +56,14 @@
           </div>
           <div class="booking-link">
             <p>En validant ma participation, je déclare avoir pris connaissance et accepté sans réserve les CGU et CGV</p>
-            <%= link_to pick_payments_path(@pick), class: "btn book",  method: :post do %>
+            <%= link_to pick_payments_path(@pick), class: "btn book waiting",  method: :post do %>
               <i class="fa fa-lock"></i>
               <p>Confirmer participation</p>
             <% end %>
           </div>
+          <div class="loader-container hidden">
+          </div>
+
           <%= form_tag update_card_user_path(@user), method: :patch, class: "hidden" do %>
             <script
               src="https://checkout.stripe.com/checkout.js" class="stripe-button"

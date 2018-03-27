@@ -1,6 +1,8 @@
 $(document).ready(function(){
   $("#close-modal-destroy-<%= @pick.id%>").click();
   $(".pick-iterate.id-<%=@pick.id%>").slideUp();
+  $(".action-links").removeClass("hidden");
+  $(".loader-container").addClass("hidden").html("");
   $(".my-picks").html('<%= j render 'shared/pending-picks' %> ');
 
 })
