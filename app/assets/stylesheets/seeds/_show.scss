@@ -195,7 +195,11 @@
 
   .modal-footer{
     border-top: none !important;
-    display: flex;
+
+    .action-links{
+      display: flex;
+      width: 100%;
+    }
 
     .mid-width{
       flex: 0 0 50%;
