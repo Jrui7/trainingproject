@@ -18,7 +18,7 @@ require "attachinary/orm/active_record"
 
 Bundler.require(*Rails.groups)
 
-module Seedlap
+module Neoju
   class Application < Rails::Application
     config.generators do |generate|
       generate.assets false
