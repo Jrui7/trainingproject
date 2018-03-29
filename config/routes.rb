@@ -47,8 +47,8 @@ Rails.application.routes.draw do
   get 'cgu', to: 'pages#cgu'
 
 
-  get 'my_seeds', to: 'my_seedlap#my_seeds'
-  get 'my_picks', to: 'my_seedlap#my_picks'
+  get 'my_seeds', to: 'my_neoju#my_seeds'
+  get 'my_picks', to: 'my_neoju#my_picks'
 
 end
 

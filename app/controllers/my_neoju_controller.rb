@@ -1,4 +1,4 @@
-class MySeedlapController < ApplicationController
+class MyNeojuController < ApplicationController
 
 
 
