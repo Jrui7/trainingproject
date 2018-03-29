@@ -1,4 +1,4 @@
-class MySeedlapPolicy < ApplicationPolicy
+class MyNeojuPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope
