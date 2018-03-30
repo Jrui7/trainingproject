@@ -42,6 +42,12 @@
               <p>Signaled (<%= @signaled.count %>)</p>
             </div>
           <% end %>
+          <%= link_to sidekiq_web_path do %>
+            <div class="sub-title">
+              <div class="filter-icon glyphicon glyphicon-exclamation-sign"></div>
+              <p>Background Jobs (<%= @signaled.count %>)</p>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

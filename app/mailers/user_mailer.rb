@@ -7,7 +7,6 @@ class UserMailer < ApplicationMailer
   #
   def welcome(user)
     @user = user
-
     mail to: @user.email, subject: "#{@user.pseudo}: en route pour une super expérience"
   end
 end

@@ -6,7 +6,7 @@ git_source(:github) { |name| "https://github.com/#{name}.git" }
 gem 'devise'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
-gem 'pg'
+gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.0.5'
 gem 'redis'
@@ -35,6 +35,8 @@ gem 'coffee-rails'
 gem 'yt', '~> 0.28.0'
 gem 'will_paginate'
 gem 'friendly_id', '~> 5.2', '>= 5.2.3'
+gem 'sidekiq', '~> 5.1', '>= 5.1.2'
+gem 'sidekiq-failures', '~> 1.0'
 
 group :development, :test do
   gem 'pry-byebug'

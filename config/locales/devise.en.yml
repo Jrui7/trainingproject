@@ -34,8 +34,8 @@ en:
       no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
       send_instructions: "Instructions de changement de mot de passe envoyées."
       send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
-      updated: "Your password has been changed successfully. You are now signed in."
-      updated_not_active: "Your password has been changed successfully."
+      updated: "Votre mot de passe a été changé avec succès. Vous êtes à présent connecté(e)."
+      updated_not_active: "Votre mot de passe a été changé avec succès."
     registrations:
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       signed_up: "Bienvenue!"
