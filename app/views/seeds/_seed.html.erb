@@ -8,7 +8,7 @@
       <%if seed.user.has_photo? %>
       <%= cl_image_tag(seed.user.photo.path, class: "seeder-picture", :quality=> 40)%>
       <% else %>
-        <i class="fa fa-user-o"></i>
+        <i class="fa fa-user"></i>
       <% end %>
       <div class="user">
         <p id= "pseudo"> <%= seed.user.pseudo %> </p>
@@ -27,7 +27,7 @@
           <p><%= seed.view_counter%></p>
         </div>
         <div class="icon-and-number">
-          <i class="fa fa-hand-lizard-o" aria-hidden="true"></i>
+          <i class="fa fa-hand-lizard" aria-hidden="true"></i>
           <p class="seed-counter"><%= seed.picks.count%></p>
         </div>
       </div>

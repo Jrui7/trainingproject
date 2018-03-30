@@ -148,7 +148,7 @@
               <%if @seeder.has_photo? %>
               <%= cl_image_tag(@seeder.photo.path, class: "seeder-picture-big")%>
               <% else %>
-                <i class="fa fa-user-o"></i>
+                <i class="fa fa-user"></i>
               <% end %>
               <div class="user-show">
                 <p id= "pseudo-bold"> <%= @seeder.pseudo %>
@@ -170,11 +170,11 @@
                   <% end %>
                   <% if @seeder.social_links? %>
                     <div class="col-xs-12 social-group">
-                      <p>Social-links:</p>
+                      <p>Qui m'aime me suive !</p>
                       <% if @seed.user.insta?  %>
                         <div class="col-xs-6 col-md-3 kill-padding">
                           <div class="icon-and-pseudo">
-                          <div class="fa fa-instagram"></div>
+                          <%= image_tag "instagram.png" %>
                           <p><%= @seeder.insta %></p>
                         </div>
                         </div>
@@ -182,7 +182,7 @@
                       <% if @seeder.youtube? %>
                         <div class="col-xs-6 col-md-3 kill-padding">
                           <div class="icon-and-pseudo">
-                          <div class="fa fa-youtube"></div>
+                          <%= image_tag "youtube.png" %>
                           <p><%= @seeder.youtube %></p>
                         </div>
                         </div>
@@ -190,7 +190,7 @@
                       <% if @seeder.snap? %>
                         <div class="col-xs-6 col-md-3 kill-padding">
                           <div class="icon-and-pseudo">
-                          <div class="fa fa-snapchat-ghost"></div>
+                          <%= image_tag "snapchat.png" %>
                           <p><%= @seeder.snap %></p>
                         </div>
                         </div>
@@ -198,7 +198,7 @@
                       <% if @seeder.facebook? %>
                         <div class="col-xs-6 col-md-3 kill-padding">
                           <div class="icon-and-pseudo">
-                          <div class="fa fa-facebook"></div>
+                          <%= image_tag "facebook.png" %>
                           <p><%= @seeder.facebook %></p>
                         </div>
                         </div>
