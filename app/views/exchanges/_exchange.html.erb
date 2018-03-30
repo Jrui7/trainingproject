@@ -3,7 +3,7 @@
     <%if exchange.user.photo? %>
       <%= cl_image_tag exchange.user.photo.path, class: "author-avatar pic"%>
     <% else %>
-      <i class="fa fa-user-o dropdown-toggle" class="author-avatar"></i>
+      <i class="fa fa-user dropdown-toggle" class="author-avatar"></i>
     <% end %>
     <div class="author-and-date">
       <div class="message-sent"><%= exchange.created_at.strftime("%d/%m/%Y") %>

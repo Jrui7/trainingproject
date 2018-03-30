@@ -32,7 +32,7 @@
               <% if current_user.photo? %>
                 <%= cl_image_tag current_user.photo.path, :quality=>40, class: "dropdown-toggle", id: "dropdown-photo", "data-toggle" => "dropdown" %>
               <% else %>
-                <i class="fa fa-user-o dropdown-toggle" aria-hidden="true" id="dropdown-icon", data-toggle="dropdown"></i>
+                <i class="fa fa-user dropdown-toggle" aria-hidden="true" id="dropdown-icon", data-toggle="dropdown"></i>
               <% end %>
               <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
                 <li>
@@ -91,7 +91,7 @@
               <% if current_user.photo? %>
                 <%= cl_image_tag current_user.photo.path, class: "dropdown-toggle", id: "dropdown-photo", "data-toggle" => "dropdown" %>
               <% else %>
-                <i class="fa fa-user-o dropdown-toggle" aria-hidden="true" id="dropdown-icon", data-toggle="dropdown"></i>
+                <i class="fa fa-user dropdown-toggle" aria-hidden="true" id="dropdown-icon", data-toggle="dropdown"></i>
               <% end %>
               <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
                 <li>

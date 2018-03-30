@@ -123,44 +123,6 @@
         margin-left: 10px;
       }
 
-      .fa {
-
-        font-size: 25px;
-        text-align: center;
-        text-decoration: none;
-        margin: 5px 2px;
-        width: 30px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 4px;
-      }
-
-      .fa-instagram {
-        color: white;
-        background: #f09433;
-        background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-        background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-        background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
-      }
-
-      .fa-snapchat-ghost {
-        background: #fffc00;
-        color: white;
-        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-      }
-
-      .fa-facebook {
-        background: #3B5998;
-        color: white;
-      }
-
-      .fa-youtube {
-        background: #bb0000;
-        color: white;
-      }
 
       .control-label {
         text-align: left;
@@ -195,7 +157,8 @@
     margin-top: 30px;
 
     h4 {
-      font-size: 20px;
+      font-size: 23px;
+      margin-bottom: 17px;
     }
 
     .icons-and-form {
@@ -215,6 +178,9 @@
       margin-right: 30px;
       .written-label {
         margin-right: 0;
+        img {
+          height: 35px;
+        }
       }
       .attached-inputs {
         margin-left: 0;

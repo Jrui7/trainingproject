@@ -110,7 +110,7 @@
       background-color: $blue;
 
 
-      .fa-hand-lizard-o {
+      .fa-hand-lizard {
         font-size: 20px;
         color: white;
         padding: 0;
@@ -388,6 +388,10 @@
       .icon-and-pseudo{
         display: flex;
         align-items: center;
+        img{
+          height: 35px;
+          margin-right: 9px;
+        }
         p{
           margin: 0;
         }
@@ -611,7 +615,7 @@
     padding: 10px;
     box-shadow: 0px -8px 10px 1px rgba(217,208,217,1);
 
-    .fa-hand-lizard-o {
+    .fa-hand-lizard {
       color: white;
       padding: 0;
     }
@@ -702,7 +706,7 @@
       background-color: $blue;
 
 
-        .fa-hand-lizard-o {
+        .fa-hand-lizard {
           font-size: 15px;
           color: white;
           padding: 0;
