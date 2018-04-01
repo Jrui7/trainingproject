@@ -87,7 +87,9 @@ class User < ApplicationRecord
   private
 
   def send_welcome_email
-    UserMailer.welcome(self).deliver_later
+    UserMailer.welcome(self).deliver_now
+    # UserMailer.welcome(self).deliver_later(wait_until: 5.minutes.from_now)
+
   end
 
 end
