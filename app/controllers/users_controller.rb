@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :set_sample, only: [:show]
+  before_action :set_sample, only: [:show, :update]
 
 
   def show

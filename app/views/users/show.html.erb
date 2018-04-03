@@ -16,7 +16,7 @@
               <div class="user-form">
                 <%= simple_form_for @user do |f| %>
                   <%= f.input :pseudo, label: "Pseudo" %>
-                  <%= f.input :mini_bio, label: "Mini-bio", placeholder: "Présentez-vous à ceux qui consultent vos Seeds" %>
+                  <%= f.input :mini_bio, label: "Mini-bio", placeholder: "Présentez-vous à ceux qui consultent vos posts" %>
                   <div class="photo-update">
                       <div class="btn btn-danger choosePhoto"><%if @user.photo?%>
                           Changer de photo
