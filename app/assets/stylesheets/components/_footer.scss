@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 150px;
   width: 100%;
   padding: 0px 30px;
   color: rgba(0,0,0,0.3);
@@ -10,8 +10,8 @@
   margin-bottom: 0px;
   margin-top: 50px;
   bottom: 0;
-  background: $red;
-  background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+  background-color: #0F1136;
+
 
   p {
     color: white;
