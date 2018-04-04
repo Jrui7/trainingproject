@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def set_sample
-    if Seed.ongoing.any? == true
+    if Seed.seed_selection.any? == true
       @sample = Seed.seed_selection.sample
     else
       @sample = Seed.seed_sample_expired.sample

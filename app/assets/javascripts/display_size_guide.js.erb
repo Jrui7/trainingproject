@@ -3,6 +3,7 @@ $(document).ready(function(){
       var userInput  = $("#seed_category_id").val();
       var mode = $("<%= Category.where(name: 'Mode').first.id %>");
       var string_mode = JSON.parse(mode["selector"]);
+
       if (userInput == string_mode){
         $(".size-guide-input").removeClass("hidden");
       } else{
