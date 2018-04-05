@@ -148,7 +148,7 @@
               <%if @seeder.has_photo? %>
               <%= cl_image_tag(@seeder.photo.path, class: "seeder-picture-big")%>
               <% else %>
-                <i class="fa fa-user-circle"></i>
+                <i class="fa fa-user"></i>
               <% end %>
               <div class="user-show">
                 <p id= "pseudo-bold"> <%= @seeder.pseudo %>

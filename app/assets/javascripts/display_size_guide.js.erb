@@ -5,14 +5,13 @@ $(document).ready(function(){
       var string_mode = JSON.parse(mode["selector"]);
 
       if (userInput == string_mode){
+        console.log("envoyez nous un mail avec le code HD4TZ et recevez un petit cadeau de notre part");
         $(".size-guide-input").removeClass("hidden");
       } else{
         if (!$(".size-guide-input").hasClass('hidden')) {
           $(".size-guide-input").addClass("hidden");
         }
       }
-
-
 
   })
 })
