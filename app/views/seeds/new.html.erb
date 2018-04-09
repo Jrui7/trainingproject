@@ -12,8 +12,9 @@
                   <div class="input-block">
                     <%= f.input :title, label:"Titre", placeholder: "Exemple: Drone en mousse" %>
                   </div>
-                  <div class="input-block">
-                    <%= f.input :price, label:"Prix original en €", placeholder: "exemple: 15", error: "Veuillez entrer un prix" %>
+                  <div class="input-block-price">
+                    <%= f.input :price, label:"Prix original", placeholder: "exemple: 15", error: "Veuillez entrer un prix" %>
+                    <span class="unit">€</span>
                   </div>
                   <div class="input-block">
                     <%= f.association :category, label:"Catégorie", prompt: "Selectionner une categorie"%>

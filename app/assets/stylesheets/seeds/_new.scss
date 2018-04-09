@@ -95,9 +95,6 @@ margin-bottom: 35px;
     width: 100%;
     margin-left: 0;
     font-size: 14px;
-    border: 1px solid #ddd;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(0,0,0,0.07);
-
     }
 
   .form-action {
@@ -212,6 +209,22 @@ abbr {
     font-weight: normal;
     color: $gray;
   }
+
+  .input-block-price{
+    font-size: 15px;
+    font-weight: normal;
+    color: $gray;
+    position: relative;
+  }
+
+  .unit {
+    position: absolute;
+    display: block;
+    right:30px;
+    top: 32px;
+    z-index: 9;
+  }
+
 
 
 
