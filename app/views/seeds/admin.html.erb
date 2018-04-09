@@ -26,13 +26,13 @@
           <% end %>
           <%= link_to success_path do %>
             <div class="sub-title">
-              <div class="filter-icon fa fa-thumbs-o-up"></div>
+              <div class="filter-icon far fa-thumbs-up"></div>
               <p>Success</p>
             </div>
           <% end %>
           <%= link_to fail_path do %>
             <div class="sub-title">
-              <div class="filter-icon fa fa-thumbs-o-down"></div>
+              <div class="filter-icon far fa-thumbs-down"></div>
               <p>Fail</p>
             </div>
           <% end %>
@@ -44,8 +44,8 @@
           <% end %>
           <%= link_to sidekiq_web_path do %>
             <div class="sub-title">
-              <div class="filter-icon glyphicon glyphicon-exclamation-sign"></div>
-              <p>Background Jobs (<%= @signaled.count %>)</p>
+              <div class="filter-icon far fa-arrow-alt-circle-left"></div>
+              <p>Sidekiq Jobs</p>
             </div>
           <% end %>
         </div>
