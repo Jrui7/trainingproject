@@ -71,6 +71,7 @@ class SeedsController < ApplicationController
 
   def new
     @seed = Seed.new
+    @mode_category_id = Category.where(name: 'Mode').first.id
     authorize @seed
   end
 

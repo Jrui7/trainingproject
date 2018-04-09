@@ -1,22 +1,22 @@
 $(document).ready(function() {
   videoHandler();
   secondVideoHandler();
-})
+});
 
 function getVideoUrl() {
   var userInput = $("#seed_url").val();
-  return userInput
+  return userInput;
 }
-
 
 function clearVideoPreview() {
   $('#iframe').attr('src', '').hide();
 }
 
 function parseVideoUrl(videoUrl) {
-  var id = videoUrl.replace("https://www.youtube.com/watch?v=", "")
-  var url = 'https://www.youtube.com/embed/'+id
-  return url
+  var id = videoUrl.replace("https://www.youtube.com/watch?v=", "");
+  var url = 'https://www.youtube.com/embed/' + id;
+  console.log(url);
+  return url;
 }
 
 function showVideoPreview(url) {
@@ -24,22 +24,18 @@ function showVideoPreview(url) {
   $('#iframe').attr('src', url).show();
 }
 
-
-
-
-
-
 function videoHandler() {
   $('#seed_url').on('keyup', function(event) {
-    if (event.keyCode == 86) {
-      clearVideoPreview()
-      var videoUrl = $('#seed_url').val()
-      var videoId = parseVideoUrl(videoUrl)
-      showVideoPreview(videoId)
+    if (event.keyCode == 86 || event.keyCode == 91) {
+      clearVideoPreview();
+      var videoUrl = $('#seed_url').val();
+      var videoId = parseVideoUrl(videoUrl);
+      showVideoPreview(videoId);
     }
+
     if (event.keyCode == 8) {
       if ($('#seed_url').val() == "") {
-        clearVideoPreview()
+        clearVideoPreview();
       }
     }
   })
@@ -47,7 +43,7 @@ function videoHandler() {
 
 function getSecondVideoUrl() {
   var userInput = $("#seed_secondary_url").val();
-  return userInput
+  return userInput;
 }
 
 
@@ -56,18 +52,15 @@ function clearSecondVideoPreview() {
 }
 
 function parseSecondVideoUrl(videoUrl) {
-  var id = videoUrl.replace("https://www.youtube.com/watch?v=", "")
-  var url = 'https://www.youtube.com/embed/'+id
-  return url
+  var id = videoUrl.replace("https://www.youtube.com/watch?v=", "");
+  var url = 'https://www.youtube.com/embed/' + id;
+  return url;
 }
 
 function showSecondVideoPreview(url) {
   $('.second-media-preview').removeClass("hidden");
   $('#iframe-2').attr('src', url).show();
 }
-
-
-
 
 function secondVideoHandler() {
   $('#seed_secondary_url').on('keyup', function(event) {
@@ -79,7 +72,7 @@ function secondVideoHandler() {
     }
     if (event.keyCode == 8) {
       if ($('#seed_secondary_url').val() == "") {
-        clearSecondVideoPreview()
+        clearSecondVideoPreview();
       }
     }
   })
