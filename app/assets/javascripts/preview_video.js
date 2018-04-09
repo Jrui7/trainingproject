@@ -64,7 +64,7 @@ function showSecondVideoPreview(url) {
 
 function secondVideoHandler() {
   $('#seed_secondary_url').on('keyup', function(event) {
-    if (event.keyCode == 86) {
+    if (event.keyCode == 86 || event.keyCode == 91) {
       clearSecondVideoPreview()
       var videoUrl = $('#seed_secondary_url').val()
       var videoId = parseSecondVideoUrl(videoUrl)
