@@ -49,6 +49,11 @@
       flex-direction: column;
     }
 
+    .lost-link-text  {
+      margin: 0;
+    }
+
+
     .forgot-link {
       text-decoration: none;
       color: white;
@@ -300,6 +305,51 @@
   .outcome{
     font-weight: bold;
   }
+
+  @media screen and (max-width: 480px) {
+
+    .cookies-eu .cookies-eu-button-holder .cookies-eu-ok {
+      margin-bottom: 10px;
+    }
+
+    .banner-container {
+        padding-top: 55px;
+        height: 60vh;
+      }
+    .moto{
+      font-size: 35px;
+    }
+
+      .concept {
+        margin: 10px auto 0 auto;
+
+        p {
+        font-size: 17px;
+        background: rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        text-align: center;
+        }
+      }
+
+      .cta-link{
+        font-size: 18px;
+      }
+
+      #features-container{
+        display: block;
+        height: auto;
+      }
+
+      .icon-and-text{
+        margin-bottom: 20px;
+      }
+
+      .steps {
+        display: block;
+      }
+
+  }
+
 
 
 
