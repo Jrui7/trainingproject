@@ -11,3 +11,11 @@
   border: 2px solid $blue !important;
   background-color: transparent !important;
 }
+
+
+@media screen and (max-width: 480px) {
+
+  .cookies-eu .cookies-eu-button-holder .cookies-eu-ok {
+    margin-bottom: 10px;
+  }
+}
