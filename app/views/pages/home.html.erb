@@ -1,176 +1,142 @@
 
-
-    <div class="forgot-modal">
-  <!-- Modal -->
-    <div class="modal fade" id="lostModal" role="dialog">
-      <div class="modal-dialog modal-md">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Mot de passe oublié?</h4>
-
-          </div>
-          <div class="modal-body">
-            <p>Saisissez l'adresse mail que vous nous avez indiquée lors de votre inscription
+<div class="forgot-modal">
+<!-- Modal -->
+  <div class="modal fade" id="lostModal" role="dialog">
+    <div class="modal-dialog modal-md">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Mot de passe oublié?</h4>
+        </div>
+        <div class="modal-body">
+          <p>Saisissez l'adresse mail que vous nous avez indiquée lors de votre inscription
 afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
-            <div class="pick-modal">
-              <%= render "devise/passwords/reset-password"%>
-            </div>
-          </div>
-          <div class="modal-footer hidden">
-            <button type="button" id="close-modal-lost" class="btn btn-default text-center" data-dismiss="modal"></button>
+          <div class="pick-modal">
+            <%= render "devise/passwords/reset-password"%>
           </div>
         </div>
-
+        <div class="modal-footer hidden">
+          <button type="button" id="close-modal-lost" class="btn btn-default text-center" data-dismiss="modal"></button>
+        </div>
       </div>
     </div>
-    <%= render "devise/shared/links" %>
   </div>
+  <%= render "devise/shared/links" %>
+</div>
+
 <div class="container-home">
   <%= render 'cookies_eu/consent_banner' %>
   <div class="nav-and-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.7) 0%, rgba(0,36,61,0.7) 50%),
          url('https://res.cloudinary.com/dlddnk3pr/image/upload/v1520011589/souhaiter_h0suob.jpg')">
-    <%= render "pages/unauthentified-navbar" %>
+    <header class="header-home">
+        <div class="logo-and-log">
+          <div class="logo-box">
+            <div id="logo-home">Neoju</div>
+            <span class="glyphicon glyphicon-leaf", id="logo-home"></span>
+          </div>
+          <div class="right-links">
+            <a href="#features-container">
+              CONCEPT
+            </a>
+            <div class="hidden-xs hidden-sm connect-button">
+              CONNEXION
+            </div>
+            <div class="connexion-xs hidden-md hidden-lg">
+              <%= link_to new_user_session_path do%>
+                CONNEXION
+              <% end %>
+            </div>
+            <div class="log-in-home hidden">
+              <%= render "devise/sessions/login" %>
+            </div>
+          </div>
+        </div>
+      </header>
     <div class="banner-container">
       <h1 class="moto">
-        Le prix adapté
+        Le meilleur prix
       </h1>
       <div class="concept">
-        <p>Avec Neoju, décidez du prix que vous êtes prêt à payer pour les nouveautés qui vous plaisent.
+        <p>Et si payer devenait (presque) agréable ? Décidez du prix que vous êtes prêt à payer pour les nouveautés qui vous plaisent.
         </p>
 
       </div>
     </div>
-    <%= link_to seeds_path do %>
-      <div class="btn join-us-now">
-          Découvrir
-      </div>
-    <% end %>
+      <%= link_to seeds_path, class:"cta-link" do %>
+        Découvrir
+      <% end %>
   </div>
-  <div>
-    <div class="boucing-icon text-right" style="height: 0">
-      <a href="#share">
-        <i class="fa fa-arrow-circle-down bounce" aria-hidden="true"></i>
-      </a>
+
+
+  <div id="features-container">
+    <div class="icon-and-text" id="first">
+      <%= image_tag "number-1.png", class: "feature-images"  %>
+      <h3 class="quote">"J'aime ce produit, mais 90€…"</h3>
+      <div class="quote-text">Vous aimez les nouveautés, et ça vous coûte souvent cher ? Vous aimez les nouveautés, mais vous n'avez parfois pas le budget ?</div>
+      <%= image_tag "medal.png", class: "action-image" %>
+      <div class="quote-text">Présentez-nous vos plus belles découvertes. Comme-vous, certaines personnes aiment le produit que vous avez présenté mais ne sont pas prêtes à payer le prix demandé.</div>
+    </div>
+    <div class="icon-and-text" id="second">
+      <%= image_tag "number-2.png", class: "feature-images"  %>
+      <h3 class="quote">"Pour 75€ je fonce."</h3>
+      <div class="quote-text">Chaque personne intéressée par un produit a sept jours pour manifester sa volonté d'achat.</div>
+      <%= image_tag "medal.png", class: "action-image" %>
+      <div class="quote-text">"Pickez" un produit qui vous plait en donnant le prix que vous êtes personnellement prêt à payer pour en faire l'acquisition.</div>
+    </div>
+    <div class="icon-and-text" id="third">
+      <%= image_tag "number-3.png", class: "feature-images"  %>
+      <h3 class="quote">"Je ne paye plus que 70€ !"</h3>
+      <div class="quote-text">Vous proposez de payer 75€ ce produit initialement à 90€. Neoju calcule un prix optimal à 70€, vous ne payez que 70€.</div>
+      <%= image_tag "medal.png", class: "action-image" %>
+      <div class="quote-text">Avec Neoju vous bénéficiez du meilleur prix possible: celui qui contente le plus grand nombre d'acheteurs tout en permettant au vendeur de maintenir sa rentabilité.</div>
     </div>
   </div>
 
-  <div class="features-container">
-    <div class="row"  id="share">
-      <div class="col-xs-12 img-container hidden-md hidden-lg">
-        <%= image_tag "number-1.png", class: "feature-images" %>
-      </div>
-      <div class="col-xs-12 col-md-7 explanation-text">
-        <h3>"J’aime ce produit, mais 90€…"</h3>
-        <p>Vous aimez les nouveautés, et ça vous coûte souvent cher ? Vous aimez les nouveautés, mais vous n'avez parfois pas le budget ? </p>
-        <div class="icon-header-body">
-          <div class="icon-header">
-            <i class="fa fa-plus" aria-hidden="true"></i>
-            <h4>Postez</h4>
-          </div>
-          <p>Présentez-nous vos plus belles découvertes. Comme-vous, certaines personnes aiment le produit que vous avez présenté mais ne sont pas prêtes à payer le prix demandé.
-          </p>
-        </div>
-      </div>
-      <div class="col-md-4 col-md-offset-1 img-container hidden-xs hidden-sm">
-        <%= image_tag "number-1.png", class: "feature-images" %>
-      </div>
-    </div>
-    <div class="row" id="pick">
-      <div class="col-xs-12 col-md-4 img-container">
-        <%= image_tag "number-2.png", class: "feature-images" %>
-      </div>
-      <div class="col-xs-12 col-md-7 col-md-offset-1 explanation-text">
-        <h3>"Pour 75€ je fonce."</h3>
-        <p>Chaque personne intéressée par un produit a sept jours pour manifester sa volonté d'achat.</p>
-        <div class="icon-header-body">
-          <div class="icon-header">
-            <i class="fa fa-hand-lizard" aria-hidden="true"></i>
-            <h4>Pickez</h4>
-          </div>
-          <p>
-          "Pickez" un produit qui vous plait en donnant le prix que vous êtes personnellement prêt à payer pour en faire l'acquisition.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div  class= "row" id="save">
-      <div class="col-xs-12 img-container hidden-md hidden-lg">
-        <%= image_tag "number-3.png", class: "feature-images" %>
-      </div>
-      <div class="col-xs-12 col-md-7 explanation-text">
-        <h3>"Je ne paye plus que 70€ !"</h3>
-        <p>Vous proposez de payer 75€ ce produit initialement à 90€. Neoju calcule un prix optimal à 70€, vous ne payez que 70€.</p>
-        <div class="icon-header-body">
-          <div class="icon-header">
-            <i class="fa fa-trophy" aria-hidden="true"></i>
-            <h4>Enjoy</h4>
-          </div>
-            <p>Avec Neoju vous bénéficiez du meilleur prix possible: celui qui contente le plus grand nombre d'acheteurs tout en permettant au vendeur de maintenir sa rentabilité.
-            </p>
-        </div>
-      </div>
-      <div class="col-md-4 col-md-offset-1 img-container hidden-xs hidden-sm">
-        <%= image_tag "number-3.png", class: "feature-images" %>
-      </div>
-    </div>
-  </div>
-
-  <div class="home-blue-background-bottom">
+  <div class="home-blue-background">
     <div class="how-it-works">
-      <div class="row">
-        <div class="col-xs-12  col-md-8 col-md-offset-2 how-it-works-head">
-          <div class="cog-and-text">
-            <i class="fa fa-cog"></i>
-            <h3>Comment ça marche</h3>
+      <h3 class="how-it-works-title">Comment ça marche</h3>
+      <p>
+        Neoju détermine quel prix permet au vendeur de compenser la remise que vous lui demandez par une augmentation de ses ventes.
+      </p>
+      <div class="steps">
+        <div class="icon-and-text-no-shaddow">
+          <%= image_tag "medal.png", class: "action-image" %>
+          <div class="step-title">Rassembler</div>
+          <div class="step-text">
+            Lorsqu'un utilisateur poste un produit, nous collectons pendant 7 jours les propositions d'achat des personnes intéressées. Enregistrez votre participation à la campagne d'achat en versant un acompte qui vous sera remboursé à la fin de celle-ci.
           </div>
-          <p>
-            Neoju détermine quel prix permet au vendeur de compenser la remise que vous lui demandez par une augmentation de ses ventes.
-          </p>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 steps">
-          <div class="col-xs-12 col-md-4 step">
-            <%= image_tag "people.png", class: "how-it-works-images"%>
-            <div class="step-title">Rassembler</div>
-            <div class="step-text">
-              Lorsqu'un utilisateur poste un produit, nous collectons pendant 7 jours les propositions d'achat des personnes intéressées. Enregistrez votre participation à la campagne d'achat en versant un acompte qui vous sera remboursé à la fin de celle-ci.
-            </div>
+        <div class="icon-and-text-no-shaddow">
+          <%= image_tag "medal.png", class: "action-image" %>
+          <div class="step-title">Analyser</div>
+          <div class="step-text">
+            Nous contactons le(s) vendeur(s) du produit, et sur la base de tous les picks récoltés, nous calculons grâce à notre algorithme, le prix optimal qui va permettre aux acheteurs de bénéficier de la meilleure remise possible tout en maintenant la rentabilité du vendeur.
           </div>
-          <div class="col-xs-12 col-md-4 step">
-            <%= image_tag "chart.png", class: "how-it-works-images"%>
-            <div class="step-title">Analyser</div>
-            <div class="step-text">
-              Nous contactons le(s) vendeur(s) du produit, et sur la base de tous les picks récoltés, nous calculons grâce à notre algorithme, le prix optimal qui va permettre aux acheteurs de bénéficier de la meilleure remise possible tout en maintenant la rentabilité du vendeur.
-            </div>
-          </div>
-          <div class="col-xs-12 col-md-4 step">
-            <%= image_tag "goal.png", class: "how-it-works-images"%>
-            <div class="step-title">Finaliser</div>
-            <div class="step-text">
-              Nous remboursons tous les acomptes de participation à la campagne. Les "pickers" dont le prix est supérieur ou égal au prix optimal Neoju remportent le deal à ce prix. Les autres ne peuvent en bénéficier. Voir ci-dessous.
-            </div>
+        </div>
+        <div class="icon-and-text-no-shaddow">
+          <%= image_tag "medal.png", class: "action-image" %>
+          <div class="step-title">Finaliser</div>
+          <div class="step-text">
+            Nous remboursons tous les acomptes de participation à la campagne. Les "pickers" dont le prix est supérieur ou égal au prix optimal Neoju remportent le deal à ce prix. Les autres ne peuvent en bénéficier. Voir ci-dessous.
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-12 finalization">
-          <div class="finalization-title">Votre proprosition d'achat permet-elle au vendeur d'être rentable ?
-          </div>
-          <div class="col-xs-12 col-md-6 list">
-            <div class="pick-validated">OUI</div>
+      <div class="conclusion-box">
+        <h4 class="conclusion-title">
+          Votre proprosition d'achat permet-elle au vendeur d'être rentable ?
+        </h4>
+        <div class="yes-no">
+          <div class="outcome-and-text">
+            <h5 class="outcome">OUI</h5>
             <ul style="padding-left: 0">
               <li>Vous aviez pické le produit à 75€</li>
               <li>Le prix Neoju est de 70€</li>
               <li>Vous remportez le deal: le produit ne vous coûte plus que 70€</li>
             </ul>
           </div>
-          <div class="col-xs-12 col-md-6 list">
-            <div class="pick-validated">NON</div>
+          <div class="outcome-and-text">
+            <h5 class="outcome">NON</h5>
             <ul style="padding-left: 0">
               <li>Vous aviez pické le produit à 65€</li>
               <li>Le prix Neoju est de 70€</li>
@@ -180,8 +146,6 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
         </div>
       </div>
     </div>
-  </div>
-  <div class="footer">
   </div>
 </div>
 

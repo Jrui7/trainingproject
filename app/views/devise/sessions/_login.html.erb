@@ -10,7 +10,7 @@
     </div>
     <div class="password">
       <%= f.password_field :password, id: "password" %>
-      <%= link_to "#lostModal", data: { toggle: "modal" } do%>
+      <%= link_to "#lostModal", class: "lost-link-text", data: { toggle: "modal" } do%>
           <div class="forgot-link">Mot de passe oublié?</div>
       <% end %>
     </div>
