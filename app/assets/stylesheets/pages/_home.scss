@@ -327,6 +327,13 @@
         }
       }
 
+      .right-links{
+        font-size: 13px;
+        a{
+          margin: 0 0 0 5px;
+        }
+      }
+
       .cta-link{
         font-size: 18px;
       }
@@ -342,6 +349,43 @@
 
       .steps {
         display: block;
+      }
+
+      .quote{
+        font-size: 24px;
+      }
+
+      .how-it-works{
+        width: 90%;
+        p{
+          font-size:17px;
+        }
+
+        h3{
+          font-size: 28px;
+          margin: 0 0 15px;
+        }
+      }
+
+      .conclusion-title{
+        font-size:20px;
+      }
+
+      .yes-no{
+        display: block;
+        li{
+          font-size:13px;
+        }
+      }
+
+      .outcome-and-text{
+        display: block;
+        margin-top:30px;
+      }
+
+      .outcome{
+        margin-top:0;
+        margin-bottom:2px;
       }
 
   }
