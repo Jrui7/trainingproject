@@ -3,11 +3,12 @@ $.attachinary.config.template = '\
         <% if(files[i].resource_type == "raw") { %>\
           <div class="raw-file"></div>\
         <% } else { %>\
+          <% $(".no-photo").hide(); %>\
           <div class="picture-upload">\
             <img\
               src="<%= $.cloudinary.url(files[i].public_id, { "version": files[i].version, "format": "jpg", "crop": "fill", "width": 250, "height": 250 }) %>"\
-              alt="" width="100" height="100" />\
-            <a href="#" data-remove="<%= files[i].public_id %>" class="glyphicon glyphicon-trash"></a>\
+              alt="" width="150" height="150" />\
+            <a href="#" data-remove="<%= files[i].public_id %>" class="glyphicon glyphicon-remove"></a>\
           </div>\
         <% } %>\
     <% } %>\
@@ -22,12 +23,6 @@ $(document).ready(function() {
       $(".input-block.attach").removeClass("hidden");
 
   });
-
-
-
-
-
-
 
 
   $('.attachinary-input').bind('fileuploaddone', function (event) {
@@ -47,7 +42,7 @@ $(document).ready(function() {
 
 function updateUserPhoto() {
     $(".choosePhoto").click(function() {
-        $(".glyphicon.glyphicon-trash").click();
+        $(".glyphicon.glyphicon-remove").click();
         $("#user_photo").click();
     });
   }
