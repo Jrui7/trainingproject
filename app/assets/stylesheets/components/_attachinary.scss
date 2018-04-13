@@ -3,8 +3,9 @@
 
   .picture-upload {
     position: relative;
-    margin: 10px;
-
+    img {
+      border-radius: 10px;
+    }
 
     a {
       color: white;
@@ -13,9 +14,9 @@
       top: -11px;
       right: -11px;
       border: solid 1px;
-      padding: 5px;
+      padding: 3px;
       border-radius: 50%;
-      font-size: 11px;
+      font-size: 0.2em;
 
     }
 

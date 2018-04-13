@@ -54,11 +54,6 @@
 
 
 
-
-  .form-inline {
-    display: flex;
-  }
-
   .edit-button {
     color: $blue;
     border: solid 1px $blue;
@@ -104,6 +99,40 @@
   .user-form {
     padding: 20px 20px;
 
+    .primary-infos{
+      display: flex;
+    }
+
+    img {
+      margin-bottom: 15px;
+    }
+
+    .no-photo{
+      background-color: #e8e5e5;
+      height: 150px;
+      width: 150px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .photo-update{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 0 0 20%;
+    }
+
+    .pseudo-mini-bio{
+      flex: 0 0 80%;
+      padding-left: 35px;
+    }
+
+    input, textarea {
+      border-radius: 10px;
+    }
+
+
+
 
       label {
         margin-right: 15px;
@@ -146,11 +175,15 @@
   }
 
 
-
+  .tab-content, .small-padding, #public-profile, #personal-infos{
+    &:focus{
+      outline: none;
+    }
+  }
 
 
   #user_mini_bio {
-    height: 90px;
+    height: 145px;
   }
 
   .social-options {
@@ -243,15 +276,18 @@
 
 
   .choosePhoto {
+  display: inline-block;
   overflow: hidden;
   text-decoration: none;
   text-transform: uppercase;
-  color: white;
+  color: orange;
+  border: 1px solid orange;
   font-size: 12px;
   text-align: center;
   padding: 5px 14px;
-  margin: 20px 0 10px 0;
-  border-radius: 5px;
+  margin: 0 0 10px 0;
+  border-radius: 10px;
+  cursor: pointer;
 
   }
 
