@@ -330,8 +330,8 @@ a:hover {
 }
 
 .seeder-picture {
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
 }
 
@@ -515,6 +515,11 @@ a:hover {
         padding: 10px;
       }
 
+      .product-image{
+        height:100px;
+        width:100px;
+      }
+
 
       .product-body {
 
@@ -529,6 +534,11 @@ a:hover {
         p {
           font-size: 10px;
         }
+      }
+
+      .seeder-picture{
+        height: 35px;
+        width:35px;
       }
 
       .product-category{

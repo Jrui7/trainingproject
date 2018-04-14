@@ -223,6 +223,10 @@ a:hover {
 
     @media(max-width: 480px) {
 
+      .page-container{
+        padding: 0;
+      }
+
       .seed-feed {
         margin: 0;
         width: 100%;
@@ -243,6 +247,15 @@ a:hover {
 
       .pick-iterate {
         padding: 25px 0;
+      }
+
+      .pick-container{
+        padding: 7px;
+      }
+
+      .campaign-status{
+        padding:7px;
+        font-size:13px;
       }
 
 
@@ -272,7 +285,7 @@ a:hover {
       .payment-link, .payment-recap {
         .btn {
           font-size: 13px;
-          padding: 6px 10px;
+          padding: 6px;
         }
       }
 
