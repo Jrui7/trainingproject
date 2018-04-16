@@ -87,10 +87,12 @@
                                                 order: [:day, :month, :year], :prompt => { :month => 'Mois', :year => 'Année', :day => 'Jour' }, use_month_numbers: true  %>
                   <%= f.input :email, label: "Email" %>
 
+
                   <div class="text-right">
                     <%= f.button :submit, value: "Enregistrer", class: "btn seedlap", id: "update-user" %>
                   </div>
                 <% end %>
+                <%= link_to "Change your password", edit_user_registration_path %>
               </div>
             </div>
           </div>
