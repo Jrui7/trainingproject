@@ -459,8 +459,16 @@
         margin-bottom:2px;
       }
 
-      .testimony-box .testimony {
-        flex: 0 0 100%;
+      .testimony-box {
+
+        .testimonies {
+          margin: 50px 0 15px 0;
+        }
+
+        .testimony {
+          flex: 0 0 100%;
+          margin-bottom: 35px;
+        }
       }
 
   }
