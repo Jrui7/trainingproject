@@ -6,45 +6,40 @@
 <div class="page-container">
 
   <div class="page-sections">
-
     <div class="header">
       <div class="title">
         <h1><%= @seed.title %></h1>
       </div>
-      <div class="row head">
-        <div class="col-xs-12 col-sm-7 nopadding-right nopadding-left">
-          <% if @seed.ongoing? %>
-            <div class="timer-and-pick">
-              <div class="seed-infos-timer">
-                <div id="timer" data-timer="<%= (@seed.expiration) %>">
-                  <%= render "seeds/timer"  %>
-                  <div id="clockdiv">
-                    <div class="dynamic-timer">
-                      <div class="smalltext">Jours</div>
-                      <span class="days"></span>
-                    </div>
-                    <div class="dynamic-timer">
-                      <div class="smalltext">Heures</div>
-                      <span class="hours"></span>
-                    </div>
-                    <div class="dynamic-timer">
-                      <div class="smalltext">Minutes</div>
-                      <span class="minutes"></span>
-                    </div>
-                    <div class="dynamic-timer">
-                      <div class="smalltext">Secondes</div>
-                      <span class="seconds"></span>
-                    </div>
-                  </div>
+      <% if @seed.ongoing? %>
+        <div class="timer-and-pick">
+          <div class="seed-infos-timer">
+            <div id="timer" data-timer="<%= (@seed.expiration) %>">
+              <%= render "seeds/timer"  %>
+              <div id="clockdiv">
+                <div class="dynamic-timer">
+                  <div class="smalltext">Jours</div>
+                  <span class="days"></span>
+                </div>
+                <div class="dynamic-timer">
+                  <div class="smalltext">Heures</div>
+                  <span class="hours"></span>
+                </div>
+                <div class="dynamic-timer">
+                  <div class="smalltext">Minutes</div>
+                  <span class="minutes"></span>
+                </div>
+                <div class="dynamic-timer">
+                  <div class="smalltext">Secondes</div>
+                  <span class="seconds"></span>
                 </div>
               </div>
-                <div class="pick-section hidden-xs">
-                  <%= render "seeds/pick-section" %>
-                </div>
             </div>
-          <% end %>
+          </div>
+            <div class="pick-section hidden-xs">
+              <%= render "seeds/pick-section" %>
+            </div>
         </div>
-      </div>
+      <% end %>
     </div>
 
 
@@ -74,7 +69,6 @@
     </div>
 
     <div class="row body">
-
       <div class="col-xs-12 col-sm-7 nopadding-left nopadding-right">
         <div class="left-section">
           <div class="seed-media">
