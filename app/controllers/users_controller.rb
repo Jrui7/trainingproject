@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @address = @user.addresses.first
     authorize @user
     if @address.update(address_params)
-      redirect_to user_path(@user)
+      redirect_to @user
     else
       render :show
     end
