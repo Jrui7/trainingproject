@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
 
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => :registrations }
   resources :seeds, only: [:index, :new, :create, :update, :show], shallow: true do
     resources :picks, only: [:index, :show, :create, :update, :destroy] do
       resources :exchanges, only: [:create, :update]
@@ -24,6 +24,8 @@ Rails.application.routes.draw do
     member do
         patch :update_card
         put :update_card
+        patch :update_address
+        put :update_address
       end
   end
   resources :addresses, only: [:update]

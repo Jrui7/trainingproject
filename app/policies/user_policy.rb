@@ -14,6 +14,10 @@ class UserPolicy < ApplicationPolicy
   end
 
   def update_card?
-    record == user
+    record == user || user.admin == true
+  end
+
+  def update_address?
+    record == user || user.admin == true
   end
 end

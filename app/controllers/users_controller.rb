@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.friendly.find(params[:id])
-    @addresses = @user.addresses
+    @addresses = @user.addresses.first
     authorize @user
   end
 
@@ -14,6 +14,17 @@ class UsersController < ApplicationController
     @user.slug = @user.pseudo
     authorize @user
     if @user.update(user_params)
+      redirect_to user_path(@user)
+    else
+      render :show
+    end
+  end
+
+  def update_address
+    @user = User.friendly.find(params[:id])
+    @address = @user.addresses.first
+    authorize @user
+    if @address.update(address_params)
       redirect_to user_path(@user)
     else
       render :show
@@ -36,6 +47,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:photo, :insta, :youtube, :facebook, :snap, :mini_bio, :pseudo, :email, :sex, :date_of_birth)
+  end
+
+  def address_params
+    params.require(:address).permit(:full_name, :street, :zip_code, :city, :address_complement, :phone_number)
   end
 
 
