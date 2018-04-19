@@ -336,7 +336,7 @@
     }
   }
 
-  #profil-and-pen, #address-and-pen, #password-and-pen{
+  #profil-and-pen, #address-and-pen, #password-and-pen, #paiement-and-pen{
     display: flex;
     flex: 0 0 50%;
     justify-content: space-between;
@@ -365,8 +365,8 @@
   .form-civil, .form-livraison, .form-password {
     display: none;
     padding:15px 20px;
-    margin-left:30px;
-    width:650px;
+    margin-top:20px;
+    width:70%;
     background-color: #F2F2F2;
     border-radius: 5px;
 
@@ -540,6 +540,42 @@
         .form-control {
           width: 100%;
         }
+      }
+
+      .synthesis{
+        display: block;
+      }
+
+      .form-box{
+        padding:5px 0;
+      }
+
+      .title-and-data{
+        margin: 0;
+        width: 250px;
+        font-size: 14px;
+        .title{
+          flex: 0 0 40%;
+        }
+        .data{
+          flex: 0 0 60%;
+        }
+      }
+
+      .edit-icon{
+        padding-left: 10px;
+        .glyphicon{
+          padding:3px;
+          font-size: 14px;
+        }
+      }
+
+      .form-civil, .form-livraison, .form-password {
+        width: 100%;
+      }
+
+      #password-and-pen .key-icon {
+        width: 20px;
       }
 
     }

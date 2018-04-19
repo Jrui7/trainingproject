@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def show
     @user = User.friendly.find(params[:id])
     @addresses = @user.addresses.first
+    @customer_infos = Stripe::Customer.retrieve(@user.customer_id).sources.data[0]
     authorize @user
   end
 
@@ -29,6 +30,15 @@ class UsersController < ApplicationController
     else
       render :show
     end
+  end
+
+  def update_paiement
+    @user = User.friendly.find(params[:id])
+    authorize @user
+    cu = Stripe::Customer.retrieve("#{@user.customer_id}")
+    cu.source = params[:stripeToken] # obtained with Stripe.js
+    cu.save
+    redirect_to @user
   end
 
 

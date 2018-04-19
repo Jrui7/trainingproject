@@ -6,7 +6,7 @@ $(document).ready(function(){
 
   $("#cancel-civil").click(function(){
     $(".form-civil").hide();
-    $("#profil-and-pen").show();
+    $("#profil-and-pen").slideToggle();
   })
 
   $("#edit-address").click(function(){
@@ -16,7 +16,7 @@ $(document).ready(function(){
 
   $("#cancel-address").click(function(){
     $(".form-livraison").hide();
-    $("#address-and-pen").show();
+    $("#address-and-pen").slideToggle();
   })
 
   $("#edit-password").click(function(){
@@ -26,7 +26,11 @@ $(document).ready(function(){
 
   $("#cancel-password").click(function(){
     $(".form-password").hide();
-    $("#password-and-pen").show();
+    $("#password-and-pen").slideToggle();
+  })
+
+  $("#edit-paiement").click(function(){
+    $(".stripe-button-el").click();
   })
 
 

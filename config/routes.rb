@@ -26,6 +26,8 @@ Rails.application.routes.draw do
         put :update_card
         patch :update_address
         put :update_address
+        patch :update_paiement
+        put :update_paiement
       end
   end
   resources :addresses, only: [:update]
