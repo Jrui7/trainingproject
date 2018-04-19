@@ -128,34 +128,81 @@
                   </div>
                 </div>
                 <div class="form-box livraison">
-                  <h3>Livraison</h3>
-                  <div class="form-livraison">
-                    <%= simple_form_for @addresses, :url => update_address_user_path(@user.id), :method => :patch do |f| %>
-                      <%= f.input :full_name, class: "input-group-field", label: false %>
-                      <%= f.input :street, class: "input-group-field", label: false %>
+                  <div class="synthesis">
+                    <h3>Livraison</h3>
+                    <div id="address-and-pen">
+                      <div class="current-infos">
+                        <div class="title-and-data">
+                          <%= @addresses.full_name %>
+                        </div>
+                        <div class="title-and-data">
+                          <%= @addresses.street %>
+                        </div>
+                        <div class="title-and-data">
+                          <%= @addresses.zip_code %> <%= @addresses.city %>
+                        </div>
+                        <div class="title-and-data">
+                          <div class="title">Complément d'adresse:</div>
+                          <div class="data <%= 'blank' if @addresses.address_complement.blank? %>"><%= @addresses.address_complement.blank? ? "Non renseigné" : @addresses.address_complement %>
+                          </div>
+                        </div>
+                        <div class="title-and-data">
+                          <div class="title">Téléphone:</div>
+                          <div class="data <%= 'blank' if @addresses.phone_number.blank? %>"><%= @addresses.phone_number.blank? ? "Non renseigné" : @addresses.phone_number %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="edit-icon">
+                        <span id= "edit-address" class="glyphicon glyphicon-pencil"></span>
+                      </div>
+                    </div>
+                    <div class="form-livraison">
+                      <%= simple_form_for @addresses, :url => update_address_user_path(@user.id), :method => :patch do |f| %>
+                        <%= f.input :full_name, label: "Nom complet", class: "input-group-field" %>
+                        <%= f.input :street, label: "Rue et numéro", class: "input-group-field" %>
 
-                      <%= f.input :zip_code, class: "input-group-field", label: false %>
-                      <%= f.input :city, class: "input-group-field", label: false %>
+                        <%= f.input :zip_code, label: "Code postal", class: "input-group-field" %>
+                        <%= f.input :city, label: "Ville", class: "input-group-field" %>
 
-                      <%= f.input :address_complement, class: "input-group-field", label: false, placeholder: "Autres instructions de livraison: Digicode, Batiment, Société " %>
-                      <%= f.input :phone_number, class: "input-group-field", label: false, placeholder: "Vous joindre par téléphone" %>
-                      <%= f.button :submit, value: "Enregistrer", class: "btn update-delivery-infos" %>
-                    <% end %>
+                        <%= f.input :address_complement, class: "input-group-field", label: "Complément d'adresse", placeholder: "Autres instructions de livraison: Digicode, Batiment, Société " %>
+                        <%= f.input :phone_number, class: "input-group-field", label: "Téléphone", placeholder: "Vous joindre par téléphone" %>
+                        <div class="action-buttons">
+                          <div id= "cancel-address" class="btn cancel">Annuler</div>
+                          <%= f.button :submit, value: "Actualiser", class: "btn validate", id: "submit-update-address" %>
+                        </div>
+                      <% end %>
+                    </div>
                   </div>
                 </div>
                 <div class="form-box password">
-                  <h3>Mot de passe</h3>
-                  <div class="form-password">
-                    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-                      <%= f.error_notification %>
-                        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-                        <% end %>
-                        <%= f.input :current_password, label: "Mot de passe actuel", required: true %>
-                        <%= f.input :password, autocomplete: "off", hint: "minimum 6 carractères", label: "Nouveau mot de passe", required: false %>
-                        <%= f.input :password_confirmation, label: "Confirmation", hint: "confirmer le nouveau mot de passe", required: false %>
-                        <%= f.button :submit, "Update" %>
-                    <% end %>
+                  <div class="synthesis">
+                    <h3>Sécurité</h3>
+                    <div id="password-and-pen">
+                      <div class="current-infos">
+                        <div class="title-and-data">
+                          <div class="title">Mot de passe:</div>
+                          <div class="data"><%= image_tag "key.png", class: "key-icon" %></div>
+                        </div>
+                      </div>
+                      <div class="edit-icon">
+                        <span id= "edit-password" class="glyphicon glyphicon-pencil"></span>
+                      </div>
+                    </div>
+                    <div class="form-password">
+                      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+                        <%= f.error_notification %>
+                          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+                          <% end %>
+                          <%= f.input :current_password, label: "Mot de passe actuel", required: true %>
+                          <%= f.input :password, autocomplete: "off", placeholder: "minimum 6 carractères", label: "Nouveau mot de passe", required: false %>
+                          <%= f.input :password_confirmation, label: "Confirmation", placeholder: "confirmer le nouveau mot de passe", required: false %>
+                          <div class="action-buttons">
+                            <div id= "cancel-password" class="btn cancel">Annuler</div>
+                            <%= f.button :submit, value: "Actualiser", class: "btn validate", id: "submit-update-password" %>
+                          </div>
+                      <% end %>
+                    </div>
                   </div>
                 </div>
               </div>

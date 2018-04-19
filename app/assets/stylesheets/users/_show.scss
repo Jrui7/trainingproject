@@ -130,6 +130,11 @@
     .pseudo-mini-bio{
       flex: 0 0 80%;
       padding-left: 35px;
+      label {
+        margin-right: 15px;
+        width: 15%;
+        margin-bottom: 0px;
+      }
     }
 
     input, textarea {
@@ -139,11 +144,7 @@
 
 
 
-      label {
-        margin-right: 15px;
-        width: 15%;
-        margin-bottom: 0px;
-      }
+
 
       .attached-inputs {
         .form-group {
@@ -227,12 +228,6 @@
     }
 
 
-    .written-label {
-      width: auto;
-      margin-right: 15px;
-      color: #a6a6ae;
-    }
-
     .form-control {
       -webkit-box-shadow: none;
       box-shadow: none;
@@ -265,11 +260,6 @@
     }
   }
 
-
-
-  .collection_radio_buttons {
-    margin-left: 10px;
-  }
 
   .user_date_of_birth {
     .form-control {
@@ -319,14 +309,18 @@
 
   .form-box{
     padding: 5px 10px;
+    margin-bottom: 40px;
   }
 
   .synthesis{
     display: flex;
     h3 {
       margin: 0;
+      flex: 0 0 20%;
+      font-size: 20px;
     }
   }
+
 
   .title-and-data{
     margin:0 30px;
@@ -342,8 +336,15 @@
     }
   }
 
-  #profil-and-pen{
+  #profil-and-pen, #address-and-pen, #password-and-pen{
     display: flex;
+    flex: 0 0 50%;
+    justify-content: space-between;
+
+    .key-icon{
+      width: 25px;
+      margin: 0;
+    }
   }
 
   .edit-icon{
@@ -363,15 +364,32 @@
 
   .form-civil, .form-livraison, .form-password {
     display: none;
-    padding:10px 20px;
+    padding:15px 20px;
     margin-left:30px;
     width:650px;
     background-color: #F2F2F2;
     border-radius: 5px;
 
+    .form-control{
+      flex: 0 0 70%;
+    }
+
+    label {
+      flex: 0 0 25%;
+    }
+
+    .written-label{
+      flex: 0 0 25%;
+    }
+
+    .collection_radio_buttons {
+      margin:0 20px 0 10px;
+    }
+
     .action-buttons{
       display: flex;
       justify-content: flex-end;
+      margin-top: 30px;
     }
 
     .validate{

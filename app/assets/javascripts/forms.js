@@ -9,13 +9,27 @@ $(document).ready(function(){
     $("#profil-and-pen").show();
   })
 
-  $(".livraison").click(function(){
+  $("#edit-address").click(function(){
+    $("#address-and-pen").hide();
     $(".form-livraison").slideToggle();
   })
 
-  $(".password").click(function(){
+  $("#cancel-address").click(function(){
+    $(".form-livraison").hide();
+    $("#address-and-pen").show();
+  })
+
+  $("#edit-password").click(function(){
+    $("#password-and-pen").hide();
     $(".form-password").slideToggle();
   })
+
+  $("#cancel-password").click(function(){
+    $(".form-password").hide();
+    $("#password-and-pen").show();
+  })
+
+
 
 
 })
