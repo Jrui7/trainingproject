@@ -5,7 +5,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.friendly.find(params[:id])
-    @addresses = @user.addresses
+    @addresses = @user.addresses.first
+    @customer_infos = Stripe::Customer.retrieve(@user.customer_id).sources.data[0]
     authorize @user
   end
 
@@ -18,6 +19,26 @@ class UsersController < ApplicationController
     else
       render :show
     end
+  end
+
+  def update_address
+    @user = User.friendly.find(params[:id])
+    @address = @user.addresses.first
+    authorize @user
+    if @address.update(address_params)
+      redirect_to @user
+    else
+      render :show
+    end
+  end
+
+  def update_paiement
+    @user = User.friendly.find(params[:id])
+    authorize @user
+    cu = Stripe::Customer.retrieve("#{@user.customer_id}")
+    cu.source = params[:stripeToken] # obtained with Stripe.js
+    cu.save
+    redirect_to @user
   end
 
 
@@ -36,6 +57,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:photo, :insta, :youtube, :facebook, :snap, :mini_bio, :pseudo, :email, :sex, :date_of_birth)
+  end
+
+  def address_params
+    params.require(:address).permit(:full_name, :street, :zip_code, :city, :address_complement, :phone_number)
   end
 
 

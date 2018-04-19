@@ -6,8 +6,8 @@
 
       <div class="col-xs-12 tabs-info">
         <ul class="nav nav-tabs">
-            <li class="active"><a href="#public-profile">PROFIL PUBLIC</a></li>
-            <li><a href="#personal-infos">INFOS PRIVEES</a></li>
+            <li class="active"><a data-target="#public-profile">PROFIL PUBLIC</a></li>
+            <li><a data-target="#personal-infos">INFOS PRIVEES</a></li>
         </ul>
         <div class="small-padding">
           <div class="tab-content">
@@ -73,23 +73,175 @@
                 <% end %>
               </div>
             </div>
+
             <div id="personal-infos" class="tab-pane fade">
               <div class="user-form">
-                <%= simple_form_for @user do |f| %>
-                  <div class="no-label">
-                    <div class="written-label">Civilité</div>
-                    <div class="attached-inputs">
-                    <%= f.collection_radio_buttons :sex, [["man", 'Homme'] ,["woman", 'Femme']], :first, :last %>
+                <div class="form-box civil">
+                  <div class="synthesis">
+                    <h3>Profil</h3>
+                    <div id="profil-and-pen">
+                      <div class="current-infos">
+                        <div class="title-and-data">
+                          <div class="title">Sexe:</div>
+                          <div class="data <%= 'blank' if @user.sex.blank? %>">
+                            <% if @user.sex.blank? %>
+                              <%= "Non renseigné" %>
+                            <% elsif  @user.sex == "man"%>
+                              <%= "Homme" %>
+                            <% else %>
+                              <%= "Femme" %>
+                            <% end %>
+                          </div>
+                        </div>
+                        <div class="title-and-data">
+                          <div class="title">Date de naissance:</div>
+                          <div class="data <%= 'blank' if @user.date_of_birth.blank? %>"><%= @user.date_of_birth.blank? ? "Non renseignée" : @user.date_of_birth.strftime("%d/%m/%y") %>
+                          </div>
+                        </div>
+                        <div class="title-and-data">
+                          <div class="title">Email:</div>
+                          <div class="data"><%= @user.email %></div>
+                        </div>
+                      </div>
+                      <div class="edit-icon">
+                        <span id= "edit-civil" class="glyphicon glyphicon-pencil"></span>
+                      </div>
                     </div>
                   </div>
-                  <%= f.input :date_of_birth, label:"Date de naissance", as: :date,  start_year: Date.today.year - 18,
-                                                end_year: 1900,
-                                                order: [:day, :month, :year], :prompt => { :month => 'Mois', :year => 'Année', :day => 'Jour' }, use_month_numbers: true  %>
-                  <%= f.input :email, label: "Email" %>
-
-                  <div class="text-right">
-                    <%= f.button :submit, value: "Enregistrer", class: "btn seedlap", id: "update-user" %>
+                  <div class="form-civil">
+                    <%= simple_form_for @user, html: { id: 'update-private'} do |f| %>
+                      <div class="no-label">
+                        <div class="written-label">Sexe</div>
+                        <div class="attached-inputs">
+                        <%= f.collection_radio_buttons :sex, [["man", 'Homme'] ,["woman", 'Femme']], :first, :last %>
+                        </div>
+                      </div>
+                      <%= f.input :date_of_birth, label:"Date de naissance", as: :date,  start_year: Date.today.year - 18,
+                                                    end_year: 1900,
+                                                    order: [:day, :month, :year], :prompt => { :month => 'Mois', :year => 'Année', :day => 'Jour' }, use_month_numbers: true  %>
+                      <%= f.input :email, label: "Email" %>
+                      <div class="action-buttons">
+                        <div id= "cancel-civil" class="btn cancel">Annuler</div>
+                        <%= f.button :submit, value: "Actualiser", class: "btn validate", id: "submit-update-private" %>
+                      </div>
+                    <% end %>
                   </div>
+                </div>
+                <div class="form-box livraison">
+                  <div class="synthesis">
+                    <h3>Livraison</h3>
+                    <div id="address-and-pen">
+                      <div class="current-infos">
+                        <div class="title-and-data">
+                          <%= @addresses.full_name %>
+                        </div>
+                        <div class="title-and-data">
+                          <%= @addresses.street %>
+                        </div>
+                        <div class="title-and-data">
+                          <%= @addresses.zip_code %> <%= @addresses.city %>
+                        </div>
+                        <div class="title-and-data">
+                          <div class="title">Complément d'adresse:</div>
+                          <div class="data <%= 'blank' if @addresses.address_complement.blank? %>"><%= @addresses.address_complement.blank? ? "Non renseigné" : @addresses.address_complement %>
+                          </div>
+                        </div>
+                        <div class="title-and-data">
+                          <div class="title">Téléphone:</div>
+                          <div class="data <%= 'blank' if @addresses.phone_number.blank? %>"><%= @addresses.phone_number.blank? ? "Non renseigné" : @addresses.phone_number %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="edit-icon">
+                        <span id= "edit-address" class="glyphicon glyphicon-pencil"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-livraison">
+                    <%= simple_form_for @addresses, :url => update_address_user_path(@user.id), :method => :patch do |f| %>
+                      <%= f.input :full_name, label: "Nom complet", class: "input-group-field" %>
+                      <%= f.input :street, label: "Rue et numéro", class: "input-group-field" %>
+
+                      <%= f.input :zip_code, label: "Code postal", class: "input-group-field" %>
+                      <%= f.input :city, label: "Ville", class: "input-group-field" %>
+
+                      <%= f.input :address_complement, class: "input-group-field", label: "Complément d'adresse", placeholder: "Autres instructions de livraison: Digicode, Batiment, Société " %>
+                      <%= f.input :phone_number, class: "input-group-field", label: "Téléphone", placeholder: "Vous joindre par téléphone" %>
+                      <div class="action-buttons">
+                        <div id= "cancel-address" class="btn cancel">Annuler</div>
+                        <%= f.button :submit, value: "Actualiser", class: "btn validate", id: "submit-update-address" %>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+                <div class="form-box password">
+                  <div class="synthesis">
+                    <h3>Sécurité</h3>
+                    <div id="password-and-pen">
+                      <div class="current-infos">
+                        <div class="title-and-data">
+                          <div class="title">Mot de passe:</div>
+                          <div class="data"><%= image_tag "key.png", class: "key-icon" %></div>
+                        </div>
+                      </div>
+                      <div class="edit-icon">
+                        <span id= "edit-password" class="glyphicon glyphicon-pencil"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-password">
+                    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+                      <%= f.error_notification %>
+                        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+                        <% end %>
+                        <%= f.input :current_password, label: "Mot de passe actuel", required: true %>
+                        <%= f.input :password, autocomplete: "off", placeholder: "minimum 6 carractères", label: "Nouveau mot de passe", required: false %>
+                        <%= f.input :password_confirmation, label: "Confirmation", placeholder: "confirmer le nouveau mot de passe", required: false %>
+                        <div class="action-buttons">
+                          <div id= "cancel-password" class="btn cancel">Annuler</div>
+                          <%= f.button :submit, value: "Actualiser", class: "btn validate", id: "submit-update-password" %>
+                        </div>
+                    <% end %>
+                  </div>
+                </div>
+
+                <div class="form-box paiement">
+                  <div class="synthesis">
+                    <h3>Paiement</h3>
+                    <div id="paiement-and-pen">
+                      <div class="current-infos">
+                        <div class="title-and-data">
+                          <div class="title">Carte:</div>
+                          <div class="data">
+                            <div class="stripe-block"><%= @customer_infos["brand"]%></div>
+                            <div class="stripe-block">
+                              <i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><%= @customer_infos["last4"] %>
+                            </div>
+                            <div class="stripe-block">
+                              <%= @customer_infos["exp_month"]%>/<%= @customer_infos["exp_year"] %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="edit-icon">
+                        <span id= "edit-paiement" class="glyphicon glyphicon-pencil"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <%= form_tag update_paiement_user_path(@user), method: :patch, class: "hidden" do %>
+                  <script
+                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-key="pk_test_vLvpA9ucqPkcgXW1QQIQdnUA"
+                    data-name="Infos paiement"
+                    data-email="<%= current_user.email %>"
+                    data-panel-label="Modifier ma carte"
+                    data-label="Modifier ma carte"
+                    data-allow-remember-me=false
+                    data-locale="auto">
+                  </script>
                 <% end %>
               </div>
             </div>
