@@ -1,0 +1,5 @@
+$(document).ready(function(){
+  $(".current-infos.civil-infos").html('<%= j render 'users/civil', user: @user %>');
+  $(".form-civil").slideToggle();
+  $("#profil-and-pen").slideToggle();
+})

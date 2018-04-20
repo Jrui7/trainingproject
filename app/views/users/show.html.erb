@@ -80,28 +80,8 @@
                   <div class="synthesis">
                     <h3>Profil</h3>
                     <div id="profil-and-pen">
-                      <div class="current-infos">
-                        <div class="title-and-data">
-                          <div class="title">Sexe:</div>
-                          <div class="data <%= 'blank' if @user.sex.blank? %>">
-                            <% if @user.sex.blank? %>
-                              <%= "Non renseigné" %>
-                            <% elsif  @user.sex == "man"%>
-                              <%= "Homme" %>
-                            <% else %>
-                              <%= "Femme" %>
-                            <% end %>
-                          </div>
-                        </div>
-                        <div class="title-and-data">
-                          <div class="title">Date de naissance:</div>
-                          <div class="data <%= 'blank' if @user.date_of_birth.blank? %>"><%= @user.date_of_birth.blank? ? "Non renseignée" : @user.date_of_birth.strftime("%d/%m/%y") %>
-                          </div>
-                        </div>
-                        <div class="title-and-data">
-                          <div class="title">Email:</div>
-                          <div class="data"><%= @user.email %></div>
-                        </div>
+                      <div class="current-infos civil-infos">
+                        <%= render 'users/civil', user: @user %>
                       </div>
                       <div class="edit-icon">
                         <span id= "edit-civil" class="glyphicon glyphicon-pencil"></span>
@@ -109,7 +89,7 @@
                     </div>
                   </div>
                   <div class="form-civil">
-                    <%= simple_form_for @user, html: { id: 'update-private'} do |f| %>
+                    <%= simple_form_for @user, :url => update_civil_user_path(@user.id), html: { id: 'update-private'}, remote: true do |f| %>
                       <div class="no-label">
                         <div class="written-label">Sexe</div>
                         <div class="attached-inputs">
