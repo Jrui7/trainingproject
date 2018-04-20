@@ -21,14 +21,26 @@ class UsersController < ApplicationController
     end
   end
 
+  def update_civil
+    @user = User.friendly.find(params[:id])
+    authorize @user
+    if @user.update(civil_params)
+      respond_to do |format|
+        format.html {redirect_to user_path(@user)}
+        format.js
+      end
+    end
+  end
+
   def update_address
     @user = User.friendly.find(params[:id])
-    @address = @user.addresses.first
+    @addresses = @user.addresses.first
     authorize @user
-    if @address.update(address_params)
-      redirect_to @user
-    else
-      render :show
+    if @addresses.update(address_params)
+      respond_to do |format|
+        format.html {redirect_to user_path(@user)}
+        format.js
+      end
     end
   end
 
@@ -56,11 +68,15 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:photo, :insta, :youtube, :facebook, :snap, :mini_bio, :pseudo, :email, :sex, :date_of_birth)
+    params.require(:user).permit(:photo, :insta, :youtube, :facebook, :snap, :mini_bio, :pseudo)
   end
 
   def address_params
     params.require(:address).permit(:full_name, :street, :zip_code, :city, :address_complement, :phone_number)
+  end
+
+  def civil_params
+    params.require(:user).permit(:sex, :date_of_birth, :email)
   end
 
 

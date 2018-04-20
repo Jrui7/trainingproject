@@ -1,0 +1,19 @@
+<div class="title-and-data">
+  <%= addresses.full_name %>
+</div>
+<div class="title-and-data">
+  <%= addresses.street %>
+</div>
+<div class="title-and-data">
+  <%= addresses.zip_code %> <%= addresses.city %>
+</div>
+<div class="title-and-data">
+  <div class="title">Complément d'adresse:</div>
+  <div class="data <%= 'blank' if addresses.address_complement.blank? %>"><%= addresses.address_complement.blank? ? "Non renseigné" : addresses.address_complement %>
+  </div>
+</div>
+<div class="title-and-data">
+  <div class="title">Téléphone:</div>
+  <div class="data <%= 'blank' if addresses.phone_number.blank? %>"><%= addresses.phone_number.blank? ? "Non renseigné" : addresses.phone_number %>
+  </div>
+</div>

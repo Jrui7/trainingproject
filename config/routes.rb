@@ -28,6 +28,8 @@ Rails.application.routes.draw do
         put :update_address
         patch :update_paiement
         put :update_paiement
+        patch :update_civil
+        put :update_civil
       end
   end
   resources :addresses, only: [:update]

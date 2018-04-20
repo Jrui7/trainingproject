@@ -1,0 +1,5 @@
+$(document).ready(function(){
+  $(".current-infos.address-infos").html('<%= j render 'users/livraison', addresses: @addresses %>');
+  $(".form-livraison").slideToggle();
+  $("#address-and-pen").slideToggle();
+})

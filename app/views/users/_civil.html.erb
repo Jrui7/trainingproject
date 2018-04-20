@@ -1,0 +1,23 @@
+<div class="title-and-data">
+  <div class="title">Sexe:</div>
+  <div class="data <%= 'blank' if user.sex.blank? %>">
+    <% if user.sex.blank? %>
+      <%= "Non renseigné" %>
+    <% elsif  user.sex == "man"%>
+      <%= "Homme" %>
+    <% else %>
+      <%= "Femme" %>
+    <% end %>
+  </div>
+</div>
+<div class="title-and-data">
+  <div class="title">Date de naissance:</div>
+  <div class="data <%= 'blank' if user.date_of_birth.blank? %>"><%= user.date_of_birth.blank? ? "Non renseignée" : user.date_of_birth.strftime("%d/%m/%y") %>
+  </div>
+</div>
+<div class="title-and-data">
+  <div class="title">Email:</div>
+  <div class="data"><%= user.email %></div>
+</div>
+
+

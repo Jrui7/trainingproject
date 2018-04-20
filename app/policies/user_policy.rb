@@ -24,4 +24,9 @@ class UserPolicy < ApplicationPolicy
   def update_paiement?
     record == user || user.admin == true
   end
+
+  def update_civil?
+    record == user || user.admin == true
+  end
+
 end
