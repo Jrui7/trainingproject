@@ -9,4 +9,6 @@ $(document).ready(function(){
     $(".action-links").addClass("hidden");
     $(".loader-container").removeClass("hidden").html("<div class='loader'></div>");
   })
+
+
 })
