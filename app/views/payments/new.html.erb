@@ -16,10 +16,11 @@
                 </p>
               </div>
             </div>
-            <div class="acompt-detail">Le versement d'un acompte de <%= humanized_money_with_symbol(@pick.amount)%> vous est demandé pour bloquer votre participation. Il vous sera remboursé à la fin de la campagne.</div>
+            <div class="acompt-detail">Le versement d'un acompte de <%= humanized_money_with_symbol(@pick.amount)%> vous est demandé pour bloquer votre participation. Il vous sera remboursé à la fin de la campagne.
+            </div>
           </div>
         </div>
-        <% if current_user.customer_id.blank? %>
+        <% if @user.customer_id.blank? %>
           <div class="new-user-form">
             <%= form_tag pick_payments_path(@pick), class: "hidden" do %>
               <script
@@ -27,7 +28,7 @@
                 data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                 data-name="Neoju"
                 data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-                data-email="<%= current_user.email %>"
+                data-email="<%= @user.email %>"
                 data-description="<%= @pick.seed.title %>"
                 data-amount="<%= @pick.amount_cents %>"
                 data-currency="<%= @pick.amount.currency %>"
@@ -70,7 +71,7 @@
               data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
               data-key="pk_test_vLvpA9ucqPkcgXW1QQIQdnUA"
               data-name="Infos paiement"
-              data-email="<%= current_user.email %>"
+              data-email="<%= @user.email %>"
               data-panel-label="Modifier ma carte"
               data-label="Modifier ma carte"
               data-allow-remember-me=false
