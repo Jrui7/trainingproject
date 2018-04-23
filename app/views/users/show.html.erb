@@ -107,6 +107,7 @@
                     <% end %>
                   </div>
                 </div>
+                <% if  @addresses%>
                 <div class="form-box livraison">
                   <div class="synthesis">
                     <h3>Livraison</h3>
@@ -136,6 +137,7 @@
                     <% end %>
                   </div>
                 </div>
+                <% end %>
                 <div class="form-box password">
                   <div class="synthesis">
                     <h3>Sécurité</h3>
@@ -168,42 +170,44 @@
                   </div>
                 </div>
 
-                <div class="form-box paiement">
-                  <div class="synthesis">
-                    <h3>Paiement</h3>
-                    <div id="paiement-and-pen">
-                      <div class="current-infos">
-                        <div class="title-and-data">
-                          <div class="title">Carte:</div>
-                          <div class="data">
-                            <div class="stripe-block"><%= @customer_infos["brand"]%></div>
-                            <div class="stripe-block">
-                              <i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><%= @customer_infos["last4"] %>
-                            </div>
-                            <div class="stripe-block">
-                              <%= @customer_infos["exp_month"]%>/<%= @customer_infos["exp_year"] %>
+                <% if @customer_infos %>
+                  <div class="form-box paiement">
+                    <div class="synthesis">
+                      <h3>Paiement</h3>
+                      <div id="paiement-and-pen">
+                        <div class="current-infos">
+                          <div class="title-and-data">
+                            <div class="title">Carte:</div>
+                            <div class="data">
+                              <div class="stripe-block"><%= @customer_infos["brand"]%></div>
+                              <div class="stripe-block">
+                                <i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><%= @customer_infos["last4"] %>
+                              </div>
+                              <div class="stripe-block">
+                                <%= @customer_infos["exp_month"]%>/<%= @customer_infos["exp_year"] %>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="edit-icon">
-                        <span id= "edit-paiement" class="glyphicon glyphicon-pencil"></span>
+                        <div class="edit-icon">
+                          <span id= "edit-paiement" class="glyphicon glyphicon-pencil"></span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <%= form_tag update_paiement_user_path(@user), method: :patch, class: "hidden" do %>
-                  <script
-                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                    data-key="pk_test_vLvpA9ucqPkcgXW1QQIQdnUA"
-                    data-name="Infos paiement"
-                    data-email="<%= current_user.email %>"
-                    data-panel-label="Modifier ma carte"
-                    data-label="Modifier ma carte"
-                    data-allow-remember-me=false
-                    data-locale="auto">
-                  </script>
+                  <%= form_tag update_paiement_user_path(@user), method: :patch, class: "hidden" do %>
+                    <script
+                      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                      data-key="pk_test_vLvpA9ucqPkcgXW1QQIQdnUA"
+                      data-name="Infos paiement"
+                      data-email="<%= current_user.email %>"
+                      data-panel-label="Modifier ma carte"
+                      data-label="Modifier ma carte"
+                      data-allow-remember-me=false
+                      data-locale="auto">
+                    </script>
+                  <% end %>
                 <% end %>
               </div>
             </div>
@@ -213,5 +217,6 @@
     </div>
   </div>
 </div>
+
 
 

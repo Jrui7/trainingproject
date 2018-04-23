@@ -5,8 +5,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.friendly.find(params[:id])
-    @addresses = @user.addresses.first
-    @customer_infos = Stripe::Customer.retrieve(@user.customer_id).sources.data[0]
+    unless @user.customer_id.blank?
+      @addresses = @user.addresses.first
+      @customer_infos = Stripe::Customer.retrieve(@user.customer_id).sources.data[0]
+    end
     authorize @user
   end
 
