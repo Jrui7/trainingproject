@@ -58,7 +58,7 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
         Le meilleur prix
       </h1>
       <div class="concept">
-        <p>Et si payer devenait (presque) agréable ? Décidez du prix que vous êtes prêt à payer pour les nouveautés qui vous plaisent.
+        <p>Les plus belles nouveautés ont souvent un prix (trop) élevé. Sur Neoju décidez du prix que vous êtes prêt à payer pour les nouveautés qui vous plaisent.
         </p>
 
       </div>
@@ -71,25 +71,37 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
 
   <div id="features-container">
     <div class="icon-and-text" id="first">
-      <%= image_tag "number-1.png", class: "feature-images"  %>
-      <h3 class="quote">"J'aime ce produit, mais 90€…"</h3>
-      <div class="quote-text">Vous aimez les nouveautés, et ça vous coûte souvent cher ? Vous aimez les nouveautés, mais vous n'avez parfois pas le budget ?</div>
-      <%= image_tag "medal.png", class: "action-image" %>
-      <div class="quote-text">Présentez-nous vos plus belles découvertes. Comme-vous, certaines personnes aiment le produit que vous avez présenté mais ne sont pas prêtes à payer le prix demandé.</div>
+      <div class="half top">
+        <%= image_tag "number-1.png", class: "feature-images"  %>
+        <h3 class="quote">"J'aime ce produit, mais 190€…"</h3>
+        <div class="quote-text">Vous aimez ce produit tout beau tout nouveau mais renoncez à l'acheter à cause de son prix</div>
+      </div>
+      <div class="half">
+        <%= image_tag "medal.png", class: "action-image" %>
+        <div class="quote-text">Présentez-nous ce produit. Il ya fort à parier que comme-vous, certaines personnes l'adorent mais ne sont pas prêtes à payer le prix demandé.</div>
+      </div>
     </div>
     <div class="icon-and-text" id="second">
-      <%= image_tag "number-2.png", class: "feature-images"  %>
-      <h3 class="quote">"Pour 75€ je fonce."</h3>
-      <div class="quote-text">Chaque personne intéressée par un produit a sept jours pour manifester sa volonté d'achat.</div>
-      <%= image_tag "medal.png", class: "action-image" %>
-      <div class="quote-text">"Pickez" un produit qui vous plait en donnant le prix que vous êtes personnellement prêt à payer pour en faire l'acquisition.</div>
+      <div class="half top">
+        <%= image_tag "number-2.png", class: "feature-images"  %>
+        <h3 class="quote">"Pour 150€ je fonce."</h3>
+        <div class="quote-text">Chaque personne intéressée par un produit a sept jours pour manifester sa volonté d'achat.</div>
+      </div>
+      <div class="half">
+        <%= image_tag "medal.png", class: "action-image" %>
+        <div class="quote-text">"Pickez" un produit qui vous plait en donnant le prix que vous êtes personnellement prêt à payer pour en faire l'acquisition.</div>
+      </div>
     </div>
     <div class="icon-and-text" id="third">
-      <%= image_tag "number-3.png", class: "feature-images"  %>
-      <h3 class="quote">"Je ne paye plus que 70€ !"</h3>
-      <div class="quote-text">Vous proposez de payer 75€ ce produit initialement à 90€. Neoju calcule un prix optimal à 70€, vous ne payez que 70€.</div>
-      <%= image_tag "medal.png", class: "action-image" %>
-      <div class="quote-text">Avec Neoju vous bénéficiez du meilleur prix possible: celui qui contente le plus grand nombre d'acheteurs tout en permettant au vendeur de maintenir sa rentabilité.</div>
+      <div class="half top">
+        <%= image_tag "number-3.png", class: "feature-images"  %>
+        <h3 class="quote">"Je ne paye plus que 147€ !"</h3>
+        <div class="quote-text">Neoju calcule un prix optimal à 147€, vous ne payez que 147€.</div>
+      </div>
+      <div class="half">
+        <%= image_tag "medal.png", class: "action-image" %>
+        <div class="quote-text">Avec Neoju vous bénéficiez du meilleur prix possible: celui qui contente le plus grand nombre d'acheteurs tout en permettant au vendeur de maintenir sa rentabilité.</div>
+      </div>
     </div>
   </div>
 
@@ -180,6 +192,8 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
         </div>
       <% end %>
     </div>
+    <%= render 'shared/footer' %>
+
   </div>
 </div>
 

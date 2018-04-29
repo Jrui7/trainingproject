@@ -1,38 +1,72 @@
 .footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 150px;
+  min-height: 200px;
   width: 100%;
-  padding: 0px 30px;
+  padding: 20px 0;
   color: rgba(0,0,0,0.3);
   position: relative;
   margin-bottom: 0px;
   margin-top: 50px;
   bottom: 0;
-  background-color: #0F1136;
+  background: linear-gradient(to right, #3e2995 0, #337b80 50%, #337b80 50%, #3f937d 100%);
+
+  .footer-content{
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .footer-links{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
 
 
-  p {
+  .brand {
     color: white;
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+
+  .footer-link {
+    font-weight: lighter;
+    text-decoration: none;
+    margin: 5px 0;
+
+
+    a {
+      color: white;
+
+      &:hover{
+        color: $orange;
+      }
+    }
+
+  }
+
+  .fab {
+    color: white;
+    margin: 0 20px 0 0;
+    font-size: 20px;
+    &:hover{
+      color: $orange
+    }
   }
 
 }
-.footer-links {
-  display: flex;
-  align-items: center;
-}
-.footer-links a {
-  color: white;
-  font-weight: lighter;
-  text-decoration: none;
-  font-size: 20px;
-  padding: 0px 10px;
+
+@media screen and (max-width: 480px) {
+  .footer{
+    .footer-content{
+      width: 90%;
+    }
+
+    .fab{
+      margin: 0 10px 0 0;
+    }
+  }
 }
 
-.footer-links a:hover {
-  color: $orange;
-}
-.footer .fa-heart {
-  color: white;
-}
+
+
+
+
