@@ -220,11 +220,8 @@
     box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.3);
     background-color: rgba(241, 243, 247, 1);
     padding: 0 20px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 
-    .half {
+    .top {
       height: 50%;
     }
   }
