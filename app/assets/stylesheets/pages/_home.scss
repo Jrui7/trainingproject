@@ -103,7 +103,6 @@
 
 
 .nav-and-banner {
-  text-align: center;
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -114,11 +113,9 @@
 .header-home {
   width: 90%;
   margin: 0 auto;
-  height: 100px;
   display: flex;
   align-items: center;
   height: 80px;
-  margin-bottom: 0px;
 
 }
 
@@ -163,8 +160,9 @@
 
 
 .banner-container {
-    width: 90%;
-    margin: 0 auto;
+    position: absolute;
+    max-width: 600px;
+    right: 5%;
     height: 65vh;
     padding-top: 150px;
     color: #FFFFFF;
@@ -174,13 +172,9 @@
     font-size: 50px;
     font-weight: bold;
     text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-    text-align: center;
   }
 
   .concept {
-    max-width: 600px;
-    text-align: center;
-    margin: 50px auto 0 auto;
     font-family: 'Lato';
 
 
@@ -189,10 +183,14 @@
     }
   }
 
+  .cta-links{
+    display: flex;
+  }
+
 
   .cta-link{
     border-radius: 50px;
-    border: 3px solid white;
+    border: 1px solid white;
     color: white;
     text-transform: uppercase;
     font-weight: bold;
@@ -314,6 +312,9 @@
 
   .outcome{
     font-weight: bold;
+    text-transform: uppercase;
+    font-style: italic;
+
   }
 
   .testimony-box{
