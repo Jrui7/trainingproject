@@ -77,7 +77,7 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
     <div class="icon-and-text" id="first">
       <div class="half top">
         <%= image_tag "number-1.png", class: "feature-images"  %>
-        <h3 class="quote">"J'aime ce produit, mais 190€…"</h3>
+        <h3 class="quote">"J'aime ce produit, mais 190 €…"</h3>
         <div class="quote-text">Vous aimez ce produit tout beau tout nouveau mais hésitez à l'acheter à cause de son prix</div>
       </div>
       <div class="half">
@@ -88,7 +88,7 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
     <div class="icon-and-text" id="second">
       <div class="half top">
         <%= image_tag "number-2.png", class: "feature-images"  %>
-        <h3 class="quote">"Pour 150€ je fonce."</h3>
+        <h3 class="quote">"Pour 150 € je fonce."</h3>
         <div class="quote-text">Chaque personne intéressée par un produit a sept jours pour manifester sa volonté d'achat.</div>
       </div>
       <div class="half">
@@ -99,15 +99,17 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
     <div class="icon-and-text" id="third">
       <div class="half top">
         <%= image_tag "number-3.png", class: "feature-images"  %>
-        <h3 class="quote">"J'achète finalement à 147€ !"</h3>
-        <div class="quote-text">Sur Neoju vous bénéficiez toujours du meilleur prix possible.
-        <br><a class="go-to-how-it-works" href="#home-blue-background">
-              Comment ça marche
-            </a></div>
+        <h3 class="quote">"J'achète finalement à 147 € !"</h3>
+        <div class="quote-text">
+          Sur Neoju vous bénéficiez toujours du meilleur prix possible.
+          <br><a href="#home-blue-background">
+              <div class="go-to-how-it-works">Comment ça marche ?</div>
+            </a>
+        </div>
       </div>
       <div class="half">
         <%= image_tag "medal.png", class: "action-image" %>
-        <div class="quote-text">Si le prix Neoju est toujours supérieur à l'objectif que vous vous étiez fixé, il est sage de renoncer </div>
+        <div class="quote-text">Si le prix proposé par Neoju est supérieur à l'objectif que vous vous étiez fixé, il est sage de renoncer </div>
       </div>
     </div>
   </div>
@@ -123,42 +125,43 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
           <%= image_tag "medal.png", class: "action-image" %>
           <div class="step-title">Rassembler</div>
           <div class="step-text">
-            Lorsqu'un utilisateur poste un produit, nous collectons pendant 7 jours les propositions d'achat des personnes intéressées. Enregistrez votre participation à la campagne d'achat en versant un acompte qui vous sera remboursé à la fin de celle-ci.
+            Lorsqu'un produit est posté, nous collectons pendant 7 jours les propositions d'achat des personnes intéressées par celui-ci.
           </div>
         </div>
         <div class="icon-and-text-no-shaddow">
           <%= image_tag "medal.png", class: "action-image" %>
           <div class="step-title">Analyser</div>
           <div class="step-text">
-            Nous contactons le(s) vendeur(s) du produit, et sur la base de tous les picks récoltés, nous calculons grâce à notre algorithme, le prix optimal qui va permettre aux acheteurs de bénéficier de la meilleure remise possible tout en maintenant la rentabilité du vendeur.
+            Nous calculons le prix optimal qui permet aux clients de bénéficier du meilleur prix possible tout en maintenant la rentabilité du vendeur.
           </div>
         </div>
         <div class="icon-and-text-no-shaddow">
           <%= image_tag "medal.png", class: "action-image" %>
           <div class="step-title">Finaliser</div>
           <div class="step-text">
-            Nous remboursons tous les acomptes de participation à la campagne. Les "pickers" dont le prix est supérieur ou égal au prix optimal Neoju remportent le deal à ce prix. Les autres ne peuvent en bénéficier. Voir ci-dessous.
+            Buy or Goodbye.
+            <br>Au bout de 7 jours vous êtes fixés: vous achetez au meilleur prix, ou renoncez sans regret.
           </div>
         </div>
       </div>
       <div class="conclusion-box">
         <h4 class="conclusion-title">
-           "Jachetè ? " Nous vous répondons:
+           Vous savez à présent si vous achetez :
         </h4>
         <div class="yes-no">
           <div class="outcome-and-text">
             <h5 class="outcome">OUI</h5>
             <ul style="padding-left: 0">
-              <li>Vous acceptiez de payer le produit 75€</li>
-              <li>Le prix Neoju est de 70€</li>
-              <li>Achetez le avec nous pour 70€</li>
+              <li>Vous acceptiez de payer le produit 150 €</li>
+              <li>Le prix Neoju est de 140 €</li>
+              <li>Vous ne payez plus que 140 €</li>
             </ul>
           </div>
           <div class="outcome-and-text">
             <h5 class="outcome">NON</h5>
             <ul style="padding-left: 0">
-              <li>Vous acceptiez de payer le produit 65€</li>
-              <li>Le prix Neoju est de 70€</li>
+              <li>Vous acceptiez de payer le produit 135 €</li>
+              <li>Le prix Neoju est de 140 €</li>
               <li>Renoncez à acheter ce produit</li>
             </ul>
           </div>
