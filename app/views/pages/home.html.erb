@@ -55,10 +55,14 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
       </header>
     <div class="banner-container">
       <h1 class="moto">
-        Le meilleur prix
+        Faciliter vos décisions d'achat
       </h1>
+      <h2>Buy or Goodbye</h2>
       <div class="concept">
-        <p>Les plus belles nouveautés ont souvent un prix (trop) élevé. Sur Neoju décidez du prix que vous êtes prêt à payer pour les nouveautés qui vous plaisent.
+        <p>Ici, décidez du prix que vous êtes prêt à payer pour les nouveautés qui vous plaisent.
+        </p>
+        <p>
+          N’achetez que si vous obtenez satistisfaction
         </p>
 
       </div>
@@ -74,11 +78,11 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
       <div class="half top">
         <%= image_tag "number-1.png", class: "feature-images"  %>
         <h3 class="quote">"J'aime ce produit, mais 190€…"</h3>
-        <div class="quote-text">Vous aimez ce produit tout beau tout nouveau mais renoncez à l'acheter à cause de son prix</div>
+        <div class="quote-text">Vous aimez ce produit tout beau tout nouveau mais hésitez à l'acheter à cause de son prix</div>
       </div>
       <div class="half">
         <%= image_tag "medal.png", class: "action-image" %>
-        <div class="quote-text">Présentez-nous ce produit. Il ya fort à parier que comme-vous, certaines personnes l'adorent mais ne sont pas prêtes à payer le prix demandé.</div>
+        <div class="quote-text">Présentez-nous ce produit. Tout comme vous certaines personnes hésitent à payer le prix demander.</div>
       </div>
     </div>
     <div class="icon-and-text" id="second">
@@ -89,23 +93,26 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
       </div>
       <div class="half">
         <%= image_tag "medal.png", class: "action-image" %>
-        <div class="quote-text">"Pickez" un produit qui vous plait en donnant le prix que vous êtes personnellement prêt à payer pour en faire l'acquisition.</div>
+        <div class="quote-text">Fixez votre objectif d'achat: Quel prix êtes-vous personnellement prêt à payer pour en faire l'acquisition ?</div>
       </div>
     </div>
     <div class="icon-and-text" id="third">
       <div class="half top">
         <%= image_tag "number-3.png", class: "feature-images"  %>
-        <h3 class="quote">"Je ne paye plus que 147€ !"</h3>
-        <div class="quote-text">Neoju calcule un prix optimal à 147€, vous ne payez que 147€.</div>
+        <h3 class="quote">"J'achète finalement à 147€ !"</h3>
+        <div class="quote-text">Sur Neoju vous bénéficiez toujours du meilleur prix possible.
+        <br><a class="go-to-how-it-works" href="#home-blue-background">
+              Comment ça marche
+            </a></div>
       </div>
       <div class="half">
         <%= image_tag "medal.png", class: "action-image" %>
-        <div class="quote-text">Avec Neoju vous bénéficiez du meilleur prix possible: celui qui contente le plus grand nombre d'acheteurs tout en permettant au vendeur de maintenir sa rentabilité.</div>
+        <div class="quote-text">Si le prix Neoju est toujours supérieur à l'objectif que vous vous étiez fixé, il est sage de renoncer </div>
       </div>
     </div>
   </div>
 
-  <div class="home-blue-background">
+  <div id="home-blue-background">
     <div class="how-it-works">
       <h3 class="how-it-works-title">Comment ça marche</h3>
       <p>
@@ -136,23 +143,23 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
       </div>
       <div class="conclusion-box">
         <h4 class="conclusion-title">
-          Votre proprosition d'achat permet-elle au vendeur d'être rentable ?
+           "Jachetè ? " Nous vous répondons:
         </h4>
         <div class="yes-no">
           <div class="outcome-and-text">
             <h5 class="outcome">OUI</h5>
             <ul style="padding-left: 0">
-              <li>Vous aviez pické le produit à 75€</li>
+              <li>Vous acceptiez de payer le produit 75€</li>
               <li>Le prix Neoju est de 70€</li>
-              <li>Vous remportez le deal: le produit ne vous coûte plus que 70€</li>
+              <li>Achetez le avec nous pour 70€</li>
             </ul>
           </div>
           <div class="outcome-and-text">
             <h5 class="outcome">NON</h5>
             <ul style="padding-left: 0">
-              <li>Vous aviez pické le produit à 65€</li>
+              <li>Vous acceptiez de payer le produit 65€</li>
               <li>Le prix Neoju est de 70€</li>
-              <li>Nous vous remboursons votre pick mais vous ne pouvez pas bénéficier du deal à 70€</li>
+              <li>Renoncez à acheter ce produit</li>
             </ul>
           </div>
         </div>
@@ -188,7 +195,7 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
       </div>
       <%= link_to seeds_path do %>
         <div class="cta">
-          <div class="btn">Découvrez vous-même</div>
+          <div class="btn">A vous d'essayer</div>
         </div>
       <% end %>
     </div>
