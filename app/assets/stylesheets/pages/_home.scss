@@ -197,6 +197,25 @@
     padding: 10px 30px;
     font-size: 20px;
     margin-right: 30px;
+    &:focus, &:hover{
+      color: $orange;
+      border: 1px solid $orange;
+    }
+  }
+
+  .go-to{
+    border-radius: 50px;
+    border: 1px solid white;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    font-size: 20px;
+    margin-right: 30px;
+    background-color: #FFF;
+    color: #243763;
+
+    &:focus, &:hover{
+      color: $orange;
+    }
   }
 
   #features-container{
