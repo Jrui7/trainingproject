@@ -410,6 +410,8 @@
   @media screen and (max-width: 480px) {
 
     .banner-container {
+        position: static;
+        text-align:center;
         padding-top: 55px;
         height: 60vh;
       }
@@ -433,6 +435,11 @@
         a{
           margin: 0 0 0 5px;
         }
+      }
+
+      .cta-links{
+        padding: 0 10px;
+        justify-content: space-between;
       }
 
       .cta-link{
