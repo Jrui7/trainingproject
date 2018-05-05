@@ -149,10 +149,15 @@
     color: white;
     margin: 0 20px;
     text-transform: uppercase;
+    text-decoration: underline;
     &:hover {
       color: white;
       cursor: pointer;
     }
+  }
+
+  .connexion-xs{
+    text-decoration: underline;
   }
 }
 
@@ -444,6 +449,7 @@
 
       .cta-link{
         font-size: 18px;
+        margin-right: 20px;
       }
 
       #features-container{
