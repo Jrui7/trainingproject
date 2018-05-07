@@ -417,7 +417,7 @@
     .banner-container {
         position: static;
         text-align:center;
-        padding-top: 55px;
+        padding-top: 30px;
         h2{
           font-size: 25px;
         }
@@ -430,7 +430,7 @@
         margin: 10px auto 0 auto;
 
         p {
-        font-size: 17px;
+        font-size: 16px;
         background: rgba(0, 0, 0, 0.2);
         padding: 10px;
         text-align: center;
@@ -445,6 +445,7 @@
       }
 
       .cta-links{
+        margin-top: 20px;
         padding: 0 10px;
         justify-content: space-between;
       }
