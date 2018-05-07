@@ -447,23 +447,24 @@
       .cta-links{
         margin-top: 20px;
         padding: 0 10px;
-        justify-content: space-between;
+        justify-content: center;
       }
 
       .cta-link{
         font-size: 15px;
         padding: 7px 30px;
-        margin-right: 20px;
       }
 
       .go-to{
         padding: 7px 30px;
         font-size: 15px;
+        margin-right: 20px;
       }
 
       #features-container{
         display: block;
         height: auto;
+        padding: 15px 0;
       }
 
       .icon-and-text{
