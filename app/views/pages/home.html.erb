@@ -177,21 +177,21 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
       </h2>
       <div class="testimonies">
         <div class="testimony">
-          <%= cl_image_tag User.first.photo.path, class: "user-photo" %>
-          <h4 class="testimony-title">"Eureka !"</h4>
+          <%= cl_image_tag @jorge.photo.path, class: "user-photo" %>
+          <h4 class="testimony-title">"Le mot du CEO"</h4>
           <div class="testimony-text">
-            Combien de fois j'ai renoncé à un achat à cause du prix... C'est le parfait compromis pour contenter les clients et les vendeurs, du coup contrairement aux sites d'achats groupés, l'offre est géniale.
+            Il m'arrive souvent de renoncer à acheter un produit que je trouve cool à cause de son prix. Il m'arrive aussi fréquemment de payer un prix que je juge trop élevé, ce qui au final terni mon expérience d'achat et d'utilisation.
           </div>
         </div>
         <div class="testimony">
-          <%= cl_image_tag User.where(pseudo:"Onur").first.photo.path, class: "user-photo" %>
+          <%= cl_image_tag @onur.photo.path, class: "user-photo" %>
           <h4 class="testimony-title">"Franchement top"</h4>
           <div class="testimony-text">
-            Concept super intelligent, facilite la découverte de vraies pépites et permet de se les procurer au prix idéal. Si en plus ça bénéficie aux product owners, que dire de plus...
+            Concept super intelligent, facilite la découverte de vraies pépites et permet de se les procurer au prix idéal. Si en plus tout le monde est gagnant...
           </div>
         </div>
         <div class="testimony">
-          <%= cl_image_tag User.where(pseudo:"SurfMousse").first.photo.path, class: "user-photo" %>
+          <%= cl_image_tag @last.photo.path, class: "user-photo" %>
           <h4 class="testimony-title">"Grrrrr"</h4>
           <div class="testimony-text">
             Who let the dogs out ?

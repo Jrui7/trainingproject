@@ -6,6 +6,9 @@ class PagesController < ApplicationController
 
 
   def home
+    @jorge = User.first
+    @onur = User.where(pseudo:"Onur").first
+    @last = User.where(pseudo:"SurfMousse").first
   end
 
   def faq

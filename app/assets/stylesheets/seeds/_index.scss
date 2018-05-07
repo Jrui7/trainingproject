@@ -474,9 +474,20 @@ a:hover {
   display: none;
 }
 
-
-
-
+.no-seed{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px 0;
+  background-color: #f1f8fc;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  p{
+    font-size: 17px;
+    color: $orange;
+  }
+}
 
 
 @media(max-width: 992px) {
@@ -559,6 +570,14 @@ a:hover {
       .name-and-count{
         color: white;
         font-size: 15px;
+      }
+
+      .no-seed{
+        margin: 50% 20px;
+        padding: 20px;
+        h1{
+          text-align: center;
+        }
       }
 
     }
