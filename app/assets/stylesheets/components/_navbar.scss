@@ -305,6 +305,8 @@
 
 .sub-container{
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  background: linear-gradient(to right, #3e2995 0, #337b80 50%, #337b80 50%, #3f937d 100%);
+
 }
 
 .sub-nav {
@@ -312,54 +314,48 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   height: 50px;
   margin-bottom: 0px;
 
 }
 
-.fa-home{
-  color: $blue;
-  margin-right: 60px;
-  font-size: 35px;
+.filter-icon {
+  margin-right: 10px;
+  font-size: 18px;
 }
-
 
 
 .cat {
   display: flex;
   align-items: center;
-  transition: all 0.1s;
-  padding: 5px 30px;
-  color: #4c4c4c;
+  color: #FFF;
   text-transform: uppercase;
-  position: relative;
 
-  &:after {
-    border-left: 1px solid #4c4c4c;
-    height: 50%;
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 25%;
-  }
-
-
-    &:hover {
-      color: $blue;
-}
   a {
     text-decoration: none;
   }
   p {
     margin: 0;
     font-size: 16px;
+    border-bottom: 2px solid transparent;
+    transition: all .4s ease-in;
+  }
+
+  &:hover {
+    color: white;
+    p{
+      border-bottom: 2px solid white;
+    }
   }
 
 }
 
 .selected {
-  color: $blue;
+  color: white;
+  p {
+    border-bottom: 2px solid white;
+  }
 }
 
 .seedlap-connect {
