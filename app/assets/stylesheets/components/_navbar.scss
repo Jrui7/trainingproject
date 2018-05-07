@@ -299,8 +299,8 @@
   top: -6px;
   background-color: white;
   transform: rotate(45deg);
-  border-left: 1px solid white;
-  border-top: 1px solid white;
+  border-left: 1px solid rgba(0, 0, 0, 0.15);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .sub-container{

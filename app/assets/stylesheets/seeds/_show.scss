@@ -7,22 +7,16 @@
 
   .carousel-indicators {
 
-    bottom: 5px;
+    bottom: -45px;
 
     li {
       background-color: gray;
       border: none;
-      margin: 0px;
-      width: 30px;
-      height: 3px;
-      border-radius: 0;
     }
 
     .active {
       background-color: $blue;
       color: $blue;
-      width: 30px;
-      height: 3px;
 
     }
 
@@ -73,13 +67,12 @@
     }
 
     .has_picked {
-      background-color: $orange;
+      background-color: $blue;
       border-radius: 4px;
       color: white;
-      margin: 0;
+      margin: 0 0 0 20px;
       text-transform: uppercase;
       padding: 10px;
-      margin-left: 20px;
     }
 
     a {
@@ -107,7 +100,7 @@
       align-items: center;
       margin-left: 20px;
       text-decoration: none;
-      background-color: $blue;
+      background-color: $orange;
 
 
       .fa-hand-lizard {
@@ -266,6 +259,7 @@
     .seed-social {
       display: flex;
       justify-content: center;
+      margin-top: 45px;
 
       .glyphicon {
         color: #282828;
@@ -728,11 +722,7 @@
       }
 
       .has_picked {
-        background-color: $orange;
-        border-radius: 4px;
-        color: white;
         margin: 0;
-        text-transform: uppercase;
         padding: 6px;
         margin-left: 15px;
       }
@@ -747,24 +737,25 @@
 
     .carousel-indicators {
 
-      bottom: 20px;
+      bottom: -15px;
 
       li {
         background-color: gray;
         border: none;
-        margin: 0px;
-        width: 30px;
-        height: 3px;
       }
 
       .active {
         background-color: $blue;
         color: $blue;
-        width: 30px;
-        height: 3px;
       }
 
 
+    }
+
+    .page-container .left-section .seed-social {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
     }
 
 
