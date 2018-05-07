@@ -193,6 +193,20 @@
     margin-top: 60px;
   }
 
+  .go-to{
+    border-radius: 50px;
+    border: 1px solid white;
+    text-transform: uppercase;
+    margin-right: 30px;
+    padding: 10px 30px;
+    font-size: 20px;
+    background-color: #FFF;
+    color: #243763;
+
+    &:focus, &:hover{
+      color: $orange;
+    }
+  }
 
   .cta-link{
     border-radius: 50px;
@@ -201,27 +215,13 @@
     text-transform: uppercase;
     padding: 10px 30px;
     font-size: 20px;
-    margin-right: 30px;
     &:focus, &:hover{
       color: $orange;
       border: 1px solid $orange;
     }
   }
 
-  .go-to{
-    border-radius: 50px;
-    border: 1px solid white;
-    text-transform: uppercase;
-    padding: 10px 30px;
-    font-size: 20px;
-    margin-right: 30px;
-    background-color: #FFF;
-    color: #243763;
 
-    &:focus, &:hover{
-      color: $orange;
-    }
-  }
 
   #features-container{
     height: 100vh;
@@ -446,7 +446,6 @@
 
       .cta-links{
         margin-top: 20px;
-        padding: 0 10px;
         justify-content: center;
       }
 
