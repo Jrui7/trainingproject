@@ -297,14 +297,19 @@
   }
 
   .seedlap {
-    border-radius: 50px;
-    border: 3px solid $blue;
-    color: $blue;
-    background-color: white;
+    border-radius: 50px !important;
+    border: 3px solid $orange;
+    color: white;
+    background-color: $orange;
     text-transform: uppercase;
     font-weight: bold;
     padding: 10px;
     font-size: 15px;
+    &:hover{
+      border: 3px solid $orange;
+      color: white;
+      background-color: $orange;
+    }
   }
 
   .form-box{

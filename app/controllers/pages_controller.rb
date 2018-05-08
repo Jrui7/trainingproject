@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-  skip_before_action :authenticate_user!, only: [:home]
+  skip_before_action :authenticate_user!, only: [:home,:faq, :contact, :mentions_legales, :cgv, :cgu]
   before_action :set_sample, only: [:faq, :contact, :mentions_legales, :cgv, :cgu]
   before_action :set_page_action, only: [:faq, :contact, :mentions_legales, :cgv, :cgu]
 

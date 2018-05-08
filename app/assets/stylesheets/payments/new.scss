@@ -141,6 +141,7 @@
     .form-group {
       margin: 0;
       flex-grow: 1;
+      margin-left: 5px;
     }
     .form-control {
       display: flex;
@@ -157,6 +158,7 @@
         border-right: 1px solid $blue;
         border-bottom: 1px solid $blue;
         text-decoration: none;
+        border-bottom-right-radius: 5px;
       }
 
 
@@ -172,6 +174,7 @@
       width: 45px;
       color: $blue;
       flex-shrink: 0;
+      border-radius: 5px;
     }
 
     .fa-mobile-phone {
@@ -191,6 +194,7 @@
     border-bottom: 1px solid #f4f4f4;
     .form-control {
       width: auto;
+      margin-left: 5px;
     }
   }
 
@@ -234,9 +238,9 @@
 
   .book{
     border-radius: 50px;
-    border: 3px solid #49c4f4;
+    border: 3px solid $orange;
     color: white;
-    background-color: $blue;
+    background-color: $orange;
     text-transform: uppercase;
     font-weight: bold;
     padding: 12px 16px;

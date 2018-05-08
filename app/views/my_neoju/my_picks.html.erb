@@ -1,6 +1,3 @@
-
-
-
 <div class="page-container">
   <div class="pick-feed">
     <%if @picks.any? %>
@@ -73,7 +70,7 @@
         <div class="pick-feed">
           <div class="pick-presentation">
             <h2>Vos picks</h2>
-            <p class="text-center">Vous n'avez encore rien pické jusqu'à présent</p>
+            <p class="no-picks-yet">Vous n'avez encore rien pické jusqu'à présent</p>
 
             <div class="index-path">
               <%= link_to seeds_path do %>
