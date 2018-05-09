@@ -1,4 +1,4 @@
 $(document).ready(function(){
   $(".user-update-form").html('<%= j render 'payments/address', customer_address: @address  %>');
-  $(".update-delivery-infos").removeClass("hidden");
+  $(".update-delivery-infos").addClass("hidden");
 })

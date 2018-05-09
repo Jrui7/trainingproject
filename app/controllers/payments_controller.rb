@@ -17,7 +17,6 @@ class PaymentsController < ApplicationController
           source: params[:stripeToken],
           email:  params[:stripeEmail]
         )
-
         customer_id = customer.id
         @user.customer_id = customer_id
         @user.save
@@ -42,19 +41,11 @@ class PaymentsController < ApplicationController
     end
 
 
-
-
-
-
-
   private
 
     def set_pick
       @pick = Pick.where(state: 'pending').find(params[:pick_id])
       authorize @pick
     end
-
-
-
 
 end
