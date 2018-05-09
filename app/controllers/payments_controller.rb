@@ -4,9 +4,9 @@ class PaymentsController < ApplicationController
 
     def new
       @user = current_user
-      unless current_user.customer_id.blank?
+      @user.addresses.any? ? @customer_address = @user.addresses.first : @customer_address = Address.new
+      unless @user.customer_id.blank?
         @customer_infos = Stripe::Customer.retrieve(@user.customer_id).sources.data[0]
-        @customer_address = current_user.addresses.first
       end
     end
 
@@ -21,8 +21,6 @@ class PaymentsController < ApplicationController
         customer_id = customer.id
         @user.customer_id = customer_id
         @user.save
-        Address.create(user_id: @user.id, full_name: params["stripeBillingName"], street: params["stripeBillingAddressLine1"], zip_code: params["stripeBillingAddressZip"], city: params["stripeBillingAddressCity"])
-
       else
         customer_id = @user.customer_id
       end

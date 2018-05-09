@@ -32,7 +32,7 @@ Rails.application.routes.draw do
         put :update_civil
       end
   end
-  resources :addresses, only: [:update]
+  resources :addresses, only: [:create, :update]
   resources :campaigns, only: [:update]
 
 
