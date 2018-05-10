@@ -42,8 +42,8 @@ onur = User.where(pseudo: "Onur").first
 
 
 
-# j = Address.create(user_id: jorge.id, full_name: "Jorge Ruivinho", street: "64 rue de la Pompe", zip_code: "75116", city: "Paris")
-# t = Address.create(user_id: thomas.id, full_name: "Thomas Caillol", street: "1 rue de la falaise", zip_code: "13000", city: "Marseille")
+# j = Address.create(user_id: jorge.id, first_name: "Jorge", last_name: "Ruivinho", street: "64 rue de la Pompe", zip_code: "75116", city: "Paris")
+# t = Address.create(user_id: thomas.id, first_name: "Thomas", last_name: "Caillol" street: "1 rue de la falaise", zip_code: "13000", city: "Marseille")
 
 # puts "Addreses created !"
 # puts "--------------------"

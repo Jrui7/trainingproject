@@ -36,6 +36,6 @@ class AddressesController < ApplicationController
   private
 
   def address_params_form_payment
-    params.require(:address).permit(:full_name, :street, :address_complement, :zip_code, :city, :phone_number)
+    params.require(:address).permit(:first_name, :last_name, :street, :address_complement, :zip_code, :city, :phone_number)
   end
 end

@@ -3,7 +3,10 @@
     <div class="inputs">
       <div class="input-and-icon">
         <i class="fa fa-user left-icon"></i>
-        <%= f.input :full_name, class: "input-group-field", label: false %>
+        <div class="zip-city">
+          <%= f.input :first_name, class: "input-group-field", label: false %>
+          <%= f.input :last_name, class: "input-group-field", label: false %>
+        </div>
       </div>
 
       <div class="input-and-icon">

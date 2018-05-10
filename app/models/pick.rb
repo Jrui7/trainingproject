@@ -23,7 +23,7 @@ class Pick < ApplicationRecord
 
   def self.as_csv
     CSV.generate do |csv|
-      columns = %w(seed_title id price state full_name street address_complement zip_code city phone_number user_birthdate user_sex user_email)
+      columns = %w(seed_title id price state first_name last_name street address_complement zip_code city phone_number user_birthdate user_sex user_email)
       csv << columns.map(&:humanize)
       all_with_seed_details.each do |pick|
         csv << pick.attributes.values_at(*columns)

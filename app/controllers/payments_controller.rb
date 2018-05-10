@@ -32,7 +32,7 @@ class PaymentsController < ApplicationController
         currency:     @pick.amount.currency
       )
 
-      @pick.update(payment: charge.to_json, state: 'paid', full_name: pick_address.full_name, street: pick_address.street, address_complement: pick_address.address_complement, zip_code: pick_address.zip_code, city: pick_address.city, phone_number: pick_address.phone_number)
+      @pick.update(payment: charge.to_json, state: 'paid', first_name: pick_address.first_name, last_name: pick_address.first_name, street: pick_address.street, address_complement: pick_address.address_complement, zip_code: pick_address.zip_code, city: pick_address.city, phone_number: pick_address.phone_number)
       redirect_to my_picks_path
 
       rescue Stripe::CardError => e

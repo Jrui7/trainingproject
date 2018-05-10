@@ -1,7 +1,12 @@
 class Address < ApplicationRecord
   belongs_to :user
 
-  validates :full_name,
+  validates :first_name,
+    presence: {
+    message: "Présence obligatoire"
+    }
+
+  validates :last_name,
     presence: {
     message: "Présence obligatoire"
     }
