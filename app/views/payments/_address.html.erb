@@ -4,18 +4,18 @@
       <div class="input-and-icon">
         <i class="fa fa-user left-icon"></i>
         <div class="fields-address">
-          <%= f.input :first_name, class: "input-group-field", label: false %>
-          <%= f.input :last_name, class: "input-group-field", label: false %>
+          <%= f.input :first_name, class: "input-group-field", placeholder: "Prénom", label: false %>
+          <%= f.input :last_name, class: "input-group-field", placeholder: "Nom", label: false %>
         </div>
       </div>
 
       <div class="input-and-icon">
         <i class="fa fa-truck left-icon"></i>
         <div class="fields-address">
-          <%= f.input :street, class: "input-group-field", label: false %>
+          <%= f.input :street, class: "input-group-field", placeholder: "Numéro et rue", label: false %>
           <div class="zip-city">
-            <%= f.input :zip_code, class: "input-group-field", label: false %>
-            <%= f.input :city, class: "input-group-field", label: false %>
+            <%= f.input :zip_code, class: "input-group-field", placeholder: "Code Postal", label: false %>
+            <%= f.input :city, class: "input-group-field", placeholder: "Ville", label: false %>
           </div>
           <%= f.input :address_complement, class: "input-group-field", label: false, placeholder: "Autres instructions de livraison: Digicode, Batiment, Société " %>
         </div>
