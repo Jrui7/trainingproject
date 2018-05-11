@@ -16,9 +16,12 @@ $(document).ready(function(){
 
     if (firstName == "" || lastName == "" ) {
       $(".fa.fa-user").css({ 'color': 'red', 'border-color': 'red' });
-    }
-    if (addressStreet == "" || zipCode == "" || city == "" ) {
+    } else {
+      $(".fa.fa-user").removeAttr('style');
+    } if (addressStreet == "" || zipCode == "" || city == "" ) {
       $(".fa.fa-truck").css({ 'color': 'red', 'border-color': 'red' });
+    } else {
+      $(".fa.fa-truck").removeAttr('style');
     }
   })
 
