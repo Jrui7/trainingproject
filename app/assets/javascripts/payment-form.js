@@ -22,13 +22,13 @@ function paymentClick(){
       $(".fa.fa-user").css({ 'color': 'red', 'border-color': 'red' });
     } else {
       $(".fa.fa-user").removeAttr('style');
-    } if (address_street == "" || zipCode == "" || city == "" ) {
+    } if (addressStreet == "" || zipCode == "" || city == "" ) {
       $(".fa.fa-truck").css({ 'color': 'red', 'border-color': 'red' });
     } else {
       $(".fa.fa-truck").removeAttr('style');
     }
 
-     if (firstName != "" && lastName != "" && address_street != "" && zipCode != "" && city != "" ) {
+     if (firstName != "" && lastName != "" && addressStreet != "" && zipCode != "" && city != "" ) {
       $(".stripe-button-el").click();
     }
   })
