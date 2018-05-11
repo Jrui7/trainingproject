@@ -122,7 +122,8 @@
                   </div>
                   <div class="form-livraison">
                     <%= simple_form_for @addresses, :url => update_address_user_path(@user.id), :method => :patch, remote: true do |f| %>
-                      <%= f.input :full_name, label: "Nom complet", class: "input-group-field" %>
+                      <%= f.input :first_name, label: "Prénom", class: "input-group-field" %>
+                      <%= f.input :last_name, label: "Nom", class: "input-group-field" %>
                       <%= f.input :street, label: "Rue et numéro", class: "input-group-field" %>
 
                       <%= f.input :zip_code, label: "Code postal", class: "input-group-field" %>

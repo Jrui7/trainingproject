@@ -4,9 +4,9 @@ class PaymentsController < ApplicationController
 
     def new
       @user = current_user
-      unless current_user.customer_id.blank?
+      @user.addresses.any? ? @customer_address = @user.addresses.first : @customer_address = Address.new
+      unless @user.customer_id.blank?
         @customer_infos = Stripe::Customer.retrieve(@user.customer_id).sources.data[0]
-        @customer_address = current_user.addresses.first
       end
     end
 
@@ -17,12 +17,9 @@ class PaymentsController < ApplicationController
           source: params[:stripeToken],
           email:  params[:stripeEmail]
         )
-
         customer_id = customer.id
         @user.customer_id = customer_id
         @user.save
-        Address.create(user_id: @user.id, full_name: params["stripeBillingName"], street: params["stripeBillingAddressLine1"], zip_code: params["stripeBillingAddressZip"], city: params["stripeBillingAddressCity"])
-
       else
         customer_id = @user.customer_id
       end
@@ -35,7 +32,7 @@ class PaymentsController < ApplicationController
         currency:     @pick.amount.currency
       )
 
-      @pick.update(payment: charge.to_json, state: 'paid', full_name: pick_address.full_name, street: pick_address.street, address_complement: pick_address.address_complement, zip_code: pick_address.zip_code, city: pick_address.city, phone_number: pick_address.phone_number)
+      @pick.update(payment: charge.to_json, state: 'paid', first_name: pick_address.first_name, last_name: pick_address.first_name, street: pick_address.street, address_complement: pick_address.address_complement, zip_code: pick_address.zip_code, city: pick_address.city, phone_number: pick_address.phone_number)
       redirect_to my_picks_path
 
       rescue Stripe::CardError => e
@@ -44,19 +41,11 @@ class PaymentsController < ApplicationController
     end
 
 
-
-
-
-
-
   private
 
     def set_pick
       @pick = Pick.where(state: 'pending').find(params[:pick_id])
       authorize @pick
     end
-
-
-
 
 end

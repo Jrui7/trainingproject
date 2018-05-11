@@ -5,6 +5,10 @@ class AddressPolicy < ApplicationPolicy
     end
   end
 
+  def create?
+    record.user == user
+  end
+
 
   def update?
     record.user == user

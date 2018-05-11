@@ -74,7 +74,7 @@ class UsersController < ApplicationController
   end
 
   def address_params
-    params.require(:address).permit(:full_name, :street, :zip_code, :city, :address_complement, :phone_number)
+    params.require(:address).permit(:first_name, :last_name, :street, :zip_code, :city, :address_complement, :phone_number)
   end
 
   def civil_params

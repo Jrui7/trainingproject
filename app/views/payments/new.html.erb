@@ -20,6 +20,20 @@
             </div>
           </div>
         </div>
+        <div class="stripe-infos">
+          <div class="user-update-form">
+            <% if  @user.addresses.any? %>
+              <%= render "payments/address", customer_address: @customer_address %>
+              <% else %>
+              <%= render "payments/create-address", customer_address: @customer_address %>
+            <% end %>
+          </div>
+          <% if  @customer_infos %>
+            <div id="update-customer-stripe">
+              <%= render "payments/card", customer_infos: @customer_infos %>
+            </div>
+          <% end %>
+        </div>
         <% if @user.customer_id.blank? %>
           <div class="new-user-form">
             <%= form_tag pick_payments_path(@pick), class: "hidden" do %>
@@ -33,7 +47,6 @@
                 data-amount="<%= @pick.amount_cents %>"
                 data-currency="<%= @pick.amount.currency %>"
                 data-locale="auto"
-                data-billing-address="true"
                 data-allow-remember-me="false"
                 data-label="Procéder au versement">
               </script>
@@ -47,20 +60,13 @@
             </div>
           </div>
         <% else %>
-          <div class="stripe-infos">
-            <div class="user-update-form">
-              <%= render "payments/address", customer_address: @customer_address %>
-            </div>
-            <div id="update-customer-stripe">
-              <%= render "payments/card", customer_infos: @customer_infos %>
-            </div>
-          </div>
           <div class="booking-link">
             <p>En validant ma participation, je déclare avoir pris connaissance et accepté sans réserve les CGU et CGV</p>
-            <%= link_to pick_payments_path(@pick), class: "btn book waiting",  method: :post do %>
+            <div class="btn book waiting">
               <i class="fa fa-lock"></i>
               <p>Confirmer participation</p>
-            <% end %>
+            </div>
+            <%= link_to "Save and book", pick_payments_path(@pick), class: "hidden", id: "save-and-book",  method: :post %>
           </div>
           <div class="loader-container hidden">
           </div>
@@ -78,7 +84,6 @@
               data-locale="auto">
             </script>
           <% end %>
-
           <% end %>
         </div>
       </div>

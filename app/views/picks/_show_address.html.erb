@@ -1,5 +1,6 @@
 <h3>Livraison</h3>
-<div class="address-input"><%= pick.full_name %></div>
+<div class="address-input"><%= pick.first_name %></div>
+<div class="address-input"><%= pick.last_name %></div>
 <div class="address-input"><%= pick.street %></div>
 <div class="address-input"><%= pick.zip_code %> <%= pick.city %></div>
 <% unless pick.address_complement.blank? %>

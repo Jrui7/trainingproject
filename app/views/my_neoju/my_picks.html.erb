@@ -25,7 +25,7 @@
                       </div>
                     </div>
                     <div class="modal-footer hidden">
-                      <button type="button" id="close-modal-<%= pick.id%>" class="btn btn-default text-center" data-dismiss="modal">Fermer</button>
+                      <button type="button" id="close-modal-<%= pick.id%>" class="btn btn-default text-center" data-dismiss="modal">Retour</button>
                     </div>
                   </div>
                 </div>
@@ -54,7 +54,7 @@
                         <%= link_to pick_path(pick.id), class: "mid-width  #{'paid' if pick.state == 'paid'}", method: :delete, remote: true do %>
                             <div class="btn seedlap">Supprimer mon pick</div>
                           <% end %>
-                        <button type="button" id="close-modal-destroy-<%= pick.id%>" class="btn seedlap  mid-width text-center" data-dismiss="modal">Fermer</button>
+                        <button type="button" id="close-modal-destroy-<%= pick.id%>" class="btn seedlap  mid-width text-center" data-dismiss="modal">Retour</button>
                       </div>
                       <div class="loader-container hidden"></div>
                     </div>
