@@ -8,7 +8,7 @@ $(document).ready(function(){
     var zipCode = $("#address_zip_code").val();
     var city = $("#address_city").val();
 
-     if (firstName != "" &&  lastName != "" && address_street != "" && zipCode != "" && city != "" ) {
+     if (firstName != "" && lastName != "" && address_street != "" && zipCode != "" && city != "" ) {
       $(this).hide();
       $(".loader-container").removeClass("hidden").html("<div class='loader'></div>");
       $("#save-and-book").click();
