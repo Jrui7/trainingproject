@@ -1,4 +1,5 @@
 
+ <script src="https://js.stripe.com/v3/"></script>
  <div class="paiement-container">
   <div class="booking-confirmation">
     <div class="row">
@@ -32,63 +33,105 @@
             <div id="update-customer-stripe">
               <%= render "payments/card", customer_infos: @customer_infos %>
             </div>
+            <%= form_tag pick_payments_path(@pick), class: "stp", id: "payment-form" do %>
+              <div class="form-row">
+                <label for="card-element">
+                  Carte de paiement
+                </label>
+                <div id="card-element">
+                  <!-- A Stripe Element will be inserted here. -->
+                </div>
+
+                <!-- Used to display form errors. -->
+                <div id="card-errors" role="alert"></div>
+              </div>
+              <div class="cgu-reminder">En validant ma participation, je déclare avoir pris connaissance et accepté sans réserve les CGU et CGV</div>
+              <button class="booking-button" id="validate-paiement">
+                <i class="fa fa-lock"></i>
+                <p>Confirmer participation</p>
+              </button>
+            <% end %>
           <% end %>
         </div>
-        <% if @user.customer_id.blank? %>
-          <div class="new-user-form">
-            <%= form_tag pick_payments_path(@pick), class: "hidden" do %>
-              <script
-                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                data-name="Neoju"
-                data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-                data-email="<%= @user.email %>"
-                data-description="<%= @pick.seed.title %>"
-                data-amount="<%= @pick.amount_cents %>"
-                data-currency="<%= @pick.amount.currency %>"
-                data-locale="auto"
-                data-allow-remember-me="false"
-                data-label="Procéder au versement">
-              </script>
-            <% end %>
-          </div>
-          <div class="booking-link">
-            <p>En validant ma participation, je déclare avoir pris connaissance et accepté sans réserve les CGU et CGV</p>
-            <div class="book new-user-book">
-              <i class="fa fa-lock"></i>
-              <p>Confirmer participation</p>
-            </div>
-          </div>
-        <% else %>
-          <div class="booking-link">
-            <p>En validant ma participation, je déclare avoir pris connaissance et accepté sans réserve les CGU et CGV</p>
-            <div class="btn book waiting">
-              <i class="fa fa-lock"></i>
-              <p>Confirmer participation</p>
-            </div>
-            <%= link_to "Save and book", pick_payments_path(@pick), class: "hidden", id: "save-and-book",  method: :post %>
-          </div>
-          <div class="loader-container hidden">
-          </div>
-
-          <%= form_tag update_card_user_path(@user), method: :patch, class: "hidden" do %>
-            <script
-              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-              data-key="pk_test_vLvpA9ucqPkcgXW1QQIQdnUA"
-              data-name="Infos paiement"
-              data-email="<%= @user.email %>"
-              data-panel-label="Modifier ma carte"
-              data-label="Modifier ma carte"
-              data-allow-remember-me=false
-              data-locale="auto">
-            </script>
-          <% end %>
-          <% end %>
+        <div class="loader-container hidden">
+        </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<% content_for(:after_js) do %>
+  <script>
+    var stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+
+    // Create an instance of Elements.
+    var elements = stripe.elements();
+
+    // Custom styling can be passed to options when creating an Element.
+    // (Note that this demo uses a wider set of styles than the guide below.)
+    var style = {
+      base: {
+        color: '#32325d',
+        lineHeight: '18px',
+        fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+        fontSmoothing: 'antialiased',
+        fontSize: '16px',
+        '::placeholder': {
+          color: '#aab7c4'
+        }
+      },
+      invalid: {
+        color: '#fa755a',
+        iconColor: '#fa755a'
+      }
+    };
+
+    // Create an instance of the card Element.
+    var card = elements.create('card', {style: style});
+
+    // Add an instance of the card Element into the `card-element` <div>.
+    card.mount('#card-element');
+    card.addEventListener('change', function(event) {
+      var displayError = document.getElementById('card-errors');
+      if (event.error) {
+        displayError.textContent = event.error.message;
+      } else {
+        displayError.textContent = '';
+      }
+    });
+    // Create a token or display an error when the form is submitted.
+    var form = document.getElementById('payment-form');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      stripe.createToken(card).then(function(result) {
+        if (result.error) {
+          // Inform the customer that there was an error.
+          var errorElement = document.getElementById('card-errors');
+          errorElement.textContent = result.error.message;
+        } else {
+          // Send the token to your server.
+          $(".booking-link").addClass("hidden");
+          $(".loader-container").removeClass("hidden").html("<div class='loader'></div>");
+          stripeTokenHandler(result.token);
+        }
+      });
+    });
+    function stripeTokenHandler(token) {
+    // Insert the token ID into the form so it gets submitted to the server
+    var form = document.getElementById('payment-form');
+    var hiddenInput = document.createElement('input');
+    hiddenInput.setAttribute('type', 'hidden');
+    hiddenInput.setAttribute('name', 'stripeToken');
+    hiddenInput.setAttribute('value', token.id);
+    form.appendChild(hiddenInput);
+
+    // Submit the form
+    form.submit();
+
+    }
+    </script>
+  <% end %>
 
 

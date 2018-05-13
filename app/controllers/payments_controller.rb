@@ -15,7 +15,7 @@ class PaymentsController < ApplicationController
       if @user.customer_id.blank?
         customer = Stripe::Customer.create(
           source: params[:stripeToken],
-          email:  params[:stripeEmail]
+          email:  @user.email
         )
         customer_id = customer.id
         @user.customer_id = customer_id

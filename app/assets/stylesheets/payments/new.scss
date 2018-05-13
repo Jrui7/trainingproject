@@ -222,6 +222,39 @@
 
 }
 
+#payment-form{
+  display: none;
+  .cgu-reminder {
+    max-width: 350px;
+    margin: 50px auto 30px;
+    text-align: center;
+  }
+  p{
+    margin: 0 10px;
+    font-size: 15px;
+  }
+  .fa-lock{
+    color: white;
+    font-size: 24px;
+  }
+}
+
+.booking-button{
+  border-radius: 50px;
+  border: 3px solid $orange;
+  color: white;
+  background-color: $orange;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 12px 16px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
 .booking-link{
   text-align: center;
   margin-top: 50px;

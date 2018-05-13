@@ -1,6 +1,8 @@
 $(document).ready(function(){
   $(".display-card").click(function(){
-    $(".stripe-button-el").click();
+    $("#update-customer-stripe").slideToggle();
+    $("#payment-form").slideToggle();
+
   })
 
   paymentClick();
@@ -29,7 +31,7 @@ function paymentClick(){
     }
 
      if (firstName != "" && lastName != "" && addressStreet != "" && zipCode != "" && city != "" ) {
-      $(".stripe-button-el").click();
+      $("#validate-paiement").click();
     }
   })
 }
