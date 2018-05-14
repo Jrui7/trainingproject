@@ -33,25 +33,33 @@
             <div id="update-customer-stripe">
               <%= render "payments/card", customer_infos: @customer_infos %>
             </div>
-            <%= form_tag pick_payments_path(@pick), class: "stp", id: "payment-form" do %>
-              <div class="form-row">
-                <label for="card-element">
-                  Carte de paiement
-                </label>
-                <div id="card-element">
-                  <!-- A Stripe Element will be inserted here. -->
-                </div>
-
-                <!-- Used to display form errors. -->
-                <div id="card-errors" role="alert"></div>
-              </div>
-              <div class="cgu-reminder">En validant ma participation, je déclare avoir pris connaissance et accepté sans réserve les CGU et CGV</div>
-              <button class="booking-button" id="validate-paiement">
-                <i class="fa fa-lock"></i>
-                <p>Confirmer participation</p>
-              </button>
-            <% end %>
           <% end %>
+          <%= form_tag pick_payments_path(@pick), class: "#{'hidden' if @customer_infos}", id: "payment-form" do %>
+            <div class="form-row">
+              <label for="card-element">
+                Paiement
+              </label>
+              <div id="card-element">
+                <!-- A Stripe Element will be inserted here. -->
+              </div>
+
+              <!-- Used to display form errors. -->
+              <div id="card-errors" role="alert"></div>
+            </div>
+            <div class="cgu-reminder">En validant ma participation, je déclare avoir pris connaissance et accepté sans réserve les CGU et CGV</div>
+            <button class="booking-button" id="validate-paiement">
+              <i class="fa fa-lock"></i>
+              <p>Confirmer participation</p>
+            </button>
+          <% end %>
+          <%= link_to "Save and book", pick_payments_path(@pick), class: "hidden", id: "save-and-book",  method: :post %>
+          <div class="with_customer_id <%= 'hidden' unless @customer_infos %>">
+            <div class="cgu-reminder">En validant ma participation, je déclare avoir pris connaissance et accepté sans réserve les CGU et CGV</div>
+            <div class="booking-button" id="with_customer_id">
+              <i class="fa fa-lock"></i>
+              <p>Confirmer participation</p>
+            </div>
+          </div>
         </div>
         <div class="loader-container hidden">
         </div>
@@ -105,16 +113,36 @@
     form.addEventListener('submit', function(event) {
       event.preventDefault();
 
+      $(".update-delivery-infos").click();
+      var firstName = $("#address_first_name").val();
+      var lastName = $("#address_last_name").val();
+      var addressStreet = $("#address_street").val();
+      var zipCode = $("#address_zip_code").val();
+      var city = $("#address_city").val();
+
+      if (firstName == "" || lastName == "" ) {
+        $(".fa.fa-user").css({ 'color': 'red', 'border-color': 'red' });
+      } else {
+        $(".fa.fa-user").removeAttr('style');
+      } if (addressStreet == "" || zipCode == "" || city == "" ) {
+        $(".fa.fa-truck").css({ 'color': 'red', 'border-color': 'red' });
+      } else {
+        $(".fa.fa-truck").removeAttr('style');
+      }
+
       stripe.createToken(card).then(function(result) {
         if (result.error) {
           // Inform the customer that there was an error.
           var errorElement = document.getElementById('card-errors');
           errorElement.textContent = result.error.message;
         } else {
-          // Send the token to your server.
-          $(".booking-link").addClass("hidden");
-          $(".loader-container").removeClass("hidden").html("<div class='loader'></div>");
-          stripeTokenHandler(result.token);
+          if (firstName != "" && lastName != "" && addressStreet != "" && zipCode != "" && city != "" ) {
+
+            // Send the token to your server.
+            $(".booking-link").addClass("hidden");
+            $(".loader-container").removeClass("hidden").html("<div class='loader'></div>");
+            stripeTokenHandler(result.token);
+          }
         }
       });
     });

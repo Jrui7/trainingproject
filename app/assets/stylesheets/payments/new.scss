@@ -222,22 +222,21 @@
 
 }
 
-#payment-form{
-  display: none;
+
   .cgu-reminder {
     max-width: 350px;
     margin: 50px auto 30px;
     text-align: center;
+    font-size: 14px;
   }
   p{
     margin: 0 10px;
-    font-size: 15px;
   }
   .fa-lock{
     color: white;
     font-size: 24px;
   }
-}
+
 
 .booking-button{
   border-radius: 50px;
