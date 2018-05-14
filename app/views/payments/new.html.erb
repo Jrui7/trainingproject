@@ -139,7 +139,7 @@
           if (firstName != "" && lastName != "" && addressStreet != "" && zipCode != "" && city != "" ) {
 
             // Send the token to your server.
-            $(".booking-link").addClass("hidden");
+            $("#validate-paiement").hide();
             $(".loader-container").removeClass("hidden").html("<div class='loader'></div>");
             stripeTokenHandler(result.token);
           }
