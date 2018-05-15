@@ -52,7 +52,11 @@ class UsersController < ApplicationController
     cu = Stripe::Customer.retrieve("#{@user.customer_id}")
     cu.source = params[:stripeToken] # obtained with Stripe.js
     cu.save
-    redirect_to @user
+    @customer_infos = cu.sources.data[0]
+    respond_to do |format|
+      format.html {redirect_to user_path(@user)}
+      format.js
+    end
   end
 
 

@@ -1,0 +1,5 @@
+$(document).ready(function(){
+  $(".current-infos.card-infos").html('<%= j render 'users/card-infos', customer_infos: @customer_infos %>');
+  $(".form-card").slideToggle();
+  $("#paiement-and-pen").slideToggle();
+})

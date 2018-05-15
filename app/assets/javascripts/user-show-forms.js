@@ -30,7 +30,13 @@ $(document).ready(function(){
   })
 
   $("#edit-paiement").click(function(){
-    $(".stripe-button-el").click();
+    $(".form-card").slideToggle();
+    $("#paiement-and-pen").slideToggle();
+  })
+
+  $("#cancel-card").click(function(){
+    $(".form-card").slideToggle();
+    $("#paiement-and-pen").slideToggle();
   })
 
 

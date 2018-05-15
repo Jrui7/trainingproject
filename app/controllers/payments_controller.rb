@@ -15,11 +15,16 @@ class PaymentsController < ApplicationController
       if @user.customer_id.blank?
         customer = Stripe::Customer.create(
           source: params[:stripeToken],
-          email:  params[:stripeEmail]
+          email:  @user.email
         )
         customer_id = customer.id
         @user.customer_id = customer_id
         @user.save
+      elsif params[:stripeToken]
+        cu = Stripe::Customer.retrieve("#{@user.customer_id}")
+        cu.source = params[:stripeToken] # obtained with Stripe.js
+        cu.save
+        customer_id = @user.customer_id
       else
         customer_id = @user.customer_id
       end

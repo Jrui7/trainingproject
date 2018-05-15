@@ -1,4 +1,5 @@
 
+ <script src="https://js.stripe.com/v3/"></script>
  <div class="paiement-container">
   <div class="booking-confirmation">
     <div class="row">
@@ -33,62 +34,40 @@
               <%= render "payments/card", customer_infos: @customer_infos %>
             </div>
           <% end %>
-        </div>
-        <% if @user.customer_id.blank? %>
-          <div class="new-user-form">
-            <%= form_tag pick_payments_path(@pick), class: "hidden" do %>
-              <script
-                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                data-name="Neoju"
-                data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-                data-email="<%= @user.email %>"
-                data-description="<%= @pick.seed.title %>"
-                data-amount="<%= @pick.amount_cents %>"
-                data-currency="<%= @pick.amount.currency %>"
-                data-locale="auto"
-                data-allow-remember-me="false"
-                data-label="Procéder au versement">
-              </script>
-            <% end %>
-          </div>
-          <div class="booking-link">
-            <p>En validant ma participation, je déclare avoir pris connaissance et accepté sans réserve les CGU et CGV</p>
-            <div class="book new-user-book">
-              <i class="fa fa-lock"></i>
-              <p>Confirmer participation</p>
-            </div>
-          </div>
-        <% else %>
-          <div class="booking-link">
-            <p>En validant ma participation, je déclare avoir pris connaissance et accepté sans réserve les CGU et CGV</p>
-            <div class="btn book waiting">
-              <i class="fa fa-lock"></i>
-              <p>Confirmer participation</p>
-            </div>
-            <%= link_to "Save and book", pick_payments_path(@pick), class: "hidden", id: "save-and-book",  method: :post %>
-          </div>
-          <div class="loader-container hidden">
-          </div>
+          <%= form_tag pick_payments_path(@pick), class: "#{'hidden' if @customer_infos}", id: "payment-form" do %>
+            <div class="form-row">
+              <label for="card-element">
+                Paiement
+              </label>
+              <div id="card-element">
+                <!-- A Stripe Element will be inserted here. -->
+              </div>
 
-          <%= form_tag update_card_user_path(@user), method: :patch, class: "hidden" do %>
-            <script
-              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-              data-key="pk_test_vLvpA9ucqPkcgXW1QQIQdnUA"
-              data-name="Infos paiement"
-              data-email="<%= @user.email %>"
-              data-panel-label="Modifier ma carte"
-              data-label="Modifier ma carte"
-              data-allow-remember-me=false
-              data-locale="auto">
-            </script>
+              <!-- Used to display form errors. -->
+              <div id="card-errors" role="alert"></div>
+            </div>
+            <div class="cgu-reminder">En validant ma participation, je déclare avoir pris connaissance et accepté sans réserve les CGU et CGV</div>
+            <button class="booking-button" id="validate-paiement">
+              <i class="fa fa-lock"></i>
+              <p>Confirmer participation</p>
+            </button>
           <% end %>
-          <% end %>
+          <%= link_to "Save and book", pick_payments_path(@pick), class: "hidden", id: "save-and-book",  method: :post %>
+          <div class="with_customer_id <%= 'hidden' unless @customer_infos %>">
+            <div class="cgu-reminder">En validant ma participation, je déclare avoir pris connaissance et accepté sans réserve les CGU et CGV</div>
+            <div class="booking-button" id="with_customer_id">
+              <i class="fa fa-lock"></i>
+              <p>Confirmer participation</p>
+            </div>
+          </div>
+        </div>
+        <div class="loader-container hidden">
+        </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+<%= render "shared/stripe-form" %>
 
