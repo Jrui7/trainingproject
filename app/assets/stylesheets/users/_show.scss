@@ -359,8 +359,8 @@
     border-left: 1px solid #cecece;
     padding-left: 30px;
     .glyphicon{
-      color: $blue;
-      border: 1px solid $blue;
+      color: $orange;
+      border: 1px solid $orange;
       padding: 5px;
       border-radius: 5px;
       cursor: pointer;
@@ -368,12 +368,16 @@
     }
   }
 
-  .form-civil, .form-livraison, .form-password {
+  .form-civil, .form-livraison, .form-password, .form-card {
     display: none;
-    padding:15px 20px;
+    padding:20px;
     width:70%;
     background-color: #F2F2F2;
     border-radius: 5px;
+
+    .new-card{
+      margin-bottom: 5px;
+    }
 
     input, textarea {
       flex: 0 0 70%;
@@ -407,7 +411,8 @@
       background-color: $blue;
       border-radius: 10px;
       border: 1px solid $blue;
-      padding: 5px 10px
+      padding: 5px 10px;
+      flex: 0 70%;
     }
     .cancel{
       color: $blue;
