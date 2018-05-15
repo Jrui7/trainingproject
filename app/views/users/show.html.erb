@@ -162,7 +162,7 @@
                         <% end %>
                         <%= f.input :current_password, label: "Mot de passe actuel", required: true %>
                         <%= f.input :password, autocomplete: "off", placeholder: "minimum 6 carractères", label: "Nouveau mot de passe", required: false %>
-                        <%= f.input :password_confirmation, label: "Confirmation", placeholder: "confirmer le nouveau mot de passe", required: false %>
+                        <%= f.input :password_confirmation, label: "Confirmer", placeholder: "confirmer le nouveau mot de passe", required: false %>
                         <div class="action-buttons">
                           <div id= "cancel-password" class="btn cancel">Annuler</div>
                           <%= f.button :submit, value: "Actualiser", class: "btn validate", id: "submit-update-password" %>
