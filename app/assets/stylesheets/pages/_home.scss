@@ -106,8 +106,8 @@
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
-   -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 95%, 0 85%);
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 95%, 0 85%);
+   -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 95%, 0 90%);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 95%, 0 90%);
 }
 
 .header-home {
@@ -165,12 +165,17 @@
 
 
 .banner-container {
-    position: absolute;
-    max-width: 600px;
-    right: 5%;
-    height: 65vh;
-    padding-top: 150px;
+    width: 90%;
+    margin: 0 auto;
+    min-height: calc(90vh - 80px);
     color: #FFFFFF;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .banner-content{
+    max-width: 600px;
   }
 
 .moto {
