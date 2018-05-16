@@ -3,9 +3,16 @@
 * ------------------------------------- */
 
 .alert {
-  margin: 0;
+  top: 5px;
+  right: 5px;
   text-align: center;
   color: white;
+  background: #A1CECF;
+  position: absolute;
+  font-size: 15px;
+  display: flex;
+  z-index: 3;
+  border-radius: 10px;
 }
 .alert-info {
   background: $blue;

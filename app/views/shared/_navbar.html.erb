@@ -30,7 +30,7 @@
           <div class="user-menu">
             <div class="dropdown">
               <% if current_user.photo? %>
-                <%= cl_image_tag current_user.photo.path, :quality=>40, class: "dropdown-toggle", id: "dropdown-photo", "data-toggle" => "dropdown" %>
+                <%= cl_image_tag current_user.photo.path, :width=>110, :height=>110, class: "dropdown-toggle", id: "dropdown-photo", "data-toggle" => "dropdown" %>
               <% else %>
                 <i class="fa fa-user dropdown-toggle" aria-hidden="true" id="dropdown-icon", data-toggle="dropdown"></i>
               <% end %>

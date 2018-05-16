@@ -140,7 +140,7 @@
           <div class="show-seed-description">
             <div class="seeder">
               <%if @seeder.has_photo? %>
-              <%= cl_image_tag(@seeder.photo.path, class: "seeder-picture-big")%>
+              <%= cl_image_tag(@seeder.photo.path, :width=>110, :height=>110, class: "seeder-picture-big")%>
               <% else %>
                 <i class="fa fa-user"></i>
               <% end %>
