@@ -59,6 +59,8 @@
   margin: 0 auto;
   width: 80%;
   text-align: left;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
 .exchange-header {
@@ -68,6 +70,7 @@
   background: #f3f3f3;
   margin-top: 30px;
   text-align: center;
+  border-radius: 10px;
 }
 
 .exchanges-and-questions {
@@ -176,6 +179,14 @@
     .exchanges-and-questions {
       width: 90%;
       margin-top: 30px;
+    }
+
+    .pick-status {
+      width: 90%;
+    }
+
+    .ship-and-payment {
+      width: 90%;
     }
 
 
