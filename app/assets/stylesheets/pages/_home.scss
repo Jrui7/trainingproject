@@ -224,10 +224,9 @@
 
 
   #features-container{
-    height: 100vh;
     width: 80%;
     margin: 0 auto;
-    padding: 50px 0;
+    padding: 20px 0 50px;
     display: flex;
     justify-content: space-between;
 
@@ -244,9 +243,11 @@
     background-color: rgba(241, 243, 247, 1);
     padding: 0 20px 20px;
 
-    .top {
-      height: 50%;
-    }
+
+  }
+
+  .half {
+    margin-bottom: 20px;
   }
 
   .feature-images, .action-image{
