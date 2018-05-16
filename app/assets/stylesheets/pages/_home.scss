@@ -421,12 +421,13 @@
   @media screen and (max-width: 480px) {
 
     .banner-container {
-        position: static;
-        text-align:center;
-        padding-top: 20px;
+        justify-content: center;
         h2{
           font-size: 25px;
         }
+      }
+      .banner-content{
+        text-align: center;
       }
     .moto{
       font-size: 30px;
