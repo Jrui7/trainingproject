@@ -1,6 +1,6 @@
 class MyNeojuController < ApplicationController
 
-
+  before_action :set_sample, only: [:my_picks]
 
   def my_seeds
     @seeds = Seed.where(user_id: current_user)
@@ -8,7 +8,6 @@ class MyNeojuController < ApplicationController
 
   def my_picks
     @picks = current_user.picks.includes(:seed).newest
-    @sample = Seed.ongoing.where.not(admin_review:"Invalide")
     authorize @picks
   end
 
