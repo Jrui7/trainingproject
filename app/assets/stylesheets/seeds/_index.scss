@@ -367,6 +367,9 @@ a:hover {
 .product-category{
   display: flex;
   text-transform: uppercase;
+  p {
+    margin: 0;
+  }
 
   .sport {
     border: 1px solid #e8e8e8;
