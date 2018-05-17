@@ -27,10 +27,6 @@
 
 .page-container {
 
-
-
-
-
   .page-sections {
     margin-right: auto;
     margin-left: auto;
@@ -241,20 +237,26 @@
       border-bottom: solid 1px rgba(0,0,0,0.1);
       border-top: solid 1px rgba(0,0,0,0.1);
 
-
-
-
-
-
     }
 
     .seed-photos {
       text-align: center;
-
-      .item {
-        max-height: 380px;
-      }
     }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+      margin-bottom: 20px;
+  }
+  .video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
 
     .signal {
       a {
@@ -488,6 +490,8 @@
 
   }
 
+}
+
 
   .right-section {
     background-color: #FFFFFF;
@@ -498,33 +502,6 @@
 
 
   }
-
-
-  .video-container {
-      position: relative;
-      width: 100%;
-      height: 0;
-      padding-bottom: 56.25%;
-      margin-bottom: 20px;
-  }
-  .video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-  }
-
-
-
-
-
-}
-
-
-
-
-
 
 
   .pick-seed {
