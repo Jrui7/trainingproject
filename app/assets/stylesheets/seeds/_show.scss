@@ -153,11 +153,13 @@
     padding: 0!important;
     color: #FFFFFF;
 
+    .modal-title{
+      text-align: center;
+    }
+
     .modal-content {
-      background: linear-gradient(-225deg, #1a2980, #26d0ce 50%);
-      background: -webkit-linear-gradient(left, #1a2980, #26d0ce); /* For Safari 5.1 to 6.0 */
-      background: -o-linear-gradient(right,#1a2980, #26d0ce); /* For Opera 11.1 to 12.0 */
-      background: -moz-linear-gradient(right,#1a2980, #26d0ce); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(to right, #3e2995 0, #337b80 50%, #337b80 50%, #3f937d 100%);
+
     }
 
     h3 {
@@ -180,9 +182,14 @@
     text-align: left;
     vertical-align: middle;
     margin: 0;
+    border-radius: 10px;
   }
 
 
+  }
+
+  .modal-body{
+    padding: 15px 15px 35px 15px !important;
   }
 
   .modal-footer{
@@ -568,6 +575,7 @@
 
     .form-control {
       width: 25%;
+      border-radius: 5px;
     }
   }
 
@@ -579,8 +587,8 @@
 
   #btn-pick {
       border-radius: 50px;
-      border: 3px solid white;
-      color: $blue;
+      color: white;
+      background-color: $orange;
       text-transform: uppercase;
       font-weight: bold;
       padding: 10px 12px;
@@ -688,7 +696,7 @@
 
       .form-control {
         margin-left: 10px;
-        width: 40%;
+        width: 60%;
       }
 
     }

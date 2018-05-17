@@ -27,7 +27,13 @@ $border-radius-small: 2px;
 
 
 
-
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
 
 .dropdown-menu {
   padding: 6px 0 0 !important;
