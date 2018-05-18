@@ -9,11 +9,17 @@
     li {
       background-color: gray;
       border: none;
+      height: 16px;
+      width: 16px;
+      margin: 0 2px;
     }
 
     .active {
       background-color: $blue;
       color: $blue;
+      height: 16px;
+      width: 16px;
+      margin: 0 2px;
 
     }
 
@@ -715,7 +721,7 @@
 
     .carousel-indicators {
 
-      bottom: -15px;
+      bottom: -45px;
 
       li {
         background-color: gray;
@@ -733,7 +739,7 @@
     .page-container .left-section .seed-social {
         display: flex;
         justify-content: center;
-        margin-top: 15px;
+        margin-top: 40px;
     }
 
 
