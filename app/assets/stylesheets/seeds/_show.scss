@@ -1,8 +1,5 @@
   .carousel-inner {
     height: 300px !important;
-    position: relative;
-
-
   }
 
   .carousel-indicators {
@@ -12,11 +9,17 @@
     li {
       background-color: gray;
       border: none;
+      height: 16px;
+      width: 16px;
+      margin: 0 2px;
     }
 
     .active {
       background-color: $blue;
       color: $blue;
+      height: 16px;
+      width: 16px;
+      margin: 0 2px;
 
     }
 
@@ -26,10 +29,6 @@
 
 
 .page-container {
-
-
-
-
 
   .page-sections {
     margin-right: auto;
@@ -241,20 +240,23 @@
       border-bottom: solid 1px rgba(0,0,0,0.1);
       border-top: solid 1px rgba(0,0,0,0.1);
 
-
-
-
-
-
     }
 
     .seed-photos {
       text-align: center;
-
-      .item {
-        max-height: 380px;
-      }
     }
+
+    .video-container {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      justify-content: center;
+
+      iframe {
+        flex: 0 0 100%;
+      }
+  }
+
 
     .signal {
       a {
@@ -488,44 +490,7 @@
 
   }
 
-
-  .right-section {
-    background-color: #FFFFFF;
-    border-radius: 4px;
-    width: 100%;
-    padding: 20px;
-
-
-
-  }
-
-
-  .video-container {
-      position: relative;
-      width: 100%;
-      height: 0;
-      padding-bottom: 56.25%;
-      margin-bottom: 20px;
-  }
-  .video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-  }
-
-
-
-
-
 }
-
-
-
-
-
-
 
   .pick-seed {
     display: flex;
@@ -713,10 +678,6 @@
     padding: 0 15px;
     }
 
-  .page-container .right-section {
-    padding: 0;
-  }
-
     .page-container .head  {
       .pick-link {
       display: flex;
@@ -750,13 +711,17 @@
     }
 
     .carousel-inner {
-      height: 180px !important;
+      height: 200px !important;
+      .img-seed {
+        max-height: 200px;
+        width: auto;
+      }
     }
 
 
     .carousel-indicators {
 
-      bottom: -15px;
+      bottom: -45px;
 
       li {
         background-color: gray;
@@ -774,7 +739,7 @@
     .page-container .left-section .seed-social {
         display: flex;
         justify-content: center;
-        margin-top: 15px;
+        margin-top: 40px;
     }
 
 

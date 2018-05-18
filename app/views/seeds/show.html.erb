@@ -2,6 +2,7 @@
 <% content_for :meta_description, "Quel prix souhaitez-vous payer pour #{@seed.title} ?" %>
 <% content_for :meta_image, cl_image_path(@seed.photos.first.path) %>
 
+
 <%= render "shared/sub-navbar" %>
 <div class="page-container">
 
@@ -73,17 +74,21 @@
         <div class="left-section">
           <div class="seed-media">
             <div class="seed-photos">
-              <div id="myCarousel" class="carousel slide" data-ride="carousel">
+              <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
+
+                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                   <% turns = @seed.photos.size - 1 %>
                   <% slide_index = 1 %>
-                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                   <% if @seed.photos.size > 1 %>
                     <% turns.times do  %>
                       <li data-target="#myCarousel" data-slide-to="<%= slide_index%>"></li>
                       <% slide_index += 1 %>
                     <% end %>
+                  <% end %>
+                  <% unless @seed.url.blank? %>
+                    <li data-target="#myCarousel" data-slide-to="<%= turns + 1%>"></li>
                   <% end %>
                 </ol>
                 <!-- Wrapper for slides -->
@@ -91,12 +96,7 @@
                 <% photos = @seed.extract_seed_photos %>
                   <div class="item active">
                     <a href="<%= cl_image_path photos.first.path %>" class="swipebox" title="<%= @seed.title %>">
-                      <div class="hidden-xs">
-                        <%= cl_image_tag photos.first.path, :height=>300, :crop=>"scale" %>
-                      </div>
-                      <div class="hidden-sm hidden-md hidden-lg">
-                        <%= cl_image_tag photos.first.path, :height=>150, :crop=>"scale" %>
-                      </div>
+                      <%= cl_image_tag photos.first.path, :height=>300, :crop=>"scale", class:"img-seed" %>
                     </a>
                   </div>
 
@@ -105,16 +105,15 @@
                     <% photos.each_with_index do |photo, i| %>
                       <div class="item">
                         <a href="<%= cl_image_path photo.path %>" class="swipebox" title="<%= @seed.title %>">
-                          <div class="hidden-xs">
-                             <%= cl_image_tag photo.path, :height=>300, :crop=>"scale" %>
-                           </div>
-                           <div class="hidden-sm hidden-md hidden-lg">
-                             <%= cl_image_tag photo.path, :height=>150, :crop=>"scale" %>
-                           </div>
+                          <%= cl_image_tag photo.path, :height=>300, :crop=>"scale", class:"img-seed" %>
                         </a>
                       </div>
-
                     <% end %>
+                  <% end %>
+                  <% unless @seed.url.blank? %>
+                    <div class="item video-container">
+                      <iframe frameborder="0 class="video" src="<%= @seed.url.gsub('watch?v=', 'embed/') %>" allowfullscreen></iframe>
+                    </div>
                   <% end %>
                 </div>
               </div>
@@ -219,27 +218,6 @@
           </div>
         </div>
       </div>
-
-      <% if (@seed.url != "") || (@seed.secondary_url != "") %>
-        <div class="col-xs-12 col-sm-5 nopadding-left nopadding-right">
-          <div class="right-section">
-            <% if @seed.url != "" %>
-              <div class="video-container">
-                <iframe allowfullscreen class="video" src="<%= @seed.url.gsub('watch?v=', 'embed/') %>"
-                      frameborder="0">
-                </iframe>
-              </div>
-          <% end %>
-          <% if @seed.secondary_url != "" %>
-            <div class="video-container">
-              <iframe allowfullscreen class="video" src="<%= @seed.secondary_url.gsub('watch?v=', 'embed/') %>"
-                    frameborder="0">
-              </iframe>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
 
 
 
