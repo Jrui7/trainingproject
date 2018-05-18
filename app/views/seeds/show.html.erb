@@ -76,6 +76,21 @@
             <div class="seed-photos">
               <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
                 <!-- Indicators -->
+                <ol class="carousel-indicators">
+
+                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                  <% turns = @seed.photos.size - 1 %>
+                  <% slide_index = 1 %>
+                  <% if @seed.photos.size > 1 %>
+                    <% turns.times do  %>
+                      <li data-target="#myCarousel" data-slide-to="<%= slide_index%>"></li>
+                      <% slide_index += 1 %>
+                    <% end %>
+                  <% end %>
+                  <% unless @seed.url.blank? %>
+                    <li data-target="#myCarousel" data-slide-to="<%= turns + 1%>"></li>
+                  <% end %>
+                </ol>
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox" style=" width:100%;">
                 <% photos = @seed.extract_seed_photos %>
@@ -95,26 +110,12 @@
                       </div>
                     <% end %>
                   <% end %>
-                  <% if (@seed.url != "")%>
+                  <% unless @seed.url.blank? %>
                     <div class="item video-container">
                       <iframe frameborder="0 class="video" src="<%= @seed.url.gsub('watch?v=', 'embed/') %>" allowfullscreen></iframe>
                     </div>
                   <% end %>
                 </div>
-                <ol class="carousel-indicators">
-                  <% turns = @seed.photos.size - 1 %>
-                  <% slide_index = 1 %>
-                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                  <% if @seed.photos.size > 1 %>
-                    <% turns.times do  %>
-                      <li data-target="#myCarousel" data-slide-to="<%= slide_index%>"></li>
-                      <% slide_index += 1 %>
-                    <% end %>
-                  <% end %>
-                  <% if (@seed.url != "")%>
-                    <li data-target="#myCarousel" data-slide-to="<%= turns + 1%>"></li>
-                  <% end %>
-                </ol>
               </div>
             </div>
             <div class="seed-social">

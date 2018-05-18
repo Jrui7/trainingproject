@@ -44,7 +44,6 @@ class Seed < ApplicationRecord
     }
 
   validates :url, url: true
-  validates :secondary_url, url: true
 
   validates :size_guide, presence: true, if: :mode?
 
