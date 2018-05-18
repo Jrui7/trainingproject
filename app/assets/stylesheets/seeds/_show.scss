@@ -1,8 +1,5 @@
   .carousel-inner {
     height: 300px !important;
-    position: relative;
-
-
   }
 
   .carousel-indicators {
@@ -244,19 +241,16 @@
     }
 
     .video-container {
-      position: relative;
-      width: 100%;
-      height: 0;
-      padding-bottom: 56.25%;
-      margin-bottom: 20px;
-  }
-  .video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
+      display: flex;
       height: 100%;
+      width: 100%;
+      justify-content: center;
+
+      iframe {
+        flex: 0 0 100%;
+      }
   }
+
 
     .signal {
       a {
@@ -492,18 +486,6 @@
 
 }
 
-
-  .right-section {
-    background-color: #FFFFFF;
-    border-radius: 4px;
-    width: 100%;
-    padding: 20px;
-
-
-
-  }
-
-
   .pick-seed {
     display: flex;
 
@@ -690,10 +672,6 @@
     padding: 0 15px;
     }
 
-  .page-container .right-section {
-    padding: 0;
-  }
-
     .page-container .head  {
       .pick-link {
       display: flex;
@@ -727,7 +705,11 @@
     }
 
     .carousel-inner {
-      height: 180px !important;
+      height: 200px !important;
+      .img-seed {
+        max-height: 200px;
+        width: auto;
+      }
     }
 
 
