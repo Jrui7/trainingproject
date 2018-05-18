@@ -246,16 +246,11 @@
       text-align: center;
     }
 
-    .video-container {
-      display: flex;
-      height: 100%;
+    iframe {
+      height: 300px;
       width: 100%;
-      justify-content: center;
+    }
 
-      iframe {
-        flex: 0 0 100%;
-      }
-  }
 
 
     .signal {
@@ -745,6 +740,11 @@
         display: flex;
         justify-content: center;
         margin-top: 40px;
+    }
+
+    .page-container .left-section iframe {
+      height: 200px;
+      width: auto;
     }
 
 
