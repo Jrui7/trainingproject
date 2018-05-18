@@ -199,31 +199,24 @@
   }
 
   .go-to{
-    border-radius: 50px;
-    border: 1px solid white;
-    text-transform: uppercase;
     margin-right: 30px;
+    border-radius: 50px;
+    border: 1px solid #FFF;
+    color: white;
+    text-transform: uppercase;
     padding: 10px 30px;
     font-size: 20px;
-    background-color: #FFF;
-    color: #243763;
 
-    &:focus, &:hover{
-      color: $orange;
-    }
   }
 
   .cta-link{
     border-radius: 50px;
     border: 1px solid white;
-    color: white;
     text-transform: uppercase;
     padding: 10px 30px;
     font-size: 20px;
-    &:focus, &:hover{
-      color: $orange;
-      border: 1px solid $orange;
-    }
+    background-color: #FFF;
+    color: #243763;
   }
 
 
