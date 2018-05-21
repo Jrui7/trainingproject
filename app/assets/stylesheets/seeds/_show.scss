@@ -312,180 +312,153 @@
       padding: 15px 0;
     }
 
-    .seeder {
-      display: flex;
-      align-items: flex-start;
-    }
-
-    .fa-user{
-     font-size: 17px;
-     background-color: #49c4f4;
-     border-radius: 50%;
-     padding: 10px;
-     color: white;
-    }
-
-    .seeder-picture-big {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-    }
-
-    .user-show {
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      margin-left: 10px;
-      p{
-        margin: 0;
-      }
-
-      #pseudo-bold {
-        font-weight: bold;
-        margin: 0;
-        color: #270000;
-      }
-
-      .post-date {
-        color: #7A7A7A;
-        p {
-          margin: 0 0 5px;
-        }
-      }
-
-      #other_posts_link {
-        cursor: pointer;
-        text-decoration: underline;
-      }
-
-      .other_posts {
-        display: none;
-        p {
-          margin: 5px 0 0 0;
-        }
-      }
 
 
 
-      .seeder-infos-media {
-        cursor: pointer;
-      }
-    }
-
-    .social-card-user {
-      margin-top: 5px;
-    }
-
-    .mini-bio {
-      text-align: justify;
-      margin-bottom: 10px;
-    }
-
-
-    .social-group {
-      padding: 0;
-      p{
-        margin: 0 0 5px 0;
-        color: black;
-      }
-      .kill-padding {
-        padding: 0;
-        margin: 5px 0;
-      }
-
-      .icon-and-pseudo{
-        display: flex;
-        align-items: center;
-        img{
-          height: 35px;
-          margin-right: 9px;
-        }
-        p{
-          margin: 0;
-        }
-      }
-
-      .fa {
-
-        font-size: 25px;
-        text-align: center;
-        text-decoration: none;
-        margin: 0 10px 0 0;
-        width: 30px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 4px;
-
-      }
-
-      .fa-instagram {
-        color: white;
-        background: #f09433;
-        background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-        background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-        background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
-      }
-
-      .fa-snapchat-ghost {
-        background: #fffc00;
-        color: white;
-        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-      }
-
-      .fa-facebook {
-        background: #3B5998;
-        color: white;
-      }
-
-      .fa-youtube {
-        background: #bb0000;
-        color: white;
-      }
-
-
-    }
-    .descriptif-content {
-         margin: 15px;
-       }
-
-
-
-
-    .nav-tabs {
-      margin-top: 30px;
-      border: none;
-      box-shadow: 0 4px 3px -3px rgba(0,0,0,0.1);
-
-          a:hover {
-            color: $blue;
-          }
-
-          li {
-            a {
-              text-decoration: none;
-              color: #4d4d5e;
-              border: none;
-            }
-          }
-
-          .active {
-            border: none;
-            border-bottom: 1px solid #270000;;
-
-            a {
-              color: #270000;
-              text-decoration: none;
-            }
-          }
-
-        }
 
   }
 
 }
+
+.seeder {
+  display: flex;
+  align-items: flex-start;
+}
+
+.fa-user{
+ font-size: 17px;
+ background-color: #49c4f4;
+ border-radius: 50%;
+ padding: 10px;
+ color: white;
+}
+
+.seeder-picture-big {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.user-show {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  p{
+    margin: 0;
+  }
+
+  #pseudo-bold {
+    font-weight: bold;
+    margin: 0;
+    color: #270000;
+  }
+
+  .post-date {
+    color: #7A7A7A;
+    p {
+      margin: 0 0 5px;
+    }
+  }
+
+  #other_posts_link {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .other_posts {
+    display: none;
+    p {
+      margin: 5px 0 0 0;
+    }
+  }
+
+
+
+  .seeder-infos-media {
+    cursor: pointer;
+  }
+}
+
+.social-card-user {
+  margin-top: 5px;
+}
+
+.mini-bio {
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+
+.social-group {
+  padding: 0;
+  p{
+    margin: 0 0 5px 0;
+    color: black;
+  }
+  .kill-padding {
+    padding: 0;
+    margin: 5px 0;
+  }
+
+  .icon-and-pseudo{
+    display: flex;
+    align-items: center;
+    img{
+      height: 35px;
+      margin-right: 9px;
+    }
+    p{
+      margin: 0;
+    }
+  }
+
+  .fa {
+
+    font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 10px 0 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+
+  }
+
+  .fa-instagram {
+    color: white;
+    background: #f09433;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  }
+
+  .fa-snapchat-ghost {
+    background: #fffc00;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+
+  .fa-youtube {
+    background: #bb0000;
+    color: white;
+  }
+
+
+}
+.descriptif-content {
+     margin: 15px;
+   }
+
 
   .pick-seed {
     display: flex;
@@ -622,6 +595,50 @@
 
   }
 
+  .official-description{
+    background-color: #F9F9F9;
+    min-height: 321px;
+  }
+
+  .internet-site {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: #fff;
+    border-radius: 6px;
+    border: 1px solid #e8e8e8;
+    padding: 7px 10px;
+
+    .glyphicon{
+      color: #999999;
+      margin-left: auto;
+      font-size: 22px;
+    }
+  }
+
+  .img-background{
+    background-color: #999999;
+    margin-right: 15px;
+    padding: 10px;
+    border-radius: 50%;
+
+  }
+
+  .link-img {
+    height: 30px;
+    width: 30px;
+  }
+
+  .display-link{
+    color: #7A7A7A;
+    h5{
+      color: #000;
+      margin:0;
+    }
+  }
+
+
+
 
 @media(max-width: 992px) {
 
@@ -748,20 +765,4 @@
     }
 
 
-    .nav-tabs {
-
-      li {
-        a {
-          padding: 5px 8px;
-          margin-right: 0;
-        }
-      }
-
-      h5 {
-        font-size: 12px;
-      }
-
-
-
-    }
   }
