@@ -130,6 +130,7 @@
     margin-left: 20px;
     text-decoration: none;
     background-color: $orange;
+    box-shadow: 0 3px 0 #f26a41;
 
 
     .fa-hand-lizard {
@@ -239,13 +240,14 @@
       display: flex;
       flex-direction: column;
       padding: 20px 0;
-      border-bottom: solid 1px rgba(0,0,0,0.1);
-      border-top: solid 1px rgba(0,0,0,0.1);
+      border: solid 1px rgba(0,0,0,0.1);
+      border-radius: 5px;
 
     }
 
     .seed-photos {
       text-align: center;
+      padding: 0 20px;
     }
 
     iframe {
@@ -325,15 +327,17 @@
 .seeder {
   display: flex;
   align-items: flex-start;
+  padding: 0 20px;
+  .fa-user{
+   font-size: 17px;
+   background-color: $blue;
+   border-radius: 50%;
+   padding: 10px;
+   color: white;
+  }
 }
 
-.fa-user{
- font-size: 17px;
- background-color: #49c4f4;
- border-radius: 50%;
- padding: 10px;
- color: white;
-}
+
 
 .seeder-picture-big {
   width: 50px;
@@ -609,11 +613,13 @@
       font-size:30px;
       margin-top:0px;
     }
-    .pick-link{
+    .pick-link, .has_picked{
       position: absolute;
       bottom: 20px;
       width: 50%;
+      display: flex;
       justify-content: center;
+      align-items: center;
       left: 0;
       right: 0;
       margin-left: auto;
@@ -698,11 +704,6 @@
     .page-container .left-section {
       margin-right: 0px;
       padding: 0;
-
-      .seed-media{
-        padding: 0;
-        border: none;
-      }
     }
 
     .pick-form {

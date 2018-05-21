@@ -25,7 +25,9 @@ $border-radius-small: 2px;
 
 // Override other variables below!
 
-
+body {
+  background-color: #f3f6f8 !important;
+}
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
