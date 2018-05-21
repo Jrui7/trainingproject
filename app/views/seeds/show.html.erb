@@ -208,7 +208,7 @@
           Descirptif
         </h2>
         <div class="descritpion-text">
-          <%= @seed.official_description %>
+          <%= @seed.official_description.capitalize %>
         </div>
           <a href="<%= @seed.sale_point_url %>" class="internet-site" target="_blank">
             <div class="img-background">
@@ -220,6 +220,7 @@
             </div>
             <span class="glyphicon glyphicon-chevron-right"></span>
           </a>
+          <%= render "seeds/pick-section" %>
       </div>
 
 
