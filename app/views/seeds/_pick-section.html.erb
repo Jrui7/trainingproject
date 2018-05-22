@@ -3,7 +3,7 @@
     <p class="has_picked">Mon pick : <%= Pick.my_pick(current_user, @seed).first.price%> € </p>
   <% else %>
     <%= link_to "#myModal", data: { toggle: "modal" } do%>
-      <div class="btn btn-primary pick-link">
+      <div class="btn pick-link">
         <i class="fa fa-hand-lizard" aria-hidden="true"> </i>
         <p>Pick it</p>
       </div>
@@ -11,7 +11,7 @@
   <% end %>
 <% else %>
   <%= link_to new_user_session_path do  %>
-    <div class="btn btn-primary pick-link">
+    <div class="btn pick-link">
       <i class="fa fa-hand-lizard" aria-hidden="true"> </i>
       <p>Pick it</p>
     </div>
