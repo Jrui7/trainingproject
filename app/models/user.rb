@@ -70,6 +70,10 @@ class User < ApplicationRecord
     facebook? || insta? || youtube? || snap?
   end
 
+  def social_card?
+    mini_bio? || social_links? || seeder_other_seeds?
+  end
+
   def seeder_other_seeds?
     self.seeds.count - 1 > 0
   end
