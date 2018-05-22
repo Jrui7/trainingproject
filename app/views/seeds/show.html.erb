@@ -154,7 +154,7 @@
               </div>
               <div class="personal-description">
                 <h4>Le mot du seeder</h4>
-                <p class="descriptif-content"><%= @seed.description %></p>
+                <p class="descriptif-content"><%= @seed.description.capitalize %></p>
               </div>
             </div>
             <div class="social-card-user">
@@ -171,7 +171,7 @@
                     <div class="col-xs-6 col-md-3 kill-padding">
                       <div class="icon-and-pseudo">
                       <%= image_tag "instagram.png" %>
-                      <p><%= @seeder.insta %></p>
+                      <p class="seeder-media"><%= @seeder.insta %></p>
                     </div>
                     </div>
                   <% end %>
@@ -179,7 +179,7 @@
                     <div class="col-xs-6 col-md-3 kill-padding">
                       <div class="icon-and-pseudo">
                       <%= image_tag "youtube.png" %>
-                      <p><%= @seeder.youtube %></p>
+                      <p class="seeder-media"><%= @seeder.youtube %></p>
                     </div>
                     </div>
                   <% end %>
@@ -187,7 +187,7 @@
                     <div class="col-xs-6 col-md-3 kill-padding">
                       <div class="icon-and-pseudo">
                       <%= image_tag "snapchat.png" %>
-                      <p><%= @seeder.snap %></p>
+                      <p class="seeder-media"><%= @seeder.snap %></p>
                     </div>
                     </div>
                   <% end %>
@@ -195,7 +195,7 @@
                     <div class="col-xs-6 col-md-3 kill-padding">
                       <div class="icon-and-pseudo">
                       <%= image_tag "facebook.png" %>
-                      <p><%= @seeder.facebook %></p>
+                      <p class="seeder-media"><%= @seeder.facebook %></p>
                     </div>
                     </div>
                   <% end %>
@@ -227,7 +227,7 @@
             </div>
             <div class="display-link">
               <h5>Plus d'infos</h5>
-              <%= @seed.sale_point_url %>
+              <div class="url"><p><%= @seed.sale_point_url %></p></div>
             </div>
             <span class="glyphicon glyphicon-chevron-right"></span>
           </a>
