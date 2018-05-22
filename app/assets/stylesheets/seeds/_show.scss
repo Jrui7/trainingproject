@@ -221,7 +221,6 @@
 
 
   .left-section {
-    background-color: #FFFFFF;
     margin-right: 20px;
 
 
@@ -239,9 +238,11 @@
     .seed-media {
       display: flex;
       flex-direction: column;
-      padding: 20px 0;
-      border: solid 1px rgba(0,0,0,0.1);
+      padding: 20px 0 0;
+      border: 1px solid #efefef;
       border-radius: 5px;
+      margin-bottom: 20px;
+      background-color: #FFFFFF;
 
     }
 
@@ -325,9 +326,14 @@
 }
 
 .seeder {
-  display: flex;
-  align-items: flex-start;
-  padding: 0 20px;
+  padding: 20px;
+  border: 1px solid #efefef;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  .seeder-show{
+    display: flex;
+    align-items: flex-start;
+  }
   .fa-user{
    font-size: 17px;
    background-color: $blue;
@@ -367,17 +373,12 @@
     }
   }
 
-  #other_posts_link {
+  #social_card_link {
     cursor: pointer;
     text-decoration: underline;
   }
 
-  .other_posts {
-    display: none;
-    p {
-      margin: 5px 0 0 0;
-    }
-  }
+
 
 
 
@@ -387,12 +388,16 @@
 }
 
 .social-card-user {
-  margin-top: 5px;
+  margin: 30px 0 0 60px;
+  display: none;
 }
 
 .mini-bio {
   text-align: justify;
   margin-bottom: 10px;
+  p{
+    margin: 0;
+  }
 }
 
 
@@ -461,9 +466,27 @@
 
 
 }
+
+.personal-description{
+  h4{
+    color: #4eb379;
+    margin:0 0 3px;
+  }
+}
 .descriptif-content {
-     margin: 15px;
+     margin: 0;
+     font-style: italic;
    }
+
+  #other_posts_link{
+    margin: 0;
+    font-weight: bold;
+    .other_posts{
+      a {
+        margin: 0;
+      }
+    }
+  }
 
 
   .pick-seed {
@@ -602,29 +625,23 @@
   }
 
   .official-description{
-    background-color: #F9F9F9;
-    min-height: 321px;
+    background-color: #FFFFFF;
     border-radius: 5px;
     padding: 20px;
-    border-color: #d4d4d4;
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.1);
-    position: relative;
+    border: 1px solid #efefef;
     h2 {
       font-size:30px;
       margin-top:0px;
     }
     .pick-link, .has_picked{
-      position: absolute;
-      bottom: 20px;
       width: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
-      left: 0;
-      right: 0;
       margin-left: auto;
       margin-right: auto;
       height: 50px;
+      margin-top: 40px;
       p{
         font-size: 20px;
       }
@@ -730,7 +747,7 @@
     }
 
   .page-container .left-section .seeder {
-    padding: 0 15px;
+    padding: 15px;
     }
 
     .page-container .head  {
