@@ -223,13 +223,11 @@
 
     .no-label {
       margin-right: 30px;
-      .written-label {
-        margin-right: 0;
         img {
+          width: 35px;
           height: 35px;
           margin-bottom: 0;
         }
-      }
       .attached-inputs {
         margin-left: 0;
       }
@@ -247,6 +245,7 @@
   }
 
   .no-label {
+    flex: 0 0 40%;
     display: flex;
     margin-bottom: 15px;
   }
@@ -557,7 +556,7 @@
 
       .social-options .no-label .attached-inputs {
           margin-left: 10px;
-          width: 70%;
+          width: 100%;
       }
 
       .social-group {
