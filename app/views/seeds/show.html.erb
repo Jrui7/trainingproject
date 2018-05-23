@@ -222,9 +222,11 @@
             </div>
             <span class="glyphicon glyphicon-chevron-right"></span>
           </a>
-          <div class="pick-section">
-            <%= render "seeds/pick-section" %>
-          </div>
+          <% if @seed.ongoing? %>
+            <div class="pick-section">
+              <%= render "seeds/pick-section" %>
+            </div>
+          <% end %>
       </div>
 
 
