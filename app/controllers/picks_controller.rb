@@ -1,5 +1,5 @@
 class PicksController < ApplicationController
-
+  before_action :set_sample, only: [:show]
   after_action :verify_authorized
 
   def index

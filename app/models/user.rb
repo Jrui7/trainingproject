@@ -62,12 +62,12 @@ class User < ApplicationRecord
     !self.youtube.blank?
   end
 
-  def snap?
-    !self.snap.blank?
+  def twitter?
+    !self.twitter.blank?
   end
 
   def social_links?
-    facebook? || insta? || youtube? || snap?
+    facebook? || insta? || youtube? || twitter?
   end
 
   def social_card?
