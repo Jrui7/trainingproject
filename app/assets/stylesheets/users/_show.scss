@@ -364,7 +364,6 @@
   .edit-icon{
     display:flex;
     align-items:center;
-    border-left: 1px solid #cecece;
     padding-left: 30px;
     .glyphicon{
       color: $orange;
@@ -558,6 +557,7 @@
 
       .social-options .no-label .attached-inputs {
           margin-left: 10px;
+          width: 70%;
       }
 
       .social-group {
