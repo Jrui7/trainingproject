@@ -1,7 +1,7 @@
 <% @categories.each do |category| %>
   <%= link_to popular_path(category: category) do %>
       <div class="sub-title <%=category.id%> <%='inactive' if category == @filter %>">
-        <%= image_tag "#{category.name.downcase.gsub(' ', '_').gsub('é', 'e')}.jpg", class: "categories-icon" %>
+        <%= image_tag "#{category.name.downcase.gsub(' ', '_').gsub('é', 'e')}.png", class: "categories-icon" %>
         <div class="name-and-count">
           <p><%= category.name%></p>
         </div>
