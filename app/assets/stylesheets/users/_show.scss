@@ -554,6 +554,10 @@
         flex: 0 0 100%;
       }
 
+      .social-options .social-group{
+        margin-bottom: 0;
+      }
+
       .social-options .no-label .attached-inputs {
           margin-left: 10px;
           width: 100%;
@@ -563,6 +567,10 @@
         .form-control {
           width: 100%;
         }
+      }
+
+      .user-form .attached-inputs .form-group {
+        width: 100%;
       }
 
       .synthesis{
