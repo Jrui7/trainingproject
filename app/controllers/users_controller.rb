@@ -74,7 +74,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:photo, :insta, :youtube, :facebook, :snap, :mini_bio, :pseudo)
+    params.require(:user).permit(:photo, :insta, :youtube, :facebook, :twitter, :mini_bio, :pseudo)
   end
 
   def address_params

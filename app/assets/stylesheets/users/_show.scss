@@ -17,6 +17,7 @@
 
             a:hover {
               color: $blue;
+              background-color: transparent;
             }
 
             li {
@@ -25,16 +26,23 @@
                 color: #4d4d5e;
                 border: none;
                 cursor: pointer;
+                background-color: transparent;
               }
             }
 
             .active {
               border: none;
-              border-bottom: 1px solid #270000;;
+              border-bottom: 1px solid #270000;
+              background-color: transparent;
+
+
 
               a {
                 color: #270000;
                 text-decoration: none;
+                &:hover{
+                  background-color: transparent;
+                }
               }
             }
 

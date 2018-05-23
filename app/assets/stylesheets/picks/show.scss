@@ -1,6 +1,5 @@
 .pick-details-container {
-  padding: 50px;
-  min-height: calc(100vh - 70px);
+  padding: 40px 0 0;
 
   .pick-title{
     margin-top: 0;
@@ -19,7 +18,6 @@
 .pick-detail {
   padding: 30px 60px;
   border-radius: 5px;
-  box-shadow: 0 0 1px rgba(0,0,0,0.5);
   text-align: center;
 }
 
@@ -47,6 +45,14 @@
     .payment{
       flex: 1;
     }
+}
+
+.address-input{
+  font-size: 14px;
+}
+
+.card-input{
+  font-size: 14px;
 }
 
 .pick-status{
@@ -151,6 +157,7 @@
 
 .post-question {
   margin-top: 20px;
+  text-align: right;
 }
 
 

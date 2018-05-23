@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180518171322) do
+ActiveRecord::Schema.define(version: 20180523155827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -162,7 +162,7 @@ ActiveRecord::Schema.define(version: 20180518171322) do
     t.string   "insta"
     t.string   "youtube"
     t.string   "facebook"
-    t.string   "snap"
+    t.string   "twitter"
     t.string   "customer_id"
     t.string   "slug"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
