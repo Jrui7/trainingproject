@@ -374,6 +374,8 @@
     }
   }
 
+
+
   .form-civil, .form-livraison, .form-password, .form-card {
     display: none;
     padding:20px;
@@ -601,6 +603,18 @@
         .glyphicon{
           padding:3px;
           font-size: 14px;
+        }
+      }
+
+      .form-civil, .form-livraison, .form-password{
+        .no-label{
+          display: block;
+        }
+        .attached-inputs{
+          margin-left: 0;
+        }
+        .form-group{
+          display: block;
         }
       }
 
