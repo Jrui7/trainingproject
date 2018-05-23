@@ -165,38 +165,30 @@
                 </div>
               <% end %>
               <% if @seeder.social_links? %>
-                <div class="col-xs-12 social-group">
-                  <p><b>Suivre :</b></p>
+                <p style="margin:0;"><b>Suivre :</b></p>
+                <div class="social-group">
                   <% if @seed.user.insta?  %>
-                    <div class="col-xs-6 col-md-3 kill-padding">
-                      <div class="icon-and-pseudo">
+                    <div class="icon-and-pseudo">
                       <%= image_tag "instagram.png" %>
                       <p class="seeder-media"><%= @seeder.insta %></p>
                     </div>
-                    </div>
                   <% end %>
                   <% if @seeder.youtube? %>
-                    <div class="col-xs-6 col-md-3 kill-padding">
-                      <div class="icon-and-pseudo">
+                    <div class="icon-and-pseudo">
                       <%= image_tag "youtube.png" %>
                       <p class="seeder-media"><%= @seeder.youtube %></p>
                     </div>
-                    </div>
                   <% end %>
                   <% if @seeder.snap? %>
-                    <div class="col-xs-6 col-md-3 kill-padding">
-                      <div class="icon-and-pseudo">
-                      <%= image_tag "snapchat.png" %>
+                    <div class="icon-and-pseudo">
+                      <%= image_tag "twitter.png" %>
                       <p class="seeder-media"><%= @seeder.snap %></p>
-                    </div>
                     </div>
                   <% end %>
                   <% if @seeder.facebook? %>
-                    <div class="col-xs-6 col-md-3 kill-padding">
-                      <div class="icon-and-pseudo">
+                    <div class="icon-and-pseudo">
                       <%= image_tag "facebook.png" %>
                       <p class="seeder-media"><%= @seeder.facebook %></p>
-                    </div>
                     </div>
                   <% end %>
                 </div>
@@ -227,7 +219,6 @@
             </div>
             <div class="display-link">
               <h5>Plus d'infos</h5>
-              <div class="url"><p><%= @seed.sale_point_url %></p></div>
             </div>
             <span class="glyphicon glyphicon-chevron-right"></span>
           </a>

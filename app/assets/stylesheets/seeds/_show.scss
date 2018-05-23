@@ -412,6 +412,9 @@
 .social-group {
   padding: 0;
   color: #4d4d5e;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   margin-bottom: 15px;
   p{
     margin: 0 0 5px 0;
@@ -419,14 +422,12 @@
   .seeder-media{
     color: #7A7A7A;
   }
-  .kill-padding {
-    padding: 0;
-    margin: 5px 0;
-  }
 
   .icon-and-pseudo{
     display: flex;
     align-items: center;
+    flex: 0 0 50%;
+    margin: 10px 0;
     img{
       height: 35px;
       margin-right: 9px;
@@ -707,12 +708,7 @@
     h5{
       color: #000;
       margin:0;
-    }
-    .url{
-      display: flex;
-      p{
-        margin: 0;
-      }
+      font-size:19px;
     }
   }
 
@@ -831,6 +827,10 @@
         display: flex;
         justify-content: center;
         margin-top: 40px;
+    }
+
+    .page-container .left-section .seed-photos {
+      padding: 0;
     }
 
     .page-container .left-section iframe {
