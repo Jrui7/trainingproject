@@ -308,6 +308,10 @@ padding-left: 20px;
 
 @media(max-width: 480px) {
 
+  .form-title {
+    border-radius: 0;
+  }
+
   .remove-padding-xs {
     padding: 0;
   }
@@ -327,6 +331,13 @@ padding-left: 20px;
       }
 
     }
+    h5{
+      padding-left: 0;
+    }
+
+    span {
+      margin-left:0;
+    }
   }
 
   .seed_description {
@@ -336,6 +347,10 @@ padding-left: 20px;
 
   .official_description {
     margin-top: 25px;
+  }
+
+  .chooseVideo, .chooseFile {
+    padding-left: 0;
   }
 
 }
