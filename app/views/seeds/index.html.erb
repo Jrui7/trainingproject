@@ -48,21 +48,22 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Filtrer</h4>
+            <h4 class="modal-title">Catégories</h4>
           </div>
           <div class="modal-body">
             <div class="filter-title">
               <div class="filter-header">
-               <p class="filter-before">CHOISIR</p>
-               <%= link_to seeds_path do %>
-                <i class="fa fa-toggle-on xs-fa hidden" aria-hidden="true"></i>
+               <% if @filter %>
+                <p class="filter-before">DÉFILTRER</p>
+                <%= link_to seeds_path do %>
+                 <i class="fa fa-toggle-on xs-fa" aria-hidden="true"></i>
+                <% end %>
                <% end %>
               </div>
               <div class="sub-categories">
                 <%= render "shared/categories", categories: @categories %>
               </div>
             </div>
-              <div class="btn validate-filter">Valider</div>
           </div>
         </div>
       </div>
@@ -83,7 +84,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Trier</h4>
+            <h4 class="modal-title">Catégories</h4>
           </div>
           <div class="modal-body">
             <div class="filter-title">

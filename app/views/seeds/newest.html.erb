@@ -54,10 +54,12 @@
           </div>
           <div class="modal-body">
             <div class="filter-title">
-              <div class="filter-header">
-               <p class="filter-before">CHOISIR</p>
-               <%= link_to seeds_path do %>
-                <i class="fa fa-toggle-on xs-fa hidden" aria-hidden="true"></i>
+             <div class="filter-header">
+               <% if @filter %>
+                <p class="filter-before">DÉFILTRER</p>
+                <%= link_to newest_path do %>
+                 <i class="fa fa-toggle-on xs-fa" aria-hidden="true"></i>
+                <% end %>
                <% end %>
               </div>
               <div class="sub-categories">

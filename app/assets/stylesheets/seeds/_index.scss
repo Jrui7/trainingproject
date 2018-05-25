@@ -1,7 +1,3 @@
-
-
-
-
 .page-container {
   width: 100%;
   padding: 50px 0;
@@ -24,21 +20,6 @@
 
 
 .filter-xs {
-
-  .glyphicon-filter {
-    color: #FFF;
-    font-size: 14px;
-  }
-
-  .glyphicon-globe {
-    color: #FFF;
-  }
-
-  .glyphicon-th-list {
-    color: #FFF;
-    font-size: 14px;
-  }
-
   a {
     text-decoration: none;
     color: inherit;
@@ -76,7 +57,7 @@
   }
   .modal-content {
     height: 100%;
-    border-radius: 0;
+    border-radius: 0 !important;
     overflow:auto;
   }
 
@@ -92,8 +73,7 @@
     font-size: 25px;
   }
 
-  .filter-before {
-    color: #FFFFFF;
+  .filter-title {
     font-size: 17px;
   }
 
@@ -102,22 +82,27 @@
   }
 
   .sub-categories {
-    width: 50%;
+    width: 60%;
   }
 
-  .fa-toggle-on {
-    color: #FFFFFF;
-  }
 
 
   .selected-category {
     display: flex;
     align-items: center;
     transition: all 0.1s;
-    padding: 5px 13px 5px 13px;
+    padding: 3px 10px 3px 10px;
     margin-bottom: 2px;
     box-shadow: none;
-    color: white;
+    border: 1px solid #e8e8e8 !important;
+
+    .filter-icon{
+      background-color: $orange;
+      padding: 5px;
+      border-radius: 5px;
+      color: #FFF;
+    }
+
 
 
     &:hover{
@@ -131,8 +116,8 @@
     p {
       margin: 0;
       font-weight: bold;
-      text-decoration: underline;
       font-size: 15px;
+      color: $blue;
 
 
     }
@@ -244,34 +229,10 @@ a:hover {
   }
   p {
     margin: 0;
+    color: inherit;
   }
 }
 
-.selected-category {
-  display: flex;
-  align-items: center;
-  font-size: 13px;
-  transition: all 0.1s;
-  padding: 5px 13px 5px 13px;
-  margin-bottom: 2px;
-  border: 1px solid #e8e8e8;
-
-    &:hover {
-  border: 1px solid #e8e8e8;
-  background-color: #FFFFFF;
-  padding: 5px 13px 5px 13px;
-  margin-bottom: 2px;
-}
-  a {
-    text-decoration: none;
-  }
-  p {
-    margin: 0;
-    font-weight: bold;
-    text-decoration: underline;
-  }
-
-}
 
 
 .seed-presentation {
@@ -584,6 +545,19 @@ a:hover {
         h1{
           text-align: center;
         }
+      }
+
+      .sub-title{
+        .filter-icon{
+          background-color: $orange;
+          padding: 5px;
+          border-radius: 5px;
+          color: #FFF;
+        }
+      }
+
+      .glyphicon-th-list, .glyphicon-filter {
+        color: #FFF;
       }
 
     }
