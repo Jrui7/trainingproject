@@ -401,7 +401,6 @@ a:hover {
       }
 
       .sub-title{
-        border: none;
         &:hover{
           background-color: inherit;
         }
@@ -422,7 +421,7 @@ a:hover {
       .sub-title{
         .filter-icon{
           background-color: $orange;
-          padding: 3px;
+          padding: 5px;
           border-radius: 5px;
           color: #FFF;
         }
@@ -511,7 +510,7 @@ a:hover {
 
           .filter-icon{
             background-color: $orange;
-            padding: 3px;
+            padding: 5px;
             border-radius: 5px;
             color: #FFF;
           }
