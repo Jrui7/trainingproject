@@ -173,38 +173,40 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
       </div>
       </div>
     </div>
-    <div class="testimony-box">
-      <h2>
-        <span>Témoignages</span>
-      </h2>
-      <div class="testimonies">
-        <div class="testimony">
-          <%= cl_image_tag @jorge.photo.path, class: "user-photo" %>
-          <h4 class="testimony-title">"Le mot du CEO"</h4>
-          <div class="testimony-text">
-            Il m'arrive souvent de renoncer à acheter un produit que je trouve cool à cause de son prix. Il m'arrive aussi fréquemment de payer un prix que je juge trop élevé, ce qui au final terni mon expérience d'achat et d'utilisation.
+    <div class="testimonies-container">
+      <div class="testimony-box">
+        <h2>
+          <span>Témoignages</span>
+        </h2>
+        <div class="testimonies">
+          <div class="testimony">
+            <%= cl_image_tag @jorge.photo.path, class: "user-photo" %>
+            <h4 class="testimony-title">"Le mot du CEO"</h4>
+            <div class="testimony-text">
+              Il m'arrive souvent de renoncer à acheter un produit que je trouve cool à cause de son prix. Il m'arrive aussi fréquemment de payer un prix que je juge trop élevé, ce qui au final terni mon expérience d'achat et d'utilisation.
+            </div>
+          </div>
+          <div class="testimony">
+            <%= cl_image_tag @onur.photo.path, class: "user-photo" %>
+            <h4 class="testimony-title">"Franchement top"</h4>
+            <div class="testimony-text">
+              Concept super intelligent, facilite la découverte de vraies pépites et permet de se les procurer au prix idéal. Si en plus tout le monde est gagnant...
+            </div>
+          </div>
+          <div class="testimony">
+            <%= cl_image_tag @last.photo.path, class: "user-photo" %>
+            <h4 class="testimony-title">"Grrrrr"</h4>
+            <div class="testimony-text">
+              Who let the dogs out ?
+            </div>
           </div>
         </div>
-        <div class="testimony">
-          <%= cl_image_tag @onur.photo.path, class: "user-photo" %>
-          <h4 class="testimony-title">"Franchement top"</h4>
-          <div class="testimony-text">
-            Concept super intelligent, facilite la découverte de vraies pépites et permet de se les procurer au prix idéal. Si en plus tout le monde est gagnant...
+        <%= link_to seeds_path do %>
+          <div class="cta">
+            <div class="btn">A vous d'essayer</div>
           </div>
-        </div>
-        <div class="testimony">
-          <%= cl_image_tag @last.photo.path, class: "user-photo" %>
-          <h4 class="testimony-title">"Grrrrr"</h4>
-          <div class="testimony-text">
-            Who let the dogs out ?
-          </div>
-        </div>
+        <% end %>
       </div>
-      <%= link_to seeds_path do %>
-        <div class="cta">
-          <div class="btn">A vous d'essayer</div>
-        </div>
-      <% end %>
     </div>
     <%= render 'shared/footer' %>
 
