@@ -45,7 +45,7 @@ class Seed < ApplicationRecord
 
   validates :url, url: true
 
-  validates :size_guide, presence: true, if: :mode?
+  # validates :size_guide, presence: true, if: :mode?
 
 
 
@@ -117,13 +117,13 @@ class Seed < ApplicationRecord
     end
   end
 
-  def mode?
-    category.name == "Mode" if self.category
-  end
+  # def mode?
+  #   category.name == "Mode" if self.category
+  # end
 
-  def size_guide_error
-    errors.add(:size_guide, "doit etre rempli") if size_guide.blank?
-  end
+  # def size_guide_error
+  #   errors.add(:size_guide, "doit etre rempli") if size_guide.blank?
+  # end
 
 
 
