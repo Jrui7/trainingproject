@@ -18,13 +18,19 @@
                     <%= f.association :category, label:"Catégorie", prompt: "Selectionner une categorie", input_html: { data: { 'mode-category-id' => @mode_category_id } } %>
                   </div>
                   <div class="input-block size-guide-input">
-                    <%= f.input :size_guide, label:"Guide des tailles", placeholder: "url du site / guide des tailles"%>
+                    <p id="size-guide-label">Guide des tailles</p>
                     <p class= "size-explain">Pour tous les produits ou l'utilisateur doit choisir une taille (hommes femmes enfants animaux), merci de coller le lien vers le guide des tailles du vendeur.</p>
+                    <%= f.input :size_guide, label: false, placeholder: "url du site / guide des tailles"%>
+                  </div>
+                  <div class="shop">
+                    <div class="magn-left text-center">Informations vendeur</div>
+                    <%= f.input :sale_point_url, label:"Site internet", placeholder: "http://www..." %>
+                    <%= f.input :sale_point_contact, label:"Contact", placeholder: "email, téléphone..." %>
                   </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-sm-offset-1 descirption-block">
                   <div class="input-block">
-                    <%= f.input :official_description,label:"Court descriptif", placeholder: "Qu'est-ce que ce produit ? Principales carractéristiques ? Comment s'utilise t-il ? (cf. descriptif du vendeur)" %>
+                    <%= f.input :official_description,label:"Descriptif produit", placeholder: "Court descriptif: Utilisation, carractéristiques... (cf. descriptif du vendeur)" %>
                   </div>
                   <div class="input-block" id="description">
                     <%= f.input :description,label:"Pourquoi appréciez-vous ce produit?", placeholder: "Exemple: Ce drône est juste top, je l'ai essayé, super autonomie, facilement rangeable, et clairement indestructible grace à ses rebords en mousse." %>
@@ -59,20 +65,6 @@
                           </iframe>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="supplier-infos">
-              <div class="row">
-                <div class="help-us">
-                  <div class="col-xs-12 col-sm-6 nopadding-right nopadding-left">
-                    <div class="shop internet">
-                      <div class="magn-left text-center">Informations vendeur</div>
-                      <%= f.input :sale_point_url, label:"Site internet", placeholder: "http://www..." %>
-                      <%= f.input :sale_point_contact, label:"Contact", placeholder: "email, téléphone..." %>
                     </div>
                   </div>
                 </div>
