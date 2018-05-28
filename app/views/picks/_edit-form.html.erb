@@ -2,14 +2,19 @@
   <%= simple_form_for [seed, pick], url: pick_path(pick), remote: true do |f| %>
     <div class="pick-form">
       <div class="price">
-        <p><strong>Prix :</strong></p>
-        <%= f.input_field :price, as: :integer, class: 'input-sm form-control pick', id: 'start-pick', placeholder: 'Exemple: 15'%>
+        <%= f.input_field :price, as: :integer, class: 'input-sm form-control pick', id: 'start-pick'%>
         <div class="counter-body">
           <div class="counter">€</div>
         </div>
       </div>
-      <div class="submit-pick">
-        <%= f.submit "Enregistrer mon pick", class: "btn", id: "btn-pick" %>
+      <div class="livraison">
+        <p>Dans l'hypothèse ou le produit doit vous être livré, vous serez débité de 3€90 au titre des coûts de livraison</p>
+      </div>
+      <div class="modal-footer">
+        <div class="action-links">
+          <button type="button" class="btn-dissmiss text-center" data-dismiss="modal">Retour</button>
+          <%= f.submit "Enregistrer mon pick", class: "btn", id: "btn-pick" %>
+        </div>
       </div>
     </div>
   <% end %>
