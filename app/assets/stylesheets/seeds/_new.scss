@@ -134,15 +134,10 @@ margin-bottom: 35px;
 
 
     .shop {
-      border: 1px solid lightgray;
       padding: 10px 0 30px 0;
       border-radius: 10px;
-      background-color: $blue;
+      background-color: #f1f8fc;
       margin: 35px 15px 15px 15px;
-
-      label {
-        color: white;
-      }
 
       .form-group {
       margin-bottom: 10px;
@@ -173,9 +168,9 @@ margin-bottom: 35px;
 
   .magn-left {
     font-weight: bold;
-    font-size: 16px;
-    color: white;
+    font-size: 18px;
     margin-bottom: 15px;
+    margin-left: 20px;
   }
 
   span {
@@ -251,23 +246,26 @@ abbr {
 
 }
 
-.media-preview {
-  padding: 0 20px;
+.media-bar{
+  background-color: lightgray;
+  height: 60px;
+  color: white;
+  margin-bottom: 30px;
+  padding-left: 40px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
 }
 
-.second-media-preview {
+.media-preview {
   padding: 0 20px;
+  height: 250px;
 }
 
 #iframe {
+  height: 100%;
   width: 100%;
-  margin-top: 10px;
-}
-
-#iframe-2 {
-  width: 100%;
-  margin-top: 10px;
-
 }
 
 
@@ -314,6 +312,10 @@ padding-left: 20px;
   }
 
   .form-post-seed {
+
+    .magn-left {
+      margin-left: 0;
+    }
 
     .unit {
       right: 15px;
@@ -363,6 +365,16 @@ padding-left: 20px;
 
   #size-guide-label {
     margin-left:0;
+  }
+
+  .media-bar{
+    padding-left: 20px;
+    font-size: 17px;
+  }
+
+  .media-preview {
+    padding: 0;
+    height: 165px;
   }
 
 }

@@ -17,7 +17,7 @@ class Seed < ApplicationRecord
 
   validates :title,
     presence: {
-    message: "Donnez un titre au seed"
+    message: "Nom du produit requis"
     }
 
   validates :title, length: { minimum: 5 }
@@ -41,6 +41,11 @@ class Seed < ApplicationRecord
 
   validates :photos, presence: {
     message: "Ajoutez au moins une photo"
+    }
+
+  validates :sale_point_url,
+    presence: {
+    message: "Premettre aux utilisateurs d'obtenir plus d'infos sur le produit"
     }
 
   validates :url, url: true

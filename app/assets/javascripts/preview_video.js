@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  displayVideoContainer();
+
   $(".chooseVideo").click(function() {
       $(".video-block").toggleClass("hidden");
       $(".video-container").toggleClass("cache montre");
@@ -42,6 +44,14 @@ function videoHandler() {
       }
     }
   })
+}
+
+function displayVideoContainer() {
+  var urlInput = $("#seed_url").val();
+  if (urlInput != "") {
+    $(".video-block").toggleClass("hidden");
+    $(".video-container").toggleClass("cache montre");
+  }
 }
 
 

@@ -8,7 +8,7 @@
               <div class="row head">
                 <div class="col-xs-12 col-sm-5 nopadding-right nopadding-left">
                   <div class="input-block">
-                    <%= f.input :title, label:"Titre", placeholder: "Exemple: Drone en mousse" %>
+                    <%= f.input :title, label:"Nom du produit" %>
                   </div>
                   <div class="input-block-price">
                     <%= f.input :price, label:"Prix original", placeholder: "exemple: 15", error: "Veuillez entrer un prix" %>
@@ -23,9 +23,9 @@
                     <%= f.input :size_guide, label: false, placeholder: "url du site / guide des tailles"%>
                   </div>
                   <div class="shop">
-                    <div class="magn-left text-center">Informations vendeur</div>
+                    <div class="magn-left">Informations produit</div>
                     <%= f.input :sale_point_url, label:"Site internet", placeholder: "http://www..." %>
-                    <%= f.input :sale_point_contact, label:"Contact", placeholder: "email, téléphone..." %>
+                    <%= f.input :sale_point_contact, label:"Contact vendeur", placeholder: "page contact, email, social-media..." %>
                   </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-sm-offset-1 descirption-block">
@@ -33,12 +33,12 @@
                     <%= f.input :official_description,label:"Descriptif produit", placeholder: "Court descriptif: Utilisation, carractéristiques... (cf. descriptif du vendeur)" %>
                   </div>
                   <div class="input-block" id="description">
-                    <%= f.input :description,label:"Pourquoi appréciez-vous ce produit?", placeholder: "Exemple: Ce drône est juste top, je l'ai essayé, super autonomie, facilement rangeable, et clairement indestructible grace à ses rebords en mousse." %>
+                    <%= f.input :description,label:"Avis personnel", placeholder: "Pourquoi appréciez-vous ce produit?" %>
                   </div>
                 </div>
               </div>
             </div>
-
+            <div class="media-bar">Medias</div>
             <div class="media-display">
               <div class="row head">
                 <div class="col-xs-12 nopadding-right nopadding-left">
