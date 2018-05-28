@@ -156,52 +156,52 @@
                 <h4>Le mot du seeder</h4>
                 <p class="descriptif-content"><%= @seed.description.capitalize %></p>
               </div>
-            </div>
-            <div class="social-card-user">
-              <% if @seeder.mini_bio? %>
-                <div class="mini-bio">
-                  <p><b>Mini-bio :</b>
-                    <br><%= @seeder.mini_bio.capitalize %></p>
-                </div>
-              <% end %>
-              <% if @seeder.social_links? %>
-                <p style="margin:0;"><b>Suivre :</b></p>
-                <div class="social-group">
-                  <% if @seed.user.insta?  %>
-                    <div class="icon-and-pseudo">
-                      <%= image_tag "instagram.png" %>
-                      <p class="seeder-media"><%= @seeder.insta %></p>
-                    </div>
-                  <% end %>
-                  <% if @seeder.youtube? %>
-                    <div class="icon-and-pseudo">
-                      <%= image_tag "youtube.png" %>
-                      <p class="seeder-media"><%= @seeder.youtube %></p>
-                    </div>
-                  <% end %>
-                  <% if @seeder.twitter? %>
-                    <div class="icon-and-pseudo">
-                      <%= image_tag "twitter.png" %>
-                      <p class="seeder-media"><%= @seeder.twitter %></p>
-                    </div>
-                  <% end %>
-                  <% if @seeder.facebook? %>
-                    <div class="icon-and-pseudo">
-                      <%= image_tag "facebook.png" %>
-                      <p class="seeder-media"><%= @seeder.facebook %></p>
-                    </div>
-                  <% end %>
-                </div>
-              <% end %>
-              <% if @seeder.seeder_other_seeds? %>
-                <p id="other_posts_link">Autres posts</p>
-                <div class="other_posts">
-                  <% @seeder.seeder_other_seeds_list(@seed).each do |seed| %>
-                    <%= link_to "#{seed.title}", seed_path(seed) %>
-                    <br>
-                  <% end %>
-                </div>
-              <% end %>
+              <div class="social-card-user">
+                <% if @seeder.mini_bio? %>
+                  <div class="mini-bio">
+                    <p><b>Mini-bio :</b>
+                      <br><%= @seeder.mini_bio.capitalize %></p>
+                  </div>
+                <% end %>
+                <% if @seeder.social_links? %>
+                  <p style="margin:0;"><b>Suivre :</b></p>
+                  <div class="social-group">
+                    <% if @seed.user.insta?  %>
+                      <div class="icon-and-pseudo">
+                        <%= image_tag "instagram.png" %>
+                        <p class="seeder-media"><%= @seeder.insta %></p>
+                      </div>
+                    <% end %>
+                    <% if @seeder.youtube? %>
+                      <div class="icon-and-pseudo">
+                        <%= image_tag "youtube.png" %>
+                        <p class="seeder-media"><%= @seeder.youtube %></p>
+                      </div>
+                    <% end %>
+                    <% if @seeder.twitter? %>
+                      <div class="icon-and-pseudo">
+                        <%= image_tag "twitter.png" %>
+                        <p class="seeder-media"><%= @seeder.twitter %></p>
+                      </div>
+                    <% end %>
+                    <% if @seeder.facebook? %>
+                      <div class="icon-and-pseudo">
+                        <%= image_tag "facebook.png" %>
+                        <p class="seeder-media"><%= @seeder.facebook %></p>
+                      </div>
+                    <% end %>
+                  </div>
+                <% end %>
+                <% if @seeder.seeder_other_seeds? %>
+                  <p id="other_posts_link">Autres posts</p>
+                  <div class="other_posts">
+                    <% @seeder.seeder_other_seeds_list(@seed).each do |seed| %>
+                      <%= link_to "#{seed.title}", seed_path(seed) %>
+                      <br>
+                    <% end %>
+                  </div>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
