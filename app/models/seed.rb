@@ -17,7 +17,7 @@ class Seed < ApplicationRecord
 
   validates :title,
     presence: {
-    message: "Donnez un titre au seed"
+    message: "Nom du produit requis"
     }
 
   validates :title, length: { minimum: 5 }
@@ -43,9 +43,14 @@ class Seed < ApplicationRecord
     message: "Ajoutez au moins une photo"
     }
 
+  validates :sale_point_url,
+    presence: {
+    message: "Premettre aux utilisateurs d'obtenir plus d'infos sur le produit"
+    }
+
   validates :url, url: true
 
-  validates :size_guide, presence: true, if: :mode?
+  # validates :size_guide, presence: true, if: :mode?
 
 
 
@@ -117,13 +122,13 @@ class Seed < ApplicationRecord
     end
   end
 
-  def mode?
-    category.name == "Mode" if self.category
-  end
+  # def mode?
+  #   category.name == "Mode" if self.category
+  # end
 
-  def size_guide_error
-    errors.add(:size_guide, "doit etre rempli") if size_guide.blank?
-  end
+  # def size_guide_error
+  #   errors.add(:size_guide, "doit etre rempli") if size_guide.blank?
+  # end
 
 
 

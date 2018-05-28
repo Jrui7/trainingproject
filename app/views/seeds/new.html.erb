@@ -1,16 +1,14 @@
 
 <div class="container">
   <div class="page-section">
-    <div class="row head">
-      <div class="col-xs-12 col-sm-10 col-sm-offset-1 remove-padding-xs">
         <div class="form-title">Ajouter un produit</div>
           <div class="form-post-seed">
             <%= simple_form_for @seed do |f| %>
             <div class="seeder-infos">
               <div class="row head">
-                <div class="col-xs-12 col-sm-6 nopadding-right nopadding-left">
+                <div class="col-xs-12 col-sm-5 nopadding-right nopadding-left">
                   <div class="input-block">
-                    <%= f.input :title, label:"Titre", placeholder: "Exemple: Drone en mousse" %>
+                    <%= f.input :title, label:"Nom du produit" %>
                   </div>
                   <div class="input-block-price">
                     <%= f.input :price, label:"Prix original", placeholder: "exemple: 15", error: "Veuillez entrer un prix" %>
@@ -19,19 +17,28 @@
                   <div class="input-block">
                     <%= f.association :category, label:"Catégorie", prompt: "Selectionner une categorie", input_html: { data: { 'mode-category-id' => @mode_category_id } } %>
                   </div>
-                  <div class="input-block size-guide-input <%= 'hidden' unless @seed.mode? %>">
-                    <p class= "size-explain">Afin d'aider les participants à la campagne à choisir la taille qui leur convient, merci de coller ci-dessous le lien vers le guide des tailles du produit.</p>
-                    <%= f.input :size_guide, label:"Guide des tailles", placeholder: "url du site"%>
+                  <div class="input-block size-guide-input">
+                    <p id="size-guide-label">Guide des tailles</p>
+                    <p class= "size-explain">Pour tous les produits ou l'utilisateur doit choisir une taille (hommes femmes enfants animaux), merci de coller le lien vers le guide des tailles du vendeur.</p>
+                    <%= f.input :size_guide, label: false, placeholder: "url du site / guide des tailles"%>
+                  </div>
+                  <div class="shop">
+                    <div class="magn-left">Informations produit</div>
+                    <%= f.input :sale_point_url, label:"Site internet", placeholder: "http://www..." %>
+                    <%= f.input :sale_point_contact, label:"Contact vendeur", placeholder: "page contact, email, social-media..." %>
                   </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 nopadding-right nopadding-left">
+                <div class="col-xs-12 col-sm-6 col-sm-offset-1 descirption-block">
+                  <div class="input-block">
+                    <%= f.input :official_description,label:"Descriptif produit", placeholder: "Court descriptif: Utilisation, carractéristiques... (cf. descriptif du vendeur)" %>
+                  </div>
                   <div class="input-block" id="description">
-                    <%= f.input :description,label:"Pourquoi appréciez-vous ce produit?", placeholder: "Exemple: Ce drône est juste top, je l'ai essayé, super autonomie, facilement rangeable, et clairement indestructible grace à ses rebords en mousse." %>
+                    <%= f.input :description,label:"Avis personnel", placeholder: "Pourquoi appréciez-vous ce produit?" %>
                   </div>
                 </div>
               </div>
             </div>
-
+            <div class="media-bar">Medias</div>
             <div class="media-display">
               <div class="row head">
                 <div class="col-xs-12 nopadding-right nopadding-left">
@@ -64,43 +71,11 @@
               </div>
             </div>
 
-            <div class="supplier-infos">
-              <div class="row head">
-                <div class="col-xs-12 col-sm-6 nopadding-right nopadding-left">
-                  <h5>Ou avez-vous découvert produit ?</h5>
-                  <%= f.collection_radio_buttons :sale_point, [["internet", 'Sur internet'] ,["traditional", 'Commerce traditionnel']], :first, :last %>
-                </div>
-              </div>
-              <div class="row">
-                <div class="help-us cache">
-                  <div class="col-xs-12 col-sm-6 nopadding-right nopadding-left">
-                    <div class="shop internet hidden">
-                      <div class="magn-left text-center">Aidez-nous à contacter les vendeurs</div>
-                      <%= f.input :sale_point_url, label:"Site internet", placeholder: "http://www..." %>
-                      <%= f.input :sale_point_contact, label:"Contact", placeholder: "email, téléphone..." %>
-                    </div>
-                    <div class="shop traditional hidden">
-                      <div class="magn-left text-center">Aidez-nous à contacter les vendeurs</div>
-                      <%= f.input :sale_point_address, label:"Adresse", placeholder: "Dronesen mousse, 1 rue de Paradis..." %>
-                      <%= f.input :sale_point_contact, label:"Contact", placeholder: "Email, site internet ou téléphone" %>
-                    </div>
-                  </div>
-                  <div class="col-xs-12 col-sm-6">
-                    <div class="official_description hidden">
-                      <%= f.input :official_description,label:"Collez-ici le descriptif officiel du vendeur", placeholder: "Exemple: dimensions, autonomie, composants..." %>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             <div class="form-action">
             <%= f.submit value: "POSTER", class: "btn seedlap-danger" %>
             </div>
           <% end %>
         </div>
-      </div>
-    </div>
   </div>
 </div>
 
