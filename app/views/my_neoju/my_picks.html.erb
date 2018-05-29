@@ -44,7 +44,7 @@
                     </div>
                     <div class="modal-body">
                       <% if pick.state == "pending" %>
-                        <h5>Cliquez sur "Supprimer mon pick" pour retirer "<%= pick.seed.title %>"" de vos picks.</h5>
+                        <h5>Cliquez sur <b>"Supprimer"</b> pour retirer "<%= pick.seed.title %>"" de vos picks, sinon, cliquez sur <b>"Retour"</b>.</h5>
                       <% else %>
                         <h5>En supprimant votre pick vous annulez votre participation à la campagne d'achat pour obtenir <%= pick.seed.title %>. Nous vous remboursons dès maintenant l'intégralité de l'acompte que vous aviez versé. </h5>
                       <% end %>
@@ -53,7 +53,7 @@
                       <div class="action-links">
                         <button type="button" id="close-modal-destroy-<%= pick.id%>" class="btn-dissmiss text-center" data-dismiss="modal">Retour</button>
                         <%= link_to pick_path(pick.id), class: "mid-width  #{'paid' if pick.state == 'paid'}", method: :delete, remote: true do %>
-                            <div class="btn seedlap">Supprimer mon pick</div>
+                            <div class="btn seedlap">Supprimer</div>
                           <% end %>
                       </div>
                       <div class="loader-container hidden"></div>
