@@ -706,6 +706,7 @@
 
     @media(max-width: 480px) {
 
+
       .page-container .head .title h1 {
           font-size: 17px;
           font-weight: bold;
@@ -870,27 +871,25 @@
       flex-grow: 1;
       display: flex;
       flex-direction: column;
-    }
-
-    .pick-modal {
-      flex-grow: 1;
-      display: flex;
-      form {
+      .pick-modal {
         flex-grow: 1;
         display: flex;
-        .pick-form{
+        form {
           flex-grow: 1;
-          position: relative;
-          .action-links {
-            position: absolute;
-            bottom: 0;
-            margin: 0;
-            right: 0;
-            border-top: none;
+          display: flex;
+          .pick-form{
+            flex-grow: 1;
+            position: relative;
+            .action-links {
+              position: absolute;
+              bottom: 0;
+              margin: 0;
+              right: 0;
+              border-top: none;
+            }
           }
         }
       }
     }
-
 
   }
