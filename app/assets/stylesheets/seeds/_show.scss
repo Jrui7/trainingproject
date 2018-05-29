@@ -197,24 +197,24 @@
     padding: 15px !important;
   }
 
+  .action-links{
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid #e6e6e6;
+    padding-top: 20px;
+    margin-top: 20px;
+
+    .btn-dissmiss{
+      border: 1px solid;
+      border-radius: 50px;
+      padding: 6px 12px;
+      margin-right: 10px;
+      background-color: inherit;
+    }
+  }
+
   .modal-footer{
     border-top: none !important;
-
-    .action-links{
-      display: flex;
-      justify-content: flex-end;
-      border-top: 1px solid #e6e6e6;
-      padding-top: 20px;
-
-      .btn-dissmiss{
-        border: 1px solid;
-        border-radius: 50px;
-        padding: 6px 12px;
-        margin-right: 10px;
-
-      }
-    }
-
 
   }
 
