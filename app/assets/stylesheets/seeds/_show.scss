@@ -847,5 +847,50 @@
       text-align: justify;
     }
 
+    .page-container .pick-modal .modal:before {
+      content: none;
+    }
+
+    .page-container .pick-modal .modal-dialog {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .modal-content{
+      height: auto;
+      min-height: 100%;
+      border-radius: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-container .modal-body {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pick-modal {
+      flex-grow: 1;
+      display: flex;
+      form {
+        flex-grow: 1;
+        display: flex;
+        .pick-form{
+          flex-grow: 1;
+          position: relative;
+          .action-links {
+            position: absolute;
+            bottom: 0;
+            margin: 0;
+            right: 0;
+            border-top: none;
+          }
+        }
+      }
+    }
+
 
   }
