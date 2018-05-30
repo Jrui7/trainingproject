@@ -441,8 +441,28 @@
 
   @media(max-width: 768px) {
 
-
+    .user-form .form-control {
+      box-shadow: none;
+      margin-left: 15px;
+      width: 70%;
     }
+
+    .user-form .photo-update {
+      flex: 0 0 30%;
+    }
+
+    .form-civil, .form-livraison, .form-password, .form-card {
+      width: 100%;
+    }
+
+    #profil-and-pen, #address-and-pen, #password-and-pen, #paiement-and-pen {
+    display: flex;
+    flex: 1 0 50%;
+    justify-content: space-between;
+    }
+
+
+  }
 
     @media(max-width: 480px) {
 

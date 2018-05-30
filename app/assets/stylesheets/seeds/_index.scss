@@ -337,8 +337,12 @@ a:hover {
 
   @media(max-width: 768px) {
 
+    .page-container {
+      padding: 50px;
+    }
+
       .seed-presentation {
-        flex: 0 0 60%;
+        flex: 1 0 60%;
         margin-right: auto;
         margin-left: auto;
       }
@@ -359,6 +363,9 @@ a:hover {
 
       .product {
         padding: 10px;
+        border-radius: 0;
+        border-left: 0;
+        border-right: 0;
       }
 
       .product-image{

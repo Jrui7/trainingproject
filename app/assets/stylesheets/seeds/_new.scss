@@ -301,7 +301,18 @@ padding-left: 20px;
 
 }
 
+@media(max-width: 768px) {
+
+  .page-section {
+    padding: 0 50px;
+  }
+}
+
 @media(max-width: 480px) {
+
+  .page-section {
+    padding: 0;
+  }
 
   .form-title {
     border-radius: 0;

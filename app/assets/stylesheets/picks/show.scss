@@ -178,8 +178,11 @@
     }
 
     .pick-detail {
-      padding: 0;
+      padding: 15px 0 0 0;
       min-height: calc(100vh - 70px);
+      h2{
+        font-size : 28px;
+      }
 
     }
 
