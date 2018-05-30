@@ -221,7 +221,7 @@ a:hover {
   @media(max-width: 768px) {
 
       .pick-presentation {
-        flex: 0 0 60%;
+        flex: 0 0 100%;
         margin-right: auto;
         margin-left: auto;
 
@@ -261,15 +261,17 @@ a:hover {
 
       .pick-container{
         padding: 7px;
-        border-top-right-radius: 0;
-        border-top-left-radius: 0;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
       }
 
       .campaign-status{
         padding:7px;
         font-size:13px;
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 0;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
       }
 
 

@@ -296,6 +296,12 @@
   }
 }
 
+@media(max-width: 768px) {
+  .booking-form {
+    border-radius: 0;
+  }
+}
+
 @media(max-width: 480px) {
   .paiement-container{
     padding-top: 0;

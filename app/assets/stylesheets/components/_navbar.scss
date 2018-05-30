@@ -373,9 +373,19 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+
+  .navbar, .sub-container {
+    padding: 0 50px;
+  }
+}
 
 
 @media screen and (max-width: 480px) {
+
+  .navbar {
+    padding: 0;
+  }
 
   .logo-box {
     padding: 0 0 0 10px;

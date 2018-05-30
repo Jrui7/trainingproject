@@ -755,8 +755,17 @@
       }
     }
 
+  .page-container .left-section .seed-media {
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+  }
+
   .page-container .left-section .seeder {
     padding: 15px;
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
     }
 
     .page-container .head  {
@@ -834,11 +843,19 @@
 
     .internet-site{
       padding: 5px;
+      border-radius: 0;
+      border-left: none;
+      border-right: none;
     }
 
 
     .official-description{
       padding: 15px 0;
+      margin-top: 20px;
+      border-radius: 0;
+      border-left: none;
+      border-right: none;
+
       h2{
         padding: 0 15px;
       }
