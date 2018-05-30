@@ -645,6 +645,12 @@
     }
   }
 
+  .descritpion-text {
+    max-height: calc(589px - 86px - 90px - 20px - 30px - 33px - 8px);
+    overflow: auto;
+    line-height: 1.6;
+  }
+
   .internet-site {
     display: flex;
     align-items: center;
@@ -653,7 +659,7 @@
     border-radius: 6px;
     border: 1px solid #e8e8e8;
     padding: 7px 10px;
-    margin-top: 20px;
+    margin-top: 25px;
     &:hover{
       border-color: #d4d4d4;
       box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
