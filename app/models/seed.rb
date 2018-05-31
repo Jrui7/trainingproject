@@ -48,6 +48,8 @@ class Seed < ApplicationRecord
     message: "Premettre aux utilisateurs d'obtenir plus d'infos sur le produit"
     }
 
+  validates :sale_point_url, url: true
+
   validates :url, url: true
 
   # validates :size_guide, presence: true, if: :mode?

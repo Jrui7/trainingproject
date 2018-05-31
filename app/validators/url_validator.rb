@@ -11,7 +11,7 @@ class UrlValidator < ActiveModel::EachValidator
 
   def validate_each(record, attribute, value)
     unless value.blank? || self.class.compliant?(value)
-      record.errors.add(attribute, "URL invalide")
+      record.errors.add(attribute, "Merci de renseigner une URL valide du type http://www.exemple.com")
     end
   end
 
