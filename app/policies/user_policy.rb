@@ -29,4 +29,8 @@ class UserPolicy < ApplicationPolicy
     record == user || user.admin == true
   end
 
+  def my_picks?
+    record == user || user.admin == true
+  end
+
 end

@@ -38,7 +38,7 @@ class PaymentsController < ApplicationController
       )
 
       @pick.update(payment: charge.to_json, state: 'paid', first_name: pick_address.first_name, last_name: pick_address.last_name, street: pick_address.street, address_complement: pick_address.address_complement, zip_code: pick_address.zip_code, city: pick_address.city, phone_number: pick_address.phone_number)
-      redirect_to my_picks_path
+      redirect_to my_picks_user_path(@user)
 
       rescue Stripe::CardError => e
       flash[:alert] = e.message

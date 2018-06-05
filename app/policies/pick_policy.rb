@@ -17,10 +17,6 @@ class PickPolicy < ApplicationPolicy
     true
   end
 
-  def my_picks?
-    true
-  end
-
   def update?
     record.user == user
   end

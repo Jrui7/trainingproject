@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :set_sample, only: [:show, :update]
+  before_action :set_sample, only: [:show, :update, :my_picks]
 
 
   def show
@@ -69,6 +69,12 @@ class UsersController < ApplicationController
     cu.source = params[:stripeToken] # obtained with Stripe.js
     cu.save
     redirect_to new_pick_payment_path(pick)
+  end
+
+  def my_picks
+    @user = User.friendly.find(params[:id])
+    authorize @user
+    @picks = @user.picks.includes(:seed).newest
   end
 
   private

@@ -17,6 +17,7 @@ class PicksController < ApplicationController
 
   def show
     @pick = Pick.find(params[:id])
+    @user = @pick.user_id
     authorize @pick
     unless @pick.payment.blank?
       @customer_infos = JSON.parse(@pick.payment)["source"]
@@ -29,6 +30,7 @@ class PicksController < ApplicationController
     @seed = Seed.friendly.find(params[:seed_id])
     @pick = @seed.picks.new(pick_params)
     @pick.user_id = current_user.id
+    @user = @pick.user_id
     @pick.amount = @seed.price * 0.2
     @pick.state = "pending"
     authorize @pick
@@ -43,11 +45,12 @@ class PicksController < ApplicationController
 
   def update
     @pick = Pick.find(params[:id])
+    @user = @pick.user_id
     @seed = @pick.seed
     authorize @pick
     if @pick.update(pick_params)
       respond_to do |format|
-        format.html {redirect_to my_picks_path}
+        format.html {redirect_to my_picks_user_path(@user)}
         format.js
       end
     end
@@ -56,6 +59,7 @@ class PicksController < ApplicationController
 
   def destroy
     @pick = Pick.find(params[:id])
+    @user = @pick.user_id
     authorize @pick
     @seed = @pick.seed
     if @pick.state == "paid"
@@ -69,7 +73,7 @@ class PicksController < ApplicationController
     @pick.destroy
     @seed.increment_popularity
     respond_to do |format|
-      format.html {redirect_to my_picks_path}
+      format.html {redirect_to my_picks_user_path(@user)}
       format.js
     end
 
@@ -81,7 +85,6 @@ class PicksController < ApplicationController
   def pick_params
     params.require(:pick).permit(:price)
   end
-
 
 
 end

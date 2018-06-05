@@ -2,7 +2,7 @@ class SeedsController < ApplicationController
 
   before_action :set_sample, only: [:index, :last_day, :popular, :newest, :show, :new]
   skip_before_action :authenticate_user!, only: [:index, :last_day, :popular, :newest, :show]
-
+  before_action :set_user, only: [:index, :last_day, :popular, :newest, :show, :new]
 
   def index
     @categories = Category.all
@@ -139,6 +139,10 @@ class SeedsController < ApplicationController
 
   def admin_review_params
     params.require(:seed).permit(:admin_review)
+  end
+
+  def set_user
+    @user = current_user
   end
 
 
