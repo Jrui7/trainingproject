@@ -646,9 +646,13 @@
   }
 
   .descritpion-text {
-    max-height: calc(589px - 86px - 90px - 20px - 30px - 33px - 8px);
+    max-height: calc(589px - 42px - 44px - 85px - 85px - 90px);
     overflow: auto;
     line-height: 1.6;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-left: 3px solid rgba(0, 0, 0, 0.1);;
+    padding: 5px 10px;
+    text-align: justify;
   }
 
   .internet-site {
@@ -660,6 +664,7 @@
     border: 1px solid #e8e8e8;
     padding: 7px 10px;
     margin-top: 25px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.06);
     &:hover{
       border-color: #d4d4d4;
       box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
@@ -679,7 +684,7 @@
   .img-background{
     background-color: #999999;
     margin-right: 15px;
-    padding: 10px;
+    padding: 7px;
     border-radius: 50%;
 
   }

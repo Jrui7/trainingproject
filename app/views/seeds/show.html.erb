@@ -222,6 +222,15 @@
             </div>
             <span class="glyphicon glyphicon-chevron-right"></span>
           </a>
+          <a href="<%=@seed.size_guide %>" class="internet-site" target="_blank">
+            <div class="img-background">
+              <%= image_tag "website.png", class:"link-img" %>
+            </div>
+            <div class="display-link">
+              <h5>Guide des tailles</h5>
+            </div>
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
           <% if @seed.ongoing? %>
             <div class="pick-section">
               <%= render "seeds/pick-section" %>
