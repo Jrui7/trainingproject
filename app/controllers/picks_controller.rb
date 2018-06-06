@@ -1,5 +1,5 @@
 class PicksController < ApplicationController
-  before_action :set_sample, only: [:show]
+  before_action :set_sample, only: [:show, :my_picks]
   after_action :verify_authorized
 
   def index
@@ -17,6 +17,7 @@ class PicksController < ApplicationController
 
   def show
     @pick = Pick.find(params[:id])
+    @user = @pick.user_id
     authorize @pick
     unless @pick.payment.blank?
       @customer_infos = JSON.parse(@pick.payment)["source"]
@@ -29,6 +30,7 @@ class PicksController < ApplicationController
     @seed = Seed.friendly.find(params[:seed_id])
     @pick = @seed.picks.new(pick_params)
     @pick.user_id = current_user.id
+    @user = @pick.user_id
     @pick.amount = @seed.price * 0.2
     @pick.state = "pending"
     authorize @pick
@@ -72,16 +74,20 @@ class PicksController < ApplicationController
       format.html {redirect_to my_picks_path}
       format.js
     end
-
-
   end
+
+  def my_picks
+    @picks = current_user.picks.includes(:seed).newest
+    authorize @picks
+  end
+
+
 
   private
 
   def pick_params
     params.require(:pick).permit(:price)
   end
-
 
 
 end

@@ -29,4 +29,5 @@ class UserPolicy < ApplicationPolicy
     record == user || user.admin == true
   end
 
+
 end

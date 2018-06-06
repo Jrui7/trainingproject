@@ -71,6 +71,8 @@ class UsersController < ApplicationController
     redirect_to new_pick_payment_path(pick)
   end
 
+
+
   private
 
   def user_params
