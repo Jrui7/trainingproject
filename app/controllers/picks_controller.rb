@@ -77,7 +77,7 @@ class PicksController < ApplicationController
   end
 
   def my_picks
-    @picks = @user.picks.includes(:seed).newest
+    @picks = current_user.picks.includes(:seed).newest
     authorize @picks
   end
 
