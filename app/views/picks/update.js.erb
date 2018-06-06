@@ -1,5 +1,5 @@
 $(document).ready(function(){
   $("#close-modal-<%= @pick.id%>").click();
-  $(".pick-iterate.id-<%= @pick.id%>").html('<%= j render 'users/pick-history', pick: @pick %>');
+  $(".pick-iterate.id-<%= @pick.id%>").html('<%= j render 'picks/pick-history', pick: @pick %>');
 
 })

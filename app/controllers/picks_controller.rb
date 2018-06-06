@@ -1,5 +1,5 @@
 class PicksController < ApplicationController
-  before_action :set_sample, only: [:show]
+  before_action :set_sample, only: [:show, :my_picks]
   after_action :verify_authorized
 
   def index
@@ -45,12 +45,11 @@ class PicksController < ApplicationController
 
   def update
     @pick = Pick.find(params[:id])
-    @user = @pick.user_id
     @seed = @pick.seed
     authorize @pick
     if @pick.update(pick_params)
       respond_to do |format|
-        format.html {redirect_to my_picks_user_path(@user)}
+        format.html {redirect_to my_picks_path}
         format.js
       end
     end
@@ -59,7 +58,6 @@ class PicksController < ApplicationController
 
   def destroy
     @pick = Pick.find(params[:id])
-    @user = @pick.user_id
     authorize @pick
     @seed = @pick.seed
     if @pick.state == "paid"
@@ -73,12 +71,17 @@ class PicksController < ApplicationController
     @pick.destroy
     @seed.increment_popularity
     respond_to do |format|
-      format.html {redirect_to my_picks_user_path(@user)}
+      format.html {redirect_to my_picks_path}
       format.js
     end
-
-
   end
+
+  def my_picks
+    @picks = @user.picks.includes(:seed).newest
+    authorize @picks
+  end
+
+
 
   private
 

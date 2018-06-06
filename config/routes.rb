@@ -30,7 +30,6 @@ Rails.application.routes.draw do
         put :update_paiement
         patch :update_civil
         put :update_civil
-        get :my_picks
       end
   end
   resources :addresses, only: [:create, :update]
@@ -49,6 +48,8 @@ Rails.application.routes.draw do
   get 'newest', to: 'seeds#newest'
   get 'popular', to: 'seeds#popular'
   get 'last_day', to: 'seeds#last_day'
+
+  get ':my_picks', to: 'picks#my_picks'
 
   get 'home', to: 'pages#home'
   get 'faq', to: 'pages#faq'
