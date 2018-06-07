@@ -32,7 +32,6 @@ class PicksController < ApplicationController
     @pick.user_id = current_user.id
     @user = @pick.user_id
     @pick.amount = @seed.price * 0.2
-    @pick.state = "pending"
     authorize @pick
     if @pick.save
       @seed.increment_popularity
@@ -77,7 +76,7 @@ class PicksController < ApplicationController
   end
 
   def my_picks
-    @picks = current_user.picks.includes(:seed).newest
+    @picks = current_user.picks.seed.campaign.where(status: "pending")
     authorize @picks
   end
 

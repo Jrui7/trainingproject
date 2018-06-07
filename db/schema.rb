@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180528112454) do
+ActiveRecord::Schema.define(version: 20180607154444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,10 +89,10 @@ ActiveRecord::Schema.define(version: 20180528112454) do
     t.integer  "price"
     t.integer  "seed_id"
     t.integer  "user_id"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.integer  "amount_cents",       default: 0, null: false
-    t.string   "state"
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.integer  "amount_cents",       default: 0,         null: false
+    t.string   "state",              default: "pending"
     t.jsonb    "payment"
     t.string   "first_name"
     t.string   "street"
@@ -163,6 +163,7 @@ ActiveRecord::Schema.define(version: 20180528112454) do
     t.string   "twitter"
     t.string   "customer_id"
     t.string   "slug"
+    t.float    "reputation",             default: 1.0
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["slug"], name: "index_users_on_slug", unique: true, using: :btree
