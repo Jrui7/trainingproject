@@ -1,0 +1,88 @@
+<%= render 'shared/sub-navbar' %>
+<div class="page-container">
+  <div class="pick-feed">
+    <%if @picks.any? %>
+      <div class="pick-presentation">
+        <h2>Vos picks</h2>
+        <% @picks.each do |pick| %>
+          <div class="pick-iterate id-<%= pick.id%>">
+          <%= render "picks/pick-history", pick: pick %>
+          </div>
+          <% if pick.seed.ongoing? %>
+            <div class="pick-modal">
+            <!-- Modal -->
+              <div class="modal fade" id="myPick-<%= pick.id%>" role="dialog">
+                <div class="modal-dialog modal">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title"><%= pick.seed.title %> </h4>
+                    </div>
+                    <div class="modal-body">
+                      <h3>Modifier votre prix </h3>
+                      <div class="pick-modal">
+                        <%= render "picks/edit-form", seed: pick.seed, pick: pick %>
+                      </div>
+                    </div>
+                    <div class="modal-footer hidden">
+                      <button type="button" id="close-modal-<%= pick.id%>" class="btn btn-default text-center" data-dismiss="modal">Retour</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pick-modal">
+            <!-- Modal -->
+              <div class="modal fade" id="destroyPick-<%= pick.id%>" role="dialog">
+                <div class="modal-dialog modal">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Supprimer votre pick ? </h4>
+                    </div>
+                    <div class="modal-body">
+                      <% if pick.state == "pending" %>
+                        <h5>Cliquez sur <b>"Supprimer"</b> pour retirer "<%= pick.seed.title %>"" de vos picks, sinon, cliquez sur <b>"Retour"</b>.</h5>
+                      <% else %>
+                        <h5>En supprimant votre pick vous annulez votre participation à la campagne d'achat pour obtenir <%= pick.seed.title %>. Nous vous remboursons dès maintenant l'intégralité de l'acompte que vous aviez versé. </h5>
+                      <% end %>
+                    </div>
+                    <div class="modal-footer">
+                      <div class="action-links">
+                        <button type="button" id="close-modal-destroy-<%= pick.id%>" class="btn-dissmiss text-center" data-dismiss="modal">Retour</button>
+                        <%= link_to pick_path(pick.id), class: "mid-width  #{'paid' if pick.state == 'paid'}", method: :delete, remote: true do %>
+                            <div class="btn seedlap">Supprimer</div>
+                          <% end %>
+                      </div>
+                      <div class="loader-container hidden"></div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <% else %>
+        <div class="pick-feed">
+          <div class="pick-presentation">
+            <h2>Vos picks</h2>
+            <p class="no-picks-yet">Vous n'avez encore rien pické jusqu'à présent</p>
+
+            <div class="index-path">
+              <%= link_to seeds_path do %>
+                <div class="btn btn-default">Y remédier</div>
+              <% end %>
+            </div>
+
+          </div>
+        </div>
+
+    <% end %>
+
+  </div>
+</div>

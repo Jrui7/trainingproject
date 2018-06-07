@@ -26,7 +26,11 @@ class PickPolicy < ApplicationPolicy
   end
 
   def my_picks?
-    record == user || user.admin == true
+    record.user == user
+  end
+
+  def pick_history?
+    record.user == user
   end
 
 

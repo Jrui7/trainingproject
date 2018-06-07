@@ -1,5 +1,5 @@
 class PicksController < ApplicationController
-  before_action :set_sample, only: [:show, :my_picks]
+  before_action :set_sample, only: [:show, :my_picks, :pick_history]
   after_action :verify_authorized
 
   def index
@@ -76,8 +76,15 @@ class PicksController < ApplicationController
   end
 
   def my_picks
-    @picks = current_user.picks.seed.campaign.where(status: "pending")
-    authorize @picks
+    @picks = current_user.pending_picks
+    @verif = @picks.first
+    authorize @verif
+  end
+
+  def pick_history
+    @picks = current_user.picks.includes(:seed).newest
+    @verif = @picks.first
+    authorize @verif
   end
 
 

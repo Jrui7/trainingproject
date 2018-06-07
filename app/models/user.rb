@@ -37,14 +37,6 @@ class User < ApplicationRecord
       seed.signal_seed.where(user: self).any?
   end
 
-  def user_picked
-    picks = Pick.where(user: self)
-    seeds = []
-    picks.each do |pick|
-      seeds << pick.seed
-    end
-    seeds
-  end
 
   def mini_bio?
     !self.mini_bio.blank?
@@ -84,7 +76,7 @@ class User < ApplicationRecord
 
 
   def pending_picks
-    self.picks.where(state: "pending").select {|pick| pick.seed.ongoing? == true}
+    self.picks.where(state: "pending").select {|pick| pick.seed.campaign.status == "pending"}
   end
 
 
