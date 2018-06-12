@@ -1,4 +1,4 @@
-<% case pick.state when "paid" %>
+<% case pick.state when "validated" %>
   <div class="pick-status">
     <h3>En attente</h3>
     <div class="status-text">Vous avez pické pour <%= pick.price %>€. La campagne se termine le <%= pick.seed.expiration.strftime("%d/%m/%Y") %>, et nous revenons vers vous dès que la négo avec le vendeur est terminée . </div>
@@ -23,15 +23,10 @@
     <h3>Campagne terminée</h3>
     <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€ mais n'avez pas bloqué votre participation à la campagne qui est maintenant fermée. </div>
   </div>
-  <% when "refunded" %>
-  <div class="pick-status">
-    <h3>Remboursé</h3>
-    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€. Nous avons fermé la campagne et vous avons remboursé votre acompte versé car le produit ne respecte pas les CGU . </div>
-  </div>
   <% when "cancelled" %>
   <div class="pick-status">
-    <h3>Annulé</h3>
-    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€. Nous avons fermé la campagne car le produit ne respecte pas les CGU . Vous ne pouvez plus valider votre pick. </div>
+    <h3>Campagne annulée</h3>
+    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€. Nous avons fermé la campagne car le produit ne respecte pas les CGU . </div>
   </div>
   <% when "error" %>
   <div class="pick-status">
@@ -41,6 +36,6 @@
   <% when "pick_failed" %>
   <div class="pick-status">
     <h3>Echec</h3>
-    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€. Le prix Pickalgo négocié est de <%= pick.seed.campaign.price %>€, nous vous remboursons votre acompte, mais vous ne bénéficiez pas du deal . </div>
+    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€. Le prix Pickalgo négocié est de <%= pick.seed.campaign.price %>€, vous ne pouvez pas bénéficier du deal . </div>
   </div>
 <% end %>

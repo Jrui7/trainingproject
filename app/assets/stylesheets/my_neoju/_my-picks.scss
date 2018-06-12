@@ -166,7 +166,9 @@ a:hover {
   background-color: #f1f8fc;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   transition: all 0.15s ease;
   padding: 10px 20px;
 
@@ -238,7 +240,7 @@ a:hover {
 #selected-menu, #selected-menu-bis {
   background-color: $blue;
   color: white;
-  border: 1px solid;
+  border: 1px solid $blue;
 }
 
 
