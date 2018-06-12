@@ -6,7 +6,7 @@ class PicksController < ApplicationController
   def index
     @user = current_user
     @seed = Seed.friendly.find(params[:seed_id])
-    @picks = policy_scope(Pick).where(seed_id: @seed, state: "paid").order(price: :desc )
+    @picks = policy_scope(Pick).where(seed_id: @seed, state: "validated").order(price: :desc )
     authorize @picks
 
     respond_to do |format|
