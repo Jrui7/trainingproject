@@ -213,6 +213,27 @@ a:hover {
   }
 }
 
+.pending-and-all {
+  display: flex;
+  justify-content: center;
+}
+
+.pick-menu {
+  padding: 5px 10px;
+  text-transform: uppercase;
+  border: 1px solid;
+  color: $blue;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#selected-menu {
+  background-color: $blue;
+  color: white;
+  border: 1px solid;
+}
+
 
 @media(max-width: 992px) {
 
@@ -303,6 +324,11 @@ a:hover {
           font-size: 13px;
           padding: 6px;
         }
+      }
+
+      .pending-and-all {
+        margin-top: 20px;
+        font-size: 15px;
       }
 
     }

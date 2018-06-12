@@ -4,6 +4,12 @@
     <%if @picks.any? %>
       <div class="pick-presentation">
         <h2>Vos picks</h2>
+        <div class="pending-and-all">
+          <div class="pick-menu" id="selected-menu">A valider</div>
+          <%= link_to pick_history_path do%>
+            <div class="pick-menu">Historique</div>
+          <% end %>
+        </div>
         <% @picks.each do |pick| %>
           <div class="pick-iterate id-<%= pick.id%>">
           <%= render "picks/pick-history", pick: pick %>

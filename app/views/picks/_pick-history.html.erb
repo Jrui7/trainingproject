@@ -33,7 +33,7 @@
 
   <% if pick.state == "pending" && pick.seed.ongoing? %>
     <div class="campaign-status pick-pending">
-      Vous avez jusqu'au <%= pick.seed.expiration.strftime("%d/%m/%Y") %> pour finaliser votre pick.
+      Fin de la campagne: <%= pick.seed.expiration.strftime("%d/%m/%Y") %>.
       <div class="payment-link">
         <%= link_to new_pick_payment_path(pick) do %>
           <div class="btn">Finaliser pick</div>
@@ -43,7 +43,7 @@
   <% else %>
     <div class="campaign-status pick-other">
       <% case pick.state when "finalized" %>
-        <div>Finalisé</div>
+        <div>Succès</div>
       <% when "pending" %>
         <div>Pick expiré</div>
       <% when "campaign_failed" %>
@@ -52,10 +52,8 @@
         <div>Pick échoué</div>
       <% when "campaign_closed" %>
         <div>Campagne fermée</div>
-      <% when "refunded" %>
-        <div>Remboursé</div>
       <% when "cancelled" %>
-        <div>Annulé</div>
+        <div>Campagne annulée</div>
       <% when "paid" %>
         <div>En attente</div>
       <% end %>

@@ -112,7 +112,7 @@ class SeedsController < ApplicationController
       redirect_to signaled_path
 
     else
-      @seed.refund_seed
+      @seed.cancel_campaign
       @seed.update(admin_review_params)
       redirect_to signaled_path
     end
