@@ -77,6 +77,12 @@
         <div class="pick-feed">
           <div class="pick-presentation">
             <h2>Vos picks</h2>
+            <div class="pending-and-all">
+              <div class="pick-menu" id="selected-menu-bis">A valider</div>
+              <%= link_to pick_history_path do%>
+                <div class="pick-menu">Historique</div>
+              <% end %>
+            </div>
             <p class="no-picks-yet">Pas de picks à finaliser</p>
 
           </div>

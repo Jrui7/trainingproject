@@ -48,8 +48,8 @@
           <div class="item payment">
             <h3>Paiement</h3>
             <div class="card-input"><%= @customer_infos["brand"]%></div>
-            <div class="card-input">
-              <i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><%= @customer_infos["last4"] %>
+            <div class="card-input card-numbers">
+              **** **** **** <%= @customer_infos["last4"] %>
             </div>
             <div class="card-input">
               <%= @customer_infos["exp_month"]%>/<%= @customer_infos["exp_year"] %>

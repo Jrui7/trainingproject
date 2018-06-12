@@ -91,6 +91,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   border-radius: 4px;
+  margin-top: 50px;
 }
 
 
@@ -228,7 +229,7 @@ a:hover {
   cursor: pointer;
 }
 
-#selected-menu {
+#selected-menu, #selected-menu-bis {
   background-color: $blue;
   color: white;
   border: 1px solid;

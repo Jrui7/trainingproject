@@ -1,6 +1,7 @@
 class PicksController < ApplicationController
   before_action :set_sample, only: [:show, :my_picks, :pick_history]
   after_action :verify_authorized
+  skip_after_action :verify_authorized, only: [:my_picks, :pick_history]
 
   def index
     @user = current_user
@@ -19,10 +20,12 @@ class PicksController < ApplicationController
     @pick = Pick.find(params[:id])
     @user = @pick.user_id
     authorize @pick
-    unless @pick.payment.blank?
-      @customer_infos = JSON.parse(@pick.payment)["source"]
+    unless @pick.state == "pending"
+      @customer_infos = @pick.payment
+      # @customer_infos = JSON.parse(@pick.payment)["source"]
     end
     @exchange = Exchange.new
+
   end
 
 
@@ -77,14 +80,10 @@ class PicksController < ApplicationController
 
   def my_picks
     @picks = current_user.pending_picks
-    @verif = @picks.first
-    authorize @verif
   end
 
   def pick_history
     @picks = current_user.picks.includes(:seed).newest
-    @verif = @picks.first
-    authorize @verif
   end
 
 

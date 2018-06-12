@@ -3,7 +3,7 @@ class Campaign < ApplicationRecord
 
   def finalize_campaign
     self.seed.picks.includes(:user).each do |pick|
-      if pick.state == "paid"
+      if pick.state == "validated"
         payment_hash = JSON.parse(pick.payment)
 
         if self.status == "success"
