@@ -6,17 +6,17 @@
   <% when "finalized" %>
   <div class="pick-status">
     <h3>Finalisé</h3>
-    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€, mais remportez le deal pour seulement <%= pick.seed.campaign.price %>€. Bravo !</div>
+    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€, mais remportez le deal pour seulement <%= pick.seed.campaign.price %>€. C'est bon ça !</div>
   </div>
   <% when "campaign_failed" %>
   <div class="pick-status">
     <h3>Echec</h3>
-    <div class="status-text">Vous avez pické pour <%= pick.price %>€. Le vendeur n'a pas voulu finaliser le deal avec nous. Nous vous remboursons l'acompte que vous nous aviez versé pour bloquer votre participation au deal. </div>
+    <div class="status-text">Vous avez pické pour <%= pick.price %>€. Le vendeur n'a malheureusement pas voulu faire de deal avec nous. On ne fait pas boire un âne qui n'a pas soif dit le proverbe... </div>
   </div>
   <% when "campaign_closed" %>
   <div class="pick-status">
     <h3>Campagne terminée</h3>
-    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€ mais n'avez pas bloqué votre participation à la campagne qui est maintenant fermée. </div>
+    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€ mais n'avez pas bloqué votre participation à la campagne qui est maintenant fermée. C'est dommage !!! </div>
   </div>
   <% when "pending" %>
   <div class="pick-status">

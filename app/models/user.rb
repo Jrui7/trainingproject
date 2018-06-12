@@ -76,7 +76,7 @@ class User < ApplicationRecord
 
 
   def pending_picks
-    self.picks.where(state: "pending").select {|pick| pick.seed.ongoing?}
+    self.picks.includes(:seed).where(state: "pending").select {|pick| pick.seed.ongoing?}
   end
 
 
