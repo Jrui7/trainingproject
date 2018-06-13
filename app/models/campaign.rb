@@ -3,10 +3,23 @@ class Campaign < ApplicationRecord
 
   def finalize_campaign
     self.seed.picks.includes(:user).each do |pick|
-      if pick.state == "validated"
+
+      unless pick.deal_price.blank?
+        previous_payment = JSON.parse(pick.deal_price)
+        if previous_payment["paid"] == true
+          Stripe::Refund.create(
+            charge: previous_payment["id"]
+            )
+          pick.update(state: "validated")
+        end
+      end
+
+
+      if pick.state != "pending"
+        customer_id = pick.user.customer_id
+
         if self.status == "success"
           if pick.price >= self.price
-            customer_id = pick.user.customer_id
             pick.amount = self.price
             charge = Stripe::Charge.create(
               customer:     customer_id,   # You should store this customer id and re-use it.
@@ -31,6 +44,7 @@ class Campaign < ApplicationRecord
       else
         pick.update(state: "campaign_closed")
       end
+
     end
   end
 
