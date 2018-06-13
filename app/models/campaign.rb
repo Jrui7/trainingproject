@@ -21,6 +21,7 @@ class Campaign < ApplicationRecord
         if self.status == "success"
           if pick.price >= self.price
             pick.amount = self.price
+            begin
             charge = Stripe::Charge.create(
               customer:     customer_id,   # You should store this customer id and re-use it.
               amount:       pick.amount_cents,
@@ -29,9 +30,10 @@ class Campaign < ApplicationRecord
             )
             pick.update(deal_price: charge.to_json)
             final_payment = JSON.parse(pick.deal_price)
-            if final_payment["paid"] == true
-              pick.update(state: "finalized")
-            else
+            final_payment["paid"] == true
+            pick.update(state: "finalized")
+
+            rescue Stripe::CardError => e
               pick.update(state: "error")
             end
           else
@@ -46,6 +48,7 @@ class Campaign < ApplicationRecord
       end
 
     end
+
   end
 
 
