@@ -1,11 +1,12 @@
 class PicksController < ApplicationController
-  before_action :set_sample, only: [:show, :my_picks]
+  before_action :set_sample, only: [:show, :my_picks, :pick_history]
   after_action :verify_authorized
+  skip_after_action :verify_authorized, only: [:my_picks, :pick_history]
 
   def index
     @user = current_user
     @seed = Seed.friendly.find(params[:seed_id])
-    @picks = policy_scope(Pick).where(seed_id: @seed, state: "paid").order(price: :desc )
+    @picks = policy_scope(Pick).where(seed_id: @seed, state: "validated").order(price: :desc )
     authorize @picks
 
     respond_to do |format|
@@ -19,10 +20,12 @@ class PicksController < ApplicationController
     @pick = Pick.find(params[:id])
     @user = @pick.user_id
     authorize @pick
-    unless @pick.payment.blank?
-      @customer_infos = JSON.parse(@pick.payment)["source"]
+    unless @pick.state == "pending"
+      @customer_infos = @pick.payment
+      # @customer_infos = JSON.parse(@pick.payment)["source"]
     end
     @exchange = Exchange.new
+
   end
 
 
@@ -32,7 +35,6 @@ class PicksController < ApplicationController
     @pick.user_id = current_user.id
     @user = @pick.user_id
     @pick.amount = @seed.price * 0.2
-    @pick.state = "pending"
     authorize @pick
     if @pick.save
       @seed.increment_popularity
@@ -77,8 +79,11 @@ class PicksController < ApplicationController
   end
 
   def my_picks
+    @picks = current_user.pending_picks
+  end
+
+  def pick_history
     @picks = current_user.picks.includes(:seed).newest
-    authorize @picks
   end
 
 

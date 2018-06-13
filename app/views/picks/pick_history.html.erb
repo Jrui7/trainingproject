@@ -5,10 +5,10 @@
       <div class="pick-presentation">
         <h2>Vos picks</h2>
         <div class="pending-and-all">
-          <div class="pick-menu" id="selected-menu">A valider</div>
-          <%= link_to pick_history_path do%>
-            <div class="pick-menu">Historique</div>
+          <%= link_to my_picks_path do %>
+            <div class="pick-menu">A valider</div>
           <% end %>
+          <div class="pick-menu" id="selected-menu">Historique</div>
         </div>
         <% @picks.each do |pick| %>
           <div class="pick-iterate id-<%= pick.id%>">
@@ -78,12 +78,18 @@
           <div class="pick-presentation">
             <h2>Vos picks</h2>
             <div class="pending-and-all">
-              <div class="pick-menu" id="selected-menu-bis">A valider</div>
-              <%= link_to pick_history_path do%>
-                <div class="pick-menu">Historique</div>
+              <%= link_to my_picks_path do %>
+                <div class="pick-menu">A valider</div>
+              <% end %>
+              <div class="pick-menu" id="selected-menu-bis">Historique</div>
+            </div>
+            <p class="no-picks-yet">Vous n'avez encore rien pické jusqu'à présent</p>
+
+            <div class="index-path">
+              <%= link_to seeds_path do %>
+                <div class="btn btn-default">Y remédier</div>
               <% end %>
             </div>
-            <p class="no-picks-yet">Pas de picks à finaliser</p>
 
           </div>
         </div>

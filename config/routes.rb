@@ -50,6 +50,7 @@ Rails.application.routes.draw do
   get 'last_day', to: 'seeds#last_day'
 
   get 'my_picks', to: 'picks#my_picks'
+  get 'pick_history', to: 'picks#pick_history'
 
   get 'home', to: 'pages#home'
   get 'faq', to: 'pages#faq'

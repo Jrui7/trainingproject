@@ -109,17 +109,9 @@ class Seed < ApplicationRecord
     where.not(admin_review:"Invalide")
   end
 
-  def refund_seed
+  def cancel_campaign
     self.picks.each do |pick|
-      if pick.state == "paid"
-        payment_hash = JSON.parse(pick.payment)
-         Stripe::Refund.create(
-           charge: payment_hash["id"]
-         )
-         pick.state = "refunded"
-      else
-        pick.state = "cancelled"
-      end
+      pick.state = "cancelled"
       pick.save
     end
   end
