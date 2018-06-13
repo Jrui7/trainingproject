@@ -33,12 +33,10 @@ class Campaign < ApplicationRecord
               currency:     pick.amount.currency
             )
             pick.update(deal_price: charge.to_json)
-            final_payment = JSON.parse(pick.deal_price)
-            final_payment["paid"] == true
             pick.update(state: "finalized")
 
-            rescue Stripe::CardError => e
-              pick.update(state: "refund-error")
+            rescue
+              pick.update(state: "error")
             end
           else
             pick.update(state: "pick_failed")
