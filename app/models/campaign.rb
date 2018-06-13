@@ -7,10 +7,14 @@ class Campaign < ApplicationRecord
       unless pick.deal_price.blank?
         previous_payment = JSON.parse(pick.deal_price)
         if previous_payment["paid"] == true
+          begin
           Stripe::Refund.create(
             charge: previous_payment["id"]
             )
           pick.update(state: "validated")
+          rescue
+            pick.update(state: "refund_failed")
+          end
         end
       end
 
@@ -34,7 +38,7 @@ class Campaign < ApplicationRecord
             pick.update(state: "finalized")
 
             rescue Stripe::CardError => e
-              pick.update(state: "error")
+              pick.update(state: "refund-error")
             end
           else
             pick.update(state: "pick_failed")

@@ -54,6 +54,10 @@
         <div class= "status-overview">Campagne fermée</div>
       <% when "cancelled" %>
         <div class= "status-overview">Campagne annulée</div>
+      <% when "refund_failed" %>
+        <div class= "status-overview">Erreur</div>
+      <% when "error" %>
+        <div class= "status-overview">Erreur</div>
       <% when "validated" %>
         <div class= "status-overview">En attente</div>
       <% end %>
