@@ -18,7 +18,6 @@ class Campaign < ApplicationRecord
         end
       end
 
-
       if pick.state != "pending"
         customer_id = pick.user.customer_id
 
