@@ -33,6 +33,11 @@
     <h3>Erreur</h3>
     <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€ mais nous n'avons pas réussi à valider le paiement final. Merci de suivre ce lien . </div>
   </div>
+  <% when "refund_failed" %>
+  <div class="pick-status">
+    <h3>Erreur</h3>
+    <div class="status-text">Nous avons recontré un problème lors du remboursemet que nous voulions effectuer. Merci de suivre ce lien . </div>
+  </div>
   <% when "pick_failed" %>
   <div class="pick-status">
     <h3>Echec</h3>

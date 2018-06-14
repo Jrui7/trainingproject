@@ -43,19 +43,23 @@
   <% else %>
     <div class="pick-other">
       <% case pick.state when "finalized" %>
-        <div>Succès</div>
+        <div class= "status-overview">Succès</div>
       <% when "pending" %>
-        <div>Pick expiré</div>
+        <div class= "status-overview">Pick expiré</div>
       <% when "campaign_failed" %>
-        <div>Campagne échouée</div>
+        <div class= "status-overview">Campagne échouée</div>
       <% when "pick_failed" %>
-        <div>Pick échoué</div>
+        <div class= "status-overview">Pick échoué</div>
       <% when "campaign_closed" %>
-        <div>Campagne fermée</div>
+        <div class= "status-overview">Campagne fermée</div>
       <% when "cancelled" %>
-        <div>Campagne annulée</div>
+        <div class= "status-overview">Campagne annulée</div>
+      <% when "refund_failed" %>
+        <div class= "status-overview">Erreur</div>
+      <% when "error" %>
+        <div class= "status-overview">Erreur</div>
       <% when "validated" %>
-        <div>En attente</div>
+        <div class= "status-overview">En attente</div>
       <% end %>
       <div class="payment-recap">
         <%= link_to pick_path(pick) do %>

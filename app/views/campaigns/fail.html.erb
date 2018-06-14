@@ -31,7 +31,7 @@
             </div>
           <% end %>
           <%= link_to fail_path do %>
-            <div class="selected-category">
+            <div class="sub-title selected-category">
               <div class="filter-icon far fa-thumbs-down"></div>
               <p>Fail</p>
             </div>
@@ -54,8 +54,8 @@
 
 
     <div class="seed-presentation">
-      <h1>Admin dashboard > Fail</h1>
-      <%= render partial: "campaigns/seed", collection: @seeds %>
+      <h1>Admin dashboard > Pending</h1>
+      <%= render "campaigns/seeds", seeds: @seeds %>
     </div>
 
   </div>

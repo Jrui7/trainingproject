@@ -25,7 +25,7 @@
             </div>
           <% end %>
           <%= link_to success_path do %>
-            <div class="selected-category">
+            <div class="sub-title selected-category">
               <div class="filter-icon far fa-thumbs-up"></div>
               <p>Success</p>
             </div>
@@ -55,7 +55,7 @@
 
     <div class="seed-presentation">
       <h1>Admin dashboard > Success</h1>
-      <%= render partial: "campaigns/seed", collection: @seeds %>
+      <%= render "campaigns/seeds", seeds: @seeds %>
     </div>
 
   </div>

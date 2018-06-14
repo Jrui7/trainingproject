@@ -3,36 +3,47 @@ class Campaign < ApplicationRecord
 
   def finalize_campaign
     self.seed.picks.includes(:user).each do |pick|
-      if pick.state == "validated"
-        if self.status == "success"
+
+      if pick.state == "finalized" || pick.state == "refund_failed"
+        previous_payment = JSON.parse(pick.deal_price)
+        begin
+        Stripe::Refund.create(
+          charge: previous_payment["id"]
+          )
+        pick.update(state: "validated")
+        rescue
+          pick.update(state: "refund_failed")
+        end
+      end
+
+      if self.status == "success"
+        unless pick.state == "pending" && pick.state == "campaign_closed" && pick.state == "cancelled"
+          customer_id = pick.user.customer_id
           if pick.price >= self.price
-            customer_id = pick.user.customer_id
             pick.amount = self.price
+            begin
             charge = Stripe::Charge.create(
               customer:     customer_id,   # You should store this customer id and re-use it.
               amount:       pick.amount_cents,
-              description:  "Deal confirmé pour #{pick.seed.title}",
+              description:  "#{pick.seed.title} via Pickalgo",
               currency:     pick.amount.currency
             )
             pick.update(deal_price: charge.to_json)
-            final_payment = JSON.parse(pick.deal_price)
-            if final_payment["paid"] == true
-              pick.update(state: "finalized")
-            else
+            pick.update(state: "finalized")
+            rescue
               pick.update(state: "error")
             end
           else
             pick.update(state: "pick_failed")
           end
-        else
-          pick.update(state: "campaign_failed")
         end
-
       else
-        pick.update(state: "campaign_closed")
+        pick.update(state: "campaign_failed")
       end
+
     end
   end
+
 
 
 end

@@ -43,3 +43,17 @@ h1 {
 .action-count {
     padding: 0 5px;
 }
+
+.selected-category {
+  font-weight: bold;
+  background-color: #FFFFFF;
+  border: 1px solid #e8e8e8 !important;
+  color: #337b80;
+}
+
+.edit_campaign {
+  .btn {
+    background-color: $blue;
+    color: #FFF;
+  }
+}

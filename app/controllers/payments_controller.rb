@@ -21,6 +21,7 @@ class PaymentsController < ApplicationController
           source: card,
           email:  @user.email
         )
+
         customer_id = customer.id
         @user.customer_id = customer_id
         @user.save
@@ -28,7 +29,7 @@ class PaymentsController < ApplicationController
       elsif params[:stripeToken]
         card = params[:stripeToken]
         cu = Stripe::Customer.retrieve("#{@user.customer_id}")
-        cu.source = card # obtained with Stripe.js
+        cu.source = card
         cu.save
         card = Stripe::Token.retrieve(card)["card"]
       else
@@ -43,7 +44,12 @@ class PaymentsController < ApplicationController
       #         description:  "Participation au deal pour #{@pick.seed.title} enregistrée",
       #         currency:     @pick.amount.currency
       #       )
+
       redirect_to pick_path(@pick)
+
+      rescue Stripe::CardError => e
+      flash[:alert] = e.message
+      redirect_to new_pick_payment_path(@pick)
 
     end
 
