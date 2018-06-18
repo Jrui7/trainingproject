@@ -6,12 +6,12 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.welcome.subject
   #
   def welcome(user)
-    @user = user
+    @user = User.find(user)
     mail to: @user.email, subject: "#{@user.pseudo}: en route pour une super expérience"
   end
 
   def payment_error(user_id)
     @user = User.find(user_id)
-    mail to: @user.email, subject: "Erreur de paiement"
+    mail to: @user.email, subject: "Erreur de paiement", from: 'contact@pickalgo.com'
   end
 end
