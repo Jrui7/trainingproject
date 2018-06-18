@@ -6,7 +6,7 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.find(params[:id])
     authorize @campaign
     @campaign.update(pending_campaign_params)
-    @campaign.finalize_campaign
+    FinalizeCampaignJob.perform_later(@campaign.id)
     redirect_to pending_path
   end
 
