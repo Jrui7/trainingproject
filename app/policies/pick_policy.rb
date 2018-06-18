@@ -17,6 +17,14 @@ class PickPolicy < ApplicationPolicy
     true
   end
 
+  def edit?
+    record.user == user || user.admin == true
+  end
+
+  def update_card?
+    record.user == user || user.admin == true
+  end
+
   def update?
     record.user == user
   end

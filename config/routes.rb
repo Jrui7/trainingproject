@@ -13,7 +13,11 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { :registrations => :registrations }
   resources :seeds, only: [:index, :new, :create, :update, :show], shallow: true do
-    resources :picks, only: [:index, :show, :create, :update, :destroy] do
+    resources :picks, only: [:index, :edit, :show, :create, :update, :destroy] do
+      member do
+        patch :update_card
+        put :update_card
+      end
       resources :exchanges, only: [:create, :update]
       resources :payments, only: [:new, :create, :destroy]
     end

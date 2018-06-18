@@ -1,0 +1,53 @@
+
+ <script src="https://js.stripe.com/v3/"></script>
+ <div class="paiement-container">
+  <div class="booking-confirmation">
+    <div class="row">
+      <div class="col-xs-12 col-md-8 col-md-offset-2 booking-form">
+        <div class="head">
+          <h2>Erreur lors du paiement</h2>
+          <div class="title-and-validation">
+            <div class="explanation">
+              <%= cl_image_tag @pick.seed.photos.first.path, :height=>75, :crop=>"scale" %>
+              <div class="explanation-paragraph">
+                <h4><%= @pick.seed.title %></h4>
+                <p>Prix original: <%= @pick.seed.price %> €</p>
+                <p class="picked">Votre pick: <%= @pick.price %> €
+                </p>
+              </div>
+            </div>
+            <div class="acompt-detail">La campagne est un succès et vous avez obtenu <%= @pick.seed.title %> pour <%= @campaign_price %> €. Cependant, la carte enregistrée lors de votre confirmation de participation ne peut être débitée. Merci de mettre à jour cette carte afin que nous puissions procéder au débit.
+            </div>
+          </div>
+        </div>
+        <div class="stripe-infos">
+          <div class="user-update-form">
+          <%= form_tag update_card_pick_path(@pick), id: "payment-form" , method: :patch do %>
+            <div class="form-row">
+              <label for="card-element">
+                Carte bancaire
+              </label>
+              <div id="card-element">
+                <!-- A Stripe Element will be inserted here. -->
+              </div>
+
+              <!-- Used to display form errors. -->
+              <div id="card-errors" role="alert"></div>
+            </div>
+            <div class="cgu-reminder"></div>
+            <button class="booking-button" id="validate-paiement">
+              <i class="fa fa-lock"></i>
+              <p>Payer <%= @campaign_price %> €</p>
+            </button>
+          <% end %>
+        </div>
+        <div class="loader-container hidden">
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/stripe-form" %>
+
