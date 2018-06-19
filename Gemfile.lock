@@ -102,6 +102,9 @@ GEM
       sass (>= 3.2)
     friendly_id (5.2.3)
       activerecord (>= 4.0.0)
+    gibbon (3.2.0)
+      faraday (>= 0.9.1)
+      multi_json (>= 1.11.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     http-cookie (1.0.3)
@@ -295,6 +298,7 @@ DEPENDENCIES
   figaro
   font-awesome-sass
   friendly_id (~> 5.2, >= 5.2.3)
+  gibbon
   jbuilder (~> 2.0)
   jquery-fileupload-rails
   jquery-rails
