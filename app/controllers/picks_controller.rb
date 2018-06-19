@@ -66,6 +66,8 @@ class PicksController < ApplicationController
   def update_card
     @pick = Pick.find(params[:id])
     authorize @pick
+    @campaign = @pick.seed.campaign.id
+    @user_id = @pick.user_id
     customer_id = User.find(@pick.user_id).customer_id
     card = params[:stripeToken]
     cu = Stripe::Customer.retrieve(customer_id)
@@ -81,6 +83,7 @@ class PicksController < ApplicationController
         currency:     @pick.amount.currency
       )
       @pick.update(payment: card, state: 'finalized', deal_price: charge.to_json)
+      CampaignMailer.pick_success(@user_id, @campaign, @pick.id).deliver_later
       redirect_to pick_path(@pick)
     rescue Stripe::CardError => e
       flash[:alert] = e.message
