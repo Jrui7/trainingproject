@@ -20,6 +20,7 @@ class User < ApplicationRecord
    has_many :signal_seed
 
   after_create :send_welcome_email
+  after_create :subscribe_to_newsletter
 
   extend FriendlyId
   friendly_id :pseudo, use: :slugged
@@ -86,6 +87,10 @@ class User < ApplicationRecord
     # UserMailer.welcome(self).deliver_now
     UserMailer.welcome(self.id).deliver_later(wait_until: 1.day.from_now)
 
+  end
+
+  def subscribe_to_newsletter
+    AddUserToMarketingListJob.perform_later(self.id)
   end
 
 end
