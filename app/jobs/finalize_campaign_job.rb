@@ -20,6 +20,7 @@ class FinalizeCampaignJob < ApplicationJob
       if campaign.status == "success"
         unless pick.state == "pending" && pick.state == "campaign_closed" && pick.state == "cancelled"
           customer_id = pick.user.customer_id
+          user_id = pick.user_id
           if pick.price >= campaign.price
             pick.amount = campaign.price
             begin
@@ -31,10 +32,10 @@ class FinalizeCampaignJob < ApplicationJob
             )
             pick.update(deal_price: charge.to_json)
             pick.update(state: "finalized")
+            CampaignMailer.pick_success(user_id, campaign.id, pick.id).deliver_later
             rescue
               pick.update(state: "error")
-              user_id = pick.user_id
-              UserMailer.payment_error(user_id).deliver_later
+              CampaignMailer.payment_error(user_id).deliver_later
             end
           else
             pick.update(state: "pick_failed")

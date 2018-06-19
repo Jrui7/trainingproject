@@ -73,7 +73,6 @@ class PicksController < ApplicationController
     cu.save
     @pick.amount = @pick.seed.campaign.price
     card = Stripe::Token.retrieve(card)["card"]
-    binding.pry
     begin
       charge = Stripe::Charge.create(
         customer:     customer_id,   # You should store this customer id and re-use it.
