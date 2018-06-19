@@ -16,9 +16,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:pseudo, :date_of_birth])
   end
 
-  def after_sign_in_path_for(resource_or_scope)
-    seeds_path
-  end
+
 
   def default_url_options
   { host: ENV["HOST"] || "localhost:3000" }
@@ -43,7 +41,10 @@ class ApplicationController < ActionController::Base
       devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
     end
 
-
+    protected
+      def after_sign_in_path_for(resource)
+        request.env['omniauth.origin'] || stored_location_for(resource) || seeds_path
+      end
 
 
 

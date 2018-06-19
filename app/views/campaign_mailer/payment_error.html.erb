@@ -1,1 +1,2 @@
 <p><%= @user.pseudo %> , il s'est produit une erreur lors du paiement de votre pick. Merci de bien vouloir suivre ce lien et mettre à jour vos coordonnées bancaires</p>
+<%= link_to 'Modifier', edit_pick_url(@pick.id) %>

@@ -35,7 +35,7 @@ class FinalizeCampaignJob < ApplicationJob
             CampaignMailer.pick_success(user_id, campaign.id, pick.id).deliver_later
             rescue
               pick.update(state: "error")
-              CampaignMailer.payment_error(user_id).deliver_later
+              CampaignMailer.payment_error(user_id, campaign.id, pick.id).deliver_later
             end
           else
             pick.update(state: "pick_failed")
