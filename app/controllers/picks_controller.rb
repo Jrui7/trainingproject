@@ -57,6 +57,41 @@ class PicksController < ApplicationController
     end
   end
 
+  def edit
+    @pick = Pick.find(params[:id])
+    authorize @pick
+    @campaign_price = @pick.seed.campaign.price
+  end
+
+  def update_card
+    @pick = Pick.find(params[:id])
+    authorize @pick
+    @campaign = @pick.seed.campaign.id
+    @user_id = @pick.user_id
+    customer_id = User.find(@pick.user_id).customer_id
+    card = params[:stripeToken]
+    cu = Stripe::Customer.retrieve(customer_id)
+    cu.source = card
+    cu.save
+    @pick.amount = @pick.seed.campaign.price
+    card = Stripe::Token.retrieve(card)["card"]
+    begin
+      charge = Stripe::Charge.create(
+        customer:     customer_id,   # You should store this customer id and re-use it.
+        amount:       @pick.amount_cents,
+        description:  "Participation au deal pour #{@pick.seed.title} enregistrée",
+        currency:     @pick.amount.currency
+      )
+      @pick.update(payment: card, state: 'finalized', deal_price: charge.to_json)
+      CampaignMailer.pick_success(@user_id, @campaign, @pick.id).deliver_later
+      redirect_to pick_path(@pick)
+    rescue Stripe::CardError => e
+      flash[:alert] = e.message
+      redirect_to edit_pick_path(@pick)
+    end
+
+  end
+
 
   def destroy
     @pick = Pick.find(params[:id])
