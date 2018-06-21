@@ -1,19 +1,21 @@
 <div class="display-card">
   <div class="title-and-validation">
     <h3>Paiement</h3>
-    <div class="info-detail">Aucun acompte ou paiement ne vous est demandé pour enregistrer votre participation à la campagne. Renseignez simplement la carte sur laquelle vous souhaitez être débité en cas d'acceptation de votre proposition d'achat par le vendeur.
+    <div class="info-and-inputs">
+      <div class="info-detail">Aucun acompte ou paiement ne vous est demandé pour enregistrer votre participation à la campagne. Renseignez simplement la carte sur laquelle vous souhaitez être débité en cas d'acceptation de votre proposition d'achat par le vendeur.
+      </div>
     </div>
-  </div>
-  <div class="input-and-icon">
-    <i class="fa fa-credit-card fa-fw left-icon"></i>
-    <div class="form-control">
-      <div class="left-part">
-        <div class="stripe-block"><%= customer_infos["brand"]%></div>
-        <div class="stripe-block">
-          <i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><%= customer_infos["last4"] %>
-        </div>
-        <div class="stripe-block">
-          <%= customer_infos["exp_month"]%>/<%= customer_infos["exp_year"] %>
+    <div class="input-and-icon">
+      <i class="fa fa-credit-card fa-fw left-icon"></i>
+      <div class="form-control">
+        <div class="left-part">
+          <div class="stripe-block"><%= customer_infos["brand"]%></div>
+          <div class="stripe-block">
+            <i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><%= customer_infos["last4"] %>
+          </div>
+          <div class="stripe-block">
+            <%= customer_infos["exp_month"]%>/<%= customer_infos["exp_year"] %>
+          </div>
         </div>
       </div>
     </div>

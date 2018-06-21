@@ -4,7 +4,7 @@
   <div class="booking-confirmation">
     <h2>Enregistrez votre participation</h2>
     <div class="recap-and-form">
-      <div class="address-and-stripe">
+      <div class="address input-form">
         <div class="address-form">
           <% if  @user.addresses.any? %>
             <%= render "payments/address", customer_address: @customer_address %>
@@ -40,6 +40,44 @@
           </div>
           <div class="info-detail">Vous n'avez rien à payer aujourd'hui, et ne serez débité que si nous arrivons à obtenir un prix inférieur ou égal à celui que vous avez proposé.
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="recap-and-form">
+      <div class="input-form stripe">
+        <% if @customer_infos %>
+          <div id="update-customer-stripe">
+            <%= render "payments/card", customer_infos: @customer_infos %>
+          </div>
+        <% end %>
+        <%= form_tag pick_payments_path(@pick), class: "#{'hidden' if @customer_infos}", id: "payment-form" do %>
+          <div class="form-row">
+            <label for="card-element">
+              Paiement
+            </label>
+            <div id="card-element">
+              <!-- A Stripe Element will be inserted here. -->
+            </div>
+
+            <!-- Used to display form errors. -->
+            <div id="card-errors" role="alert"></div>
+          </div>
+          <div class="cgu-reminder">En validant ma participation, je déclare avoir pris connaissance et accepté sans réserve les CGU et CGV</div>
+          <button class="booking-button" id="validate-paiement">
+            <i class="fa fa-lock"></i>
+            <p>Confirmer participation</p>
+          </button>
+        <% end %>
+        <%= link_to "Save and book", pick_payments_path(@pick), class: "hidden", id: "save-and-book",  method: :post %>
+        <div class="with_customer_id <%= 'hidden' unless @customer_infos %>">
+          <div class="cgu-reminder">En validant ma participation, je déclare avoir pris connaissance et accepté sans réserve les CGU et CGV</div>
+          <div class="booking-button" id="with_customer_id">
+            <i class="fa fa-lock"></i>
+            <p>Confirmer participation</p>
+          </div>
+        </div>
+        </div>
+        <div class="loader-container hidden">
         </div>
       </div>
     </div>
