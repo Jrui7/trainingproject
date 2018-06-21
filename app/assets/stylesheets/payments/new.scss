@@ -231,3 +231,55 @@
       margin: 0 10px;
     }
 }
+
+@media(max-width: 768px) {
+
+  .paiement-container {
+    padding-top: 0;
+    margin-bottom: 0;
+  }
+
+  .booking-confirmation h2 {
+      margin-bottom: 25px;
+      font-size: 22px;
+      padding: 0 10px;
+  }
+  .recap-and-form {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .input-form .address-form {
+    border-radius: 0;
+  }
+
+  .recap {
+    border-radius: 0;
+    flex: 0 0 100%;
+  }
+
+  .recap h3 {
+    font-size: 20px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  .input-form h3 {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    font-size: 20px;
+  }
+
+  .input-form .info-and-inputs {
+      padding: 10px 15px 20px;
+  }
+
+  .card-container {
+    padding: 0 15px 20px;
+  }
+
+  .stripe {
+    margin-top: 0;
+  }
+
+}

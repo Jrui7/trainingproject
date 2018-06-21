@@ -5,7 +5,7 @@
       <div class="right-part">
         <div class="stripe-block"><%= customer_infos["brand"]%></div>
         <div class="stripe-block">
-          **** **** **** <%= customer_infos["last4"] %>
+          <div class="hidden-xs">**** ****</div> **** <%= customer_infos["last4"] %>
         </div>
         <div class="stripe-block">
           <%= customer_infos["exp_month"]%>/<%= customer_infos["exp_year"] %>
