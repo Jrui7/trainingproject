@@ -19,7 +19,7 @@ function displayForm() {
   $(".display-card").click(function(){
     $("#update-customer-stripe").slideToggle();
     $("#payment-form").removeClass("hidden");
-    $(".with_customer_id").hide();
+    $(".with_customer_id").addClass("hidden");
   })
 }
 

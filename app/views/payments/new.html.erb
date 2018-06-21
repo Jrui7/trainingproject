@@ -45,39 +45,42 @@
     </div>
     <div class="recap-and-form">
       <div class="input-form stripe">
-        <% if @customer_infos %>
-          <div id="update-customer-stripe">
-            <%= render "payments/card", customer_infos: @customer_infos %>
+        <h3>Paiement</h3>
+        <div class="info-and-inputs">
+          <div class="info-detail">Renseignez la carte à débiter en cas de succès de votre proposition d'achat
           </div>
-        <% end %>
-        <%= form_tag pick_payments_path(@pick), class: "#{'hidden' if @customer_infos}", id: "payment-form" do %>
-          <div class="form-row">
-            <label for="card-element">
-              Paiement
-            </label>
-            <div id="card-element">
-              <!-- A Stripe Element will be inserted here. -->
+        </div>
+          <div class="card-container">
+          <% if @customer_infos %>
+            <div id="update-customer-stripe">
+              <%= render "payments/card", customer_infos: @customer_infos %>
             </div>
-
-            <!-- Used to display form errors. -->
-            <div id="card-errors" role="alert"></div>
+            <%= link_to "Save and book", pick_payments_path(@pick), class: "hidden", id: "save-and-book",  method: :post %>
+            <div class="with_customer_id">
+              <div class="cgu-reminder">En validant ma participation, je déclare avoir pris connaissance et accepté sans réserve les CGU et CGV</div>
+              <div class="booking-button" id="with_customer_id">
+                <i class="fa fa-lock"></i>
+                <p>Confirmer participation</p>
+              </div>
+            </div>
+          <% end %>
+          <%= form_tag pick_payments_path(@pick), class: "#{'hidden' if @customer_infos}", id: "payment-form" do %>
+            <div class="form-row">
+              <div id="card-element">
+                <!-- A Stripe Element will be inserted here. -->
+              </div>
+              <!-- Used to display form errors. -->
+              <div id="card-errors" role="alert"></div>
+            </div>
+            <div class="cgu-reminder">En validant ma participation, je déclare avoir pris connaissance et accepté sans réserve les CGU et CGV</div>
+            <button class="booking-button" id="validate-paiement">
+              <i class="fa fa-lock"></i>
+              <p>Confirmer participation</p>
+            </button>
+            <% end %>
           </div>
-          <div class="cgu-reminder">En validant ma participation, je déclare avoir pris connaissance et accepté sans réserve les CGU et CGV</div>
-          <button class="booking-button" id="validate-paiement">
-            <i class="fa fa-lock"></i>
-            <p>Confirmer participation</p>
-          </button>
-        <% end %>
-        <%= link_to "Save and book", pick_payments_path(@pick), class: "hidden", id: "save-and-book",  method: :post %>
-        <div class="with_customer_id <%= 'hidden' unless @customer_infos %>">
-          <div class="cgu-reminder">En validant ma participation, je déclare avoir pris connaissance et accepté sans réserve les CGU et CGV</div>
-          <div class="booking-button" id="with_customer_id">
-            <i class="fa fa-lock"></i>
-            <p>Confirmer participation</p>
+          <div class="loader-container hidden">
           </div>
-        </div>
-        </div>
-        <div class="loader-container hidden">
         </div>
       </div>
     </div>
