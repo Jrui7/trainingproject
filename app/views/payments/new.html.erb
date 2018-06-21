@@ -2,47 +2,73 @@
  <script src="https://js.stripe.com/v3/"></script>
  <div class="paiement-container">
   <div class="booking-confirmation">
-    <div class="row">
-      <div class="col-xs-12 col-md-8 col-md-offset-2 booking-form">
-        <div class="head">
-          <h2>Enregistrer votre participation</h2>
-          <div class="title-and-validation">
-            <h3>Récap</h3>
-            <div class="explanation">
-              <%= cl_image_tag @pick.seed.photos.first.path, :height=>75, :crop=>"scale" %>
-              <div class="explanation-paragraph">
-                <h4><%= @pick.seed.title %></h4>
-                <p>Prix original: <%= @pick.seed.price %> €</p>
-                <p class="picked">Votre pick: <%= @pick.price %> €
-                </p>
+    <h2>Enregistrez votre participation</h2>
+    <div class="recap-and-form">
+      <div class="address input-form">
+        <div class="address-form">
+          <% if  @user.addresses.any? %>
+            <%= render "payments/address", customer_address: @customer_address %>
+            <% else %>
+            <%= render "payments/create-address", customer_address: @customer_address %>
+          <% end %>
+        </div>
+      </div>
+      <div class="recap">
+        <h3>Récap</h3>
+        <div class="explanation">
+          <div class="image-title-price">
+            <%= cl_image_tag @pick.seed.photos.first.path, :height=>75, :crop=>"scale" %>
+            <div class="recap-paragraph">
+              <div>
+              <h4><%= @pick.seed.title %></h4>
+              <p>Prix original: <%= @pick.seed.price %> €</p>
               </div>
+              Pické le: <%= @pick.created_at.strftime("%d/%m/%Y") %>
             </div>
-            <div class="acompt-detail">Le versement d'un acompte de <%= humanized_money_with_symbol(@pick.amount)%> vous est demandé pour bloquer votre participation. Il vous sera intégralement remboursé à la fin de la campagne.
-            </div>
+          </div>
+          <div class="how-much">
+            <div class="text">Coût livraison:</div>
+            <p class="price">3.90 €</p>
+          </div>
+          <div class="how-much">
+            <div class="text">Pické pour:</div>
+            <p class="price"><%= @pick.price %> €</p>
+          </div>
+          <div class="how-much last">
+            <div class="text"><b>Coût total max:</b></div>
+            <p class="price"><%= @pick.price + 3.90 %> €</p>
+          </div>
+          <div class="info-detail">Vous n'avez rien à payer aujourd'hui, et ne serez débité que si nous arrivons à obtenir un prix inférieur ou égal à celui que vous avez proposé.
           </div>
         </div>
-        <div class="stripe-infos">
-          <div class="user-update-form">
-            <% if  @user.addresses.any? %>
-              <%= render "payments/address", customer_address: @customer_address %>
-              <% else %>
-              <%= render "payments/create-address", customer_address: @customer_address %>
-            <% end %>
+      </div>
+    </div>
+    <div class="recap-and-form">
+      <div class="input-form stripe">
+        <h3>Paiement</h3>
+        <div class="info-and-inputs">
+          <div class="info-detail">Renseignez la carte à débiter en cas de succès de votre proposition d'achat
           </div>
-          <% if  @customer_infos %>
+        </div>
+          <div class="card-container">
+          <% if @customer_infos %>
             <div id="update-customer-stripe">
               <%= render "payments/card", customer_infos: @customer_infos %>
+            </div>
+            <%= link_to "Save and book", pick_payments_path(@pick), class: "hidden", id: "save-and-book",  method: :post %>
+            <div class="with_customer_id">
+              <div class="cgu-reminder">En validant ma participation, je déclare avoir pris connaissance et accepté sans réserve les CGU et CGV</div>
+              <div class="booking-button" id="with_customer_id">
+                <i class="fa fa-lock"></i>
+                <p>Confirmer participation</p>
+              </div>
             </div>
           <% end %>
           <%= form_tag pick_payments_path(@pick), class: "#{'hidden' if @customer_infos}", id: "payment-form" do %>
             <div class="form-row">
-              <label for="card-element">
-                Paiement
-              </label>
               <div id="card-element">
                 <!-- A Stripe Element will be inserted here. -->
               </div>
-
               <!-- Used to display form errors. -->
               <div id="card-errors" role="alert"></div>
             </div>
@@ -51,23 +77,16 @@
               <i class="fa fa-lock"></i>
               <p>Confirmer participation</p>
             </button>
-          <% end %>
-          <%= link_to "Save and book", pick_payments_path(@pick), class: "hidden", id: "save-and-book",  method: :post %>
-          <div class="with_customer_id <%= 'hidden' unless @customer_infos %>">
-            <div class="cgu-reminder">En validant ma participation, je déclare avoir pris connaissance et accepté sans réserve les CGU et CGV</div>
-            <div class="booking-button" id="with_customer_id">
-              <i class="fa fa-lock"></i>
-              <p>Confirmer participation</p>
-            </div>
+            <% end %>
           </div>
-        </div>
-        <div class="loader-container hidden">
-        </div>
+          <div class="loader-container hidden">
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
 <%= render "shared/stripe-form" %>
 

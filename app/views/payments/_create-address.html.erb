@@ -1,5 +1,8 @@
 <%= simple_form_for customer_address, remote: true do |f| %>
   <h3>Livraison</h3>
+  <div class="info-and-inputs">
+    <div class="info-detail">Renseignez l'adresse à laquelle vous souhaitez être livré en cas d'acceptation de votre proposition d'achat par le vendeur.
+    </div>
       <div class="inputs">
         <div class="input-and-icon">
           <i class="fa fa-user left-icon"></i>
@@ -29,4 +32,5 @@
       <div class="update-address-button">
         <%= f.button :submit, value: "Enregistrer", class: "btn update-delivery-infos hidden" %>
       </div>
+    </div>
   <% end %>
