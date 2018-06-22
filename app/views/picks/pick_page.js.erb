@@ -1,0 +1,7 @@
+$('.pick-infinite').append('<%= j render @picks %>');
+<% if @picks.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate @picks %>');
+<% else %>
+  $('.layout').off('scroll');
+  $('.pagination').remove();
+<% end %>
