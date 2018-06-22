@@ -36,14 +36,18 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
             <span class="glyphicon glyphicon-leaf", id="logo-home"></span>
           </div>
           <div class="right-links">
-            <div class="hidden-xs hidden-sm connect-button">
-              CONNEXION
-            </div>
-            <div class="connexion-xs hidden-md hidden-lg">
-              <%= link_to new_user_session_path do%>
+            <% if user_signed_in? %>
+              <%= link_to "CONNEXION", seeds_path %>
+            <% else %>
+              <div class="hidden-xs hidden-sm connect-button">
                 CONNEXION
-              <% end %>
-            </div>
+              </div>
+              <div class="connexion-xs hidden-md hidden-lg">
+                <%= link_to new_user_session_path do%>
+                  CONNEXION
+                <% end %>
+              </div>
+            <% end %>
             <div class="log-in-home hidden">
               <%= render "devise/sessions/login" %>
             </div>
