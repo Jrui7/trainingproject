@@ -4,6 +4,7 @@ class Pick < ApplicationRecord
   belongs_to :user
   has_many :exchanges, dependent: :destroy
   monetize :amount_cents
+  self.per_page = 10
 
   validates :price,
     presence: {
@@ -39,7 +40,11 @@ class Pick < ApplicationRecord
   end
 
   def self.my_pick(user, seed)
-    Pick.where(user_id: user.id, seed_id: seed.id)
+    where(user_id: user.id, seed_id: seed.id)
+  end
+
+  def self.pending_picks(user)
+    where(user_id: user, state: "pending")
   end
 
 

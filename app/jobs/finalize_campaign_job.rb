@@ -22,7 +22,7 @@ class FinalizeCampaignJob < ApplicationJob
           customer_id = pick.user.customer_id
           user_id = pick.user_id
           if pick.price >= campaign.price
-            pick.amount = campaign.price
+            pick.amount = campaign.price + 3.9
             begin
             charge = Stripe::Charge.create(
               customer:     customer_id,   # You should store this customer id and re-use it.

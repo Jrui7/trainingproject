@@ -114,11 +114,15 @@ class PicksController < ApplicationController
   end
 
   def my_picks
-    @picks = current_user.pending_picks
+    @picks = Pick.pending_picks(current_user).select {|pick| pick.seed.ongoing?}
   end
 
   def pick_history
-    @picks = current_user.picks.includes(:seed).newest
+    @picks = current_user.picks.includes(:seed).newest.paginate(page: params[:page])
+    respond_to do |format|
+      format.html
+      format.js { render 'picks/pick_page' }
+    end
   end
 
 
