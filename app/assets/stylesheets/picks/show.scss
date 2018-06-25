@@ -158,6 +158,21 @@
   text-align: right;
 }
 
+.recap-and-pay {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.stripe-card-form {
+  margin-left: 30px;
+  flex: 0 0 60%;
+  background-color: #FFF;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 10px 20px 30px;
+}
+
 
 
 @media(max-width: 992px) {
@@ -165,7 +180,12 @@
   }
 
   @media(max-width: 768px) {
-
+  .stripe-card-form {
+    flex: 0 0 100%;
+    margin-left: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
 
     }
 

@@ -1,51 +1,63 @@
 
  <script src="https://js.stripe.com/v3/"></script>
- <div class="paiement-container">
-  <div class="booking-confirmation">
-    <div class="row">
-      <div class="col-xs-12 col-md-8 col-md-offset-2 booking-form">
-        <div class="head">
-          <h2>Erreur lors du paiement</h2>
-          <div class="title-and-validation">
-            <div class="explanation">
-              <%= cl_image_tag @pick.seed.photos.first.path, :height=>75, :crop=>"scale" %>
-              <div class="explanation-paragraph">
-                <h4><%= @pick.seed.title %></h4>
-                <p>Prix original: <%= @pick.seed.price %> €</p>
-                <p class="picked">Votre pick: <%= @pick.price %> €
-                </p>
+<div class="payment-container">
+   <div class="booking-confirmation">
+    <h2>Erreur lors du paiement</h2>
+    <div class="recap-and-pay">
+      <div class="recap">
+        <h3>Récap</h3>
+        <div class="explanation">
+          <div class="image-title-price">
+            <%= cl_image_tag @pick.seed.photos.first.path, :height=>75, :crop=>"scale" %>
+            <div class="recap-paragraph">
+              <div>
+              <h4><%= @pick.seed.title %></h4>
+              <p>Prix original: <%= @pick.seed.price %> €</p>
               </div>
-            </div>
-            <div class="acompt-detail">La campagne est un succès et vous avez obtenu <%= @pick.seed.title %> pour <%= @campaign_price %> €. Cependant, la carte enregistrée lors de votre confirmation de participation ne peut être débitée. Merci de mettre à jour cette carte afin que nous puissions procéder au débit.
+              Pické le: <%= @pick.created_at.strftime("%d/%m/%Y") %> pour <%= @pick.price %> €
             </div>
           </div>
-        </div>
-        <div class="stripe-infos">
-          <div class="user-update-form">
-          <%= form_tag update_card_pick_path(@pick), id: "payment-form" , method: :patch do %>
-            <div class="form-row">
-              <label for="card-element">
-                Carte bancaire
-              </label>
-              <div id="card-element">
-                <!-- A Stripe Element will be inserted here. -->
-              </div>
-
-              <!-- Used to display form errors. -->
-              <div id="card-errors" role="alert"></div>
-            </div>
-            <div class="cgu-reminder"></div>
-            <button class="booking-button" id="validate-paiement">
-              <i class="fa fa-lock"></i>
-              <p>Payer <%= @campaign_price %> €</p>
-            </button>
-          <% end %>
-        </div>
-        <div class="loader-container hidden">
-        </div>
+          <div class="how-much">
+            <div class="text">Prix négocié :</div>
+            <p class="price"><%= @pick.seed.campaign.price %>.00 €</p>
+          </div>
+          <div class="how-much">
+            <div class="text">Coût livraison:</div>
+            <p class="price">3.90 €</p>
+          </div>
+          <div class="how-much last">
+            <div class="text"><b>A payer:</b></div>
+            <p class="price"><%= @pick.seed.campaign.price + 3.90 %> €</p>
+          </div>
         </div>
       </div>
+      <div class="stripe-card-form">
+        <div class="info-detail">La campagne est un succès et vous avez obtenu <%= @pick.seed.title %> pour <%= @campaign_price %> €. Cependant, la carte enregistrée lors de votre confirmation de participation ne peut être débitée. Merci de mettre à jour cette carte afin que nous puissions procéder au débit.
+        </div>
+        <div class="user-update-form">
+        <%= form_tag update_card_pick_path(@pick), id: "payment-form" , method: :patch do %>
+          <div class="form-row">
+            <label for="card-element">
+              Carte bancaire
+            </label>
+            <div id="card-element">
+              <!-- A Stripe Element will be inserted here. -->
+            </div>
+
+            <!-- Used to display form errors. -->
+            <div id="card-errors" role="alert"></div>
+          </div>
+          <div class="cgu-reminder"></div>
+          <button class="booking-button" id="validate-paiement">
+            <i class="fa fa-lock"></i>
+            <p>Payer <%= @campaign_price + 3.9 %> €</p>
+          </button>
+        <% end %>
+      </div>
+      <div class="loader-container hidden">
+      </div>
     </div>
+   </div>
   </div>
 </div>
 
