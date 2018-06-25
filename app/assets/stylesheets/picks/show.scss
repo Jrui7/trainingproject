@@ -173,6 +173,22 @@
   padding: 10px 20px 30px;
 }
 
+.link-container {
+  margin-top: 15px;
+  text-align: right;
+}
+
+.edit-card-link {
+  border: 1px solid $blue;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: $blue;
+  color: #FFF;
+  &:hover {
+    color: #FFF;
+  }
+}
+
 
 
 @media(max-width: 992px) {
