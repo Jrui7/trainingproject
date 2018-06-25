@@ -40,7 +40,9 @@
                       <% if pick.state == "pending" %>
                         <h5>Cliquez sur <b>"Supprimer"</b> pour retirer "<%= pick.seed.title %>"" de vos picks, sinon, cliquez sur <b>"Retour"</b>.</h5>
                       <% else %>
-                        <h5>En supprimant votre pick vous annulez votre participation à la campagne d'achat pour obtenir <%= pick.seed.title %>. Nous vous remboursons dès maintenant l'intégralité de l'acompte que vous aviez versé. </h5>
+                        <h5>En supprimant votre pick vous annulez votre participation à la campagne d'achat pour obtenir <%= pick.seed.title %>.
+                        <br>
+                        <br> Cliquez sur <b>"Supprimer"</b> pour retirer "<%= pick.seed.title %>"" de vos picks, sinon, cliquez sur <b>"Retour"</b>. </h5>
                       <% end %>
                     </div>
                     <div class="modal-footer">

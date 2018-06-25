@@ -1,9 +1,9 @@
 class FinalizeCampaignJob < ApplicationJob
   queue_as :default
 
-  def perform(campaign_id)
-    campaign = Campaign.find(campaign_id)
-      campaign.seed.picks.includes(:user).each do |pick|
+  def perform(pick_id)
+    pick = Pick.find(pick_id)
+    campaign = pick.seed.campaign
 
       if pick.state == "finalized" || pick.state == "refund_failed"
         previous_payment = JSON.parse(pick.deal_price)
@@ -32,10 +32,10 @@ class FinalizeCampaignJob < ApplicationJob
             )
             pick.update(deal_price: charge.to_json)
             pick.update(state: "finalized")
-            CampaignMailer.pick_success(user_id, campaign.id, pick.id).deliver_later
+            CampaignMailer.pick_success(user_id, campaign.id, pick_id).deliver_later
             rescue
               pick.update(state: "error")
-              CampaignMailer.payment_error(user_id, campaign.id, pick.id).deliver_later
+              CampaignMailer.payment_error(user_id, campaign.id, pick_id).deliver_later
             end
           else
             pick.update(state: "pick_failed")
@@ -44,7 +44,5 @@ class FinalizeCampaignJob < ApplicationJob
       else
         pick.update(state: "campaign_failed")
       end
-
-    end
   end
 end
