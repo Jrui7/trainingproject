@@ -71,10 +71,11 @@ class PicksController < ApplicationController
     customer_id = User.find(@pick.user_id).customer_id
     card = params[:stripeToken]
     cu = Stripe::Customer.retrieve(customer_id)
-    cu.source = card
+    cu.sources.create(source: card)
+    card = Stripe::Token.retrieve(card)["card"]
+    cu.default_source = card
     cu.save
     @pick.amount = @pick.seed.campaign.price + 3.9
-    card = Stripe::Token.retrieve(card)["card"]
     begin
       charge = Stripe::Charge.create(
         customer:     customer_id,   # You should store this customer id and re-use it.

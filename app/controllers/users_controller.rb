@@ -50,28 +50,13 @@ class UsersController < ApplicationController
     @user = User.friendly.find(params[:id])
     authorize @user
     cu = Stripe::Customer.retrieve("#{@user.customer_id}")
-    cu.source = params[:stripeToken] # obtained with Stripe.js
+    card = params[:stripeToken]
+    cu.sources.create(source: card)
+    card = Stripe::Token.retrieve(card)["card"]
+    cu.default_source = card
     cu.save
-    @customer_infos = cu.sources.data[0]
-    respond_to do |format|
-      format.html {redirect_to user_path(@user)}
-      format.js
-    end
+    redirect_to user_path(@user)
   end
-
-
-  def update_card
-    @user = current_user
-    authorize @user
-    url = Rails.application.routes.recognize_path(request.referrer)
-    pick = Pick.find(url[:pick_id])
-    cu = Stripe::Customer.retrieve("#{@user.customer_id}")
-    cu.source = params[:stripeToken] # obtained with Stripe.js
-    cu.save
-    redirect_to new_pick_payment_path(pick)
-  end
-
-
 
   private
 
