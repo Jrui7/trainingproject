@@ -9,6 +9,7 @@ class User < ApplicationRecord
    # validates :insta, url: true
    # validates :facebook, url: true
    # validates :youtube, url: true
+   validates :terms_of_service, acceptance: { message: 'Merci de valider' }
 
    has_many :seeds
    has_many :picks
