@@ -51,15 +51,11 @@ class UsersController < ApplicationController
     authorize @user
     cu = Stripe::Customer.retrieve("#{@user.customer_id}")
     card = params[:stripeToken]
-    cu.sources.create({:source => card})
+    cu.sources.create(source: card)
     card = Stripe::Token.retrieve(card)["card"]
     cu.default_source = card
     cu.save
-    @customer_infos = cu.sources.data[0]
-    respond_to do |format|
-      format.html {redirect_to user_path(@user)}
-      format.js
-    end
+    redirect_to user_path(@user)
   end
 
 

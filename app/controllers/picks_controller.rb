@@ -71,7 +71,7 @@ class PicksController < ApplicationController
     customer_id = User.find(@pick.user_id).customer_id
     card = params[:stripeToken]
     cu = Stripe::Customer.retrieve(customer_id)
-    cu.sources.create({:source => card})
+    cu.sources.create(source: card)
     card = Stripe::Token.retrieve(card)["card"]
     cu.default_source = card
     cu.save
