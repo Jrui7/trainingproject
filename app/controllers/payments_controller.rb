@@ -14,7 +14,7 @@ class PaymentsController < ApplicationController
     def create
       @user = current_user
       pick_address = @user.addresses.last
-
+      binding.pry
       if @user.customer_id.blank?
         card = params[:stripeToken]
         customer = Stripe::Customer.create(

@@ -25,7 +25,8 @@ class FinalizeCampaignJob < ApplicationJob
             pick.amount = campaign.price + 3.9
             begin
             charge = Stripe::Charge.create(
-              customer:     customer_id,   # You should store this customer id and re-use it.
+              card:     pick.payment["id"],
+              customer:     customer_id,
               amount:       pick.amount_cents,
               description:  "#{pick.seed.title} via Pickalgo",
               currency:     pick.amount.currency
