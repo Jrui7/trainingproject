@@ -61,6 +61,20 @@
 
 }
 
+.checkbox-and-text {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+
+  a {
+    margin-left: 4px;
+  }
+}
+
+#user_terms_of_service {
+  margin: 0 10px 0 0;
+}
+
 @media screen and (max-width: 480px) {
 
     .sign-container {
