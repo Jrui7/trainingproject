@@ -29,9 +29,10 @@ class PaymentsController < ApplicationController
       elsif params[:stripeToken]
         card = params[:stripeToken]
         cu = Stripe::Customer.retrieve("#{@user.customer_id}")
-        cu.source = card
-        cu.save
+        cu.sources.create({:source => card})
         card = Stripe::Token.retrieve(card)["card"]
+        cu.default_source = card
+        cu.save
       else
         customer_id = @user.customer_id
         card = Stripe::Customer.retrieve(customer_id)["sources"]["data"].first
