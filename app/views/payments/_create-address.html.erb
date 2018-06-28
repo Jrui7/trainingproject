@@ -1,11 +1,12 @@
 <%= simple_form_for customer_address, remote: true do |f| %>
-  <h3>Livraison</h3>
+  <h3 id="address-form">Livraison</h3>
   <div class="info-and-inputs">
     <div class="info-detail">Renseignez l'adresse à laquelle vous souhaitez être livré en cas d'acceptation de votre proposition d'achat par le vendeur.
     </div>
       <div class="inputs">
         <div class="input-and-icon">
           <i class="fa fa-user left-icon"></i>
+          <a href="#address-form" id="go-to-form" class='hidden'></a>
           <div class="fields-address">
             <%= f.input :first_name, class: "input-group-field", placeholder: "Prénom", label: false %>
             <%= f.input :last_name, class: "input-group-field", placeholder: "Nom", label: false %>
