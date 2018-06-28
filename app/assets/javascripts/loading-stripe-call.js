@@ -31,12 +31,16 @@ function directPayment() {
     var zipCode = $("#address_zip_code").val();
     var city = $("#address_city").val();
 
+    if (firstName == "" || lastName == "" || addressStreet == "" || zipCode == "" || city == "" ) {
+      $("#go-to-form").click();
+    }
+
     if (firstName == "" || lastName == "" ) {
-      $(".fa.fa-user").css({ 'color': 'red', 'border-color': 'red' });
+      $(".fa.fa-user").addClass("shake").css({ 'color': 'red', 'border-color': 'red' });
     } else {
       $(".fa.fa-user").removeAttr('style');
     } if (addressStreet == "" || zipCode == "" || city == "" ) {
-      $(".fa.fa-truck").css({ 'color': 'red', 'border-color': 'red' });
+      $(".fa.fa-truck").addClass("shake").css({ 'color': 'red', 'border-color': 'red' });
     } else {
       $(".fa.fa-truck").removeAttr('style');
     }

@@ -232,6 +232,12 @@
     }
 }
 
+#address-form {
+  &:focus {
+    outline: none;
+  }
+}
+
 @media(max-width: 768px) {
 
   .paiement-container {
