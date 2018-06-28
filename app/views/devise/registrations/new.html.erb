@@ -13,6 +13,7 @@
                                         end_year: Date.today.year - 90,
                                         placeholder: { year: 'Année', month: 'mois', day: 'jour' },
                                         order: [:day, :month, :year]  %>
+            <p>Vous devez avoir plus de 16 ans pour vous enregistrer</p>
 
             <%= f.input :pseudo, required: true, autofocus: true %>
             <%= f.input :email, required: true, autofocus: true %>
@@ -27,3 +28,5 @@
     </div>
   </div>
 </div>
+
+<%= render 'shared/footer' %>
