@@ -7,6 +7,7 @@ class SendPickReminderJob < ApplicationJob
       PickreminderMailer.send_reminder_email(pick.id, pick.user_id)
       pick.reminder = true
       pick.save
+      puts "email sent"
     end
   end
 end
