@@ -32,15 +32,25 @@ function directPayment() {
     var city = $("#address_city").val();
 
     if (firstName == "" || lastName == "" || addressStreet == "" || zipCode == "" || city == "" ) {
+      if ($(".fa.fa-user").hasClass("shake")) {
+        $(".fa.fa-user").removeClass("shake");
+      }
+      if ($(".fa.fa-truck").hasClass("shake")) {
+        $(".fa.fa-user").removeClass("shake");
+      }
       $("#go-to-form").click();
     }
 
     if (firstName == "" || lastName == "" ) {
-      $(".fa.fa-user").addClass("shake").css({ 'color': 'red', 'border-color': 'red' });
+        setTimeout(function(){
+          $(".fa.fa-user").addClass("shake").css({ 'color': 'red', 'border-color': 'red' });
+      }, 1000);
     } else {
       $(".fa.fa-user").removeAttr('style');
     } if (addressStreet == "" || zipCode == "" || city == "" ) {
-      $(".fa.fa-truck").addClass("shake").css({ 'color': 'red', 'border-color': 'red' });
+        setTimeout(function(){
+          $(".fa.fa-truck").addClass("shake").css({ 'color': 'red', 'border-color': 'red' });
+      }, 1000);
     } else {
       $(".fa.fa-truck").removeAttr('style');
     }
