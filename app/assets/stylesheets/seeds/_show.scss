@@ -669,7 +669,7 @@
       border-color: #d4d4d4;
       box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
       .glyphicon {
-        color: $blue;
+        color: $orange;
       }
     }
 
@@ -681,17 +681,11 @@
 
   }
 
-  .img-background{
-    background-color: #999999;
-    margin-right: 15px;
-    padding: 7px;
-    border-radius: 50%;
-
-  }
 
   .link-img {
-    height: 30px;
-    width: 30px;
+    height: 35px;
+    width: 35px;
+    margin-right: 15px;
   }
 
   .display-link{
