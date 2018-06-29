@@ -36,7 +36,7 @@ function directPayment() {
         $(".fa.fa-user").removeClass("shake");
       }
       if ($(".fa.fa-truck").hasClass("shake")) {
-        $(".fa.fa-user").removeClass("shake");
+        $(".fa.fa-truck").removeClass("shake");
       }
       $("#go-to-form").click();
     }
