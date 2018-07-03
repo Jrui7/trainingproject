@@ -176,20 +176,26 @@
 
   .banner-content{
     max-width: 600px;
+    padding-right: 100px;
+
+    p {
+      font-size: 17px;
+      text-align: justify;
+    }
   }
 
-.moto {
-    font-size: 50px;
-    font-weight: bold;
-    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-  }
 
   .concept {
     font-family: 'Lato';
-
+    margin: 10px auto 0 auto;
+    display: flex;
 
     p {
       font-size: 23px;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      margin: 0px 0 20px;
+      border-radius: 5px;
     }
   }
 
@@ -431,24 +437,22 @@
     .banner-container {
         justify-content: center;
         h2{
-          font-size: 25px;
+          font-size: 20px;
         }
       }
       .banner-content{
         text-align: center;
+        padding-right: 0;
       }
-    .moto{
-      font-size: 30px;
-    }
 
       .concept {
         margin: 10px auto 0 auto;
 
         p {
-        font-size: 15px;
-        background: rgba(0, 0, 0, 0.2);
-        padding: 10px;
-        text-align: center;
+          font-size: 15px;
+          background: rgba(0, 0, 0, 0.2);
+          padding: 10px;
+          text-align: center;
         }
       }
 
