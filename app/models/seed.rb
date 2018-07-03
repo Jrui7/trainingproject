@@ -1,5 +1,5 @@
 class Seed < ApplicationRecord
-
+  after_create :pick_reminder
   extend FriendlyId
   friendly_id :title, use: :slugged
 
@@ -9,6 +9,7 @@ class Seed < ApplicationRecord
   has_many :picks, dependent: :destroy
   has_many :signal_seed, dependent: :destroy
   monetize :price_cents
+
 
   self.per_page = 10
 
@@ -116,13 +117,10 @@ class Seed < ApplicationRecord
     end
   end
 
-  # def mode?
-  #   category.name == "Mode" if self.category
-  # end
 
-  # def size_guide_error
-  #   errors.add(:size_guide, "doit etre rempli") if size_guide.blank?
-  # end
+  def pick_reminder
+    SendPickReminderJob.set(wait: 6.days).perform_later(self.id)
+  end
 
 
 
