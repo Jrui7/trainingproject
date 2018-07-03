@@ -4,6 +4,7 @@ class SeedsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :last_day, :popular, :newest, :show]
   before_action :set_user, only: [:index, :last_day, :popular, :newest, :show, :new]
 
+
   def index
     @categories = Category.all
     if params[:category].present?
@@ -144,6 +145,7 @@ class SeedsController < ApplicationController
   def set_user
     @user = current_user
   end
+
 
 
 
