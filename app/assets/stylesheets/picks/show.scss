@@ -74,7 +74,19 @@
   background: $orange;
   text-align: center;
   border-radius: 10px;
-  color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p {
+    margin: 0 0 0 10px;
+    color: #FFF;
+    text-transform: uppercase;
+  }
+
+  .speech-img {
+    height: 25px;
+  }
+
 }
 
 .exchanges-and-questions {

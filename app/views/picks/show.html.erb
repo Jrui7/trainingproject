@@ -58,12 +58,15 @@
         </div>
       <% end %>
       <div class="exchanges-and-questions">
-          <div class="exchange-header">Comment pouvons-nous vous aider ?</div>
+          <div class="exchange-header">
+            <%= image_tag "speech-bubble.png", class:"speech-img" %>
+            <p>Une question ?</p>
+          </div>
           <div id="exchange_form">
             <%= render 'exchanges/form', pick: @pick, exchange: @exchange %>
           </div>
           <div id="exchanges">
-            <% unless @pick.exchanges.blank? %>
+            <% unless @exchanges.blank? %>
               <div class="all-messages">
                 <% @exchanges.each do |exchange| %>
                   <div class="message-block <%= exchange.message_author %>">
