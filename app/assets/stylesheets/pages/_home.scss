@@ -179,7 +179,7 @@
     padding-right: 100px;
 
     p {
-      font-size: 17px;
+      font-size: 20px;
       text-align: justify;
     }
   }
@@ -196,6 +196,8 @@
       padding: 10px;
       margin: 0px 0 20px;
       border-radius: 5px;
+      flex: 0 0 100%;
+      text-align: center;
     }
   }
 

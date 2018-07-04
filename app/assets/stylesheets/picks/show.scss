@@ -69,18 +69,19 @@
 
 .exchange-header {
   margin-bottom: 15px;
-  border: 1px solid #ddd;
+  border: 1px solid $orange;
   padding: 8px;
-  background: #f3f3f3;
-  margin-top: 30px;
+  background: $orange;
   text-align: center;
   border-radius: 10px;
+  color: #FFF;
 }
 
 .exchanges-and-questions {
   text-align: center;
   margin: 0 auto;
   width: 80%;
+  margin-top: 30px;
 }
 
 .all-messages {
@@ -96,6 +97,7 @@
   text-align: left;
   padding: 6px 12px;
   border-bottom: 1px solid #dddddd;
+  background-color: #FFF;
 
   .avatar-author-date {
     display: flex;
@@ -139,7 +141,8 @@
   .btn-default {
     border-radius: 50px !important;
     border: 3px solid $blue !important;
-    color: $blue !important;
+    color: #FFF !important;
+    background-color: $blue;
     padding: 6px 12px !important;
     font-size: 16px !important;
   }
