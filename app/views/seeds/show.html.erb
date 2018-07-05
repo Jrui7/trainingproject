@@ -154,7 +154,7 @@
               </div>
               <div class="personal-description">
                 <h4>Le mot du seeder</h4>
-                <p class="descriptif-content"><%= @seed.description.capitalize %></p>
+                <div class="descritpion-text"><%= simple_format(@seed.description.capitalize) %></div>
               </div>
               <div class="social-card-user">
                 <% if @seeder.mini_bio? %>
@@ -211,7 +211,7 @@
           Descirption
         </h2>
         <div class="descritpion-text">
-          <%= @seed.official_description.capitalize %>
+          <%= simple_format(@seed.official_description.capitalize) %>
         </div>
           <a href="<%=@seed.sale_point_url %>" class="internet-site" target="_blank">
               <%= image_tag "infos.png", class:"link-img" %>
