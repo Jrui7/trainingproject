@@ -3,7 +3,7 @@
     <%= cl_image_tag("#{seed.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "product-image")%>
   <% end %>
   <div class='product-body'> <%= link_to seed_path(seed) do  %>
-    <h3> <%= seed.title %></h3>
+    <h3> <%= seed.title.capitalize %></h3>
     <div class="user-testimony">
       <%if seed.user.has_photo? %>
       <%= cl_image_tag(seed.user.photo.path, class: "seeder-picture", :width=>110, :height=>110,)%>
