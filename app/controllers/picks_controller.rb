@@ -116,7 +116,7 @@ class PicksController < ApplicationController
   end
 
   def my_picks
-    @picks = Pick.pending_picks(current_user).select {|pick| pick.seed.ongoing?}
+    @picks = Pick.pending_picks(current_user).includes(:seed).select {|pick| pick.seed.ongoing?}
   end
 
   def pick_history
