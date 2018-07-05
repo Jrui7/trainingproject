@@ -1,7 +1,7 @@
 
   <%= simple_form_for([pick, exchange], remote: true) do |f| %>
     <div class="question-field">
-      <%= f.input_field :question, placeholder: "Posez votre question:" %>
+      <%= f.input_field :question, placeholder: "Comment pouvons-nous vous aider ?" %>
     </div>
     <div class="post-question">
       <%= f.submit value: "POSTER", class: "btn btn-default" %>
