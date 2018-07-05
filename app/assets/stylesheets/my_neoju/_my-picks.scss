@@ -232,9 +232,17 @@ a:hover {
   text-transform: uppercase;
   border: 1px solid;
   color: $blue;
-  margin: 0 10px;
-  border-radius: 5px;
   cursor: pointer;
+}
+
+.left-menu {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.right-menu {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 #selected-menu, #selected-menu-bis {
