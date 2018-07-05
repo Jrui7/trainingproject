@@ -32,7 +32,7 @@ class Seed < ApplicationRecord
     too_short: "%{count} carractères au minimum" }
 
   validates :category_id, presence: {
-    message: "Attribuez une catégorie au seed"
+    message: "Attribuez une catégorie au produit"
     }
 
   validates :price, presence: {
