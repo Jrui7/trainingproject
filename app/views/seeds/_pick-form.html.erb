@@ -8,8 +8,11 @@
           <div class="counter">€</div>
         </div>
       </div>
-      <div class="livraison">
+      <% unless @seed.size_guide.blank? %>
+        <%= f.input_field :size, class: 'input-sm form-control pick', id: 'size-pick', placeholder: "Votre taille"%>
+      <% end %>
         <p>Dans l'hypothèse ou le produit doit vous être livré, vous serez débité de 3€90 au titre des coûts de livraison</p>
+      <div class="livraison">
       </div>
         <div class="action-links">
           <button type="button" class="btn-dissmiss text-center" data-dismiss="modal">Retour</button>
