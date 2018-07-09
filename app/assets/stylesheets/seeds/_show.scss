@@ -518,24 +518,57 @@
   }
 
   .pick-form {
-    padding: 0 15px;
+    .form-control {
+      border-radius: 5px;
+    }
+    label {
+      margin-bottom: 8px;
+    }
+  }
+
+  .inputs-and-recap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .pick-inputs {
+    flex: 0 0 60%;
   }
 
   .price {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 25px;
+    position: relative;
+    margin-bottom: 20px;
 
-    p {
-      margin: 0 10px 0 0;
+
+    .unit {
+      position: absolute;
+      display: block;
+      top: 36px;
+      right: 3%;
+      z-index: 9;
+    }
+  }
+
+    #delivery-info {
+      margin: 20px 0 0 0;
+      font-weight: bold;
     }
 
-    .form-control {
-      width: 25%;
-      border-radius: 5px;
-      border: 1px solid #66afe9;
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6)
+  .recap-animation {
+    flex: 0 0 35%;
+    margin-left: 5%;
+    display: flex;
+    align-items: flex-end;
+    .how-much {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0;
+      flex: 0 0 100%;
+      .text {
+        font-weight: bold;
+      }
     }
   }
 
@@ -551,24 +584,10 @@
 
   }
 
-  .counter-body {
-    color: $blue;
-    margin-left: -10px;
-    text-align: center;
-    display: table;
-  }
 
   .counter {
-    display: table-cell;
-    margin:1.5%;
-    font-size:30px;
-    background-color: #FFFFFF;
-    width: 70px;
-    border-radius: 50%;
-    height: 70px;
-    vertical-align: middle;
-    border: 1px solid #66afe9;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    font-size: 25px;
+    color: $orange;
   }
 
   .pick-bar-xs  {

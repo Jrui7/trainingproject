@@ -1,18 +1,25 @@
 
   <%= simple_form_for [@seed, @pick], url: seed_picks_path(@seed), remote: true,method: :post do |f| %>
     <div class="pick-form">
-      <h3>Quel prix souhaitez-vous payer?</h3>
-      <div class="price">
-        <%= f.input_field :price, as: :integer, class: 'input-sm form-control pick', id: 'start-pick', placeholder: 'Votre prix'%>
-        <div class="counter-body">
-          <div class="counter">€</div>
+      <div class="inputs-and-recap">
+        <div class="pick-inputs">
+          <div class="price">
+            <label for="price">Quel prix souhaitez-vous payer au maximum?</label>
+            <%= f.input_field :price, as: :integer, class: 'input-sm form-control pick', id: 'start-pick', placeholder: 'Votre prix'%>
+            <span class="unit">€</span>
+          </div>
+          <% unless @seed.size_guide.blank? %>
+            <label for="size">Taille</label>
+            <%= f.input_field :size, class: 'input-sm form-control pick', id: 'size-pick', placeholder: "Référez-vous au guide des tailles"%>
+          <% end %>
+          <p id="delivery-info">Toute livraison sera facturée 3.90€ en plus du prix du deal.</p>
         </div>
-      </div>
-      <% unless @seed.size_guide.blank? %>
-        <%= f.input_field :size, class: 'input-sm form-control pick', id: 'size-pick', placeholder: "Votre taille"%>
-      <% end %>
-        <p>Dans l'hypothèse ou le produit doit vous être livré, vous serez débité de 3€90 au titre des coûts de livraison</p>
-      <div class="livraison">
+        <div class="recap-animation">
+          <div class="how-much">
+            <div class="text">Coût total max:</div>
+            <div class="counter">€</div>
+          </div>
+        </div>
       </div>
         <div class="action-links">
           <button type="button" class="btn-dissmiss text-center" data-dismiss="modal">Retour</button>
