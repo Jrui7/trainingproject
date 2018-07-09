@@ -551,7 +551,7 @@
   }
 
     #delivery-info {
-      margin: 20px 0 0 0;
+      margin: 30px 0 0 0;
       font-weight: bold;
     }
 
@@ -566,10 +566,16 @@
       justify-content: space-between;
       padding: 0;
       flex: 0 0 100%;
-      .text {
+      .last-text {
         font-weight: bold;
+        border-bottom: 3px solid rgba(106, 194, 239, 0.6);
+        box-shadow: inset 0 -5px 0 rgba(106, 194, 239, 0.38);
       }
     }
+  }
+
+  .end-block {
+    flex: 0 0 100%;
   }
 
 
