@@ -1,6 +1,7 @@
 
 <%= simple_form_for [@seed, @pick], url: seed_picks_path(@seed), remote: true,method: :post do |f| %>
   <div class="pick-form">
+    <p class="instruction">Dites nous quel est le prix maximal vous êtes prêt à payer pour acquérir "<%= @seed.title.capitalize %>". Si Pickalgo obtient un prix inférieur ou égal à votre prix, vous ne paierez que le prix du deal !</p>
     <p id="delivery-info">Toutes les livraisons sont facturées 3.90€ en plus du prix du deal.</p>
     <div class="inputs-and-recap">
       <div class="pick-inputs">
@@ -15,6 +16,7 @@
         <% end %>
       </div>
       <div class="recap-animation">
+        <p>Récap:</p>
         <div class="end-block">
           <div class="how-much">
             <div>Mon pick:</div>

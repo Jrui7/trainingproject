@@ -524,6 +524,10 @@
     label {
       margin-bottom: 8px;
     }
+    .instruction {
+      font-size: 16px;
+      text-align: justify;
+    }
   }
 
   .inputs-and-recap {
@@ -567,9 +571,14 @@
   .recap-animation {
     flex: 0 0 50%;
     margin-left: 5%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    margin-top: auto;
+
+    p {
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: underline;
+      margin: 0 0 3px 0;
+    }
     .how-much {
       display: flex;
       align-items: center;
@@ -602,8 +611,9 @@
 
 
   .totalcounter {
-    font-size: 25px;
+    font-size: 20px;
     color: $orange;
+    font-weight: bold;
   }
 
   .pick-bar-xs  {
@@ -752,10 +762,7 @@
 
     .recap-animation {
       flex: 0 0 100%;
-      margin-left: 0;
-      display: flex;
-      align-items: flex-end;
-      margin-top: 30px;
+      margin: 30px 0;
     }
     .price .unit {
         top: 35px;
