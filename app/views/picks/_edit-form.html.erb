@@ -1,23 +1,25 @@
 <%= simple_form_for [seed, pick], url: pick_path(pick), remote: true do |f| %>
   <div class="pick-form">
+    <p class="instruction">Pas de stratégie compliquée à élaborer, dites nous simplement quel est le prix maximal vous êtes prêt à payer pour acquérir "<%= seed.title.capitalize %>". (voir guide du pick)</p>
+    <p id="delivery-info">Toutes les livraisons sont facturées 3.90€ en plus du prix du deal.</p>
     <div class="inputs-and-recap">
       <div class="pick-inputs">
         <div class="price">
-          <label for="price">Quel prix souhaitez-vous payer au maximum?</label>
-          <%= f.input_field :price, as: :integer, class: 'input-sm form-control pick', id: 'start-pick', placeholder: 'Votre prix'%>
+          <label for="price">Votre prix</label>
+          <%= f.input_field :price, as: :integer, class: 'input-sm form-control pick', id: 'start-pick', placeholder: 'Exemple: 150'%>
           <span class="unit">€</span>
         </div>
         <% unless seed.size_guide.blank? %>
-          <label for="size">Taille</label>
+          <label for="size" id="size-label">Taille</label>
           <%= f.input_field :size, class: 'input-sm form-control pick', id: 'size-pick', placeholder: "Référez-vous au guide des tailles"%>
         <% end %>
-        <p id="delivery-info">Toute livraison sera facturée 3.90€ en plus du prix du deal.</p>
       </div>
       <div class="recap-animation">
+        <p>Récap:</p>
         <div class="end-block">
           <div class="how-much">
             <div>Mon pick:</div>
-            <div class="counter"><%= pick.price %> €</div>
+            <div class="counter">€</div>
           </div>
           <div class="how-much">
             <div>Livraison:</div>
@@ -25,7 +27,7 @@
           </div>
           <div class="how-much">
             <div class="last-text">Coût total max:</div>
-            <div class="totalcounter"><%= pick.price + 3.9 %>€</div>
+            <div class="totalcounter">€</div>
           </div>
         </div>
       </div>
