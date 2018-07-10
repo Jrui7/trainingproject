@@ -518,25 +518,64 @@
   }
 
   .pick-form {
-    padding: 0 15px;
+    .form-control {
+      border-radius: 5px;
+    }
+    label {
+      margin-bottom: 8px;
+    }
+  }
+
+  .inputs-and-recap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .pick-inputs {
+    flex: 0 0 50%;
   }
 
   .price {
+    position: relative;
+    margin-bottom: 20px;
+
+
+    .unit {
+      position: absolute;
+      display: block;
+      top: 56px;
+      right: 3%;
+      z-index: 9;
+    }
+  }
+
+    #delivery-info {
+      margin: 30px 0 0 0;
+      font-weight: bold;
+    }
+
+  .recap-animation {
+    flex: 0 0 40%;
+    margin-left: 5%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 25px;
-
-    p {
-      margin: 0 10px 0 0;
+    align-items: flex-end;
+    .how-much {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0;
+      flex: 0 0 100%;
+      .last-text {
+        font-weight: bold;
+        border-bottom: 3px solid rgba(106, 194, 239, 0.6);
+        box-shadow: inset 0 -5px 0 rgba(106, 194, 239, 0.38);
+      }
     }
+  }
 
-    .form-control {
-      width: 25%;
-      border-radius: 5px;
-      border: 1px solid #66afe9;
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6)
-    }
+  .end-block {
+    flex: 0 0 100%;
   }
 
 
@@ -551,24 +590,14 @@
 
   }
 
-  .counter-body {
-    color: $blue;
-    margin-left: -10px;
-    text-align: center;
-    display: table;
+  .pick-counter {
+    font-size: 15px;
   }
 
-  .counter {
-    display: table-cell;
-    margin:1.5%;
-    font-size:30px;
-    background-color: #FFFFFF;
-    width: 70px;
-    border-radius: 50%;
-    height: 70px;
-    vertical-align: middle;
-    border: 1px solid #66afe9;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+
+  .totalcounter {
+    font-size: 25px;
+    color: $orange;
   }
 
   .pick-bar-xs  {
@@ -706,12 +735,27 @@
   }
 
   @media(max-width: 768px) {
-  .page-container .header {
-      padding: 10px 5px;
-      margin: 0;
-  }
-
+    .page-container .header {
+        padding: 10px 5px;
+        margin: 0;
     }
+
+    .pick-inputs {
+      flex: 0 0 100%;
+    }
+
+    .recap-animation {
+      flex: 0 0 100%;
+      margin-left: 0;
+      display: flex;
+      align-items: flex-end;
+      margin-top: 30px;
+    }
+    .price .unit {
+        top: 14px;
+    }
+
+  }
 
     @media(max-width: 480px) {
 

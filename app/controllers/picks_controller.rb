@@ -132,7 +132,7 @@ class PicksController < ApplicationController
   private
 
   def pick_params
-    params.require(:pick).permit(:price)
+    params.require(:pick).permit(:price, :size)
   end
 
 
