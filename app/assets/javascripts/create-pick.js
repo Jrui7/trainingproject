@@ -26,7 +26,8 @@ function countTo(target, counter) {
         $this.text(Math.floor(this.countNum));
       },
       complete: function() {
-        $this.text(this.countNum);
+        var finish = (this.countNum).toString() + " " + "€";
+        $this.text(finish);
       }
     });
   });

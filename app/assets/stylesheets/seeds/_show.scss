@@ -595,7 +595,7 @@
   }
 
 
-  .counter {
+  .totalcounter {
     font-size: 25px;
     color: $orange;
   }
@@ -735,12 +735,27 @@
   }
 
   @media(max-width: 768px) {
-  .page-container .header {
-      padding: 10px 5px;
-      margin: 0;
-  }
-
+    .page-container .header {
+        padding: 10px 5px;
+        margin: 0;
     }
+
+    .pick-inputs {
+      flex: 0 0 100%;
+    }
+
+    .recap-animation {
+      flex: 0 0 100%;
+      margin-left: 0;
+      display: flex;
+      align-items: flex-end;
+      margin-top: 30px;
+    }
+    .price .unit {
+        top: 14px;
+    }
+
+  }
 
     @media(max-width: 480px) {
 
