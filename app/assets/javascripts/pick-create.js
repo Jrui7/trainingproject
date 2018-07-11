@@ -1,12 +1,19 @@
 
 $(document).ready(function() {
-  var target = $('#start-pick');
-  var counter = $(".counter");
-  var totalcounter = $(".totalcounter");
-  setCounterValueAndAction(target, counter);
-  setCounterValueAndActionTotal(target, totalcounter);
+
+  $("#start-pick").on('keyup', function(event) {
+    var target = $('#start-pick');
+    var counter = $(".counter");
+    var totalcounter = $(".totalcounter");
+
+    setCounterValueAndAction(target, counter);
+    setCounterValueAndActionTotal(target, totalcounter);
+
+
 
   });
+
+});
 
 
 
@@ -26,7 +33,7 @@ function countTo(target, counter) {
         $this.text(Math.floor(this.countNum));
       },
       complete: function() {
-        var finish = (this.countNum).toString() + " " + "€";
+        var finish = (this.countNum) + " " + "€";
         $this.text(finish);
       }
     });
@@ -35,7 +42,7 @@ function countTo(target, counter) {
 
 
 function countToTotal(target, totalcounter) {
-  var target = $(target).val();
+  var target = parseInt($(target).val()) + 3.9;
   $(totalcounter).each(function() {
     var $this = $(this),
       countTo = target;
@@ -49,7 +56,7 @@ function countToTotal(target, totalcounter) {
         $this.text(Math.floor(this.countNum));
       },
       complete: function() {
-        var finish = (this.countNum + 3.9).toString() + " " + "€";
+        var finish = (this.countNum).toString() + " " + "€";
         $this.text(finish);
       }
     });
@@ -63,8 +70,9 @@ function setCounterValueAndAction(target, counter) {
         $(counter).html("€");
       }
       else {
-        var newTarget = $(target).val();
-        $(counter).html(newTarget);
+        $(counter).html("");
+        var newCounter = $(counter);
+        countTo(target, newCounter);
       }
     }
     else if (event.keyCode != 13) {
@@ -82,8 +90,9 @@ function setCounterValueAndActionTotal(target, totalcounter) {
         $(totalcounter).html("€");
       }
       else {
-        var newTarget = $(target).val();
-        $(totalcounter).html(newTarget);
+        $(totalcounter).html("");
+        var newCounter = $(totalcounter);
+        countToTotal(target, newCounter);
       }
     }
     else if (event.keyCode != 13) {

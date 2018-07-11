@@ -6,7 +6,7 @@
     <div class="title-delete-price">
       <div class="title-and-delete">
         <%= link_to seed_path(pick.seed) do  %>
-            <h3><%= pick.seed.title %></h3>
+            <h3><%= pick.seed.title.capitalize %></h3>
         <% end %>
         <% if pick.seed.ongoing? %>
           <%= link_to "#destroyPick-#{pick.id}", data: {toggle: "modal"} do %>

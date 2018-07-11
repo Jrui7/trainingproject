@@ -524,6 +524,10 @@
     label {
       margin-bottom: 8px;
     }
+    .instruction {
+      font-size: 16px;
+      text-align: justify;
+    }
   }
 
   .inputs-and-recap {
@@ -533,33 +537,56 @@
   }
 
   .pick-inputs {
-    flex: 0 0 50%;
+    flex: 0 0 40%;
   }
 
   .price {
     position: relative;
-    margin-bottom: 20px;
-
 
     .unit {
       position: absolute;
       display: block;
-      top: 56px;
+      top: 36px;
       right: 3%;
       z-index: 9;
     }
   }
 
+  #size-label {
+    margin-top: 20px;
+  }
+
     #delivery-info {
-      margin: 30px 0 0 0;
+      display: flex;
+      align-items: center;
       font-weight: bold;
+      margin: 35px 0;
+      font-size: 16px;
+      text-align: justify;
+
+      .truck-img {
+        height: 50px;
+        margin-right: 15px;
+      }
     }
 
+  .end-block {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 5px;
+    flex: 0 0 100%;
+  }
+
   .recap-animation {
-    flex: 0 0 40%;
+    flex: 0 0 50%;
     margin-left: 5%;
-    display: flex;
-    align-items: flex-end;
+    margin-top: auto;
+
+    p {
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: underline;
+      margin: 0 0 3px 0;
+    }
     .how-much {
       display: flex;
       align-items: center;
@@ -572,10 +599,6 @@
         box-shadow: inset 0 -5px 0 rgba(106, 194, 239, 0.38);
       }
     }
-  }
-
-  .end-block {
-    flex: 0 0 100%;
   }
 
 
@@ -596,8 +619,9 @@
 
 
   .totalcounter {
-    font-size: 25px;
+    font-size: 20px;
     color: $orange;
+    font-weight: bold;
   }
 
   .pick-bar-xs  {
@@ -746,13 +770,14 @@
 
     .recap-animation {
       flex: 0 0 100%;
-      margin-left: 0;
-      display: flex;
-      align-items: flex-end;
-      margin-top: 30px;
+      margin: 30px 0;
     }
     .price .unit {
-        top: 14px;
+        top: 35px;
+    }
+
+    #delivery-info {
+      font-size: 14px;
     }
 
   }
@@ -779,21 +804,6 @@
       }
     }
 
-    .price {
-      margin-top: 25px;
-      display: flex;
-      align-items: center;
-
-      p {
-        margin: 0;
-      }
-
-      .form-control {
-        margin-left: 10px;
-        width: 60%;
-      }
-
-    }
 
     .modal-content {
       border-radius: 0 !important;
