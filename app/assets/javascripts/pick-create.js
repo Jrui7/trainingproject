@@ -3,10 +3,25 @@ $(document).ready(function() {
   var target = $('#start-pick');
   var counter = $(".counter");
   var totalcounter = $(".totalcounter");
-  setCounterValueAndAction(target, counter);
-  setCounterValueAndActionTotal(target, totalcounter);
+
+  $("#start-pick").on('keyup', function(event) {
+    if ($.isNumeric(target.val())) {
+      setCounterValueAndAction(target, counter);
+      setCounterValueAndActionTotal(target, totalcounter);
+    }
+
+    else if (target.val() == "") {
+      $(totalcounter).html("€");
+      $(counter).html("€");
+    }
+
+    else if(isNaN(target.val())) {
+      alert("NaN");
+    }
 
   });
+
+});
 
 
 
