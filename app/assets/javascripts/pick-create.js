@@ -63,8 +63,9 @@ function setCounterValueAndAction(target, counter) {
         $(counter).html("€");
       }
       else {
-        var newTarget = $(target).val();
-        $(counter).html(newTarget);
+        $(counter).html("");
+        var newCounter = $(counter);
+        countTo(target, newCounter);
       }
     }
     else if (event.keyCode != 13) {
@@ -82,8 +83,9 @@ function setCounterValueAndActionTotal(target, totalcounter) {
         $(totalcounter).html("€");
       }
       else {
-        var newTarget = $(target).val();
-        $(totalcounter).html(newTarget);
+        $(totalcounter).html("");
+        var newCounter = $(totalcounter);
+        countToTotal(target, newCounter);
       }
     }
     else if (event.keyCode != 13) {

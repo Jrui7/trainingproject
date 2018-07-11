@@ -557,9 +557,17 @@
   }
 
     #delivery-info {
+      display: flex;
+      align-items: center;
       font-weight: bold;
-      margin-bottom: 35px;
+      margin: 35px 0;
       font-size: 16px;
+      text-align: justify;
+
+      .truck-img {
+        height: 50px;
+        margin-right: 15px;
+      }
     }
 
   .end-block {
@@ -766,6 +774,10 @@
     }
     .price .unit {
         top: 35px;
+    }
+
+    #delivery-info {
+      font-size: 14px;
     }
 
   }
