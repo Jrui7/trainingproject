@@ -59,7 +59,10 @@ function directPayment() {
       $("#with_customer_id").addClass("hidden");
       $(".loader-container").removeClass("hidden").html("<div class='loader'></div>");
       $(".update-delivery-infos").click();
+      setTimeout(function(){
       $("#save-and-book").click();
+    }, 500);
+
     }
   })
 }
