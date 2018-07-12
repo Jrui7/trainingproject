@@ -21,7 +21,7 @@ class AddressesController < ApplicationController
   def update
     url = Rails.application.routes.recognize_path(request.referrer)
     pick = Pick.find(url[:pick_id])
-    @address = Address.find(params[:id])
+    @address = current_user.addresses.last
     authorize @address
 
     if @address.update(address_params_form_payment)

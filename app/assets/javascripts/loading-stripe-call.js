@@ -61,7 +61,7 @@ function directPayment() {
       $(".update-delivery-infos").click();
       setTimeout(function(){
       $("#save-and-book").click();
-    }, 1000);
+    }, 500);
 
     }
   })

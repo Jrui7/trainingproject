@@ -1,7 +1,7 @@
 <% case pick.state when "validated" %>
   <div class="pick-status">
     <h3>En attente</h3>
-    <div class="status-text">Vous avez pické pour <%= pick.price %>€. La campagne se termine le <%= pick.seed.expiration.strftime("%d/%m/%Y") %>, et nous revenons vers vous dès que la négo avec le vendeur est terminée . </div>
+    <div class="status-text">Vous avez pické pour <%= pick.price %>€. La campagne se termine le <%= pick.seed.expiration.strftime("%d/%m/%Y") %>, et nous revenons vers vous quand la campagne sera terminée . </div>
   </div>
   <% when "finalized" %>
   <div class="pick-status">
