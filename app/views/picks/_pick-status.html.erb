@@ -1,49 +1,49 @@
 <% case pick.state when "validated" %>
-  <div class="pick-status">
-    <h3>En attente</h3>
-    <div class="status-text">Vous avez pické pour <%= pick.price %>€. La campagne se termine le <%= pick.seed.expiration.strftime("%d/%m/%Y") %>, et nous revenons vers vous quand la campagne sera terminée . </div>
+  <div>
+    <h4>En attente</h4>
+    <div class="status-text">Vous avez bien enregistré votre participation à la camapagne d'achat. Celle-ci se termine le <%= pick.seed.expiration.strftime("%d/%m/%Y") %>, et vous saurez à ce moment si votre proposition d'achat de <%= pick.price %> € a été retenue.</div>
   </div>
   <% when "finalized" %>
-  <div class="pick-status">
-    <h3>Finalisé</h3>
+  <div>
+    <h4>Finalisé</h4>
     <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€, mais remportez le deal pour seulement <%= pick.seed.campaign.price %>€. C'est bon ça !</div>
   </div>
   <% when "campaign_failed" %>
-  <div class="pick-status">
-    <h3>Echec</h3>
+  <div>
+    <h4>Echec</h4>
     <div class="status-text">Vous avez pické pour <%= pick.price %>€. Le vendeur n'a malheureusement pas voulu faire de deal avec nous. On ne fait pas boire un âne qui n'a pas soif dit le proverbe... </div>
   </div>
   <% when "campaign_closed" %>
-  <div class="pick-status">
-    <h3>Campagne terminée</h3>
+  <div>
+    <h4>Campagne terminée</h4>
     <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€ mais n'avez pas bloqué votre participation à la campagne qui est maintenant fermée. C'est dommage !!! </div>
   </div>
   <% when "pending" %>
-  <div class="pick-status">
-    <h3>Campagne terminée</h3>
+  <div>
+    <h4>Campagne terminée</h4>
     <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€ mais n'avez pas bloqué votre participation à la campagne qui est maintenant fermée. </div>
   </div>
   <% when "cancelled" %>
-  <div class="pick-status">
-    <h3>Campagne annulée</h3>
+  <div>
+    <h4>Campagne annulée</h4>
     <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€. Nous avons fermé la campagne car le produit ne respecte pas les CGU . </div>
   </div>
   <% when "error" %>
-  <div class="pick-status">
-    <h3>Erreur</h3>
+  <div>
+    <h4>Erreur</h4>
     <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€ mais nous n'avons pas réussi à valider le paiement final. Merci de mettre à jour votre carte de paiement</div>
     <div class="link-container">
       <%= link_to "Mettre à jour", edit_pick_path(pick), class: 'edit-card-link' %>
     </div>
   </div>
   <% when "refund_failed" %>
-  <div class="pick-status">
-    <h3>Erreur</h3>
+  <div>
+    <h4>Erreur</h4>
     <div class="status-text">Nous avons recontré un problème lors du remboursemet que nous voulions effectuer. Merci de suivre ce lien . </div>
   </div>
   <% when "pick_failed" %>
-  <div class="pick-status">
-    <h3>Echec</h3>
+  <div>
+    <h4>Echec</h4>
     <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€. Le prix Pickalgo négocié est de <%= pick.seed.campaign.price %>€, vous ne pouvez pas bénéficier du deal . </div>
   </div>
 <% end %>

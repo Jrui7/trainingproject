@@ -36,17 +36,40 @@
 
 
 <div class="pick-details-container">
-  <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2 pick-detail">
-      <h2  class="pick-title"><%= @pick.seed.title %></h2>
-      <%= render 'picks/pick-status', pick: @pick %>
+  <div class="recap">
+    <h3>Récap</h3>
+    <div class="explanation">
+      <div class="image-title-price">
+        <%= cl_image_tag @pick.seed.photos.first.path, :height=>75, :crop=>"scale" %>
+        <div class="recap-paragraph">
+          <div>
+          <h4><%= @pick.seed.title %></h4>
+          <p>Prix original: <%= @pick.seed.price %> €</p>
+          </div>
+          Pické le: <%= @pick.created_at.strftime("%d/%m/%Y") %>
+        </div>
+      </div>
+      <div class="how-much">
+        <div class="text">Coût livraison:</div>
+        <p class="price">3.90 €</p>
+      </div>
+      <div class="how-much">
+        <div class="text">Pické pour:</div>
+        <p class="price"><%= @pick.price %> €</p>
+      </div>
+      <div class="how-much last">
+        <div class="text"><b>Coût total max:</b></div>
+        <p class="price"><%= @pick.price + 3.90 %> €</p>
+      </div>
+      <div class="info-detail"><%= render 'picks/pick-status', pick: @pick %>
+      </div>
       <% if @customer_infos %>
         <div class="ship-and-payment">
           <div class="item ship">
             <%= render 'picks/show_address', pick: @pick  %>
           </div>
           <div class="item payment">
-            <h3>Paiement</h3>
+            <h5>Paiement</h5>
             <div class="card-input"><%= @customer_infos["brand"]%></div>
             <div class="card-input card-numbers">
               **** **** **** <%= @customer_infos["last4"] %>
@@ -57,54 +80,54 @@
           </div>
         </div>
       <% end %>
-      <div class="exchanges-and-questions">
-          <div class="exchange-header">
-            <%= image_tag "speech-bubble.png", class:"speech-img" %>
-            <p>Une question ?</p>
-          </div>
-          <div id="exchange_form">
-            <%= render 'exchanges/form', pick: @pick, exchange: @exchange %>
-          </div>
-          <div id="exchanges">
-            <% unless @exchanges.blank? %>
-              <div class="all-messages">
-                <% @exchanges.each do |exchange| %>
-                  <div class="message-block <%= exchange.message_author %>">
-                    <div class="avatar-author-date">
-                      <%if exchange.user.photo? %>
-                        <%= cl_image_tag exchange.user.photo.path, class: "author-avatar pic"%>
-                      <% else %>
-                        <i class="fa fa-user dropdown-toggle" class="author-avatar"></i>
-                      <% end %>
-                      <div class="author-and-date">
-                        <div class="message-sent"><%= exchange.created_at.strftime("%d/%m/%Y") %>
-                        </div>
-                        <div class="user-pseudo">
-                          <%= exchange.user.pseudo %>:
-                        </div>
-                      </div>
-                    </div>
-                    <div class="question-content">
-                      <%= exchange.question %>
-                    </div>
-                  </div>
-                <% end %>
-              </div>
-              <% else %>
-              <div class="all-messages hidden"></div>
-            <% end %>
-          </div>
-          <% if current_user.admin == true && @pick.exchanges.any? %>
-            <div class="validate-link">
-              <p>Toutes les questions client ont trouvé une réponse?</p>
-              <%= link_to exchange_path(@pick.exchanges.last), :method => :patch do%>
-                <div class="btn btn-default">Oui</div>
-              <% end %>
-            </div>
-          <% end %>
-      </div>
-
     </div>
   </div>
+  <div class="exchanges-and-questions">
+    <div class="exchange-header">
+      <%= image_tag "speech-bubble.png", class:"speech-img" %>
+      <p>Une question ?</p>
+    </div>
+        <div id="exchanges">
+          <div class="all-messages">
+            <% unless @exchanges.blank? %>
+            <% @exchanges.each do |exchange| %>
+              <div class="message-block <%= exchange.message_author %>">
+              <div class="avatar-author-date">
+                <%if exchange.user.photo? %>
+                  <%= cl_image_tag exchange.user.photo.path, class: "author-avatar pic"%>
+                <% else %>
+                  <i class="fa fa-user dropdown-toggle" class="author-avatar"></i>
+                <% end %>
+                <div class="author-and-date">
+                  <div class="message-sent"><%= exchange.created_at.strftime("%d/%m/%Y") %>
+                  </div>
+                  <div class="user-pseudo">
+                    <%= exchange.user.pseudo %>:
+                  </div>
+                </div>
+              </div>
+              <div class="question-content">
+                <%= simple_format(exchange.question) %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div id="exchange_form">
+      <%= render 'exchanges/form', pick: @pick, exchange: @exchange %>
+    </div>
+
+    <% if current_user.admin == true && @pick.exchanges.any? %>
+      <div class="validate-link">
+        <p>Toutes les questions client ont trouvé une réponse?</p>
+        <%= link_to exchange_path(@pick.exchanges.last), :method => :patch do%>
+          <div class="btn btn-default">Oui</div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
 </div>
 <%= render 'shared/footer' %>
+
