@@ -1,9 +1,7 @@
 
   $("#exchange_form").html("<%= j render 'exchanges/form', pick: @pick, exchange: Exchange.new %>");
-  <% if @pick.exchanges.any? %>
-    $(".all-messages").removeClass("hidden");
-  <% end %>
   $(".all-messages").append("<%= j render 'exchanges/exchange', exchange: @exchange %>");
+  $('.all-messages').scrollTop($('.all-messages')[0].scrollHeight);
 
 
 
