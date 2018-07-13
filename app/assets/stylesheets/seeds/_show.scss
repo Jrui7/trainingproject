@@ -778,6 +778,7 @@
 
     #delivery-info {
       font-size: 14px;
+      margin: 25px 0;
     }
 
   }
@@ -967,6 +968,11 @@
           }
         }
       }
+    }
+
+    #delivery-info .truck-img {
+    height: 35px;
+    margin-right: 15px;
     }
 
   }
