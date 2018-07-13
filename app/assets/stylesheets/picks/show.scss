@@ -108,14 +108,7 @@
 
 }
 
-.author-avatar {
-  font-size: 17px;
-  background-color: white;
-  border-radius: 50%;
-  padding: 10px;
-  background-color: $blue;
-  color: #FFF;
-}
+
 
 .message-block {
   display: block;
@@ -140,6 +133,15 @@
 
   .author-and-date{
     margin-left: 5px;
+  }
+
+  .author-avatar {
+    font-size: 17px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: $blue;
+    color: #FFF;
   }
 }
 
