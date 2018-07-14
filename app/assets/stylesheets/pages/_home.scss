@@ -104,6 +104,7 @@
 
 .nav-and-banner {
   height: 100vh;
+  background-image: url(tags.jpg);
   background-repeat: no-repeat;
   background-size: cover;
    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 95%, 0 90%);
@@ -131,13 +132,12 @@
 #logo-home {
   font-size: 30px;
   font-style: italic;
-  color: white;
   margin-right: 4px;
   a {
   text-decoration: none;
    &:hover{
     text-decoration: none;
-    color: white;
+    color: $blue;
    }
   }
 }
@@ -146,12 +146,12 @@
   display: flex;
   font-size: 15px;
   a , .connect-button {
-    color: white;
+    color: $blue;
     margin: 0 20px;
     text-transform: uppercase;
     text-decoration: underline;
     &:hover {
-      color: white;
+      color: $orange;
       cursor: pointer;
     }
   }
@@ -168,24 +168,23 @@
     width: 90%;
     margin: 0 auto;
     min-height: calc(90vh - 80px);
-    color: #FFFFFF;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: center;
+    position: relative;
   }
 
   .banner-content{
-    max-width: 600px;
-    padding-right: 100px;
+    max-width: 700px;
+    position: absolute;
+    top: 50px;
 
     h2 {
       line-height: 1.3em;
+      text-align: center;
+      margin-bottom: 40px;
+      color: $blue;
     }
 
-    p {
-      font-size: 20px;
-      text-align: justify;
-    }
   }
 
 
@@ -195,29 +194,40 @@
     display: flex;
 
     p {
-      font-size: 23px;
+      font-size: 26px;
       background: rgba(0, 0, 0, 0.2);
-      padding: 10px;
+      padding: 20px 30px;
       margin: 0px 0 20px;
       border-radius: 5px;
       flex: 0 0 100%;
       text-align: center;
+      color: #FFF;
     }
+  }
+
+  .promise {
+    font-weight: bold;
+    font-size: 23px;
+    text-align: center;
+    max-width: 500px;
+    margin: auto;
   }
 
   .cta-links{
     display: flex;
+    justify-content: center;
     margin-top: 60px;
   }
 
   .go-to{
     margin-right: 30px;
     border-radius: 50px;
-    border: 1px solid #FFF;
+    border: 1px solid #243763;
     color: white;
     text-transform: uppercase;
     padding: 10px 30px;
     font-size: 20px;
+    color: #243763;
 
   }
 
@@ -443,8 +453,13 @@
     .banner-container {
         justify-content: center;
         h2{
-          font-size: 20px;
+          font-size: 24px;
+          margin-bottom: 20px;
         }
+      }
+
+      .nav-and-banner {
+        background-position: right bottom;
       }
       .banner-content{
         text-align: center;
