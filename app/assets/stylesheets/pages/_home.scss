@@ -269,7 +269,12 @@
     margin-bottom: 20px;
   }
 
-  .feature-images, .action-image{
+  .feature-images {
+    padding-top: 20px;
+    max-height: 85px;
+  }
+
+  .action-image{
     padding-top: 20px;
     max-height: 150px;
   }
