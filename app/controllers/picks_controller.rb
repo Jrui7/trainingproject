@@ -1,5 +1,5 @@
 class PicksController < ApplicationController
-  before_action :set_sample, only: [:show, :new, :my_picks, :pick_history]
+  before_action :set_sample, only: [:show, :my_picks, :pick_history]
   after_action :verify_authorized
   skip_after_action :verify_authorized, only: [:my_picks, :pick_history]
 
@@ -28,11 +28,6 @@ class PicksController < ApplicationController
     @exchange = Exchange.new
   end
 
-  def new
-    @seed = Seed.friendly.find(params[:seed_id])
-    @pick = Pick.new
-    authorize @pick
-  end
 
   def create
     @seed = Seed.friendly.find(params[:seed_id])
