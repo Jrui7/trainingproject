@@ -126,6 +126,10 @@
   align-items: center;
   justify-content: center;
 
+  &:focus {
+    outline: none;
+  }
+
   .tooltiptext {
     visibility: hidden;
     background-color: white;
