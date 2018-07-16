@@ -64,6 +64,12 @@
   }
 }
 
+#top-link {
+  &:focus {
+    outline: none;
+  }
+}
+
 
 
 /* Right section */
@@ -126,9 +132,6 @@
   align-items: center;
   justify-content: center;
 
-  &:focus {
-    outline: none;
-  }
 
   .tooltiptext {
     visibility: hidden;

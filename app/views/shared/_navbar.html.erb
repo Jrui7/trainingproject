@@ -1,4 +1,5 @@
 <div class="navbar-container">
+  <div id="top-link"></div>
   <div class="navbar">
 
     <!-- Logo -->
@@ -8,7 +9,6 @@
         <span class="glyphicon glyphicon-leaf", id="logo-icon"></span>
       </div>
     <% end %>
-
 
     <!-- Right Navigation -->
     <% if user_signed_in? %>
@@ -22,7 +22,7 @@
             <span class="tooltiptext">Poster un produit</span>
           </div>
 
-          <div class="my-picks" id="pending">
+          <div class="my-picks">
             <%= render "shared/pending-picks" %>
             <span class="tooltiptext">Mes picks</span>
           </div>
