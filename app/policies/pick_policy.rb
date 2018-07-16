@@ -13,10 +13,6 @@ class PickPolicy < ApplicationPolicy
     record.user == user || user.admin == true
   end
 
-  def new?
-    true
-  end
-
   def create?
     true
   end
