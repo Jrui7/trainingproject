@@ -182,16 +182,22 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
         <div class="testimonies">
           <div class="testimony">
             <%= cl_image_tag @jorge.photo.path, class: "user-photo" %>
-            <h4 class="testimony-title">"Le mot du CEO"</h4>
+            <h4 class="testimony-title">Jorge, founder @Pickalgo</h4>
             <div class="testimony-text">
-              Il m'arrive souvent de renoncer à acheter un produit que je trouve cool à cause de son prix. Il m'arrive aussi fréquemment de payer un prix que je juge trop élevé, ce qui au final terni mon expérience d'achat et d'utilisation.
+              Il m'arrivait trop souvent de renoncer à un produit que je venais de découvrir à cause de son prix.
+              <%= link_to "#firstTestimony", data: { toggle: "modal" } do%>
+                <div class="expant-testimony">En savoir +</div>
+              <% end %>
             </div>
           </div>
           <div class="testimony">
             <%= cl_image_tag @onur.photo.path, class: "user-photo" %>
-            <h4 class="testimony-title">"Franchement top"</h4>
+            <h4 class="testimony-title">Jenny, founder <a href="https://petitvoyou.com" target="_blank">@PetitVoyou</a></h4>
             <div class="testimony-text">
-              Concept super intelligent, facilite la découverte de vraies pépites et permet de se les procurer au prix idéal. Si en plus tout le monde est gagnant...
+              Lorsque j'ai créé ma marque..
+              <%= link_to "#secondTestimony", data: { toggle: "modal" } do%>
+                <div class="expant-testimony">En savoir +</div>
+              <% end %>
             </div>
           </div>
           <div class="testimony">
@@ -199,6 +205,9 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
             <h4 class="testimony-title">"Grrrrr"</h4>
             <div class="testimony-text">
               Who let the dogs out ?
+              <%= link_to "#thirdTestimony", data: { toggle: "modal" } do%>
+                <div class="expant-testimony">En savoir +</div>
+              <% end %>
             </div>
           </div>
         </div>
@@ -208,11 +217,13 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
           </div>
         <% end %>
       </div>
+      <%= render 'testimony' %>
     </div>
     <%= render 'shared/footer' %>
-
   </div>
+
 </div>
+
 
 
 
