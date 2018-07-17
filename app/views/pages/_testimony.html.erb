@@ -9,11 +9,20 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body testimony-body">
-          <p>Il m'arrive souvent de renoncer à un produit que je viens de découvrir à cause de son prix. A chaque fois deux possibilités:</p>
-
-          <p>Le prix pas adapté: parfois de beaucoup, parfois de peu, lorsque je juge le prix inadapté à la valeur que je perçois pour ce produit,ce que j'aurais personnellement payé pour ce produit</p>
-
-          <p>Le produit trop cher pour moi: cette fois même si le prix me semble adapté au produit, ce dernier est simplement trop cher pour moi. </p>
+          <div class="speaker">
+            <h4 class="modal-title">
+              Jorge
+            </h4>
+            <span>Founder @Pickalgo</span>
+          </div>
+          <div class="statement-and-text">
+            <p class="statement">" Ce t-shirt est une fraicheur, mais je ne me vois pas payer un t-shirt 90 € "</p>
+            <p class="text">Quelquefois le prix nous semble inadapté à la valeur que nous percevons pour ce produit (de beaucoup, ou de peu).</p>
+            <p class="statement">" Ces enceintes sont exceptionnelles, mais je n'ai pas 5000€"</p>
+            <p class="text">Il est également possible d'estimer qu'un produit est simplement trop cher pour nous, même si son prix nous semble juste par rapport à sa qualité.</p>
+            <p class="statement">"A quel prix tu l'aurais acheté ?"</p>
+            <p class="text">J'ai constaté que ceux qui avaient renoncé à acheter un produit à cause de son prix n'avaient généralement pas la même réponse à cette question.</p>
+          </div>
         </div>
         <div class="modal-footer hidden">
           <button type="button" id="close-modal" class="btn btn-default text-center" data-dismiss="modal"></button>
@@ -30,10 +39,21 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header blue-gradiant">
+          <%= cl_image_tag @jenny.photo.path, class: "user-photo-modal" %>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-        <div class="modal-body">
-          <p>Jenny</p>
+        <div class="modal-body testimony-body">
+          <div class="speaker">
+            <h4 class="modal-title">
+              Jenny
+            </h4>
+            <span>Founder <a href="https://petitvoyou.com" target="_blank">@PetitVoyou</a></span>
+          </div>
+          <p>Il m'arrive souvent de renoncer à acheter un produit que je viens de découvrir à cause de son prix. Deux cas de figure:</p>
+
+          <p>Le prix n'est pas adapté: parfois de beaucoup, parfois de peu, je juge le prix inadapté à la valeur que je perçois pour ce produit</p>
+
+          <p>Trop cher pour moi: cette fois même si le prix me semble adapté par rapport à la valeur que je perçois pour ce produit, ce dernier est simplement trop cher pour moi.</p>
         </div>
         <div class="modal-footer hidden">
           <button type="button" id="close-modal" class="btn btn-default text-center" data-dismiss="modal"></button>
