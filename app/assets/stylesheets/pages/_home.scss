@@ -624,6 +624,15 @@
       }
 
       .testimony-box {
+        padding: 40px 0;
+        h2 {
+          border-bottom: none;
+          font-size: 23px;
+        }
+
+        h2 span {
+          padding: 0;
+        }
 
         .testimonies {
           margin: 50px 0 15px 0;
@@ -655,6 +664,10 @@
           border-radius: 0;
         }
 
+      }
+
+      .statement-and-text {
+        padding: 20px 5px;
       }
 
 
