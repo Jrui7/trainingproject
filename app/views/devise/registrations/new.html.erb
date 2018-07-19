@@ -9,7 +9,7 @@
           <%= devise_error_messages! %>
 
           <div class="form-inputs">
-          <%= f.input :date_of_birth, required: true, label:"Date de naissance", as: :date, start_year: Date.today.year - 18,
+          <%= f.input :date_of_birth, required: true, label:"Date de naissance", as: :date, start_year: Date.today.year - 16,
                                         end_year: Date.today.year - 90,
                                         placeholder: { year: 'Année', month: 'mois', day: 'jour' },
                                         order: [:day, :month, :year]  %>

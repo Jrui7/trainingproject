@@ -2,6 +2,11 @@
   padding: 50px;
   background-color: #F1F1F1;
 
+  .form-control {
+    border-radius: 10px;
+    padding: 20px;
+  }
+
 
 
 
@@ -54,9 +59,9 @@
   }
 
   .forgot-link {
-    text-align: center;
-    color: #4d4d5e;
+    color: $orange;
     font-size: 17px;
+    margin-bottom: 35px;
   }
 
 }
