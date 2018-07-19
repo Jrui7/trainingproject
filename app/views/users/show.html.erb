@@ -67,7 +67,10 @@
                     </div>
                   </div>
 
-                  <div class="text-right">
+                  <div class="action-links">
+                    <%= link_to user_path(@user) do %>
+                      <div class="btn-cancel hidden">Annuler</div>
+                    <% end %>
                     <%= f.button :submit, value: "Enregistrer", class: "btn  seedlap", id: "update-user" %>
                   </div>
                 <% end %>

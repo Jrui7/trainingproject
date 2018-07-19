@@ -43,7 +43,10 @@ $(document).ready(function() {
 function updateUserPhoto() {
     $(".choosePhoto").click(function() {
         $(".glyphicon.glyphicon-remove").click();
+        $(".no-photo").hide();
+        $(".photo-update").prepend("<div class='no-photo'></div>");
         $("#user_photo").click();
+        $(".btn-cancel").removeClass('hidden');
     });
   }
 
