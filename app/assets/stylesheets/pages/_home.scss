@@ -394,11 +394,11 @@
     margin: 0 auto;
 
     h2 {
-      width: 100%;
+      width: 80%;
       text-align: center;
       border-bottom: 1px solid #E0E0E0;
       line-height: 0.1em;
-      margin: 10px 0 20px;
+      margin: 0 auto;
     }
 
     h2 span {
@@ -626,6 +626,7 @@
       .testimony-box {
         padding: 40px 0;
         h2 {
+          width: 100%;
           border-bottom: none;
           font-size: 23px;
         }
