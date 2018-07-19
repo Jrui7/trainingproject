@@ -2,15 +2,6 @@
     height: 0px;
   }
 
-.testimony-modal {
-  .blue-gradiant {
-    background: linear-gradient(to right, #3e2995 0, #337b80 50%, #337b80 50%, #3f937d 100%);
-    height: 120px;
-    position: relative;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-  }
-}
 
 .user-photo-modal {
   height: 160px;
@@ -25,12 +16,6 @@
   right: 0;
   bottom: -80px;
 }
-
-.testimony-body {
-  padding: 95px 15px 15px;
-}
-
-
 
 
 .container-home {
@@ -466,6 +451,51 @@
 
     .testimony-text{
       text-align: center;
+    }
+  }
+
+  .expant-testimony {
+    margin-top: 5px;
+  }
+
+  .testimony-modal {
+  .blue-gradiant {
+    background: linear-gradient(to right, #3e2995 0, #337b80 50%, #337b80 50%, #3f937d 100%);
+    height: 100px;
+    position: relative;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+}
+
+  .testimony-body {
+    padding: 95px 15px 15px;
+  }
+
+  .speaker {
+    text-align: center;
+    h4 {
+      font-weight: 600;
+      font-size: 26px;
+    }
+    span {
+      color: #999999;
+    }
+  }
+
+  .statement-and-text {
+    padding: 20px;
+    .statement {
+      margin: 0 0 5px;
+      font-style: italic;
+      color: $orange;
+      font-size: 16px;
+      text-align: center;
+    }
+    .text {
+      margin: 0 0 20px;
+      text-align: justify;
+      font-size: 16px;
     }
   }
 
