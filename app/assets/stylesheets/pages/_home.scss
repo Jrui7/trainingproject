@@ -444,18 +444,19 @@
 
     .testimony-title{
       font-weight: bold;
-      font-style: italic;
       font-size: 16px;
       margin-top: 15px;
     }
 
     .testimony-text{
       text-align: center;
+      font-style: italic;
     }
   }
 
   .expant-testimony {
     margin-top: 5px;
+    font-style: normal;
   }
 
   .testimony-modal {
