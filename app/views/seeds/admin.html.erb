@@ -1,67 +1,50 @@
 
 
 <div class="page-container">
-
-  <div class="seed-feed">
-    <div class="categories">
-      <div class="filter-title">
-        <div class="sub-categories">
-          <%= link_to admin_path do %>
-            <div class=" sub-title selected-category">
-              <div class="filter-icon glyphicon glyphicon-globe"></div>
-              <p>Dashboard</p>
-            </div>
-          <% end %>
-          <%= link_to publish_seed_path do %>
-            <div class="sub-title">
-              <i class="filter-icon fas fa-hourglass-start"></i>
-              <p>Publish (<%= @seeds %>)</p>
-            </div>
-          <% end %>
-          <%= link_to message_path do %>
-            <div class="sub-title">
-              <div class="filter-icon fa fa-envelope"></div>
-              <p>Messages (<%= @picks.size %>)</p>
-            </div>
-          <% end %>
-          <%= link_to pending_path do %>
-            <div class="sub-title">
-              <div class="filter-icon fa fa-pause"></div>
-              <p>Pending (<%= @pending.count %>)</p>
-            </div>
-          <% end %>
-          <%= link_to success_path do %>
-            <div class="sub-title">
-              <div class="filter-icon far fa-thumbs-up"></div>
-              <p>Success</p>
-            </div>
-          <% end %>
-          <%= link_to fail_path do %>
-            <div class="sub-title">
-              <div class="filter-icon far fa-thumbs-down"></div>
-              <p>Fail</p>
-            </div>
-          <% end %>
-          <%= link_to signaled_path do %>
-            <div class="sub-title">
-              <div class="filter-icon glyphicon glyphicon-exclamation-sign"></div>
-              <p>Signaled (<%= @signaled.count %>)</p>
-            </div>
-          <% end %>
-          <%= link_to sidekiq_web_path do %>
-            <div class="sub-title">
-              <div class="filter-icon far fa-arrow-alt-circle-left"></div>
-              <p>Sidekiq Jobs</p>
-            </div>
-          <% end %>
+  <div class="page-sections">
+    <div class="all-cards">
+      <%= link_to publish_seed_path do %>
+        <div class="admin-card">
+          <i class="filter-icon fas fa-hourglass-start"></i>
+          <p>Publish (<%= @seeds %>)</p>
         </div>
-      </div>
+      <% end %>
+      <%= link_to message_path do %>
+        <div class="admin-card">
+          <div class="filter-icon fa fa-envelope"></div>
+          <p>Messages (<%= @picks.size %>)</p>
+        </div>
+      <% end %>
+      <%= link_to pending_path do %>
+        <div class="admin-card">
+          <div class="filter-icon fa fa-pause"></div>
+          <p>Pending (<%= @pending.count %>)</p>
+        </div>
+      <% end %>
+      <%= link_to success_path do %>
+        <div class="admin-card">
+          <div class="filter-icon far fa-thumbs-up"></div>
+          <p>Success</p>
+        </div>
+      <% end %>
+      <%= link_to fail_path do %>
+        <div class="admin-card">
+          <div class="filter-icon far fa-thumbs-down"></div>
+          <p>Fail</p>
+        </div>
+      <% end %>
+      <%= link_to signaled_path do %>
+        <div class="admin-card">
+          <div class="filter-icon glyphicon glyphicon-exclamation-sign"></div>
+          <p>Signaled (<%= @signaled.count %>)</p>
+        </div>
+      <% end %>
+      <%= link_to sidekiq_web_path do %>
+        <div class="admin-card">
+          <div class="filter-icon far fa-arrow-alt-circle-left"></div>
+          <p>Sidekiq Jobs</p>
+        </div>
+      <% end %>
     </div>
-
-
-    <div class="seed-presentation">
-      <h1>Admin dashboard</h1>
-    </div>
-
   </div>
 </div>

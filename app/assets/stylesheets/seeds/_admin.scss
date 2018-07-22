@@ -57,3 +57,20 @@ h1 {
     color: #FFF;
   }
 }
+
+.all-cards {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.admin-card {
+  display: flex;
+  align-items: center;
+  border: 1px solid;
+  padding: 20px 30px;
+  margin-left: 20px;
+  p {
+    margin: 0;
+  }
+}
