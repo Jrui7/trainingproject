@@ -1,0 +1,17 @@
+
+<% seeds.each do |seed| %>
+<div class="product id-<%= seed.category_id%>">
+    <div class='product-body'>
+      <div class="head-seed">
+        <%= link_to seed_path(seed) do  %>
+          <h3> <%= seed.title %>: id <%= seed.id %></h3>
+        <% end %>
+      </div>
+
+      <div class="bottom-sexion">
+        toto
+
+      </div>
+    </div>
+  </div>
+<% end %>

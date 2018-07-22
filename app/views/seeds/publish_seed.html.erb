@@ -3,31 +3,25 @@
 <div class="page-container">
 
   <div class="seed-feed">
-    <div class="categories">
+    <div class="categories hidden-xs">
       <div class="filter-title">
         <div class="sub-categories">
           <%= link_to admin_path do %>
-            <div class=" sub-title selected-category">
+            <div class="sub-title">
               <div class="filter-icon glyphicon glyphicon-globe"></div>
               <p>Dashboard</p>
-            </div>
-          <% end %>
-          <%= link_to publish_seed_path do %>
-            <div class="sub-title">
-              <i class="filter-icon fas fa-hourglass-start"></i>
-              <p>Publish (<%= @seeds %>)</p>
             </div>
           <% end %>
           <%= link_to message_path do %>
             <div class="sub-title">
               <div class="filter-icon fa fa-envelope"></div>
-              <p>Messages (<%= @picks.size %>)</p>
+              <p>Messages</p>
             </div>
           <% end %>
           <%= link_to pending_path do %>
-            <div class="sub-title">
+            <div class="sub-title selected-category">
               <div class="filter-icon fa fa-pause"></div>
-              <p>Pending (<%= @pending.count %>)</p>
+              <p>Pending (<%= @seeds.count %>)</p>
             </div>
           <% end %>
           <%= link_to success_path do %>
@@ -45,7 +39,7 @@
           <%= link_to signaled_path do %>
             <div class="sub-title">
               <div class="filter-icon glyphicon glyphicon-exclamation-sign"></div>
-              <p>Signaled (<%= @signaled.count %>)</p>
+              <p>Signaled</p>
             </div>
           <% end %>
           <%= link_to sidekiq_web_path do %>
@@ -60,8 +54,8 @@
 
 
     <div class="seed-presentation">
-      <h1>Admin dashboard</h1>
+      <h1>Admin dashboard > Publish_seed</h1>
+      <%= render "seeds/publish_seeds", seeds: @seeds %>
     </div>
-
   </div>
 </div>

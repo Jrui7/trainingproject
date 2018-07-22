@@ -129,13 +129,11 @@
                 <div class="media-filter-icon glyphicon glyphicon-euro"></div>
                 <p><%= @seed.price %></p>
               </div>
-              <% if @seed.admin_review == "not-reviewed" %>
-                <div class="social-category">
-                  <div class="signal">
-                    <%= render "signal_seeds/signal" %>
-                  </div>
+              <div class="social-category">
+                <div class="signal">
+                  <%= render "signal_seeds/signal" %>
                 </div>
-              <% end %>
+              </div>
             </div>
           </div>
           <div class="seeder">
