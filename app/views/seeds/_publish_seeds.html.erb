@@ -9,8 +9,10 @@
       </div>
 
       <div class="bottom-sexion">
-        toto
-
+        <%= simple_form_for seed, :url => update_delivery_costs_seed_path(seed.id), :method => :patch do |f| %>
+          <%= f.input_field :expedition_costs, placeholder: 'Exemple: 4.90'%>
+          <%= f.button :submit, value: "Enregistrer", class: "validate-btn"%>
+        <% end %>
       </div>
     </div>
   </div>

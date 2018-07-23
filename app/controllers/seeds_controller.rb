@@ -120,6 +120,10 @@ class SeedsController < ApplicationController
 
   end
 
+  def update_delivery_costs
+
+  end
+
 
 
   def admin
