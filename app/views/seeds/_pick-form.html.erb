@@ -6,7 +6,7 @@
   <div class="pick-form">
     <div id="delivery-info">
     <%= image_tag "truck.png", class:"truck-img" %>
-    Toutes les livraisons sont facturées 3.90€ en plus du prix du deal.
+    Toutes les livraisons sont facturées en plus du prix du deal.
   </div>
     <div class="inputs-and-recap">
       <div class="pick-inputs">
@@ -25,15 +25,24 @@
         <div class="end-block">
           <div class="how-much">
             <div>Mon pick:</div>
-            <div class="counter">€</div>
+            <div class="cout">
+              <div class="counter"></div>
+              <p>€</p>
+            </div>
           </div>
           <div class="how-much">
             <div>Livraison:</div>
-            <div class="cout">3.9 €</div>
+            <div class="cout">
+              <div id="cost-input"><%= @seed.expedition_costs %></div>
+              <p>€</p>
+            </div>
           </div>
           <div class="how-much">
             <div class="last-text">Coût total max:</div>
-            <div class="totalcounter">€</div>
+            <div class="cout">
+              <div class="totalcounter"></div>
+              <p>€</p>
+            </div>
           </div>
         </div>
       </div>
@@ -44,4 +53,6 @@
       </div>
   </div>
 <% end %>
+
+
 
