@@ -2,59 +2,16 @@
 
 <div class="page-container">
   <div class="seed-feed">
-
-    <div class="categories hidden-xs">
-      <div class="filter-title">
-        <div class="sub-categories">
-          <%= link_to admin_path do %>
-            <div class="sub-title">
-              <div class="filter-icon glyphicon glyphicon-globe"></div>
-              <p>Dashboard</p>
-            </div>
-          <% end %>
-          <%= link_to message_path do %>
-            <div class="sub-title">
-              <div class="filter-icon fa fa-envelope"></div>
-              <p>Messages</p>
-            </div>
-          <% end %>
-          <%= link_to pending_path do %>
-            <div class="sub-title">
-              <div class="filter-icon fa fa-pause"></div>
-              <p>Pending</p>
-            </div>
-          <% end %>
-          <%= link_to success_path do %>
-            <div class="sub-title">
-              <div class="filter-icon far fa-thumbs-up"></div>
-              <p>Success</p>
-            </div>
-          <% end %>
-          <%= link_to fail_path do %>
-            <div class="sub-title">
-              <div class="filter-icon far fa-thumbs-down"></div>
-              <p>Fail</p>
-            </div>
-          <% end %>
-          <%= link_to signaled_path do %>
-            <div class="sub-title selected-category">
-              <div class="filter-icon glyphicon glyphicon-exclamation-sign"></div>
-              <p>Signaled (<%= @signaled %>)</p>
-            </div>
-          <% end %>
-          <%= link_to sidekiq_web_path do %>
-            <div class="sub-title">
-              <div class="filter-icon far fa-arrow-alt-circle-left"></div>
-              <p>Sidekiq Jobs</p>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-
-
     <div class="seed-presentation">
-      <h1>Admin dashboard > Signaled</h1>
+      <div class="link-and-title">
+        <%= link_to admin_path do %>
+          <div>
+            <i class= "far fa-arrow-alt-circle-left"></i>
+            Admin-dashbord
+          </div>
+        <% end %>
+        <h1>Signaled</h1>
+      </div>
       <% @seeds.each do |seed| %>
       <div class="product id-<%= seed.category_id%>">
           <div class='product-body'>
