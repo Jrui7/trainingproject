@@ -72,18 +72,11 @@ class Seed < ApplicationRecord
   end
 
 
-  def set_view_counter
-    self.view_counter = 0
-  end
-
   def increment_views
     self.view_counter += 1
     save!
   end
 
-  def set_popularity
-    self.popularity = 0
-  end
 
   def increment_popularity
     self.popularity = (self.view_counter + self.picks.count * 5)
@@ -103,11 +96,11 @@ class Seed < ApplicationRecord
   end
 
   def self.seed_selection
-    ongoing.where.not(admin_review:"Invalide")
+    ongoing.where(status:"published", admin_review: ["Valide", "not-reviewed"])
   end
 
   def self.seed_sample_expired
-    where.not(admin_review:"Invalide")
+    where(status:"published", admin_review: ["Valide", "not-reviewed"])
   end
 
   def cancel_campaign

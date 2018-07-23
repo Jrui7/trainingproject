@@ -37,4 +37,8 @@ class SeedPolicy < ApplicationPolicy
     user.admin == true
   end
 
+  def update_delivery_costs?
+    user.admin == true
+  end
+
 end

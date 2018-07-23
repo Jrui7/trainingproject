@@ -24,7 +24,7 @@ class CampaignsController < ApplicationController
 
   def signaled
     @seeds = Seed.where(admin_review: "not-reviewed").joins(:signal_seed).distinct
-    @signaled = Seed.where(admin_review: "not-reviewed").joins(:signal_seed).distinct.count
+    @signaled = @seeds.count
   end
 
   def message
