@@ -10,7 +10,7 @@
 
       <div class="bottom-sexion">
         <%= simple_form_for seed, :url => update_delivery_costs_seed_path(seed.id), :method => :patch do |f| %>
-        <%= f.collection_radio_buttons :status, [["pending", 'Pending'] ,["published", 'Publier']], :first, :last %>
+        <%= f.collection_radio_buttons :status, [["reject", 'Rejetter'] ,["published", 'Publier']], :first, :last %>
           <%= f.input_field :expedition_costs, placeholder: 'Exemple: 4.90'%>
           <%= f.button :submit, value: "Enregistrer", class: "validate-btn"%>
         <% end %>
