@@ -13,6 +13,10 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { :registrations => :registrations }
   resources :seeds, only: [:index, :new, :create, :update, :show], shallow: true do
+    member do
+      patch :update_delivery_costs
+      put :update_delivery_costs
+    end
     resources :picks, only: [:index, :edit, :show, :create, :update, :destroy] do
       member do
         patch :update_card
@@ -47,6 +51,7 @@ Rails.application.routes.draw do
 
 
   get 'admin', to: 'seeds#admin'
+  get 'publish_seed', to: 'seeds#publish_seed'
   get 'newest', to: 'seeds#newest'
   get 'popular', to: 'seeds#popular'
   get 'last_day', to: 'seeds#last_day'

@@ -6,6 +6,7 @@ class PaymentsController < ApplicationController
     def new
       @user = current_user
       @user.addresses.any? ? @customer_address = @user.addresses.first : @customer_address = Address.new
+      @seed = @pick.seed
       unless @user.customer_id.blank?
         @customer_infos = Stripe::Customer.retrieve(@user.customer_id).sources.data[0]
       end

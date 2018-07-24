@@ -35,6 +35,16 @@ h1 {
   label {
     margin-right: 10px;
   }
+
+  input {
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  .validate-btn {
+    color: #FFF;
+    background-color: $orange;
+  }
 }
 
 .media-filter-icon {
@@ -55,5 +65,77 @@ h1 {
   .btn {
     background-color: $blue;
     color: #FFF;
+  }
+}
+
+.all-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.admin-card {
+  display: flex;
+  align-items: center;
+  border: 1px solid;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  padding: 20px 30px;
+  flex: 0 0 20%;
+  background-color: $blue;
+  color: #FFF;
+  border-radius: 5px;
+  p {
+    margin: 0;
+  }
+  &:hover {
+    color: #FFF;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  }
+}
+
+.link-and-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  a {
+    border: 1px solid $blue;
+    color: $blue;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  h1 {
+    margin: 0 0 0 20px;
+  }
+}
+
+.admin-instructions {
+  margin-bottom: 20px;
+  font-size: 17px;
+}
+
+
+@media(max-width: 480px) {
+
+  .all-cards {
+    margin-top: 30px;
+  }
+  .admin-card {
+    flex: 0 0 60%;
+    }
+
+  .link-and-title {
+    justify-content: center;
+    margin: 20px 0;
+    font-size: 14px;
+    a {
+      padding: 5px 7px;
+      border-radius: 5px;
+    }
+    h1 {
+      margin: 0 0 0 10px;
+      font-size: 14px;
+    }
   }
 }

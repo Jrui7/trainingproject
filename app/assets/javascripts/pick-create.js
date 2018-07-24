@@ -5,12 +5,8 @@ $(document).ready(function() {
     var target = $('#start-pick');
     var counter = $(".counter");
     var totalcounter = $(".totalcounter");
-
     setCounterValueAndAction(target, counter);
     setCounterValueAndActionTotal(target, totalcounter);
-
-
-
   });
 
 });
@@ -33,7 +29,7 @@ function countTo(target, counter) {
         $this.text(Math.floor(this.countNum));
       },
       complete: function() {
-        var finish = (this.countNum) + " " + "€";
+        var finish = (this.countNum);
         $this.text(finish);
       }
     });
@@ -42,7 +38,10 @@ function countTo(target, counter) {
 
 
 function countToTotal(target, totalcounter) {
-  var target = parseInt($(target).val()) + 3.9;
+  var delivery = document.getElementById("cost-input").innerHTML;
+  var delivery_costs = parseFloat(delivery);
+  var input = parseFloat(target.val()) + delivery_costs
+  var target = input.toFixed(2)
   $(totalcounter).each(function() {
     var $this = $(this),
       countTo = target;
@@ -56,7 +55,7 @@ function countToTotal(target, totalcounter) {
         $this.text(Math.floor(this.countNum));
       },
       complete: function() {
-        var finish = (this.countNum).toString() + " " + "€";
+        var finish = (this.countNum);
         $this.text(finish);
       }
     });
@@ -67,16 +66,16 @@ function setCounterValueAndAction(target, counter) {
   $(target).on('keyup', function(event) {
     if (event.keyCode == 8) {
       if ($(target).val() == "") {
-        $(counter).html("€");
+        $(counter).html("");
       }
       else {
-        $(counter).html("");
+        $(counter).html(0);
         var newCounter = $(counter);
         countTo(target, newCounter);
       }
     }
     else if (event.keyCode != 13) {
-      $(counter).html("");
+      $(counter).html(0);
       var newCounter = $(counter);
       countTo(target, newCounter);
     }
@@ -87,16 +86,16 @@ function setCounterValueAndActionTotal(target, totalcounter) {
   $(target).on('keyup', function(event) {
     if (event.keyCode == 8) {
       if ($(target).val() == "") {
-        $(totalcounter).html("€");
+        $(totalcounter).html("");
       }
       else {
-        $(totalcounter).html("");
+        $(totalcounter).html(0);
         var newCounter = $(totalcounter);
         countToTotal(target, newCounter);
       }
     }
     else if (event.keyCode != 13) {
-      $(totalcounter).html("");
+      $(totalcounter).html(0);
       var newCounter = $(totalcounter);
       countToTotal(target, newCounter);
     }

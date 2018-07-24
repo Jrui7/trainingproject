@@ -19,6 +19,7 @@ class PicksController < ApplicationController
   def show
     @pick = Pick.find(params[:id])
     @user = @pick.user_id
+    @seed = @pick.seed
     @exchanges = @pick.exchanges.includes(:user)
     authorize @pick
     unless @pick.state == "pending"

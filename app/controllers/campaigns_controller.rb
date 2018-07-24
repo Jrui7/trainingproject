@@ -15,16 +15,16 @@ class CampaignsController < ApplicationController
   end
 
   def success
-    @seeds = Seed.joins(:campaign).where(campaigns: {status: "success"})
+    @seeds = Seed.joins(:campaign).where(campaigns: {status: "success"}).distinct
   end
 
   def fail
-    @seeds = Seed.joins(:campaign).where(campaigns: {status: "fail"})
+    @seeds = Seed.joins(:campaign).where(campaigns: {status: "fail"}).distinct
   end
 
   def signaled
     @seeds = Seed.where(admin_review: "not-reviewed").joins(:signal_seed).distinct
-    @signaled = Seed.where(admin_review: "not-reviewed").joins(:signal_seed).distinct.count
+    @signaled = @seeds.count
   end
 
   def message

@@ -151,9 +151,19 @@
       </div>
     </div>
 
-    <div class="seed-presentation">
-      <%= render @seeds, seeds: @seeds%>
-    </div>
+    <% if @seeds.blank? %>
+      <div class="no-seed">
+        <h1>Pas de campagne en cours de clôture.</h1>
+        <p>Peut-être demain !</p>
+      </div>
+    <% else %>
+      <div class="seed-presentation">
+        <div id="infinite-scrolling">
+          <%= will_paginate @seeds %>
+        </div>
+        <%= render @seeds%>
+      </div>
+    <% end %>
 
   </div>
 </div>

@@ -11,10 +11,10 @@
             Admin-dashbord
           </div>
         <% end %>
-        <h1>Fail</h1>
+        <h1>Publish_seed</h1>
       </div>
-      <%= render "campaigns/seeds", seeds: @seeds %>
+      <div class="admin-instructions">Renseigner le coût d'expédition du produit (à déterminer à partir du poid du produit à trouver sur le site du vendeur).</div>
+      <%= render "seeds/publish_seeds", seeds: @seeds %>
     </div>
-
   </div>
 </div>

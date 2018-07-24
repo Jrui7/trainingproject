@@ -81,12 +81,7 @@ class SeedsController < ApplicationController
      @seed = current_user.seeds.build(seed_params)
      authorize @seed
     if @seed.save
-      @seed.set_expiration
-      @seed.set_view_counter
-      @seed.set_popularity
-      @seed.save
-      Campaign.create(seed_id: @seed.id)
-      flash[:notice] = "Votre seed est maintenant en ligne"
+      flash[:notice] = "Seed en attente de validation"
       redirect_to seed_path(@seed)
     else
       render :new
@@ -120,15 +115,35 @@ class SeedsController < ApplicationController
 
   end
 
+  def update_delivery_costs
+    @seed = Seed.find(params[:id])
+    authorize @seed
+    status = params["seed"]["status"]
+    if status == "published"
+      @seed.set_expiration
+      @seed.update(delivery_costs_infos)
+      Campaign.create(seed_id: @seed.id)
+      redirect_to publish_seed_path
+    else
+      @seed.update(delivery_costs_infos)
+      redirect_to publish_seed_path
+    end
+  end
+
 
 
   def admin
-    @pending = Seed.where.not(admin_review:"Invalide").includes(:campaign).joins(:campaign).where(campaigns: {status: "pending"})
+    @pending = @pending = Seed.where.not(admin_review:"Invalide").includes(:campaign).joins(:campaign).where(campaigns: {status: "pending"})
     @signaled = Seed.where(admin_review: "not-reviewed").joins(:signal_seed).distinct
     @picks =  Pick.joins(:exchanges).where(exchanges: { admin_review: false }).distinct
-
+    @seeds = Seed.where(status: "pending").count
     @seed = Seed.first
     authorize @seed
+  end
+
+  def publish_seed
+    @seeds = Seed.where(status: "pending")
+    authorize @seeds
   end
 
 
@@ -144,6 +159,10 @@ class SeedsController < ApplicationController
 
   def set_user
     @user = current_user
+  end
+
+  def delivery_costs_infos
+    params.require(:seed).permit(:expedition_costs, :status)
   end
 
 
