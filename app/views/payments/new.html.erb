@@ -17,18 +17,18 @@
         <h3>Récap</h3>
         <div class="explanation">
           <div class="image-title-price">
-            <%= cl_image_tag @pick.seed.photos.first.path, :height=>75, :crop=>"scale" %>
+            <%= cl_image_tag @seed.photos.first.path, :height=>75, :crop=>"scale" %>
             <div class="recap-paragraph">
               <div>
-              <h4><%= @pick.seed.title %></h4>
-              <p>Prix original: <%= @pick.seed.price %> €</p>
+              <h4><%= @seed.title %></h4>
+              <p>Prix original: <%= @seed.price %> €</p>
               </div>
               Pické le: <%= @pick.created_at.strftime("%d/%m/%Y") %>
             </div>
           </div>
           <div class="how-much">
             <div class="text">Coût livraison:</div>
-            <p class="price">3.90 €</p>
+            <p class="price"><%= @seed.expedition_costs %> €</p>
           </div>
           <div class="how-much">
             <div class="text">Pické pour:</div>
@@ -36,7 +36,7 @@
           </div>
           <div class="how-much last">
             <div class="text"><b>Coût total max:</b></div>
-            <p class="price"><%= @pick.price + 3.90 %> €</p>
+            <p class="price"><%= @pick.price + @seed.expedition_costs %> €</p>
           </div>
           <div class="info-detail">Vous n'avez rien à payer aujourd'hui, et ne serez débité que si nous arrivons à obtenir un prix inférieur ou égal à celui que vous avez proposé.
           </div>

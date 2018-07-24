@@ -22,7 +22,7 @@ class FinalizeCampaignJob < ApplicationJob
           customer_id = pick.user.customer_id
           user_id = pick.user_id
           if pick.price >= campaign.price
-            pick.amount = campaign.price + 3.9
+            pick.amount = campaign.price + pick.seed.expedition_costs
             begin
             charge = Stripe::Charge.create(
               card:     pick.payment["id"],
