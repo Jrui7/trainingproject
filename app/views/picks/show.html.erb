@@ -59,7 +59,7 @@
       </div>
       <div class="how-much last">
         <div class="text"><b>Coût total max:</b></div>
-        <p class="price"><%= @pick.price + 3.90 %> €</p>
+        <p class="price"><%= @pick.price + @seed.expedition_costs %> €</p>
       </div>
       <div class="info-detail"><%= render 'picks/pick-status', pick: @pick %>
       </div>

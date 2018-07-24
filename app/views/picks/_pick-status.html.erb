@@ -6,7 +6,7 @@
   <% when "finalized" %>
   <div>
     <h4>Finalisé</h4>
-    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€, mais remportez le deal pour seulement <%= pick.seed.campaign.price %>€. C'est bon ça !</div>
+    <div class="status-text">Votre pick est un succès. Vous avez été débité(e) d'un total de <%= pick.seed.campaign.price  + pick.seed.expedition_costs %> € qui comprend <%= pick.seed.campaign.price %> € pour le produit (prix négocié par Pickalgo), ansi que <%= pick.seed.expedition_costs %> €  au titre des frais de transport.</div>
   </div>
   <% when "campaign_failed" %>
   <div>
