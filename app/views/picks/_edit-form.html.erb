@@ -1,42 +1,49 @@
 <%= simple_form_for [seed, pick], url: pick_path(pick), remote: true do |f| %>
-  <div class="pick-form">
-    <p class="instruction">Pas de stratégie compliquée à élaborer, dites nous simplement quel est le prix maximal vous êtes prêt à payer pour acquérir "<%= seed.title.capitalize %>". (voir guide du pick)</p>
-    <p id="delivery-info">Toutes les livraisons sont facturées 3.90€ en plus du prix du deal.</p>
-    <div class="inputs-and-recap">
-      <div class="pick-inputs">
-        <div class="price">
-          <label for="price">Votre prix</label>
-          <%= f.input_field :price, as: :integer, class: 'input-sm form-control pick', id: 'start-pick', placeholder: 'Exemple: 150'%>
-          <span class="unit">€</span>
-        </div>
-        <% unless seed.size_guide.blank? %>
-          <label for="size" id="size-label">Taille</label>
-          <%= f.input_field :size, class: 'input-sm form-control pick', id: 'size-pick', placeholder: "Référez-vous au guide des tailles"%>
-        <% end %>
+<div class="pick-form">
+  <div class="inputs-and-recap">
+    <div class="pick-inputs">
+      <div class="price">
+        <label for="price">Votre prix</label>
+        <%= f.input_field :price, as: :integer, class: 'input-sm form-control pick', id: 'start-pick', placeholder: 'Exemple: 150'%>
+        <span class="unit">€</span>
       </div>
-      <div class="recap-animation">
-        <p>Récap:</p>
-        <div class="end-block">
-          <div class="how-much">
-            <div>Mon pick:</div>
-            <div class="counter">€</div>
+      <% unless seed.size_guide.blank? %>
+        <label for="size" id="size-label">Taille</label>
+        <%= f.input_field :size, class: 'input-sm form-control pick', id: 'size-pick', placeholder: "Référez-vous au guide des tailles"%>
+      <% end %>
+    </div>
+    <div class="recap-animation">
+      <p>Récap:</p>
+      <div class="end-block">
+        <div class="how-much">
+          <div>Mon pick:</div>
+          <div class="cout">
+            <div class="counter"></div>
+            <p>€</p>
           </div>
-          <div class="how-much">
-            <div>Livraison:</div>
-            <div class="cout">3.9 €</div>
+        </div>
+        <div class="how-much">
+          <div>Livraison:</div>
+          <div class="cout">
+            <div id="cost-input"><%= seed.expedition_costs %></div>
+            <p>€</p>
           </div>
-          <div class="how-much">
-            <div class="last-text">Coût total max:</div>
-            <div class="totalcounter">€</div>
+        </div>
+        <div class="how-much">
+          <div class="last-text">Coût total max:</div>
+          <div class="cout">
+            <div class="totalcounter"></div>
+            <p id="color-euro">€</p>
           </div>
         </div>
       </div>
     </div>
-      <div class="action-links">
-        <button type="button" class="btn-dissmiss text-center" data-dismiss="modal">Retour</button>
-        <%= f.submit "Enregistrer", class: "btn", id: "btn-pick" %>
-      </div>
   </div>
+    <div class="action-links">
+      <button type="button" class="btn-dissmiss text-center" data-dismiss="modal">Retour</button>
+      <%= f.submit "Enregistrer", class: "btn", id: "btn-pick" %>
+    </div>
+</div>
 <% end %>
 
 
