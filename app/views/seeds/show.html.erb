@@ -57,6 +57,12 @@
               <h4 class="modal-title"><%= @seed.title.capitalize %> </h4>
             </div>
             <div class="modal-body">
+              <div class="instruction">
+                Nouveau sur Pickalgo ? <br>Découvrez
+                <%= link_to "#howToPick", data: { toggle: "modal" } do%>
+                   ici
+                <% end %> comment (bien) picker.
+              </div>
               <div class="pick-modal">
                 <%= render "seeds/pick-form"%>
               </div>
@@ -69,6 +75,7 @@
         </div>
       </div>
     </div>
+    <%= render "shared/how-to-pick" %>
 
     <div class="row body">
       <div class="col-xs-12 col-md-7 nopadding-left nopadding-right">

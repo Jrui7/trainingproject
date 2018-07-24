@@ -1,13 +1,6 @@
 
 <%= simple_form_for [@seed, @pick], url: seed_picks_path(@seed), remote: true,method: :post do |f| %>
-  <h4 class="instruction">
-    Conseils pour (bien) Picker
-  </h4>
   <div class="pick-form">
-    <div id="delivery-info">
-    <%= image_tag "truck.png", class:"truck-img" %>
-    Toutes les livraisons sont facturées en plus du prix du deal.
-  </div>
     <div class="inputs-and-recap">
       <div class="pick-inputs">
         <div class="price">
