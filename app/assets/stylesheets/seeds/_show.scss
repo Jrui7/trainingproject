@@ -49,11 +49,29 @@
     .title {
       padding: 0 0 0 5px;
       display: flex;
-      justify-content: space-between;
+      align-items: center;
        h1 {
         font-size: 22px;
         font-weight: bold;
         margin: 0;
+      }
+      .pending-infos {
+        display: flex;
+        align-items: center;
+        background-color: $orange;
+        padding: 7px 20px;
+        border-radius: 5px;
+        margin-left: 20px;
+      }
+
+      .fa-hourglass-start {
+        color: #FFF;
+        margin-right: 10px;
+      }
+      p {
+        color: #FFF;
+        margin: 0;
+        font-size: 16px;
       }
     }
 

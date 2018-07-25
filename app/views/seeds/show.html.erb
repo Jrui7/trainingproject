@@ -10,9 +10,18 @@
     <div class="header">
       <div class="title">
         <h1><%= @seed.title.capitalize %></h1>
+        <% unless @seed.status == "published" %>
+          <%= link_to "#statusInfos", data: { toggle: "modal" } do%>
+            <div class="pending-infos">
+              <i class="fas fa-hourglass-start"></i>
+              <p>En attente</p>
+            </div>
+          <% end %>
+        <% end %>
         <a href="#top-link" class="hidden" id="go-to-top-link"></a>
       </div>
-      <% if @seed.ongoing? %>
+      <%= render 'seeds/status-infos' %>
+      <% if @seed.ongoing? && @seed.status == "published" %>
         <div class="timer-and-pick">
           <div class="seed-infos-timer">
             <div id="timer" data-timer="<%= (@seed.expiration) %>">
@@ -235,7 +244,7 @@
               <span class="glyphicon glyphicon-chevron-right"></span>
             </a>
           <% end %>
-          <% if @seed.ongoing? %>
+          <% if @seed.ongoing? && @seed.status == "published" %>
             <div class="pick-section hidden-xs">
               <%= render "seeds/pick-section" %>
             </div>
@@ -248,12 +257,14 @@
     </div>
   </div>
 </div>
+
+<% if @seed.ongoing? && @seed.status == "published" %>
+  <div class="pick-container-xs">
+    <%= render "seeds/pick-section-xs" %>
+  </div>
+<% end %>
+
 <%= render 'shared/footer' %>
-
-
-<div class="pick-container-xs">
-  <%= render "seeds/pick-section-xs" %>
-</div>
 
 
 
