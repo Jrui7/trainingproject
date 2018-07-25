@@ -119,13 +119,16 @@ class SeedsController < ApplicationController
     @seed = Seed.find(params[:id])
     authorize @seed
     status = params["seed"]["status"]
+    @user = @seed.user.id
     if status == "published"
       @seed.set_expiration
       @seed.update(delivery_costs_infos)
       Campaign.create(seed_id: @seed.id)
+      PublishSeedMailer.seed_validated(@seed.id, @user).deliver_later
       redirect_to publish_seed_path
     else
       @seed.update(delivery_costs_infos)
+      PublishSeedMailer.seed_rejected(@seed.id, @user).deliver_later
       redirect_to publish_seed_path
     end
   end
