@@ -1,4 +1,5 @@
 meta_product_name: "Pickalgo"
 meta_title: "Pickalgo - Les nouveautés au meilleur prix"
-meta_description: "Avec Pickalgo vous bénéficiez du meilleur prix possible: celui qui contente le plus grand nombre d'acheteurs tout en permettant au vendeur de maintenir sa rentabilité"
-meta_image: "tech.jpg"                           # Une image dans votre dossier app/assets/images/              # indispensable pour les Twitter Cards
+meta_description: "Décidez du prix que vous êtes prêt à payer
+pour les nouveautés qui vous plaisent. Nous contactons et calculons avec le vendeur, le meilleur prix qu'il lui est possible de réaliser"
+meta_image: "tags.jpg"                           # Une image dans votre dossier app/assets/images/              # indispensable pour les Twitter Cards
