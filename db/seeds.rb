@@ -1,7 +1,7 @@
 
 =begin
 User.destroy_all
-jorge = User.create(admin: true, sex: "Homme", email: "jorge.ruivinho@me.com", password: "password", pseudo: "Jrui7", photo_url: "http://res.cloudinary.com/dlddnk3pr/image/upload/v1504805315/chx9ggnqbpz9ojb9pjnb.jpg")
+jorge = User.create(admin: true, sex: "Homme", email: "jorge.ruivinho@me.com", password: "password", pseudo: "Jrui7", photo_url: "http://res.cloudinary.com/dlddnk3pr/image/upload/v1518690464/n5jdovwupist569mxi1r.jpg")
 jennifer = User.create(sex: "Femme", email: "jenniferschwientek@gmail.com", password: "password", pseudo: "Jenny", photo_url: "http://res.cloudinary.com/dlddnk3pr/image/upload/v1504809025/pfzlmedhzlieyalaczxr.jpg")
 thomas = User.create(sex: "Homme", email: "studentouch@gmail.com", password: "password", pseudo: "SurfMousse", photo_url: "http://res.cloudinary.com/dlddnk3pr/image/upload/v1505133796/sgb463x8acjlumv7ht86.jpg")
 
