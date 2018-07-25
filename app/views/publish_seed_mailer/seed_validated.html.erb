@@ -1,7 +1,7 @@
 <h1>Hello <%= @user.pseudo %></h1>
 
 <p>Merci de nous avoir présenté <%= @seed.title %>.
-<br>Votre <%= link_to 'post', seed_url(@seed.id) %> est maintenant en ligne.  Nous lançons dès à présent la campagne d'achat pour le produit.</p>
+<br>Votre <%= link_to 'post', seed_url(@seed.title.parameterize) %> est maintenant en ligne.  Nous lançons dès à présent la campagne d'achat pour le produit.</p>
 <p>N'hésitez pas à en parler autour de vous pour donner de la visibilité à cette campagne, et ainsi maximiser ses chances de succès.</p>
 
 <p>A très vite sur Pickalgo</p>

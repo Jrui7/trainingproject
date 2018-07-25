@@ -1,6 +1,6 @@
 <h1>Hello <%= @user.pseudo %></h1>
 
-<p>Merci de nous avoir présenté <%= @seed.title %>. Votre <%= link_to 'post', seed_url(@seed.id) %> n'a pas été validé car il ne respectait pas pleinement nos conditions générales d'utilisation.
+<p>Merci de nous avoir présenté <%= @seed.title %>. Votre <%= link_to 'post', seed_url(@seed.title.parameterize) %> n'a pas été validé car il ne respectait pas pleinement nos conditions générales d'utilisation.
 <br>Les motifs de refus de validation par un admin sont généralement les suivants: </p>
 
 <ul>
