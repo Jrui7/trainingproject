@@ -36,7 +36,7 @@
       Fin de la campagne: <%= pick.seed.expiration.strftime("%d/%m/%Y") %>.
       <div class="payment-link">
         <%= link_to new_pick_payment_path(pick) do %>
-          <div class="btn">Finaliser pick</div>
+          <div class="btn-orange">Finaliser pick</div>
         <% end %>
       </div>
     </div>
@@ -63,7 +63,7 @@
       <% end %>
       <div class="payment-recap">
         <%= link_to pick_path(pick) do %>
-          <div class="btn">Détails</div>
+          <div class="btn-white">Détails</div>
         <% end %>
       </div>
     </div>

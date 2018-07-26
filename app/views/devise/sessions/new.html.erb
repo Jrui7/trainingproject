@@ -15,7 +15,7 @@
               <div class="forgot-link">Mot de passe oublié ?</div>
           <% end %>
           <div class="form-actions">
-            <%= f.button :submit, "Connexion" %>
+            <%= f.button :submit, "Connexion", class: "btn-orange" %>
           </div>
         <% end %>
     </div>
@@ -41,9 +41,6 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
             <div class="pick-modal">
               <%= render "devise/passwords/reset-password"%>
             </div>
-          </div>
-          <div class="modal-footer hidden">
-            <button type="button" id="close-modal-lost" class="btn btn-default text-center" data-dismiss="modal"></button>
           </div>
         </div>
 

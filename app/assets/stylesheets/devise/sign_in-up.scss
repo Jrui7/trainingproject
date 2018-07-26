@@ -32,19 +32,8 @@
   }
 
   .form-actions {
-    text-align: center;
-  }
-
-  .btn-default {
-    border-radius: 50px;
-    border: 3px solid $orange;
-    color: $orange;
-    padding: 6px 12px;
-    font-size: 20px;
-    &:hover{
-      background-color: $orange;
-      color: white;
-    }
+    display: flex;
+    justify-content: center;
   }
 
   .optional {

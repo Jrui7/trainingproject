@@ -151,7 +151,7 @@
       }
     }
 
-    input, textarea {
+    .form-control {
       border-radius: 10px;
     }
 
@@ -305,25 +305,19 @@
     display: none;
   }
 
+  .action-links {
+    input {
+      border-radius: 50px;
+    }
+    .btn-white {
+      margin-right: 30px;
+    }
+  }
+
   #update-user {
     margin: 20px 0;
   }
 
-  .seedlap {
-    border-radius: 50px !important;
-    border: 3px solid $orange;
-    color: white;
-    background-color: $orange;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 10px;
-    font-size: 15px;
-    &:hover{
-      border: 3px solid $orange;
-      color: white;
-      background-color: $orange;
-    }
-  }
 
   .form-box{
     padding: 5px 10px;
@@ -418,23 +412,12 @@
       justify-content: flex-end;
       margin: 30px 0 0 auto;
       width: 30%;
+
+      .btn-white {
+        margin-right: 15px;
+      }
     }
 
-    .validate{
-      color: white;
-      background-color: $blue;
-      border-radius: 10px;
-      border: 1px solid $blue;
-      padding: 5px 10px;
-      flex: 0 70%;
-    }
-    .cancel{
-      color: $blue;
-      border: 1px solid $blue;
-      border-radius: 10px;
-      padding: 5px 10px;
-      margin-right:15px;
-    }
   }
 
 

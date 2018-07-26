@@ -156,14 +156,6 @@
 .validate-link {
   margin: 20px 0;
   color: $blue;
-  .btn-default {
-    border-radius: 50px !important;
-    border: 3px solid $red !important;
-    color: $red !important;
-    padding: 6px 12px !important;
-    font-size: 15px !important;
-
-  }
 }
 
 #exchanges, #exchange_form {
@@ -183,16 +175,10 @@
     outline: none;
   }
 }
-  .btn-default {
+  .btn-orange {
     position: absolute;
     bottom: 12px;
     right: 10px;
-    border-radius: 50px !important;
-    border: 3px solid $orange !important;
-    color: #FFF !important;
-    background-color: $orange;
-    padding: 3px 10px !important;
-    font-size: 16px !important;
   }
 }
 

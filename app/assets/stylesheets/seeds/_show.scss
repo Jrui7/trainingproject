@@ -78,7 +78,7 @@
     .timer-and-pick {
       display: flex;
       align-items: center;
-      padding: 5px 0 0 0;
+      padding: 10px 0 0 0;
 
 
     }
@@ -113,14 +113,6 @@
     }
   }
 
-  .has_picked {
-    background-color: $blue;
-    border-radius: 4px;
-    color: white;
-    margin: 0 0 0 20px;
-    text-transform: uppercase;
-    padding: 10px;
-  }
 
   a {
   text-decoration: none;
@@ -133,36 +125,14 @@
     text-decoration: none;
   }
 
-  .btn {
-    margin: 0;
-    border: none;
-  }
 
-  .btn-primary {
-    border: none;
-  }
 
-  .pick-link {
-    display: flex;
-    align-items: center;
-    padding: 10px 30px;
+.pick-section {
+  .btn-blue {
     margin-left: 20px;
-    text-decoration: none;
-    border-radius: 50px;
-    text-shadow: 0 1px 0 $blue;
-    background: -webkit-gradient(linear, left top, left bottom, from(#f5af19), to($orange));
-    background: linear-gradient(#f5af19, $orange);
-    -webkit-box-shadow: 0 7px 13px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 #4b58ba;
-    box-shadow: 0 7px 13px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 $blue;
-
-    &:hover {
-      -webkit-box-shadow: 0 5px 8px -1px rgba(45,35,66,0.3), 0 4px 5px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 $blue;
-      box-shadow: 0 5px 8px -1px rgba(45,35,66,0.3), 0 4px 5px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 $blue;
-      -webkit-transform: translateY(-1px);
-      -ms-transform: translateY(-1px);
-      transform: translateY(-1px);
-    }
-
+  }
+  .btn-orange {
+    margin-left: 20px;
 
     .fa-hand-lizard {
       font-size: 20px;
@@ -170,15 +140,13 @@
       padding: 0;
     }
 
-
     p {
       margin: 0 0 0 10px;
       font-size: 18px;
       color: #FFFFFF;
     }
-
-
   }
+}
 
 
   .body {
@@ -558,17 +526,6 @@
   }
 
 
-  #btn-pick {
-      border-radius: 50px;
-      color: white;
-      background-color: $orange;
-      text-transform: uppercase;
-      font-weight: bold;
-      padding: 10px 12px;
-      font-size: 15px;
-
-  }
-
   .pick-counter {
     font-size: 15px;
   }
@@ -589,7 +546,6 @@
   .pick-bar-xs  {
     position: fixed;
     bottom: 0px;
-    background-color: $orange;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -597,7 +553,10 @@
     outline: none;
     width: 100%;
     padding: 10px;
-    box-shadow: 0px -8px 10px 1px rgba(217,208,217,1);
+    background: -webkit-gradient(linear, left top, right bottom, from(#f5af19), to($orange));
+    background: linear-gradient(#f5af19, $orange);
+    -webkit-box-shadow: 0 7px 13px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 #4b58ba;
+    box-shadow: 0 7px 13px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 $blue;
 
     .fa-hand-lizard {
       color: white;
@@ -615,7 +574,6 @@
   .picked-bar-xs  {
     position: fixed;
     bottom: 0px;
-    background-color: $blue;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -623,7 +581,10 @@
     outline: none;
     width: 100%;
     padding: 10px;
-    box-shadow: 0px -8px 10px 1px rgba(217,208,217,1);
+    background: -webkit-gradient(linear, left top, right bottom, from($blue), to(#3e2995));
+    background: linear-gradient($blue, #3e2995);
+    -webkit-box-shadow: 0 7px 14px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 $blue;
+    box-shadow: 0 7px 14px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 $blue;
 
 
     p {
@@ -642,22 +603,6 @@
     h2 {
       font-size:30px;
       margin-top:0px;
-    }
-    .pick-link, .has_picked{
-      width: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-left: auto;
-      margin-right: auto;
-      height: 50px;
-      margin-top: 40px;
-      p{
-        font-size: 20px;
-      }
-      .fa-hand-lizard{
-        font-size: 22px;
-      }
     }
   }
 
@@ -721,13 +666,6 @@
     padding-top: 20px;
     margin-top: 20px;
 
-    .btn-dissmiss{
-      border: 1px solid;
-      border-radius: 50px;
-      padding: 6px 12px;
-      margin-right: 10px;
-      background-color: inherit;
-    }
 
     .btn-cancel {
       border-radius: 50px !important;

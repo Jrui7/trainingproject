@@ -30,8 +30,9 @@
   h3 {
     margin: 0;
     padding: 7px 20px;
-    background-color: #1A171B;
-    color: #FFF;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e4e4e9));
+    background: linear-gradient(#fff, #e4e4e9);
+    color: #243763;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
@@ -103,7 +104,8 @@
   h3 {
     margin: 0;
     padding: 7px 20px;
-    background-color: $blue;
+    background: -webkit-gradient(linear, left top, right bottom, from($blue), to(#3e2995));
+    background: linear-gradient($blue, #3e2995);
     color: #FFF;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -211,24 +213,37 @@
 
 .booking-button {
     border-radius: 50px;
-    border: 3px solid #ff6d43;
     color: white;
-    background-color: #ff6d43;
+    text-shadow: 0 1px 0 $blue;
+    background: -webkit-gradient(linear, left top, right bottom, from(#f5af19), to($orange));
+    background: linear-gradient(#f5af19, $orange);
+    -webkit-box-shadow: 0 7px 13px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 #4b58ba;
+    box-shadow: 0 7px 13px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 $blue;
+    transition: box-shadow 0.15s ease, transform 0.15s ease, -webkit-box-shadow 0.15s ease, -webkit-transform 0.15s ease;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 12px 16px;
+    padding: 15px;
     width: 90%;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    border: none;
     .fa-lock {
       font-size: 24px;
     }
     p {
       text-align: center;
       margin: 0 10px;
+    }
+
+    &:hover {
+      -webkit-box-shadow: 0 5px 8px -1px rgba(45,35,66,0.3), 0 4px 5px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 $blue;
+      box-shadow: 0 5px 8px -1px rgba(45,35,66,0.3), 0 4px 5px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 $blue;
+      -webkit-transform: translateY(-1px);
+      -ms-transform: translateY(-1px);
+      transform: translateY(-1px);
     }
 }
 

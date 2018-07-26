@@ -1,51 +1,72 @@
 
-<%= simple_form_for [@seed, @pick], url: seed_picks_path(@seed), remote: true,method: :post do |f| %>
-  <div class="pick-form">
-    <div class="inputs-and-recap">
-      <div class="pick-inputs">
-        <div class="price">
-          <label for="price">Votre prix</label>
-          <%= f.input_field :price, as: :integer, class: 'input-sm form-control pick', id: 'start-pick', placeholder: 'Exemple: 150'%>
-          <span class="unit">€</span>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <%= render "shared/how-to-pick" %>
+      <!-- Modal content-->
+      <div class="modal-content">
+
+        <%= simple_form_for [@seed, @pick], url: seed_picks_path(@seed), remote: true,method: :post do |f| %>
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><%= @seed.title.capitalize %> </h4>
         </div>
-        <% unless @seed.size_guide.blank? %>
-          <label for="size" id="size-label">Taille</label>
-          <%= f.input_field :size, class: 'input-sm form-control pick', id: 'size-pick', placeholder: "Référez-vous au guide des tailles"%>
+
+        <div class="modal-body">
+          <div class="instruction">
+            Nouveau sur Pickalgo ? <br>Découvrez
+            <%= link_to "#howToPick", data: { toggle: "modal" } do%>
+               ici
+            <% end %> comment (bien) picker.
+          </div>
+          <div class="inputs-and-recap">
+            <div class="pick-inputs">
+              <div class="price">
+                <label for="price">Votre prix</label>
+                <%= f.input_field :price, as: :integer, class: 'input-sm form-control pick', id: 'start-pick', placeholder: 'Exemple: 150'%>
+                <span class="unit">€</span>
+              </div>
+              <% unless @seed.size_guide.blank? %>
+                <label for="size" id="size-label">Taille</label>
+                <%= f.input_field :size, class: 'input-sm form-control pick', id: 'size-pick', placeholder: "Référez-vous au guide des tailles"%>
+              <% end %>
+            </div>
+            <div class="recap-animation">
+              <p>Récap:</p>
+              <div class="end-block">
+                <div class="how-much">
+                  <div>Mon pick:</div>
+                  <div class="cout">
+                    <div class="counter"></div>
+                    <p>€</p>
+                  </div>
+                </div>
+                <div class="how-much">
+                  <div>Livraison:</div>
+                  <div class="cout">
+                    <div id="cost-input"><%= @seed.expedition_costs %></div>
+                    <p>€</p>
+                  </div>
+                </div>
+                <div class="how-much">
+                  <div class="last-text">Coût total max:</div>
+                  <div class="cout">
+                    <div class="totalcounter"></div>
+                    <p id="color-euro">€</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="action-links">
+            <button type="button" class="btn-white" data-dismiss="modal">Retour</button>
+            <%= f.submit "Enregistrer", class: "btn-orange", id: "btn-pick" %>
+          </div>
+        </div>
         <% end %>
       </div>
-      <div class="recap-animation">
-        <p>Récap:</p>
-        <div class="end-block">
-          <div class="how-much">
-            <div>Mon pick:</div>
-            <div class="cout">
-              <div class="counter"></div>
-              <p>€</p>
-            </div>
-          </div>
-          <div class="how-much">
-            <div>Livraison:</div>
-            <div class="cout">
-              <div id="cost-input"><%= @seed.expedition_costs %></div>
-              <p>€</p>
-            </div>
-          </div>
-          <div class="how-much">
-            <div class="last-text">Coût total max:</div>
-            <div class="cout">
-              <div class="totalcounter"></div>
-              <p id="color-euro">€</p>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </div>
-      <div class="action-links">
-        <button type="button" class="btn-dissmiss text-center" data-dismiss="modal">Retour</button>
-        <%= f.submit "Enregistrer", class: "btn", id: "btn-pick" %>
-      </div>
   </div>
-<% end %>
-
-
-
