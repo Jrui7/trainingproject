@@ -244,17 +244,21 @@
     padding: 10px 30px;
     font-size: 20px;
     color: #243763;
+     -webkit-box-shadow: 0 7px 14px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 #cfd1e3;
+    box-shadow: 0 7px 14px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 #cfd1e3;
 
   }
 
   .cta-link{
     border-radius: 50px;
-    border: 1px solid white;
     text-transform: uppercase;
     padding: 10px 30px;
     font-size: 20px;
-    background-color: #FFF;
     color: #243763;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e4e4e9));
+    background: linear-gradient(#fff, #e4e4e9);
+    -webkit-box-shadow: 0 7px 14px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 #cfd1e3;
+    box-shadow: 0 7px 14px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 #cfd1e3;
   }
 
 
