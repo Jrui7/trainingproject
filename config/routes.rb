@@ -63,7 +63,6 @@ Rails.application.routes.draw do
   get 'faq', to: 'pages#faq'
   get 'contact', to: 'pages#contact'
   get 'mentions_legales', to: 'pages#mentions_legales'
-  get 'cgv', to: 'pages#cgv'
   get 'cgu', to: 'pages#cgu'
 
 

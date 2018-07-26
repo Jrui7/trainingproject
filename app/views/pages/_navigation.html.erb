@@ -1,15 +1,26 @@
-<%= link_to faq_path , class: "page-link #{'active-page' if page == 'faq'}" do %>
-  FAQ
-<% end %>
-<%= link_to contact_path , class: "page-link #{'active-page' if page == 'contact'}" do %>
-  Contact
-<% end %>
-<%= link_to mentions_legales_path , class: "page-link #{'active-page' if page == 'mentions_legales'}" do %>
-  Mentions légales
-<% end %>
-<%= link_to cgv_path , class: "page-link #{'active-page' if page == 'cgv'}" do %>
-  CGV
-<% end %>
-<%= link_to cgu_path , class: "page-link #{'active-page' if page == 'cgu'}" do %>
-  CGU
-<% end %>
+<div class="navigation-menu">
+  <%= link_to faq_path do %>
+    <div class="menu <%= 'selected-category' if page == 'faq' %>">
+      <div class="filter-icon glyphicon glyphicon-question-sign"></div>
+      <p>FAQ</p>
+    </div>
+  <% end %>
+  <%= link_to contact_path do %>
+    <div class="menu <%= 'selected-category' if page == 'contact' %>">
+      <div class="filter-icon glyphicon glyphicon-envelope"></div>
+      <p>Contact</p>
+    </div>
+  <% end %>
+  <%= link_to mentions_legales_path do %>
+    <div class="menu <%= 'selected-category' if page == 'mentions_legales' %>">
+      <div class="filter-icon glyphicon glyphicon-info-sign"></div>
+      <p>Mention légales</p>
+    </div>
+  <% end %>
+  <%= link_to cgu_path do %>
+      <div class="menu <%= 'selected-category' if page == 'cgu' %>">
+        <div class="filter-icon glyphicon glyphicon-folder-open"></div>
+        <p>CGU-CGV</p>
+    </div>
+  <% end %>
+</div>
