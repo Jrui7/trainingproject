@@ -121,6 +121,7 @@ input[type=number]::-webkit-outer-spin-button {
 .modal-header{
   background: linear-gradient(to right, #3e2995 0, #337b80 50%, #337b80 50%, #3f937d 100%);
   color: #FFFFFF;
+  text-align: center;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -140,13 +141,6 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 10px;
 }
 
-.modal-header {
-  background: linear-gradient(to right, #3e2995 0, #337b80 50%, #337b80 50%, #3f937d 100%);
-  color: #FFFFFF;
-  text-align: center;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
 
 @media screen and (max-width: 480px) {
 
