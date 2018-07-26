@@ -69,9 +69,9 @@
 
                   <div class="action-links">
                     <%= link_to user_path(@user) do %>
-                      <div class="btn-cancel hidden">Annuler</div>
+                      <div class="btn-white hidden">Annuler</div>
                     <% end %>
-                    <%= f.button :submit, value: "Enregistrer", class: "btn  seedlap", id: "update-user" %>
+                    <%= f.button :submit, value: "Enregistrer", id: "update-user" %>
                   </div>
                 <% end %>
               </div>
@@ -104,8 +104,8 @@
                                                     order: [:day, :month, :year], :prompt => { :month => 'Mois', :year => 'Année', :day => 'Jour' }, use_month_numbers: true  %>
                       <%= f.input :email, label: "Email" %>
                       <div class="action-buttons">
-                        <div id= "cancel-civil" class="btn cancel">Annuler</div>
-                        <%= f.button :submit, value: "Actualiser", class: "btn validate", id: "submit-update-private" %>
+                        <div id= "cancel-civil" class="btn-white">Annuler</div>
+                        <%= f.button :submit, value: "Actualiser", id: "submit-update-private" %>
                       </div>
                     <% end %>
                   </div>
@@ -135,8 +135,8 @@
                       <%= f.input :address_complement, class: "input-group-field", label: "Complément d'adresse", placeholder: "Autres instructions de livraison: Digicode, Batiment, Société " %>
                       <%= f.input :phone_number, class: "input-group-field", label: "Téléphone", placeholder: "Vous joindre par téléphone" %>
                       <div class="action-buttons">
-                        <div id= "cancel-address" class="btn cancel">Annuler</div>
-                        <%= f.button :submit, value: "Actualiser", class: "btn validate", id: "submit-update-address" %>
+                        <div id= "cancel-address" class="btn-white">Annuler</div>
+                        <%= f.button :submit, value: "Actualiser", id: "submit-update-address" %>
                       </div>
                     <% end %>
                   </div>
@@ -167,8 +167,8 @@
                         <%= f.input :password, autocomplete: "off", placeholder: "minimum 6 carractères", label: "Nouveau mot de passe", required: false %>
                         <%= f.input :password_confirmation, label: "Confirmer", placeholder: "confirmer le nouveau mot de passe", required: false %>
                         <div class="action-buttons">
-                          <div id= "cancel-password" class="btn cancel">Annuler</div>
-                          <%= f.button :submit, value: "Actualiser", class: "btn validate", id: "submit-update-password" %>
+                          <div id= "cancel-password" class="btn-white">Annuler</div>
+                          <%= f.button :submit, value: "Actualiser", id: "submit-update-password" %>
                         </div>
                     <% end %>
                   </div>
@@ -202,8 +202,8 @@
                           <div id="card-errors" role="alert"></div>
                         </div>
                         <div class="action-buttons">
-                          <div id= "cancel-card" class="btn cancel">Annuler</div>
-                          <button class= "btn validate", id="submit-update-card">Actualiser
+                          <div id= "cancel-card" class="btn-white">Annuler</div>
+                          <button class= "btn-orange", id="submit-update-card">Actualiser
                           </button>
                         </div>
                       <% end %>

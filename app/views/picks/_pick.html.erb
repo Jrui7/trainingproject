@@ -49,7 +49,7 @@
                       <div class="action-links">
                         <button type="button" id="close-modal-destroy-<%= pick.id%>" class="btn-dissmiss text-center" data-dismiss="modal">Retour</button>
                         <%= link_to pick_path(pick.id), class: "mid-width  #{'paid' if pick.state == 'paid'}", method: :delete, remote: true do %>
-                            <div class="btn seedlap">Supprimer</div>
+                            <div class="btn-orange">Supprimer</div>
                           <% end %>
                       </div>
                       <div class="loader-container hidden"></div>

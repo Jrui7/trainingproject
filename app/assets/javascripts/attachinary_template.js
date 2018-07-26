@@ -46,7 +46,7 @@ function updateUserPhoto() {
         $(".no-photo").hide();
         $(".photo-update").prepend("<div class='no-photo'></div>");
         $("#user_photo").click();
-        $(".btn-cancel").removeClass('hidden');
+        $(".btn-white").removeClass('hidden');
     });
   }
 
