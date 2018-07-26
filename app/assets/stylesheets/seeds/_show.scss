@@ -145,12 +145,23 @@
   .pick-link {
     display: flex;
     align-items: center;
+    padding: 10px 30px;
     margin-left: 20px;
-    border: 2px solid $orange;
     text-decoration: none;
     border-radius: 50px;
-    background-color: $orange;
-    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 0 $blue;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f5af19), to($orange));
+    background: linear-gradient(#f5af19, $orange);
+    -webkit-box-shadow: 0 7px 13px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 #4b58ba;
+    box-shadow: 0 7px 13px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 $blue;
+
+    &:hover {
+      -webkit-box-shadow: 0 5px 8px -1px rgba(45,35,66,0.3), 0 4px 5px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 $blue;
+      box-shadow: 0 5px 8px -1px rgba(45,35,66,0.3), 0 4px 5px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 $blue;
+      -webkit-transform: translateY(-1px);
+      -ms-transform: translateY(-1px);
+      transform: translateY(-1px);
+    }
 
 
     .fa-hand-lizard {
@@ -168,64 +179,6 @@
 
 
   }
-
-  .pick-modal {
-    .modal {
-    text-align: center;
-    padding: 0!important;
-
-    .modal-header{
-      background: linear-gradient(to right, #3e2995 0, #337b80 50%, #337b80 50%, #3f937d 100%);
-      color: #FFFFFF;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-    }
-
-    .modal-title{
-      text-align: center;
-    }
-
-
-    h3 {
-      text-align: center;
-    }
-  }
-
-
-
-  .modal:before {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-    margin-right: -4px;
-  }
-
-  .modal-dialog {
-    display: inline-block;
-    text-align: left;
-    vertical-align: middle;
-    margin: 0;
-    border-radius: 10px;
-  }
-
-
-  }
-
-  .modal-body{
-    padding: 15px !important;
-    h5 {
-      line-height: 1.5;
-    }
-  }
-
-
-  .modal-footer{
-    border-top: none !important;
-
-  }
-
-
 
 
   .body {
@@ -862,19 +815,6 @@
     }
 
 
-    .modal-content {
-      border-radius: 0 !important;
-    }
-
-    .page-container .pick-modal {
-      .modal-dialog{
-        border-radius: 0;
-      }
-      .modal .modal-header {
-        border-radius: 0;
-      }
-    }
-
   .page-container .left-section .seed-media {
     border-radius: 0;
     border-left: 0;
@@ -982,46 +922,6 @@
       text-align: justify;
     }
 
-    .page-container .pick-modal .modal:before {
-      content: none;
-    }
-
-    .page-container .pick-modal .modal-dialog {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      vertical-align: top;
-    }
-
-    .modal-content{
-      height: auto;
-      min-height: 100%;
-      border-radius: 0;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .page-container .modal-body {
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      .pick-modal {
-        flex-grow: 1;
-        display: flex;
-        form {
-          flex-grow: 1;
-          display: flex;
-          .pick-form{
-            flex-grow: 1;
-            position: relative;
-            .action-links {
-              border-top: none;
-            }
-          }
-        }
-      }
-    }
 
     #delivery-info {
       align-items: flex-start;

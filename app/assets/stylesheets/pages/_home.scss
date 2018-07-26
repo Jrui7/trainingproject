@@ -237,24 +237,13 @@
 
   .go-to{
     margin-right: 30px;
-    border-radius: 50px;
-    border: 1px solid #243763;
-    color: white;
     text-transform: uppercase;
-    padding: 10px 30px;
     font-size: 20px;
-    color: #243763;
-
   }
 
   .cta-link{
-    border-radius: 50px;
-    border: 1px solid white;
     text-transform: uppercase;
-    padding: 10px 30px;
     font-size: 20px;
-    background-color: #FFF;
-    color: #243763;
   }
 
 
@@ -407,17 +396,15 @@
     }
 
     .cta {
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      .btn-orange {
+        font-size: 20px;
+        text-transform: uppercase;
+        padding: 10px 30px;
+      }
     }
 
-    .btn {
-      margin: 0 auto;
-      background-color: $orange;
-      color: white;
-      border-radius: 50px;
-      padding: 10px 20px;
-      font-size: 20px;
-    }
 
 
     .testimonies{
@@ -461,16 +448,13 @@
 
   .testimony-modal {
   .blue-gradiant {
-    background: linear-gradient(to right, #3e2995 0, #337b80 50%, #337b80 50%, #3f937d 100%);
     height: 100px;
     position: relative;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
   }
 }
 
   .testimony-body {
-    padding: 95px 15px 15px;
+    padding: 95px 15px 15px !important;
   }
 
   .speaker {
@@ -501,12 +485,14 @@
   }
 
   #forgot-p {
-    margin: 10px 0;
+    margin: 15px 0;
+    font-size: 16px;
   }
 
   #reset-password-button {
-    text-align: right;
-    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
   }
 
 
@@ -648,25 +634,6 @@
         }
       }
 
-      .testimony-modal {
-        .modal-dialog {
-          width: 100%;
-          height: 100%;
-          margin: 0;
-          padding: 0;
-        }
-
-        .blue-gradiant {
-          border-radius: 0;
-        }
-
-        .modal-content {
-          height: auto;
-          min-height: 100%;
-          border-radius: 0;
-        }
-
-      }
 
       .statement-and-text {
         padding: 20px 5px;
