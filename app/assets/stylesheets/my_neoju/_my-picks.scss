@@ -151,13 +151,6 @@ a:hover {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 
-  .btn {
-    border: 3px solid $orange;
-    background-color: $orange;
-    color: #FFF;
-
-  }
-
 }
 
 .pick-other {
@@ -213,13 +206,6 @@ a:hover {
 .index-path {
   text-align: center;
   margin-top: 30px;
-  .btn-default {
-    border-radius: 50px !important;
-    border: 3px solid $blue !important;
-    color: $blue !important;
-    padding: 6px 12px !important;
-    font-size: 16px !important;
-  }
 }
 
 .pending-and-all {

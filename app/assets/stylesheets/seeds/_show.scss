@@ -558,17 +558,6 @@
   }
 
 
-  #btn-pick {
-      border-radius: 50px;
-      color: white;
-      background-color: $orange;
-      text-transform: uppercase;
-      font-weight: bold;
-      padding: 10px 12px;
-      font-size: 15px;
-
-  }
-
   .pick-counter {
     font-size: 15px;
   }
@@ -721,13 +710,6 @@
     padding-top: 20px;
     margin-top: 20px;
 
-    .btn-dissmiss{
-      border: 1px solid;
-      border-radius: 50px;
-      padding: 6px 12px;
-      margin-right: 10px;
-      background-color: inherit;
-    }
 
     .btn-cancel {
       border-radius: 50px !important;
