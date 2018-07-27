@@ -14,7 +14,7 @@
             <div class="pick-inputs">
               <div class="price">
                 <label for="price">Votre prix</label>
-                <%= f.input_field :price, as: :integer, class: 'input-sm form-control pick', id: 'start-pick', placeholder: 'Exemple: 150'%>
+                <%= f.input_field :price, as: :integer, class: 'input-sm form-control edit-pick', id: "#{pick.id}", placeholder: 'Exemple: 150'%>
                 <span class="unit">€</span>
               </div>
               <% unless seed.size_guide.blank? %>
@@ -28,21 +28,21 @@
                 <div class="how-much">
                   <div>Mon pick:</div>
                   <div class="cout">
-                    <div class="counter"></div>
+                    <div class="counter" id="counter-<%= pick.id %>"><%= pick.price %></div>
                     <p>€</p>
                   </div>
                 </div>
                 <div class="how-much">
                   <div>Livraison:</div>
                   <div class="cout">
-                    <div id="cost-input"><%= seed.expedition_costs %></div>
+                    <div id="cost-input-<%= pick.id %>"><%= seed.expedition_costs %></div>
                     <p>€</p>
                   </div>
                 </div>
                 <div class="how-much">
                   <div class="last-text">Coût total max:</div>
                   <div class="cout">
-                    <div class="totalcounter"></div>
+                    <div class="totalcounter" id="total-counter-<%= pick.id %>"><%= pick.price + seed.expedition_costs %></div>
                     <p id="color-euro">€</p>
                   </div>
                 </div>

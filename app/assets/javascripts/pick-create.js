@@ -1,13 +1,23 @@
 
 $(document).ready(function() {
 
-  $("#start-pick").on('keyup', function(event) {
-    var target = $('#start-pick');
+  $(".pick").on('keyup', function(event) {
+    var target = $(this);
     var counter = $(".counter");
     var totalcounter = $(".totalcounter");
     setCounterValueAndAction(target, counter);
     setCounterValueAndActionTotal(target, totalcounter);
+
   });
+
+  $(".edit-pick").on('keyup', function(event) {
+    var id = parseInt((this.id));
+    var target = $(this);
+    var counter = $('#counter-' + id);
+    var totalcounter  = $('#total-counter-' + id);
+
+  });
+
 
 });
 
