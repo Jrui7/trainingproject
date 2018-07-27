@@ -5,11 +5,11 @@ $(document).ready(function() {
     var id = parseInt((this.id));
     var target = $(this);
     var counter = $('#counter-' + id);
-    var delivery = document.getElementById('cost-input-' + id).innerHTML;;
+    var delivery = document.getElementById('cost-input-' + id).innerHTML;
     var delivery_costs = parseFloat(delivery);
     var totalcounter  = $('#total-counter-' + id);
     setCounterValueAndAction(target, counter);
-    setCounterValueAndActionTotal(target, totalcounter);
+    setCounterValueAndActionTotal(target, totalcounter, delivery_costs);
 
   });
 
@@ -42,7 +42,7 @@ function countTo(target, counter) {
 }
 
 
-function countToTotal(target, totalcounter) {
+function countToTotal(target, totalcounter, delivery_costs) {
   var input = parseFloat(target.val()) + delivery_costs
   var target = input.toFixed(2)
   $(totalcounter).each(function() {
@@ -68,14 +68,7 @@ function countToTotal(target, totalcounter) {
 function setCounterValueAndAction(target, counter) {
   $(target).on('keyup', function(event) {
     if (event.keyCode == 8) {
-      if ($(target).val() == "") {
-        $(counter).html("");
-      }
-      else {
-        $(counter).html(0);
-        var newCounter = $(counter);
-        countTo(target, newCounter);
-      }
+      $(counter).html("");
     }
     else if (event.keyCode != 13) {
       $(counter).html(0);
@@ -85,22 +78,15 @@ function setCounterValueAndAction(target, counter) {
   })
 }
 
-function setCounterValueAndActionTotal(target, totalcounter) {
+function setCounterValueAndActionTotal(target, totalcounter, delivery_costs) {
   $(target).on('keyup', function(event) {
     if (event.keyCode == 8) {
-      if ($(target).val() == "") {
-        $(totalcounter).html("");
-      }
-      else {
-        $(totalcounter).html(0);
-        var newCounter = $(totalcounter);
-        countToTotal(target, newCounter);
-      }
+      $(totalcounter).html("");
     }
     else if (event.keyCode != 13) {
       $(totalcounter).html(0);
       var newCounter = $(totalcounter);
-      countToTotal(target, newCounter);
+      countToTotal(target, newCounter, delivery_costs);
     }
   })
 }

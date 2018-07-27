@@ -1,13 +1,11 @@
-
 $(document).ready(function() {
 
-  $(".pick").on('keyup', function(event) {
-    var target = $(this);
+  $("#start-pick").on('keyup', function(event) {
+    var target = $('#start-pick');
     var counter = $(".counter");
     var totalcounter = $(".totalcounter");
-    setCounterValueAndAction(target, counter);
-    setCounterValueAndActionTotal(target, totalcounter);
-
+    setValue(target, counter);
+    setValueTotal(target, totalcounter);
   });
 
 });
@@ -15,7 +13,7 @@ $(document).ready(function() {
 
 
 
-function countTo(target, counter) {
+function count(target, counter) {
   var target = $(target).val();
   $(counter).each(function() {
     var $this = $(this),
@@ -38,7 +36,7 @@ function countTo(target, counter) {
 }
 
 
-function countToTotal(target, totalcounter) {
+function countTotal(target, totalcounter) {
   var delivery = document.getElementById("cost-input").innerHTML;
   var delivery_costs = parseFloat(delivery);
   var input = parseFloat(target.val()) + delivery_costs
@@ -63,7 +61,7 @@ function countToTotal(target, totalcounter) {
   });
 }
 
-function setCounterValueAndAction(target, counter) {
+function setValue(target, counter) {
   $(target).on('keyup', function(event) {
     if (event.keyCode == 8) {
       if ($(target).val() == "") {
@@ -78,30 +76,22 @@ function setCounterValueAndAction(target, counter) {
     else if (event.keyCode != 13) {
       $(counter).html(0);
       var newCounter = $(counter);
-      countTo(target, newCounter);
+      count(target, newCounter);
     }
   })
 }
 
-function setCounterValueAndActionTotal(target, totalcounter) {
+function setValueTotal(target, totalcounter) {
   $(target).on('keyup', function(event) {
     if (event.keyCode == 8) {
-      if ($(target).val() == "") {
-        $(totalcounter).html("");
-      }
-      else {
-        $(totalcounter).html(0);
-        var newCounter = $(totalcounter);
-        countToTotal(target, newCounter);
-      }
+      $(totalcounter).html("");
     }
     else if (event.keyCode != 13) {
       $(totalcounter).html(0);
       var newCounter = $(totalcounter);
-      countToTotal(target, newCounter);
+      countTotal(target, newCounter);
     }
   })
 }
-
 
 
