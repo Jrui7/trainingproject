@@ -1,14 +1,18 @@
 
 $(document).ready(function() {
 
-  $(".pick").on('keyup', function(event) {
+  $(".edit-pick").on('keyup', function(event) {
+    var id = parseInt((this.id));
     var target = $(this);
-    var counter = $(".counter");
-    var totalcounter = $(".totalcounter");
+    var counter = $('#counter-' + id);
+    var delivery = document.getElementById('cost-input-' + id).innerHTML;;
+    var delivery_costs = parseFloat(delivery);
+    var totalcounter  = $('#total-counter-' + id);
     setCounterValueAndAction(target, counter);
     setCounterValueAndActionTotal(target, totalcounter);
 
   });
+
 
 });
 
@@ -39,8 +43,6 @@ function countTo(target, counter) {
 
 
 function countToTotal(target, totalcounter) {
-  var delivery = document.getElementById("cost-input").innerHTML;
-  var delivery_costs = parseFloat(delivery);
   var input = parseFloat(target.val()) + delivery_costs
   var target = input.toFixed(2)
   $(totalcounter).each(function() {
