@@ -1,6 +1,4 @@
  <% if current_user %>
-  <%= render "seeds/pick-form" %>
-  <%= render "shared/how-to-pick" %>
   <% if current_user.has_picked?(@seed) %>
     <div class="btn-blue">Mon pick : <%= Pick.my_pick(current_user, @seed).first.price%> € </div>
   <% else %>
