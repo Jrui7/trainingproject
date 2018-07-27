@@ -11,6 +11,10 @@
           <% end %>
         </div>
         <% @picks.each do |pick| %>
+          <% if pick.seed.ongoing? %>
+            <%= render "picks/edit-form", seed: pick.seed, pick: pick %>
+            <%= render "picks/destroy-pick-modal", pick: pick %>
+          <% end %>
           <div class="pick-iterate id-<%= pick.id%>">
           <%= render "picks/pick-history", pick: pick %>
           </div>
