@@ -1,3 +1,9 @@
+
+<% if pick.seed.ongoing? %>
+  <%= render "picks/edit-form", seed: pick.seed, pick: pick %>
+  <%= render "picks/destroy-pick-modal", pick: pick %>
+<% end %>
+
 <div class="pick-container">
   <%= link_to seed_path(pick.seed) do  %>
     <%= cl_image_tag("#{pick.seed.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "pick-image")%>

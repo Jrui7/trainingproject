@@ -163,10 +163,14 @@ input[type=number]::-webkit-outer-spin-button {
     min-height: 100%;
     height: auto;
     width: 100%;
-    overflow: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+  }
+
+  .how-to-pick, .testimony-modal {
+    .modal-dialog {
+    height: auto !important
+    }
   }
 
 }

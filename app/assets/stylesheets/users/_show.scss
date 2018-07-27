@@ -378,8 +378,8 @@
 
   .form-civil, .form-livraison, .form-password, .form-card {
     display: none;
-    padding:20px;
-    width:70%;
+    padding: 10px;
+    width: 70%;
     background-color: #F2F2F2;
     border-radius: 5px;
 
@@ -442,6 +442,7 @@
 
     .form-civil, .form-livraison, .form-password, .form-card {
       width: 100%;
+      padding: 10px;
     }
 
     #profil-and-pen, #address-and-pen, #password-and-pen, #paiement-and-pen {
