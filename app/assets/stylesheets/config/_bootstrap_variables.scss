@@ -167,4 +167,10 @@ input[type=number]::-webkit-outer-spin-button {
     flex-direction: column;
   }
 
+  .how-to-pick, .testimony-modal {
+    .modal-dialog {
+    height: auto !important
+    }
+  }
+
 }
