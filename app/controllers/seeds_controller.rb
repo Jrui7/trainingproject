@@ -96,6 +96,7 @@ class SeedsController < ApplicationController
     @seed.increment_popularity
     @pick = Pick.new
     @user = current_user
+    @my_pick = Pick.my_pick(@user, @seed).first
   end
 
   def update
