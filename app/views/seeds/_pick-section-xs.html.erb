@@ -1,8 +1,16 @@
 
 <% if current_user %>
-  <% if current_user.has_picked?(@seed) %>
+  <% unless @my_pick.blank? %>
     <div class="picked-bar-xs hidden-md hidden-lg">
-      <p class="has_picked">Mon pick : <%= Pick.my_pick(current_user, @seed).first.price%> €</p>
+      <% if  my_pick.state == "pending" %>
+        <%= link_to new_pick_payment_path(my_pick) do %>
+          <div class="has_picked">Mon pick : <%= my_pick.price %> €</div>
+        <% end %>
+      <% else %>
+        <%= link_to pick_path(my_pick) do %>
+          <div class="has_picked">Mon pick : <%= my_pick.price %> €</div>
+        <% end %>
+      <% end %>
     </div>
   <% else %>
     <%= link_to "#myModal", data: { toggle: "modal" }, class: "xs-pick" do%>

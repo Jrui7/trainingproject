@@ -32,12 +32,12 @@ class PicksController < ApplicationController
 
   def create
     @seed = Seed.friendly.find(params[:seed_id])
-    @pick = @seed.picks.new(pick_params)
-    @pick.user_id = current_user.id
-    @user = @pick.user_id
-    @pick.amount = @seed.price * 0.2
-    authorize @pick
-    if @pick.save
+    @my_pick = @seed.picks.new(pick_params)
+    @my_pick.user_id = current_user.id
+    @user = @my_pick.user_id
+    @my_pick.amount = @seed.price * 0.2
+    authorize @my_pick
+    if @my_pick.save
       @seed.increment_popularity
       respond_to do |format|
         format.html { redirect_to seed_path(@seed) }
