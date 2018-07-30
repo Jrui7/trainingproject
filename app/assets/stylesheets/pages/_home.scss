@@ -138,23 +138,16 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
 
 }
 
 
-#logo-home {
-  font-size: 30px;
-  font-style: italic;
-  margin-right: 4px;
-  a {
-  text-decoration: none;
-   &:hover{
-    text-decoration: none;
-    color: $blue;
-   }
-  }
+#logo {
+  height: 40px;
 }
+
+
 
 .right-links{
   display: flex;
@@ -303,7 +296,9 @@
   }
 
   #home-blue-background{
-    background: linear-gradient(to right, #3e2995 0, #337b80 50%, #337b80 50%, #3f937d 100%);
+    background: -webkit-linear-gradient(left, #3940D5, #1FC1B1 100%);
+    background: -o-linear-gradient(left, #3940D5, #1FC1B1 100%);
+    background: linear-gradient(to right, #3940D5, #1FC1B1 100%);
     text-align: center;
     color: white;
     padding: 60px 0;

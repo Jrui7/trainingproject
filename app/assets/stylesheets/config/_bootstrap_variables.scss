@@ -120,8 +120,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .modal-header{
-  background: linear-gradient(to right, #3e2995 0, #337b80 50%, #337b80 50%, #3f937d 100%);
-  color: #FFFFFF;
+  background: -webkit-linear-gradient(left, #3940D5, #1FC1B1 100%);
+  background: -o-linear-gradient(left, #3940D5, #1FC1B1 100%);
+  background: linear-gradient(to right, #3940D5, #1FC1B1 100%);  color: #FFFFFF;
   text-align: center;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;

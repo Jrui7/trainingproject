@@ -17,36 +17,6 @@
 }
 
 
-
-/* Logo */
-.logo-box {
-  display: flex;
-  align-items: center;
-  color: $blue;
-
-
-}
-
-#logo-text {
-  font-size: 25px;
-  font-style: italic;
-  margin-right: 4px;
-  a {
-  text-decoration: none;
-   &:hover{
-    text-decoration: none;
-    color: $blue;
-   }
-  }
-}
-
-#logo-icon {
-  font-size: 30px;
-  text-decoration: none;
-  color: $blue;
-}
-
-
 .menu-links {
   display: flex;
   justify-content: space-between;
@@ -312,8 +282,7 @@
 
 .sub-container{
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: linear-gradient(to right, #3e2995 0, #337b80 50%, #337b80 50%, #3f937d 100%);
-
+  background-color: $blue;
 }
 
 .sub-nav {
@@ -379,20 +348,6 @@
   .navbar {
     padding: 0;
   }
-
-  .logo-box {
-    padding: 0 0 0 10px;
-  }
-
-  #logo-text {
-  font-size: 20px;
-  }
-
-  #logo-icon {
-    font-size: 20px;
-  }
-
-
 
   .user-menu {
     padding: 0 10px 0 0;
