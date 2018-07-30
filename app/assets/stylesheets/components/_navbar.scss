@@ -133,36 +133,25 @@
 
 }
 
-.fa-hand-lizard {
-  font-size: 25px;
-  padding: 10px;
-  color: $blue;
-  a {
-  text-decoration: none;
-   &:hover{
-    text-decoration: none;
-   }
-
-  }
+.pick-icon {
+  height: 28px;
+}
 
 
-
-  .picks-pending {
-    position: absolute;
-    left: -2px;
-    min-width: 20px;
-    min-height: 20px;
-    margin: 0;
-    font-size: 12px;
-    font-weight: bold;
-    color: white;
-    background-color: $red;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-  }
+.picks-pending {
+  position: absolute;
+  left: -2px;
+  min-width: 20px;
+  min-height: 20px;
+  margin: 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  background-color: $red;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 }
 
