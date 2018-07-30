@@ -137,14 +137,15 @@
 
 .picks-pending {
   position: absolute;
-  left: -2px;
+  left: 2px;
+  bottom: -15px;
   min-width: 20px;
   min-height: 20px;
   margin: 0;
   font-size: 12px;
   font-weight: bold;
   color: white;
-  background-color: $red;
+  background-color: #EE5F5B;
   border-radius: 50%;
   display: flex;
   align-items: center;
