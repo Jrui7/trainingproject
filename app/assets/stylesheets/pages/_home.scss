@@ -118,7 +118,7 @@
 
 
 .nav-and-banner {
-  height: 100vh;
+  min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 95%, 0 90%);
@@ -174,7 +174,7 @@
 .banner-container {
     width: 90%;
     margin: 0 auto;
-    height: calc(90vh - 80px);
+    min-height: calc(90vh - 80px);
     display: flex;
     justify-content: center;
   }
