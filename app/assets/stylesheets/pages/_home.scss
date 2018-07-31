@@ -177,13 +177,11 @@
     height: calc(90vh - 80px);
     display: flex;
     justify-content: center;
-    position: relative;
   }
 
   .banner-content{
     width: 700px;
-    position: absolute;
-    top: 50px;
+    margin-top: 50px;
 
 
     h2 {
@@ -226,6 +224,7 @@
   .cta-links{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     margin-top: 60px;
   }
 
@@ -510,8 +509,8 @@
         background-position: right bottom;
       }
       .banner-content{
-        top: 25px;
-        width: 100%;
+        margin-top: 25px;
+        width: auto;
         p {
           text-align: center;
           font-size: 17px;
@@ -538,12 +537,11 @@
 
       .cta-links{
         margin-top: 20px;
-        justify-content: center;
       }
 
       .cta-link{
         font-size: 15px;
-        padding: 7px 30px;
+        padding: 7px 20px;
       }
 
       .go-to{
