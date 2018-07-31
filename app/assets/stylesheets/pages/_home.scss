@@ -174,14 +174,14 @@
 .banner-container {
     width: 90%;
     margin: 0 auto;
-    min-height: calc(90vh - 80px);
+    height: calc(90vh - 80px);
     display: flex;
     justify-content: center;
     position: relative;
   }
 
   .banner-content{
-    max-width: 700px;
+    width: 700px;
     position: absolute;
     top: 50px;
 
@@ -510,7 +510,7 @@
         background-position: right bottom;
       }
       .banner-content{
-        top: 5%;
+        top: 25px;
         width: 100%;
         p {
           text-align: center;
