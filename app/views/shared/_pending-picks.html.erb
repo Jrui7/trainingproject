@@ -1,6 +1,6 @@
 <%= link_to my_picks_path do %>
   <div class="complete-link">
-    <i class="fa fa-hand-lizard pending" aria-hidden="true">
+      <%= image_tag "blue-icon.png", class: "pending pick-icon" %>
       <%pending_picks = Pick.pending_picks(current_user).includes(:seed).select {|pick| pick.seed.ongoing?} %>
       <% if pending_picks.any?  %>
         <div class="picks-pending">

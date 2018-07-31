@@ -134,12 +134,6 @@
   .btn-orange {
     margin-left: 20px;
 
-    .fa-hand-lizard {
-      font-size: 20px;
-      color: #FFFFFF;
-      padding: 0;
-    }
-
     p {
       margin: 0 0 0 10px;
       font-size: 18px;
@@ -558,16 +552,15 @@
     -webkit-box-shadow: 0 7px 13px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 #4b58ba;
     box-shadow: 0 7px 13px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 $blue;
 
-    .fa-hand-lizard {
-      color: white;
-      padding: 0;
-      margin-right: 15px;
-    }
 
     p {
       color: white;
-      margin: 0 5px;
+      margin: 0 10px;
       font-size: 20px;
+    }
+
+    .pick-icon {
+      height: 15px;
     }
   }
 
@@ -773,13 +766,6 @@
       margin-left: 15px;
       text-decoration: none;
       background-color: $blue;
-
-
-        .fa-hand-lizard {
-          font-size: 15px;
-          color: white;
-          padding: 0;
-        }
 
 
         p {

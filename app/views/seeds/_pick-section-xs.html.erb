@@ -15,7 +15,7 @@
   <% else %>
     <%= link_to "#myModal", data: { toggle: "modal" }, class: "xs-pick" do%>
       <div class="pick-bar-xs hidden-md hidden-lg">
-        <i class="fa fa-hand-lizard" aria-hidden="true"> </i>
+        <%= image_tag "white-icon.png", class: "pick-icon" %>
         <p>Pick it</p>
       </div>
     <% end %>
@@ -23,7 +23,7 @@
 <% else %>
   <%= link_to new_user_session_path do %>
     <div class="pick-bar-xs hidden-md hidden-lg">
-      <i class="fa fa-hand-lizard" aria-hidden="true"> </i>
+      <%= image_tag "white-icon.png", class: "pick-icon" %>
       <p>Pick it</p>
     </div>
   <% end %>

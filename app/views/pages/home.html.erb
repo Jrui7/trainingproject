@@ -30,10 +30,7 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
   <div class="nav-and-banner" style="background-image: url('https://res.cloudinary.com/dlddnk3pr/image/upload/v1531593116/tags_n0uqhz.jpg')">
     <header class="header-home">
         <div class="logo-and-log">
-          <div class="logo-box">
-            <div id="logo-home">Pickalgo</div>
-            <span class="glyphicon glyphicon-leaf", id="logo-home"></span>
-          </div>
+          <%= image_tag "logo.png", id: "logo" %>
           <div class="right-links">
             <% if user_signed_in? %>
               <%= link_to "CONNEXION", seeds_path %>

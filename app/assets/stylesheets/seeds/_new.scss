@@ -119,8 +119,13 @@ margin-bottom: 35px;
 
   .form-action {
     margin-top: 60px;
-    padding: 0;
+    display: flex;
+    justify-content: center;
     margin-bottom: 40px;
+  }
+
+  .btn-orange {
+    width: 40%;
   }
 
 
@@ -190,15 +195,6 @@ abbr {
   display: none;
 }
 
-  .form-action {
-    padding: 10px;
-    text-align: center;
-  }
-
-  .btn {
-    width: 50%;
-  }
-
 
   .input-block {
     font-size: 15px;
@@ -229,10 +225,6 @@ abbr {
     overflow:hidden;
   }
 
-
-}
-
-.official-description {
 
 }
 
