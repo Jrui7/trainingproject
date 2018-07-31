@@ -500,7 +500,6 @@
   @media screen and (max-width: 480px) {
 
     .banner-container {
-        justify-content: center;
         h2{
           font-size: 24px;
           margin-bottom: 20px;
@@ -511,9 +510,8 @@
         background-position: right bottom;
       }
       .banner-content{
-        text-align: center;
-        padding-right: 0;
-        top: 25px;
+        top: 10%;
+        width: 100%;
         p {
           text-align: center;
           font-size: 17px;
