@@ -494,20 +494,46 @@
 
   @media all and (max-width: 1280px) {
 
+
     #features-container {
-        display: block;
+      flex-wrap: wrap;
     }
 
     .icon-and-text {
-      width: 70%;
+      flex: 0 0 45%;
       margin: 0 auto 40px auto;
+    }
+
+    .outcome-and-text {
+        flex: 0 0 40%;
+    }
+
+    .testimony-box {
+      .testimony {
+        flex: 0 0 45%;
+      }
+
+      .testimony:last-child {
+        margin: 20px auto 0 auto;
+      }
+      .testimony-title {
+        text-align: center;
+      }
     }
   }
 
   @media all and (max-width: 980px) {
+    .banner-container {
+      padding-bottom: 50px;
+    }
+
     .icon-and-text {
-      width: 90%;
+      flex: 0 0 70%;
       margin: 0 auto 30px auto;
+    }
+
+    .testimony-box .cta {
+      margin-top: 40px;
     }
 
   }
