@@ -1,6 +1,5 @@
 .page-container {
   width: 100%;
-  padding: 50px 0;
   display: flex;
   justify-content: center;
 
@@ -9,6 +8,7 @@
 
 .seed-feed {
   max-width: 1100px;
+  padding: 50px 0;
   flex: 0 0 100%;
   display: flex;
   align-items: flex-start;
@@ -328,10 +328,6 @@ a:hover {
   }
 
   @media(max-width: 768px) {
-
-    .page-container {
-      padding: 50px;
-    }
 
       .seed-presentation {
         flex: 1 0 60%;
