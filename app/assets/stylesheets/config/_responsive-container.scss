@@ -15,10 +15,19 @@
 }
 
 @media all and (max-width: 736px) {
+  .seed-feed {
+    padding: 0 !important;
+  }
+
+
 
  }
 
 @media all and (max-width: 480px) {
+
+  .navbar-container {
+    padding: 0 5px;
+  }
 
 
 }
