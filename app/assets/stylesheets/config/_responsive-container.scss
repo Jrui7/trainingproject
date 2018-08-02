@@ -3,6 +3,10 @@
     padding: 0 50px;
   }
 
+  .page-container .page-sections {
+    padding: 0 50px;
+  }
+
   .seed-feed {
     padding: 50px !important;
   }
@@ -11,6 +15,7 @@
 }
 
 @media all and (max-width: 980px) {
+
 
 }
 
@@ -27,6 +32,9 @@
 
   .navbar-container {
     padding: 0 5px;
+  }
+  .page-container .page-sections {
+      padding: 0 ;
   }
 
 
