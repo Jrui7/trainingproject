@@ -451,195 +451,197 @@
     justify-content: space-between;
     }
 
+    .container {
+      margin-bottom: 0;
+      margin-top: 0px;
+    }
+
+    .dashboard {
+      padding: 0 1px;
+    }
+
+
+      .profile-details {
+        margin: 20px 50px;
+        padding: 20px;
+      }
+
+
+      .view {
+        margin: 10px 0 0 0;
+      }
+
+      .user-form {
+        padding: 20px 5px;
+
+        .primary-infos{
+          display: flex;
+          flex-direction: column;
+        }
+
+        .pseudo-mini-bio{
+          padding: 0;
+          margin-top: 15px;
+        }
+
+        .form-group {
+          justify-content: space-between;
+        }
+
+        .form-control {
+          width: 100%;
+          margin-left: 0;
+          font-size: 17px;
+        }
+      }
+
+
+
+      .tabs-info {
+        margin-top: 40px;
+      }
+
+    .nav-tabs {
+
+          li {
+            a {
+              padding: 10px;
+              font-size: 12px;
+            }
+          }
+
+
+        }
+
+
+    label {
+      font-size: 12px;
+    }
+
+    .written-label {
+      font-size: 12px;
+      .form-group {
+        margin-bottom: 0;
+      }
+    }
+
+
+      .attached-inputs {
+
+        label {
+          font-size: 12px;
+          color: #1F1F26;
+        }
+      }
+
+
+    .form-inline {
+      width: 75%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+
+    .view-body {
+      padding: 0;
+    }
+
+
+
+    .low-padding {
+      padding: 0px;
+    }
+
+    .small-padding {
+      padding: 5px 10px;
+    }
+
+    .social-options .no-label {
+      margin-right: 0;
+      flex: 0 0 100%;
+    }
+
+    .social-options .social-group{
+      margin-bottom: 0;
+    }
+
+    .social-options .no-label .attached-inputs {
+        margin-left: 10px;
+        width: 100%;
+    }
+
+    .social-group {
+      .form-control {
+        width: 100%;
+      }
+    }
+
+    .user-form .attached-inputs .form-group {
+      width: 100%;
+    }
+
+    .synthesis{
+      display: block;
+      h3{
+        font-size: 17px;
+      }
+    }
+
+    .form-box{
+      padding:5px 0;
+    }
+
+    .title-and-data{
+      margin: 0;
+      width: 250px;
+      font-size: 14px;
+      .title{
+        flex: 0 0 40%;
+      }
+      .data{
+        flex: 0 0 60%;
+      }
+    }
+
+    .edit-icon{
+      padding-left: 10px;
+      .glyphicon{
+        padding:3px;
+        font-size: 14px;
+      }
+    }
+
+    .form-civil, .form-livraison, .form-password{
+      .no-label{
+        display: block;
+      }
+      .attached-inputs{
+        margin-left: 0;
+      }
+      .form-group{
+        display: block;
+      }
+    }
+
+    .form-civil, .form-livraison, .form-password, .form-card {
+      width: 100%;
+    }
+
+    #user_date_of_birth_1i, #user_date_of_birth_2i, #user_date_of_birth_3i{
+      width: auto;
+      padding: 6px;
+      border-radius: 10px;
+    }
+
+    #password-and-pen .key-icon {
+      width: 20px;
+    }
+
+
 
   }
 
     @media(max-width: 480px) {
 
-      .container {
-        margin-bottom: 0;
-        margin-top: 0px;
-      }
-
-      .dashboard {
-        padding: 0 1px;
-      }
-
-
-        .profile-details {
-          margin: 20px 50px;
-          padding: 20px;
-        }
-
-
-        .view {
-          margin: 10px 0 0 0;
-        }
-
-        .user-form {
-          padding: 20px 5px;
-
-          .primary-infos{
-            display: flex;
-            flex-direction: column;
-          }
-
-          .pseudo-mini-bio{
-            padding: 0;
-            margin-top: 15px;
-          }
-
-          .form-group {
-            justify-content: space-between;
-          }
-
-          .form-control {
-            width: 100%;
-            margin-left: 0;
-            font-size: 17px;
-          }
-        }
-
-
-
-        .tabs-info {
-          margin-top: 40px;
-        }
-
-      .nav-tabs {
-
-            li {
-              a {
-                padding: 10px;
-                font-size: 12px;
-              }
-            }
-
-
-          }
-
-
-      label {
-        font-size: 12px;
-      }
-
-      .written-label {
-        font-size: 12px;
-        .form-group {
-          margin-bottom: 0;
-        }
-      }
-
-
-        .attached-inputs {
-
-          label {
-            font-size: 12px;
-            color: #1F1F26;
-          }
-        }
-
-
-      .form-inline {
-        width: 75%;
-        display: flex;
-        justify-content: space-between;
-      }
-
-
-      .view-body {
-        padding: 0;
-      }
-
-
-
-      .low-padding {
-        padding: 0px;
-      }
-
-      .small-padding {
-        padding: 5px 10px;
-      }
-
-      .social-options .no-label {
-        margin-right: 0;
-        flex: 0 0 100%;
-      }
-
-      .social-options .social-group{
-        margin-bottom: 0;
-      }
-
-      .social-options .no-label .attached-inputs {
-          margin-left: 10px;
-          width: 100%;
-      }
-
-      .social-group {
-        .form-control {
-          width: 100%;
-        }
-      }
-
-      .user-form .attached-inputs .form-group {
-        width: 100%;
-      }
-
-      .synthesis{
-        display: block;
-        h3{
-          font-size: 17px;
-        }
-      }
-
-      .form-box{
-        padding:5px 0;
-      }
-
-      .title-and-data{
-        margin: 0;
-        width: 250px;
-        font-size: 14px;
-        .title{
-          flex: 0 0 40%;
-        }
-        .data{
-          flex: 0 0 60%;
-        }
-      }
-
-      .edit-icon{
-        padding-left: 10px;
-        .glyphicon{
-          padding:3px;
-          font-size: 14px;
-        }
-      }
-
-      .form-civil, .form-livraison, .form-password{
-        .no-label{
-          display: block;
-        }
-        .attached-inputs{
-          margin-left: 0;
-        }
-        .form-group{
-          display: block;
-        }
-      }
-
-      .form-civil, .form-livraison, .form-password, .form-card {
-        width: 100%;
-      }
-
-      #user_date_of_birth_1i, #user_date_of_birth_2i, #user_date_of_birth_3i{
-        width: auto;
-        padding: 6px;
-        border-radius: 10px;
-      }
-
-      #password-and-pen .key-icon {
-        width: 20px;
-      }
 
     }

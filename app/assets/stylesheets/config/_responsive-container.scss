@@ -1,9 +1,40 @@
+.page-sections {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 0px;
+    width: 1100px;
+    padding: 50px 0;
+  }
+
+  .pick-details-container {
+    padding: 40px 0 40px 0;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+  }
+
+
+
 @media all and (max-width: 1280px) {
   .navbar-container, .sub-container {
     padding: 0 50px;
   }
 
-  .page-container .page-sections {
+
+
+.pick-details-container {
+  padding: 50px;
+}
+
+  .page-sections {
+    padding: 50px;
+  }
+
+  .page-section {
     padding: 0 50px;
   }
 
@@ -16,12 +47,20 @@
 
 @media all and (max-width: 980px) {
 
+  .page-sections {
+    padding: 0 50px 50px;
+  }
+
 
 }
 
 @media all and (max-width: 736px) {
   .seed-feed {
     padding: 0 !important;
+  }
+
+  .page-sections {
+    padding: 0 50px 50px;
   }
 
 
@@ -33,7 +72,7 @@
   .navbar-container {
     padding: 0 5px;
   }
-  .page-container .page-sections {
+  .page-sections {
       padding: 0 ;
   }
 
