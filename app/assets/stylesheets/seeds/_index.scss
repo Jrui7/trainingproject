@@ -2,6 +2,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  min-height: calc(100vh - 120px - 160px);
 
 }
 
@@ -15,6 +16,7 @@
   justify-content: flex-start;
   margin-bottom: 0px;
 }
+
 
 a:hover {
     text-decoration: none;
@@ -322,217 +324,249 @@ a:hover {
   }
 }
 
+.filter-xs {
+  display: none;
+}
+
+@media all and (max-width: 1280px) {
+  .categories {
+      flex: 0 0 25%;
+      margin-right: 30px;
+  }
+
+
+}
+
 
 @media(max-width: 992px) {
+
+    .seed-presentation {
+        flex: 0 0 75%;
+    }
 
   }
 
   @media(max-width: 768px) {
+    .sub-container {
+      display: none;
+    }
 
-      .seed-presentation {
-        flex: 1 0 60%;
-        margin-right: auto;
-        margin-left: auto;
+    .categories {
+      display: none;
+    }
+
+    .seed-feed {
+      margin: 0;
+      width: 100%;
+    }
+
+    .seed-presentation {
+      flex: 0 0 100%;
+      padding: 0;
+    }
+
+    .product {
+      padding: 10px;
+      border-radius: 0;
+      border-left: 0;
+      border-right: 0;
+    }
+
+    .product-image{
+      height:100px;
+      width:100px;
+    }
+
+
+    .product-body {
+
+      h3 {
+        font-size: 16px;
       }
     }
 
-    @media(max-width: 480px) {
+    .social-overview .icon-and-number {
+      margin-left: 5px;
 
+      p {
+        font-size: 10px;
+      }
+    }
 
-      .seed-feed {
-        margin: 0;
-        width: 100%;
+    .seeder-picture{
+      height: 35px;
+      width:35px;
+    }
+
+    .product-category{
+      p {
+        font-size: 10px;
+      }
+    }
+
+    .filter-header {
+      p {
+        color: darkgray;
+        font-size: 16px;
+      }
+    }
+
+    .sub-title{
+      &:hover{
+        background-color: inherit;
+      }
+    }
+
+    .name-and-count{
+      font-size: 15px;
+    }
+
+    .no-seed{
+      margin: 50% 20px;
+      padding: 20px;
+      h1{
+        text-align: center;
+      }
+    }
+
+    .sub-title{
+      .filter-icon{
+        background-color: $orange;
+        padding: 5px;
+        border-radius: 5px;
+        color: #FFF;
+      }
+    }
+
+    .glyphicon-th-list, .glyphicon-filter {
+      color: #FFF;
+    }
+
+    .filter-xs {
+      display: block;
+      a {
+        text-decoration: none;
+        color: inherit;
       }
 
-      .seed-presentation {
-        flex: 0 0 100%;
-        padding: 0;
+
+
+      #fixed-modal-trigger  {
+        position: fixed;
+        right: 50px;
+        bottom: 10px;
+        padding: 15px 18px;
+        text-shadow: 0 1px 0 #ce870c;
+        background: -webkit-gradient(linear, left top, right bottom, from(#f5af19), to($orange));
+        background: linear-gradient(#f5af19, $orange);
+        -webkit-box-shadow: 0 7px 13px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 #4b58ba;
+        box-shadow: 0 7px 13px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 #ce870c;
+        border-radius: 50%;
+        text-decoration: none;
+        outline: none;
       }
 
-      .product {
-        padding: 10px;
-        border-radius: 0;
-        border-left: 0;
-        border-right: 0;
+      #fixed-modal-trigger-cat {
+        position: fixed;
+        left: 50px;
+        bottom: 10px;
+        padding: 15px 18px;
+        border-radius: 50%;
+        text-decoration: none;
+        outline: none;
+        text-shadow: 0 1px 0 #ce870c;
+        background: -webkit-gradient(linear, left top, right bottom, from(#f5af19), to($orange));
+        background: linear-gradient(#f5af19, $orange);
+        -webkit-box-shadow: 0 7px 13px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 #4b58ba;
+        box-shadow: 0 7px 13px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 #ce870c;
       }
 
-      .product-image{
-        height:100px;
-        width:100px;
+
+
+
+      .filter-title {
+        font-size: 17px;
+      }
+
+      .xs-fa {
+        font-size: 30px;
+      }
+
+      .sub-categories {
+        width: 60%;
       }
 
 
-      .product-body {
 
-        h3 {
-          font-size: 16px;
-        }
-      }
+      .selected-category {
+        display: flex;
+        align-items: center;
+        transition: all 0.1s;
+        padding: 3px 10px 3px 10px;
+        margin-bottom: 2px;
+        box-shadow: none;
+        border: 1px solid #e8e8e8 !important;
 
-      .social-overview .icon-and-number {
-        margin-left: 5px;
-
-        p {
-          font-size: 10px;
-        }
-      }
-
-      .seeder-picture{
-        height: 35px;
-        width:35px;
-      }
-
-      .product-category{
-        p {
-          font-size: 10px;
-        }
-      }
-
-      .filter-header {
-        p {
-          color: darkgray;
-          font-size: 16px;
-        }
-      }
-
-      .sub-title{
-        &:hover{
-          background-color: inherit;
-        }
-      }
-
-      .name-and-count{
-        font-size: 15px;
-      }
-
-      .no-seed{
-        margin: 50% 20px;
-        padding: 20px;
-        h1{
-          text-align: center;
-        }
-      }
-
-      .sub-title{
         .filter-icon{
           background-color: $orange;
           padding: 5px;
           border-radius: 5px;
           color: #FFF;
         }
-      }
-
-      .glyphicon-th-list, .glyphicon-filter {
-        color: #FFF;
-      }
-
-      .filter-xs {
-        a {
-          text-decoration: none;
-          color: inherit;
-        }
 
 
 
-        #fixed-modal-trigger  {
-          position: fixed;
-          right: 10px;
-          bottom: 10px;
-          padding: 15px 18px;
-          text-shadow: 0 1px 0 #ce870c;
-          background: -webkit-gradient(linear, left top, right bottom, from(#f5af19), to($orange));
-          background: linear-gradient(#f5af19, $orange);
-          -webkit-box-shadow: 0 7px 13px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 #4b58ba;
-          box-shadow: 0 7px 13px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 #ce870c;
-          border-radius: 50%;
-          text-decoration: none;
-          outline: none;
-        }
-
-        #fixed-modal-trigger-cat {
-          position: fixed;
-          left: 10px;
-          bottom: 10px;
-          padding: 15px 18px;
-          border-radius: 50%;
-          text-decoration: none;
-          outline: none;
-          text-shadow: 0 1px 0 #ce870c;
-          background: -webkit-gradient(linear, left top, right bottom, from(#f5af19), to($orange));
-          background: linear-gradient(#f5af19, $orange);
-          -webkit-box-shadow: 0 7px 13px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 #4b58ba;
-          box-shadow: 0 7px 13px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 #ce870c;
-        }
-
-
-
-
-        .filter-title {
-          font-size: 17px;
-        }
-
-        .xs-fa {
-          font-size: 30px;
-        }
-
-        .sub-categories {
-          width: 60%;
-        }
-
-
-
-        .selected-category {
-          display: flex;
-          align-items: center;
-          transition: all 0.1s;
-          padding: 3px 10px 3px 10px;
-          margin-bottom: 2px;
-          box-shadow: none;
-          border: 1px solid #e8e8e8 !important;
-
-          .filter-icon{
-            background-color: $orange;
-            padding: 5px;
-            border-radius: 5px;
-            color: #FFF;
-          }
-
-
-
-          &:hover{
-            background-color: inherit;
-          }
-
-
-          a {
-            text-decoration: none;
-          }
-          p {
-            margin: 0;
-            font-weight: bold;
-            font-size: 15px;
-            color: $blue;
-
-
-          }
-
-        }
-
-        .inactive {
+        &:hover{
           background-color: inherit;
         }
 
 
-
-        .validate-filter {
-          position: fixed;
-          bottom: 15px;
-          right: 15px;
-          background-color: #FFFFFF;
-          color: $blue;
-          padding: 4px 12px;
+        a {
+          text-decoration: none;
         }
+        p {
+          margin: 0;
+          font-weight: bold;
+          font-size: 15px;
+          color: $blue;
+
+
+        }
+
       }
+
+      .inactive {
+        background-color: inherit;
+      }
+
+
+
+      .validate-filter {
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        background-color: #FFFFFF;
+        color: $blue;
+        padding: 4px 12px;
+      }
+    }
+
+
+    }
+
+    @media(max-width: 480px) {
+
+      .filter-xs {
+        #fixed-modal-trigger  {
+          right: 10px;
+        }
+
+        #fixed-modal-trigger-cat {
+          left: 10px;
+        }
+
+      }
+
 
     }
 
