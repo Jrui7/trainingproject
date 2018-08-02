@@ -504,6 +504,10 @@
       margin: 0 auto 40px auto;
     }
 
+    .how-it-works {
+      width: 90%;
+    }
+
     .outcome-and-text {
         flex: 0 0 40%;
     }
@@ -532,10 +536,27 @@
       margin: 0 auto 30px auto;
     }
 
-    .testimony-box .cta {
-      margin-top: 40px;
-    }
 
+
+    .testimony-box {
+
+      .cta {
+        margin-top: 40px;
+      }
+
+      h2 {
+        width: 100%;
+        border-bottom: none;
+      }
+
+      }
+
+    .how-it-works {
+      width: 90%;
+      p {
+        width: 75%;
+      }
+    }
   }
 
 

@@ -261,6 +261,10 @@ a:hover {
 
   @media(max-width: 768px) {
 
+    .page-container{
+      padding: 0 0 50px 0;
+    }
+
       .pick-presentation {
         flex: 0 0 100%;
         margin-right: auto;
@@ -274,9 +278,7 @@ a:hover {
 
     @media(max-width: 480px) {
 
-      .page-container{
-        padding: 0;
-      }
+
 
       .seed-feed {
         margin: 0;
