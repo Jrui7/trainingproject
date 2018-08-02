@@ -247,9 +247,18 @@
     box-shadow: none;
   }
 
-  .pick-details-container .recap {
-    flex: 0 0 100%;
-  }
+   .pick-details-container .recap {
+      flex: 0 0 100%;
+    }
+
+    .exchanges-and-questions {
+      margin-top: 30px;
+      flex: 0 0 100%;
+      padding: 0 10px;
+      margin-bottom: 35px;
+    }
+
+
 
     }
 
@@ -274,6 +283,8 @@
       padding: 0 10px;
       margin-bottom: 35px;
     }
+
+
 
 
 

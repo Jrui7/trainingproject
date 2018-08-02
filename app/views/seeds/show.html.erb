@@ -47,7 +47,7 @@
               </div>
             </div>
           </div>
-            <div class="pick-section hidden-xs">
+            <div class="pick-section">
               <%= render "seeds/pick-section", my_pick: @my_pick %>
             </div>
         </div>
@@ -114,7 +114,7 @@
               </div>
               <div class="social-category">
                 <div class="media-filter-icon glyphicon glyphicon-euro"></div>
-                <p><%= @seed.price %></p>
+                <p><%= @seed.price.round(2) %></p>
               </div>
               <div class="social-category">
                 <div class="signal">
@@ -224,13 +224,17 @@
   </div>
 </div>
 
+<div class="footer-on-show">
+  <%= render 'shared/footer' %>
+</div>
+
 <% if @seed.ongoing? && @seed.status == "published" %>
   <div class="pick-container-xs">
     <%= render "seeds/pick-section-xs", my_pick: @my_pick %>
   </div>
 <% end %>
 
-<%= render 'shared/footer' %>
+
 
 
 

@@ -21,22 +21,22 @@
             <div class="recap-paragraph">
               <div>
               <h4><%= @seed.title %></h4>
-              <p>Prix original: <%= @seed.price %> €</p>
+              <p>Prix original: <%= @seed.price.round(2) %> €</p>
               </div>
               Pické le: <%= @pick.created_at.strftime("%d/%m/%Y") %>
             </div>
           </div>
           <div class="how-much">
             <div class="text">Coût livraison:</div>
-            <p class="price"><%= @seed.expedition_costs %> €</p>
+            <p class="price"><%= @seed.expedition_costs.round(2) %> €</p>
           </div>
           <div class="how-much">
             <div class="text">Pické pour:</div>
-            <p class="price"><%= @pick.price %> €</p>
+            <p class="price"><%= @pick.price.round(2) %> €</p>
           </div>
           <div class="how-much last">
             <div class="text"><b>Coût total max:</b></div>
-            <p class="price"><%= @pick.price + @seed.expedition_costs %> €</p>
+            <p class="price"><%= (@pick.price + @seed.expedition_costs).round(2) %> €</p>
           </div>
           <div class="info-detail">Vous n'avez rien à payer aujourd'hui, et ne serez débité que si nous arrivons à obtenir un prix inférieur ou égal à celui que vous avez proposé.
           </div>

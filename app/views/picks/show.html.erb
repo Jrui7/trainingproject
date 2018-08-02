@@ -51,15 +51,15 @@
       </div>
       <div class="how-much">
         <div class="text">Coût livraison:</div>
-        <p class="price"><%= @seed.expedition_costs %> €</p>
+        <p class="price"><%= (@seed.expedition_costs).round(2) %> €</p>
       </div>
       <div class="how-much">
         <div class="text">Pické pour:</div>
-        <p class="price"><%= @pick.price %> €</p>
+        <p class="price"><%= (@pick.price).round(2) %> €</p>
       </div>
       <div class="how-much last">
         <div class="text"><b>Coût total max:</b></div>
-        <p class="price"><%= @pick.price + @seed.expedition_costs %> €</p>
+        <p class="price"><%= (@pick.price + @seed.expedition_costs).round(2) %> €</p>
       </div>
       <div class="info-detail"><%= render 'picks/pick-status', pick: @pick %>
       </div>
