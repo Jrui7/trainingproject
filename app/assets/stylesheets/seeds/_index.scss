@@ -452,6 +452,7 @@ a:hover {
 
 
       #fixed-modal-trigger  {
+        z-index: 1000;
         position: fixed;
         right: 50px;
         bottom: 10px;
@@ -467,6 +468,7 @@ a:hover {
       }
 
       #fixed-modal-trigger-cat {
+        z-index: 1000;
         position: fixed;
         left: 50px;
         bottom: 10px;

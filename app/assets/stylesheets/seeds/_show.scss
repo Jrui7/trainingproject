@@ -532,6 +532,7 @@
   }
 
   .pick-bar-xs  {
+    z-index: 1000;
     position: fixed;
     bottom: 0px;
     display: flex;
