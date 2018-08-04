@@ -42,56 +42,58 @@
     form.addEventListener('submit', function(event) {
       event.preventDefault();
 
+      var firstName = $("#address_first_name").val();
+      var lastName = $("#address_last_name").val();
+      var addressStreet = $("#address_street").val();
+      var zipCode = $("#address_zip_code").val();
+      var city = $("#address_city").val();
 
-      stripe.createToken(card).then(function(result) {
-        if (result.error) {
-          // Inform the customer that there was an error.
-          var errorElement = document.getElementById('card-errors');
-          errorElement.textContent = result.error.message;
-        } else {
+      if (firstName != "" && lastName != "" && addressStreet != "" && zipCode != "" && city != "" ) {
+        $("#validate-paiement").hide();
+        $(".loader-container").removeClass("hidden").html("<div class='loader'></div>");
+        $(".update-delivery-infos").click();
 
-          var firstName = $("#address_first_name").val();
-          var lastName = $("#address_last_name").val();
-          var addressStreet = $("#address_street").val();
-          var zipCode = $("#address_zip_code").val();
-          var city = $("#address_city").val();
-
-          if (firstName != "" && lastName != "" && addressStreet != "" && zipCode != "" && city != "" ) {
-            $("#validate-paiement").hide();
-            $(".loader-container").removeClass("hidden").html("<div class='loader'></div>");
-            $(".update-delivery-infos").click();
+        stripe.createToken(card).then(function(result) {
+          if (result.error) {
+            // Inform the customer that there was an error.
+            var errorElement = document.getElementById('card-errors');
+            errorElement.textContent = result.error.message;
+          } else {
 
             // Send the token to your server.
             stripeTokenHandler(result.token);
-          } else {
 
-            if (firstName == "" || lastName == "" || addressStreet == "" || zipCode == "" || city == "" ) {
-              if ($(".fa.fa-user").hasClass("shake")) {
-                $(".fa.fa-user").removeClass("shake");
-              }
-              if ($(".fa.fa-truck").hasClass("shake")) {
-                $(".fa.fa-truck").removeClass("shake");
-              }
-              $("#go-to-form").click();
-            }
-
-            if (firstName == "" || lastName == "" ) {
-              setTimeout(function(){
-                $(".fa.fa-user").addClass("shake").css({ 'color': 'red', 'border-color': 'red' });
-            }, 1000);
-             } else {
-               $(".fa.fa-user").removeAttr('style');
-             } if (addressStreet == "" || zipCode == "" || city == "" ) {
-                 setTimeout(function(){
-                   $(".fa.fa-truck").addClass("shake").css({ 'color': 'red', 'border-color': 'red' });
-               }, 1000);
-             } else {
-               $(".fa.fa-truck").removeAttr('style');
-             }
           }
+        });
 
+
+      } else {
+
+        if (firstName == "" || lastName == "" || addressStreet == "" || zipCode == "" || city == "" ) {
+          if ($(".fa.fa-user").hasClass("shake")) {
+            $(".fa.fa-user").removeClass("shake");
+          }
+          if ($(".fa.fa-truck").hasClass("shake")) {
+            $(".fa.fa-truck").removeClass("shake");
+          }
+          $("#go-to-form").click();
         }
-      });
+
+        if (firstName == "" || lastName == "" ) {
+          setTimeout(function(){
+            $(".fa.fa-user").addClass("shake").css({ 'color': 'red', 'border-color': 'red' });
+        }, 1000);
+         } else {
+           $(".fa.fa-user").removeAttr('style');
+         } if (addressStreet == "" || zipCode == "" || city == "" ) {
+             setTimeout(function(){
+               $(".fa.fa-truck").addClass("shake").css({ 'color': 'red', 'border-color': 'red' });
+           }, 1000);
+         } else {
+           $(".fa.fa-truck").removeAttr('style');
+         }
+      }
+
     });
     function stripeTokenHandler(token) {
     // Insert the token ID into the form so it gets submitted to the server
