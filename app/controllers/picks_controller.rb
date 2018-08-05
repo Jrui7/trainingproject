@@ -61,7 +61,8 @@ class PicksController < ApplicationController
   def edit
     @pick = Pick.find(params[:id])
     authorize @pick
-    @campaign_price = @pick.seed.campaign.price
+    @expedition_costs = @pick.seed.expedition_costs.round(2)
+    @campaign_price = @pick.seed.campaign.price.round(2)
   end
 
   def update_card

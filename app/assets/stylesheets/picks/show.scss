@@ -236,16 +236,18 @@
 
 
 @media(max-width: 992px) {
-
-  }
-
-  @media(max-width: 768px) {
   .stripe-card-form {
     flex: 0 0 100%;
     margin-left: 0;
     border-radius: 0;
     box-shadow: none;
+    margin-top: 20px;
   }
+
+  }
+
+  @media(max-width: 768px) {
+
 
    .pick-details-container .recap {
       flex: 0 0 100%;

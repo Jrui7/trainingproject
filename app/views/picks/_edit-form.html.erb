@@ -42,7 +42,7 @@
                 <div class="how-much">
                   <div class="last-text">Coût total max:</div>
                   <div class="cout">
-                    <div class="totalcounter" id="total-counter-<%= pick.id %>"><%= pick.price.round(2) + seed.expedition_costs.round(2) %></div>
+                    <div class="totalcounter" id="total-counter-<%= pick.id %>"><%= (pick.price + seed.expedition_costs).round(2) %></div>
                     <p id="color-euro">€</p>
                   </div>
                 </div>
