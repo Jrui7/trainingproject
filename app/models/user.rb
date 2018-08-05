@@ -12,7 +12,7 @@ class User < ApplicationRecord
    validates :terms_of_service, acceptance: { message: 'Merci de valider' }
 
    has_many :seeds
-   has_many :picks
+   has_many :picks, dependent: :destroy
    has_many :exchanges
    has_many :addresses, dependent: :destroy
    accepts_nested_attributes_for :addresses
