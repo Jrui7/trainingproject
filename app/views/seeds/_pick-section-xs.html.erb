@@ -4,11 +4,11 @@
     <div class="picked-bar-xs hidden-md hidden-lg">
       <% if  my_pick.state == "pending" %>
         <%= link_to new_pick_payment_path(my_pick) do %>
-          <div class="has_picked">Mon pick : <%= my_pick.price %> €</div>
+          <div class="has_picked">Mon pick : <%= my_pick.price.round(2) %> €</div>
         <% end %>
       <% else %>
         <%= link_to pick_path(my_pick) do %>
-          <div class="has_picked">Mon pick : <%= my_pick.price %> €</div>
+          <div class="has_picked">Mon pick : <%= my_pick.price.round(2) %> €</div>
         <% end %>
       <% end %>
     </div>

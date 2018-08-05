@@ -17,11 +17,11 @@
           <% end %>
         <% end %>
       </div>
-      <p>Prix original: <%= pick.seed.price %>€</p>
+      <p>Prix original: <%= pick.seed.price.round(2) %>€</p>
     </div>
     <div class="price-pick">
       <div class="pick-state">
-        <p class="price-display">Pické pour <%= pick.price %>€</p>
+        <p class="price-display">Pické pour <%= pick.price.round(2) %>€</p>
       <% if pick.seed.ongoing? %>
         <%= link_to "#myPick-#{pick.id}", data: {toggle: "modal"} do %>
           <span class="glyphicon glyphicon-pencil"></span>
