@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180724141433) do
+ActiveRecord::Schema.define(version: 20180807120722) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20180724141433) do
   create_table "campaigns", force: :cascade do |t|
     t.integer  "seed_id"
     t.string   "status",     default: "pending"
-    t.integer  "price"
+    t.float    "price"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.index ["seed_id"], name: "index_campaigns_on_seed_id", using: :btree
@@ -122,7 +122,7 @@ ActiveRecord::Schema.define(version: 20180724141433) do
     t.string   "sale_point_url"
     t.string   "sale_point_contact"
     t.text     "official_description"
-    t.integer  "price_cents"
+    t.float    "price"
     t.string   "admin_review",         default: "not-reviewed"
     t.string   "slug"
     t.string   "size_guide"
