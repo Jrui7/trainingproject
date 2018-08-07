@@ -62,12 +62,6 @@ puts "Seed created"
 puts "----------------------"
 
 campaign1 = Campaign.create(seed_id: seed_mode.id)
-campaign2 = Campaign.create(seed_id: seed_sport.id)
-campaign3 = Campaign.create(seed_id: seed_tech.id)
-campaign4 = Campaign.create(seed_id: seed_loisir.id)
-campaign5 = Campaign.create(seed_id: seed_maison.id)
-campaign6 = Campaign.create(seed_id: seed_enfants.id)
-campaign7 = Campaign.create(seed_id: seed_animaux.id)
 
 puts "Campaigns created"
 puts "-----------------------"

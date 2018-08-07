@@ -1,0 +1,34 @@
+
+<% campaigns.each do |campaign| %>
+<div class="product id-<%= campaign.id%>">
+    <div class='product-body'>
+      <div class="head-seed">
+        <%= link_to seed_path(campaign.seed) do  %>
+          <h3> <%= campaign.seed.title %>: id <%= campaign.seed.id %></h3>
+        <% end %>
+        <div class="export-link"><%= link_to "Export CSV", seed_picks_path(seed_id: campaign.seed, format: :csv) %>
+        </div>
+      </div>
+
+      <div class="bottom-sexion">
+        <div class="product-category">
+          <%= simple_form_for campaign do |f| %>
+            <%= f.collection_radio_buttons :status, [["success", 'Success'] ,["fail", 'Fail']], :first, :last %>
+            <%= f.input :price, label:"Prix négocié en €", placeholder: "exemple: 15,25"%>
+            <%= f.button :submit, value: "Enregistrer"%>
+          <% end %>
+        </div>
+        <div class="right-icons">
+          <div class="signal-box">
+            <%= image_tag "gray-icon.png", class: "pending pick-icon" %>
+            <p>Picks</p>
+            <p class="action-count">(<%= campaign.seed.picks.count%>)</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
