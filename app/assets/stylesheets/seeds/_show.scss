@@ -461,10 +461,14 @@
     .unit {
       position: absolute;
       display: block;
-      top: 34px;
-      right: 3%;
+      top: 32px;
+      left: 10px;
       z-index: 9;
     }
+  }
+
+  #start-pick {
+    padding-left: 25px;
   }
 
   #size-label {
@@ -702,9 +706,7 @@
       flex: 0 0 100%;
       margin: 30px 0;
     }
-    .price .unit {
-        top: 35px;
-    }
+
 
     #delivery-info {
       font-size: 14px;

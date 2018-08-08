@@ -212,9 +212,13 @@ abbr {
   .unit {
     position: absolute;
     display: block;
-    right:30px;
+    left:30px;
     top: 37px;
     z-index: 9;
+  }
+
+  #seed_price {
+    padding-left: 25px;
   }
 
 
@@ -311,7 +315,7 @@ padding-left: 20px;
     }
 
     .unit {
-      right: 15px;
+      left: 10px;
     }
 
     .form-group {
