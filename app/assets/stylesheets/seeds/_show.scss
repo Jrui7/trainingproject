@@ -465,10 +465,11 @@
       left: 10px;
       z-index: 9;
     }
-  }
 
-  #start-pick {
-    padding-left: 25px;
+    .form-control {
+      padding-left: 25px;
+      border-radius: 5px;
+    }
   }
 
   #size-label {
