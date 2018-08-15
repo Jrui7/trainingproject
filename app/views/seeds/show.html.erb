@@ -183,7 +183,7 @@
               </div>
             <% end %>
             <% if @seeder.seeder_other_seeds? %>
-              <p id="other_posts_link">Autres posts</p>
+              <p id="other_posts_link">Mes autres posts</p>
               <div class="other_posts">
                 <% @seeder.seeder_other_seeds_list(@seed).each do |seed| %>
                   <%= link_to "#{seed.title}", seed_path(seed) %>
