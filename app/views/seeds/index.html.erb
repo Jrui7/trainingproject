@@ -152,7 +152,7 @@
     <% if @seeds.blank? %>
       <div class="no-seed">
         <h1>Pas de campagne en cours.</h1>
-        <p>Poster votre seed !</p>
+        <%= link_to "Lancez la votre !", new_seed_path, class: "cta-new" %>
       </div>
     <% else %>
       <div class="seed-presentation">
