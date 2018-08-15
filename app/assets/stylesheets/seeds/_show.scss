@@ -248,23 +248,18 @@
 
 }
 
-.seeder {
-  padding: 20px;
-  border: 1px solid #efefef;
-  border-radius: 5px;
-  background-color: #FFFFFF;
   .seeder-show{
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
+    .fa-user{
+     padding: 13px;
+     background-color: $blue;
+     border-radius: 50%;
+     color: white;
+    }
   }
-  .fa-user{
-   padding: 13px;
-   background-color: $blue;
-   border-radius: 50%;
-   color: white;
-  }
-}
+
 
 
 
@@ -757,12 +752,6 @@
     border-right: 0;
   }
 
-  .page-container .left-section .seeder {
-    padding: 15px;
-    border-radius: 0;
-    border-left: 0;
-    border-right: 0;
-    }
 
     .page-container .head  {
       .pick-link {

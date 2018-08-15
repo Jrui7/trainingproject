@@ -125,86 +125,78 @@
               </div>
             </div>
           </div>
-          <div class="seeder">
-            <div class="seeder-show">
-              <%if @seeder.has_photo? %>
-              <%= cl_image_tag(@seeder.photo.path, :width=>110, :height=>110, class: "seeder-picture-big")%>
-              <% else %>
-                <i class="fa fa-user"></i>
-              <% end %>
-              <div class="user-show">
-                <p id= "pseudo-bold"> <%= @seeder.pseudo %>
-                </p>
-                <p class="post-date">Posté le <%= @seed.created_at.strftime("%d/%m/%y")%></p>
-                <% if @seeder.social_card? %>
-                  <p id="social_card_link">Infos</p>
-                <% end %>
-              </div>
-              <div class="personal-description">
-                <h4>Le mot du seeder</h4>
-                <div class="descritpion-text"><%= simple_format(@seed.description.capitalize) %></div>
-              </div>
-              <div class="social-card-user">
-                <% if @seeder.mini_bio? %>
-                  <div class="mini-bio">
-                    <p><b>Mini-bio :</b>
-                      <br><%= @seeder.mini_bio.capitalize %></p>
-                  </div>
-                <% end %>
-                <% if @seeder.social_links? %>
-                  <p style="margin:0;"><b>Suivre :</b></p>
-                  <div class="social-group">
-                    <% if @seed.user.insta?  %>
-                      <div class="icon-and-pseudo">
-                        <%= image_tag "instagram.png" %>
-                        <p class="seeder-media"><%= @seeder.insta %></p>
-                      </div>
-                    <% end %>
-                    <% if @seeder.youtube? %>
-                      <div class="icon-and-pseudo">
-                        <%= image_tag "youtube.png" %>
-                        <p class="seeder-media"><%= @seeder.youtube %></p>
-                      </div>
-                    <% end %>
-                    <% if @seeder.twitter? %>
-                      <div class="icon-and-pseudo">
-                        <%= image_tag "twitter.png" %>
-                        <p class="seeder-media"><%= @seeder.twitter %></p>
-                      </div>
-                    <% end %>
-                    <% if @seeder.facebook? %>
-                      <div class="icon-and-pseudo">
-                        <%= image_tag "facebook.png" %>
-                        <p class="seeder-media"><%= @seeder.facebook %></p>
-                      </div>
-                    <% end %>
-                  </div>
-                <% end %>
-                <% if @seeder.seeder_other_seeds? %>
-                  <p id="other_posts_link">Autres posts</p>
-                  <div class="other_posts">
-                    <% @seeder.seeder_other_seeds_list(@seed).each do |seed| %>
-                      <%= link_to "#{seed.title}", seed_path(seed) %>
-                      <br>
-                    <% end %>
-                  </div>
-                <% end %>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
       <div class="col-xs-12 col-md-5 official-description">
-        <h2 class="description-title">
-          Description
-        </h2>
-        <div class="descritpion-text">
-          <%= simple_format(@seed.official_description.capitalize) %>
+        <div class="seeder-show">
+          <%if @seeder.has_photo? %>
+          <%= cl_image_tag(@seeder.photo.path, :width=>110, :height=>110, class: "seeder-picture-big")%>
+          <% else %>
+            <i class="fa fa-user"></i>
+          <% end %>
+          <div class="user-show">
+            <p id= "pseudo-bold"> <%= @seeder.pseudo %>
+            </p>
+            <p class="post-date">Posté le <%= @seed.created_at.strftime("%d/%m/%y")%></p>
+            <% if @seeder.social_card? %>
+              <p id="social_card_link">Infos</p>
+            <% end %>
+          </div>
+          <div class="personal-description">
+            <h4>Le mot du seeder</h4>
+            <div class="descritpion-text"><%= simple_format(@seed.description.capitalize) %></div>
+          </div>
+          <div class="social-card-user">
+            <% if @seeder.mini_bio? %>
+              <div class="mini-bio">
+                <p><b>Mini-bio :</b>
+                  <br><%= @seeder.mini_bio.capitalize %></p>
+              </div>
+            <% end %>
+            <% if @seeder.social_links? %>
+              <p style="margin:0;"><b>Suivre :</b></p>
+              <div class="social-group">
+                <% if @seed.user.insta?  %>
+                  <div class="icon-and-pseudo">
+                    <%= image_tag "instagram.png" %>
+                    <p class="seeder-media"><%= @seeder.insta %></p>
+                  </div>
+                <% end %>
+                <% if @seeder.youtube? %>
+                  <div class="icon-and-pseudo">
+                    <%= image_tag "youtube.png" %>
+                    <p class="seeder-media"><%= @seeder.youtube %></p>
+                  </div>
+                <% end %>
+                <% if @seeder.twitter? %>
+                  <div class="icon-and-pseudo">
+                    <%= image_tag "twitter.png" %>
+                    <p class="seeder-media"><%= @seeder.twitter %></p>
+                  </div>
+                <% end %>
+                <% if @seeder.facebook? %>
+                  <div class="icon-and-pseudo">
+                    <%= image_tag "facebook.png" %>
+                    <p class="seeder-media"><%= @seeder.facebook %></p>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+            <% if @seeder.seeder_other_seeds? %>
+              <p id="other_posts_link">Autres posts</p>
+              <div class="other_posts">
+                <% @seeder.seeder_other_seeds_list(@seed).each do |seed| %>
+                  <%= link_to "#{seed.title}", seed_path(seed) %>
+                  <br>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
         </div>
           <a href="<%=@seed.sale_point_url %>" class="internet-site" target="_blank">
               <%= image_tag "infos.png", class:"link-img" %>
             <div class="display-link">
-              <h5>Plus d'infos</h5>
+              <h5>Description officielle</h5>
             </div>
             <span class="glyphicon glyphicon-chevron-right"></span>
           </a>
