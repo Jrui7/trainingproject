@@ -70,8 +70,8 @@
   padding: 8px;
   background: $blue;
   text-align: center;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,7 +89,8 @@
 
 .exchanges-and-questions {
   text-align: center;
-  flex: 0 0 50%;
+  flex: 0 0 65%;
+  padding: 0 50px;
 }
 
 .all-messages {
@@ -256,7 +257,7 @@
     .exchanges-and-questions {
       margin-top: 30px;
       flex: 0 0 100%;
-      padding: 0 10px;
+      padding: 0;
       margin-bottom: 35px;
     }
 
@@ -282,9 +283,15 @@
     .exchanges-and-questions {
       margin-top: 30px;
       flex: 0 0 100%;
-      padding: 0 10px;
       margin-bottom: 35px;
     }
+
+    .exchange-header {
+      border-top-right-radius: 0px;
+      border-top-left-radius: 0px;
+    }
+
+
 
 
 

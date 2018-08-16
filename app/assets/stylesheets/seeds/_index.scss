@@ -317,9 +317,13 @@ a:hover {
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-  p{
+  .cta-new, p {
     font-size: 17px;
     color: $orange;
+  }
+
+  a {
+    text-decoration: underline !important;
   }
 }
 

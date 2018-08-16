@@ -55,6 +55,9 @@
   .dashboard {
       padding: 0;
       margin: 0;
+      background-color: #fff;
+      border: 1px solid #dbdbdb;
+      border-radius: 3px;
   }
 
   .tabs-info {
@@ -106,7 +109,7 @@
 
 
   .user-form {
-    padding: 20px 20px;
+    padding: 40px 20px;
 
     .primary-infos{
       display: flex;
@@ -303,6 +306,11 @@
 
   #user_photo {
     display: none;
+  }
+
+  .save-user {
+    display: flex;
+    justify-content: flex-end;
   }
 
   .action-links {

@@ -7,7 +7,7 @@ class UserMailer < ApplicationMailer
   #
   def welcome(user)
     @user = User.find(user)
-    mail to: @user.email, subject: "#{@user.pseudo}: en route pour une super expérience"
+    mail to: @user.email, subject: "Bienvenue dans la communauté Pickalgo"
   end
 
 end
