@@ -7,7 +7,27 @@ class UserMailer < ApplicationMailer
   #
   def welcome(user)
     @user = User.find(user)
-    mail to: @user.email, subject: "Bienvenue dans la communauté Pickalgo"
+    # This call sends a message to the given recipient with vars and custom vars.
+    variable = Mailjet::Send.create(messages: [{
+      'From'=> {
+        'Email'=> "jorge@pickalgo.com",
+        'Name'=> "Jorge de Pickalgo"
+      },
+      'To'=> [
+        {
+          'Email'=> "#{@user.email}",
+          'Name'=> 'passenger'
+        }
+      ],
+      delivery_method_options: { version: 'v3.1' },
+      'TemplateID'=> 507732,
+      'TemplateLanguage'=> true,
+      'Subject'=> "Bienvenue dans la communauté Pickalgo",
+      'Variables'=> {
+        "pseudo" => "#{@user.pseudo}"
+      }
+    }])
+    p variable.attributes['Messages']
   end
 
 end
