@@ -7,6 +7,9 @@ class UserMailer < ApplicationMailer
   #
   def welcome(user)
     @user = User.find(user)
+    Mailjet.configure do |config|
+      config.api_version = "v3.1"
+    end
     # This call sends a message to the given recipient with vars and custom vars.
     variable = Mailjet::Send.create(messages: [{
       'From'=> {
@@ -15,11 +18,9 @@ class UserMailer < ApplicationMailer
       },
       'To'=> [
         {
-          'Email'=> "#{@user.email}",
-          'Name'=> 'passenger'
+          'Email'=> "#{@user.email}"
         }
       ],
-      delivery_method_options: { version: 'v3.1' },
       'TemplateID'=> 507732,
       'TemplateLanguage'=> true,
       'Subject'=> "Bienvenue dans la communauté Pickalgo",
