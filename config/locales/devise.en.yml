@@ -20,7 +20,7 @@ en:
       confirmation_instructions:
         subject: "Confirmation instructions"
       reset_password_instructions:
-        subject: "Nouveau mot de passe instructions"
+        subject: "Réinitialisez votre mot de passe"
       unlock_instructions:
         subject: "Instructions de délocage"
       email_changed:

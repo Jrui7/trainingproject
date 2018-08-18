@@ -10,8 +10,8 @@
           <h4 class="modal-title">Mot de passe oublié ?</h4>
         </div>
         <div class="modal-body">
-          <p id="forgot-p">Saisissez l'adresse mail que vous nous avez indiquée lors de votre inscription
-afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
+          <p id="forgot-p">Saisissez <b>l'adresse email</b> que vous nous avez indiquée lors de votre inscription.
+          <br>Nous allons vous envoyer un lien pour choisir un nouveau mot de passe.</p>
           <div class="pick-modal">
             <%= render "devise/passwords/reset-password"%>
           </div>
@@ -104,13 +104,15 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
         <%= image_tag "number-3.png", class: "feature-images"  %>
         <h3 class="quote">"J'achète finalement à 150 € !"</h3>
         <div class="quote-text">
-          Vous proposiez de payer 160 € mais Pickalgo calcule un prix optimal à 150 €, vous ne payez que 150 €.
+          Nous transmettons vos propositions au vendeur, l'aidons à calculer le prix optimal, puis vous informons de sa réponse
         </div>
       </div>
       <div class="half">
         <%= image_tag "like.png", class: "action-image" %>
         <div class="quote-text">
-          Sur Pickalgo vous bénéficiez toujours du meilleur prix possible.
+          Vous proposiez de payer 160 €
+          <br>Prix optimal fixé à 150 €
+          <br>Vous obtenez le produit pour 150 €
           <br><a href="#home-blue-background">
               <div class="go-to-how-it-works">Comment ça marche ?</div>
             </a>
@@ -121,10 +123,7 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
 
   <div id="home-blue-background">
     <div class="how-it-works">
-      <h3 class="how-it-works-title">Comment ça marche</h3>
-      <p>
-        Pickalgo calcule si le prix que vous proposez permet au vendeur de compenser la remise que vous lui demandez par une augmentation de ses ventes.
-      </p>
+      <h3>Calculer un nouveau prix qui permet de compenser la remise accordée par une augmentation des ventes</h3>
       <div class="steps">
         <div class="icon-and-text-no-shaddow">
           <%= image_tag "abc.png", class: "action-image" %>
@@ -142,10 +141,11 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
           </div>
         </div>
         <div class="icon-and-text-no-shaddow">
-          <%= image_tag "tick.png", class: "action-image" %>
-          <div class="step-title">Optimiser</div>
+          <%= image_tag "finalize.png", class: "action-image" %>
+          <div class="step-title">Finaliser</div>
           <div class="step-text">
-            Le prix optimal est fixé: les acheteurs bénéficient du meilleur prix possible, le vendeur optimise ses volumes et sa marge.
+            Nous vous transmettons la décision du vendeur
+            <br>En fonction de sa décision, l'issue de la campagne peut être différente pour chacun des acheteurs:
           </div>
         </div>
       </div>
@@ -167,7 +167,15 @@ afin de recevoir un lien pour choisir un nouveau mot de passe.</p>
             <ul style="padding-left: 0">
               <li>Vous acceptiez de payer le produit 145 €</li>
               <li>Le prix optimal est de 150 €</li>
-              <li>Renoncez à acheter ce produit</li>
+              <li>Vous ne pouvez pas profiter du deal</li>
+            </ul>
+          </div>
+          <div class="outcome-and-text">
+            <h5 class="outcome">"No deal"</h5>
+            <ul style="padding-left: 0">
+              <li>Le vendeur n'est pas intéressé</li>
+              <li>Aucune modification du prix est possible</li>
+              <li>Personne ne peut profiter d'un deal</li>
             </ul>
           </div>
         </div>
