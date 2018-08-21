@@ -103,13 +103,13 @@
   }
 
   .input-form h3 {
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
+    border-top-right-radius: 0 !important;
+    border-top-left-radius: 0 !important;
     font-size: 20px;
   }
 
   .input-form .info-and-inputs {
-      padding: 10px 15px 20px;
+      padding: 10px 15px 20px !important;
   }
 
   .card-container {
