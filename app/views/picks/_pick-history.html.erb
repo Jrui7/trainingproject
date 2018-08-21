@@ -33,7 +33,29 @@
 
   <% if pick.state == "pending" && pick.seed.ongoing? %>
     <div class="campaign-status pick-pending">
-      Fin de la campagne: <%= pick.seed.expiration.strftime("%d/%m/%Y") %>.
+      <div class="seed-infos-timer">
+        <div id="timer-<%= pick.id %>" data-timer="<%= pick.seed.expiration %>">
+          <%= render "picks/timer", pick: pick  %>
+          <div id="clockdiv-<%= pick.id%>" class="clockdiv">
+            <div class="dynamic-timer">
+              <span class="days"></span>
+              <div class="smalltext">j</div>
+            </div>
+            <div class="dynamic-timer">
+              <span class="hours"></span>
+              <div class="smalltext">h</div>
+            </div>
+            <div class="dynamic-timer">
+              <span class="minutes"></span>
+              <div class="smalltext">m</div>
+            </div>
+            <div class="dynamic-timer">
+              <span class="seconds"></span>
+              <div class="smalltext">s</div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="payment-link">
         <%= link_to new_pick_payment_path(pick) do %>
           <div class="btn-orange">Finaliser pick</div>

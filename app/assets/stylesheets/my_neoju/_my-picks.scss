@@ -131,7 +131,7 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   transition: all 0.15s ease;
-  padding: 10px 20px;
+  padding: 10px;
 
   p {
     margin: 0;
@@ -151,6 +151,24 @@ a:hover {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 
+}
+
+.clockdiv {
+  display: flex;
+}
+
+.dynamic-timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin: 0 5px;
+  background-color: $blue;
+  color: #FFFFFF;
+  border: 1px dashed #FFFFFF;
+  font-size: 13px;
 }
 
 .pick-other {
@@ -356,6 +374,10 @@ a:hover {
       .pick-other {
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
+      }
+
+      .dynamic-timer {
+        padding: 0 5px;
       }
 
     }
