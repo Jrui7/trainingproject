@@ -27,8 +27,9 @@
 
 
 .media-display {
-padding: 0 20px;
-margin-bottom: 35px;
+  padding: 0 40px;
+  margin-bottom: 35px;
+
   .attachinary_container {
     margin-bottom: 30px;
     display: flex;
@@ -39,21 +40,15 @@ margin-bottom: 35px;
   }
   .video-block {
     margin-top: 20px;
+    width: 50%;
   }
 }
 
-.supplier-infos {
-padding: 0 20px;
-margin-bottom: 35px;
-}
 
 .collection_radio_buttons {
   margin: 0 8px 0;
 }
 
-#seed_sale_point_internet{
-  margin: 0;
-}
 
 .form-title {
   background: -webkit-gradient(linear, left top, right bottom, from($blue), to(#3e2995));
@@ -224,13 +219,16 @@ color: $blue;
 font-size: 17px;
 cursor: pointer;
 margin: 0;
-padding-left: 20px;
 margin-bottom: 30px;
 
   span {
     margin-left: 0;
     margin-right: 10px;
   }
+}
+
+.video-container {
+  padding-left: 20px;
 }
 
 .chooseVideo {
@@ -240,13 +238,20 @@ color: $blue;
 font-size: 17px;
 cursor: pointer;
 margin: 0px;
-padding-left: 20px;
 
   span {
     margin-left: 0;
     margin-right: 10px;
   }
 
+
+}
+
+@media(max-width: 768px) {
+  .media-display .video-block {
+      margin-top: 20px;
+      width: 100%;
+  }
 }
 
 @media(max-width: 767px) {
@@ -268,6 +273,8 @@ padding-left: 20px;
       flex: 0 0 100%;
       margin-left: 0;
     }
+
+
   }
 
 
@@ -281,6 +288,7 @@ padding-left: 20px;
 
   .form-title {
     border-radius: 0;
+    margin-top: 0;
   }
 
   .remove-padding-xs {
@@ -310,9 +318,9 @@ padding-left: 20px;
     margin-top: 25px;
   }
 
-
-  .official_description {
-    margin-top: 25px;
+  .media-display {
+      padding: 0 10px;
+      margin-bottom: 35px;
   }
 
   .chooseVideo, .chooseFile {
