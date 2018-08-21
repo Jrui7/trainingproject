@@ -40,6 +40,7 @@
   }
   .video-block {
     margin-top: 20px;
+    display: none;
     width: 50%;
   }
 }
@@ -202,8 +203,8 @@ abbr {
 }
 
 .media-preview {
-  padding: 0 20px;
   height: 250px;
+  display: none;
 }
 
 #iframe {
@@ -347,6 +348,10 @@ margin: 0px;
   .media-preview {
     padding: 0;
     height: 165px;
+  }
+
+  .video-container {
+    padding-left: 0;
   }
 
 }

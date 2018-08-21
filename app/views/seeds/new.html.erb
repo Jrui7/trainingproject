@@ -35,14 +35,12 @@
           <div class="chooseVideo">
             <span class="glyphicon glyphicon-plus"></span>Ajouter une vidéo
           </div>
-          <div class="video-container cache">
-            <div class="input-block video-block hidden">
-              <%= f.input :url, label: "Lien Youtube", placeholder: "coller ici l'url d'une video youtube" %>
+          <div class="input-block video-block">
+            <%= f.input :url, label: "Lien Youtube", placeholder: "coller ici l'url d'une video youtube" %>
 
-              <div class="media-preview hidden">
-                <iframe id="iframe" src="">
-                </iframe>
-              </div>
+            <div class="media-preview">
+              <iframe id="iframe" src="">
+              </iframe>
             </div>
           </div>
         </div>
