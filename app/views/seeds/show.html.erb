@@ -115,8 +115,8 @@
                 <p><%=@seed.view_counter%></p>
               </div>
               <div class="social-category">
-                <div class="media-filter-icon glyphicon glyphicon-euro"></div>
-                <p><%= @seed.price.round(2) %></p>
+                <%= image_tag "gray-icon.png", class: "media-filter-icon" %>
+                <p><%= @seed.picks.count %></p>
               </div>
               <div class="social-category">
                 <div class="signal">

@@ -6,18 +6,15 @@
     <%= cl_image_tag("#{pick.seed.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "pick-image")%>
   <% end %>
   <div class="pick-body">
-    <div class="title-delete-price">
-      <div class="title-and-delete">
-        <%= link_to seed_path(pick.seed) do  %>
-            <h3><%= pick.seed.title.capitalize %></h3>
+    <div class="title-and-delete">
+      <%= link_to seed_path(pick.seed) do  %>
+          <h3><%= pick.seed.title.capitalize %></h3>
+      <% end %>
+      <% if pick.seed.ongoing? %>
+        <%= link_to "#destroyPick-#{pick.id}", data: {toggle: "modal"} do %>
+          <i class="fa fa-times-circle"></i>
         <% end %>
-        <% if pick.seed.ongoing? %>
-          <%= link_to "#destroyPick-#{pick.id}", data: {toggle: "modal"} do %>
-            <i class="fa fa-times-circle"></i>
-          <% end %>
-        <% end %>
-      </div>
-      <p>Prix original: <%= pick.seed.price.round(2) %>€</p>
+      <% end %>
     </div>
     <div class="price-pick">
       <div class="pick-state">

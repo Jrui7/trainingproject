@@ -35,7 +35,6 @@ class PicksController < ApplicationController
     @my_pick = @seed.picks.new(pick_params)
     @my_pick.user_id = current_user.id
     @user = @my_pick.user_id
-    @my_pick.amount = @seed.price * 0.2
     authorize @my_pick
     if @my_pick.save
       @seed.increment_popularity
@@ -77,7 +76,7 @@ class PicksController < ApplicationController
     card = Stripe::Token.retrieve(card)["card"]
     cu.default_source = card
     cu.save
-    @pick.amount = @pick.seed.campaign.price + 3.9
+    @pick.amount = @pick.seed.campaign.price + @pick.seed.expedition_costs
     begin
       charge = Stripe::Charge.create(
         customer:     customer_id,   # You should store this customer id and re-use it.

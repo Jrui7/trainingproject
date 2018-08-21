@@ -1,7 +1,7 @@
 <% if current_user %>
   <%if current_user.has_signaled?(@seed) %>
     <%= link_to signal_seed_path(current_user.signal_seed.where(seed: @seed).first), class: "seed-signaled", remote: true, method: :delete do %>
-      <div class="signal-box">
+      <div class="user-signal">
         <div class="media-filter-icon glyphicon glyphicon-exclamation-sign"></div>
         <p>Modérer</p>
         <p class="action-count">(<%= @seed.signal_seed.size%>)</p>
@@ -10,7 +10,7 @@
     <% end %>
   <% else %>
     <%= link_to seed_signal_seeds_path(@seed), remote: true, method: :post do %>
-    <div class="signal-box">
+    <div class="user-signal">
       <div class="media-filter-icon glyphicon glyphicon-exclamation-sign"></div>
       <p>Modérer</p>
       <p class="action-count">(<%= @seed.signal_seed.size %>)</p>
@@ -19,7 +19,7 @@
   <% end %>
 <% else %>
   <%= link_to new_user_session_path do %>
-    <div class="signal-box">
+    <div class="user-signal">
       <div class="media-filter-icon glyphicon glyphicon-exclamation-sign"></div>
       <p>Modérer</p>
       <p class="action-count">(<%= @seed.signal_seed.size %>)</p>
