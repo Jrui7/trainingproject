@@ -153,6 +153,19 @@ a:hover {
 
 }
 
+.clockdiv {
+  display: flex;
+}
+
+.dynamic-timer {
+  display: flex;
+  padding: 0 10px;
+  border-radius: 3px;
+  margin: 0 5px;
+  background-color: #FFFFFF;
+  color: $blue;
+}
+
 .pick-other {
   color: #3F3933;
   border: 1px solid lightgray;
@@ -356,6 +369,10 @@ a:hover {
       .pick-other {
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
+      }
+
+      .dynamic-timer {
+        padding: 0 5px;
       }
 
     }
