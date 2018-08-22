@@ -83,6 +83,7 @@
 
   .text-infos {
     display: flex;
+    align-items: flex-start;
     flex-wrap: wrap;
     padding: 10px 20px;
   }
@@ -94,7 +95,7 @@
   .right-part {
     flex: 0 0 55%;
     margin-left: 5%;
-    padding: 10px 20px 0px;
+    padding: 10px 20px 40px;
     background-color: #f1f8fc;
     border-radius: 10px;
   }
@@ -204,7 +205,6 @@ abbr {
 
 .media-preview {
   height: 250px;
-  display: none;
 }
 
 #iframe {

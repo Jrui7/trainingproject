@@ -12,8 +12,7 @@ function getVideoUrl() {
 }
 
 function clearVideoPreview() {
-  $('#iframe').attr('src', '').hide();
-  $(".media-preview").slideToggle();
+  $('#iframe').attr('src', '');
 }
 
 function parseVideoUrl(videoUrl) {
@@ -24,8 +23,7 @@ function parseVideoUrl(videoUrl) {
 }
 
 function showVideoPreview(url) {
-  $(".media-preview").slideToggle();
-  $('#iframe').attr('src', url).show();
+  $('#iframe').attr('src', url);
 }
 
 function videoHandler() {
