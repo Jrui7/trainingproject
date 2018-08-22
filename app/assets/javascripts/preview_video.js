@@ -1,9 +1,7 @@
 $(document).ready(function() {
-  displayVideoContainer();
 
   $(".chooseVideo").click(function() {
-      $(".video-block").toggleClass("hidden");
-      $(".video-container").toggleClass("cache montre");
+      $(".video-block").slideToggle();
     });
   videoHandler();
 });
@@ -14,7 +12,7 @@ function getVideoUrl() {
 }
 
 function clearVideoPreview() {
-  $('#iframe').attr('src', '').hide();
+  $('#iframe').attr('src', '');
 }
 
 function parseVideoUrl(videoUrl) {
@@ -25,8 +23,7 @@ function parseVideoUrl(videoUrl) {
 }
 
 function showVideoPreview(url) {
-  $('.media-preview').removeClass("hidden");
-  $('#iframe').attr('src', url).show();
+  $('#iframe').attr('src', url);
 }
 
 function videoHandler() {
@@ -46,13 +43,7 @@ function videoHandler() {
   })
 }
 
-function displayVideoContainer() {
-  var urlInput = $("#seed_url").val();
-  if (urlInput != "") {
-    $(".video-block").toggleClass("hidden");
-    $(".video-container").toggleClass("cache montre");
-  }
-}
+
 
 
 

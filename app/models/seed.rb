@@ -34,11 +34,6 @@ class Seed < ApplicationRecord
     message: "Attribuez une catégorie au produit"
     }
 
-  validates :price, presence: {
-    message: "A quel prix est-il actuellement vendu?"
-    }
-  validates :price, numericality: true
-
   validates :photos, presence: {
     message: "Ajoutez au moins une photo"
     }

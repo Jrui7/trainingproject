@@ -1,81 +1,54 @@
 
 <div class="container">
   <div class="page-section">
-        <div class="form-title">Ajouter un produit</div>
-          <div class="form-post-seed">
-            <%= simple_form_for @seed do |f| %>
-            <div class="seeder-infos">
-              <div class="row head">
-                <div class="col-xs-12 col-md-5 nopadding-right nopadding-left">
-                  <div class="input-block">
-                    <%= f.input :title, label:"Nom du produit" %>
-                  </div>
-                  <div class="input-block-price">
-                    <%= f.input :price, label:"Prix original", placeholder: "exemple: 15" %>
-                    <span class="unit">€</span>
-                  </div>
-                  <div class="input-block">
-                    <%= f.association :category, label:"Catégorie", prompt: "Selectionner une categorie", input_html: { data: { 'mode-category-id' => @mode_category_id } } %>
-                  </div>
-                  <div class="input-block size-guide-input">
-                    <p id="size-guide-label">Guide des tailles</p>
-                    <p class= "size-explain">Pour tous les produits ou l'utilisateur doit choisir une taille (hommes femmes enfants animaux), merci de coller le lien vers le guide des tailles du vendeur.</p>
-                    <%= f.input :size_guide, label: false, placeholder: "url du site / guide des tailles"%>
-                  </div>
-                  <div class="shop">
-                    <div class="magn-left">Informations produit</div>
-                    <%= f.input :sale_point_url, label:"Site internet", placeholder: "http://www..." %>
-                    <%= f.input :sale_point_contact, label:"Contact vendeur", placeholder: "page contact, email, social-media..." %>
-                  </div>
-                </div>
-                <div class="col-xs-12 col-md-6 col-md-offset-1 descirption-block">
-                  <div class="input-block">
-                    <%= f.input :official_description,label:"Descriptif produit", placeholder: "Court descriptif: Utilisation, carractéristiques... (cf. descriptif du vendeur)" %>
-                  </div>
-                  <div class="input-block" id="description">
-                    <%= f.input :description,label:"Avis personnel", placeholder: "Pourquoi appréciez-vous ce produit?" %>
-                  </div>
-                </div>
-              </div>
+    <h1 class="form-title">Ajouter un produit</h1>
+    <div class="form-post-seed">
+      <%= simple_form_for @seed do |f| %>
+        <div class="text-infos">
+          <div class="left-part">
+            <div class="input-block">
+              <%= f.input :title, label:"Nom du produit" %>
             </div>
-            <div class="media-bar">Medias</div>
-            <div class="media-display">
-              <div class="row head">
-                <div class="col-xs-12 nopadding-right nopadding-left">
-                  <div class="chooseFile">
-                    <div><span class="glyphicon glyphicon-plus"></span>Ajouter des photos<span style="color: #ff6d43; font-size: 13px; font-weight: bold; margin-left: 10px;">(min-1 / max-5)</span></div>
-                  </div>
-                  <div class="input-block attach">
-                    <%= f.attachinary_file_field :photos, label: false, class: "upload", cloudinary: { transformation: { width: 1220, height: 813, crop: :limit } } %>
-                  </div>
-                </div>
-                <div class="col-xs-12 nopadding-right nopadding-left">
-                  <div class="chooseVideo">
-                    <span class="glyphicon glyphicon-plus"></span>Ajouter une vidéo
-                  </div>
-                </div>
-                <div class="from-group">
-                  <div class="video-container cache">
-                    <div class="col-xs-12 col-md-6 nopadding-right nopadding-left">
-                      <div class="input-block video-block hidden">
-                        <%= f.input :url, label: "Lien Youtube", placeholder: "coller ici l'url d'une video youtube" %>
-
-                        <div class="media-preview hidden">
-                          <iframe id="iframe" src="">
-                          </iframe>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="input-block">
+              <%= f.association :category, label:"Catégorie", prompt: "Selectionner une categorie", input_html: { data: { 'mode-category-id' => @mode_category_id } } %>
             </div>
-
-            <div class="form-action">
-            <%= f.submit value: "POSTER", class: "btn-orange" %>
+            <div class="input-block" id="description">
+              <%= f.input :description,label:"Avis personnel", placeholder: "Pourquoi appréciez-vous ce produit?" %>
             </div>
-          <% end %>
+          </div>
+          <div class="right-part">
+            <%= f.input :sale_point_url, label:"Site internet", placeholder: "https://www..." %>
+            <p id="size-guide-label">Guide des tailles</p>
+            <p>Pour tous les produits ou l'utilisateur doit choisir une taille (hommes femmes enfants animaux), merci de coller le lien vers le guide des tailles du vendeur.</p>
+            <%= f.input :size_guide, label: false, placeholder: "url du site / guide des tailles"%>
+            <%= f.input :sale_point_contact, label:"Contact vendeur", placeholder: "page contact, email, social-media..." %>
+          </div>
         </div>
+        <h2 class="media-bar">Medias</h2>
+        <div class="media-display">
+          <div class="chooseFile">
+            <div><span class="glyphicon glyphicon-plus"></span>Ajouter des photos<span style="color: #ff6d43; font-size: 13px; font-weight: bold; margin-left: 10px;">(min-1 / max-5)</span></div>
+          </div>
+          <div class="input-block attach">
+            <%= f.attachinary_file_field :photos, label: false, class: "upload", cloudinary: { transformation: { width: 1220, height: 813, crop: :limit } } %>
+          </div>
+          <div class="chooseVideo">
+            <span class="glyphicon glyphicon-plus"></span>Ajouter une vidéo
+          </div>
+          <div class="input-block video-block">
+            <%= f.input :url, label: "Lien Youtube", placeholder: "coller ici l'url d'une video youtube" %>
+
+            <div class="media-preview">
+              <iframe id="iframe" src="">
+              </iframe>
+            </div>
+          </div>
+        </div>
+        <div class="form-action">
+        <%= f.submit value: "POSTER", class: "btn-orange" %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 
