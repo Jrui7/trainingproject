@@ -83,7 +83,7 @@
 
   .text-infos {
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     flex-wrap: wrap;
     padding: 10px 20px;
   }
@@ -103,6 +103,13 @@
   .form-group {
     margin: 0 0 30px;
   }
+
+  .seed_description {
+    margin-bottom: 0;
+    margin-top: 25px;
+  }
+
+
 
 
   .seed_sale_point_contact {
@@ -315,9 +322,6 @@ margin: 0px;
     }
   }
 
-  .seed_description {
-    margin-top: 25px;
-  }
 
   .media-display {
       padding: 0 10px;
