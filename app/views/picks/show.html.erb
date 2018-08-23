@@ -44,9 +44,8 @@
         <div class="recap-paragraph">
           <div>
           <h4><%= @seed.title %></h4>
-          <p>Prix original: <%= @seed.price %> €</p>
+          <p>Pické le: <%= @pick.created_at.strftime("%d/%m/%Y") %></p>
           </div>
-          Pické le: <%= @pick.created_at.strftime("%d/%m/%Y") %>
         </div>
       </div>
       <div class="how-much">

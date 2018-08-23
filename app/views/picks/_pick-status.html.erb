@@ -11,22 +11,22 @@
   <% when "campaign_failed" %>
   <div>
     <h4>Echec</h4>
-    <div class="status-text">Vous avez pické pour <%= pick.price %>€. Le vendeur n'a malheureusement pas voulu faire de deal avec nous. On ne fait pas boire un âne qui n'a pas soif dit le proverbe... </div>
+    <div class="status-text">Vous avez pické pour <%= pick.price %>€. Le vendeur n'a malheureusement pas voulu faire de deal avec nous. </div>
   </div>
   <% when "campaign_closed" %>
   <div>
     <h4>Campagne terminée</h4>
-    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€ mais n'avez pas bloqué votre participation à la campagne qui est maintenant fermée. C'est dommage !!! </div>
+    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€ mais n'avez pas bloqué votre participation à la campagne qui est maintenant fermée. Pensez-y la prochaine fois.</div>
   </div>
   <% when "pending" %>
   <div>
     <h4>Campagne terminée</h4>
-    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€ mais n'avez pas bloqué votre participation à la campagne qui est maintenant fermée. </div>
+    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€ mais n'avez pas bloqué votre participation à la campagne qui est maintenant fermée. Pensez-y la prochaine fois.</div>
   </div>
   <% when "cancelled" %>
   <div>
     <h4>Campagne annulée</h4>
-    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€. Nous avons fermé la campagne car le produit ne respecte pas les CGU . </div>
+    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€. Nous avons fermé la campagne car le produit ne respecte pas les CGU. </div>
   </div>
   <% when "error" %>
   <div>
@@ -39,11 +39,11 @@
   <% when "refund_failed" %>
   <div>
     <h4>Erreur</h4>
-    <div class="status-text">Nous avons recontré un problème lors du remboursemet que nous voulions effectuer. Merci de suivre ce lien . </div>
+    <div class="status-text">Nous avons recontré un problème lors du remboursement que nous voulions effectuer. Merci de prendre contact avec un administrateur: contact@pickalgo.com </div>
   </div>
   <% when "pick_failed" %>
   <div>
     <h4>Echec</h4>
-    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€. Le prix Pickalgo négocié est de <%= pick.seed.campaign.price %>€, vous ne pouvez pas bénéficier du deal . </div>
+    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€. Le prix Pickalgo négocié est de <%= pick.seed.campaign.price %>€, vous ne pouvez pas bénéficier du deal. </div>
   </div>
 <% end %>
