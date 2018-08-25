@@ -81,8 +81,8 @@
 
 .inactive {
   font-weight: bold;
-  background-color: #FFFFFF;
-  border: 1px solid #e8e8e8 !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e4e4e9));
+  background: linear-gradient(#fff, #e4e4e9);
   color: $blue;
 }
 

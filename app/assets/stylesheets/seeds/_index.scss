@@ -89,11 +89,9 @@ a:hover {
   transition: all 0.1s;
   padding: 3px 10px 3px 10px;
   margin-bottom: 2px;
-  border: 1px solid transparent;
 
 
     &:hover {
-  border: 1px solid #e8e8e8;
   background-color: #FFFFFF;
   padding: 3px 10px 3px 10px;
   margin-bottom: 2px;
@@ -435,7 +433,7 @@ a:hover {
     .sub-title{
       .filter-icon{
         background-color: $orange;
-        padding: 5px;
+        padding: 3px;
         border-radius: 5px;
         color: #FFF;
       }
@@ -509,12 +507,12 @@ a:hover {
         transition: all 0.1s;
         padding: 3px 10px 3px 10px;
         margin-bottom: 2px;
-        box-shadow: none;
-        border: 1px solid #e8e8e8 !important;
+        background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e4e4e9));
+        background: linear-gradient(#fff, #e4e4e9);
 
         .filter-icon{
           background-color: $orange;
-          padding: 5px;
+          padding: 3px;
           border-radius: 5px;
           color: #FFF;
         }

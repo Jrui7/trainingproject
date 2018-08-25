@@ -81,7 +81,6 @@ class SeedsController < ApplicationController
      @seed = current_user.seeds.build(seed_params)
      authorize @seed
     if @seed.save
-      flash[:notice] = "Seed en attente de validation"
       redirect_to seed_path(@seed)
     else
       render :new

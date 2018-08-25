@@ -15,7 +15,7 @@
         <h1><%= @seed.title.capitalize %></h1>
         <% unless @seed.status == "published" %>
           <%= link_to "#statusInfos", data: { toggle: "modal" } do%>
-            <div class="pending-infos">
+            <div class="pending-infos btn-orange">
               <i class="fas fa-hourglass-start"></i>
               <p>En attente</p>
             </div>
