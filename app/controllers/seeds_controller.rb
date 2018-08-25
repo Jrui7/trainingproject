@@ -171,7 +171,5 @@ class SeedsController < ApplicationController
   end
 
 
-
-
 end
 

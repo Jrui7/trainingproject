@@ -48,7 +48,7 @@
 
 
 
-.pick-details-container {
+.pick-details-container, .infos-container {
   padding: 50px;
 }
 
@@ -128,7 +128,7 @@
     padding: 0 !important;
   }
 
-  .page-sections {
+  .page-sections, .infos-container {
     padding: 0 50px 50px;
   }
 
@@ -143,12 +143,13 @@
 
 @media all and (max-width: 480px) {
 
-  .navbar-container {
+  .navbar-container, .infos-container {
     padding: 0 5px;
   }
   .page-sections {
       padding: 0 ;
   }
+
 
 
 }

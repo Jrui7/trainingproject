@@ -7,6 +7,7 @@
 
 .content-box{
   min-height: calc(100vh - 200px);
+  flex: 0 0 75%;
 
   h1{
     margin-bottom: 30px;
@@ -62,6 +63,7 @@
 
 .infos-container {
   display: flex;
+  flex-wrap: wrap;
   .selected-category {
     font-weight: normal;
     p {
@@ -70,7 +72,7 @@
   }
 
   .navigation-menu {
-    flex: 0 0 16%;
+    flex: 0 0 15%;
     margin-right: 10%;
   }
 
@@ -81,14 +83,12 @@
     transition: all 0.1s;
     padding: 3px 10px 3px 10px;
     margin-bottom: 2px;
-    border: 1px solid transparent;
     color: #4d4d5e;
 
     p {
       margin: 0;
     }
     &:hover {
-      border: 1px solid #e8e8e8;
       background-color: #FFFFFF;
       padding: 3px 10px 3px 10px;
       margin-bottom: 2px;
@@ -98,7 +98,7 @@
 
   .filter-icon {
     background-color: #ff6d43;
-    padding: 5px;
+    padding: 3px;
     border-radius: 5px;
     color: #FFF;
     margin-right: 10px;
@@ -157,6 +157,24 @@
     border: none;
   }
 
+@media all and (max-width: 736px) {
+  .infos-container .navigation-menu {
+      flex: 0 0 100%;
+      margin-right: 0%;
+      margin-top: 10px;
+  }
 
+  .content-box {
+    flex: 0 0 100%;
+    margin-top: 40px;
+  }
+
+ }
+
+@media all and (max-width: 480px) {
+
+
+
+}
 
 
