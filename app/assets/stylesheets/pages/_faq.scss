@@ -157,7 +157,19 @@
     border: none;
   }
 
-@media all and (max-width: 736px) {
+@media all and (max-width: 768px) {
+  .infos-container .navigation-menu {
+      flex: 0 0 25%;
+  }
+
+  .content-box {
+    flex: 0 0 65%;
+  }
+
+ }
+
+@media all and (max-width: 480px) {
+
   .infos-container .navigation-menu {
       flex: 0 0 100%;
       margin-right: 0%;
@@ -168,11 +180,6 @@
     flex: 0 0 100%;
     margin-top: 40px;
   }
-
- }
-
-@media all and (max-width: 480px) {
-
 
 
 }
