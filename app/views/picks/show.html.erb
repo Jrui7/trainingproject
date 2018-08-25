@@ -44,7 +44,11 @@
         <div class="recap-paragraph">
           <div>
           <h4><%= @seed.title %></h4>
-          <p>Pické le: <%= @pick.created_at.strftime("%d/%m/%Y") %></p>
+          <p>Pické le: <%= @pick.created_at.strftime("%d/%m/%Y") %>
+            <% if @pick.state == "finalized" %>
+              <br><b>Mon pick: <%= (@pick.price).round(2) %> €</b>
+            <% end %>
+          </p>
           </div>
         </div>
       </div>
@@ -53,12 +57,22 @@
         <p class="price"><%= (@seed.expedition_costs).round(2) %> €</p>
       </div>
       <div class="how-much">
-        <div class="text">Pické pour:</div>
-        <p class="price"><%= (@pick.price).round(2) %> €</p>
+        <% if @pick.state == "finalized" %>
+          <div class="text">Prix négocié:</div>
+          <p class="price"><%= @pick.seed.campaign.price.round(2) %> €</p>
+        <% else %>
+          <div class="text">Pické pour:</div>
+          <p class="price"><%= (@pick.price).round(2) %> €</p>
+        <% end %>
       </div>
       <div class="how-much last">
-        <div class="text"><b>Coût total max:</b></div>
-        <p class="price"><%= (@pick.price + @seed.expedition_costs).round(2) %> €</p>
+        <% if @pick.state == "finalized" %>
+          <div class="text"><b>Coût total:</b></div>
+          <p class="price"><%= (@pick.seed.campaign.price.round(2) + @seed.expedition_costs).round(2) %> €</p>
+        <% else %>
+          <div class="text"><b>Coût total max:</b></div>
+          <p class="price"><%= (@pick.price + @seed.expedition_costs).round(2) %> €</p>
+        <% end %>
       </div>
       <div class="info-detail"><%= render 'picks/pick-status', pick: @pick %>
       </div>

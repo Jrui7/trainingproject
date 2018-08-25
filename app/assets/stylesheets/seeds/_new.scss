@@ -199,15 +199,15 @@ abbr {
 }
 
 .media-bar{
-  background-color: lightgray;
   height: 60px;
-  color: white;
   margin-bottom: 30px;
   padding-left: 40px;
   display: flex;
   align-items: center;
   font-weight: bold;
   font-size: 20px;
+  background: linear-gradient(#fff, #e4e4e9);
+  color: #243763;
 }
 
 .media-preview {
@@ -279,7 +279,7 @@ margin: 0px;
 
     .right-part {
       flex: 0 0 100%;
-      margin-left: 0;
+      margin: 30px 0 30px 0;
     }
 
 
@@ -308,7 +308,6 @@ margin: 0px;
 
 
     .right-part {
-      margin: 0 0 30px 0;
       padding-right: 15px;
       padding-left: 15px;
     }

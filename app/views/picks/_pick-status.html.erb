@@ -11,17 +11,17 @@
   <% when "campaign_failed" %>
   <div>
     <h4>Echec</h4>
-    <div class="status-text">Vous avez pické pour <%= pick.price %>€. Le vendeur n'a malheureusement pas voulu faire de deal avec nous. </div>
+    <div class="status-text">Vous avez pické pour <%= pick.price %>€. Nous n'avons malheureusement pas négocier le prix avec le vendeur. </div>
   </div>
   <% when "campaign_closed" %>
   <div>
     <h4>Campagne terminée</h4>
-    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€ mais n'avez pas bloqué votre participation à la campagne qui est maintenant fermée. Pensez-y la prochaine fois.</div>
+    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€ mais n'avez pas bloqué votre participation à la campagne qui est maintenant fermée. La prochaine fois, pensez-y.</div>
   </div>
   <% when "pending" %>
   <div>
     <h4>Campagne terminée</h4>
-    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€ mais n'avez pas bloqué votre participation à la campagne qui est maintenant fermée. Pensez-y la prochaine fois.</div>
+    <div class="status-text">Vous avez pické <%= pick.seed.title %> pour <%= pick.price %>€ mais n'avez pas bloqué votre participation à la campagne qui est maintenant fermée. La prochaine fois, pensez-y.</div>
   </div>
   <% when "cancelled" %>
   <div>
