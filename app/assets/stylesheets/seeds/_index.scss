@@ -24,8 +24,8 @@ a:hover {
   }
 
 .categories {
-  flex: 0 0 15%;
-  margin-right: 70px;
+  flex: 0 0 20%;
+  margin-right: 5%;
   position: sticky;
   top: 30px;
 
@@ -89,10 +89,11 @@ a:hover {
   transition: all 0.1s;
   padding: 3px 10px 3px 10px;
   margin-bottom: 2px;
+  border-radius: 25px;
 
 
     &:hover {
-  background-color: #FFFFFF;
+  background-color: #F1F3F4;
   padding: 3px 10px 3px 10px;
   margin-bottom: 2px;
 }
@@ -509,6 +510,7 @@ a:hover {
         margin-bottom: 2px;
         background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e4e4e9));
         background: linear-gradient(#fff, #e4e4e9);
+        border-radius: 25px;
 
         .filter-icon{
           background-color: $orange;
@@ -540,6 +542,7 @@ a:hover {
 
       .inactive {
         background-color: inherit;
+        border-radius: 25px;
       }
 
 

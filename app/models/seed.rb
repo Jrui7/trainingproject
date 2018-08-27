@@ -19,6 +19,9 @@ class Seed < ApplicationRecord
     presence: {
     message: "Nom du produit requis"
     }
+  validates :title, uniqueness: {
+    message: "Produit déjà posté"
+    }
 
   validates :title, length: { minimum: 5 }
 
