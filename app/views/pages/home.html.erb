@@ -52,7 +52,7 @@
       </header>
     <div class="banner-container">
       <div class="banner-content">
-        <h2>Le prix juste</h2>
+        <h2>Aidez les à vous aider</h2>
         <div class="concept">
           <p class="hidden-xs">Décidez du prix que vous êtes prêt à payer
           <br>pour les nouveautés qui vous plaisent
@@ -61,7 +61,8 @@
           </p>
         </div>
         <p class="promise">
-        Nous transmettons vos propositions au vendeur pour tenter d'optenir le meilleur prix possible</p>
+        Aidez un produit à améliorer son prix,
+        profitez en échange de la meilleure remise possible</p>
         <div class="cta-links">
           <a href="#features-container">
             <div class="btn-white go-to">Concept</div>
@@ -80,39 +81,51 @@
     <div class="icon-and-text" id="first">
       <div class="half top">
         <%= image_tag "number-1.png", class: "feature-images"  %>
-        <h3 class="quote">"J'aime ce produit, mais 190 €…"</h3>
-        <div class="quote-text">Vous aimez ce produit tout beau tout nouveau mais hésitez à l'acheter à cause de son prix</div>
+        <h3 class="quote">"85 € pour ce produit ?"</h3>
+        <div class="quote-text">Vous aimez ce produit mais
+          <br>pensez que son prix devrait être
+          <div class="price-choice">
+            <div>
+              <input type="checkbox" id="scales" name="feature"
+                             value="scales" />
+              <label for="scales" class="checkbox-label">moins élevé</label>
+            </div>
+            <div>
+              <input type="checkbox" id="cream" name="feature"
+                         value="scales" />
+              <label for="scales" class="checkbox-label">plus élevé</label>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="half">
         <%= image_tag "share.png", class: "action-image" %>
-        <div class="quote-text">Présentez-nous ce produit. Tout comme vous certaines personnes hésitent à payer le prix demandé.</div>
+        <div class="quote-text">Présentez-nous ce produit. Nous avons tous une opinion différente du prix juste à payer pour un produit</div>
       </div>
     </div>
     <div class="icon-and-text" id="second">
       <div class="half top">
         <%= image_tag "number-2.png", class: "feature-images"  %>
-        <h3 class="quote">"Pour 160 € je fonce."</h3>
+        <h3 class="quote">-"Oui pour 80 €"<br>-"Oui même 90 €"</h3>
         <div class="quote-text">Chaque personne intéressée par un produit a sept jours pour manifester sa volonté d'achat.</div>
       </div>
       <div class="half">
         <%= image_tag "tag.png", class: "action-image" %>
-        <div class="quote-text">Fixez votre objectif. Quel prix maximal êtes-vous personnellement prêt à payer pour en faire l'acquisition ?</div>
+        <div class="quote-text">Quel prix trouvez-vous juste de payer pour en faire l'acquisition ? Soyez sincères, vous êtes couverts!</div>
       </div>
     </div>
     <div class="icon-and-text" id="third">
       <div class="half top">
         <%= image_tag "number-3.png", class: "feature-images"  %>
-        <h3 class="quote">"J'achète finalement à 150 € !"</h3>
+        <h3 class="quote">"J'achète finalement à 75 €"</h3>
         <div class="quote-text">
-          Nous transmettons vos propositions au vendeur, l'aidons à calculer le prix optimal, puis vous informons de sa décision
+          Vous aidez le vendeur à améliorer son prix, il vous fait en échange profiter de la meilleure remise possible
         </div>
       </div>
       <div class="half">
         <%= image_tag "like.png", class: "action-image" %>
         <div class="quote-text">
-          Vous proposiez de payer 160 €
-          <br>Prix optimal fixé à 150 €
-          <br>Vous obtenez le produit pour 150 €
+          Sur Pickalgo, nous vous faisons toujours bénéficier du meilleur prix possible
           <br><a href="#home-blue-background">
               <div class="go-to-how-it-works">Comment ça marche ?</div>
             </a>

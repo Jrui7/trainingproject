@@ -180,7 +180,7 @@
   }
 
   .banner-content{
-    width: 600px;
+    width: auto;
     margin-top: 50px;
 
 
@@ -290,6 +290,20 @@
     margin-top: 20px;
     .go-to-how-it-works{
       text-decoration: underline;
+      color: #4d4d5e;
+    }
+
+    .price-choice {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .choice-checkbox {
+      margin: 0 7px 0 14px;
+    }
+
+    .checkbox-label {
       color: #4d4d5e;
     }
   }
@@ -628,6 +642,7 @@
 
       .icon-and-text{
         margin-bottom: 20px;
+        padding: 0 10px 20px;
       }
 
       .steps {
