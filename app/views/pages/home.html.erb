@@ -60,9 +60,12 @@
           <p class= "hidden-sm hidden-md hidden-lg hidden-xl">Décidez du prix que vous êtes prêt à payer pour les nouveautés qui vous plaisent
           </p>
         </div>
-        <p class="promise">
-          Aidez les nouveaux produits à adopter le prix juste,
-          <br>bénéficiez en retour de la meilleure remise possible
+        <p class="promise hidden-xs">
+          Bénéficiez en retour de la meilleure remise possible
+       </p>
+       <p class="promise hidden-sm hidden-md hidden-lg hidden-xl">
+          Bénéficiez en retour
+          <br>de la meilleure remise possible
        </p>
         <div class="cta-links">
           <a href="#features-container">
@@ -124,40 +127,40 @@
 
   <div id="home-blue-background">
     <div class="how-it-works">
+      <h3>Quel prix permet au plus grand nombre d'obtenir le produit et compense la remise accordée par une augmentation des ventes ?</h3>
       <div class="steps">
         <div class="icon-and-text-no-shaddow">
           <%= image_tag "abc-1.png", class: "action-image" %>
           <div class="step-title">Rassembler</div>
           <div class="step-text">
-            Lorsqu'un produit est posté,nous collectons pendant 7 jours les propositions d'achat des personnes intéressées par celui-ci
+            Nous collectons pendant 7 jours les propositions d'achat des personnes intéressées par le même produit
           </div>
         </div>
         <div class="icon-and-text-no-shaddow">
           <%= image_tag "analyze-1.png", class: "action-image" %>
           <div class="step-title">Analyser</div>
           <div class="step-text">
-            Chacune de ces propositions est étudiée
-            pour déterminer son impact sur les volumes, les coûts, et donc la marge du vendeur
+            A partir du nombre de ces propositions, nous calculons la meilleure remise qu'il est possible d'accorder aux acheteurs
           </div>
         </div>
         <div class="icon-and-text-no-shaddow">
           <%= image_tag "finalize-1.png", class: "action-image" %>
           <div class="step-title">Finaliser</div>
           <div class="step-text">
-            Vous bénéficiez du prix qui permet de compenser la meilleure remise accordée par une augmentation des ventes
+            Si le prix que vous aviez proposé est suppérieur au prix minimal auquel le produit peut être vendu, vous remportez le deal !
           </div>
         </div>
       </div>
       <div class="conclusion-box">
         <h4 class="conclusion-title">
-           Fin de campagne :
+           Exemple :
         </h4>
         <div class="yes-no">
           <div class="outcome-and-text">
             <h5 class="outcome">"C'est gagné !"</h5>
             <ul style="padding-left: 0">
               <li>Vous acceptiez de payer le produit 160 €</li>
-              <li>Le prix optimal est de 150 €</li>
+              <li>Le prix minimal est de 150 €</li>
               <li>Vous obtenez le produit pour 150 €</li>
             </ul>
           </div>
@@ -165,7 +168,7 @@
             <h5 class="outcome">"Rien de perdu"</h5>
             <ul style="padding-left: 0">
               <li>Vous acceptiez de payer le produit 145 €</li>
-              <li>Le prix optimal est de 150 €</li>
+              <li>Le prix minimal est de 150 €</li>
               <li>Vous ne pouvez pas profiter du deal</li>
             </ul>
           </div>

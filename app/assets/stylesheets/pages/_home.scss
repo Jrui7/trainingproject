@@ -308,7 +308,14 @@
   .how-it-works{
     width: 80%;
     margin: 0 auto;
+    h3 {
+      font-size: 22px;
+      width: 50%;
+      margin: 0 auto 15px;
+    }
   }
+
+
 
 
   .steps{
@@ -554,6 +561,9 @@
 
     .how-it-works {
       width: 90%;
+      h3 {
+        width: 100%;
+        }
     }
   }
 
@@ -632,9 +642,10 @@
         font-size: 24px;
       }
 
-      .how-it-works{
-        width: 90%;
-
+      .how-it-works {
+        h3 {
+          font-size: 17px;
+          }
       }
 
       .conclusion-title{
