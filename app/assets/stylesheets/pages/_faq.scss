@@ -147,6 +147,36 @@
    }
  }
 
+ .questions-and-answers {
+  div {
+    &:focus {
+    outline: none !important;
+    }
+  }
+ }
+
+ .custom-table {
+   margin-top: 5px;
+   display: flex;
+   flex-wrap: wrap;
+   margin-top: 10px;
+ }
+
+ .regroup {
+   padding: 5px 10px;
+   background-color: #f1f8fc;
+   border-radius: 5px;
+   background: linear-gradient(#fff, #e4e4e9);
+   box-shadow: 0 2px -1px -1px rgba(45, 35, 66, 0.3), 0 1px 2px 0 rgba(45, 35, 66, 0.4), inset 0 -2px 0 0 #cfd1e3;
+   transition: box-shadow 0.15s ease, transform 0.15s ease, -webkit-transform 0.15s ease;
+   flex: 0 0 50%;
+ }
+
+ .idea {
+   color: #337AB5;
+   font-weight: bold;
+ }
+
 
   .panel-default > .panel-heading {
     background-color: $blue;
