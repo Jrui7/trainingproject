@@ -84,6 +84,7 @@
     padding: 3px 10px 3px 10px;
     margin-bottom: 2px;
     color: #4d4d5e;
+    border-radius: 25px;
 
     p {
       margin: 0;
@@ -93,6 +94,7 @@
       padding: 3px 10px 3px 10px;
       margin-bottom: 2px;
       color: $blue;
+      border-radius: 25px;
     }
   }
 
@@ -156,10 +158,9 @@
  }
 
  .custom-table {
-   margin-top: 5px;
+   margin-top: 20px;
    display: flex;
    flex-wrap: wrap;
-   margin-top: 10px;
  }
 
  .regroup {
@@ -169,12 +170,29 @@
    background: linear-gradient(#fff, #e4e4e9);
    box-shadow: 0 2px -1px -1px rgba(45, 35, 66, 0.3), 0 1px 2px 0 rgba(45, 35, 66, 0.4), inset 0 -2px 0 0 #cfd1e3;
    transition: box-shadow 0.15s ease, transform 0.15s ease, -webkit-transform 0.15s ease;
-   flex: 0 0 50%;
+   flex: 0 0 45%;
+   margin: 5px;
+   cursor: pointer;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   &:hover {
+    box-shadow: 0 7px 14px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 #cfd1e3;
+        transition: box-shadow 0.15s ease, transform 0.15s ease, -webkit-transform 0.15s ease;
+   }
  }
 
  .idea {
    color: #337AB5;
    font-weight: bold;
+   text-align: center;
+ }
+
+ .problem {
+  display: none;
+  padding: 10px;
+  text-align: justify;
  }
 
 
@@ -194,6 +212,11 @@
 
   .content-box {
     flex: 0 0 65%;
+  }
+
+  .regroup {
+    flex: 0 0 100%;
+    margin: 5px 0;
   }
 
  }
