@@ -11,14 +11,6 @@
     <% if user_signed_in? %>
       <div class="hidden-xs">
         <div class="navbar-right">
-          <div class="new-seed">
-            <%= link_to new_seed_path do %>
-              <i class="fa fa-plus" aria-hidden="true">
-              </i>
-            <% end %>
-            <span class="tooltiptext">Poster un produit</span>
-          </div>
-
           <div class="my-picks">
             <%= render "shared/pending-picks" %>
             <span class="tooltiptext">Mes picks</span>

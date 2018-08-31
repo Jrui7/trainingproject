@@ -58,37 +58,6 @@
   }
 }
 
-.new-seed {
-  margin: 0 10px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  .tooltiptext {
-    visibility: hidden;
-    background-color: white;
-    color: $blue;
-    border: 1px solid $blue;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    top: 90%;
-    min-width: 90px;
-    font-size: 15px;
-  }
-
-  .tooltiptext::after {
-      visibility: visible;
-  }
-
-  &:hover .tooltiptext {
-      visibility: visible;
-  }
-}
 
 .menu-links-text{
   font-size:15px;
