@@ -109,11 +109,18 @@ a:hover {
 .right-container {
   flex: 0 0 24%;
   margin-left: 5%;
-  background-color: #FFFFFF;
-  border: 1px solid #e8e8e8;
-  padding: 15px;
-  border-radius: 2px;
-  color: #4d4d5e;
+
+  .encart-element {
+    margin-bottom: 30px;
+  }
+
+  .background {
+    background-color: #FFFFFF;
+    border: 1px solid #e8e8e8;
+    padding: 15px;
+    border-radius: 2px;
+    color: #4d4d5e;
+  }
   h3 {
     margin-top: 0;
     padding-bottom: 15px;
@@ -121,12 +128,18 @@ a:hover {
     border-bottom: 1px solid #e8e8e8;
     font-size: 18px;
     text-align: center;
+    font-weight: bold;
   }
 
-  .icon-text {
+  .pic-text {
     display: flex;
     align-items: flex-start;
     margin-bottom: 15px;
+
+    h5 {
+      margin: 0;
+      color: #4d4d5e;
+    }
     p {
       margin: 0 0 0 10px;
       color: #999999;

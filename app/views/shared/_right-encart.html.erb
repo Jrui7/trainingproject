@@ -1,0 +1,41 @@
+<div class="right-container">
+  <div class="encart-element background">
+    <h3>Présenter un produit</h3>
+    <div class="pic-text">
+      <%= image_tag "star.png", class: "star-icon" %>
+      <p>Vous venez de découvrir un super produit</p>
+    </div>
+    <div class="pic-text">
+      <%= image_tag "star.png", class: "star-icon" %>
+      <p>Vous pensez qu'il pourrait adopter un autre prix</p>
+    </div>
+    <div class="pic-text">
+      <%= image_tag "star.png", class: "star-icon" %>
+      <p>Vous souhaitez partager votre découverte</p>
+    </div>
+    <%= link_to new_seed_path, class:"cta-container" do %>
+      <div class="cta-button btn-orange">Sousmettre</div>
+    <% end %>
+  </div>
+  <div class="encart-element">
+    <h3>Les picks les plus récents</h3>
+    <%= link_to seed_path(@pick_1.seed) do %>
+      <div class="pic-text">
+        <%= cl_image_tag("#{@pick_1.seed.photos.first.path}", :width=>40, :height=>40, :crop=>"fill", class: "pick-image")%>
+        <h5><%= @pick_1.seed.title %></h5>
+      </div>
+    <% end %>
+    <%= link_to seed_path(@pick_2.seed) do %>
+      <div class="pic-text">
+        <%= cl_image_tag("#{@pick_2.seed.photos.first.path}", :width=>40, :height=>40, :crop=>"fill", class: "pick-image")%>
+        <h5><%= @pick_2.seed.title %></h5>
+      </div>
+    <% end %>
+    <div class="pic-text">
+      <%= cl_image_tag("#{@pick_3.seed.photos.first.path}", :width=>40, :height=>40, :crop=>"fill", class: "pick-image")%>
+      <h5><%= @pick_3.seed.title %></h5>
+    </div>
+  </div>
+
+</div>
+
