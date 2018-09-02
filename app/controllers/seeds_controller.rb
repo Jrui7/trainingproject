@@ -172,7 +172,7 @@ class SeedsController < ApplicationController
   end
 
   def last_picks
-    @picks = Pick.last(3)
+    @picks = Pick.includes(:seed).all.group_by(&:seed_id).map{|s| s.last.last}.last(3)
     @pick_1 = @picks[0]
     @pick_2 = @picks[1]
     @pick_3 = @picks[2]

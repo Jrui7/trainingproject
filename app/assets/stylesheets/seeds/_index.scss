@@ -131,10 +131,33 @@ a:hover {
     font-weight: bold;
   }
 
+  .last-picks-title {
+    margin-bottom: 0;
+  }
+
+  .last-picks {
+    padding-top: 15px;
+    border-bottom: 1px solid #e8e8e8;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .category {
+    display: flex;
+    p {
+      margin: 5px 0 0 0 !important;
+      padding: 0px 5px;
+      border: 1px solid #e8e8e8;
+      background: #f8f8f8;
+    }
+  }
+
+
   .pic-text {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 15px;
+    padding-bottom: 15px;
 
     h5 {
       margin: 0;
