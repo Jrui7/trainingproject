@@ -153,6 +153,10 @@ a:hover {
     }
   }
 
+  .pick-image {
+    flex-shrink: 0;
+  }
+
 
   .pic-text {
     display: flex;

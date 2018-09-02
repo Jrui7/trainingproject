@@ -17,33 +17,41 @@
       <div class="cta-button btn-orange">Sousmettre</div>
     <% end %>
   </div>
-  <div class="encart-element background">
-    <h3 class="last-picks-title">Picks les plus récents</h3>
-    <%= link_to seed_path(@pick_1.seed), class:"pic-text last-picks" do %>
-        <%= cl_image_tag("#{@pick_1.seed.photos.first.path}", :width=>45, :height=>45, :crop=>"fill", class: "pick-image")%>
-        <div><h5><%= @pick_1.seed.title %></h5>
-          <div class="category">
-            <p><%= @pick_1.seed.category.name %></p>
-          </div>
-        </div>
-    <% end %>
-    <%= link_to seed_path(@pick_2.seed), class:"pic-text last-picks" do %>
-        <%= cl_image_tag("#{@pick_2.seed.photos.first.path}", :width=>45, :height=>45, :crop=>"fill", class: "pick-image")%>
-        <div><h5><%= @pick_2.seed.title %></h5>
-          <div class="category">
-            <p><%= @pick_2.seed.category.name %></p>
-          </div>
-        </div>
-    <% end %>
-      <%= link_to seed_path(@pick_3.seed), class:"pic-text last-picks" do %>
-        <%= cl_image_tag("#{@pick_3.seed.photos.first.path}", :width=>45, :height=>45, :crop=>"fill", class: "pick-image")%>
-        <div><h5><%= @pick_3.seed.title %></h5>
-          <div class="category">
-            <p><%= @pick_3.seed.category.name %></p>
-          </div>
-        </div>
+  <% unless @picks.blank? %>
+    <div class="encart-element background">
+      <h3 class="last-picks-title">Picks les plus récents</h3>
+      <% unless @pick_1.blank? %>
+        <%= link_to seed_path(@pick_1.seed), class:"pic-text last-picks" do %>
+            <%= cl_image_tag("#{@pick_1.seed.photos.first.path}", :width=>45, :height=>45, :crop=>"fill", class: "pick-image")%>
+            <div><h5><%= @pick_1.seed.title %></h5>
+              <div class="category">
+                <p><%= @pick_1.seed.category.name %></p>
+              </div>
+            </div>
+        <% end %>
       <% end %>
-  </div>
+      <% unless @pick_2.blank? %>
+        <%= link_to seed_path(@pick_2.seed), class:"pic-text last-picks" do %>
+            <%= cl_image_tag("#{@pick_2.seed.photos.first.path}", :width=>45, :height=>45, :crop=>"fill", class: "pick-image")%>
+            <div><h5><%= @pick_2.seed.title %></h5>
+              <div class="category">
+                <p><%= @pick_2.seed.category.name %></p>
+              </div>
+            </div>
+        <% end %>
+      <% end %>
+      <% unless @pick_3.blank? %>
+        <%= link_to seed_path(@pick_3.seed), class:"pic-text last-picks" do %>
+          <%= cl_image_tag("#{@pick_3.seed.photos.first.path}", :width=>45, :height=>45, :crop=>"fill", class: "pick-image")%>
+          <div><h5><%= @pick_3.seed.title %></h5>
+            <div class="category">
+              <p><%= @pick_3.seed.category.name %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
 
 </div>
 
