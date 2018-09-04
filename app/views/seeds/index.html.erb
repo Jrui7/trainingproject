@@ -34,102 +34,24 @@
 </div>
 
 <div class="page-container">
+  <%= render "seeds/index-modals" %>
+
   <div class=" filter-xs">
     <!-- Trigger the modal with a button -->
     <div id="fixed-modal-trigger"><span class="glyphicon glyphicon-filter"></span></div>
 
     <button type="button" class="btn hidden" id="real-trigger" data-toggle="modal" data-target="#filter-xs"></button>
 
-    <!-- Modal -->
-    <div id="filter-xs" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Filtrer</h4>
-          </div>
-          <div class="modal-body">
-            <div class="filter-title">
-              <div class="filter-header">
-               <% if @filter %>
-                <p class="filter-before">DÉFILTRER</p>
-                <%= link_to seeds_path do %>
-                 <i class="fa fa-toggle-on xs-fa" aria-hidden="true"></i>
-                <% end %>
-               <% end %>
-              </div>
-              <div class="sub-categories">
-                <%= render "shared/categories", categories: @categories %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class=" filter-xs">
-
     <%= link_to new_seed_path, class:"cta-xs-button" do %>
       <div id="new-seed-link"><span class="glyphicon glyphicon-plus"></span></div>
     <% end %>
+
     <!-- Trigger the modal with a button -->
     <div id="fixed-modal-trigger-cat"><span class="glyphicon glyphicon-th-list"></span></div>
 
     <button type="button" class="btn hidden" id="real-trigger-cat" data-toggle="modal" data-target="#filter-xs-cat"></button>
-
-    <!-- Modal -->
-    <div id="filter-xs-cat" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Trier</h4>
-          </div>
-          <div class="modal-body">
-            <div class="filter-title">
-              <div class="sub-categories">
-                <%= link_to seeds_path do %>
-                  <div class="selected-category">
-                    <div class="filter-icon glyphicon glyphicon-globe"></div>
-                    <p>Tout</p>
-                  </div>
-                <% end %>
-                <%= link_to popular_path do %>
-                  <div class="sub-title">
-                    <div class="filter-icon glyphicon glyphicon-fire"></div>
-                    <p>Tendances</p>
-                  </div>
-                <% end %>
-                <%= link_to newest_path do %>
-                  <div class="sub-title">
-                    <div class="filter-icon glyphicon glyphicon-leaf"></div>
-                    <p>Récents</p>
-                  </div>
-                <% end %>
-                <%= link_to last_day_path do %>
-                  <div class="sub-title">
-                    <div class="filter-icon glyphicon glyphicon-flash"></div>
-                    <p>Dernier jour</p>
-                  </div>
-                <% end %>
-                <%= link_to seed_path(@sample) do %>
-                <div class="sub-title">
-                  <div class="filter-icon glyphicon glyphicon-random"></div>
-                  <p>Hasard</p>
-                </div>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
+
 
 
   <div class="seed-feed">

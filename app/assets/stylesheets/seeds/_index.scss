@@ -90,6 +90,7 @@ a:hover {
   padding: 3px 10px 3px 10px;
   margin-bottom: 2px;
   border-radius: 25px;
+  color: #4d4d5e;
 
 
     &:hover {
@@ -537,10 +538,8 @@ a:hover {
 
     .sub-title{
       .filter-icon{
-        background-color: $orange;
         padding: 3px;
         border-radius: 5px;
-        color: #FFF;
       }
     }
 
@@ -549,18 +548,22 @@ a:hover {
     }
 
     .filter-xs {
-      display: block;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 10px;
+      z-index: 1000;
+
       a {
         text-decoration: none;
         color: inherit;
       }
 
       .cta-xs-button {
-        z-index: 1000;
-        position: fixed;
         color: white;
-        left: 50%;
-        bottom: 10px;
         padding: 15px 18px;
         border-radius: 50%;
         text-decoration: none;
@@ -573,10 +576,6 @@ a:hover {
 
 
       #fixed-modal-trigger  {
-        z-index: 1000;
-        position: fixed;
-        right: 50px;
-        bottom: 10px;
         padding: 15px 18px;
         text-shadow: 0 1px 0 #ce870c;
         background: -webkit-gradient(linear, left top, right bottom, from(#f5af19), to($orange));
@@ -589,10 +588,6 @@ a:hover {
       }
 
       #fixed-modal-trigger-cat {
-        z-index: 1000;
-        position: fixed;
-        left: 50px;
-        bottom: 10px;
         padding: 15px 18px;
         border-radius: 50%;
         text-decoration: none;
@@ -620,44 +615,6 @@ a:hover {
       }
 
 
-
-      .selected-category {
-        display: flex;
-        align-items: center;
-        transition: all 0.1s;
-        padding: 3px 10px 3px 10px;
-        margin-bottom: 2px;
-        background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e4e4e9));
-        background: linear-gradient(#fff, #e4e4e9);
-        border-radius: 25px;
-
-        .filter-icon{
-          background-color: $orange;
-          padding: 3px;
-          border-radius: 5px;
-          color: #FFF;
-        }
-
-
-
-        &:hover{
-          background-color: inherit;
-        }
-
-
-        a {
-          text-decoration: none;
-        }
-        p {
-          margin: 0;
-          font-weight: bold;
-          font-size: 15px;
-          color: $blue;
-
-
-        }
-
-      }
 
       .inactive {
         background-color: inherit;
