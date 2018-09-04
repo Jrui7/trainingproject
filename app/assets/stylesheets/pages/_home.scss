@@ -180,8 +180,7 @@
   }
 
   .banner-content{
-    width: auto;
-    margin-top: 50px;
+    margin-top: 75px;
 
 
     h2 {
@@ -198,27 +197,20 @@
 
 
   .concept {
-    font-family: 'Lato';
-    margin: 10px auto 0 auto;
-    display: flex;
-
-    p {
-      font-size: 26px;
-      background: rgba(0, 0, 0, 0.2);
-      padding: 20px 30px;
-      margin: 0px 0 20px;
-      border-radius: 5px;
-      flex: 0 0 100%;
-      text-align: center;
-      color: #FFF;
-    }
+    margin: 10px auto 20px auto;
+    font-size: 26px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px 15px;
+    border-radius: 5px;
+    text-align: center;
+    color: #FFF;
   }
 
   .promise {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 24px;
     text-align: center;
-    max-width: 550px;
     margin: auto;
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
   }
@@ -597,7 +589,7 @@
       }
 
       .concept {
-        margin: 10px auto 0 auto;
+        margin: 10px auto 10px auto;
 
         p {
           font-size: 15px;
