@@ -38,29 +38,6 @@
             </div>
           </div>
 
-          <div class="user-menu">
-            <div class="dropdown">
-                <i class="glyphicon glyphicon-option-vertical avatar dropdown-toggle" aria-hidden="true" id="dropdown-icon-vertical", data-toggle="dropdown"></i>
-              <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
-                <li>
-                  <%= link_to faq_path do %>
-                    <div class="drop-item">
-                      <i class="fa fa-question-circle"></i>
-                      <p>Aide</p>
-                    </div>
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to contact_path do %>
-                    <div class="drop-item">
-                      <i class="fa fa-envelope"></i>
-                      <p>Contact</p>
-                    </div>
-                  <% end %>
-                </li>
-              </ul>
-            </div>
-          </div>
           <% if policy(Seed).admin? %>
             <%= link_to admin_path do %>
               <i class="fa fa-user-plus" aria-hidden="true"></i>

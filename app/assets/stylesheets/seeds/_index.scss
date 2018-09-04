@@ -188,6 +188,9 @@ a:hover {
     text-transform: inherit;
     font-weight: bold;
     margin-top: 30px;
+    span {
+      margin-right: 5px;
+    }
   }
 
   h4 {
@@ -464,12 +467,13 @@ a:hover {
     }
 
     .seed-presentation {
-      flex: 0 0 100%;
+      flex: 0 0 65%;
       padding: 0;
     }
 
     .right-container {
-      display: none;
+      flex: 0 0 28%;
+      margin-left: 7%
     }
 
     .product {
@@ -563,14 +567,7 @@ a:hover {
       }
 
       .cta-xs-button {
-        color: white;
-        padding: 15px 18px;
-        border-radius: 50%;
-        text-decoration: none;
-        outline: none;
-        text-shadow: 0 1px 0 #ce870c;
-        background: linear-gradient(#f5af19, #ff6d43);
-        box-shadow: 0 7px 13px -3px rgba(45, 35, 66, 0.3), 0 2px 4px 0 rgba(45, 35, 66, 0.4), inset 0 -2px 0 0 #ce870c;
+        display: none;
       }
 
 
@@ -656,6 +653,18 @@ a:hover {
 
         #fixed-modal-trigger-cat {
           left: 10px;
+        }
+
+        .cta-xs-button {
+          display: block;
+          color: white;
+          padding: 15px 18px;
+          border-radius: 50%;
+          text-decoration: none;
+          outline: none;
+          text-shadow: 0 1px 0 #ce870c;
+          background: linear-gradient(#f5af19, #ff6d43);
+          box-shadow: 0 7px 13px -3px rgba(45, 35, 66, 0.3), 0 2px 4px 0 rgba(45, 35, 66, 0.4), inset 0 -2px 0 0 #ce870c;
         }
 
       }
