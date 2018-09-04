@@ -180,14 +180,15 @@
   }
 
   .banner-content{
-    width: 600px;
-    margin-top: 50px;
+    margin-top: 75px;
 
 
     h2 {
       line-height: 1.3em;
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 25px;
+      letter-spacing: 0.2em;
+      font-size: 40px;
       color: $blue;
       text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
     }
@@ -196,27 +197,21 @@
 
 
   .concept {
-    font-family: 'Lato';
-    margin: 10px auto 0 auto;
-    display: flex;
-
-    p {
-      font-size: 26px;
-      background: rgba(0, 0, 0, 0.2);
-      padding: 20px 30px;
-      margin: 0px 0 20px;
-      border-radius: 5px;
-      flex: 0 0 100%;
-      text-align: center;
-      color: #FFF;
-    }
+    margin: 10px auto 20px auto;
+    font-size: 26px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px 15px;
+    border-radius: 5px;
+    text-align: center;
+    color: #FFF;
+    max-width: 570px;
   }
 
   .promise {
     font-weight: bold;
-    font-size: 23px;
+    font-size: 24px;
     text-align: center;
-    max-width: 500px;
     margin: auto;
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
   }
@@ -292,6 +287,7 @@
       text-decoration: underline;
       color: #4d4d5e;
     }
+
   }
 
   #home-blue-background{
@@ -306,13 +302,14 @@
   .how-it-works{
     width: 80%;
     margin: 0 auto;
-
-    h3{
+    h3 {
       font-size: 22px;
       width: 50%;
       margin: 0 auto 15px;
     }
   }
+
+
 
 
   .steps{
@@ -481,6 +478,7 @@
       text-align: justify;
       font-size: 16px;
     }
+
   }
 
   #forgot-p {
@@ -560,7 +558,7 @@
       width: 90%;
       h3 {
         width: 100%;
-      }
+        }
     }
   }
 
@@ -573,6 +571,10 @@
           font-size: 24px;
           margin-bottom: 20px;
         }
+      }
+
+      #logo {
+        height: 35px;
       }
 
       .nav-and-banner {
@@ -588,7 +590,7 @@
       }
 
       .concept {
-        margin: 10px auto 0 auto;
+        margin: 10px auto 10px auto;
 
         p {
           font-size: 15px;
@@ -628,6 +630,7 @@
 
       .icon-and-text{
         margin-bottom: 20px;
+        padding: 0 10px 20px;
       }
 
       .steps {
@@ -638,12 +641,10 @@
         font-size: 24px;
       }
 
-      .how-it-works{
-        width: 90%;
-        h3{
-          font-size:17px;
-        }
-
+      .how-it-works {
+        h3 {
+          font-size: 17px;
+          }
       }
 
       .conclusion-title{

@@ -52,16 +52,17 @@
       </header>
     <div class="banner-container">
       <div class="banner-content">
-        <h2>Le prix juste</h2>
-        <div class="concept">
-          <p class="hidden-xs">Décidez du prix que vous êtes prêt à payer
-          <br>pour les nouveautés qui vous plaisent
+        <h2>Quand on s'aime, on s'aide</h2>
+          <p class="concept">Aidez les produits que vous aimez
+          <br>à adopter le prix le plus juste
           </p>
-          <p class= "hidden-sm hidden-md hidden-lg hidden-xl">Décidez du prix que vous êtes prêt à payer pour les nouveautés qui vous plaisent
-          </p>
-        </div>
-        <p class="promise">
-        Nous transmettons vos propositions au vendeur pour tenter d'optenir le meilleur prix possible</p>
+        <p class="promise hidden-xs">
+          Bénéficiez en retour de la meilleure remise possible
+       </p>
+       <p class="promise hidden-sm hidden-md hidden-lg hidden-xl">
+          Bénéficiez en retour
+          <br>de la meilleure remise possible
+       </p>
         <div class="cta-links">
           <a href="#features-container">
             <div class="btn-white go-to">Concept</div>
@@ -80,39 +81,38 @@
     <div class="icon-and-text" id="first">
       <div class="half top">
         <%= image_tag "number-1.png", class: "feature-images"  %>
-        <h3 class="quote">"J'aime ce produit, mais 190 €…"</h3>
-        <div class="quote-text">Vous aimez ce produit tout beau tout nouveau mais hésitez à l'acheter à cause de son prix</div>
+        <h3 class="quote">"80 € pour ce produit ?"</h3>
+        <div class="quote-text">Nous avons tous une opinion différente du prix juste à payer pour acquérir ce produit qui nous plait
+        </div>
       </div>
       <div class="half">
         <%= image_tag "share.png", class: "action-image" %>
-        <div class="quote-text">Présentez-nous ce produit. Tout comme vous certaines personnes hésitent à payer le prix demandé.</div>
+        <div class="quote-text">Certains trouvent le prix trop élevé. D'autres seraient même prêts à payer plus au vu de la valeur qu'ils y perçoivent</div>
       </div>
     </div>
     <div class="icon-and-text" id="second">
       <div class="half top">
         <%= image_tag "number-2.png", class: "feature-images"  %>
-        <h3 class="quote">"Pour 160 € je fonce."</h3>
-        <div class="quote-text">Chaque personne intéressée par un produit a sept jours pour manifester sa volonté d'achat.</div>
+        <h3 class="quote">-"À 70 € j'achète"<br>-"Moi, même à 90 €"</h3>
+        <div class="quote-text">Vous souhaitez l'acquérir ? Faites une proposition d'achat du montant qu'il vous semble juste de payer</div>
       </div>
       <div class="half">
         <%= image_tag "tag.png", class: "action-image" %>
-        <div class="quote-text">Fixez votre objectif. Quel prix maximal êtes-vous personnellement prêt à payer pour en faire l'acquisition ?</div>
+        <div class="quote-text">Que votre prix soit plus haut ou plus bas que le prix actuel, le deal proposé sera toujours <b>inférieur au prix actuel</b></div>
       </div>
     </div>
     <div class="icon-and-text" id="third">
       <div class="half top">
         <%= image_tag "number-3.png", class: "feature-images"  %>
-        <h3 class="quote">"J'achète finalement à 150 € !"</h3>
+        <h3 class="quote">"Je ne paye plus que 65 € !"</h3>
         <div class="quote-text">
-          Nous transmettons vos propositions au vendeur, l'aidons à calculer le prix optimal, puis vous informons de sa décision
+          Vos propositions (quantités et valeurs) aident le vendeur à calculer <b>le prix le plus judicieux</b> qu'il doit adopter
         </div>
       </div>
       <div class="half">
         <%= image_tag "like.png", class: "action-image" %>
         <div class="quote-text">
-          Vous proposiez de payer 160 €
-          <br>Prix optimal fixé à 150 €
-          <br>Vous obtenez le produit pour 150 €
+          Elles permettent également de calculer <b>la meilleure remise à vous accorder</b>
           <br><a href="#home-blue-background">
               <div class="go-to-how-it-works">Comment ça marche ?</div>
             </a>
@@ -123,59 +123,49 @@
 
   <div id="home-blue-background">
     <div class="how-it-works">
-      <h3>Quel prix permet au plus grand nombre d'obtenir le produit et compense la remise accordée par une augmentation des ventes ?</h3>
+      <h3>A partir de toutes vos propositions, nous calculons la meilleure remise qu'il est possible de vous accorder</h3>
       <div class="steps">
         <div class="icon-and-text-no-shaddow">
           <%= image_tag "abc-1.png", class: "action-image" %>
           <div class="step-title">Rassembler</div>
           <div class="step-text">
-            Lorsqu'un produit est posté, nous collectons pendant 7 jours les propositions d'achat des personnes intéressées par celui-ci.
+            Nous collectons pendant 7 jours les propositions d'achat des personnes intéressées par le même produit
           </div>
         </div>
         <div class="icon-and-text-no-shaddow">
-          <%= image_tag "analyze-1.png", class: "action-image" %>
-          <div class="step-title">Analyser</div>
+          <%= image_tag "calculator.png", class: "action-image" %>
+          <div class="step-title">Calculer</div>
           <div class="step-text">
-            Chacune de ces propositions est étudiée
-            pour déterminer son impact sur les volumes, les coûts, et donc la marge du vendeur.
+            Quel prix permet au plus grand nombre d'obtenir le produit et compense la remise accordée par une augmentation des ventes ?
           </div>
         </div>
         <div class="icon-and-text-no-shaddow">
           <%= image_tag "finalize-1.png", class: "action-image" %>
           <div class="step-title">Finaliser</div>
           <div class="step-text">
-            Nous vous transmettons la décision du vendeur
-            <br>En fonction de sa décision, l'issue de la campagne peut être différente pour chacun des acheteurs:
+            Si le montant de votre proposition est suppérieur au prix remisé que nous avons calculé, vous remportez le deal !
           </div>
         </div>
       </div>
       <div class="conclusion-box">
         <h4 class="conclusion-title">
-           Fin de campagne :
+           Exemple :
         </h4>
         <div class="yes-no">
           <div class="outcome-and-text">
             <h5 class="outcome">"C'est gagné !"</h5>
             <ul style="padding-left: 0">
-              <li>Vous acceptiez de payer le produit 160 €</li>
-              <li>Le prix optimal est de 150 €</li>
-              <li>Vous obtenez le produit pour 150 €</li>
+              <li>Vous proposiez de payer le produit 90 €</li>
+              <li>Le prix remisé est de 70 €</li>
+              <li>Vous obtenez le produit pour 70 €</li>
             </ul>
           </div>
           <div class="outcome-and-text">
             <h5 class="outcome">"Rien de perdu"</h5>
             <ul style="padding-left: 0">
-              <li>Vous acceptiez de payer le produit 145 €</li>
-              <li>Le prix optimal est de 150 €</li>
+              <li>Vous proposiez de payer le produit 65 €</li>
+              <li>Le prix remisé est de 70 €</li>
               <li>Vous ne pouvez pas profiter du deal</li>
-            </ul>
-          </div>
-          <div class="outcome-and-text">
-            <h5 class="outcome">"No deal"</h5>
-            <ul style="padding-left: 0">
-              <li>Le vendeur n'est pas intéressé</li>
-              <li>Aucune modification du prix est possible</li>
-              <li>Personne ne peut profiter d'un deal</li>
             </ul>
           </div>
         </div>
@@ -193,7 +183,7 @@
             <%= cl_image_tag @jorge.photo.path, class: "user-photo" %>
             <h4 class="testimony-title">Jorge, founder @Pickalgo</h4>
             <div class="testimony-text">
-              "Calculer le prix qui permet au plus grand nombre d'obtenir un produit, tout en optimisant la rentabilité du vendeur."
+              "Aider un produit à trouver le prix qui satisfera au mieux ses clients et ses impératifs de marge"
               <%= link_to "#firstTestimony", data: { toggle: "modal" } do%>
                 <div class="expant-testimony">En savoir +</div>
               <% end %>
@@ -203,7 +193,7 @@
             <%= cl_image_tag @jenny.photo.path, class: "user-photo" %>
             <h4 class="testimony-title">Jenny, founder <a href="https://petitvoyou.com" target="_blank">@PetitVoyou</a></h4>
             <div class="testimony-text">
-              "J'aurais vraiment aimé connaitre Pickalgo lorsque j'ai lancé ma marque ! Mes clients et moi aurions été gagnants !"
+              "Pickalgo nous aurait fait gagner du temps et de l'argent à mes clients et moi-même."
               <%= link_to "#secondTestimony", data: { toggle: "modal" } do%>
                 <div class="expant-testimony">En savoir +</div>
               <% end %>
@@ -211,7 +201,7 @@
           </div>
           <div class="testimony">
             <%= cl_image_tag @last.photo.path, class: "user-photo" %>
-            <h4 class="testimony-title">Mr P, communauté @Pickalgo </h4>
+            <h4 class="testimony-title">Mr P, earlybird @Pickalgo </h4>
             <div class="testimony-text">
               "Concept super original et malin, permet de découvrir et faire découvrir de vraies pépites."
             </div>

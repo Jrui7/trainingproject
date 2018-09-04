@@ -24,7 +24,7 @@ a:hover {
   }
 
 .categories {
-  flex: 0 0 20%;
+  flex: 0 0 16%;
   margin-right: 5%;
   position: sticky;
   top: 30px;
@@ -93,10 +93,10 @@ a:hover {
 
 
     &:hover {
-  background-color: #F1F3F4;
-  padding: 3px 10px 3px 10px;
-  margin-bottom: 2px;
-}
+      background-color: #F1F3F4;
+      padding: 3px 10px 3px 10px;
+      margin-bottom: 2px;
+    }
   a {
     text-decoration: none;
   }
@@ -106,10 +106,110 @@ a:hover {
   }
 }
 
+.right-container {
+  flex: 0 0 24%;
+  margin-left: 5%;
+
+  .encart-element {
+    margin-bottom: 30px;
+  }
+
+  .background {
+    background: linear-gradient(#fff, #F0F0F3);
+    border: 1px solid #e8e8e8;
+    padding: 15px;
+    border-radius: 2px;
+    color: #4d4d5e;
+  }
+  h3 {
+    margin-top: 0;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e8e8e8;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .last-picks-title {
+    margin-bottom: 0;
+  }
+
+  .last-picks {
+    padding-top: 15px;
+    border-bottom: 1px solid #e8e8e8;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .category {
+    display: flex;
+    p {
+      margin: 5px 0 0 0 !important;
+      padding: 0px 5px;
+      border: 1px solid #e8e8e8;
+      background: #f8f8f8;
+    }
+  }
+
+  .pick-image {
+    flex-shrink: 0;
+  }
+
+
+  .pic-text {
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 15px;
+
+    h5 {
+      margin: 0;
+      color: #4d4d5e;
+    }
+    p {
+      margin: 0 0 0 10px;
+      color: #999999;
+    }
+  }
+
+  .star-icon {
+    height: 18px;
+  }
+
+  .cta-container {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #e8e8e8;
+  }
+
+  .cta-button {
+    text-transform: inherit;
+    font-weight: bold;
+    margin-top: 30px;
+  }
+
+  h4 {
+    color: #999999;
+  }
+
+  .links-container {
+    display: flex;
+    flex-wrap: wrap;
+    color: #999999;
+    a {
+      color: inherit;
+      margin-right: 7px;
+      font-size: 14px;
+    }
+  }
+
+}
+
 
 
 .seed-presentation {
-  flex: 0 0 60%
+  flex: 0 0 50%
 }
 
 
@@ -332,7 +432,7 @@ a:hover {
 
 @media all and (max-width: 1280px) {
   .categories {
-      flex: 0 0 25%;
+      flex: 0 0 20%;
       margin-right: 30px;
   }
 
@@ -343,7 +443,7 @@ a:hover {
 @media(max-width: 992px) {
 
     .seed-presentation {
-        flex: 0 0 75%;
+        flex: 0 0 50%;
     }
 
   }
@@ -365,6 +465,10 @@ a:hover {
     .seed-presentation {
       flex: 0 0 100%;
       padding: 0;
+    }
+
+    .right-container {
+      display: none;
     }
 
     .product {
@@ -449,6 +553,21 @@ a:hover {
       a {
         text-decoration: none;
         color: inherit;
+      }
+
+      .cta-xs-button {
+        z-index: 1000;
+        position: fixed;
+        color: white;
+        left: 50%;
+        bottom: 10px;
+        padding: 15px 18px;
+        border-radius: 50%;
+        text-decoration: none;
+        outline: none;
+        text-shadow: 0 1px 0 #ce870c;
+        background: linear-gradient(#f5af19, #ff6d43);
+        box-shadow: 0 7px 13px -3px rgba(45, 35, 66, 0.3), 0 2px 4px 0 rgba(45, 35, 66, 0.4), inset 0 -2px 0 0 #ce870c;
       }
 
 
@@ -561,6 +680,17 @@ a:hover {
     }
 
     @media(max-width: 480px) {
+
+
+      .seed-presentation {
+        flex: 0 0 100%;
+        padding: 0;
+      }
+
+      .right-container {
+        display: none;
+      }
+
 
       .filter-xs {
         #fixed-modal-trigger  {

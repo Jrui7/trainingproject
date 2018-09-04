@@ -1,6 +1,7 @@
 class SeedsController < ApplicationController
 
   before_action :set_sample, only: [:index, :last_day, :popular, :newest, :show, :new]
+  before_action :last_picks, only: [:index, :last_day, :popular, :newest]
   skip_before_action :authenticate_user!, only: [:index, :last_day, :popular, :newest, :show]
   before_action :set_user, only: [:index, :last_day, :popular, :newest, :show, :new]
 
@@ -168,6 +169,13 @@ class SeedsController < ApplicationController
 
   def delivery_costs_infos
     params.require(:seed).permit(:expedition_costs, :status)
+  end
+
+  def last_picks
+    @picks = Pick.includes(:seed).all.group_by(&:seed_id).map{|s| s.last.last}.last(3)
+    @pick_1 = @picks[0]
+    @pick_2 = @picks[1]
+    @pick_3 = @picks[2]
   end
 
 

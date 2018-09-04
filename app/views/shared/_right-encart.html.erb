@@ -1,0 +1,66 @@
+<div class="right-container">
+  <div class="encart-element background">
+    <h3>Présenter un produit</h3>
+    <div class="pic-text">
+      <%= image_tag "star.png", class: "star-icon" %>
+      <p>Vous venez de découvrir un super produit</p>
+    </div>
+    <div class="pic-text">
+      <%= image_tag "star.png", class: "star-icon" %>
+      <p>Vous pensez qu'il pourrait adopter un autre prix</p>
+    </div>
+    <div class="pic-text">
+      <%= image_tag "star.png", class: "star-icon" %>
+      <p>Vous souhaitez partager votre découverte</p>
+    </div>
+    <%= link_to new_seed_path, class:"cta-container" do %>
+      <div class="cta-button btn-orange">Sousmettre</div>
+    <% end %>
+  </div>
+  <% unless @picks.blank? %>
+    <div class="encart-element background">
+      <h3 class="last-picks-title">Picks les plus récents</h3>
+      <% unless @pick_1.blank? %>
+        <%= link_to seed_path(@pick_1.seed), class:"pic-text last-picks" do %>
+            <%= cl_image_tag("#{@pick_1.seed.photos.first.path}", :width=>45, :height=>45, :crop=>"fill", class: "pick-image")%>
+            <div><h5><%= @pick_1.seed.title %></h5>
+              <div class="category">
+                <p><%= @pick_1.seed.category.name %></p>
+              </div>
+            </div>
+        <% end %>
+      <% end %>
+      <% unless @pick_2.blank? %>
+        <%= link_to seed_path(@pick_2.seed), class:"pic-text last-picks" do %>
+            <%= cl_image_tag("#{@pick_2.seed.photos.first.path}", :width=>45, :height=>45, :crop=>"fill", class: "pick-image")%>
+            <div><h5><%= @pick_2.seed.title %></h5>
+              <div class="category">
+                <p><%= @pick_2.seed.category.name %></p>
+              </div>
+            </div>
+        <% end %>
+      <% end %>
+      <% unless @pick_3.blank? %>
+        <%= link_to seed_path(@pick_3.seed), class:"pic-text last-picks" do %>
+          <%= cl_image_tag("#{@pick_3.seed.photos.first.path}", :width=>45, :height=>45, :crop=>"fill", class: "pick-image")%>
+          <div><h5><%= @pick_3.seed.title %></h5>
+            <div class="category">
+              <p><%= @pick_3.seed.category.name %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="encart-element">
+    <div class="links-container">
+      <%= link_to "FAQ", faq_path %>
+      <%= link_to "Contact", contact_path %>
+      <%= link_to "CGU", cgu_path %>
+      <%= link_to "Mentions légales", mentions_legales_path %>
+    </div>
+    <h4>©Pickalgo 2018</h4>
+  </div>
+
+</div>
+
