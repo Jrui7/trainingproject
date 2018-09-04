@@ -69,6 +69,11 @@
     p {
       color: $blue;
     }
+
+    .filter-icon {
+      color: $blue;
+    }
+
   }
 
   .navigation-menu {
@@ -99,10 +104,8 @@
   }
 
   .filter-icon {
-    background-color: #ff6d43;
     padding: 3px;
     border-radius: 5px;
-    color: #FFF;
     margin-right: 10px;
     font-size: 18px;
   }
