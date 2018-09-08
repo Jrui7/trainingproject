@@ -52,15 +52,15 @@
       </header>
     <div class="banner-container">
       <div class="banner-content">
-        <h2>Quand on s'aime, on s'aide</h2>
-          <p class="concept">Aidez les produits que vous aimez
-          <br>à adopter le prix le plus juste
+        <h2>Vous décidez du prix</h2>
+          <p class="concept">Proposez votre prix maximum
+          <br>pour payer le prix minimum
           </p>
         <p class="promise hidden-xs">
-          Bénéficiez en retour de la meilleure remise possible
+          Sur Pickalgo, bénéficiez de la meilleure remise possible
        </p>
        <p class="promise hidden-sm hidden-md hidden-lg hidden-xl">
-          Bénéficiez en retour
+          Sur Pickalgo, bénéficiez
           <br>de la meilleure remise possible
        </p>
         <div class="cta-links">
@@ -81,41 +81,41 @@
     <div class="icon-and-text" id="first">
       <div class="half top">
         <%= image_tag "number-1.png", class: "feature-images"  %>
-        <h3 class="quote">"80 € pour ce produit ?"</h3>
-        <div class="quote-text">Nous avons tous une opinion différente du prix juste à payer pour acquérir ce produit qui nous plait
-        </div>
+        <h3 class="quote">"190 € pour ce produit ?"</h3>
+        <div class="quote-text">Nous avons tous une idée différente du prix maximum que nous sommes prêt à payer pour ce produit</div>
       </div>
       <div class="half">
         <%= image_tag "share.png", class: "action-image" %>
-        <div class="quote-text">Certains trouvent le prix trop élevé. D'autres seraient même prêts à payer plus au vu de la valeur qu'ils y perçoivent</div>
+        <div class="quote-text">Certains trouvent le prix original un peu, voire beaucoup trop élevé. D'autres le trouvent juste et abordable</div>
       </div>
     </div>
     <div class="icon-and-text" id="second">
       <div class="half top">
         <%= image_tag "number-2.png", class: "feature-images"  %>
-        <h3 class="quote">-"À 70 € j'achète"<br>-"Moi, même à 90 €"</h3>
-        <div class="quote-text">Vous souhaitez l'acquérir ? Faites une proposition d'achat du montant qu'il vous semble juste de payer</div>
+        <h3 class="quote">-"À 150 € j'achète"<br>-"Moi pour 140 €"</h3>
+        <div class="quote-text">Ce produit vous plaÎt ? Faites une proposition d'achat du montant maximum que vous êtes prêt à payer</div>
       </div>
       <div class="half">
         <%= image_tag "tag.png", class: "action-image" %>
-        <div class="quote-text">Que votre prix soit plus haut ou plus bas que le prix actuel, le deal proposé sera toujours <b>inférieur au prix actuel</b></div>
+        <div class="quote-text">
+          Nous allons tenter de vous faire bénéficier d'un prix plus favorable que celui de votre proposition
+        </div>
       </div>
     </div>
     <div class="icon-and-text" id="third">
       <div class="half top">
         <%= image_tag "number-3.png", class: "feature-images"  %>
-        <h3 class="quote">"Je ne paye plus que 65 € !"</h3>
+        <h3 class="quote">"Je ne paye plus que 130 € !"</h3>
         <div class="quote-text">
-          Vos propositions (quantités et valeurs) aident le vendeur à calculer <b>le prix le plus judicieux</b> qu'il doit adopter
+          Vos propositions nous permettent de<a href="#home-blue-background">
+              <span class="go-to-how-it-works"><b>calculer la meilleure remise</b></span>
+            </a>qu'il est présentement possible de vous accorder 
         </div>
       </div>
       <div class="half">
         <%= image_tag "like.png", class: "action-image" %>
         <div class="quote-text">
-          Elles permettent également de calculer <b>la meilleure remise à vous accorder</b>
-          <br><a href="#home-blue-background">
-              <div class="go-to-how-it-works">Comment ça marche ?</div>
-            </a>
+          Elles aident aussi le vendeur à comprendre ses clients et à ajuster à posteriori sa stratégie tarifaire
         </div>
       </div>
     </div>
@@ -123,7 +123,9 @@
 
   <div id="home-blue-background">
     <div class="how-it-works">
-      <h3>A partir de toutes vos propositions, nous calculons la meilleure remise qu'il est possible de vous accorder</h3>
+      <h3>Eliminer la contrainte du prix
+      <br>Mesurer la croissance des volumes
+      <br>Répercuter les gains sur le prix</h3>
       <div class="steps">
         <div class="icon-and-text-no-shaddow">
           <%= image_tag "abc-1.png", class: "action-image" %>
@@ -183,7 +185,7 @@
             <%= cl_image_tag @jorge.photo.path, class: "user-photo" %>
             <h4 class="testimony-title">Jorge, founder @Pickalgo</h4>
             <div class="testimony-text">
-              "Aider un produit à trouver le prix qui satisfera au mieux ses clients et ses impératifs de marge"
+              "Etablir une relation gagnant-gagnant avec les vendeurs du produits"
               <%= link_to "#firstTestimony", data: { toggle: "modal" } do%>
                 <div class="expant-testimony">En savoir +</div>
               <% end %>
