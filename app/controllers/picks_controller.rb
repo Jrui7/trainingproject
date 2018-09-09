@@ -7,6 +7,7 @@ class PicksController < ApplicationController
     @user = current_user
     @seed = Seed.friendly.find(params[:seed_id])
     @picks = policy_scope(Pick).where(seed_id: @seed, state: "validated").order(price: :desc )
+    #can't export from success campaign as state becomes success
     authorize @picks
 
     respond_to do |format|
