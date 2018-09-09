@@ -15,6 +15,7 @@ class PaymentsController < ApplicationController
     def create
       @user = current_user
       pick_address = @user.addresses.last
+
       if @user.customer_id.blank?
         card = params[:stripeToken]
         customer = Stripe::Customer.create(
@@ -26,6 +27,7 @@ class PaymentsController < ApplicationController
         @user.customer_id = customer_id
         @user.save
         card = Stripe::Token.retrieve(card)["card"]
+
       elsif params[:stripeToken]
         card = params[:stripeToken]
         cu = Stripe::Customer.retrieve("#{@user.customer_id}")
@@ -33,6 +35,7 @@ class PaymentsController < ApplicationController
         card = Stripe::Token.retrieve(card)["card"]
         cu.default_source = card
         cu.save
+
       else
         customer_id = @user.customer_id
         card = Stripe::Customer.retrieve(customer_id)["sources"]["data"].first

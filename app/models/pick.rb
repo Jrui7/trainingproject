@@ -19,7 +19,7 @@ class Pick < ApplicationRecord
   scope :newest, -> { order(created_at: :desc)}
 
   def self.all_with_seed_details
-      Pick.select("picks.*, seeds.title as seed_title, seeds.expedition_costs as expedition_costs, users.sex as user_sex, users.date_of_birth as user_birthdate, users.email as user_email").joins(:seed, :user)
+      Pick.select("picks.*, seeds.title as seed_title, seeds.expedition_costs as expedition_costs, users.email as user_email").joins(:seed, :user)
   end
 
   def self.as_csv
