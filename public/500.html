@@ -183,7 +183,7 @@ p>a {
     <!-- Logo -->
     <a href="/seeds">
       <div class="logo-box">
-        <img src="/assets/logo.png" alt="Pickalgo Logo" id= "logo">
+        <img src="#" alt="Pickalgo Logo" id= "logo">
       </div>
     </a>
 
@@ -206,6 +206,10 @@ p>a {
       </div>
     </div>
   </div>
+  <script type="text/javascript">
+  var baseUrl = window.location.origin;
+  document.getElementById('logo').src = baseUrl + '/logo.png';
+</script>
 </body>
 </html>
 
