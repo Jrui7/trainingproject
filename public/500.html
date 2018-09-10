@@ -18,7 +18,7 @@
     height: 100vh;
   }
   .rails-default-error-page {
-    background-color: #EFEFEF;
+    background-color: #FAFAFA;
     color: #2E2F30;
     text-align: center;
     font-family: arial, sans-serif;
@@ -62,7 +62,7 @@
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
   h2 {
-    font-size: 24px;
+    font-size: 22px;
     text-transform: uppercase;
     letter-spacing: 4px;
     width: 100%;
@@ -118,6 +118,61 @@ a {
   padding: 30px;
 }
 
+#logo {
+  height: 40px;
+}
+
+.main {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.error-encart {
+  padding: 30px;
+}
+
+h4 {
+  color: indianred;
+  font-size: 17px;
+  margin-top: 0;
+}
+
+.email {
+  width: 80%;
+  margin: 0 auto;
+}
+
+p {
+  color: #999999;
+}
+
+p>a {
+  color: darkgray;
+  font-weight: bold;
+}
+
+.btn-orange {
+  margin: 50px auto 0;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  border: none;
+  align-items: center;
+  text-transform: uppercase;
+  padding: 10px 30px;
+  text-decoration: none;
+  border-radius: 50px;
+  color: #FFF;
+  cursor: pointer;
+  text-shadow: 0 1px 0 #ce870c;
+  background: linear-gradient(#f5af19, #ff6d43);
+  -webkit-box-shadow: 0 7px 13px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 #4b58ba;
+  box-shadow: 0 7px 13px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 #ce870c;
+}
+
+
   </style>
 </head>
 
@@ -125,12 +180,10 @@ a {
   <!-- This file lives in public/500.html -->
     <div class="navbar-container">
   <div class="navbar">
-
     <!-- Logo -->
     <a href="/seeds">
       <div class="logo-box">
-        <div id="logo-text">Pickalgo</div>
-        <span class="glyphicon glyphicon-leaf", id="logo-icon"></span>
+        <img src="/assets/logo.png" alt="Pickalgo Logo" id= "logo">
       </div>
     </a>
 
@@ -140,11 +193,19 @@ a {
 </div>
 
   <div class="container">
-    <h2>C'est un échec, de peu, mais c'est un échec (500)</h2>
-    <iframe src="https://giphy.com/embed/nKN7E76a27Uek" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-    <p>Quelque chose ne s'est pas passé comme prévu...</p>
-    <p>Merci d'essayer à nouveau</p>
-    <p>Si le soucis persiste, envoyez-nous un email (<a href="mailto:contact@pickalgo.com">contact@pickalgo.com</a>) en nous précisant ou le problème est survenu.</p>
+    <div class="main">
+      <div class="error-encart">
+       <div style="width:80%;margin: 0 auto;height:0;padding-bottom:80%;position:relative;"><iframe src="https://giphy.com/embed/l4FsIC6XXeS0wGIBG" width="100%" height="100%" style="position:absolute; left: 0; top: 0" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/death-apple-iphone-l4FsIC6XXeS0wGIBG"></a></p>
+       <h4>Erreur (500)</h4>
+        <p>Quelque chose ne s'est pas passé comme prévu...
+        <br>Merci d'essayer à nouveau</p>
+        <p class="email">Si le soucis persiste, envoyez-nous un email <a href="mailto:contact@pickalgo.com">contact@pickalgo.com</a></p>
+        <a href="/seeds">
+          <div class="btn-orange">Retour</div>
+        </a>
+      </div>
+    </div>
   </div>
 </body>
 </html>
+
