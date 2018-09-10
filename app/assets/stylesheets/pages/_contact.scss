@@ -1,0 +1,52 @@
+.text-and-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.photo-and-text {
+  display: flex;
+  align-items: flex-start;
+}
+
+
+.user-photo{
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 2px 26px 0 rgba(0,0,0,0.2)
+}
+
+.text {
+  padding-left: 30px;
+  h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 0;
+  }
+  p {
+    text-align: justify;
+  }
+}
+
+.personal-links {
+  display: flex;
+  align-items: baseline;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  color: #999999;
+  margin-right: 20px;
+
+  i {
+    font-size: 20px;
+  }
+
+  p {
+    margin: 0 0 0 5px;
+  }
+}
