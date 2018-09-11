@@ -4,30 +4,35 @@
   <div class="infos-container">
     <%= render 'pages/navigation', page: @page %>
     <div class="content-box">
-      <div class="text">
-        <h2>Bonjour, je suis Jorge, foundateur de Pickalgo,</h2>
-        <p>Vos retrours sont capitaux pour améliorer votre expérience d'utilisation. Si vous avez une remarque, des suggestions, des difficultés, n'hésitez pas à me contacter personnellement, je ferai mon possible pour vous répondre au plus vite.</p>
-        <div class="personal-links">
-          <%= cl_image_tag @jorge.photo.path, class: "user-photo" %>
-          <div>
-            <div class="group">
-              <i class="fab fa-slack"></i>
-              <p>@jorge_ruivinho</p>
-            </div>
-            <div class="group">
-              <i class="fas fa-envelope"></i>
-              <p><a href="mailto:jorge@pickalgo.com?Subject=Hello Pickalgo, <%=  ('ici' + ' ' + current_user.pseudo) if current_user %>" target="_top">jorge@pickalgo.com</a></p>
-            </div>
-            <div class="group">
-              <i class="fas fa-mobile"></i>
-              <p><a href="tel:+33627439045">+33(0)6 27 43 90 45</a></p>
-            </div>
-          </div>
+      <div class="photo-and-text">
+        <%= cl_image_tag @jorge.photo.path, class: "user-photo" %>
+        <div class="text">
+          <h2>Bonjour, je suis Jorge, foundateur de Pickalgo,</h2>
+          <p>Vos retrours sont capitaux pour améliorer votre expérience d'utilisation. Si vous avez une remarque, des suggestions, des difficultés, n'hésitez pas à me contacter personnellement, je ferai mon possible pour vous répondre au plus vite.</p>
+        </div>
+      </div>
+      <div class="personal-links">
+        <div class="group">
+          <div class="box-with-circle-icon"><i class="fab fa-slack"></i><br></div>
+          <h3>Slack</h3>
+          <p>@jorge_ruivinho</p>
+        </div>
+        <div class="group">
+          <div class="box-with-circle-icon"><i class="fas fa-envelope"></i><br></div>
+          <h3>Email</h3>
+          <p><a href="mailto:jorge@pickalgo.com?Subject=Hello Pickalgo, <%=  ('ici' + ' ' + current_user.pseudo) if current_user %>" target="_top">jorge@pickalgo.com</a></p>
+        </div>
+        <div class="group">
+          <div class="box-with-circle-icon"><i class="fab fa-whatsapp"></i><br></div>
+          <h3>Whatsapp</h3>
+          <p><a href="tel:+33627439045">+33(0)6 27 43 90 45</a></p>
         </div>
       </div>
     </div>
   </div>
 </div>
+<%= render "shared/footer" %>
+
 
 
 
