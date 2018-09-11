@@ -15,6 +15,7 @@ class PagesController < ApplicationController
   end
 
   def contact
+    @jorge = User.first
   end
 
   def mentions_legales
