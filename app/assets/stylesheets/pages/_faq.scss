@@ -35,15 +35,46 @@
   }
 
   .card-faqs {
-    padding-top: 50px;
+    margin-top: 50px;
+    background-color: #FFF;
+    border: 1px solid #e8e8e8;
+
+  }
+
+  .card-faq-container {
+    position: relative;
+    padding: 20px;
+  }
+
+  .box-with-circle-icon {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    padding: 25px;
+    margin-left: -25px;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    background-color: $orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  i {
+    font-size: 25px;
+    color: #FFFFFF;
   }
 
   h3{
     font-size: 23px;
+    margin: 20px 0;
+    color: $orange;
+    text-align: center;
   }
 
   p{
-    font-size: 18px;
+    font-size: 16px;
   }
 
 
@@ -207,6 +238,7 @@
   .panel-group .panel-heading + .panel-collapse > .panel-body, .panel-group .panel-heading + .panel-collapse > .list-group {
     border: none;
   }
+
 
 @media all and (max-width: 768px) {
   .infos-container .navigation-menu {

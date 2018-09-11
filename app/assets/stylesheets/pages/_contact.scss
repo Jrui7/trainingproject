@@ -49,20 +49,6 @@
   border-radius: 5px;
   flex: 0 0 30%;
 
-  .box-with-circle-icon {
-    position: absolute;
-    top: -25px;
-    left: 50%;
-    margin-left: -25px;
-    padding: 25px;
-    border-radius: 50%;
-    height: 25px;
-    width: 25px;
-    background-color: $orange;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 
   i {
     font-size: 25px;
