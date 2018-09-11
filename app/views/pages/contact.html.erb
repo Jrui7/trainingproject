@@ -4,12 +4,12 @@
   <div class="infos-container">
     <%= render 'pages/navigation', page: @page %>
     <div class="content-box">
-      <div class="photo-and-text">
-        <%= cl_image_tag @jorge.photo.path, class: "user-photo" %>
-        <div class="text">
-          <h2>Bonjour, je suis Jorge, foundateur de Pickalgo,</h2>
-          <p>Vos retrours sont capitaux pour améliorer votre expérience d'utilisation. Si vous avez une remarque, des suggestions, des difficultés, n'hésitez pas à me contacter personnellement, je ferai mon possible pour vous répondre au plus vite.</p>
-          <div class="personal-links">
+      <div class="text">
+        <h2>Bonjour, je suis Jorge, foundateur de Pickalgo,</h2>
+        <p>Vos retrours sont capitaux pour améliorer votre expérience d'utilisation. Si vous avez une remarque, des suggestions, des difficultés, n'hésitez pas à me contacter personnellement, je ferai mon possible pour vous répondre au plus vite.</p>
+        <div class="personal-links">
+          <%= cl_image_tag @jorge.photo.path, class: "user-photo" %>
+          <div>
             <div class="group">
               <i class="fab fa-slack"></i>
               <p>@jorge_ruivinho</p>
