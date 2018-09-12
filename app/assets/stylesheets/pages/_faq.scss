@@ -32,18 +32,24 @@
 
   ul{
     margin-top: 30px;
+    li {
+      width: fit-content;
+      &:hover {
+        font-weight: bold;
+      }
+    }
   }
 
   .card-faqs {
-    margin-top: 50px;
-    background-color: #FFF;
-    border: 1px solid #e8e8e8;
+    padding-top: 50px;
 
   }
 
   .card-faq-container {
     position: relative;
     padding: 20px;
+    background-color: #FFF;
+    border: 1px solid #e8e8e8;
   }
 
   .box-with-circle-icon {
@@ -98,11 +104,7 @@
   .selected-category {
     font-weight: normal;
     p {
-      color: $blue;
-    }
-
-    .filter-icon {
-      color: $blue;
+      font-weight: bold;
     }
 
   }
@@ -195,6 +197,7 @@
    margin-top: 20px;
    display: flex;
    flex-wrap: wrap;
+   justify-content: space-between;
  }
 
  .regroup {
@@ -205,7 +208,7 @@
    box-shadow: 0 2px -1px -1px rgba(45, 35, 66, 0.3), 0 1px 2px 0 rgba(45, 35, 66, 0.4), inset 0 -2px 0 0 #cfd1e3;
    transition: box-shadow 0.15s ease, transform 0.15s ease, -webkit-transform 0.15s ease;
    flex: 0 0 45%;
-   margin: 5px;
+   margin: 10px 0;
    cursor: pointer;
    display: flex;
    flex-direction: column;
@@ -251,7 +254,6 @@
 
   .regroup {
     flex: 0 0 100%;
-    margin: 5px 0;
   }
 
  }

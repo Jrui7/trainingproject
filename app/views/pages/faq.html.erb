@@ -6,17 +6,19 @@
     <div class="content-box">
       <div class="title">
         <h1>Foire aux questions</h1>
-        <p class="intro">Vous avez certainement beaucoup de questions sur Pickalgo et c'est normal. En soit le système ne ressemble à rien de ce que vous connaissez déjà. C'est pourquoi nous avons imaginé les questions que vous pourriez avoir, et avons tenté d'y apporter une réponse ci-dessous. Si vous avez d'autres questions, ou si aimez le projet et souhaitez nous adresser des remarques , n'hésitez pas à <%= link_to "nous contacter", contact_path, class: "help-link" %>.</p>
+        <p class="intro">Vous avez certainement beaucoup de questions sur Pickalgo et c'est normal. En soit le système ne ressemble à rien de ce que vous connaissez déjà. C'est pourquoi nous avons imaginé les questions que vous pourriez avoir, et avons tenté d'y apporter une réponse ci-dessous. Si vous avez d'autres questions, ou si aimez le projet et souhaitez nous adresser des remarques, n'hésitez pas à <%= link_to "nous contacter", contact_path, class: "help-link" %>.</p>
       </div>
       <ul class="summary-faq">
-        <li><a href="#question-1">Quel problème voulez-vous résoudre ?</a></li>
-        <li><a href="#question-2">Votre proposition de valeur</a></li>
+        <li><a href="#question-1">Quel problème Pickalgo souhaite résoudre ?</a></li>
+        <li><a href="#question-2">La proposition de valeur</a></li>
         <li><a href="#question-3">Comment ça marche ?</a></li>
         <li><a href="#question-4">Qui peut présenter un produit ?</a></li>
         <li><a href="#question-5">Un produit peut-il être refusé ?</a></li>
         <li><a href="#question-6">Comment se déroule une campagne ?</a></li>
         <li><a href="#question-7">Pourquoi confirmer ma participation ?</a></li>
         <li><a href="#question-8">Quand est-ce que je paye ?</a></li>
+        <li><a href="#question-9">Puis-je modifier le prix de mon pick ?</a></li>
+        <li><a href="#question-10">Puis-je supprimer mon pick ?</a></li>
       </ul>
       <div class="questions-and-answers">
         <div id="question-1" class="card-faqs">
@@ -30,7 +32,7 @@
                 <p>Vous est-il déjà arrivé:
                   <br>- De renoncer à acheter un produit qui vous plait à cause de son prix que vous jugiez trop élevé ?
                   <br>- De douter de la qualité d'un produit qui vous semblait pourtant pas mal à première vue ?
-                <br><br>Pour un entrepreneur, <b>trouver le prix ideal pour son produit est une tâche longue et difficile.</b><br>Il peut pour ce faire avoir recours à plusieurs méthodes comportant chacune des inconvénients:
+                <br><br>Pour un entrepreneur, <b>trouver le prix ideal pour son produit est une tâche longue et difficile.</b> Il peut pour ce faire avoir recours à plusieurs méthodes comportant chacune des inconvénients:
                 </p>
                   <div class="custom-table">
                     <div class="regroup">
@@ -105,7 +107,7 @@
                 Qui peut présenter un produit ?
               </h3>
               <div class="card-faq-answer">
-                  <p>Tous les membres de Pickalgo peuvent soumettre un produit. Avant de lancer la campagne, nous contactons le fabricant / vendeur du produit afin d'obtenir son accord de collaboration. Si vous souhaitez présenter votre propre produit, vous le pouvez également. Pensez simplement à signaler qu'il s'agit de votre produit dans le formulaire d'ajout du produit.</p>
+                  <p>Tous les membres de Pickalgo peuvent soumettre un produit. Avant de lancer la campagne, nous contactons le fabricant / vendeur du produit afin d'obtenir son accord de collaboration. Si vous souhaitez présenter votre propre produit, vous le pouvez également. Pensez simplement à signaler qu'il s'agit de votre produit dans le formulaire d'ajout de celui-ci.</p>
               </div>
             </div>
           </div>
@@ -144,7 +146,48 @@
                 Pourquoi confirmer ma participation ?
               </h3>
               <div class="card-faq-answer">
-                  <p>Le prix minimal dont nous souhaitons vous faire bénéficier est basé sur le nombre de personnes acquierant le produit sur la campagne. En confirmant votre participation le vendeur connait exactement </p>
+                  <p>Le prix minimal dont nous souhaitons vous faire bénéficier est basé sur le nombre de personnes acquérant le produit sur la campagne. En confirmant votre participation le vendeur connait exactement ses volumes de production, ses coûts, ce qui nous permet de calculer le prix minimal dont il est possible de vous faire bénéficier. Si la confirmation n'était pas obligatoire, les volumes pourraient varier en fonction des ajouts / désistements sur la campagne, et le prix minimal calculé serait donc faussé. En confirmant votre participation, <b>vous n'avez rien à payer sur le moment</b>, vous vous engagez simplement à ne pas vous désister si nous pouvons vous faire bénéficier d'un prix encore plus bas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="question-8" class="card-faqs">
+          <div class="card-faq-container">
+            <div class="box-with-circle-icon"><i class="fas fa-credit-card"></i><br></div>
+            <div class="card-faq">
+              <h3 class="card-faq-question">
+                Quand est-ce que je paye ?
+              </h3>
+              <div class="card-faq-answer">
+                  <p>Si vous avez bloqué votre participation à la campagne et que le montant que vous avez proposé est suppérieur au prix minimal que nous avons calculé, vous serez débité du prix minimal (et des frais de livraison si applicables), sur la carte que vous avez renseigné au moment de confirmer votre participation. Autrement, vous n'avez rien à payer mais vous ne pouvez pas profiter du deal.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="question-9" class="card-faqs">
+          <div class="card-faq-container">
+            <div class="box-with-circle-icon"><i class="glyphicon glyphicon-pencil"></i><br></div>
+            <div class="card-faq">
+              <h3 class="card-faq-question">
+                Puis-je modifier le prix de mon pick ?
+              </h3>
+              <div class="card-faq-answer">
+                  <p>Oui si la campagne est encore en cours</p>
+                  <p>Non si la campagne est clôturée</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="question-10" class="card-faqs">
+          <div class="card-faq-container">
+            <div class="box-with-circle-icon"><i class="fas fa-trash-alt"></i><br></div>
+            <div class="card-faq">
+              <h3 class="card-faq-question">
+                Puis-je supprimer mon pick ?
+              </h3>
+              <div class="card-faq-answer">
+                  <p>Oui si la campagne est encore en cours</p>
+                  <p>Non si la campagne est clôturée</p>
               </div>
             </div>
           </div>
