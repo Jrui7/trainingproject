@@ -235,7 +235,7 @@
 
 
 
-  #features-container{
+  #features-container, .conclusion-cases {
     width: 80%;
     margin: 0 auto;
     padding: 20px 0;
@@ -255,17 +255,16 @@
     border-radius: 10px;
     // box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.3);
     // background-color: #f1f3f7;
+
   }
 
 
 
   .action-image{
-    padding-top: 20px;
     max-height: 150px;
   }
 
   .quote{
-    height: 70px;
     margin-top: 20px;
     font-size: 30px;
     color: $blue;
@@ -274,6 +273,14 @@
   .quote-text{
     margin-top: 20px;
   }
+
+  #conclusion-container {
+    background-color: #f1f3f7;
+    text-align: center;
+  }
+
+
+
 
   .conclusion {
     background-color: #f1f3f7;
@@ -302,6 +309,32 @@
     color: $blue;
   }
 
+  .works-link {
+    padding: 80px 0;
+    background-color: #f1f3f7;
+    display: flex;
+    justify-content: center;
+    button {
+      border: none;
+      padding: 10px 30px;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 20px;
+      color: #FFF;
+      cursor: pointer;
+      text-shadow: 0 1px 0 #ce870c;
+      background: linear-gradient(#f5af19, #ff6d43);
+      box-shadow: 0 7px 13px -3px rgba(45, 35, 66, 0.3), 0 2px 4px 0 rgba(45, 35, 66, 0.4), inset 0 -2px 0 0 #ce870c;
+      transition: box-shadow 0.15s ease, transform 0.15s ease, -webkit-transform 0.15s ease;
+      &:hover {
+        box-shadow: 0 5px 8px -1px rgba(45, 35, 66, 0.3), 0 4px 5px 0 rgba(45, 35, 66, 0.4), inset 0 -2px 0 0 #ce870c;
+        -webkit-transform: translateY(-1px);
+        transform: translateY(-1px);
+        color: white;
+      }
+    }
+  }
+
    .outcome-and-text{
     flex: 0 0 20%;
   }
@@ -326,16 +359,10 @@
   }
 
 
-  .go-to-how-it-works{
-    text-decoration: underline;
-    a {
-      color: $orange;
-    }
-  }
-
   .steps{
     display: flex;
     justify-content: space-between;
+    margin-top: 40px;
   }
 
 
@@ -489,7 +516,7 @@
   @media all and (max-width: 1280px) {
 
 
-    #features-container {
+    #features-container, .conclusion-cases {
       flex-wrap: wrap;
     }
 
@@ -531,6 +558,13 @@
       margin: 0 auto 30px auto;
     }
 
+    .steps {
+      display: block;
+    }
+
+    .icon-and-text-no-shaddow {
+        padding: 40px 100px 40px;
+    }
 
 
     .testimony-box {
@@ -546,12 +580,16 @@
 
       }
 
+
+
     .how-it-works {
       width: 90%;
       h3 {
         width: 100%;
         }
     }
+
+
   }
 
 
@@ -614,7 +652,7 @@
         margin-right: 20px;
       }
 
-      #features-container{
+      #features-container, .conclusion-cases{
         display: block;
         height: auto;
         padding: 15px 0;
@@ -625,9 +663,7 @@
         padding: 10px;
       }
 
-      .steps {
-        display: block;
-      }
+
 
       .quote{
         font-size: 24px;
@@ -696,6 +732,16 @@
       .action-image{
         max-height: 110px;
       }
+
+      .icon-and-text-no-shaddow {
+          padding: 20px 20px 40px;
+      }
+
+      .outcome-box {
+        display: block;
+      }
+
+
 
 
   }

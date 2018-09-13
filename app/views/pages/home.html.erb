@@ -96,24 +96,28 @@
       </div>
     </div>
   </div>
-  <div class="conclusion">
-    <%= image_tag "cheers.svg", class:"action-image", id:"cheers" %>
-    <h4 class="conclusion-title">Gagnant-Gagnant</h4>
-    <div class="outcome-box">
-      <div class="outcome-and-text">
-        Etudier vos propositions nous permet de calculer la meilleure remise qu’il est possible de vous accorder
-        <div class="go-to-how-it-works">
-          <a href="#blue-background">Comment ça marche ?</a>
+  <div id="conclusion-container">
+    <div class="conclusion-cases">
+      <div class="icon-and-text">
+        <h3 class="quote">Gagnant</h3>
+        <div class="quote-text">
+          Etudier vos propositions nous permet de calculer la meilleure remise qu’il est possible de vous accorder
         </div>
       </div>
-      <div class="outcome-and-text">
-        Etudier vos propositions aide le vendeur à comprendre ses clients et à ajuster à posteriori sa stratégie tarifaire
-        <div class="go-to-how-it-works">
-          <a href="#blue-background">Comment ça marche ?</a>
+      <div class="icon-and-text">
+        <%= image_tag "cheers.svg", class:"action-image", id:"cheers" %>
+      </div>
+      <div class="icon-and-text">
+        <h3 class="quote">Gagnant</h3>
+        <div class="quote-text">
+          Etudier vos propositions aide le vendeur à comprendre ses clients et à ajuster à posteriori sa stratégie tarifaire
         </div>
       </div>
     </div>
   </div>
+  <a href="#blue-background" class="works-link">
+      <button>Fonctionnement</button>
+  </a>
 
   <div class="how-it-works" id="blue-background">
     <h3>Eliminer la contrainte du prix
