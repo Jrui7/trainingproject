@@ -86,10 +86,12 @@
 
   p{
     font-size: 16px;
+    text-align: justify;
   }
 
   .words {
     display: flex;
+    flex-wrap: wrap;
   }
 
   .word-column {
@@ -288,7 +290,14 @@
     flex: 0 0 100%;
     margin-top: 40px;
     padding: 0 10px;
+
+    .word-column {
+    flex: 0 0 100%;
+    padding: 0;
+    }
   }
+
+
 
 
 }
