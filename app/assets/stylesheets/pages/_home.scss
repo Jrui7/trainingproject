@@ -639,11 +639,15 @@
           }
       }
 
+      .conclusion {
+        padding: 60px 10px;
+      }
+
       .conclusion-title{
         font-size:20px;
       }
 
-      .yes-no{
+      .outcome-box{
         display: block;
         li{
           font-size:13px;
