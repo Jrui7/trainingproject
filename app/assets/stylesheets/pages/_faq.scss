@@ -25,7 +25,7 @@
     box-shadow: inset 0 -5px 0 rgba(106, 194, 239,0.38);
   }
 
-  a{
+  a {
     color: inherit;
     font-size: 18px;
   }
@@ -39,6 +39,7 @@
       }
     }
   }
+
 
   .card-faqs {
     padding-top: 50px;
@@ -74,13 +75,30 @@
 
   h3{
     font-size: 23px;
-    margin: 20px 0;
+    margin: 20px 0 30px;
     color: $orange;
     text-align: center;
+    span {
+      color: #999;
+      font-size: 15px;
+    }
   }
 
   p{
     font-size: 16px;
+  }
+
+  .words {
+    display: flex;
+  }
+
+  .word-column {
+    flex: 0 0 50%;
+    padding: 0 10px;
+    span {
+      font-weight: bold;
+      text-decoration: underline;
+    }
   }
 
 
