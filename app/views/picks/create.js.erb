@@ -3,8 +3,6 @@ $(document).ready(function(){
   $(".pick-section").html('<%= j render 'seeds/pick-section', my_pick: @my_pick %>');
   $(".pick-container-xs").html('<%= j render 'seeds/pick-section-xs', my_pick: @my_pick %>');
   $(".my-picks").html('<%= j render 'shared/pending-picks' %> ');
-  $("#go-to-top-link").click();
-  setTimeout(function(){
-    $(".complete-link").toggleClass("shake");
-      }, 1000);
+  $(".complete-link").toggleClass("shake");
+  $(".btn-blue").click();
 })

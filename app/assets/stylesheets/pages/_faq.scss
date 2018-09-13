@@ -25,25 +25,32 @@
     box-shadow: inset 0 -5px 0 rgba(106, 194, 239,0.38);
   }
 
-  a{
+  a {
     color: inherit;
     font-size: 18px;
   }
 
   ul{
     margin-top: 30px;
+    li {
+      width: fit-content;
+      &:hover {
+        font-weight: bold;
+      }
+    }
   }
 
+
   .card-faqs {
-    margin-top: 50px;
-    background-color: #FFF;
-    border: 1px solid #e8e8e8;
+    padding-top: 50px;
 
   }
 
   .card-faq-container {
     position: relative;
     padding: 20px;
+    background-color: #FFF;
+    border: 1px solid #e8e8e8;
   }
 
   .box-with-circle-icon {
@@ -68,13 +75,32 @@
 
   h3{
     font-size: 23px;
-    margin: 20px 0;
+    margin: 20px 0 30px;
     color: $orange;
     text-align: center;
+    span {
+      color: #999;
+      font-size: 15px;
+    }
   }
 
   p{
     font-size: 16px;
+    text-align: justify;
+  }
+
+  .words {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .word-column {
+    flex: 0 0 50%;
+    padding: 0 10px;
+    span {
+      font-weight: bold;
+      text-decoration: underline;
+    }
   }
 
 
@@ -98,11 +124,7 @@
   .selected-category {
     font-weight: normal;
     p {
-      color: $blue;
-    }
-
-    .filter-icon {
-      color: $blue;
+      font-weight: bold;
     }
 
   }
@@ -195,6 +217,7 @@
    margin-top: 20px;
    display: flex;
    flex-wrap: wrap;
+   justify-content: space-between;
  }
 
  .regroup {
@@ -205,7 +228,7 @@
    box-shadow: 0 2px -1px -1px rgba(45, 35, 66, 0.3), 0 1px 2px 0 rgba(45, 35, 66, 0.4), inset 0 -2px 0 0 #cfd1e3;
    transition: box-shadow 0.15s ease, transform 0.15s ease, -webkit-transform 0.15s ease;
    flex: 0 0 45%;
-   margin: 5px;
+   margin: 10px 0;
    cursor: pointer;
    display: flex;
    flex-direction: column;
@@ -251,7 +274,6 @@
 
   .regroup {
     flex: 0 0 100%;
-    margin: 5px 0;
   }
 
  }
@@ -268,7 +290,14 @@
     flex: 0 0 100%;
     margin-top: 40px;
     padding: 0 10px;
+
+    .word-column {
+    flex: 0 0 100%;
+    padding: 0;
+    }
   }
+
+
 
 
 }
