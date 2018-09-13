@@ -238,8 +238,9 @@
   #features-container{
     width: 80%;
     margin: 0 auto;
-    padding: 20px 0 50px;
+    padding: 20px 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 
     &:focus {
@@ -250,17 +251,12 @@
   .icon-and-text{
     text-align: center;
     flex: 0 0 30%;
-    border-radius: 10px;
-    box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.3);
-    background-color: rgba(241, 243, 247, 1);
     padding: 20px;
-
-
+    border-radius: 10px;
+    // box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.3);
+    // background-color: #f1f3f7;
   }
 
-  .half {
-    margin-bottom: 20px;
-  }
 
 
   .action-image{
@@ -272,29 +268,54 @@
     height: 70px;
     margin-top: 20px;
     font-size: 30px;
-    font-style: italic;
-    color: rgba(225, 106, 65, 1);
+    color: $blue;
   }
 
   .quote-text{
     margin-top: 20px;
-    .go-to-how-it-works{
-      text-decoration: underline;
-      color: #4d4d5e;
-    }
-
   }
 
-  #home-blue-background{
-    background: -webkit-linear-gradient(left, #487FC0, #1FC1B1 100%);
-    background: -o-linear-gradient(left, #487FC0, #1FC1B1 100%);
-    background: linear-gradient(to right, #487FC0, #1FC1B1 100%);
+  .conclusion {
+    background-color: #f1f3f7;
     text-align: center;
-    color: white;
     padding: 60px 0;
   }
 
+  .outcome-box {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    li{
+      list-style-type: none;
+    }
+  }
+
+  #cheers {
+    display: flex;
+    margin: auto;
+  }
+
+  .conclusion-title {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 13px 0;
+    color: $blue;
+  }
+
+   .outcome-and-text{
+    flex: 0 0 20%;
+  }
+
+  .outcome {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-style: italic;
+  }
+
+
   .how-it-works{
+    text-align: center;
+    padding: 60px 0;
     width: 80%;
     margin: 0 auto;
     h3 {
@@ -305,19 +326,18 @@
   }
 
 
-
+  .go-to-how-it-works{
+    text-decoration: underline;
+    a {
+      color: $orange;
+    }
+  }
 
   .steps{
     display: flex;
     justify-content: space-between;
   }
 
-  .step-title{
-    font-size:25px;
-    font-weight: bold;
-    margin: 13px 0;
-    color: #CAF9F2;
-  }
 
 
   .icon-and-text-no-shaddow{
@@ -338,31 +358,14 @@
     }
   }
 
-  .conclusion-title{
-    color: $blue;
-    font-size: 25px;
-    margin-top: 0;
-  }
 
-  .yes-no{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    li{
-      list-style-type: none;
+  #blue-background {
+    &:focus {
+      outline: none;
     }
   }
 
-  .outcome-and-text{
-    flex: 0 0 30%;
-  }
 
-  .outcome{
-    font-weight: bold;
-    text-transform: uppercase;
-    font-style: italic;
-
-  }
 
   .testimonies-container{
     background-color: #FFF;
@@ -376,14 +379,8 @@
     h2 {
       width: 80%;
       text-align: center;
-      border-bottom: 1px solid #E0E0E0;
       line-height: 0.1em;
       margin: 0 auto;
-    }
-
-    h2 span {
-      padding: 0 30px;
-      background-color: #FFF;
     }
 
     .cta {
@@ -642,11 +639,15 @@
           }
       }
 
+      .conclusion {
+        padding: 60px 10px;
+      }
+
       .conclusion-title{
         font-size:20px;
       }
 
-      .yes-no{
+      .outcome-box{
         display: block;
         li{
           font-size:13px;
