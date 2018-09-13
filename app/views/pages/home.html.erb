@@ -96,60 +96,75 @@
       </div>
     </div>
   </div>
-
-  <div id="home-blue-background">
-    <div class="how-it-works">
-      <h3>Eliminer la contrainte du prix
-      <br>Mesurer la croissance des volumes
-      <br>Répercuter les gains sur le prix</h3>
-      <div class="steps">
-        <div class="icon-and-text-no-shaddow">
-          <%= image_tag "gather.svg", class: "action-image" %>
-          <div class="step-title">Rassembler</div>
-          <div class="step-text">
-            Nous collectons pendant 7 jours les propositions d'achat des personnes intéressées par le même produit
-          </div>
-        </div>
-        <div class="icon-and-text-no-shaddow">
-          <%= image_tag "analyze.svg", class: "action-image" %>
-          <div class="step-title">Calculer</div>
-          <div class="step-text">
-            Quel prix permet au plus grand nombre d'obtenir le produit et compense la remise accordée par une augmentation des ventes ?
-          </div>
-        </div>
-        <div class="icon-and-text-no-shaddow">
-          <%= image_tag "finalize.svg", class: "action-image" %>
-          <div class="step-title">Finaliser</div>
-          <div class="step-text">
-            Si le montant de votre proposition est supérieur au prix remisé que nous avons calculé, vous remportez le deal !
-          </div>
+  <div class="conclusion">
+    <%= image_tag "cheers.svg", class:"action-image", id:"cheers" %>
+    <h4 class="conclusion-title">Gagnant-Gagnant</h4>
+    <div class="outcome-box">
+      <div class="outcome-and-text">
+        Etudier vos propositions nous permet de calculer la meilleure remise qu’il est possible de vous accorder
+        <div class="go-to-how-it-works">
+          <a href="#blue-background">Comment ça marche ?</a>
         </div>
       </div>
-      <div class="conclusion-box">
-        <h4 class="conclusion-title">
-           Exemple :
-        </h4>
-        <div class="yes-no">
-          <div class="outcome-and-text">
-            <h5 class="outcome">"C'est gagné !"</h5>
-            <ul style="padding-left: 0">
-              <li>Vous proposiez de payer le produit 190 €</li>
-              <li>Le prix remisé est de 150 €</li>
-              <li>Vous obtenez le produit pour 150 €</li>
-            </ul>
-          </div>
-          <div class="outcome-and-text">
-            <h5 class="outcome">"Rien de perdu"</h5>
-            <ul style="padding-left: 0">
-              <li>Vous proposiez de payer le produit 145 €</li>
-              <li>Le prix remisé est de 150 €</li>
-              <li>Vous ne pouvez pas profiter du deal</li>
-            </ul>
-          </div>
+      <div class="outcome-and-text">
+        Etudier vos propositions aide le vendeur à comprendre ses clients et à ajuster à posteriori sa stratégie tarifaire
+        <div class="go-to-how-it-works">
+          <a href="#blue-background">Comment ça marche ?</a>
         </div>
-      </div>
       </div>
     </div>
+  </div>
+
+  <div class="how-it-works" id="blue-background">
+    <h3>Eliminer la contrainte du prix
+    <br>Mesurer la croissance des volumes
+    <br>Répercuter les gains sur le prix</h3>
+    <div class="steps">
+      <div class="icon-and-text-no-shaddow">
+        <%= image_tag "gather.svg", class: "action-image" %>
+        <div class="quote">Rassembler</div>
+        <div class="step-text">
+          Nous collectons pendant 7 jours les propositions d'achat des personnes intéressées par le même produit
+        </div>
+      </div>
+      <div class="icon-and-text-no-shaddow">
+        <%= image_tag "analyze.svg", class: "action-image" %>
+        <div class="quote">Calculer</div>
+        <div class="step-text">
+          Quel prix permet au plus grand nombre d'obtenir le produit et compense la remise accordée par une augmentation des ventes ?
+        </div>
+      </div>
+      <div class="icon-and-text-no-shaddow">
+        <%= image_tag "finalize.svg", class: "action-image" %>
+        <div class="quote">Finaliser</div>
+        <div class="step-text">
+          Si le montant de votre proposition est supérieur au prix remisé que nous avons calculé, vous remportez le deal !
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="conclusion">
+    <h4 class="conclusion-title">Exemple:</h4>
+    <div class="outcome-box">
+      <div class="outcome-and-text">
+        <h5 class="outcome">"C'est gagné !"</h5>
+        <ul style="padding-left: 0">
+          <li>Vous proposiez de payer le produit 190 €</li>
+          <li>Le prix remisé est de 150 €</li>
+          <li>Vous obtenez le produit pour 150 €</li>
+        </ul>
+      </div>
+      <div class="outcome-and-text">
+        <h5 class="outcome">"Rien de perdu"</h5>
+        <ul style="padding-left: 0">
+          <li>Vous proposiez de payer le produit 145 €</li>
+          <li>Le prix remisé est de 150 €</li>
+          <li>Vous ne pouvez pas profiter du deal</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
     <div class="testimonies-container">
       <div class="testimony-box">
         <h2>
