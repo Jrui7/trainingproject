@@ -193,8 +193,20 @@ a:hover {
     }
   }
 
+
+
   h4 {
     color: #999999;
+    display: flex;
+    align-items: center;
+    span {
+      font-size: 14px;
+      margin-left: 5px;
+    }
+  }
+
+  .gray-logo {
+    height: 30px;
   }
 
   .links-container {
