@@ -76,48 +76,59 @@
 
   </div>
 
+  <div class="how-it-works" id="features-container">
+    <h3>Eliminer la contrainte du prix
+    <br>Mesurer la croissance des volumes
+    <br>Répercuter les gains sur le prix</h3>
+    <div class="steps">
+      <div class="icon-and-text-no-shaddow">
+        <%= image_tag "opinion.svg", class: "action-image" %>
+        <h3 class="quote">"Payer 190 € pour ce produit ?"</h3>
+        <div class="step-text">
+          Certains trouvent le prix original un peu, voire beaucoup trop élevé. D'autres le trouvent juste et abordable
+        </div>
+      </div>
+      <div class="icon-and-text-no-shaddow">
+        <%= image_tag "choose.svg", class: "action-image" %>
+        <div class="quote">-"À 180 € j'achète"<br>-"Moi pour 140 €"</div>
+        <div class="step-text">
+          Vous avez 7 jours pour faire une proposition d'achat du montant que vous êtes prêt à payer
+        </div>
+      </div>
+      <div class="icon-and-text-no-shaddow">
+        <%= image_tag "successful_purchase.svg", class: "action-image" %>
+        <div class="quote">"Je ne paye plus que 130 € !"</div>
+        <div class="step-text">
+          Si le montant de votre proposition est supérieur au prix remisé que nous avons calculé, vous remportez le deal !
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="conclusion">
+    <h4 class="conclusion-title">Exemple:</h4>
+    <div class="outcome-box">
+      <div class="outcome-and-text">
+        <h5 class="outcome">"C'est gagné !"</h5>
+        <ul style="padding-left: 0">
+          <li>Vous proposiez de payer le produit 190 €</li>
+          <li>Le prix remisé est de 150 €</li>
+          <li>Vous obtenez le produit pour 150 €</li>
+        </ul>
+      </div>
+      <div class="outcome-and-text">
+        <h5 class="outcome">"Rien de perdu"</h5>
+        <ul style="padding-left: 0">
+          <li>Vous proposiez de payer le produit 145 €</li>
+          <li>Le prix remisé est de 150 €</li>
+          <li>Vous ne pouvez pas profiter du deal</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-  <div id="features-container">
-    <div class="icon-and-text" id="first">
-      <%= image_tag "opinion.svg", class: "action-image" %>
-      <h3 class="quote">"Je pense que 190 € pour ce produit..."</h3>
-        <div class="quote-text">Certains trouvent le prix original un peu, voire beaucoup trop élevé. D'autres le trouvent juste et abordable</div>
-    </div>
-    <div class="icon-and-text" id="second">
-      <%= image_tag "choose.svg", class: "action-image" %>
-      <h3 class="quote">-"À 180 € j'achète"<br>-"Moi pour 140 €"</h3>
-      <div class="quote-text">Ce produit vous plaît ? Faites une proposition d'achat du montant maximum que vous êtes prêt à payer</div>
-    </div>
-    <div class="icon-and-text" id="third">
-      <%= image_tag "successful_purchase.svg", class: "action-image" %>
-      <h3 class="quote">"Je ne paye plus que 130 € !"</h3>
-      <div class="quote-text">
-        Nous vous faisons toujours bénéficier du meilleur prix possible.
-      </div>
-    </div>
-  </div>
-  <div id="conclusion-container">
-    <div class="conclusion-cases">
-      <div class="icon-and-text">
-        <h3 class="quote">Gagnant</h3>
-        <div class="quote-text">
-          Etudier vos propositions nous permet de calculer la meilleure remise qu’il est possible de vous accorder
-        </div>
-      </div>
-      <div class="icon-and-text">
-        <%= image_tag "cheers.svg", class:"action-image", id:"cheers" %>
-      </div>
-      <div class="icon-and-text">
-        <h3 class="quote">Gagnant</h3>
-        <div class="quote-text">
-          Etudier vos propositions aide le vendeur à comprendre ses clients et à ajuster à posteriori sa stratégie tarifaire
-        </div>
-      </div>
-    </div>
-  </div>
-  <a href="#blue-background" class="works-link">
+<!--   <a href="#blue-background" class="works-link">
       <button>Fonctionnement</button>
-  </a>
+  </a> -->
 
   <div class="how-it-works" id="blue-background">
     <h3>Eliminer la contrainte du prix
@@ -147,27 +158,26 @@
       </div>
     </div>
   </div>
-    <div class="conclusion">
-    <h4 class="conclusion-title">Exemple:</h4>
-    <div class="outcome-box">
-      <div class="outcome-and-text">
-        <h5 class="outcome">"C'est gagné !"</h5>
-        <ul style="padding-left: 0">
-          <li>Vous proposiez de payer le produit 190 €</li>
-          <li>Le prix remisé est de 150 €</li>
-          <li>Vous obtenez le produit pour 150 €</li>
-        </ul>
+  <div id="conclusion-container">
+    <div class="conclusion-cases">
+      <div class="icon-and-text">
+        <h3 class="quote">Gagnant</h3>
+        <div class="quote-text">
+          Etudier vos propositions nous permet de calculer la meilleure remise qu’il est possible de vous accorder
+        </div>
       </div>
-      <div class="outcome-and-text">
-        <h5 class="outcome">"Rien de perdu"</h5>
-        <ul style="padding-left: 0">
-          <li>Vous proposiez de payer le produit 145 €</li>
-          <li>Le prix remisé est de 150 €</li>
-          <li>Vous ne pouvez pas profiter du deal</li>
-        </ul>
+      <div class="icon-and-text">
+        <%= image_tag "cheers.svg", class:"action-image", id:"cheers" %>
+      </div>
+      <div class="icon-and-text">
+        <h3 class="quote">Gagnant</h3>
+        <div class="quote-text">
+          Etudier vos propositions aide le vendeur à comprendre ses clients et à ajuster à posteriori sa stratégie tarifaire
+        </div>
       </div>
     </div>
   </div>
+
 
     <div class="testimonies-container">
       <div class="testimony-box">
