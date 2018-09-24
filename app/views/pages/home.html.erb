@@ -30,7 +30,8 @@
   <div class="nav-and-banner" style="background-image: url('https://res.cloudinary.com/dlddnk3pr/image/upload/v1531593116/tags_n0uqhz.jpg')">
     <header class="header-home">
         <div class="logo-and-log">
-          <%= image_tag "logo.png", id: "logo" %>
+          <div class="logo-beta"><%= image_tag "logo.png", id: "logo" %><br>©Beta 2018
+          </div>
           <div class="right-links">
             <% if user_signed_in? %>
               <%= link_to "CONNEXION", seeds_path %>
@@ -96,7 +97,7 @@
         <%= image_tag "choose.svg", class: "action-image" %>
         <div class="quote">-"À 180 € j'achète"<br>-"Moi pour 140 €"</div>
         <div class="step-text">
-          Vous avez 7 jours pour faire une proposition d'achat du montant maximal que vous êtes prêt à payer
+          Vous avez 7 jours pour faire une proposition d'achat du montant maximal que vous êtes prêt à payer pour le produit
         </div>
       </div>
       <div class="icon-and-text-no-shaddow">
