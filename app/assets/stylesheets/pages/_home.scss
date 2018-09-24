@@ -235,6 +235,7 @@
 
 
 
+
   .conclusion-cases {
     width: 80%;
     margin: 0 auto;
@@ -246,6 +247,10 @@
     &:focus {
       outline: none !important;
     }
+
+    li{
+      list-style-type: none;
+    }
   }
 
   .icon-and-text{
@@ -255,8 +260,13 @@
     border-radius: 10px;
     // box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.3);
     // background-color: #f1f3f7;
+    .quote {
+      color: $orange;
+    }
 
   }
+
+
 
 
 
@@ -289,26 +299,12 @@
     padding: 60px 0;
   }
 
-  .outcome-box {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    li{
-      list-style-type: none;
-    }
-  }
 
   #cheers {
     display: flex;
     margin: auto;
   }
 
-  .conclusion-title {
-    font-size: 25px;
-    font-weight: bold;
-    margin: 13px 0;
-    color: $blue;
-  }
 
   .works-link {
     padding: 80px 0;
@@ -344,6 +340,12 @@
     font-weight: bold;
     text-transform: uppercase;
     font-style: italic;
+  }
+
+  #features-container {
+    &:focus {
+      outline: none;
+    }
   }
 
 
@@ -514,15 +516,16 @@
 
     .conclusion-cases {
       flex-wrap: wrap;
+      width: 100%;
     }
 
     .icon-and-text {
-      flex: 0 0 45%;
+      flex: 0 0 30%;
       margin: 0 auto 40px auto;
     }
 
     .how-it-works {
-      width: 90%;
+      width: 100%;
     }
 
     .outcome-and-text {
@@ -531,13 +534,7 @@
     }
 
     .testimony-box {
-      .testimony {
-        flex: 0 0 45%;
-      }
-
-      .testimony:last-child {
-        margin: 20px auto 0 auto;
-      }
+      width: 95%;
       .testimony-title {
         text-align: center;
       }
@@ -564,6 +561,15 @@
 
 
     .testimony-box {
+
+      .testimonies {
+        display: block;
+      }
+
+      .testimony {
+        width: 50%;
+        margin: 0 auto 40px auto;
+      }
 
       .cta {
         margin-top: 40px;
@@ -675,9 +681,6 @@
         padding: 60px 10px;
       }
 
-      .conclusion-title{
-        font-size:20px;
-      }
 
       .outcome-box{
         display: block;
@@ -713,8 +716,7 @@
         }
 
         .testimony {
-          flex: 0 0 100%;
-          margin-bottom: 35px;
+          width: 90%;
           padding: 0;
 
         }
