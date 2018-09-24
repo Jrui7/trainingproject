@@ -77,7 +77,7 @@
   </div>
 
   <div class="how-it-works" id="features-container">
-    <h3>Réfléchissez au prix juste
+    <h3 class="intro">Réfléchissez au prix juste
     <br>Faites votre proposition d'achat
     <br>Beneficiez de la meilleure remise</h3>
     <div class="steps">
@@ -129,34 +129,34 @@
   </div>
 
   <div class="how-it-works" id="blue-background">
-    <h3>Eliminer la contrainte du prix
-    <br>Mesurer la croissance des volumes
-    <br>Répercuter les gains sur le prix</h3>
+    <h3 class="intro">Mesurer les volumes de ventes induits par un prix
+    <br>Calculer les coûts associés à ces volumes
+    <br>Vous proposer le prix optimal</h3>
     <div class="steps">
       <div class="icon-and-text-no-shaddow">
         <%= image_tag "gather.svg", class: "action-image" %>
-        <div class="quote">Rassembler</div>
+        <div class="quote">Scénariser</div>
         <div class="step-text">
-          Nous collectons pendant 7 jours les propositions d'achat des personnes intéressées par le même produit
+          Nous analysons chaque prix pour déterminer le volume des personnes qui achèteraient alors le produit
         </div>
       </div>
       <div class="icon-and-text-no-shaddow">
         <%= image_tag "analyze.svg", class: "action-image" %>
         <div class="quote">Calculer</div>
         <div class="step-text">
-          Quel prix permet au plus grand nombre d'obtenir le produit et compense la remise accordée par une augmentation des ventes ?
+          Une augmentation du volume permet-elle de diminuer les coûts ? Nous calculons les coûts associés à chacun de ces scénarios.
         </div>
       </div>
       <div class="icon-and-text-no-shaddow">
         <%= image_tag "finalize.svg", class: "action-image" %>
         <div class="quote">Finaliser</div>
         <div class="step-text">
-          Si le montant de votre proposition est supérieur au prix remisé que nous avons calculé, vous remportez le deal !
+          Vous bénéficiez du prix qui permet de compenser la remise accordée par une augmentation des ventes
         </div>
       </div>
     </div>
   </div>
-  <div id="conclusion-container">
+  <div id="conclusion-container" class="conclusion">
     <div class="conclusion-cases">
       <div class="icon-and-text">
         <h3 class="quote">Gagnant</h3>
@@ -186,7 +186,7 @@
         <div class="testimonies">
           <div class="testimony">
             <%= cl_image_tag @jorge.photo.path, class: "user-photo" %>
-            <h4 class="testimony-title">Jorge, founder de Pickalgo</h4>
+            <h4 class="testimony-title">Jorge, fondateur de Pickalgo</h4>
             <div class="testimony-text">
               "Etablir une relation gagnant-gagnant avec les vendeurs du produits"
               <%= link_to "#firstTestimony", data: { toggle: "modal" } do%>
@@ -196,7 +196,7 @@
           </div>
           <div class="testimony">
             <%= cl_image_tag @jenny.photo.path, class: "user-photo" %>
-            <h4 class="testimony-title">Jenny, founder de <a href="https://petitvoyou.com" target="_blank">PetitVoyou</a></h4>
+            <h4 class="testimony-title">Jenny, fondatrice de <a href="https://petitvoyou.com" target="_blank">PetitVoyou</a></h4>
             <div class="testimony-text">
               "Pickalgo nous aurait fait gagner du temps et de l'argent à mes clients et moi-même."
               <%= link_to "#secondTestimony", data: { toggle: "modal" } do%>
