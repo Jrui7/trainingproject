@@ -30,7 +30,8 @@
   <div class="nav-and-banner" style="background-image: url('https://res.cloudinary.com/dlddnk3pr/image/upload/v1531593116/tags_n0uqhz.jpg')">
     <header class="header-home">
         <div class="logo-and-log">
-          <%= image_tag "logo.png", id: "logo" %>
+          <div class="logo-beta"><%= image_tag "logo.png", id: "logo" %><br>©Beta 2018
+          </div>
           <div class="right-links">
             <% if user_signed_in? %>
               <%= link_to "CONNEXION", seeds_path %>
@@ -52,16 +53,18 @@
       </header>
     <div class="banner-container">
       <div class="banner-content">
-        <h2>Vous décidez du prix</h2>
-          <p class="concept">Proposez votre prix maximum
-          <br>Pour payer le prix minimum
+        <h1>Ne renoncez pas à un produit à cause de son prix</h1>
+          <p class="concept hidden-sm hidden-md hidden-lg hidden-xl">Décidez du prix que vous êtes prêt à payer pour les produits qui vous plaisent
           </p>
-        <p class="promise hidden-xs">
-          Sur Pickalgo, bénéficiez de la meilleure remise possible
-       </p>
+          <p class="concept hidden-xs">Décidez du prix que vous êtes prêt à payer
+          <br>pour les produits qui vous plaisent
+          </p>
        <p class="promise hidden-sm hidden-md hidden-lg hidden-xl">
-          Sur Pickalgo, bénéficiez
-          <br>de la meilleure remise possible
+          Sur Pickalgo, bénéficiez toujours du meilleur prix possible
+       </p>
+       <p class="promise hidden-xs">
+          Sur Pickalgo, bénéficiez toujours
+          <br>du meilleur prix possible
        </p>
         <div class="cta-links">
           <a href="#features-container">
@@ -77,9 +80,11 @@
   </div>
 
   <div class="how-it-works" id="features-container">
-    <h3 class="intro">Réfléchissez au prix juste
+    <h2 class="who">Vous</h2>
+    <h3 class="intro">Déterminez votre prix maximal
     <br>Faites votre proposition d'achat
     <br>Beneficiez de la meilleure remise</h3>
+
     <div class="steps">
       <div class="icon-and-text-no-shaddow">
         <%= image_tag "opinion.svg", class: "action-image" %>
@@ -92,7 +97,7 @@
         <%= image_tag "choose.svg", class: "action-image" %>
         <div class="quote">-"À 180 € j'achète"<br>-"Moi pour 140 €"</div>
         <div class="step-text">
-          Vous avez 7 jours pour faire une proposition d'achat du montant que vous êtes prêt à payer
+          Vous avez 7 jours pour faire une proposition d'achat du montant maximal que vous êtes prêt à payer pour le produit
         </div>
       </div>
       <div class="icon-and-text-no-shaddow">
@@ -129,9 +134,10 @@
   </div>
 
   <div class="how-it-works" id="blue-background">
-    <h3 class="intro">Mesurer les volumes de ventes induits par un prix
-    <br>Calculer les coûts associés à ces volumes
-    <br>Vous proposer le prix optimal</h3>
+    <h2 class="who">Nous</h2>
+    <h3 class="intro">Mesurons les volumes induits par chaque prix
+    <br>Calculons les coûts associés à ces volumes
+    <br>Vous propons le prix optimal</h3>
     <div class="steps">
       <div class="icon-and-text-no-shaddow">
         <%= image_tag "gather.svg", class: "action-image" %>
@@ -144,14 +150,14 @@
         <%= image_tag "analyze.svg", class: "action-image" %>
         <div class="quote">Calculer</div>
         <div class="step-text">
-          Une augmentation du volume permet-elle de diminuer les coûts ? Nous calculons les coûts associés à chacun de ces scénarios.
+          Une augmentation du volume permet-elle de diminuer les coûts ? Nous calculons les coûts associés à chacun de ces scénarios
         </div>
       </div>
       <div class="icon-and-text-no-shaddow">
         <%= image_tag "finalize.svg", class: "action-image" %>
         <div class="quote">Finaliser</div>
         <div class="step-text">
-          Vous bénéficiez du prix qui permet de compenser la remise accordée par une augmentation des ventes
+          Vous bénéficiez du prix le plus bas qui permet de compenser la remise accordée par une augmentation des ventes
         </div>
       </div>
     </div>
