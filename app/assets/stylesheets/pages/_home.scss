@@ -209,7 +209,7 @@
 
   .promise {
     font-weight: bold;
-    font-size: 33px;
+    font-size: 25px;
     text-align: center;
     margin: auto;
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
@@ -604,7 +604,7 @@
   @media screen and (max-width: 480px) {
 
     .banner-container {
-        h2{
+        h1{
           font-size: 24px;
           margin-bottom: 20px;
         }
@@ -633,7 +633,7 @@
           font-size: 15px;
           background: rgba(0, 0, 0, 0.2);
           padding: 10px 5px;
-          text-align: center;
+          text-align: justify;
         }
       }
 
