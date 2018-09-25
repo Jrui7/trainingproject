@@ -14,7 +14,7 @@
       <p>Vous souhaitez partager votre découverte</p>
     </div>
     <%= link_to new_seed_path, class:"cta-container" do %>
-      <div class="cta-button btn-orange"><span>+ </span>  Présenter</div>
+      <div class="cta-button btn-orange"><span>+ </span>  Présentez le</div>
     <% end %>
   </div>
   <% unless @picks.blank? %>
@@ -52,6 +52,13 @@
       <% end %>
     </div>
   <% end %>
+  <div class="encart-element background">
+    <h3>Une remarque ?</h3>
+    <p>Pickalgo est actuellement en version beta, si vous décelez un bug, avez une suggestion, ou un mot d'amour à nous faire passer, c'est par ici ↓</p>
+    <%= link_to contact_path, class:"cta-container" do %>
+      <div class="cta-button btn-white">Nous contacter</div>
+    <% end %>
+  </div>
   <div class="encart-element">
     <div class="links-container">
       <%= link_to "FAQ", faq_path %>
