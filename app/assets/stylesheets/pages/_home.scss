@@ -194,7 +194,7 @@
       line-height: 1.3em;
       text-align: center;
       margin-bottom: 25px;
-      font-size: 40px;
+      font-size: 50px;
       color: $blue;
       text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
     }
@@ -204,14 +204,14 @@
 
   .concept {
     margin: 10px auto 20px auto;
-    font-size: 26px;
+    font-size: 22px;
     font-weight: bold;
     background: rgba(0, 0, 0, 0.2);
     padding: 20px 15px;
     border-radius: 5px;
-    text-align: center;
+    text-align: justify;
     color: #FFF;
-    max-width: 570px;
+    width: 60%;
   }
 
   .promise {
@@ -274,13 +274,6 @@
   }
 
 
-  .who {
-    color: $orange;
-  }
-
-  .intro {
-    font-size: 22px;
-  }
 
   .action-image{
     max-height: 150px;
@@ -612,7 +605,7 @@
 
     .banner-container {
         h1{
-          font-size: 24px;
+          font-size: 35px;
           margin-bottom: 20px;
         }
       }
@@ -628,13 +621,13 @@
         margin-top: 25px;
         width: auto;
         p {
-          text-align: center;
-          font-size: 17px;
+          font-size: 15px;
         }
       }
 
       .concept {
-        margin: 10px auto 10px auto;
+        margin: 10px auto 0px auto;
+        width: 100%;
 
         p {
           font-size: 15px;
@@ -651,9 +644,10 @@
         }
       }
 
-      .cta-links{
-        margin-top: 20px;
+      .cta-links {
+        margin-top: 30px;
       }
+
 
       .cta-link{
         font-size: 15px;
