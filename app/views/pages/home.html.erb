@@ -27,7 +27,7 @@
 
 <div class="container-home">
   <%= render 'cookies_eu/consent_banner' %>
-  <div class="nav-and-banner" style="background-image: linear-gradient(rgba(241, 243, 247,0.8), rgba(241, 243, 247,0.8)), url('https://res.cloudinary.com/dlddnk3pr/image/upload/v1531593116/tags_n0uqhz.jpg');">
+  <div class="nav-and-banner" style="background-image: linear-gradient(rgba(241, 243, 247,1) 50%, transparent 100%), url('https://res.cloudinary.com/dlddnk3pr/image/upload/v1531593116/tags_n0uqhz.jpg');">
     <header class="header-home">
         <div class="logo-and-log">
           <div class="logo-beta"><%= image_tag "logo.png", id: "logo" %><br>©Beta 2018
@@ -96,7 +96,7 @@
     </div>
   </div>
   <div class="conclusion">
-    <h3>Exemple d'un produit à 200 €</h3>
+    <h3>Exemple pour un produit à 200 €</h3>
     <div class="conclusion-cases">
       <div class="icon-and-text">
         <h3 class="quote">C'est gagné !</h3>
@@ -154,7 +154,6 @@
           </div>
         <% end %>
       </div>
-      <%= render 'testimony' %>
     </div>
     <%= render 'shared/footer' %>
   </div>
