@@ -194,7 +194,7 @@
       line-height: 1.3em;
       text-align: center;
       margin-bottom: 25px;
-      font-size: 40px;
+      font-size: 50px;
       color: $blue;
       text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
     }
@@ -204,23 +204,12 @@
 
   .concept {
     margin: 10px auto 20px auto;
-    font-size: 26px;
-    font-weight: bold;
-    background: rgba(0, 0, 0, 0.2);
-    padding: 20px 15px;
-    border-radius: 5px;
-    text-align: center;
-    color: #FFF;
-    max-width: 570px;
-  }
-
-  .promise {
-    font-weight: bold;
-    font-size: 25px;
-    text-align: center;
-    margin: auto;
+    font-size: 22px;
+    text-align: justify;
+    width: 60%;
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
   }
+
 
   .cta-links{
     display: flex;
@@ -274,13 +263,6 @@
   }
 
 
-  .who {
-    color: $orange;
-  }
-
-  .intro {
-    font-size: 22px;
-  }
 
   .action-image{
     max-height: 150px;
@@ -466,49 +448,6 @@
     }
   }
 
-  .expant-testimony {
-    margin-top: 5px;
-    font-style: normal;
-  }
-
-  .testimony-modal {
-  .blue-gradiant {
-    height: 100px;
-    position: relative;
-  }
-}
-
-  .testimony-body {
-    padding: 95px 15px 15px !important;
-  }
-
-  .speaker {
-    text-align: center;
-    h4 {
-      font-weight: 600;
-      font-size: 26px;
-    }
-    span {
-      color: #999999;
-    }
-  }
-
-  .statement-and-text {
-    padding: 20px;
-    .statement {
-      margin: 0 0 5px;
-      font-style: italic;
-      color: $orange;
-      font-size: 16px;
-      text-align: center;
-    }
-    .text {
-      margin: 0 0 20px;
-      text-align: justify;
-      font-size: 16px;
-    }
-
-  }
 
   #forgot-p {
     margin: 15px 0 30px;
@@ -556,6 +495,10 @@
   @media all and (max-width: 980px) {
     .banner-container {
       padding-bottom: 50px;
+    }
+
+    .concept {
+      width: 90%;
     }
 
     .icon-and-text {
@@ -612,7 +555,7 @@
 
     .banner-container {
         h1{
-          font-size: 24px;
+          font-size: 35px;
           margin-bottom: 20px;
         }
       }
@@ -628,13 +571,13 @@
         margin-top: 25px;
         width: auto;
         p {
-          text-align: center;
-          font-size: 17px;
+          font-size: 15px;
         }
       }
 
       .concept {
-        margin: 10px auto 10px auto;
+        margin: 10px auto 0px auto;
+        width: 100%;
 
         p {
           font-size: 15px;
@@ -651,9 +594,10 @@
         }
       }
 
-      .cta-links{
-        margin-top: 20px;
+      .cta-links {
+        margin-top: 30px;
       }
+
 
       .cta-link{
         font-size: 15px;
