@@ -205,7 +205,6 @@
   .concept {
     margin: 10px auto 20px auto;
     font-size: 22px;
-    font-weight: bold;
     background: rgba(0, 0, 0, 0.2);
     padding: 20px 15px;
     border-radius: 5px;
@@ -549,6 +548,10 @@
   @media all and (max-width: 980px) {
     .banner-container {
       padding-bottom: 50px;
+    }
+
+    .concept {
+      width: 90%;
     }
 
     .icon-and-text {
